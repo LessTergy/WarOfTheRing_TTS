@@ -11,10 +11,7 @@ FellowshipTrack = 0
 FreePeoplesHuntDiceCount = 0 --how many free peoples dice were retrieved from the hunt box from last turn.
 ShadowHuntDiceCount = 0
 Round = 0
---rulebooks
-WotRRulebookID = "96723e"
-LoMERulebookID = "6588bf"
-WoMERulebookID = "3fd6c0"
+
 --expansions
 LoME = false --Lords of Middle-earth
 WoME = false --warriors of middle-earth
