@@ -440,13 +440,15 @@ function onload()
     Global.setVar("CompactMode", CompactMode)
     --initialize components...
     Global.call("InitComponents")
-    --intro sound...
-    if NextStep == "BeginMenu" then
-        Global.call("PlaySound", {ID = 35})
-    --The World is changed...
-    end
-
+    playIntroSound()
     startLuaCoroutine(self, "MainCoroutine")
+end
+
+function playIntroSound()
+    -- The World is changed...
+    if NextStep == "BeginMenu" then
+        -- Global.call("PlaySound", {ID = 35})
+    end
 end
 
 function onPlayerChangeColor(PlayerColor)
