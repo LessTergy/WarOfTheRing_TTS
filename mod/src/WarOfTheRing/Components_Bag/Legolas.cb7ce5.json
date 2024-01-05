@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "cb7ce5",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 86.6049347,
+      "posY": 3.17249036,
+      "posZ": -66.28409,
+      "rotX": 357.501373,
+      "rotY": 0.09324953,
+      "rotZ": 3.28215384,
+      "scaleX": 0.5,
+      "scaleY": 0.5,
+      "scaleZ": 0.5
+    },
+    "Nickname": "Legolas",
+    "Description": "Character;2D;Companion;FreePeoples;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849467895/89552C5DFE33B42BFDC15A67AF5A16B21809FD8E/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849467895/89552C5DFE33B42BFDC15A67AF5A16B21809FD8E/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Legolas.cb7ce5.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

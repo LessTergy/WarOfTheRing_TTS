@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "d8fc5a",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 85.32386,
+      "posY": 3.155245,
+      "posZ": -59.17547,
+      "rotX": -0.000005074508,
+      "rotY": -0.0003572388,
+      "rotZ": -0.00001600824,
+      "scaleX": 0.5,
+      "scaleY": 0.5,
+      "scaleZ": 0.5
+    },
+    "Nickname": "The Ents of Fangorn",
+    "Description": "Faction;2D;Ents;FreePeoples;WoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0.333324343,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815369760808/39DA50DFD388F96883643718AA84D11F2155D0FC/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

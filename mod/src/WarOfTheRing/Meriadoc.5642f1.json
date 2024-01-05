@@ -1,0 +1,243 @@
+{
+  "Object": {
+    "GUID": "5642f1",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 28.3202877,
+      "posY": 1.01075733,
+      "posZ": 18.43892,
+      "rotX": 8.80455e-7,
+      "rotY": 0.000009088019,
+      "rotZ": -0.0000134469337,
+      "scaleX": 0.4,
+      "scaleY": 1,
+      "scaleZ": 0.4
+    },
+    "Nickname": "Meriadoc",
+    "Description": "Character;3D;Companion;FreePeoples;",
+    "GMNotes": "Region:Fellowship Box;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "DiffuseURL": "",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "Convex": true,
+      "MaterialIndex": 4,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "5f2dc7",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": -0.0154304681,
+          "posY": 0.00165969669,
+          "posZ": -0.0275420789,
+          "rotX": -0.000154160138,
+          "rotY": -6.512759e-10,
+          "rotZ": 0.0008018799,
+          "scaleX": 2.25,
+          "scaleY": 0.9,
+          "scaleZ": 2.25
+        },
+        "Nickname": "Meriadoc",
+        "Description": "Character;3D;FreePeoples;",
+        "GMNotes": "Region:;",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176392093/FC5F393063DFF63125C2D9E06F3FB2D219C58B9F/",
+          "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176392521/51791C6A7CCE6AE383EE4AD6C160EB7C4F9A125B/",
+          "NormalURL": "",
+          "ColliderURL": "",
+          "Convex": true,
+          "MaterialIndex": 3,
+          "TypeIndex": 1,
+          "CustomShader": {
+            "SpecularColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "SpecularIntensity": 0,
+            "SpecularSharpness": 2,
+            "FresnelStrength": 0
+          },
+          "CastShadows": true
+        },
+        "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "States": {
+          "2": {
+            "GUID": "773683",
+            "Name": "Figurine_Custom",
+            "Transform": {
+              "posX": 28.3499317,
+              "posY": 1.04268777,
+              "posZ": 18.2488785,
+              "rotX": 0.00000180737663,
+              "rotY": 179.996567,
+              "rotZ": 0.0000013873281,
+              "scaleX": 0.6428572,
+              "scaleY": 0.6428572,
+              "scaleZ": 0.6428572
+            },
+            "Nickname": "Meriadoc",
+            "Description": "Character;2D;FreePeoples;",
+            "GMNotes": "Region:;",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": false,
+            "Grid": true,
+            "Snap": false,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomImage": {
+              "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849470608/B19F0FCA9B4DD30B41E7C488AB85A52FDDFA3FC8/",
+              "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849470608/B19F0FCA9B4DD30B41E7C488AB85A52FDDFA3FC8/",
+              "ImageScalar": 1,
+              "WidthScale": 0
+            },
+            "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          },
+          "3": {
+            "GUID": "929feb",
+            "Name": "Custom_Model",
+            "Transform": {
+              "posX": 28.3499241,
+              "posY": 1.75200009,
+              "posZ": 18.2488861,
+              "rotX": -0.0000133488511,
+              "rotY": 179.995728,
+              "rotZ": 4.81906959e-8,
+              "scaleX": 1.28571439,
+              "scaleY": 1.28571439,
+              "scaleZ": 1.28571439
+            },
+            "Nickname": "Meriadoc",
+            "Description": "Character;FreePeoples;",
+            "GMNotes": "Region:;",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 0.9999998,
+              "g": 0.992160261,
+              "b": 0.9999998
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": false,
+            "Grid": true,
+            "Snap": true,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomMesh": {
+              "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405758892/6C909C6E7632E5DDBAC5E3742E75E71C8D17C4FB/",
+              "DiffuseURL": "http://i.imgur.com/CodWZg4.jpg",
+              "NormalURL": "",
+              "ColliderURL": "",
+              "Convex": true,
+              "MaterialIndex": 1,
+              "TypeIndex": 1,
+              "CustomShader": {
+                "SpecularColor": {
+                  "r": 0.8745098,
+                  "g": 0.8117647,
+                  "b": 0.745098054
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 1
+              },
+              "CastShadows": true
+            },
+            "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          }
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

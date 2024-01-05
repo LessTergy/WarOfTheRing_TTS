@@ -1,0 +1,68 @@
+{
+  "Object": {
+    "GUID": "d0b340",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": -25.58,
+      "posY": 1.005,
+      "posZ": -22.65,
+      "rotX": -1.85738031e-7,
+      "rotY": 269.948364,
+      "rotZ": 180,
+      "scaleX": 0.45,
+      "scaleY": 0.45,
+      "scaleZ": 0.45
+    },
+    "Nickname": "Free Peoples Victory Point Marker",
+    "Description": "",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 0.9960827
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381485070/D00EF9BFBB3D6CD78900BA2A407CCB898B35C885/",
+      "NormalURL": "",
+      "ColliderURL": "",
+      "Convex": true,
+      "MaterialIndex": 3,
+      "TypeIndex": 4,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

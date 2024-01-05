@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "b6ec8b",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 14.8966312,
+      "posY": 1.07693172,
+      "posZ": 15.1589346,
+      "rotX": -3.50509936e-7,
+      "rotY": 359.961029,
+      "rotZ": 6.40449457e-7,
+      "scaleX": 0.7000003,
+      "scaleY": 0.7000003,
+      "scaleZ": 0.7000003
+    },
+    "Nickname": "Thranduil: King of the Woodland Realm",
+    "Description": "Character;3D;Ruler;Sovereign;FreePeoples;KoME;",
+    "GMNotes": "Region:Woodland Realm;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353111294/70AD3915DE31FD60A87D18DBC5CAB5703907D520/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353111294/70AD3915DE31FD60A87D18DBC5CAB5703907D520/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,243 @@
+{
+  "Object": {
+    "GUID": "fc376c",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 36.5300522,
+      "posY": 1.011974,
+      "posZ": -27.3011856,
+      "rotX": 8.53770644e-7,
+      "rotY": 180.004562,
+      "rotZ": 7.54896163e-8,
+      "scaleX": 0.6,
+      "scaleY": 1,
+      "scaleZ": 0.6
+    },
+    "Nickname": "The Mouth of Sauron: Black Númenórean",
+    "Description": "Minion;3D;Shadow;LoME;",
+    "GMNotes": "Region:;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "DiffuseURL": "",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "ba1a29",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": -0.00573216472,
+          "posY": 0.714432657,
+          "posZ": 0.07620115,
+          "rotX": -0.00103123684,
+          "rotY": 180.205246,
+          "rotZ": 0.00255211769,
+          "scaleX": 0.6666667,
+          "scaleY": 0.4,
+          "scaleZ": 0.6666667
+        },
+        "Nickname": "The Mouth of Sauron: Black Numenorean",
+        "Description": "Minion;3D;Shadow;LoME;",
+        "GMNotes": "Region:;",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 0.9999998,
+          "g": 0.9921749,
+          "b": 0.9999998
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176174074/F6E406AC4C41D8ADB4B719933609C68332102B31/",
+          "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176166374/79BD56C28BCE6A1B0808D0F2AF36A29EED7E37C0/",
+          "NormalURL": "",
+          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176167210/A3EF3315DE54325ADB283AE651009DE982705F7C/",
+          "Convex": true,
+          "MaterialIndex": 3,
+          "TypeIndex": 1,
+          "CustomShader": {
+            "SpecularColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "SpecularIntensity": 0,
+            "SpecularSharpness": 2,
+            "FresnelStrength": 0
+          },
+          "CastShadows": true
+        },
+        "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "States": {
+          "2": {
+            "GUID": "a220b2",
+            "Name": "Figurine_Custom",
+            "Transform": {
+              "posX": 40.86365,
+              "posY": 0.9459006,
+              "posZ": -51.0372162,
+              "rotX": -0.0000105051049,
+              "rotY": 180.000412,
+              "rotZ": -0.000030735886,
+              "scaleX": 0.5714286,
+              "scaleY": 0.5714286,
+              "scaleZ": 0.5714286
+            },
+            "Nickname": "The Mouth of Sauron: Black Numenorean",
+            "Description": "Minion;2D;Shadow;LoME;",
+            "GMNotes": "Region:;",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 0,
+              "g": 0,
+              "b": 0
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": false,
+            "Grid": true,
+            "Snap": false,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomImage": {
+              "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370089201/E3EA78958F05996CB6CFFBEEBFFF2B6241672262/",
+              "ImageSecondaryURL": "",
+              "ImageScalar": 1,
+              "WidthScale": 0
+            },
+            "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          },
+          "3": {
+            "GUID": "cbfbb8",
+            "Name": "Custom_Model",
+            "Transform": {
+              "posX": 40.86345,
+              "posY": 1.65521312,
+              "posZ": -51.0375252,
+              "rotX": 0.00018346704,
+              "rotY": 180.038361,
+              "rotZ": -0.0000571185847,
+              "scaleX": 1.14285719,
+              "scaleY": 1.14285719,
+              "scaleZ": 1.14285719
+            },
+            "Nickname": "The Mouth of Sauron (Black Númenórean)",
+            "Description": "Minion;Shadow;LoME;",
+            "GMNotes": "Region:;",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 0.9999998,
+              "g": 0.992160261,
+              "b": 0.9999998
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": false,
+            "Grid": true,
+            "Snap": true,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomMesh": {
+              "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405758892/6C909C6E7632E5DDBAC5E3742E75E71C8D17C4FB/",
+              "DiffuseURL": "http://i.imgur.com/uraFfg3.jpg",
+              "NormalURL": "",
+              "ColliderURL": "",
+              "Convex": true,
+              "MaterialIndex": 1,
+              "TypeIndex": 1,
+              "CustomShader": {
+                "SpecularColor": {
+                  "r": 0.8745098,
+                  "g": 0.8117647,
+                  "b": 0.745098054
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 1
+              },
+              "CastShadows": true
+            },
+            "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          }
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

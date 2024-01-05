@@ -1,0 +1,74 @@
+{
+  "Object": {
+    "GUID": "0d58c8",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 11.4129171,
+      "posY": 0.7700007,
+      "posZ": 7.02945137,
+      "rotX": -0.000255866529,
+      "rotY": 179.978287,
+      "rotZ": 0.000167854363,
+      "scaleX": 0.55,
+      "scaleY": 1,
+      "scaleZ": 0.55
+    },
+    "Nickname": "Dol Guldur",
+    "Description": "Stronghold;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974483857/D73D70C25EA7B8CB1071EACCA1E48B834AE6B19F/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.399999857,
+        "MergeDistancePixels": 5,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./Dol_Guldur.0d58c8.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "AttachedSnapPoints": [
+      {
+        "Position": {
+          "x": -0.8027693,
+          "y": 0.199998319,
+          "z": -0.828663468
+        },
+        "Rotation": {
+          "x": -0.0000063071825,
+          "y": 45.0543022,
+          "z": -4.00248325e-7
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,60 @@
+{
+  "Object": {
+    "GUID": "290739",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": -34.75,
+      "posY": 0.95,
+      "posZ": -2.64656615,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": -2.58373909e-8,
+      "scaleX": 0.9,
+      "scaleY": 1,
+      "scaleZ": 0.9
+    },
+    "Nickname": "",
+    "Description": "StrongholdBox;FreePeoples;",
+    "GMNotes": "0da6ee",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": false,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": false,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974492877/83B3315A27BF5140404A72475A3DB95CE1253A06/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.1,
+        "MergeDistancePixels": 25,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

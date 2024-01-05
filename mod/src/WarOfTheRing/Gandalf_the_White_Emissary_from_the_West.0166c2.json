@@ -1,0 +1,243 @@
+{
+  "Object": {
+    "GUID": "0166c2",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": -3.55772138,
+      "posY": 1.0119741,
+      "posZ": 27.4879742,
+      "rotX": -0.0000022761742,
+      "rotY": -0.0000349713737,
+      "rotZ": 1.14649419e-8,
+      "scaleX": 0.5,
+      "scaleY": 1,
+      "scaleZ": 0.5
+    },
+    "Nickname": "Gandalf the White: Emissary from the West",
+    "Description": "Character;3D;FreePeoples;",
+    "GMNotes": "Region:;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "DiffuseURL": "",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "Convex": true,
+      "MaterialIndex": 4,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "da86b4",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": -0.0544737019,
+          "posY": 0.0416564457,
+          "posZ": 0.04501359,
+          "rotX": 0.00113222189,
+          "rotY": -0.000210640355,
+          "rotZ": -0.000567830633,
+          "scaleX": 1.6,
+          "scaleY": 0.8,
+          "scaleZ": 1.6
+        },
+        "Nickname": "Gandalf the White: Emissary from the West",
+        "Description": "Character;3D;FreePeoples;",
+        "GMNotes": "Region:;",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176282754/07A7972C91A077EA730F9742F1FF2802FBEED5A3/",
+          "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176282191/AD290B9BEEBBC71FFF0BA54D1F9178325001BE96/",
+          "NormalURL": "",
+          "ColliderURL": "",
+          "Convex": true,
+          "MaterialIndex": 3,
+          "TypeIndex": 1,
+          "CustomShader": {
+            "SpecularColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "SpecularIntensity": 0,
+            "SpecularSharpness": 2,
+            "FresnelStrength": 0
+          },
+          "CastShadows": true
+        },
+        "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "States": {
+          "2": {
+            "GUID": "27d117",
+            "Name": "Figurine_Custom",
+            "Transform": {
+              "posX": -30.71804,
+              "posY": 0.9459008,
+              "posZ": 38.6258163,
+              "rotX": 0.0000192721236,
+              "rotY": 179.999863,
+              "rotZ": -0.0000356450728,
+              "scaleX": 0.5,
+              "scaleY": 0.5,
+              "scaleZ": 0.5
+            },
+            "Nickname": "Gandalf the White: Emissary from the West",
+            "Description": "Character;2D;FreePeoples;",
+            "GMNotes": "Region:;",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": false,
+            "Grid": true,
+            "Snap": false,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomImage": {
+              "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815369976703/F53BA5105294D91FA44D8D2DC8DF6427769F81AF/",
+              "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731815369978729/4E7B62980CA982F2A7FC116931BC4EA6DAD6DA14/",
+              "ImageScalar": 1,
+              "WidthScale": 0
+            },
+            "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          },
+          "3": {
+            "GUID": "60bd5c",
+            "Name": "Custom_Model",
+            "Transform": {
+              "posX": -30.7181187,
+              "posY": 1.655213,
+              "posZ": 38.62582,
+              "rotX": -0.000006248078,
+              "rotY": 180.000061,
+              "rotZ": -0.000002274655,
+              "scaleX": 1,
+              "scaleY": 1,
+              "scaleZ": 1
+            },
+            "Nickname": "Gandalf the White: Emissary from the West",
+            "Description": "Character;FreePeoples;",
+            "GMNotes": "Region:;",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 0.9999998,
+              "g": 0.992160261,
+              "b": 0.9999998
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": false,
+            "Grid": true,
+            "Snap": true,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomMesh": {
+              "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405758892/6C909C6E7632E5DDBAC5E3742E75E71C8D17C4FB/",
+              "DiffuseURL": "http://i.imgur.com/xIjLNdf.jpg",
+              "NormalURL": "",
+              "ColliderURL": "",
+              "Convex": true,
+              "MaterialIndex": 1,
+              "TypeIndex": 1,
+              "CustomShader": {
+                "SpecularColor": {
+                  "r": 0.8745098,
+                  "g": 0.8117647,
+                  "b": 0.745098054
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 1
+              },
+              "CastShadows": true
+            },
+            "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          }
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

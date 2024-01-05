@@ -1,0 +1,63 @@
+{
+  "Object": {
+    "GUID": "043c9c",
+    "Name": "Bag",
+    "Transform": {
+      "posX": 27.8135643,
+      "posY": 0.8628566,
+      "posZ": 19.9231777,
+      "rotX": -0.000005602995,
+      "rotY": -0.000615677447,
+      "rotZ": -0.0000197134686,
+      "scaleX": 0.525000453,
+      "scaleY": 0.525000453,
+      "scaleZ": 0.525000453
+    },
+    "Nickname": "Random Companion Pool",
+    "Description": "",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.3251885,
+      "g": 0.4916712,
+      "b": 0.6202091
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "MaterialIndex": -1,
+    "MeshIndex": -1,
+    "Bag": {
+      "Order": 2
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ContainedObjects": []
+  },
+  "StatesPaths": {},
+  "ContainedObjectPaths": [
+    "Boromir.13af4c.json",
+    "Meriadoc.2d3902.json",
+    "Peregrin.21b923.json",
+    "Gimli.f06931.json",
+    "Strider.8054b3.json",
+    "Legolas.400d3c.json",
+    "Gandalf.ccfda3.json"
+  ]
+}

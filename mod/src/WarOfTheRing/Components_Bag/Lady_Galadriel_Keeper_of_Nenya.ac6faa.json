@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "ac6faa",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 74.26359,
+      "posY": 3.169266,
+      "posZ": -67.4481049,
+      "rotX": -0.000001013646,
+      "rotY": 0.00000104962646,
+      "rotZ": -0.000007790684,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Lady Galadriel: Keeper of Nenya",
+    "Description": "Character;2D;FreePeoples;LoME;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370005682/51EE571056961474D206EC283412ACC301A0B338/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Lady_Galadriel_Keeper_of_Nenya.ac6faa.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,61 @@
+{
+  "Object": {
+    "GUID": "64e0ce",
+    "Name": "Card",
+    "Transform": {
+      "posX": 86.92702,
+      "posY": 1.41525328,
+      "posZ": -34.3637,
+      "rotX": 1.2294997e-8,
+      "rotY": 180,
+      "rotZ": 2.69714273e-9,
+      "scaleX": 2.800268,
+      "scaleY": 1,
+      "scaleZ": 2.800268
+    },
+    "Nickname": "A New Power is Rising",
+    "Description": "Card;Event;Strategy;Shadow;Init:7;#16;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.713235259,
+      "g": 0.713235259,
+      "b": 0.713235259
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": true,
+    "Hands": true,
+    "CardID": 206901,
+    "SidewaysCard": false,
+    "CustomDeck": {
+      "48": {
+        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142858618/A1B1C77527E097849C8CBA10714BD8D9E0C705D8/",
+        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142859091/1DCECBCDB9881D8879DB0F494396013DCE398F5B/",
+        "NumWidth": 9,
+        "NumHeight": 5,
+        "BackIsHidden": true,
+        "UniqueBack": false,
+        "Type": 0
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

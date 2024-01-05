@@ -1,0 +1,60 @@
+{
+  "Object": {
+    "GUID": "38ba83",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 40.19998,
+      "posY": 0.92,
+      "posZ": -2,
+      "rotX": 0,
+      "rotY": 179.995773,
+      "rotZ": 0,
+      "scaleX": 1.70597732,
+      "scaleY": 1,
+      "scaleZ": 1.70284688
+    },
+    "Nickname": "Easterling & Southron Reserves",
+    "Description": "",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.75,
+      "g": 0.75,
+      "b": 0.75
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": false,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780732374523809599/EFAEC3E4105FDD49D75C9979CABF9E41702A5596/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.1,
+        "MergeDistancePixels": 25,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./Easterling_&_Southron_Reserves.38ba83.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

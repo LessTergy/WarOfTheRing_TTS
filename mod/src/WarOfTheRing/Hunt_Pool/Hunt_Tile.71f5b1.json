@@ -1,0 +1,58 @@
+{
+  "Object": {
+    "GUID": "71f5b1",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": -40.4767647,
+      "posY": 4.118569,
+      "posZ": -22.79365,
+      "rotX": 3.78471923,
+      "rotY": 180.01445,
+      "rotZ": 0.314893752,
+      "scaleX": 0.62499994,
+      "scaleY": 0.62499994,
+      "scaleZ": 0.62499994
+    },
+    "Nickname": "Hunt Tile",
+    "Description": "",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 0.9960827
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1752443050820018184/2C96A86EA0CCA0B740E0457786A7F4F16C7F2CAC/",
+      "NormalURL": "",
+      "ColliderURL": "",
+      "Convex": true,
+      "MaterialIndex": 0,
+      "TypeIndex": 0,
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

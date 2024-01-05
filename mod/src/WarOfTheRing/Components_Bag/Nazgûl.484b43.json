@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "484b43",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 76.89559,
+      "posY": 3.18596935,
+      "posZ": -86.81949,
+      "rotX": -0.0000048726597,
+      "rotY": 0.00000110027531,
+      "rotZ": 0.000004055427,
+      "scaleX": 0.7,
+      "scaleY": 0.7,
+      "scaleZ": 0.7
+    },
+    "Nickname": "Nazgûl",
+    "Description": "Leader;2D;Nazgul;Sauron;Shadow;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574850259678/E3168BBF4DBDFD0C30908D7D74361E499254895A/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574850259678/E3168BBF4DBDFD0C30908D7D74361E499254895A/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Nazgûl.484b43.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

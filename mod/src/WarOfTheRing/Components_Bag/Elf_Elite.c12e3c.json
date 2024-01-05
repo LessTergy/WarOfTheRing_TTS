@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "c12e3c",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 80.2631149,
+      "posY": 3.14272857,
+      "posZ": -65.979454,
+      "rotX": -0.00001060612,
+      "rotY": 0.00000268616918,
+      "rotZ": -0.000023051889,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Elf Elite",
+    "Description": "Elite;2D;Elf;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.33332327,
+      "g": 1,
+      "b": 0
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849594082/E2BFAD2CA475EB562608EF97B50AD4773DEC2FF1/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849594082/E2BFAD2CA475EB562608EF97B50AD4773DEC2FF1/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Elf_Elite.c12e3c.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

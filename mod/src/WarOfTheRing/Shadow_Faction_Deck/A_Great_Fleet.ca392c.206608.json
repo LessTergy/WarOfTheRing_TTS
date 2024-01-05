@@ -1,0 +1,61 @@
+{
+  "Object": {
+    "GUID": "ca392c",
+    "Name": "Card",
+    "Transform": {
+      "posX": 92.1617355,
+      "posY": 1.31723917,
+      "posZ": -46.528656,
+      "rotX": 0.0000207587782,
+      "rotY": 180,
+      "rotZ": -1.58512009e-7,
+      "scaleX": 2.800268,
+      "scaleY": 1,
+      "scaleZ": 2.800268
+    },
+    "Nickname": "A Great Fleet",
+    "Description": "Card;Faction;Corsairs;Shadow;#2;WoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.713235259,
+      "g": 0.713235259,
+      "b": 0.713235259
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": true,
+    "Hands": true,
+    "CardID": 206608,
+    "SidewaysCard": false,
+    "CustomDeck": {
+      "47": {
+        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142876332/DE209638AEE1E748AAEFEBF6BAD0BEB4384642DC/",
+        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142876603/B622936F589217C05D873824DEA6AAD9C0AF803B/",
+        "NumWidth": 9,
+        "NumHeight": 5,
+        "BackIsHidden": true,
+        "UniqueBack": false,
+        "Type": 0
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

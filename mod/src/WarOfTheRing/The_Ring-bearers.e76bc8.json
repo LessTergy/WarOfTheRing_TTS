@@ -1,0 +1,308 @@
+{
+  "Object": {
+    "GUID": "e76bc8",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": -0.938648164,
+      "posY": 1.010757,
+      "posZ": 15.9604254,
+      "rotX": 0.00000546128149,
+      "rotY": -0.00202847086,
+      "rotZ": 0.00000747042168,
+      "scaleX": 0.5,
+      "scaleY": 1,
+      "scaleZ": 0.5
+    },
+    "Nickname": "The Ring-bearers",
+    "Description": "Character;3D;FreePeoples;",
+    "GMNotes": "Region:Rivendell;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "DiffuseURL": "",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "Convex": true,
+      "MaterialIndex": 4,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "743d2b",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": -0.3712826,
+          "posY": -0.0299999714,
+          "posZ": 0.03289425,
+          "rotX": 359.9696,
+          "rotY": 0.280117333,
+          "rotZ": 0.04844899,
+          "scaleX": 1.19999933,
+          "scaleY": 0.6000003,
+          "scaleZ": 1.20000017
+        },
+        "Nickname": "Sam",
+        "Description": "",
+        "GMNotes": "",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1752443255061852777/0F445D4B6C1BB00AA4DA256A335B802A33CE0F1E/",
+          "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1752443255061853145/FD6C63E53E51791422FACFA75E679408AD4A20C1/",
+          "NormalURL": "",
+          "ColliderURL": "",
+          "Convex": true,
+          "MaterialIndex": 3,
+          "TypeIndex": 1,
+          "CustomShader": {
+            "SpecularColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "SpecularIntensity": 0,
+            "SpecularSharpness": 2,
+            "FresnelStrength": 0
+          },
+          "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
+      },
+      {
+        "GUID": "912c22",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": 0.387694538,
+          "posY": 0.0574897826,
+          "posZ": 0.2670659,
+          "rotX": 0.0000108060513,
+          "rotY": 359.990143,
+          "rotZ": 0.00000180525376,
+          "scaleX": 2.400001,
+          "scaleY": 1.2,
+          "scaleZ": 2.400001
+        },
+        "Nickname": "The Ring-bearers",
+        "Description": "Character;3D;FreePeoples;",
+        "GMNotes": "Region:;",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176506484/274B34E3B5D355644DA9D732F16D539C0E51ADBD/",
+          "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176506055/7F0899B77C090E685F7776F2F86E2A867D6C4AE6/",
+          "NormalURL": "",
+          "ColliderURL": "",
+          "Convex": true,
+          "MaterialIndex": 0,
+          "TypeIndex": 1,
+          "CustomShader": {
+            "SpecularColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "SpecularIntensity": 0,
+            "SpecularSharpness": 2,
+            "FresnelStrength": 0
+          },
+          "CastShadows": true
+        },
+        "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "States": {
+          "2": {
+            "GUID": "d67c12",
+            "Name": "Figurine_Custom",
+            "Transform": {
+              "posX": -0.8389638,
+              "posY": 1.04268765,
+              "posZ": 16.34276,
+              "rotX": 0.00000381420864,
+              "rotY": 179.998337,
+              "rotZ": 0.00000789735,
+              "scaleX": 0.599999964,
+              "scaleY": 0.6,
+              "scaleZ": 0.599999964
+            },
+            "Nickname": "The Ring-bearers",
+            "Description": "Character;2D;FreePeoples;",
+            "GMNotes": "Region:Rivendale;",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": false,
+            "Grid": true,
+            "Snap": false,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomImage": {
+              "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849445771/1958C53B7277A2FDABF15E55744B1DF0719F7C27/",
+              "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849445771/1958C53B7277A2FDABF15E55744B1DF0719F7C27/",
+              "ImageScalar": 1,
+              "WidthScale": 0
+            },
+            "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          },
+          "3": {
+            "GUID": "b98185",
+            "Name": "Custom_Model",
+            "Transform": {
+              "posX": -0.8389803,
+              "posY": 1.752,
+              "posZ": 16.3427925,
+              "rotX": -7.551122e-7,
+              "rotY": 179.998108,
+              "rotZ": -0.000007072908,
+              "scaleX": 1.19999993,
+              "scaleY": 1.2,
+              "scaleZ": 1.19999993
+            },
+            "Nickname": "The Ring-bearers",
+            "Description": "Character;FreePeoples;",
+            "GMNotes": "Region:Rivendale;",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 0.9999998,
+              "g": 0.992160261,
+              "b": 0.9999998
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": false,
+            "Grid": true,
+            "Snap": true,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomMesh": {
+              "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405758892/6C909C6E7632E5DDBAC5E3742E75E71C8D17C4FB/",
+              "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405754415/E73F971C27F79E9FA978F4AE4382AF6061315AA2/",
+              "NormalURL": "",
+              "ColliderURL": "",
+              "Convex": true,
+              "MaterialIndex": 1,
+              "TypeIndex": 1,
+              "CustomShader": {
+                "SpecularColor": {
+                  "r": 0.8745098,
+                  "g": 0.8117647,
+                  "b": 0.745098054
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 1
+              },
+              "CastShadows": true
+            },
+            "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          }
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

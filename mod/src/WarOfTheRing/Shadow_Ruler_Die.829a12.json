@@ -1,0 +1,108 @@
+{
+  "Object": {
+    "GUID": "829a12",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 42.5,
+      "posY": 1.54758644,
+      "posZ": -41.1028976,
+      "rotX": 0.00000128759621,
+      "rotY": 0.999581754,
+      "rotZ": 8.373717e-7,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "(Shadow Ruler Die)",
+    "Description": "Dice;Action;Ruler;Shadow;KoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2269315845048319007/FEB3734F68242E6F43471C576AD51AE30A0306AD/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 2,
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Shadow_Ruler_Die.829a12.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "RotationValues": [
+      {
+        "Value": " Army Action",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Event Action",
+        "Rotation": {
+          "x": 90,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Army/Muster Action",
+        "Rotation": {
+          "x": 180,
+          "y": 180,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Eye",
+        "Rotation": {
+          "x": 270,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Character Action",
+        "Rotation": {
+          "x": 360,
+          "y": 0,
+          "z": 270
+        }
+      },
+      {
+        "Value": "Muster Action",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,60 @@
+{
+  "Object": {
+    "GUID": "42366d",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 12.8363438,
+      "posY": 0.92,
+      "posZ": -13.9380827,
+      "rotX": 2.6397646e-7,
+      "rotY": 179.9883,
+      "rotZ": -6.46022954e-7,
+      "scaleX": 0.36,
+      "scaleY": 1,
+      "scaleZ": 0.36
+    },
+    "Nickname": "Fortification",
+    "Description": "In a region containing a Fortification, during the first round of Combat only, the attacker hits on a result of 6 (instead of 5+). After the first Combat round, normal rules apply.",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": false,
+    "Autoraise": false,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974446263/FE8942BE9951584F5A15AC337241168C27B5ED7F/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.1,
+        "MergeDistancePixels": 25,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

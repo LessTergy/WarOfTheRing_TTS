@@ -1,0 +1,115 @@
+{
+  "Object": {
+    "GUID": "2c3907",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 46.49845,
+      "posY": 1.01264536,
+      "posZ": -27.558033,
+      "rotX": -7.47993056e-7,
+      "rotY": 180.0044,
+      "rotZ": -0.00000229704233,
+      "scaleX": 0.594000041,
+      "scaleY": 0.594000041,
+      "scaleZ": 0.594000041
+    },
+    "Nickname": "Balrog: Evil of the Ancient World",
+    "Description": "Minion;3D;Shadow;LoME;",
+    "GMNotes": "Region:;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.9999998,
+      "g": 0.9921673,
+      "b": 0.9999998
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/853845649154027747/9F488F4AF4E56A750AC0981420B50A6C2BDB7235/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/853845649154029732/7FCF60E9C85E6821A15F2C3BFFC5B7CC8676291A/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/853845469457434572/AA6E5ED3E5D6F61AFADFC47218B26DE95BFF2AC9/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "f673a5",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": 0,
+          "posY": -0.0285714027,
+          "posZ": 0,
+          "rotX": 0,
+          "rotY": 0,
+          "rotZ": 0,
+          "scaleX": 1.14285731,
+          "scaleY": 1.14285719,
+          "scaleZ": 1.14285731
+        },
+        "Nickname": "Nazgûl",
+        "Description": "Leader;2D;Nazgul;Sauron;Shadow;",
+        "GMNotes": "",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 0,
+          "g": 0,
+          "b": 0
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "DiffuseURL": "",
+          "NormalURL": "",
+          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "Convex": true,
+          "MaterialIndex": 1,
+          "TypeIndex": 1,
+          "CastShadows": true
+        },
+        "LuaScript": "PickedUp = false\r\n\r\nfunction onPickUp(player_color)\r\n  if player_color == \"Red\" or player_color == \"Yellow\" then\r\n    PickedUp = true\r\n  end--if\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  --if was picked up by shadow player...\r\n  if PickedUp then\r\n    --if dropped into play...\r\n    if self.getPosition().x < Global.getVar(\"BoardX\") and self.getPosition().x > -Global.getVar(\"BoardX\") and self.getPosition().z < Global.getVar(\"BoardZ\") and self.getPosition().z > -Global.getVar(\"BoardZ\") then\r\n      Global.call(\"PlaySound\",{ID=8})--nazgul scream\r\n    end--if\r\n  end--if\r\n  PickedUp = false\r\nend--function",
+        "LuaScriptState": "",
+        "XmlUI": ""
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

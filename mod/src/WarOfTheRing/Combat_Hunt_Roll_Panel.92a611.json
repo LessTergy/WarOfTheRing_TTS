@@ -1,0 +1,73 @@
+{
+  "Object": {
+    "GUID": "92a611",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": -60,
+      "posY": 1.14,
+      "posZ": -34,
+      "rotX": 0,
+      "rotY": 0,
+      "rotZ": 0,
+      "scaleX": 2.00185657,
+      "scaleY": 1,
+      "scaleZ": 1.78215277
+    },
+    "Nickname": "Combat/Hunt Roll Panel",
+    "Description": "Shadow;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1836921402101481234/90C69E85D0F802461D5E17B0291DBEEA69C2C393/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.1,
+        "MergeDistancePixels": 15,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./Combat_Hunt_Roll_Panel.92a611.lua",
+    "LuaScriptState": "#include ./Combat_Hunt_Roll_Panel.92a611.state.json",
+    "XmlUI": "#include ./Combat_Hunt_Roll_Panel.92a611.xml",
+    "PhysicsMaterial": {
+      "StaticFriction": 1,
+      "DynamicFriction": 0.7,
+      "Bounciness": 0,
+      "FrictionCombine": 0,
+      "BounceCombine": 0
+    },
+    "Rigidbody": {
+      "Mass": 1,
+      "Drag": 0.1,
+      "AngularDrag": 0.1,
+      "UseGravity": true
+    }
+  },
+  "StatesPaths": {}
+}

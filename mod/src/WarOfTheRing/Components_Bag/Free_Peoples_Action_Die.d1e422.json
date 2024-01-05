@@ -1,0 +1,108 @@
+{
+  "Object": {
+    "GUID": "d1e422",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": -49.5081825,
+      "posY": 1.78950918,
+      "posZ": 28.495882,
+      "rotX": -0.000008456061,
+      "rotY": 179.999847,
+      "rotZ": 269.997,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "(Free Peoples Action Die)",
+    "Description": "Dice;Action;FreePeoples;2of6;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.9999998,
+      "g": 0.9921723,
+      "b": 0.9999998
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1861674254005219739/178405D49746A0A93F8CE6747485775FE08C8041/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 2,
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Free_Peoples_Action_Die.d1e422.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "RotationValues": [
+      {
+        "Value": "Character Action",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Will of the West",
+        "Rotation": {
+          "x": 90,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Army/Muster Action",
+        "Rotation": {
+          "x": 180,
+          "y": 180,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Character Action",
+        "Rotation": {
+          "x": 270,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Muster Action",
+        "Rotation": {
+          "x": 360,
+          "y": 0,
+          "z": 90
+        }
+      },
+      {
+        "Value": "Event Action",
+        "Rotation": {
+          "x": 180,
+          "y": 180,
+          "z": 90
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

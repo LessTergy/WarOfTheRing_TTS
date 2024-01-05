@@ -1,0 +1,74 @@
+{
+  "Object": {
+    "GUID": "701895",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 2.70425987,
+      "posY": 0.77,
+      "posZ": -13.4796858,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
+      "scaleX": 0.55,
+      "scaleY": 1,
+      "scaleZ": 0.55
+    },
+    "Nickname": "Dol Amroth",
+    "Description": "Stronghold;",
+    "GMNotes": "3b9615",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974478134/D78DDA6C725649F0CAD9E9D5B152FA4E67C2A3A5/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.399999857,
+        "MergeDistancePixels": 5,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./Dol_Amroth.701895.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "AttachedSnapPoints": [
+      {
+        "Position": {
+          "x": 0.8021277,
+          "y": 0.199999928,
+          "z": -0.7984507
+        },
+        "Rotation": {
+          "x": 4.18159374e-7,
+          "y": 45.0000038,
+          "z": 180
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

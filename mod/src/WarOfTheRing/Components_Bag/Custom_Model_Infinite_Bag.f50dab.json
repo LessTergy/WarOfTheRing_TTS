@@ -1,0 +1,64 @@
+{
+  "Object": {
+    "GUID": "f50dab",
+    "Name": "Custom_Model_Infinite_Bag",
+    "Transform": {
+      "posX": -59.99993,
+      "posY": 1.136199,
+      "posZ": 37.00017,
+      "rotX": -9.807734e-8,
+      "rotY": 0.0117773758,
+      "rotZ": -2.539742e-7,
+      "scaleX": 5,
+      "scaleY": 0.1,
+      "scaleZ": 1
+    },
+    "Nickname": "",
+    "Description": "",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "MaterialIndex": -1,
+    "MeshIndex": -1,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/777364374937637307/90282A489F876A964E7E718BC3D7F8E7BBECD54A/",
+      "DiffuseURL": "",
+      "NormalURL": "",
+      "ColliderURL": "",
+      "Convex": true,
+      "MaterialIndex": 0,
+      "TypeIndex": 7,
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Custom_Model_Infinite_Bag.f50dab.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ContainedObjects": []
+  },
+  "StatesPaths": {},
+  "ContainedObjectPaths": [
+    "Free_Peoples_Combat_Die.648869.json"
+  ]
+}

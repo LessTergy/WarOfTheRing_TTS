@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "96723e",
+    "Name": "Custom_PDF",
+    "Transform": {
+      "posX": -77,
+      "posY": 0.947589457,
+      "posZ": -0.00000178438734,
+      "rotX": 0.000006842388,
+      "rotY": 89.96943,
+      "rotZ": -0.00000441493876,
+      "scaleX": 5,
+      "scaleY": 1,
+      "scaleZ": 5
+    },
+    "Nickname": "War of the Ring Rulebook",
+    "Description": "",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomPDF": {
+      "PDFUrl": "http://cloud-3.steamusercontent.com/ugc/1470941285216938095/B66DDCAED974D1BB27193071B69BCDF5D76E0D60/",
+      "PDFPassword": "",
+      "PDFPage": 0,
+      "PDFPageOffset": 0
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

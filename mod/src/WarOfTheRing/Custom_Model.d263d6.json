@@ -1,0 +1,68 @@
+{
+  "Object": {
+    "GUID": "d263d6",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 2.14292026,
+      "posY": 0.933969259,
+      "posZ": 13.143425,
+      "rotX": -0.00000197825034,
+      "rotY": 180.005142,
+      "rotZ": -6.41713939e-7,
+      "scaleX": 1,
+      "scaleY": 1.4,
+      "scaleZ": 1
+    },
+    "Nickname": "",
+    "Description": "",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.6313726,
+      "g": 0.5882353,
+      "b": 0.329374284
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": false,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": false,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1753569395809713406/2943E2A612F1F1DE75E5C852F2140EFF62CD0E37/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1753569724674976848/BD6CAFF6E5D827287D8426FF334A7C8CFA6DD807/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1753569395809714507/846A40B3F324110DFC403EACE7D13378CEB34A09/",
+      "Convex": true,
+      "MaterialIndex": 3,
+      "TypeIndex": 0,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,125 @@
+{
+  "Object": {
+    "GUID": "a4f905",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": -25.8629169,
+      "posY": 2.01161885,
+      "posZ": 39.4827156,
+      "rotX": -0.00531700673,
+      "rotY": 0.000117428819,
+      "rotZ": 0.01096283,
+      "scaleX": 0.198,
+      "scaleY": 0.198,
+      "scaleZ": 0.198
+    },
+    "Nickname": "The Eagles of the Misty Mountains",
+    "Description": "Faction;3D;Eagles;FreePeoples;WoME;",
+    "GMNotes": "Region:;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.9999998,
+      "g": 0.9921883,
+      "b": 0.9999998
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176346726/EDD4AE617261D080A57EADBE9C4E009981F33F2C/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176343876/C7DD23B29C39C356C0D806964129B3735955B668/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176344463/C15C3CF47B018EA36CD34A46EFE7293DC0718546/",
+      "Convex": true,
+      "MaterialIndex": 3,
+      "TypeIndex": 1,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "67ed24",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": -0.109241888,
+          "posY": -5.302793,
+          "posZ": -0.036134623,
+          "rotX": -0.005317014,
+          "rotY": 179.991531,
+          "rotZ": 0.0109637873,
+          "scaleX": 1.40000045,
+          "scaleY": 1.39999807,
+          "scaleZ": 1.40000033
+        },
+        "Nickname": "Character Base",
+        "Description": "",
+        "GMNotes": "",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 0,
+          "g": 0,
+          "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "DiffuseURL": "",
+          "NormalURL": "",
+          "ColliderURL": "",
+          "Convex": true,
+          "MaterialIndex": 1,
+          "TypeIndex": 1,
+          "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

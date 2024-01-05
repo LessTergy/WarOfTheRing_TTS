@@ -1,0 +1,74 @@
+{
+  "Object": {
+    "GUID": "375b9f",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 0.169932857,
+      "posY": 0.769998252,
+      "posZ": 18.2083969,
+      "rotX": -0.0002122855,
+      "rotY": 179.977188,
+      "rotZ": 0.0006091623,
+      "scaleX": 0.55,
+      "scaleY": 1,
+      "scaleZ": 0.55
+    },
+    "Nickname": "Rivendell",
+    "Description": "Stronghold;",
+    "GMNotes": "68ee3a",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": false,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974419623/850F30A243AFD8D8BBC05131BCF3ABE57CE11278/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.399999857,
+        "MergeDistancePixels": 5,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./Rivendell.375b9f.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "AttachedSnapPoints": [
+      {
+        "Position": {
+          "x": 0.8851748,
+          "y": 0.200004488,
+          "z": -0.826559067
+        },
+        "Rotation": {
+          "x": 0.0000135333248,
+          "y": 44.99066,
+          "z": 180
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

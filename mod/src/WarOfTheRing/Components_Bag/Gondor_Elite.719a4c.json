@@ -1,0 +1,68 @@
+{
+  "Object": {
+    "GUID": "719a4c",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 91.57801,
+      "posY": 3.16250944,
+      "posZ": -64.6607361,
+      "rotX": -0.0012416807,
+      "rotY": 180,
+      "rotZ": -0.0007331665,
+      "scaleX": 0.4,
+      "scaleY": 0.4,
+      "scaleZ": 0.4
+    },
+    "Nickname": "Gondor Elite",
+    "Description": "Elite;Marble;Gondor;FreePeoples;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 0.9960827
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401393744/16FA8395CB055DAFE1496F7E6E4D48F4E5DF3937/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405969198/C5BCAA2FFEDB2CF64B3049DEA398B326DF57E0FB/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401393744/16FA8395CB055DAFE1496F7E6E4D48F4E5DF3937/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Gondor_Elite.719a4c.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

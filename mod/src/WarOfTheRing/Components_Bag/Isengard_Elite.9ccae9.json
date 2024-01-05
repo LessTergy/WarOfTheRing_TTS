@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "9ccae9",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 75.04748,
+      "posY": 3.16926575,
+      "posZ": -75.24041,
+      "rotX": -0.00000675997853,
+      "rotY": 3.92825228e-7,
+      "rotZ": -0.000006403301,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Isengard Elite",
+    "Description": "Elite;2D;Isengard;Shadow;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 0
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574850233164/D438202E542A7EA09A7BAAEF276B3AB63C34A7D1/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574850233164/D438202E542A7EA09A7BAAEF276B3AB63C34A7D1/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Isengard_Elite.9ccae9.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

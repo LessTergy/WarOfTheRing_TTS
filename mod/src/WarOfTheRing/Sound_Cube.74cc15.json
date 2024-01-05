@@ -1,0 +1,55 @@
+{
+  "Object": {
+    "GUID": "74cc15",
+    "Name": "Custom_Assetbundle",
+    "Transform": {
+      "posX": 85.44061,
+      "posY": 2.0475862,
+      "posZ": -50.79688,
+      "rotX": 0.000006315551,
+      "rotY": 180.008545,
+      "rotZ": 9.455316e-7,
+      "scaleX": 2,
+      "scaleY": 2,
+      "scaleZ": 2
+    },
+    "Nickname": "Sound Cube",
+    "Description": "SoundCube;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomAssetbundle": {
+      "AssetbundleURL": "http://cloud-3.steamusercontent.com/ugc/2079031781119316285/A5706EF07A14C1A5F7B32B3B9653CCE3AFC32890/",
+      "AssetbundleSecondaryURL": "",
+      "MaterialIndex": 0,
+      "TypeIndex": 0,
+      "LoopingEffectIndex": 0
+    },
+    "LuaScript": "#include ./Sound_Cube.74cc15.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

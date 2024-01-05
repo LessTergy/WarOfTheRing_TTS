@@ -1,0 +1,68 @@
+{
+  "Object": {
+    "GUID": "4c9f1d",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 101.784721,
+      "posY": 3.432506,
+      "posZ": -63.189476,
+      "rotX": -0.000008812937,
+      "rotY": 179.999954,
+      "rotZ": 0.00000174189267,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Elf Leader",
+    "Description": "Leader;Marble;Elves;FreePeoples;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 0.9960827
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401403250/5CF5A681725EF183EFF7262E106B90A4E9C738CA/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401381675/C74BB58B32E35069FC0967F80848EA57817F0C6E/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401403250/5CF5A681725EF183EFF7262E106B90A4E9C738CA/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Elf_Leader.4c9f1d.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,125 @@
+{
+  "Object": {
+    "GUID": "97771d",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 26.4318733,
+      "posY": 1.01197386,
+      "posZ": -27.4287,
+      "rotX": 8.537909e-7,
+      "rotY": 180.004089,
+      "rotZ": -4.868872e-7,
+      "scaleX": 0.6,
+      "scaleY": 1,
+      "scaleZ": 0.6
+    },
+    "Nickname": "The Mouth of Sauron: Lieutenant of Barad~Dur",
+    "Description": "Minion;3D;Shadow;",
+    "GMNotes": "Region:;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "DiffuseURL": "",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "446519",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": 0.0000166024511,
+          "posY": 0.7144335,
+          "posZ": 0.00000256296585,
+          "rotX": -0.001842903,
+          "rotY": 179.3882,
+          "rotZ": 0.00420038449,
+          "scaleX": 0.6666666,
+          "scaleY": 0.4,
+          "scaleZ": 0.6666666
+        },
+        "Nickname": "The Mouth of Sauron: Lieutenant of Barad~Dur",
+        "Description": "Minion;3D;Shadow;",
+        "GMNotes": "Region:;",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 0.9999998,
+          "g": 0.9921749,
+          "b": 0.9999998
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176166057/7037B07D7F0CA8F826D1513CCFC756B030D6D090/",
+          "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176166374/79BD56C28BCE6A1B0808D0F2AF36A29EED7E37C0/",
+          "NormalURL": "",
+          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176167210/A3EF3315DE54325ADB283AE651009DE982705F7C/",
+          "Convex": true,
+          "MaterialIndex": 3,
+          "TypeIndex": 1,
+          "CustomShader": {
+            "SpecularColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "SpecularIntensity": 0,
+            "SpecularSharpness": 2,
+            "FresnelStrength": 0
+          },
+          "CastShadows": true
+        },
+        "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+        "LuaScriptState": "",
+        "XmlUI": ""
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,60 @@
+{
+  "Object": {
+    "GUID": "0d5a1e",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 40.2,
+      "posY": 0.92,
+      "posZ": -8.000007,
+      "rotX": 0.00139427069,
+      "rotY": 179.9942,
+      "rotZ": 0,
+      "scaleX": 1.70597732,
+      "scaleY": 1,
+      "scaleZ": 1.70284688
+    },
+    "Nickname": "Sauron Reserves",
+    "Description": "",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.75,
+      "g": 0.75,
+      "b": 0.75
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": false,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1777210485804155855/9BA5541BFC3F1C4156889A119F063A44DAFDEC69/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.1,
+        "MergeDistancePixels": 25,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./Sauron_Reserves.0d5a1e.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

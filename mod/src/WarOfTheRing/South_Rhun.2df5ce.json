@@ -1,0 +1,60 @@
+{
+  "Object": {
+    "GUID": "2df5ce",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 65.44059,
+      "posY": 1.07009184,
+      "posZ": 48.7178268,
+      "rotX": 0.00001683343,
+      "rotY": 179.970688,
+      "rotZ": -4.47588718e-7,
+      "scaleX": 0.48,
+      "scaleY": 1,
+      "scaleZ": 0.48
+    },
+    "Nickname": "South Rhun",
+    "Description": "City;TFoE;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": false,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1753569444434391972/053A4BB35E26743EACB40172F2E9E4B2A8650C28/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.245000154,
+        "MergeDistancePixels": 25,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./South_Rhun.2df5ce.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

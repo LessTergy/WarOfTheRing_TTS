@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "3d983d",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 15.94148,
+      "posY": 1.07693172,
+      "posZ": 16.3116169,
+      "rotX": -5.86089968e-8,
+      "rotY": 0.1655684,
+      "rotZ": 7.46968e-7,
+      "scaleX": 0.7000003,
+      "scaleY": 0.7000003,
+      "scaleZ": 0.7000003
+    },
+    "Nickname": "Brand: King of Dale",
+    "Description": "Character;3D;Ruler;Sovereign;FreePeoples;KoME;",
+    "GMNotes": "Region:Dale;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353112591/DF4DD7561E9EBD1EF90270EB3724CE5B5162803C/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353112591/DF4DD7561E9EBD1EF90270EB3724CE5B5162803C/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

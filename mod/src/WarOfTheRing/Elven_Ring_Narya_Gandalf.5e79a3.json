@@ -1,0 +1,68 @@
+{
+  "Object": {
+    "GUID": "5e79a3",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 21.5681553,
+      "posY": 0.9748777,
+      "posZ": 39.3204079,
+      "rotX": 0.0000029302862,
+      "rotY": 269.97876,
+      "rotZ": 0.00000704178046,
+      "scaleX": 0.5000001,
+      "scaleY": 0.5000001,
+      "scaleZ": 0.5000001
+    },
+    "Nickname": "Elven Ring (Narya/Gandalf)",
+    "Description": "Ring;Elven;Narya;Gandalf;LoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 0.9960827
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380894460/D9F8BF75353B2DEC6F44C2EF81F0287DCC7E3C5D/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381094116/5AE4209C6343D4075F705F60EE0315D22FB7618A/",
+      "NormalURL": "",
+      "ColliderURL": "",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 0,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

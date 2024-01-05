@@ -1,0 +1,57 @@
+{
+  "Object": {
+    "GUID": "c2de22",
+    "Name": "3DText",
+    "Transform": {
+      "posX": 25.0003376,
+      "posY": 0.961436,
+      "posZ": -65.02433,
+      "rotX": 90,
+      "rotY": -0.0000627857444,
+      "rotZ": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "scaleZ": 1
+    },
+    "Nickname": "",
+    "Description": "",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "Text": {
+      "Text": "Shadow (The Witch-King)",
+      "colorstate": {
+        "r": 0.856,
+        "g": 0.1,
+        "b": 0.094
+      },
+      "fontSize": 64
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

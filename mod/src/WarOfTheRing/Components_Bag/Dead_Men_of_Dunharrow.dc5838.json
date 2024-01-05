@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "dc5838",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 87.21166,
+      "posY": 3.15441,
+      "posZ": -59.2348137,
+      "rotX": 6.71475e-7,
+      "rotY": 0.004956541,
+      "rotZ": -0.0000128065576,
+      "scaleX": 0.495,
+      "scaleY": 0.495,
+      "scaleZ": 0.495
+    },
+    "Nickname": "Dead Men of Dunharrow",
+    "Description": "Faction;2D;DeadMen;FreePeoples;WoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0.333324522,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815369432536/3886E31E9A5998E8BEFE78B726FF42B1CC7C0264/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

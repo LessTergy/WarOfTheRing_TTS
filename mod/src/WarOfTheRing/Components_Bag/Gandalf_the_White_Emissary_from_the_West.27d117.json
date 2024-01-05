@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "27d117",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 76.8138657,
+      "posY": 3.16926575,
+      "posZ": -67.14386,
+      "rotX": -0.000008916307,
+      "rotY": 4.53045146e-7,
+      "rotZ": -0.00000768396148,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Gandalf the White: Emissary from the West",
+    "Description": "Character;2D;FreePeoples;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815369976703/F53BA5105294D91FA44D8D2DC8DF6427769F81AF/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731815369978729/4E7B62980CA982F2A7FC116931BC4EA6DAD6DA14/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Gandalf_the_White_Emissary_from_the_West.27d117.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,233 @@
+{
+  "Object": {
+    "GUID": "c81de1",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 71.35349,
+      "posY": 3.11979556,
+      "posZ": -65.05693,
+      "rotX": 0.00000629819533,
+      "rotY": 180,
+      "rotZ": 0.0000012773661,
+      "scaleX": 0.5,
+      "scaleY": 1,
+      "scaleZ": 0.5
+    },
+    "Nickname": "Treebeard: Tree-herd",
+    "Description": "Character;3D;FreePeoples;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "DiffuseURL": "",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "Convex": true,
+      "MaterialIndex": 4,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Treebeard_Tree-herd.c81de1.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "925b37",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": 0.0131879076,
+          "posY": 0.0516571365,
+          "posZ": 0.133137122,
+          "rotX": -0.0005136583,
+          "rotY": 0,
+          "rotZ": -0.000584837748,
+          "scaleX": 0.6,
+          "scaleY": 0.4,
+          "scaleZ": 0.6
+        },
+        "Nickname": "Treebeard: Tree-herd",
+        "Description": "Character;3D;FreePeoples;",
+        "GMNotes": "Region:;",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053951875/CEF9B8D356C71CC001AC3B18D87BDDC5BA1CB271/",
+          "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053952470/31D1052E9E7C313E7F10B39D2CA95384DE3394ED/",
+          "NormalURL": "",
+          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053954234/528C7ED29B3CF8D33D68E922DB6BE961459E3ACC/",
+          "Convex": true,
+          "MaterialIndex": 1,
+          "TypeIndex": 1,
+          "CastShadows": true
+        },
+        "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "States": {
+          "2": {
+            "GUID": "e51819",
+            "Name": "Figurine_Custom",
+            "Transform": {
+              "posX": 11.7475376,
+              "posY": 0.945900559,
+              "posZ": 50.94809,
+              "rotX": 0.00000214366332,
+              "rotY": 180,
+              "rotZ": 1.27853161e-14,
+              "scaleX": 0.495000035,
+              "scaleY": 0.495000035,
+              "scaleZ": 0.495000035
+            },
+            "Nickname": "Treebeard: Tree-herd",
+            "Description": "Character;2D;FreePeoples;WoME;",
+            "GMNotes": "Region:;",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": false,
+            "Grid": true,
+            "Snap": false,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomImage": {
+              "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815369910734/D885E63F8781E39DDE1FBC610F51F2A66AE9A57D/",
+              "ImageSecondaryURL": "",
+              "ImageScalar": 1,
+              "WidthScale": 0
+            },
+            "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          },
+          "3": {
+            "GUID": "964d05",
+            "Name": "Custom_Model",
+            "Transform": {
+              "posX": 11.74753,
+              "posY": 1.65521324,
+              "posZ": 50.9481125,
+              "rotX": 0.00000128855265,
+              "rotY": 179.999939,
+              "rotZ": 0.00000223174447,
+              "scaleX": 0.990000069,
+              "scaleY": 0.990000069,
+              "scaleZ": 0.990000069
+            },
+            "Nickname": "Treebeard: Tree-herd",
+            "Description": "Character;FreePeoples;WoME;",
+            "GMNotes": "Region:;",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 0.9999998,
+              "g": 0.992160261,
+              "b": 0.9999998
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": false,
+            "Grid": true,
+            "Snap": true,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomMesh": {
+              "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405758892/6C909C6E7632E5DDBAC5E3742E75E71C8D17C4FB/",
+              "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1752443255057341059/E9EF9A208EF3CDCBF96100B84B15CFFDB81B44D5/",
+              "NormalURL": "",
+              "ColliderURL": "",
+              "Convex": true,
+              "MaterialIndex": 1,
+              "TypeIndex": 1,
+              "CustomShader": {
+                "SpecularColor": {
+                  "r": 0.8745098,
+                  "g": 0.8117647,
+                  "b": 0.745098054
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 1
+              },
+              "CastShadows": true
+            },
+            "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          }
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

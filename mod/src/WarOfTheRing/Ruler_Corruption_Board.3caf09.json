@@ -1,0 +1,122 @@
+{
+  "Object": {
+    "GUID": "3caf09",
+    "Name": "Custom_Tile",
+    "Transform": {
+      "posX": -49.3,
+      "posY": 0.97,
+      "posZ": -13,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
+      "scaleX": 6,
+      "scaleY": 1,
+      "scaleZ": 6
+    },
+    "Nickname": "Ruler Corruption Board",
+    "Description": "Board;KoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": false,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2269315845048239140/AB30AFBE6F42C1A60F608A7A0E9FE38C07A49BB3/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomTile": {
+        "Type": 0,
+        "Thickness": 0.14500016,
+        "Stackable": true,
+        "Stretch": true
+      }
+    },
+    "LuaScript": "#include ./Ruler_Corruption_Board.3caf09.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "AttachedSnapPoints": [
+      {
+        "Position": {
+          "x": -0.471829176,
+          "y": 0.145000458,
+          "z": 0.723766267
+        },
+        "Rotation": {
+          "x": 1.28539355e-7,
+          "y": 4.93315173e-18,
+          "z": 4.39785541e-9
+        }
+      },
+      {
+        "Position": {
+          "x": -0.472031325,
+          "y": 0.145000458,
+          "z": 0.388674557
+        },
+        "Rotation": {
+          "x": -1.08821993e-7,
+          "y": 2.90687877e-17,
+          "z": -3.060997e-8
+        }
+      },
+      {
+        "Position": {
+          "x": -0.47167334,
+          "y": 0.145000458,
+          "z": 0.04920765
+        },
+        "Rotation": {
+          "x": -9.165625e-8,
+          "y": -1.0924624e-16,
+          "z": 1.36583139e-7
+        }
+      },
+      {
+        "Position": {
+          "x": -0.4716307,
+          "y": 0.145000458,
+          "z": -0.279090762
+        },
+        "Rotation": {
+          "x": 8.902031e-8,
+          "y": -1.69183992e-16,
+          "z": -2.177824e-7
+        }
+      },
+      {
+        "Position": {
+          "x": -0.4715862,
+          "y": 0.145000458,
+          "z": -0.6194576
+        },
+        "Rotation": {
+          "x": 1.23916649e-7,
+          "y": 2.01539142e-16,
+          "z": 1.86372716e-7
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,61 @@
+{
+  "Object": {
+    "GUID": "647b1f",
+    "Name": "Card",
+    "Transform": {
+      "posX": -88.5907745,
+      "posY": 16.3693638,
+      "posZ": 69.7873154,
+      "rotX": -0.0000208136044,
+      "rotY": 0.0000120141376,
+      "rotZ": -3.22869447e-8,
+      "scaleX": 2.80049133,
+      "scaleY": 1,
+      "scaleZ": 2.80049133
+    },
+    "Nickname": "March of the Ents",
+    "Description": "Card;Faction;Ents;FreePeoples;#14;WoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.713235259,
+      "g": 0.713235259,
+      "b": 0.713235259
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": true,
+    "Hands": true,
+    "CardID": 206710,
+    "SidewaysCard": false,
+    "CustomDeck": {
+      "8": {
+        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142898416/B0ACA261893BFB83D4D363D34113FCBFF67BAA13/",
+        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142899143/7BBDDCBDC8A1ACDD8069CD94BDFBE3BD8B90756F/",
+        "NumWidth": 9,
+        "NumHeight": 5,
+        "BackIsHidden": true,
+        "UniqueBack": false,
+        "Type": 0
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

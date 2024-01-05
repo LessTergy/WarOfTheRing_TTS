@@ -1,0 +1,74 @@
+{
+  "Object": {
+    "GUID": "b18c8a",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": -46.75,
+      "posY": 0.95,
+      "posZ": 20.5,
+      "rotX": 3.479543e-8,
+      "rotY": 359.9887,
+      "rotZ": -2.51551768e-7,
+      "scaleX": 1.8,
+      "scaleY": 1,
+      "scaleZ": 1.8
+    },
+    "Nickname": "FreePeoples Event Discards go here",
+    "Description": "DiscardSpot;Event;FreePeoples;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780732023538791882/75DF640C7F446F1C190DCF66702D6B34E7AC9939/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.1,
+        "MergeDistancePixels": 25,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./FreePeoples_Event_Discards_go_here.b18c8a.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "AttachedSnapPoints": [
+      {
+        "Position": {
+          "x": -0.000003191515,
+          "y": 0.0499997735,
+          "z": -1.41902e-9
+        },
+        "Rotation": {
+          "x": -4.476096e-8,
+          "y": 0.0000165038073,
+          "z": 180
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

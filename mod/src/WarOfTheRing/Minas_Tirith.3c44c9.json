@@ -1,0 +1,74 @@
+{
+  "Object": {
+    "GUID": "3c44c9",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 11.6616383,
+      "posY": 0.7699987,
+      "posZ": -9.491966,
+      "rotX": 0.000277677231,
+      "rotY": 179.977921,
+      "rotZ": 0.000171063555,
+      "scaleX": 0.55,
+      "scaleY": 1,
+      "scaleZ": 0.55
+    },
+    "Nickname": "Minas Tirith",
+    "Description": "Stronghold;",
+    "GMNotes": "4fde65",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": false,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974479044/4ACBF40994388FA824BAA32623C46B755D856D7F/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.399999857,
+        "MergeDistancePixels": 5,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./Minas_Tirith.3c44c9.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "AttachedSnapPoints": [
+      {
+        "Position": {
+          "x": 0.8082567,
+          "y": 0.200001225,
+          "z": -0.8299563
+        },
+        "Rotation": {
+          "x": 0.00000164240453,
+          "y": 45.02215,
+          "z": 180
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

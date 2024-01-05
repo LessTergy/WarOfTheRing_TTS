@@ -1,0 +1,60 @@
+{
+  "Object": {
+    "GUID": "598848",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 5.43451357,
+      "posY": 0.77,
+      "posZ": -23.334795,
+      "rotX": 0.000808376761,
+      "rotY": 179.97847,
+      "rotZ": 0.000229035941,
+      "scaleX": 0.55,
+      "scaleY": 1,
+      "scaleZ": 0.55
+    },
+    "Nickname": "Umbar",
+    "Description": "Stronghold;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": false,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974479765/F360106918503620FBEAFF9806D222493E792568/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.399999857,
+        "MergeDistancePixels": 5,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./Umbar.598848.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

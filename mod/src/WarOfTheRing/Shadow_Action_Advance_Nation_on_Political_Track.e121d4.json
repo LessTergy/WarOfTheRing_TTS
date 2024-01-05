@@ -1,0 +1,60 @@
+{
+  "Object": {
+    "GUID": "e121d4",
+    "Name": "Custom_Tile",
+    "Transform": {
+      "posX": 70,
+      "posY": 0.9475906,
+      "posZ": 30.0000172,
+      "rotX": 0.0000116967494,
+      "rotY": 270.004639,
+      "rotZ": 0.00000347480159,
+      "scaleX": 0.8,
+      "scaleY": 1,
+      "scaleZ": 0.8
+    },
+    "Nickname": "Shadow Action (Advance Nation on Political Track)",
+    "Description": "HftR;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/937181570514785737/1A95A4F3C3BFA8C0EE2FEF754B69C28531899DDC/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/937181570514786372/003D75037545A0CDEDBE83B01C8CF520BA274CA9/",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomTile": {
+        "Type": 2,
+        "Thickness": 0.2,
+        "Stackable": false,
+        "Stretch": true
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

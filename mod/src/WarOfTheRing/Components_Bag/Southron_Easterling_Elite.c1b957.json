@@ -1,0 +1,68 @@
+{
+  "Object": {
+    "GUID": "c1b957",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 102.50576,
+      "posY": 3.16249323,
+      "posZ": -68.31589,
+      "rotX": 0.0000203478448,
+      "rotY": 180.000076,
+      "rotZ": -0.000004936602,
+      "scaleX": 0.4,
+      "scaleY": 0.4,
+      "scaleZ": 0.4
+    },
+    "Nickname": "Southron/Easterling Elite",
+    "Description": "Elite;Marble;Haradrim;Shadow;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 0.9960827
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401393744/16FA8395CB055DAFE1496F7E6E4D48F4E5DF3937/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405979251/E620F90560BC73E59F627997DD784AB6A25B228B/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401393744/16FA8395CB055DAFE1496F7E6E4D48F4E5DF3937/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Southron_Easterling_Elite.c1b957.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

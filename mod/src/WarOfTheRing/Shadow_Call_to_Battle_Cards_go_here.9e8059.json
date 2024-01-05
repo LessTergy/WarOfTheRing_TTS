@@ -1,0 +1,74 @@
+{
+  "Object": {
+    "GUID": "9e8059",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 2.5,
+      "posY": 0.95,
+      "posZ": -45,
+      "rotX": 0,
+      "rotY": 180.000122,
+      "rotZ": 2.89347568e-8,
+      "scaleX": 1.8,
+      "scaleY": 1,
+      "scaleZ": 1.8
+    },
+    "Nickname": "Shadow Call to Battle Cards go here",
+    "Description": "DeckSpot;CallToBattle;Shadow;WoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780732023538487132/4635B9E7C45B2EC93618022C9B8C0C36CB99FA3F/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.1,
+        "MergeDistancePixels": 25,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./Shadow_Call_to_Battle_Cards_go_here.9e8059.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "AttachedSnapPoints": [
+      {
+        "Position": {
+          "x": -0.000003191515,
+          "y": 0.0499997735,
+          "z": -1.41902e-9
+        },
+        "Rotation": {
+          "x": -4.476096e-8,
+          "y": 0.0000165038073,
+          "z": 180
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

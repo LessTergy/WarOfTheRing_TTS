@@ -1,0 +1,205 @@
+{
+  "Object": {
+    "GUID": "2091a5",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 5.50298738,
+      "posY": 0.9901498,
+      "posZ": 6.36420965,
+      "rotX": 7.56543329e-7,
+      "rotY": 89.9997559,
+      "rotZ": -0.000001191361,
+      "scaleX": 0.59,
+      "scaleY": 0.594000041,
+      "scaleZ": 0.594000041
+    },
+    "Nickname": "Elf Leader",
+    "Description": "Leader;3D;Elf;FreePeoples;",
+    "GMNotes": "Region:Lorien;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.09795778,
+      "g": 0.8397212,
+      "b": 0.13655597
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "DiffuseURL": "",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "312c10",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": -0.282895356,
+          "posY": 0.9344671,
+          "posZ": 0.154533759,
+          "rotX": 0.000143433979,
+          "rotY": 0,
+          "rotZ": 15.000001,
+          "scaleX": 0.616116464,
+          "scaleY": 0.612521231,
+          "scaleZ": 0.6122453
+        },
+        "Nickname": "Elf Leader Flag",
+        "Description": "",
+        "GMNotes": "",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 0.759581864,
+          "g": 0.759581864,
+          "b": 0.759581864
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517557599/596B4072CFDAC18A2DB023C90F7A56D57CE1C37F/",
+          "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517558030/7684CEBF7773B9A9D93D89A1C94EC91E1ACFD861/",
+          "NormalURL": "",
+          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053954234/528C7ED29B3CF8D33D68E922DB6BE961459E3ACC/",
+          "Convex": true,
+          "MaterialIndex": 3,
+          "TypeIndex": 1,
+          "CustomShader": {
+            "SpecularColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "SpecularIntensity": 0,
+            "SpecularSharpness": 2,
+            "FresnelStrength": 0
+          },
+          "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "PhysicsMaterial": {
+          "StaticFriction": 0.6,
+          "DynamicFriction": 0.6,
+          "Bounciness": 0,
+          "FrictionCombine": 0,
+          "BounceCombine": 0
+        },
+        "Rigidbody": {
+          "Mass": 0,
+          "Drag": 0.1,
+          "AngularDrag": 0.1,
+          "UseGravity": true
+        },
+        "ChildObjects": [
+          {
+            "GUID": "8debf3",
+            "Name": "Custom_Model",
+            "Transform": {
+              "posX": 0.05508064,
+              "posY": -1.53495145,
+              "posZ": -0.100455984,
+              "rotX": 359.9747,
+              "rotY": 359.9061,
+              "rotZ": 344.999329,
+              "scaleX": 2.3333323,
+              "scaleY": 2.333333,
+              "scaleZ": 2.33333254
+            },
+            "Nickname": "Elf Leader model",
+            "Description": "",
+            "GMNotes": "",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": true,
+            "Grid": true,
+            "Snap": false,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomMesh": {
+              "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517595226/4BF360927447EC0C7877DB0309C731ABDC6928EA/",
+              "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517608160/540B3371F6658C1819D6306F2D00F6C01F76A922/",
+              "NormalURL": "",
+              "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053954234/528C7ED29B3CF8D33D68E922DB6BE961459E3ACC/",
+              "Convex": true,
+              "MaterialIndex": 3,
+              "TypeIndex": 1,
+              "CustomShader": {
+                "SpecularColor": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+              },
+              "CastShadows": true
+            },
+            "LuaScript": "",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          }
+        ]
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

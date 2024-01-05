@@ -1,0 +1,74 @@
+{
+  "Object": {
+    "GUID": "aba559",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 22.8265514,
+      "posY": 0.84,
+      "posZ": -20.4008713,
+      "rotX": -0.000129360575,
+      "rotY": 179.9779,
+      "rotZ": -0.00007572021,
+      "scaleX": 0.48,
+      "scaleY": 1,
+      "scaleZ": 0.48
+    },
+    "Nickname": "Far Harad",
+    "Description": "City;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": false,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974488301/2FC228BE4F56CC0031274D055EEEB8BD68C90C4C/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.254999846,
+        "MergeDistancePixels": 5,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "AttachedSnapPoints": [
+      {
+        "Position": {
+          "x": -0.939198554,
+          "y": 0.1274999,
+          "z": -0.339034051
+        },
+        "Rotation": {
+          "x": -6.274289e-7,
+          "y": 45.0203323,
+          "z": -0.00000465481025
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

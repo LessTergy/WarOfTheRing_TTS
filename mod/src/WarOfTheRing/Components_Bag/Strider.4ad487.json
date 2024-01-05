@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "4ad487",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 88.237236,
+      "posY": 3.15256119,
+      "posZ": -67.3537,
+      "rotX": -9.489714e-7,
+      "rotY": 0.00000192967764,
+      "rotZ": -0.0000183561224,
+      "scaleX": 0.5,
+      "scaleY": 0.5,
+      "scaleZ": 0.5
+    },
+    "Nickname": "Strider",
+    "Description": "Character;2D;Companion;FreePeoples;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849515088/C738B401A3653BE76B35DA5CE2B51C9E5D92CB55/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849515088/C738B401A3653BE76B35DA5CE2B51C9E5D92CB55/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Strider.4ad487.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

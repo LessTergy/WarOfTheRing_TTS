@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "9c8483",
+    "Name": "Custom_PDF",
+    "Transform": {
+      "posX": 79,
+      "posY": 0.947590947,
+      "posZ": 30.9999981,
+      "rotX": 0.0000103297052,
+      "rotY": 270,
+      "rotZ": 0.000002801681,
+      "scaleX": 4,
+      "scaleY": 1,
+      "scaleZ": 4
+    },
+    "Nickname": "The Hunt for the Ring",
+    "Description": "",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomPDF": {
+      "PDFUrl": "http://cloud-3.steamusercontent.com/ugc/1840286802926304345/4875BD357ADA6EFE1CA86E115538CD9D26699575/",
+      "PDFPassword": "",
+      "PDFPage": 0,
+      "PDFPageOffset": 0
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

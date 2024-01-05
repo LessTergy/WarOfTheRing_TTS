@@ -1,0 +1,68 @@
+{
+  "Object": {
+    "GUID": "fc2440",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 33.55,
+      "posY": 1.00500011,
+      "posZ": 3.501635,
+      "rotX": 4.33025463e-7,
+      "rotY": 225.014969,
+      "rotZ": 180,
+      "scaleX": 0.450000048,
+      "scaleY": 0.450000048,
+      "scaleZ": 0.450000048
+    },
+    "Nickname": "Elves Political Counter",
+    "Description": "PoliticalToken;Elves;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 0.9960827
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381447535/681EE3C9AFFB6EC5C95A91AA9206FB5079F071B6/",
+      "NormalURL": "",
+      "ColliderURL": "",
+      "Convex": true,
+      "MaterialIndex": 3,
+      "TypeIndex": 0,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Elves_Political_Counter.fc2440.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,69 @@
+{
+  "Object": {
+    "GUID": "8abdc7",
+    "Name": "Deck",
+    "Transform": {
+      "posX": -84.40515,
+      "posY": 0.978145659,
+      "posZ": -34.080677,
+      "rotX": 0.00000255240366,
+      "rotY": 180,
+      "rotZ": 180,
+      "scaleX": 2.800268,
+      "scaleY": 1,
+      "scaleZ": 2.800268
+    },
+    "Nickname": "Shadow Event Cards (WoME)",
+    "Description": "Cards;Event;Shadow;WoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.713235259,
+      "g": 0.713235259,
+      "b": 0.713235259
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "SidewaysCard": false,
+    "DeckIDs": [
+      209306,
+      209324
+    ],
+    "CustomDeck": {
+      "2093": {
+        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142858618/A1B1C77527E097849C8CBA10714BD8D9E0C705D8/",
+        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142859091/1DCECBCDB9881D8879DB0F494396013DCE398F5B/",
+        "NumWidth": 9,
+        "NumHeight": 5,
+        "BackIsHidden": true,
+        "UniqueBack": false,
+        "Type": 0
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ContainedObjects": []
+  },
+  "StatesPaths": {},
+  "ContainedObjectPaths": [
+    "Great_Winged_Creatures.81349b.209306.json",
+    "Strongly_Guarded.73da40.209324.json"
+  ]
+}

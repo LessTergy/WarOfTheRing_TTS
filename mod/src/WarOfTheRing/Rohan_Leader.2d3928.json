@@ -1,0 +1,313 @@
+{
+  "Object": {
+    "GUID": "2d3928",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": -38.80293,
+      "posY": 1.00046337,
+      "posZ": 0.899083555,
+      "rotX": 5.211021e-7,
+      "rotY": 90.00008,
+      "rotZ": 0.00517825037,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Rohan Leader",
+    "Description": "Leader;3D;Rohan;FreePeoples;",
+    "GMNotes": "Region:Rohan Reinforcements;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.125469118,
+      "g": 0.2313503,
+      "b": 0.156841666
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "DiffuseURL": "",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Rohan_Leader.2d3928.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "0e9bd6",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": 0.373999268,
+          "posY": 0.5015213,
+          "posZ": 0.411453426,
+          "rotX": 0.000009054396,
+          "rotY": 0.0124207,
+          "rotZ": -0.0000127851717,
+          "scaleX": 0.942856967,
+          "scaleY": 0.942857,
+          "scaleZ": 0.942856967
+        },
+        "Nickname": "Rohan Leader flag",
+        "Description": "",
+        "GMNotes": "",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 0.759581864,
+          "g": 0.759581864,
+          "b": 0.759581864
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517557599/596B4072CFDAC18A2DB023C90F7A56D57CE1C37F/",
+          "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1487831460518035377/C5A3248F7A05B33E20C2DAF0407F6E59D7A657AC/",
+          "NormalURL": "",
+          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053954234/528C7ED29B3CF8D33D68E922DB6BE961459E3ACC/",
+          "Convex": true,
+          "MaterialIndex": 3,
+          "TypeIndex": 1,
+          "CustomShader": {
+            "SpecularColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "SpecularIntensity": 0,
+            "SpecularSharpness": 2,
+            "FresnelStrength": 0
+          },
+          "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "PhysicsMaterial": {
+          "StaticFriction": 0.6,
+          "DynamicFriction": 0.6,
+          "Bounciness": 0,
+          "FrictionCombine": 0,
+          "BounceCombine": 0
+        },
+        "Rigidbody": {
+          "Mass": 0,
+          "Drag": 0.1,
+          "AngularDrag": 0.1,
+          "UseGravity": true
+        },
+        "ChildObjects": [
+          {
+            "GUID": "45ad10",
+            "Name": "Custom_Model",
+            "Transform": {
+              "posX": -0.436389565,
+              "posY": -0.4965632,
+              "posZ": -0.4364846,
+              "rotX": -0.000009100345,
+              "rotY": 359.987762,
+              "rotZ": 0.0000126589066,
+              "scaleX": 1.75000036,
+              "scaleY": 1.75000012,
+              "scaleZ": 1.75000036
+            },
+            "Nickname": "Rohan Leader model",
+            "Description": "Leader;3D;Rohan;FreePeoples;",
+            "GMNotes": "Region:;",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": true,
+            "Grid": false,
+            "Snap": false,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": false,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomMesh": {
+              "MeshURL": "http://cloud-3.steamusercontent.com/ugc/853845830990230876/93D22D74822C4C60B2475188B481FB3683D87ECE/",
+              "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/853845830990146088/0050E9E60B4DCF3995E786F9BFD2DB70CFA3E69C/",
+              "NormalURL": "",
+              "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053954234/528C7ED29B3CF8D33D68E922DB6BE961459E3ACC/",
+              "Convex": true,
+              "MaterialIndex": 1,
+              "TypeIndex": 1,
+              "CastShadows": true
+            },
+            "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+            "LuaScriptState": "",
+            "XmlUI": "",
+            "States": {
+              "2": {
+                "GUID": "99ede8",
+                "Name": "Figurine_Custom",
+                "Transform": {
+                  "posX": -4.878836,
+                  "posY": 1.075762,
+                  "posZ": -4.550248,
+                  "rotX": 0.0000140786833,
+                  "rotY": 0.000004447415,
+                  "rotZ": 0.000009071342,
+                  "scaleX": 0.692999959,
+                  "scaleY": 0.692999959,
+                  "scaleZ": 0.692999959
+                },
+                "Nickname": "Rohan Leader",
+                "Description": "Leader;2D;Rohan;FreePeoples;",
+                "GMNotes": "Region:Fords of Isen;",
+                "AltLookAngle": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "ColorDiffuse": {
+                  "r": 0.1921477,
+                  "g": 0.5882353,
+                  "b": 0
+                },
+                "LayoutGroupSortIndex": 0,
+                "Value": 0,
+                "Locked": false,
+                "Grid": true,
+                "Snap": false,
+                "IgnoreFoW": false,
+                "MeasureMovement": false,
+                "DragSelectable": true,
+                "Autoraise": true,
+                "Sticky": true,
+                "Tooltip": true,
+                "GridProjection": false,
+                "HideWhenFaceDown": false,
+                "Hands": false,
+                "CustomImage": {
+                  "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574850186750/AEACD7326CA0A56855F585F7E6AF8797F650A431/",
+                  "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574850186750/AEACD7326CA0A56855F585F7E6AF8797F650A431/",
+                  "ImageScalar": 1,
+                  "WidthScale": 0
+                },
+                "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+                "LuaScriptState": "",
+                "XmlUI": ""
+              },
+              "3": {
+                "GUID": "c2db7d",
+                "Name": "Custom_Model",
+                "Transform": {
+                  "posX": -21.7827,
+                  "posY": 1.34731722,
+                  "posZ": -30.5224285,
+                  "rotX": 0.00000280733661,
+                  "rotY": 89.99138,
+                  "rotZ": -0.0000407157349,
+                  "scaleX": 0.594000041,
+                  "scaleY": 0.594000041,
+                  "scaleZ": 0.594000041
+                },
+                "Nickname": "Rohan Leader",
+                "Description": "Leader;Rohan;FreePeoples;",
+                "GMNotes": "Region:;",
+                "AltLookAngle": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "ColorDiffuse": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 0.9960827
+                },
+                "LayoutGroupSortIndex": 0,
+                "Value": 0,
+                "Locked": false,
+                "Grid": true,
+                "Snap": false,
+                "IgnoreFoW": false,
+                "MeasureMovement": false,
+                "DragSelectable": true,
+                "Autoraise": true,
+                "Sticky": true,
+                "Tooltip": true,
+                "GridProjection": false,
+                "HideWhenFaceDown": false,
+                "Hands": false,
+                "CustomMesh": {
+                  "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401403250/5CF5A681725EF183EFF7262E106B90A4E9C738CA/",
+                  "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405970660/E459E402363BA767C2676B05FDAA0E9BE33226A2/",
+                  "NormalURL": "",
+                  "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401403250/5CF5A681725EF183EFF7262E106B90A4E9C738CA/",
+                  "Convex": true,
+                  "MaterialIndex": 1,
+                  "TypeIndex": 1,
+                  "CustomShader": {
+                    "SpecularColor": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1
+                    },
+                    "SpecularIntensity": 0,
+                    "SpecularSharpness": 2,
+                    "FresnelStrength": 0
+                  },
+                  "CastShadows": true
+                },
+                "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+                "LuaScriptState": "",
+                "XmlUI": ""
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,118 @@
+{
+  "Object": {
+    "GUID": "03d817",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 9.995134,
+      "posY": 1.56121647,
+      "posZ": 27.5004082,
+      "rotX": 2.02187618e-8,
+      "rotY": 179.995834,
+      "rotZ": 90,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "(Vilya Action Die)",
+    "Description": "Dice;Action;Vilya;FreePeoples;LoME;Anniversary;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.9999998,
+      "g": 0.9921723,
+      "b": 0.9999998
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633506450/A151C9784B3ED333C0C5BE62718E67534AAA0341/",
+      "NormalURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633507562/560040E947104D2489D580D65E230D350B5C2F2C/",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
+      "Convex": true,
+      "MaterialIndex": 0,
+      "TypeIndex": 2,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0.2,
+        "SpecularSharpness": 5.366667,
+        "FresnelStrength": 0.516666651
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Vilya_Action_Die.03d817.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "RotationValues": [
+      {
+        "Value": "Card Draw",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Event",
+        "Rotation": {
+          "x": 90,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Card Draw",
+        "Rotation": {
+          "x": 180,
+          "y": 180,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Eye + Remove",
+        "Rotation": {
+          "x": 270,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Muster",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        }
+      },
+      {
+        "Value": "Army + Remove",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 270
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

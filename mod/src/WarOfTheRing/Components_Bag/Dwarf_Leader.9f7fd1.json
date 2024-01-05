@@ -1,0 +1,68 @@
+{
+  "Object": {
+    "GUID": "9f7fd1",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 91.4895248,
+      "posY": 3.43249273,
+      "posZ": -67.73531,
+      "rotX": 0.0000191138479,
+      "rotY": 179.9999,
+      "rotZ": -0.00000106055279,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Dwarf Leader",
+    "Description": "Leader;Marble;Dwarves;FreePeoples;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 0.9960827
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401403250/5CF5A681725EF183EFF7262E106B90A4E9C738CA/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405967625/63F1FD0F52770ED6B3AC9F4BCAA95AFF7798B7AD/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401403250/5CF5A681725EF183EFF7262E106B90A4E9C738CA/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Dwarf_Leader.9f7fd1.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "89178e",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 86.10257,
+      "posY": 3.13518786,
+      "posZ": -86.4117355,
+      "rotX": -0.000005664731,
+      "rotY": 0.00000120484231,
+      "rotZ": -0.00000480247763,
+      "scaleX": 0.396,
+      "scaleY": 0.396,
+      "scaleZ": 0.396
+    },
+    "Nickname": "Gondor Regular",
+    "Description": "Regular;2D;Gondor;FreePeoples;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849638486/909A8A9B69E90E95FE407CB3F11F81377E478004/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849638486/909A8A9B69E90E95FE407CB3F11F81377E478004/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Gondor_Regular.89178e.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

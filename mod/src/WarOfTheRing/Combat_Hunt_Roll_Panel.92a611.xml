@@ -1,0 +1,206 @@
+<Defaults>
+    <Button class="clsBtnMenu" color="#a1572d" colors="#FFFFFF|#EEEEEE|#C8C8C8|#999999" fontSize="28" fontStyle="Italic"/>
+    <Button class="clsBtnInput" color="#a1572d" colors="#FFFFFF|#EEEEEE|#C8C8C8|#999999" minWidth="57" minHeight="57" fontSize="40" fontStyle="Italic"/>
+    <Button class="clsBtnSpecial" color="#a1572d" colors="#FFFFFF|#EEEEEE|#C8C8C8|#999999" minHeight="57" fontSize="40" fontStyle="Italic"/>
+    <Button class="clsBtnBottom" color="#db6d30" colors="#FFFFFF|#EEEEEE|#C8C8C8|#999999" fontSize="42" fontStyle="Bold"/>
+    <Text class="clsTxtInputDesc" color="black" fontSize="25" alignment="MiddleLeft" fontStyle="Bold"/>
+    <Text class="clsTxtHitDesc" color="black" fontSize="40" alignment="MiddleCenter" fontStyle="Bold"/>
+    <Text class="clsTxtHitCounter" color="black" fontSize="170" alignment="MiddleCenter" fontStyle="Bold"/>
+    <HorizontalLayout class="clsHzInput" padding="0 10 0 0" spacing="3" childAlignment="MiddleRight" childForceExpandWidth="false" childForceExpandHeight="false"/>
+    <Panel class="clsPnlPanel" width="708" rectAlignment="UpperLeft"/>
+    <Panel class="clsPnlOptions" width="518" rectAlignment="UpperLeft"/>
+    <Panel class="clsPnlHits" width="190" height="398" offsetXY="518 -55" rectAlignment="UpperLeft"/>
+    <HorizontalLayout class="clsHzBottom" height="98" padding="6 6" spacing="12" offsetXY="0 -453" rectAlignment="UpperLeft"/>
+    <VerticalLayout class="clsVtInput" offsetXY="0 -55" padding="6" rectAlignment="UpperLeft" height="0" spacing="24"/>
+</Defaults>
+<Panel id="pnlMain" active="false" position="0 0 -5.1" width="0" height="0" scale="1 1">
+    <Panel width="708" height="551" offsetXY="36 -32" rectAlignment="UpperLeft">
+        <HorizontalLayout width="660" height="49" padding="6 6" spacing="12" rectAlignment="UpperLeft">
+            <Button id="btnSelectGeneral" class="clsBtnMenu" onClick="uiSelectGeneral">GENERAL</Button>
+            <Button id="btnSelectCombat" class="clsBtnMenu" onClick="uiSelectCombat">COMBAT</Button>
+            <Button id="btnSelectHunt" class="clsBtnMenu" onClick="uiSelectHunt">HUNT</Button>
+        </HorizontalLayout>
+        <Button id="btnShowStats" width="37" height="37" offsetXY="665 -6" class="clsBtnMenu" rectAlignment="UpperLeft" onClick="uiShowStats">?</Button>
+        <Panel id="pnlGeneral" class="clsPnlPanel">
+            <Panel class="clsPnlOptions">
+                <VerticalLayout class="clsVtInput">
+                    <HorizontalLayout>
+                        <Text class="clsTxtInputDesc">Dice</Text>
+                        <HorizontalLayout class="clsHzInput">
+                            <Button id="btnGeneralRollCount1" class="clsBtnInput" onClick="uiSetRollCount1">1</Button>
+                            <Button id="btnGeneralRollCount2" class="clsBtnInput" onClick="uiSetRollCount2">2</Button>
+                            <Button id="btnGeneralRollCount3" class="clsBtnInput" onClick="uiSetRollCount3">3</Button>
+                            <Button id="btnGeneralRollCount4" class="clsBtnInput" onClick="uiSetRollCount4">4</Button>
+                            <Button id="btnGeneralRollCount5" class="clsBtnInput" onClick="uiSetRollCount5">5</Button>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                        <Text class="clsTxtInputDesc">Success</Text>
+                        <HorizontalLayout class="clsHzInput">
+                            <Button id="btnGeneralRollToHit2" class="clsBtnInput" onClick="uiSetRollToHit2">2+</Button>
+                            <Button id="btnGeneralRollToHit3" class="clsBtnInput" onClick="uiSetRollToHit3">3+</Button>
+                            <Button id="btnGeneralRollToHit4" class="clsBtnInput" onClick="uiSetRollToHit4">4+</Button>
+                            <Button id="btnGeneralRollToHit5" class="clsBtnInput" onClick="uiSetRollToHit5">5+</Button>
+                            <Button id="btnGeneralRollToHit6" class="clsBtnInput" onClick="uiSetRollToHit6">6</Button>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                        <Text class="clsTxtInputDesc">Special</Text>
+                        <HorizontalLayout class="clsHzInput">
+                            <Button id="btnGeneralRollToHit7" class="clsBtnSpecial" minWidth="57" onClick="uiSetRollToHit7">#</Button>
+                            <Button id="btnGeneralRollToHit8" class="clsBtnSpecial" minWidth="177" onClick="uiSetRollToHit8">1-2 &#038; 5-6</Button>
+                            <Button id="btnGeneralRollToHit9" class="clsBtnSpecial" minWidth="117" onClick="uiSetRollToHit9">1 &#038; 6</Button>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
+                </VerticalLayout>
+            </Panel>
+            <Panel class="clsPnlHits">
+                <Panel id="pnlGeneralHits">
+                    <Text id="txtGeneralHits" class="clsTxtHitCounter" offsetXY="0 0">-</Text>
+                    <Text class="clsTxtHitDesc" offsetXY="0 -95">RESULT</Text>
+                </Panel>
+                <Panel id="pnlGeneralHitsBoth" active="false">
+                    <Text id="txtGeneralHitsEnemy" class="clsTxtHitCounter" offsetXY="0 120">-</Text>
+                    <Text id="txtGeneralHitsEnemyDesc" class="clsTxtHitDesc" offsetXY="0 25">HITS</Text>
+                    <Text id="txtGeneralHitsFriendly" class="clsTxtHitCounter" offsetXY="0 -85">-</Text>
+                    <Text id="txtGeneralHitsFriendlyDesc" class="clsTxtHitDesc" offsetXY="0 -180">HITS</Text>
+                </Panel>
+            </Panel>
+            <HorizontalLayout class="clsHzBottom">
+                <Button id="btnGeneralRoll" class="clsBtnBottom" preferredWidth="1000" onClick="beginRoll">ROLL</Button>
+                <Button id="btnGeneralAdjust" class="clsBtnBottom" minWidth="185" onClick="uiSetAdjustRoll">ADJUST</Button>
+                <Button id="btnGeneralClear" class="clsBtnBottom" minWidth="165" onClick="uiClearRoll">CLEAR</Button>
+            </HorizontalLayout>
+        </Panel>
+        <Panel id="pnlCombat" class="clsPnlPanel">
+            <Panel class="clsPnlOptions">
+                <VerticalLayout class="clsVtInput">
+                    <HorizontalLayout>
+                        <Text class="clsTxtInputDesc">Strength</Text>
+                        <HorizontalLayout class="clsHzInput">
+                            <Button id="btnCombatRollCount1" class="clsBtnInput" onClick="uiSetRollCount1">1</Button>
+                            <Button id="btnCombatRollCount2" class="clsBtnInput" onClick="uiSetRollCount2">2</Button>
+                            <Button id="btnCombatRollCount3" class="clsBtnInput" onClick="uiSetRollCount3">3</Button>
+                            <Button id="btnCombatRollCount4" class="clsBtnInput" onClick="uiSetRollCount4">4</Button>
+                            <Button id="btnCombatRollCount5" class="clsBtnInput" onClick="uiSetRollCount5">5</Button>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                        <Text class="clsTxtInputDesc">To Hit</Text>
+                        <HorizontalLayout class="clsHzInput">
+                            <Button id="btnCombatRollToHit2" class="clsBtnInput" onClick="uiSetRollToHit2">2+</Button>
+                            <Button id="btnCombatRollToHit3" class="clsBtnInput" onClick="uiSetRollToHit3">3+</Button>
+                            <Button id="btnCombatRollToHit4" class="clsBtnInput" onClick="uiSetRollToHit4">4+</Button>
+                            <Button id="btnCombatRollToHit5" class="clsBtnInput" onClick="uiSetRollToHit5">5+</Button>
+                            <Button id="btnCombatRollToHit6" class="clsBtnInput" onClick="uiSetRollToHit6">6</Button>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                        <Text class="clsTxtInputDesc">Leadership</Text>
+                        <HorizontalLayout class="clsHzInput">
+                            <Button id="btnCombatRerollCount0" class="clsBtnInput" onClick="uiSetRerollCount0">0</Button>
+                            <Button id="btnCombatRerollCount1" class="clsBtnInput" onClick="uiSetRerollCount1">1</Button>
+                            <Button id="btnCombatRerollCount2" class="clsBtnInput" onClick="uiSetRerollCount2">2</Button>
+                            <Button id="btnCombatRerollCount3" class="clsBtnInput" onClick="uiSetRerollCount3">3</Button>
+                            <Button id="btnCombatRerollCount4" class="clsBtnInput" onClick="uiSetRerollCount4">4</Button>
+                            <Button id="btnCombatRerollCount5" class="clsBtnInput" onClick="uiSetRerollCount5">5</Button>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                        <Text class="clsTxtInputDesc">To Hit</Text>
+                        <HorizontalLayout class="clsHzInput">
+                            <Button id="btnCombatRerollToHit2" class="clsBtnInput" onClick="uiSetRerollToHit2">2+</Button>
+                            <Button id="btnCombatRerollToHit3" class="clsBtnInput" onClick="uiSetRerollToHit3">3+</Button>
+                            <Button id="btnCombatRerollToHit4" class="clsBtnInput" onClick="uiSetRerollToHit4">4+</Button>
+                            <Button id="btnCombatRerollToHit5" class="clsBtnInput" onClick="uiSetRerollToHit5">5+</Button>
+                            <Button id="btnCombatRerollToHit6" class="clsBtnInput" onClick="uiSetRerollToHit6">6</Button>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
+                    <HorizontalLayout spacing="50">
+                        <HorizontalLayout id="hzCombat1HitsSelf">
+                            <Text class="clsTxtInputDesc">1 Hits Self on Combat Roll</Text>
+                            <HorizontalLayout class="clsHzInput">
+                                <Button id="btnCombat1HitsSelf" class="clsBtnInput" onClick="uiToggle1HitsSelf"></Button>
+                            </HorizontalLayout>
+                        </HorizontalLayout>
+                        <HorizontalLayout id="hzCombat6HitsTwice" active="false">
+                            <Text class="clsTxtInputDesc">6 Hits Twice</Text>
+                            <HorizontalLayout class="clsHzInput">
+                                <Button id="btnCombat6HitsTwice" class="clsBtnInput" onClick="uiToggle6HitsTwice"></Button>
+                            </HorizontalLayout>
+                        </HorizontalLayout>
+                        <HorizontalLayout id="hzCombatMissesToHits" active="false">
+                            <Text class="clsTxtInputDesc">Misses to Hits</Text>
+                            <HorizontalLayout class="clsHzInput">
+                                <Button id="btnCombatMissesToHits0" class="clsBtnInput" onClick="uiSetMissesToHits0">0</Button>
+                                <Button id="btnCombatMissesToHits1" class="clsBtnInput" onClick="uiSetMissesToHits1">1</Button>
+                                <Button id="btnCombatMissesToHits2" class="clsBtnInput" onClick="uiSetMissesToHits2">2</Button>
+                            </HorizontalLayout>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
+                </VerticalLayout>
+            </Panel>
+            <Panel class="clsPnlHits">
+                <Panel id="pnlCombatHits">
+                    <Text id="txtCombatHits" class="clsTxtHitCounter" offsetXY="0 0">-</Text>
+                    <Text class="clsTxtHitDesc" offsetXY="0 -95">HITS</Text>
+                </Panel>
+                <Panel id="pnlCombatHitsBoth" active="false">
+                    <Text id="txtCombatHitsEnemy" class="clsTxtHitCounter" offsetXY="0 120">-</Text>
+                    <Text id="txtCombatHitsEnemyDesc" class="clsTxtHitDesc" offsetXY="0 25">HITS</Text>
+                    <Text id="txtCombatHitsFriendly" class="clsTxtHitCounter" offsetXY="0 -85">-</Text>
+                    <Text id="txtCombatHitsFriendlyDesc" class="clsTxtHitDesc" offsetXY="0 -180">HITS</Text>
+                </Panel>
+            </Panel>
+            <HorizontalLayout class="clsHzBottom">
+                <Button id="btnCombatRoll" class="clsBtnBottom" preferredWidth="1000" onClick="beginRoll">ROLL</Button>
+                <Button id="btnCombatAdjust" class="clsBtnBottom" minWidth="185" onClick="uiSetAdjustRoll">ADJUST</Button>
+                <Button id="btnCombatClear" class="clsBtnBottom" minWidth="165" onClick="uiClearRoll">CLEAR</Button>
+            </HorizontalLayout>
+        </Panel>
+        <Panel id="pnlHunt" class="clsPnlPanel">
+            <Panel class="clsPnlOptions">
+                <VerticalLayout class="clsVtInput">
+                    <HorizontalLayout>
+                        <Text class="clsTxtInputDesc">Hunt Level</Text>
+                        <HorizontalLayout class="clsHzInput">
+                            <Button id="btnHuntRollCount1" class="clsBtnInput" onClick="uiSetRollCount1">1</Button>
+                            <Button id="btnHuntRollCount2" class="clsBtnInput" onClick="uiSetRollCount2">2</Button>
+                            <Button id="btnHuntRollCount3" class="clsBtnInput" onClick="uiSetRollCount3">3</Button>
+                            <Button id="btnHuntRollCount4" class="clsBtnInput" onClick="uiSetRollCount4">4</Button>
+                            <Button id="btnHuntRollCount5" class="clsBtnInput" onClick="uiSetRollCount5">5</Button>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                        <Text class="clsTxtInputDesc">Success</Text>
+                        <HorizontalLayout class="clsHzInput">
+                            <Button id="btnHuntRollToHit2" class="clsBtnInput" onClick="uiSetRollToHit2">2+</Button>
+                            <Button id="btnHuntRollToHit3" class="clsBtnInput" onClick="uiSetRollToHit3">3+</Button>
+                            <Button id="btnHuntRollToHit4" class="clsBtnInput" onClick="uiSetRollToHit4">4+</Button>
+                            <Button id="btnHuntRollToHit5" class="clsBtnInput" onClick="uiSetRollToHit5">5+</Button>
+                            <Button id="btnHuntRollToHit6" class="clsBtnInput" onClick="uiSetRollToHit6">6</Button>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
+                    <HorizontalLayout>
+                        <Text class="clsTxtInputDesc">Re-rolls</Text>
+                        <HorizontalLayout class="clsHzInput">
+                            <Button id="btnHuntRerollCount0" class="clsBtnInput" onClick="uiSetRerollCount0">0</Button>
+                            <Button id="btnHuntRerollCount1" class="clsBtnInput" onClick="uiSetRerollCount1">1</Button>
+                            <Button id="btnHuntRerollCount2" class="clsBtnInput" onClick="uiSetRerollCount2">2</Button>
+                            <Button id="btnHuntRerollCount3" class="clsBtnInput" onClick="uiSetRerollCount3">3</Button>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
+                </VerticalLayout>
+            </Panel>
+            <Panel class="clsPnlHits">
+                <Text id="txtHuntHits" class="clsTxtHitCounter" offsetXY="0 0">-</Text>
+                <Text class="clsTxtHitDesc" offsetXY="0 -95">RESULT</Text>
+            </Panel>
+            <HorizontalLayout class="clsHzBottom">
+                <Button id="btnHuntRoll" class="clsBtnBottom" preferredWidth="1000" onClick="beginRoll">ROLL</Button>
+                <Button id="btnHuntAdjust" class="clsBtnBottom" minWidth="185" onClick="uiSetAdjustRoll">ADJUST</Button>
+                <Button id="btnHuntClear" class="clsBtnBottom" minWidth="165" onClick="uiClearRoll">CLEAR</Button>
+            </HorizontalLayout>
+        </Panel>
+    </Panel>
+</Panel>

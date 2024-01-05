@@ -1,0 +1,60 @@
+{
+  "Object": {
+    "GUID": "a02da5",
+    "Name": "Custom_Tile",
+    "Transform": {
+      "posX": -31,
+      "posY": 0.947591662,
+      "posZ": 44.99562,
+      "rotX": -0.000004696348,
+      "rotY": 0.000186580641,
+      "rotZ": -6.650577e-8,
+      "scaleX": 4.5,
+      "scaleY": 1,
+      "scaleZ": 4.5
+    },
+    "Nickname": "The Eagles of the Misty Mountains",
+    "Description": "FactionCard;Eagles;FreePeoples;WoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142889141/C38D63C8F1CD2E585020FA636283AA83E2668EEA/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142889414/73CBEA26AC5EC7CD7DC3D48B03B39D59B9086E91/",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomTile": {
+        "Type": 3,
+        "Thickness": 0.1,
+        "Stackable": false,
+        "Stretch": true
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,115 @@
+{
+  "Object": {
+    "GUID": "43c87f",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": -20.8659458,
+      "posY": 0.9886385,
+      "posZ": 39.4837723,
+      "rotX": -0.00327932136,
+      "rotY": 0.00007850069,
+      "rotZ": 0.00156951463,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "scaleZ": 0.3
+    },
+    "Nickname": "The Ents of Fangorn",
+    "Description": "Faction;3D;Ents;FreePeoples;WoME;",
+    "GMNotes": "Region:;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1693900704054013759/967679EA257C19E415BEAD0E407D3CE99E0E006B/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1693900704054014641/A15989D659F8B705D405A78552121B100045F278/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053954234/528C7ED29B3CF8D33D68E922DB6BE961459E3ACC/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./The_Ents_of_Fangorn.43c87f.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "bb423e",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": 0.04398692,
+          "posY": -0.06915737,
+          "posZ": 0.145730838,
+          "rotX": 0.000261884532,
+          "rotY": 299.67688,
+          "rotZ": -0.00362336542,
+          "scaleX": 1.33333254,
+          "scaleY": 1.33333337,
+          "scaleZ": 1.33333254
+        },
+        "Nickname": "Character Base",
+        "Description": "",
+        "GMNotes": "",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 0,
+          "g": 0,
+          "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "DiffuseURL": "",
+          "NormalURL": "",
+          "ColliderURL": "",
+          "Convex": true,
+          "MaterialIndex": 1,
+          "TypeIndex": 1,
+          "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "3b26a6",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 75.35638,
+      "posY": 3.13518763,
+      "posZ": -83.87481,
+      "rotX": -0.000008555304,
+      "rotY": 5.42668261e-7,
+      "rotZ": -0.000007897404,
+      "scaleX": 0.396,
+      "scaleY": 0.396,
+      "scaleZ": 0.396
+    },
+    "Nickname": "Sauron Regular",
+    "Description": "Regular;2D;Sauron;Shadow;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 0,
+      "b": 0
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849540339/E9200B325A7CF6EE2A224B5853BD4695E09F0764/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849540339/E9200B325A7CF6EE2A224B5853BD4695E09F0764/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Sauron_Regular.3b26a6.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

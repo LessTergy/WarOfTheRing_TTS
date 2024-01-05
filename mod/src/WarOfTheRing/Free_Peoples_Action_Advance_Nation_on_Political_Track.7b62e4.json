@@ -1,0 +1,60 @@
+{
+  "Object": {
+    "GUID": "7b62e4",
+    "Name": "Custom_Tile",
+    "Transform": {
+      "posX": 70.00002,
+      "posY": 0.947587848,
+      "posZ": 32.0000229,
+      "rotX": 0.00000111774773,
+      "rotY": 270.000122,
+      "rotZ": 0.000006683163,
+      "scaleX": 0.8,
+      "scaleY": 1,
+      "scaleZ": 0.8
+    },
+    "Nickname": "Free Peoples Action (Advance Nation on Political Track)",
+    "Description": "HftR;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/937181570514781313/DE0B23C8D79127B1B2D993AA9CDC7B195BA7D81F/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/937181570514782158/1A88E3DDEA5F1AB622DA236B5F2A4EDAA83D67D5/",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomTile": {
+        "Type": 2,
+        "Thickness": 0.2,
+        "Stackable": false,
+        "Stretch": true
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

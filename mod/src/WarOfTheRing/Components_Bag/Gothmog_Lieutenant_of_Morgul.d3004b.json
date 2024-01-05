@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "d3004b",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 84.5112152,
+      "posY": 3.16196132,
+      "posZ": -63.9400253,
+      "rotX": -0.0000107020032,
+      "rotY": 2.444654e-7,
+      "rotZ": -0.0000056562485,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Gothmog: Lieutenant of Morgul",
+    "Description": "Minion;2D;Shadow;LoME;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370069771/65FEB0760429D85068D69DF0C5F17318D62604E3/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Gothmog_Lieutenant_of_Morgul.d3004b.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "aad4ef",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 79.68538,
+      "posY": 3.159448,
+      "posZ": -65.87814,
+      "rotX": 0.00000331475349,
+      "rotY": 179.965714,
+      "rotZ": -0.0000104597184,
+      "scaleX": 0.7000003,
+      "scaleY": 0.7000003,
+      "scaleZ": 0.7000003
+    },
+    "Nickname": "Dain: King Under the Mountain",
+    "Description": "Character;2D;Ruler;Sovereign;FreePeoples;KoME;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353115201/2F758296B0F1CBC798D9DA259E05BF468C05BC52/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353115201/2F758296B0F1CBC798D9DA259E05BF468C05BC52/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Dain_King_Under_the_Mountain.aad4ef.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

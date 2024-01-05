@@ -1,0 +1,71 @@
+{
+  "Object": {
+    "GUID": "70fc9b",
+    "Name": "Deck",
+    "Transform": {
+      "posX": -84.4,
+      "posY": 0.982958,
+      "posZ": -61,
+      "rotX": 0.00000343295619,
+      "rotY": 180,
+      "rotZ": 180,
+      "scaleX": 2.800268,
+      "scaleY": 1,
+      "scaleZ": 2.800268
+    },
+    "Nickname": "Shadow Character Cards (KoME)",
+    "Description": "Cards;Event;Shadow;KoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.713235259,
+      "g": 0.713235259,
+      "b": 0.713235259
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "SidewaysCard": false,
+    "DeckIDs": [
+      214124,
+      214126,
+      214125
+    ],
+    "CustomDeck": {
+      "2141": {
+        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/",
+        "BackURL": "http://cloud-3.steamusercontent.com/ugc/2079031781127736148/5BD818E3A141EA0F1CBC4D0141BC03A3D15A99CD/",
+        "NumWidth": 10,
+        "NumHeight": 4,
+        "BackIsHidden": true,
+        "UniqueBack": true,
+        "Type": 0
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ContainedObjects": []
+  },
+  "StatesPaths": {},
+  "ContainedObjectPaths": [
+    "The_Palantir_of_Minas_Tirith.83099e.214124.json",
+    "The_West_Has_Failed.da318e.214126.json",
+    "Your_Welcome_Is_Doubtful.3ab353.214125.json"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "Object": {
+    "GUID": "416864",
+    "Name": "Custom_Model_Bag",
+    "Transform": {
+      "posX": -56,
+      "posY": 0.95,
+      "posZ": 0,
+      "rotX": 0,
+      "rotY": 0,
+      "rotZ": 0,
+      "scaleX": 3,
+      "scaleY": 3,
+      "scaleZ": 3
+    },
+    "Nickname": "Removed from the Game",
+    "Description": "Bag;Removed;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": false,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "MaterialIndex": -1,
+    "MeshIndex": -1,
+    "Number": 0,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/780732023537035910/126C35365E985E069D9DE509049CE0F529300804/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/780732023537036370/EF043A62CF39132225FCB1E25B05B77DF932E880/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/780732023537035910/126C35365E985E069D9DE509049CE0F529300804/",
+      "Convex": false,
+      "MaterialIndex": 1,
+      "TypeIndex": 6,
+      "CastShadows": true
+    },
+    "Bag": {
+      "Order": 0
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

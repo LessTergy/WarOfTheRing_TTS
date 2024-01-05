@@ -1,0 +1,182 @@
+{
+  "Object": {
+    "GUID": "98f596",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 41.5599022,
+      "posY": 1.01197386,
+      "posZ": -27.4546127,
+      "rotX": -8.53790141e-7,
+      "rotY": 180.002228,
+      "rotZ": 8.537569e-7,
+      "scaleX": 0.6,
+      "scaleY": 1,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Gothmog: Lieutenant of Morgul",
+    "Description": "Minion;3D;Shadow;LoME;",
+    "GMNotes": "Region:;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "DiffuseURL": "",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "a9ca55",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": 0.045839943,
+          "posY": 0.630804241,
+          "posZ": 0.179049164,
+          "rotX": -0.00114685413,
+          "rotY": 180,
+          "rotZ": 0,
+          "scaleX": 0.659999967,
+          "scaleY": 0.396,
+          "scaleZ": 0.659999967
+        },
+        "Nickname": "Gothmog: Lieutenant of Morgul",
+        "Description": "Minion;3D;Shadow;LoME;",
+        "GMNotes": "Region:;",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 0.9999998,
+          "g": 0.9921736,
+          "b": 0.9999998
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381542406/B521835117B3EA99A303D320DF0F663EA282E52C/",
+          "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381543599/729784D82F84E2C64737B2D183ADBDFEBF7F83F3/",
+          "NormalURL": "",
+          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "Convex": true,
+          "MaterialIndex": 3,
+          "TypeIndex": 1,
+          "CustomShader": {
+            "SpecularColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "SpecularIntensity": 0,
+            "SpecularSharpness": 2,
+            "FresnelStrength": 0
+          },
+          "CastShadows": true
+        },
+        "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "ChildObjects": [
+          {
+            "GUID": "10a32f",
+            "Name": "Custom_Model",
+            "Transform": {
+              "posX": 0.0825121552,
+              "posY": -1.5441457,
+              "posZ": 0.2435139,
+              "rotX": 0.000675289368,
+              "rotY": 359.951965,
+              "rotZ": -0.000125829451,
+              "scaleX": 1.16666663,
+              "scaleY": 1.16666663,
+              "scaleZ": 1.16666663
+            },
+            "Nickname": "Nazgûl",
+            "Description": "Leader;2D;Nazgul;Sauron;Shadow;",
+            "GMNotes": "",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 0,
+              "g": 0,
+              "b": 0
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": true,
+            "Grid": true,
+            "Snap": false,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": true,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomMesh": {
+              "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+              "DiffuseURL": "",
+              "NormalURL": "",
+              "ColliderURL": "",
+              "Convex": true,
+              "MaterialIndex": 4,
+              "TypeIndex": 1,
+              "CastShadows": true
+            },
+            "LuaScript": "PickedUp = false\r\n\r\nfunction onPickUp(player_color)\r\n  if player_color == \"Red\" or player_color == \"Yellow\" then\r\n    PickedUp = true\r\n  end--if\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  --if was picked up by shadow player...\r\n  if PickedUp then\r\n    --if dropped into play...\r\n    if self.getPosition().x < Global.getVar(\"BoardX\") and self.getPosition().x > -Global.getVar(\"BoardX\") and self.getPosition().z < Global.getVar(\"BoardZ\") and self.getPosition().z > -Global.getVar(\"BoardZ\") then\r\n      Global.call(\"PlaySound\",{ID=8})--nazgul scream\r\n    end--if\r\n  end--if\r\n  PickedUp = false\r\nend--function",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          }
+        ]
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

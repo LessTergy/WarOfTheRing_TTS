@@ -1,0 +1,74 @@
+{
+  "Object": {
+    "GUID": "61c02b",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 46.75,
+      "posY": 0.95,
+      "posZ": -20.3,
+      "rotX": -1.41925611e-7,
+      "rotY": 179.979156,
+      "rotZ": 1.47282122e-7,
+      "scaleX": 1.8,
+      "scaleY": 1,
+      "scaleZ": 1.8
+    },
+    "Nickname": "Shadow Event Discards go here",
+    "Description": "DiscardSpot;Event;Shadow;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780732023538487132/4635B9E7C45B2EC93618022C9B8C0C36CB99FA3F/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.1,
+        "MergeDistancePixels": 25,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./Shadow_Event_Discards_go_here.61c02b.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "AttachedSnapPoints": [
+      {
+        "Position": {
+          "x": -0.000003191515,
+          "y": 0.0499997735,
+          "z": -1.41902e-9
+        },
+        "Rotation": {
+          "x": -4.476096e-8,
+          "y": 0.0000165038073,
+          "z": 180
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

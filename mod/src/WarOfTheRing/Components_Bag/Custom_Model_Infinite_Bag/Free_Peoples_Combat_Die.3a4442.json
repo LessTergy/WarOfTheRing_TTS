@@ -1,0 +1,99 @@
+{
+  "Object": {
+    "GUID": "3a4442",
+    "Name": "Die_6_Rounded",
+    "Transform": {
+      "posX": -58.3768044,
+      "posY": 1.55071437,
+      "posZ": 34.6797,
+      "rotX": 3.20165128e-7,
+      "rotY": 356.611328,
+      "rotZ": 270,
+      "scaleX": 1,
+      "scaleY": 1,
+      "scaleZ": 1
+    },
+    "Nickname": "(Free Peoples Combat Die)",
+    "Description": "Dice;Combat;FreePeoples;Panel:637507;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0.4235294,
+      "b": 0.996078432
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "MaterialIndex": 3,
+    "LuaScript": "#include ./Free_Peoples_Combat_Die.3a4442.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "RotationValues": [
+      {
+        "Value": "1",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "2",
+        "Rotation": {
+          "x": 90,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "3",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        }
+      },
+      {
+        "Value": "4",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": -90
+        }
+      },
+      {
+        "Value": "5",
+        "Rotation": {
+          "x": -90,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "6",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": -180
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

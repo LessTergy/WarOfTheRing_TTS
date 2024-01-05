@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "e9a616",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 76.45118,
+      "posY": 3.16196132,
+      "posZ": -63.745182,
+      "rotX": -0.000007855833,
+      "rotY": 4.90448031e-7,
+      "rotZ": -0.0000103520042,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "The Witch-King: The Black Captain",
+    "Description": "Minion;2D;Shadow;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849502311/75DC69149ED272DA4BA8AC0705B78942A45E75AA/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849502311/75DC69149ED272DA4BA8AC0705B78942A45E75AA/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./The_Witch-King_The_Black_Captain.e9a616.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

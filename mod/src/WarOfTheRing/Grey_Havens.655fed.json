@@ -1,0 +1,74 @@
+{
+  "Object": {
+    "GUID": "655fed",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": -20.2501526,
+      "posY": 0.77,
+      "posZ": 13.1428909,
+      "rotX": 0.0000881460946,
+      "rotY": 179.976608,
+      "rotZ": 0.000127846841,
+      "scaleX": 0.55,
+      "scaleY": 1,
+      "scaleZ": 0.55
+    },
+    "Nickname": "Grey Havens",
+    "Description": "Stronghold;",
+    "GMNotes": "4024b1",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": false,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974388727/5322A524239F88D65E328EC1C52AF60A5D8E644C/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.399999857,
+        "MergeDistancePixels": 5,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./Grey_Havens.655fed.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "AttachedSnapPoints": [
+      {
+        "Position": {
+          "x": 0.8890819,
+          "y": 0.200000659,
+          "z": -0.8749836
+        },
+        "Rotation": {
+          "x": 0.00000361192428,
+          "y": 45.0077744,
+          "z": 180
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,61 @@
+{
+  "Object": {
+    "GUID": "de958e",
+    "Name": "Card",
+    "Transform": {
+      "posX": 79.07518,
+      "posY": 0.9611975,
+      "posZ": 61.03195,
+      "rotX": 5.016784e-7,
+      "rotY": -3.29727385e-7,
+      "rotZ": 2.01637292e-7,
+      "scaleX": 2.8,
+      "scaleY": 1,
+      "scaleZ": 2.8
+    },
+    "Nickname": "Gimli: Dwarven Lord",
+    "Description": "Card;Companion;Character;Level:1;#6;FreePeoples;TFoE;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.713235259,
+      "g": 0.713235259,
+      "b": 0.713235259
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": true,
+    "Hands": true,
+    "CardID": 201204,
+    "SidewaysCard": false,
+    "CustomDeck": {
+      "2012": {
+        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1754691331184621671/6C886E8C884D523D08344086E001C3EE18C9D768/",
+        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1754691331184622285/0172B5D0E57BFB68061B97FF1DBCA364C05A9649/",
+        "NumWidth": 5,
+        "NumHeight": 2,
+        "BackIsHidden": true,
+        "UniqueBack": true,
+        "Type": 0
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

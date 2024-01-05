@@ -1,0 +1,61 @@
+{
+  "Object": {
+    "GUID": "658fb0",
+    "Name": "Card",
+    "Transform": {
+      "posX": 2.49995613,
+      "posY": 1.10152757,
+      "posZ": -45,
+      "rotX": 359.967468,
+      "rotY": 180.0001,
+      "rotZ": 179.754562,
+      "scaleX": 2.800268,
+      "scaleY": 1,
+      "scaleZ": 2.800268
+    },
+    "Nickname": "Borne up on the Wind",
+    "Description": "Card;CallToBattle;Init:7;#1;Shadow;WoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.713235259,
+      "g": 0.713235259,
+      "b": 0.713235259
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": true,
+    "Hands": true,
+    "CardID": 209502,
+    "SidewaysCard": false,
+    "CustomDeck": {
+      "2095": {
+        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142858618/A1B1C77527E097849C8CBA10714BD8D9E0C705D8/",
+        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142859091/1DCECBCDB9881D8879DB0F494396013DCE398F5B/",
+        "NumWidth": 9,
+        "NumHeight": 5,
+        "BackIsHidden": true,
+        "UniqueBack": false,
+        "Type": 0
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,68 @@
+{
+  "Object": {
+    "GUID": "f5ca1b",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 34.95,
+      "posY": 1.00499964,
+      "posZ": 3.474238,
+      "rotX": 0.0000016060269,
+      "rotY": 224.999985,
+      "rotZ": -0.0000118317184,
+      "scaleX": 0.450000048,
+      "scaleY": 0.450000048,
+      "scaleZ": 0.450000048
+    },
+    "Nickname": "Rohan Political Counter",
+    "Description": "PoliticalToken;Rohan;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 0.9960827
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381445431/4B50571E9B9C0E31B572DEC03249DFDD4153C151/",
+      "NormalURL": "",
+      "ColliderURL": "",
+      "Convex": true,
+      "MaterialIndex": 3,
+      "TypeIndex": 0,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Rohan_Political_Counter.f5ca1b.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

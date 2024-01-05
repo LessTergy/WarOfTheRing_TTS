@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "26c0f4",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 82.58673,
+      "posY": 3.159447,
+      "posZ": -65.75664,
+      "rotX": -7.81393439e-8,
+      "rotY": 179.965866,
+      "rotZ": -0.000009711652,
+      "scaleX": 0.7000003,
+      "scaleY": 0.7000003,
+      "scaleZ": 0.7000003
+    },
+    "Nickname": "Theoden: King of the Riddermark",
+    "Description": "Character;2D;Ruler;Sovereign;FreePeoples;KoME;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353097890/4EDF4FA3C155F3AADDB1E36FEFB7E45028FB39EB/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353097890/4EDF4FA3C155F3AADDB1E36FEFB7E45028FB39EB/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Theoden_King_of_the_Riddermark.26c0f4.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

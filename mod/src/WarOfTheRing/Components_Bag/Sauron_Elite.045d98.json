@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "045d98",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 75.26748,
+      "posY": 3.16926527,
+      "posZ": -77.94804,
+      "rotX": -0.000009392817,
+      "rotY": 0.00000123102177,
+      "rotZ": -0.0000213443273,
+      "scaleX": 0.6,
+      "scaleY": 0.6000001,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Sauron Elite",
+    "Description": "Elite;2D;Sauron;Shadow;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 0,
+      "b": 0
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574847823942/C5340EE523A7AEB906F335C4EB7EF7CD0C720203/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574847823942/C5340EE523A7AEB906F335C4EB7EF7CD0C720203/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Sauron_Elite.045d98.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,77 @@
+{
+  "Object": {
+    "GUID": "cd7757",
+    "Name": "Deck",
+    "Transform": {
+      "posX": -74.40515,
+      "posY": 0.9974019,
+      "posZ": -34.080677,
+      "rotX": 0.00000376003823,
+      "rotY": 359.968719,
+      "rotZ": 180,
+      "scaleX": 2.80049133,
+      "scaleY": 1,
+      "scaleZ": 2.80049133
+    },
+    "Nickname": "Free Peoples Event Cards (WoME)",
+    "Description": "Cards;Event;FreePeoples;WoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.713235259,
+      "g": 0.713235259,
+      "b": 0.713235259
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "SidewaysCard": false,
+    "DeckIDs": [
+      209103,
+      209113,
+      209104,
+      209116,
+      209109,
+      209112
+    ],
+    "CustomDeck": {
+      "2091": {
+        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142892350/88A32BDC33FAA7E2548BD9486900884D8A7D252A/",
+        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142892740/9CD6666E207EB4F1AF8F3D3B7D197EEA98DA0059/",
+        "NumWidth": 9,
+        "NumHeight": 5,
+        "BackIsHidden": true,
+        "UniqueBack": false,
+        "Type": 0
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ContainedObjects": []
+  },
+  "StatesPaths": {},
+  "ContainedObjectPaths": [
+    "Long_Battle.2ca0d7.209103.json",
+    "Take_Someone_You_Can_Trust.700a3d.209113.json",
+    "Majesty_and_Glory.9adf09.209104.json",
+    "The_Western_Way.28ac67.209116.json",
+    "Premonition_of_Danger.a70e98.209109.json",
+    "Swift_Boats.b9d9c9.209112.json"
+  ]
+}

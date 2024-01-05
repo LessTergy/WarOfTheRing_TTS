@@ -1,0 +1,60 @@
+{
+  "Object": {
+    "GUID": "f9d255",
+    "Name": "Custom_Tile",
+    "Transform": {
+      "posX": -55.7217865,
+      "posY": 1.04758751,
+      "posZ": -23.3161755,
+      "rotX": 0.000005303186,
+      "rotY": 179.991653,
+      "rotZ": 180,
+      "scaleX": 0.6274077,
+      "scaleY": 1,
+      "scaleZ": 0.6274077
+    },
+    "Nickname": "Corruptor Counter",
+    "Description": "Tile;Corruption;KoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353433957/2338238CA781E52535F317F02D76CA5DBCFDA4FB/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353433957/2338238CA781E52535F317F02D76CA5DBCFDA4FB/",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomTile": {
+        "Type": 3,
+        "Thickness": 0.1,
+        "Stackable": true,
+        "Stretch": true
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

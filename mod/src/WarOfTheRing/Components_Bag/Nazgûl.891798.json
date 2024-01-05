@@ -1,0 +1,68 @@
+{
+  "Object": {
+    "GUID": "891798",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 109.188438,
+      "posY": 3.43249273,
+      "posZ": -68.0632248,
+      "rotX": 0.0000204748976,
+      "rotY": 179.999954,
+      "rotZ": 0.00000138434712,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Nazgûl",
+    "Description": "Leader;Marble;Round;Nazgul;Sauron;Shadow;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.9999998,
+      "g": 0.992160261,
+      "b": 0.9999998
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401403250/5CF5A681725EF183EFF7262E106B90A4E9C738CA/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405973710/7203248298F25953FC99D2B40E5DDDEE6FDD92EE/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401403250/5CF5A681725EF183EFF7262E106B90A4E9C738CA/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 0.8745098,
+          "g": 0.8117647,
+          "b": 0.745098054
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 1
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Nazgûl.891798.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

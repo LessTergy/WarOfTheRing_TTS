@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "0faa5a",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 72.86626,
+      "posY": 3.16926527,
+      "posZ": -67.48063,
+      "rotX": -0.00000459778857,
+      "rotY": 4.491356e-7,
+      "rotZ": -0.0000213443418,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Aragorn: Heir to Isildur",
+    "Description": "Character;2D;FreePeoples;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370034428/D8D9EE32B89DFB79369A971B9068174808A9C707/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731815370034735/5D5387561EABF1EE47E34E11DC7FA28FF12BFA07/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Aragorn_Heir_to_Isildur.0faa5a.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "a68c9b",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 88.66317,
+      "posY": 3.15256119,
+      "posZ": -66.2141953,
+      "rotX": -0.00000256804924,
+      "rotY": 0.00000175008347,
+      "rotZ": -0.0000237989352,
+      "scaleX": 0.5,
+      "scaleY": 0.5,
+      "scaleZ": 0.5
+    },
+    "Nickname": "Gimli",
+    "Description": "Character;2D;Companion;FreePeoples;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849454329/E1EA374964025F9885E9781AEF77D0C11107671A/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849454329/E1EA374964025F9885E9781AEF77D0C11107671A/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Gimli.a68c9b.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

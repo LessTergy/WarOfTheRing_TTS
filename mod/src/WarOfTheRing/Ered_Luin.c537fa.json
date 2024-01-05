@@ -1,0 +1,60 @@
+{
+  "Object": {
+    "GUID": "c537fa",
+    "Name": "Custom_Token",
+    "Transform": {
+      "posX": 62.87927,
+      "posY": 1.0725919,
+      "posZ": 48.7214928,
+      "rotX": 0.0000148004037,
+      "rotY": 179.997528,
+      "rotZ": -0.00000229348848,
+      "scaleX": 0.48,
+      "scaleY": 1,
+      "scaleZ": 0.48
+    },
+    "Nickname": "Ered Luin",
+    "Description": "City;TFoE;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": false,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1753569444434429170/F1E5A98D9F3511490934C246EA380E177868B279/",
+      "ImageSecondaryURL": "",
+      "ImageScalar": 1,
+      "WidthScale": 0,
+      "CustomToken": {
+        "Thickness": 0.25,
+        "MergeDistancePixels": 5,
+        "StandUp": false,
+        "Stackable": false
+      }
+    },
+    "LuaScript": "#include ./Ered_Luin.c537fa.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

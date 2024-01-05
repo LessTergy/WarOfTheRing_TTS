@@ -1,0 +1,55 @@
+{
+  "Object": {
+    "GUID": "1202a1",
+    "Name": "Custom_Assetbundle",
+    "Transform": {
+      "posX": 87.63133,
+      "posY": 1.4475857,
+      "posZ": -55.30798,
+      "rotX": 0.00001041854,
+      "rotY": 269.9984,
+      "rotZ": 0.000006415439,
+      "scaleX": 1,
+      "scaleY": 1,
+      "scaleZ": 1
+    },
+    "Nickname": "",
+    "Description": "SoundCubeHit;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomAssetbundle": {
+      "AssetbundleURL": "http://cloud-3.steamusercontent.com/ugc/1836921935021222938/7F680B1F42DF76AD592B921B379DEF514B4A850D/",
+      "AssetbundleSecondaryURL": "",
+      "MaterialIndex": 0,
+      "TypeIndex": 0,
+      "LoopingEffectIndex": 0
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,68 @@
+{
+  "Object": {
+    "GUID": "dbfa16",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 103.743874,
+      "posY": 3.16128874,
+      "posZ": -66.711586,
+      "rotX": 0.0000187574587,
+      "rotY": 180,
+      "rotZ": -6.100572e-8,
+      "scaleX": 0.396,
+      "scaleY": 0.396,
+      "scaleZ": 0.396
+    },
+    "Nickname": "Sauron Regular",
+    "Description": "Regular;Marble;Sauron;Shadow;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 0.9960827
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401396281/DE2EAEED06214BF021BF14967F912E764EB96113/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1777210485804099562/FC00F79D631DE271DFB311DCDC9AC6D645D3903C/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401396281/DE2EAEED06214BF021BF14967F912E764EB96113/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Sauron_Regular.dbfa16.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

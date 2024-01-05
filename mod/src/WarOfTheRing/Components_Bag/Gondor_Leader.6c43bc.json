@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "6c43bc",
+    "Name": "Figurine_Custom",
+    "Transform": {
+      "posX": 86.49755,
+      "posY": 3.18597,
+      "posZ": -74.2899,
+      "rotX": -0.00000389130946,
+      "rotY": -1.25315822e-7,
+      "rotZ": -0.00000544280647,
+      "scaleX": 0.7,
+      "scaleY": 0.7,
+      "scaleZ": 0.7
+    },
+    "Nickname": "Gondor Leader",
+    "Description": "Leader;2D;Gondor;FreePeoples;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0,
+      "g": 0,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomImage": {
+      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849642178/05B443BB066AE963983243F979589E9C570E5E63/",
+      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849642178/05B443BB066AE963983243F979589E9C570E5E63/",
+      "ImageScalar": 1,
+      "WidthScale": 0
+    },
+    "LuaScript": "#include ./Gondor_Leader.6c43bc.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,118 @@
+{
+  "Object": {
+    "GUID": "e7073a",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 48.0493431,
+      "posY": 1.56121743,
+      "posZ": -27.704895,
+      "rotX": 2.983066e-7,
+      "rotY": 1.99822652,
+      "rotZ": 180,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "(Balrog Die)",
+    "Description": "Dice;Action;Balrog;Shadow;LoME;Anniversary;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.9999998,
+      "g": 0.9921723,
+      "b": 0.9999998
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633478581/8303A1916D74DF9FD4DE3A0844D44167AA7E2E4E/",
+      "NormalURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633480282/6E7C186355EA0D0047A060C4B7AEFBCF2D628E96/",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
+      "Convex": true,
+      "MaterialIndex": 0,
+      "TypeIndex": 2,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0.2,
+        "SpecularSharpness": 5.366667,
+        "FresnelStrength": 0.516666651
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Balrog_Die.e7073a.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "RotationValues": [
+      {
+        "Value": "Use Balrog",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Card Draw",
+        "Rotation": {
+          "x": 90,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Use Balrog",
+        "Rotation": {
+          "x": 180,
+          "y": 180,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Eye + Remove",
+        "Rotation": {
+          "x": 270,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Muster",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        }
+      },
+      {
+        "Value": "Character + Remove",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 270
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

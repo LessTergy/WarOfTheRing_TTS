@@ -1,0 +1,73 @@
+{
+  "Object": {
+    "GUID": "846b48",
+    "Name": "Deck",
+    "Transform": {
+      "posX": -69.5,
+      "posY": 0.987776935,
+      "posZ": 23,
+      "rotX": 4.12837622e-8,
+      "rotY": 0.0007465094,
+      "rotZ": 180,
+      "scaleX": 2.80049133,
+      "scaleY": 1,
+      "scaleZ": 2.80049133
+    },
+    "Nickname": "Free Peoples Character Event Cards (LoME)",
+    "Description": "Cards;Event;Character;FreePeoples;LoME;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.713235259,
+      "g": 0.713235259,
+      "b": 0.713235259
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": true,
+    "Hands": false,
+    "SidewaysCard": false,
+    "DeckIDs": [
+      209010,
+      209024,
+      209019,
+      209022
+    ],
+    "CustomDeck": {
+      "2090": {
+        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142892350/88A32BDC33FAA7E2548BD9486900884D8A7D252A/",
+        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142892740/9CD6666E207EB4F1AF8F3D3B7D197EEA98DA0059/",
+        "NumWidth": 9,
+        "NumHeight": 5,
+        "BackIsHidden": true,
+        "UniqueBack": false,
+        "Type": 0
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ContainedObjects": []
+  },
+  "StatesPaths": {},
+  "ContainedObjectPaths": [
+    "Safe_Paths_in_the_Dark.5f9d15.209010.json",
+    "You_Know_the_Way_There.bd4b3d.209024.json",
+    "Three_Rings_for_the_Elven-Kings.af5525.209019.json",
+    "Wind_from_the_West.104585.209022.json"
+  ]
+}

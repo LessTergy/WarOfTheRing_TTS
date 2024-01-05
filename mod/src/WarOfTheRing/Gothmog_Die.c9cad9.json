@@ -1,0 +1,118 @@
+{
+  "Object": {
+    "GUID": "c9cad9",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 43.0277519,
+      "posY": 1.561217,
+      "posZ": -27.5933762,
+      "rotX": 1.92220355e-7,
+      "rotY": 357.667633,
+      "rotZ": -2.84927182e-7,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "(Gothmog Die)",
+    "Description": "Dice;Action;Gothmog;Shadow;LoME;Anniversary;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.1919831,
+      "g": 0.701,
+      "b": 0.167983085
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633489070/EA1477583092A3B4F699AA9293278D477DEAB5F7/",
+      "NormalURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633489413/453D75C742B045F0E02871967006D97D4A1E100E/",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
+      "Convex": true,
+      "MaterialIndex": 0,
+      "TypeIndex": 2,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0.2,
+        "SpecularSharpness": 5.366667,
+        "FresnelStrength": 0.516666651
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Gothmog_Die.c9cad9.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "RotationValues": [
+      {
+        "Value": "Eye + Remove",
+        "Rotation": {
+          "x": 270,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Army",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "Value": "Army + Remove",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 270
+        }
+      },
+      {
+        "Value": "Muster",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        }
+      },
+      {
+        "Value": "Muster",
+        "Rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 180
+        }
+      },
+      {
+        "Value": "Card Draw",
+        "Rotation": {
+          "x": 90,
+          "y": 0,
+          "z": 0
+        }
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

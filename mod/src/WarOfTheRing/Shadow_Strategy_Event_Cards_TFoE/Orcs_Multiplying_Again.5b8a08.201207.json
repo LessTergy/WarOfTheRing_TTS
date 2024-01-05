@@ -1,0 +1,61 @@
+{
+  "Object": {
+    "GUID": "5b8a08",
+    "Name": "Card",
+    "Transform": {
+      "posX": 74.7956,
+      "posY": 0.9170141,
+      "posZ": 55.56862,
+      "rotX": 0.00116136344,
+      "rotY": -0.00000110880956,
+      "rotZ": 180.002121,
+      "scaleX": 2.8,
+      "scaleY": 1,
+      "scaleZ": 2.8
+    },
+    "Nickname": "Orcs Multiplying Again",
+    "Description": "Card;Event;Strategy;Init:7;#20;Shadow;TFoE;",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.713235259,
+      "g": 0.713235259,
+      "b": 0.713235259
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": true,
+    "Hands": true,
+    "CardID": 201207,
+    "SidewaysCard": false,
+    "CustomDeck": {
+      "2012": {
+        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1754691331184621671/6C886E8C884D523D08344086E001C3EE18C9D768/",
+        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1754691331184622285/0172B5D0E57BFB68061B97FF1DBCA364C05A9649/",
+        "NumWidth": 5,
+        "NumHeight": 2,
+        "BackIsHidden": true,
+        "UniqueBack": true,
+        "Type": 0
+      }
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

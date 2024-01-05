@@ -1,0 +1,54 @@
+{
+  "Object": {
+    "GUID": "b52b08",
+    "Name": "Custom_PDF",
+    "Transform": {
+      "posX": 79,
+      "posY": 0.9476186,
+      "posZ": 18,
+      "rotX": 0.00000479613436,
+      "rotY": 270.016022,
+      "rotZ": 0.000005744618,
+      "scaleX": 4,
+      "scaleY": 1,
+      "scaleZ": 4
+    },
+    "Nickname": "The Breaking of the Fellowship",
+    "Description": "",
+    "GMNotes": "",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": true,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomPDF": {
+      "PDFUrl": "http://cloud-3.steamusercontent.com/ugc/1744555712193017922/CE629726A44567DDCBDAC08115D749C8AEDC53E9/",
+      "PDFPassword": "",
+      "PDFPage": 11,
+      "PDFPageOffset": 0
+    },
+    "LuaScript": "",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

@@ -1,0 +1,68 @@
+{
+  "Object": {
+    "GUID": "840e49",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 110.675728,
+      "posY": 3.84249353,
+      "posZ": -63.24013,
+      "rotX": -0.00000163671575,
+      "rotY": 0.00000376535945,
+      "rotZ": 7.999803e-7,
+      "scaleX": 1,
+      "scaleY": 1,
+      "scaleZ": 1
+    },
+    "Nickname": "Boromir",
+    "Description": "Character;Marble;Companion;FreePeoples;",
+    "GMNotes": "Region:out of play;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.9999998,
+      "g": 0.992160261,
+      "b": 0.9999998
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405758892/6C909C6E7632E5DDBAC5E3742E75E71C8D17C4FB/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1752443255057330702/86CB87B7B517CAD5FC12BF3960624B0782F16AAC/",
+      "NormalURL": "",
+      "ColliderURL": "",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 0.8745098,
+          "g": 0.8117647,
+          "b": 0.745098054
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 1
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Boromir.840e49.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}
