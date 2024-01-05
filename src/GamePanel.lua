@@ -473,1037 +473,18 @@ function ProcessNextStep()
     self.setDescription(
         "Panel;Round:" .. Round .. ";Phase:" .. Phase .. ";Turn:" .. Turn .. ";Step:" .. Step .. ";" .. FlagString
     )
-    if Step == "" then --assume new game setup...
+    --assume new game setup...
+    if Step == "" then 
         NextStep = "BeginMenu"
         Step = ""
     elseif Step == "BeginMenu" then
-        LoME = false
-        WoME = false
-        self.clearButtons()
-        MoveGamePanel("All")
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Blue Seat\nFree Peoples Player 1 (Gondor)",
-                position = {-7.6, 79, 1.7},
-                rotation = {90, 90, 0},
-                scale = {4, 1, 1},
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = {0.4, 0.4, 1}
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Red Seat\nShadow Player 1 (Witch-King)",
-                position = {7.6, 28, 1.7},
-                rotation = {90, 270, 0},
-                scale = {4, 1, 1},
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = {1, 0, 0}
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Yellow Seat\nShadow Player 2 (Saruman)",
-                position = {7.6, 79, 1.7},
-                rotation = {90, 270, 0},
-                scale = {4, 1, 1},
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = {1, 1, 0}
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Green Seat\nFree Peoples Player 2 (Rohan)",
-                position = {-7.6, 28, 1.7},
-                rotation = {90, 90, 0},
-                scale = {4, 1, 1},
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = {0, 1, 0}
-            }
-        )
-        if Player.Red.steam_name ~= nil then
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Shadow (Player 1): " .. Player.Red.steam_name,
-                    position = {0, 0.1, -0.6},
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = {1, 0.4, 0.4}
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Shadow (Player 1): Choose red seat",
-                    position = {0, 0.1, -0.6},
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = {1, 0.4, 0.4}
-                }
-            )
-        end
-
-        if Player.Blue.steam_name ~= nil then
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Free Peoples (Player 2): " .. Player.Blue.steam_name,
-                    position = {0, 0.1, 0},
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = {0.4, 0.4, 1}
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Free Peoples (Player 2): Choose blue seat",
-                    position = {0, 0.1, 0},
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = {0.4, 0.4, 1}
-                }
-            )
-        end
-
-        if Player.Yellow.steam_name ~= nil then
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Shadow (Player 3): " .. Player.Yellow.steam_name,
-                    position = {0, 0.1, -0.4},
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = {1, 1, 0.4}
-                }
-            )
-        end
-
-        if Player.Green.steam_name ~= nil then
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Free Peoples (Player 4): " .. Player.Green.steam_name,
-                    position = {0, 0.1, 0.2},
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = {0.4, 1, 0.4}
-                }
-            )
-        end
-
-        self.createButton(
-            {
-                click_function = "ClickBegin",
-                function_owner = self,
-                label = "Begin the Journey",
-                position = {0, 0.1, 0.75},
-                width = 1500,
-                height = 300,
-                font_size = 175,
-                color = {1, 1, 1},
-                tooltip = "Start setting up the game with Scripted assistance."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "ClickNoScripting",
-                function_owner = self,
-                label = "No Scripting Please",
-                position = {-0.8, 0.1, 1.4},
-                width = 600,
-                height = 100,
-                font_size = 50,
-                color = {1, 1, 1},
-                tooltip = "Turn off scripting."
-            }
-        )
-        if Global.getVar("Mute") then
-            self.createButton(
-                {
-                    click_function = "ToggleMute",
-                    function_owner = self,
-                    label = "Sound Effects: OFF",
-                    position = {0.8, 0.1, 1.4},
-                    width = 600,
-                    height = 100,
-                    font_size = 50,
-                    color = {1, 1, 1},
-                    tooltip = "Click to toggle Sound Effects ON."
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "ToggleMute",
-                    function_owner = self,
-                    label = "Sound Effects: ON",
-                    position = {0.8, 0.1, 1.4},
-                    width = 600,
-                    height = 100,
-                    font_size = 50,
-                    color = {1, 1, 0},
-                    tooltip = "Click to toggle Sound Effects OFF."
-                }
-            )
-        end
-
-        function ClickBegin()
-            self.clearButtons()
-            Global.call("PlaySound", {ID = 0})
-            --Music Violin
-            NextStep = "PlayersMenu"
-            Step = ""
-        end
-
-        function ClickNoScripting()
-            self.clearButtons()
-            NextStep = "KillGamePanel"
-            Step = ""
-        end
-
-        function ToggleMute()
-            self.clearButtons()
-            if getObjectFromGUID(Global.getVar("SoundCubeID")) == nil then
-                printToAll("Sound Cube is missing so sounds are Muted.")
-                Global.setVar("Mute", true)
-            else
-                if Global.getVar("Mute") then
-                    Global.setVar("Mute", false)
-                    getObjectFromGUID(Global.getVar("SoundCubeID")).setDescription("SoundCube;")
-                else
-                    Global.setVar("Mute", true)
-                    getObjectFromGUID(Global.getVar("SoundCubeID")).setDescription("SoundCube;Muted;")
-                end
-            end
-
-            getObjectFromGUID(Global.getVar("SoundCubeID")).call("Menu")
-            NextStep = "BeginMenu"
-            Step = ""
-        end
+        createBeginMenu()
     elseif Step == "PlayersMenu" then
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "How Many Players?",
-                position = {0, 0.1, -1.2},
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = {1, 1, 1}
-            }
-        )
-        if Versus == "1v1" then
-            self.createButton(
-                {
-                    click_function = "Choose1v1",
-                    function_owner = self,
-                    label = "2-Player (1 vs 1)",
-                    position = {0, 0.1, -0.6},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 0},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Choose1v2",
-                    function_owner = self,
-                    label = "3-Player (1 vs 2)",
-                    position = {0, 0.1, -0.3},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Choose2v2",
-                    function_owner = self,
-                    label = "4-Player (2 vs 2)",
-                    position = {0, 0.1, 0},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Choose1v1Compact",
-                    function_owner = self,
-                    label = "2-Player (Compact Mode)",
-                    position = {0, 0.1, 0.5},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
-                }
-            )
-        elseif Versus == "1v2" then
-            self.createButton(
-                {
-                    click_function = "Choose1v1",
-                    function_owner = self,
-                    label = "2-Player (1 vs 1)",
-                    position = {0, 0.1, -0.6},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Choose1v2",
-                    function_owner = self,
-                    label = "3-Player (1 vs 2)",
-                    position = {0, 0.1, -0.3},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 0},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Choose2v2",
-                    function_owner = self,
-                    label = "4-Player (2 vs 2)",
-                    position = {0, 0.1, 0},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Choose1v1Compact",
-                    function_owner = self,
-                    label = "2-Player (Compact Mode)",
-                    position = {0, 0.1, 0.5},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
-                }
-            )
-        elseif Versus == "2v2" then
-            self.createButton(
-                {
-                    click_function = "Choose1v1",
-                    function_owner = self,
-                    label = "2-Player (1 vs 1)",
-                    position = {0, 0.1, -0.6},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Choose1v2",
-                    function_owner = self,
-                    label = "3-Player (1 vs 2)",
-                    position = {0, 0.1, -0.3},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Choose2v2",
-                    function_owner = self,
-                    label = "4-Player (2 vs 2)",
-                    position = {0, 0.1, 0},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 0},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Choose1v1Compact",
-                    function_owner = self,
-                    label = "2-Player (Compact Mode)",
-                    position = {0, 0.1, 0.5},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
-                }
-            )
-        elseif Versus == "1v1 Compact Mode" then
-            self.createButton(
-                {
-                    click_function = "Choose1v1",
-                    function_owner = self,
-                    label = "2-Player (1 vs 1)",
-                    position = {0, 0.1, -0.6},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Choose1v2",
-                    function_owner = self,
-                    label = "3-Player (1 vs 2)",
-                    position = {0, 0.1, -0.3},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Choose2v2",
-                    function_owner = self,
-                    label = "4-Player (2 vs 2)",
-                    position = {0, 0.1, 0},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Choose1v1Compact",
-                    function_owner = self,
-                    label = "2-Player (Compact Mode)",
-                    position = {0, 0.1, 0.5},
-                    width = 1600,
-                    height = 150,
-                    color = {1, 1, 0},
-                    font_size = 75,
-                    tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
-                }
-            )
-        end
-
-        self.createButton(
-            {
-                click_function = "Continue",
-                function_owner = self,
-                label = "Continue (" .. Versus .. ")",
-                position = {0, 0.1, 1},
-                width = 1600,
-                height = 200,
-                color = {1, 1, 1},
-                font_size = 100
-            }
-        )
-        function Choose1v1()
-            self.clearButtons()
-            Versus = "1v1"
-            CompactMode = false
-            NextStep = "PlayersMenu"
-            Step = ""
-        end
-
-        function Choose1v2()
-            self.clearButtons()
-            Versus = "1v2"
-            CompactMode = false
-            NextStep = "PlayersMenu"
-            Step = ""
-        end
-
-        function Choose2v2()
-            self.clearButtons()
-            Versus = "2v2"
-            CompactMode = false
-            NextStep = "PlayersMenu"
-            Step = ""
-        end
-
-        function Choose1v1Compact()
-            self.clearButtons()
-            Versus = "1v1 Compact Mode"
-            CompactMode = true
-            NextStep = "PlayersMenu"
-            Step = ""
-        end
-
-        function Continue()
-            self.clearButtons()
-            NextStep = "ExpansionMenu"
-            CompactMode = Versus == "1v1 Compact Mode"
-            Global.setVar("CompactMode", CompactMode)
-            --update here so BotF can benefit if it is used...
-            if CompactMode then
-                local GlobalSpots = Global.getTable("Spots")
-                GlobalSpots.CompanionCards.Separated = GlobalSpots.Compact.CompanionCards.Separated
-                GlobalSpots.CompanionCards.Searched = GlobalSpots.Compact.CompanionCards.Searched
-                Global.setTable("Spots", GlobalSpots)
-                Spots.ShadowDiceBox = Spots.CompactShadowUsedDice
-                Spots.FreePeoplesDiceBox = Spots.CompactFreePeoplesUsedDice
-                FlagString = FlagString .. "Compact;"
-            end
-
-            if Versus == "1v1" or Versus == "1v1 Compact Mode" then
-                --remove Yellow Label
-                --remove Green and Yellow hand zones...
-                getObjectFromGUID("588435").destruct()
-                --remove green hand
-                getObjectFromGUID("71d77a").destruct()
-                --remove yellow hand
-                getObjectFromGUID("c6a821").destruct()
-                --remove Blue Label
-                getObjectFromGUID("a3fdbb").destruct()
-                --remove Green Label
-                getObjectFromGUID("c2de22").destruct()
-                --remove Red Label
-                getObjectFromGUID("039537").destruct()
-            elseif Versus == "1v2" then
-                --remove Green hand zone...
-                getObjectFromGUID("588435").destruct()
-                --remove green hand
-                getObjectFromGUID("c6a821").destruct()
-                --remove Blue Label
-                getObjectFromGUID("a3fdbb").destruct()
-            --remove Green Label
-            end
-
-            Step = ""
-        end
+        createPlayersMenu()
     elseif Step == "ExpansionMenu" then
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Expansion Content?",
-                position = {0, 0.1, -1.3},
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = {1, 1, 1}
-            }
-        )
-        if LoME then
-            self.createButton(
-                {
-                    click_function = "ToggleLoME",
-                    function_owner = self,
-                    label = "Included: Lords of Middle-Earth",
-                    position = {0, 0.1, -0.9},
-                    width = 1800,
-                    height = 150,
-                    color = {1, 1, 0},
-                    font_size = 80,
-                    tooltip = "Click to exclude."
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "ToggleLoME",
-                    function_owner = self,
-                    label = "Excluded: Lords of Middle-Earth",
-                    position = {0, 0.1, -0.9},
-                    width = 1800,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 80,
-                    tooltip = "Click to include."
-                }
-            )
-        end
-
-        if WoME then
-            self.createButton(
-                {
-                    click_function = "ToggleWoME",
-                    function_owner = self,
-                    label = "Included: Warriors of Middle-Earth",
-                    position = {0, 0.1, -0.6},
-                    width = 1800,
-                    height = 150,
-                    color = {1, 1, 0},
-                    font_size = 80,
-                    tooltip = "Click to exclude."
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "ToggleWoME",
-                    function_owner = self,
-                    label = "Excluded: Warriors of Middle-Earth",
-                    position = {0, 0.1, -0.6},
-                    width = 1800,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 80,
-                    tooltip = "Click to include."
-                }
-            )
-        end
-
-        if KoME then
-            self.createButton(
-                {
-                    click_function = "ToggleKoME",
-                    function_owner = self,
-                    label = "Included: Kings of Middle-Earth",
-                    position = {0, 0.1, -0.3},
-                    width = 1800,
-                    height = 150,
-                    color = {1, 1, 0},
-                    font_size = 80,
-                    tooltip = "Click to exclude."
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "ToggleKoME",
-                    function_owner = self,
-                    label = "Excluded: Kings of Middle-Earth",
-                    position = {0, 0.1, -0.3},
-                    width = 1800,
-                    height = 150,
-                    color = {1, 1, 1},
-                    font_size = 80,
-                    tooltip = "Click to include."
-                }
-            )
-        end
-
-        if BotF then
-            self.createButton(
-                {
-                    click_function = "ToggleBotF",
-                    function_owner = self,
-                    label = "Included: The Breaking of the Fellowship",
-                    position = {0, 0.1, 0.05},
-                    width = 1400,
-                    height = 100,
-                    color = {1, 1, 0},
-                    font_size = 70,
-                    tooltip = "Click to exclude: The Breaking of the Fellowship (a mini-expansion)."
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "ToggleBotF",
-                    function_owner = self,
-                    label = "Excluded: The Breaking of the Fellowship",
-                    position = {0, 0.1, 0.05},
-                    width = 1400,
-                    height = 100,
-                    color = {1, 1, 1},
-                    font_size = 70,
-                    tooltip = "Click to include: The Breaking of the Fellowship (a mini-expansion)."
-                }
-            )
-        end
-
-        if HftR then
-            self.createButton(
-                {
-                    click_function = "ToggleHftR",
-                    function_owner = self,
-                    label = "Included: The Hunt for the Ring",
-                    position = {0, 0.1, 0.35},
-                    width = 1400,
-                    height = 100,
-                    color = {1, 1, 0},
-                    font_size = 70,
-                    tooltip = "Click to exclude.\nTThis is a mini-expansion from The Hunt for the Ring."
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "ToggleHftR",
-                    function_owner = self,
-                    label = "Excluded: The Hunt for the Ring",
-                    position = {0, 0.1, 0.35},
-                    width = 1400,
-                    height = 100,
-                    color = {1, 1, 1},
-                    font_size = 70,
-                    tooltip = "Click to include.\nThis is a mini-expansion from The Hunt for the Ring."
-                }
-            )
-        end
-
-        if TFoE then
-            self.createButton(
-                {
-                    click_function = "ToggleTFoE",
-                    function_owner = self,
-                    label = "Included: The Fate of Erebor",
-                    position = {0, 0.1, 0.65},
-                    width = 1400,
-                    height = 100,
-                    color = {1, 1, 0},
-                    font_size = 70,
-                    tooltip = "Click to exclude.\nThe Fate of Erebor is a mini-expansion from the Battle of the Five Armies."
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "ToggleTFoE",
-                    function_owner = self,
-                    label = "Excluded: The Fate of Erebor",
-                    position = {0, 0.1, 0.65},
-                    width = 1400,
-                    height = 100,
-                    color = {1, 1, 1},
-                    font_size = 70,
-                    tooltip = "Click to include.\nThe Fate of Erebor is a mini-expansion from the Battle of the Five Armies."
-                }
-            )
-        end
-
-        self.createButton(
-            {
-                click_function = "Continue",
-                function_owner = self,
-                label = "Continue",
-                position = {0, 0.1, 1.3},
-                width = 1800,
-                height = 200,
-                color = {1, 1, 1},
-                font_size = 100
-            }
-        )
-        function ToggleLoME()
-            LoME = not LoME
-            NextStep = "ExpansionMenu"
-            Step = ""
-        end
-
-        function ToggleWoME()
-            WoME = not WoME
-            NextStep = "ExpansionMenu"
-            Step = ""
-        end
-
-        function ToggleKoME()
-            KoME = not KoME
-            NextStep = "ExpansionMenu"
-            Step = ""
-        end
-
-        function ToggleBotF()
-            BotF = not BotF
-            NextStep = "ExpansionMenu"
-            Step = ""
-        end
-
-        function ToggleTFoE()
-            TFoE = not TFoE
-            NextStep = "ExpansionMenu"
-            Step = ""
-        end
-
-        function ToggleHftR()
-            HftR = not HftR
-            NextStep = "ExpansionMenu"
-            Step = ""
-        end
-
-        function Continue()
-            self.clearButtons()
-            NextStep = "HftRMenu"
-            Step = ""
-        end
-    elseif Step == "HftRMenu" then
-        self.clearButtons()
-        SPTCount = 0
-        FPTCount = 0
-        if HftR then
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Hunt for the Ring",
-                    position = {0, 0.1, -1.3},
-                    width = 0,
-                    height = 0,
-                    font_size = 150,
-                    font_color = {1, 1, 1}
-                }
-            )
-            if HftRSPT1 then
-                SPTCount = SPTCount + 1
-                self.createButton(
-                    {
-                        click_function = "ToggleHftRSPT1",
-                        function_owner = self,
-                        label = "Included: Shadow Token (Advance political track)",
-                        position = {0, 0.1, -0.8},
-                        width = 1800,
-                        height = 150,
-                        color = {1, 0.4, 0.4},
-                        font_color = {1, 1, 0},
-                        font_size = 70,
-                        tooltip = "Click to exclude this token."
-                    }
-                )
-            else
-                self.createButton(
-                    {
-                        click_function = "ToggleHftRSPT1",
-                        function_owner = self,
-                        label = "Excluded: Shadow Token (Advance political track)",
-                        position = {0, 0.1, -0.8},
-                        width = 1800,
-                        height = 150,
-                        color = {1, 1, 1},
-                        font_size = 70,
-                        tooltip = "Click to include this token."
-                    }
-                )
-            end
-
-            if HftRSPT2 then
-                SPTCount = SPTCount + 1
-                self.createButton(
-                    {
-                        click_function = "ToggleHftRSPT2",
-                        function_owner = self,
-                        label = "Included: Shadow Token (Move Nazgul and minions)",
-                        position = {0, 0.1, -0.5},
-                        width = 1800,
-                        height = 150,
-                        color = {1, 0.4, 0.4},
-                        font_color = {1, 1, 0},
-                        font_size = 70,
-                        tooltip = "Click to exclude this token."
-                    }
-                )
-            else
-                self.createButton(
-                    {
-                        click_function = "ToggleHftRSPT2",
-                        function_owner = self,
-                        label = "Excluded: Shadow Token (Move Nazgul and minions)",
-                        position = {0, 0.1, -0.5},
-                        width = 1800,
-                        height = 150,
-                        color = {1, 1, 1},
-                        font_size = 70,
-                        tooltip = "Click to include this token."
-                    }
-                )
-            end
-
-            if HftRFPT1 then
-                FPTCount = FPTCount + 1
-                self.createButton(
-                    {
-                        click_function = "ToggleHftRFPT1",
-                        function_owner = self,
-                        label = "Included: Free Peoples Token (Advance political track)",
-                        position = {0, 0.1, 0},
-                        width = 1800,
-                        height = 150,
-                        color = {0.4, 0.4, 1},
-                        font_color = {1, 1, 0},
-                        font_size = 70,
-                        tooltip = "Click to exclude this token."
-                    }
-                )
-            else
-                self.createButton(
-                    {
-                        click_function = "ToggleHftRFPT1",
-                        function_owner = self,
-                        label = "Excluded: Free Peoples Token (Advance political track)",
-                        position = {0, 0.1, 0},
-                        width = 1800,
-                        height = 150,
-                        color = {1, 1, 1},
-                        font_size = 70,
-                        tooltip = "Click to include this token."
-                    }
-                )
-            end
-
-            if HftRFPT2 then
-                FPTCount = FPTCount + 1
-                self.createButton(
-                    {
-                        click_function = "ToggleHftRFPT2",
-                        function_owner = self,
-                        label = "Included: Free Peoples Token (Draw event card)",
-                        position = {0, 0.1, 0.3},
-                        width = 1800,
-                        height = 150,
-                        color = {0.4, 0.4, 1},
-                        font_color = {1, 1, 0},
-                        font_size = 70,
-                        tooltip = "Click to exclude this token."
-                    }
-                )
-            else
-                self.createButton(
-                    {
-                        click_function = "ToggleHftRFPT2",
-                        function_owner = self,
-                        label = "Excluded: Free Peoples Token (Draw event card)",
-                        position = {0, 0.1, 0.3},
-                        width = 1800,
-                        height = 150,
-                        color = {1, 1, 1},
-                        font_size = 70,
-                        tooltip = "Click to include this token."
-                    }
-                )
-            end
-
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Shadow has " .. SPTCount .. " tokens. Free Peoples has " .. FPTCount .. " tokens.",
-                    position = {0, 0.1, 1},
-                    width = 0,
-                    height = 0,
-                    font_size = 70,
-                    font_color = {1, 1, 1}
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Continue",
-                    function_owner = self,
-                    label = "Continue",
-                    position = {0, 0.1, 1.3},
-                    width = 1800,
-                    height = 200,
-                    color = {1, 1, 1},
-                    font_size = 100
-                }
-            )
-            function ToggleHftRSPT1()
-                HftRSPT1 = not HftRSPT1
-                NextStep = "HftRMenu"
-                Step = ""
-            end
-
-            function ToggleHftRSPT2()
-                HftRSPT2 = not HftRSPT2
-                NextStep = "HftRMenu"
-                Step = ""
-            end
-
-            function ToggleHftRFPT1()
-                HftRFPT1 = not HftRFPT1
-                NextStep = "HftRMenu"
-                Step = ""
-            end
-
-            function ToggleHftRFPT2()
-                HftRFPT2 = not HftRFPT2
-                NextStep = "HftRMenu"
-                Step = ""
-            end
-
-            function Continue()
-                self.clearButtons()
-                printToAll("The Shadow received " .. SPTCount .. " Action Tokens from The Hunt for the Ring.")
-                if HftRSPT1 then
-                    getObjectFromGUID(IDs.HftR.ShadowToken1).setPositionSmooth({12.5, 1.02, -33}, false, true)
-                end
-
-                if HftRSPT2 then
-                    getObjectFromGUID(IDs.HftR.ShadowToken2).setPositionSmooth({12.5, 1.02, -35}, false, true)
-                end
-
-                printToAll("The Free Peoples received " .. FPTCount .. " Action Tokens from The Hunt for the Ring.")
-                if CompactMode then
-                    if HftRFPT1 then
-                        getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({-13, 1.02, -33}, false, true)
-                    end
-
-                    if HftRFPT2 then
-                        getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({-13, 1.02, -35}, false, true)
-                    end
-                else
-                    if HftRFPT1 then
-                        getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({-17, 1.02, 27.5}, false, true)
-                    end
-
-                    if HftRFPT2 then
-                        getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({-19, 1.02, 27.5}, false, true)
-                    end
-                end
-
-                NextStep = "TFoEMenu"
-                Step = ""
-            end
-        else --proceed...
-            Global.call("RemoveObjectFromGame", {Description = "HftR;"})
-            NextStep = "TFoEMenu"
-            Step = ""
-        end
+        createExpansionMenu()
+    elseif Step == "HuntForTheRingMenu" then
+        createHuntForTheRingMenu()
     elseif Step == "TFoEMenu" then
         self.clearButtons()
         if TFoE then
@@ -6050,6 +5031,1051 @@ function ProcessNextStep()
     end
 
     return 1
+end
+
+function createBeginMenu()
+    LoME = false
+    WoME = false
+    self.clearButtons()
+    MoveGamePanel("All")
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Blue Seat\nFree Peoples Player 1 (Gondor)",
+            position = {-7.6, 79, 1.7},
+            rotation = {90, 90, 0},
+            scale = {4, 1, 1},
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = {0.4, 0.4, 1}
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Red Seat\nShadow Player 1 (Witch-King)",
+            position = {7.6, 28, 1.7},
+            rotation = {90, 270, 0},
+            scale = {4, 1, 1},
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = {1, 0, 0}
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Yellow Seat\nShadow Player 2 (Saruman)",
+            position = {7.6, 79, 1.7},
+            rotation = {90, 270, 0},
+            scale = {4, 1, 1},
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = {1, 1, 0}
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Green Seat\nFree Peoples Player 2 (Rohan)",
+            position = {-7.6, 28, 1.7},
+            rotation = {90, 90, 0},
+            scale = {4, 1, 1},
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = {0, 1, 0}
+        }
+    )
+
+    if Player.Red.steam_name ~= nil then
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Shadow (Player 1): " .. Player.Red.steam_name,
+                position = {0, 0.1, -0.6},
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = {1, 0.4, 0.4}
+            }
+        )
+    else
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Shadow (Player 1): Choose red seat",
+                position = {0, 0.1, -0.6},
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = {1, 0.4, 0.4}
+            }
+        )
+    end
+
+    if Player.Blue.steam_name ~= nil then
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Free Peoples (Player 2): " .. Player.Blue.steam_name,
+                position = {0, 0.1, 0},
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = {0.4, 0.4, 1}
+            }
+        )
+    else
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Free Peoples (Player 2): Choose blue seat",
+                position = {0, 0.1, 0},
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = {0.4, 0.4, 1}
+            }
+        )
+    end
+
+    if Player.Yellow.steam_name ~= nil then
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Shadow (Player 3): " .. Player.Yellow.steam_name,
+                position = {0, 0.1, -0.4},
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = {1, 1, 0.4}
+            }
+        )
+    end
+
+    if Player.Green.steam_name ~= nil then
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Free Peoples (Player 4): " .. Player.Green.steam_name,
+                position = {0, 0.1, 0.2},
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = {0.4, 1, 0.4}
+            }
+        )
+    end
+
+    self.createButton(
+        {
+            click_function = "ClickBegin",
+            function_owner = self,
+            label = "Begin the Journey",
+            position = {0, 0.1, 0.75},
+            width = 1500,
+            height = 300,
+            font_size = 175,
+            color = {1, 1, 1},
+            tooltip = "Start setting up the game with Scripted assistance."
+        }
+    )
+
+    self.createButton(
+        {
+            click_function = "ClickNoScripting",
+            function_owner = self,
+            label = "No Scripting Please",
+            position = {-0.8, 0.1, 1.4},
+            width = 600,
+            height = 100,
+            font_size = 50,
+            color = {1, 1, 1},
+            tooltip = "Turn off scripting."
+        }
+    )
+    
+    if Global.getVar("Mute") then
+        self.createButton(
+            {
+                click_function = "ToggleMute",
+                function_owner = self,
+                label = "Sound Effects: OFF",
+                position = {0.8, 0.1, 1.4},
+                width = 600,
+                height = 100,
+                font_size = 50,
+                color = {1, 1, 1},
+                tooltip = "Click to toggle Sound Effects ON."
+            }
+        )
+    else
+        self.createButton(
+            {
+                click_function = "ToggleMute",
+                function_owner = self,
+                label = "Sound Effects: ON",
+                position = {0.8, 0.1, 1.4},
+                width = 600,
+                height = 100,
+                font_size = 50,
+                color = {1, 1, 0},
+                tooltip = "Click to toggle Sound Effects OFF."
+            }
+        )
+    end
+
+    function ClickBegin()
+        self.clearButtons()
+        Global.call("PlaySound", {ID = 0})
+        --Music Violin
+        NextStep = "PlayersMenu"
+        Step = ""
+    end
+
+    function ClickNoScripting()
+        self.clearButtons()
+        NextStep = "KillGamePanel"
+        Step = ""
+    end
+
+    function ToggleMute()
+        self.clearButtons()
+        if getObjectFromGUID(Global.getVar("SoundCubeID")) == nil then
+            printToAll("Sound Cube is missing so sounds are Muted.")
+            Global.setVar("Mute", true)
+        else
+            if Global.getVar("Mute") then
+                Global.setVar("Mute", false)
+                getObjectFromGUID(Global.getVar("SoundCubeID")).setDescription("SoundCube;")
+            else
+                Global.setVar("Mute", true)
+                getObjectFromGUID(Global.getVar("SoundCubeID")).setDescription("SoundCube;Muted;")
+            end
+        end
+
+        getObjectFromGUID(Global.getVar("SoundCubeID")).call("Menu")
+        NextStep = "BeginMenu"
+        Step = ""
+    end
+end
+
+function createPlayersMenu()
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "How Many Players?",
+            position = {0, 0.1, -1.2},
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = {1, 1, 1}
+        }
+    )
+
+    if Versus == "1v1" then
+        self.createButton(
+            {
+                click_function = "Choose1v1",
+                function_owner = self,
+                label = "2-Player (1 vs 1)",
+                position = {0, 0.1, -0.6},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 0},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Choose1v2",
+                function_owner = self,
+                label = "3-Player (1 vs 2)",
+                position = {0, 0.1, -0.3},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Choose2v2",
+                function_owner = self,
+                label = "4-Player (2 vs 2)",
+                position = {0, 0.1, 0},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Choose1v1Compact",
+                function_owner = self,
+                label = "2-Player (Compact Mode)",
+                position = {0, 0.1, 0.5},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
+            }
+        )
+    elseif Versus == "1v2" then
+        self.createButton(
+            {
+                click_function = "Choose1v1",
+                function_owner = self,
+                label = "2-Player (1 vs 1)",
+                position = {0, 0.1, -0.6},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Choose1v2",
+                function_owner = self,
+                label = "3-Player (1 vs 2)",
+                position = {0, 0.1, -0.3},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 0},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Choose2v2",
+                function_owner = self,
+                label = "4-Player (2 vs 2)",
+                position = {0, 0.1, 0},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Choose1v1Compact",
+                function_owner = self,
+                label = "2-Player (Compact Mode)",
+                position = {0, 0.1, 0.5},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
+            }
+        )
+    elseif Versus == "2v2" then
+        self.createButton(
+            {
+                click_function = "Choose1v1",
+                function_owner = self,
+                label = "2-Player (1 vs 1)",
+                position = {0, 0.1, -0.6},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Choose1v2",
+                function_owner = self,
+                label = "3-Player (1 vs 2)",
+                position = {0, 0.1, -0.3},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Choose2v2",
+                function_owner = self,
+                label = "4-Player (2 vs 2)",
+                position = {0, 0.1, 0},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 0},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Choose1v1Compact",
+                function_owner = self,
+                label = "2-Player (Compact Mode)",
+                position = {0, 0.1, 0.5},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
+            }
+        )
+    elseif Versus == "1v1 Compact Mode" then
+        self.createButton(
+            {
+                click_function = "Choose1v1",
+                function_owner = self,
+                label = "2-Player (1 vs 1)",
+                position = {0, 0.1, -0.6},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Choose1v2",
+                function_owner = self,
+                label = "3-Player (1 vs 2)",
+                position = {0, 0.1, -0.3},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Choose2v2",
+                function_owner = self,
+                label = "4-Player (2 vs 2)",
+                position = {0, 0.1, 0},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Choose1v1Compact",
+                function_owner = self,
+                label = "2-Player (Compact Mode)",
+                position = {0, 0.1, 0.5},
+                width = 1600,
+                height = 150,
+                color = {1, 1, 0},
+                font_size = 75,
+                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
+            }
+        )
+    end
+
+    self.createButton(
+        {
+            click_function = "Continue",
+            function_owner = self,
+            label = "Continue (" .. Versus .. ")",
+            position = {0, 0.1, 1},
+            width = 1600,
+            height = 200,
+            color = {1, 1, 1},
+            font_size = 100
+        }
+    )
+
+    function Choose1v1()
+        self.clearButtons()
+        Versus = "1v1"
+        CompactMode = false
+        NextStep = "PlayersMenu"
+        Step = ""
+    end
+
+    function Choose1v2()
+        self.clearButtons()
+        Versus = "1v2"
+        CompactMode = false
+        NextStep = "PlayersMenu"
+        Step = ""
+    end
+
+    function Choose2v2()
+        self.clearButtons()
+        Versus = "2v2"
+        CompactMode = false
+        NextStep = "PlayersMenu"
+        Step = ""
+    end
+
+    function Choose1v1Compact()
+        self.clearButtons()
+        Versus = "1v1 Compact Mode"
+        CompactMode = true
+        NextStep = "PlayersMenu"
+        Step = ""
+    end
+
+    function Continue()
+        self.clearButtons()
+        NextStep = "ExpansionMenu"
+        CompactMode = Versus == "1v1 Compact Mode"
+        Global.setVar("CompactMode", CompactMode)
+
+        --update here so BotF can benefit if it is used...
+        if CompactMode then
+            local GlobalSpots = Global.getTable("Spots")
+            GlobalSpots.CompanionCards.Separated = GlobalSpots.Compact.CompanionCards.Separated
+            GlobalSpots.CompanionCards.Searched = GlobalSpots.Compact.CompanionCards.Searched
+            Global.setTable("Spots", GlobalSpots)
+            Spots.ShadowDiceBox = Spots.CompactShadowUsedDice
+            Spots.FreePeoplesDiceBox = Spots.CompactFreePeoplesUsedDice
+            FlagString = FlagString .. "Compact;"
+        end
+
+        if Versus == "1v1" or Versus == "1v1 Compact Mode" then
+            --remove Yellow Label
+            --remove Green and Yellow hand zones...
+            getObjectFromGUID("588435").destruct()
+            --remove green hand
+            getObjectFromGUID("71d77a").destruct()
+            --remove yellow hand
+            getObjectFromGUID("c6a821").destruct()
+            --remove Blue Label
+            getObjectFromGUID("a3fdbb").destruct()
+            --remove Green Label
+            getObjectFromGUID("c2de22").destruct()
+            --remove Red Label
+            getObjectFromGUID("039537").destruct()
+        elseif Versus == "1v2" then
+            --remove Green hand zone...
+            getObjectFromGUID("588435").destruct()
+            --remove green hand
+            getObjectFromGUID("c6a821").destruct()
+            --remove Blue Label
+            getObjectFromGUID("a3fdbb").destruct()
+        --remove Green Label
+        end
+
+        Step = ""
+    end
+end
+
+function createExpansionMenu()
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Expansion Content?",
+            position = {0, 0.1, -1.3},
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = {1, 1, 1}
+        }
+    )
+
+    if LoME then
+        self.createButton(
+            {
+                click_function = "ToggleLoME",
+                function_owner = self,
+                label = "Included: Lords of Middle-Earth",
+                position = {0, 0.1, -0.9},
+                width = 1800,
+                height = 150,
+                color = {1, 1, 0},
+                font_size = 80,
+                tooltip = "Click to exclude."
+            }
+        )
+    else
+        self.createButton(
+            {
+                click_function = "ToggleLoME",
+                function_owner = self,
+                label = "Excluded: Lords of Middle-Earth",
+                position = {0, 0.1, -0.9},
+                width = 1800,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 80,
+                tooltip = "Click to include."
+            }
+        )
+    end
+
+    if WoME then
+        self.createButton(
+            {
+                click_function = "ToggleWoME",
+                function_owner = self,
+                label = "Included: Warriors of Middle-Earth",
+                position = {0, 0.1, -0.6},
+                width = 1800,
+                height = 150,
+                color = {1, 1, 0},
+                font_size = 80,
+                tooltip = "Click to exclude."
+            }
+        )
+    else
+        self.createButton(
+            {
+                click_function = "ToggleWoME",
+                function_owner = self,
+                label = "Excluded: Warriors of Middle-Earth",
+                position = {0, 0.1, -0.6},
+                width = 1800,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 80,
+                tooltip = "Click to include."
+            }
+        )
+    end
+
+    if KoME then
+        self.createButton(
+            {
+                click_function = "ToggleKoME",
+                function_owner = self,
+                label = "Included: Kings of Middle-Earth",
+                position = {0, 0.1, -0.3},
+                width = 1800,
+                height = 150,
+                color = {1, 1, 0},
+                font_size = 80,
+                tooltip = "Click to exclude."
+            }
+        )
+    else
+        self.createButton(
+            {
+                click_function = "ToggleKoME",
+                function_owner = self,
+                label = "Excluded: Kings of Middle-Earth",
+                position = {0, 0.1, -0.3},
+                width = 1800,
+                height = 150,
+                color = {1, 1, 1},
+                font_size = 80,
+                tooltip = "Click to include."
+            }
+        )
+    end
+
+    if BotF then
+        self.createButton(
+            {
+                click_function = "ToggleBotF",
+                function_owner = self,
+                label = "Included: The Breaking of the Fellowship",
+                position = {0, 0.1, 0.05},
+                width = 1400,
+                height = 100,
+                color = {1, 1, 0},
+                font_size = 70,
+                tooltip = "Click to exclude: The Breaking of the Fellowship (a mini-expansion)."
+            }
+        )
+    else
+        self.createButton(
+            {
+                click_function = "ToggleBotF",
+                function_owner = self,
+                label = "Excluded: The Breaking of the Fellowship",
+                position = {0, 0.1, 0.05},
+                width = 1400,
+                height = 100,
+                color = {1, 1, 1},
+                font_size = 70,
+                tooltip = "Click to include: The Breaking of the Fellowship (a mini-expansion)."
+            }
+        )
+    end
+
+    if HftR then
+        self.createButton(
+            {
+                click_function = "ToggleHftR",
+                function_owner = self,
+                label = "Included: The Hunt for the Ring",
+                position = {0, 0.1, 0.35},
+                width = 1400,
+                height = 100,
+                color = {1, 1, 0},
+                font_size = 70,
+                tooltip = "Click to exclude.\nTThis is a mini-expansion from The Hunt for the Ring."
+            }
+        )
+    else
+        self.createButton(
+            {
+                click_function = "ToggleHftR",
+                function_owner = self,
+                label = "Excluded: The Hunt for the Ring",
+                position = {0, 0.1, 0.35},
+                width = 1400,
+                height = 100,
+                color = {1, 1, 1},
+                font_size = 70,
+                tooltip = "Click to include.\nThis is a mini-expansion from The Hunt for the Ring."
+            }
+        )
+    end
+
+    if TFoE then
+        self.createButton(
+            {
+                click_function = "ToggleTFoE",
+                function_owner = self,
+                label = "Included: The Fate of Erebor",
+                position = {0, 0.1, 0.65},
+                width = 1400,
+                height = 100,
+                color = {1, 1, 0},
+                font_size = 70,
+                tooltip = "Click to exclude.\nThe Fate of Erebor is a mini-expansion from the Battle of the Five Armies."
+            }
+        )
+    else
+        self.createButton(
+            {
+                click_function = "ToggleTFoE",
+                function_owner = self,
+                label = "Excluded: The Fate of Erebor",
+                position = {0, 0.1, 0.65},
+                width = 1400,
+                height = 100,
+                color = {1, 1, 1},
+                font_size = 70,
+                tooltip = "Click to include.\nThe Fate of Erebor is a mini-expansion from the Battle of the Five Armies."
+            }
+        )
+    end
+
+    self.createButton(
+        {
+            click_function = "Continue",
+            function_owner = self,
+            label = "Continue",
+            position = {0, 0.1, 1.3},
+            width = 1800,
+            height = 200,
+            color = {1, 1, 1},
+            font_size = 100
+        }
+    )
+
+    function ToggleLoME()
+        LoME = not LoME
+        NextStep = "ExpansionMenu"
+        Step = ""
+    end
+
+    function ToggleWoME()
+        WoME = not WoME
+        NextStep = "ExpansionMenu"
+        Step = ""
+    end
+
+    function ToggleKoME()
+        KoME = not KoME
+        NextStep = "ExpansionMenu"
+        Step = ""
+    end
+
+    function ToggleBotF()
+        BotF = not BotF
+        NextStep = "ExpansionMenu"
+        Step = ""
+    end
+
+    function ToggleTFoE()
+        TFoE = not TFoE
+        NextStep = "ExpansionMenu"
+        Step = ""
+    end
+
+    function ToggleHftR()
+        HftR = not HftR
+        NextStep = "ExpansionMenu"
+        Step = ""
+    end
+
+    function Continue()
+        self.clearButtons()
+        NextStep = "HuntForTheRingMenu"
+        Step = ""
+    end
+end
+
+function createHuntForTheRingMenu()
+    self.clearButtons()
+    SPTCount = 0
+    FPTCount = 0
+
+    if HftR then
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Hunt for the Ring",
+                position = {0, 0.1, -1.3},
+                width = 0,
+                height = 0,
+                font_size = 150,
+                font_color = {1, 1, 1}
+            }
+        )
+        if HftRSPT1 then
+            SPTCount = SPTCount + 1
+            self.createButton(
+                {
+                    click_function = "ToggleHftRSPT1",
+                    function_owner = self,
+                    label = "Included: Shadow Token (Advance political track)",
+                    position = {0, 0.1, -0.8},
+                    width = 1800,
+                    height = 150,
+                    color = {1, 0.4, 0.4},
+                    font_color = {1, 1, 0},
+                    font_size = 70,
+                    tooltip = "Click to exclude this token."
+                }
+            )
+        else
+            self.createButton(
+                {
+                    click_function = "ToggleHftRSPT1",
+                    function_owner = self,
+                    label = "Excluded: Shadow Token (Advance political track)",
+                    position = {0, 0.1, -0.8},
+                    width = 1800,
+                    height = 150,
+                    color = {1, 1, 1},
+                    font_size = 70,
+                    tooltip = "Click to include this token."
+                }
+            )
+        end
+
+        if HftRSPT2 then
+            SPTCount = SPTCount + 1
+            self.createButton(
+                {
+                    click_function = "ToggleHftRSPT2",
+                    function_owner = self,
+                    label = "Included: Shadow Token (Move Nazgul and minions)",
+                    position = {0, 0.1, -0.5},
+                    width = 1800,
+                    height = 150,
+                    color = {1, 0.4, 0.4},
+                    font_color = {1, 1, 0},
+                    font_size = 70,
+                    tooltip = "Click to exclude this token."
+                }
+            )
+        else
+            self.createButton(
+                {
+                    click_function = "ToggleHftRSPT2",
+                    function_owner = self,
+                    label = "Excluded: Shadow Token (Move Nazgul and minions)",
+                    position = {0, 0.1, -0.5},
+                    width = 1800,
+                    height = 150,
+                    color = {1, 1, 1},
+                    font_size = 70,
+                    tooltip = "Click to include this token."
+                }
+            )
+        end
+
+        if HftRFPT1 then
+            FPTCount = FPTCount + 1
+            self.createButton(
+                {
+                    click_function = "ToggleHftRFPT1",
+                    function_owner = self,
+                    label = "Included: Free Peoples Token (Advance political track)",
+                    position = {0, 0.1, 0},
+                    width = 1800,
+                    height = 150,
+                    color = {0.4, 0.4, 1},
+                    font_color = {1, 1, 0},
+                    font_size = 70,
+                    tooltip = "Click to exclude this token."
+                }
+            )
+        else
+            self.createButton(
+                {
+                    click_function = "ToggleHftRFPT1",
+                    function_owner = self,
+                    label = "Excluded: Free Peoples Token (Advance political track)",
+                    position = {0, 0.1, 0},
+                    width = 1800,
+                    height = 150,
+                    color = {1, 1, 1},
+                    font_size = 70,
+                    tooltip = "Click to include this token."
+                }
+            )
+        end
+
+        if HftRFPT2 then
+            FPTCount = FPTCount + 1
+            self.createButton(
+                {
+                    click_function = "ToggleHftRFPT2",
+                    function_owner = self,
+                    label = "Included: Free Peoples Token (Draw event card)",
+                    position = {0, 0.1, 0.3},
+                    width = 1800,
+                    height = 150,
+                    color = {0.4, 0.4, 1},
+                    font_color = {1, 1, 0},
+                    font_size = 70,
+                    tooltip = "Click to exclude this token."
+                }
+            )
+        else
+            self.createButton(
+                {
+                    click_function = "ToggleHftRFPT2",
+                    function_owner = self,
+                    label = "Excluded: Free Peoples Token (Draw event card)",
+                    position = {0, 0.1, 0.3},
+                    width = 1800,
+                    height = 150,
+                    color = {1, 1, 1},
+                    font_size = 70,
+                    tooltip = "Click to include this token."
+                }
+            )
+        end
+
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Shadow has " .. SPTCount .. " tokens. Free Peoples has " .. FPTCount .. " tokens.",
+                position = {0, 0.1, 1},
+                width = 0,
+                height = 0,
+                font_size = 70,
+                font_color = {1, 1, 1}
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Continue",
+                function_owner = self,
+                label = "Continue",
+                position = {0, 0.1, 1.3},
+                width = 1800,
+                height = 200,
+                color = {1, 1, 1},
+                font_size = 100
+            }
+        )
+        function ToggleHftRSPT1()
+            HftRSPT1 = not HftRSPT1
+            NextStep = "HuntForTheRingMenu"
+            Step = ""
+        end
+
+        function ToggleHftRSPT2()
+            HftRSPT2 = not HftRSPT2
+            NextStep = "HuntForTheRingMenu"
+            Step = ""
+        end
+
+        function ToggleHftRFPT1()
+            HftRFPT1 = not HftRFPT1
+            NextStep = "HuntForTheRingMenu"
+            Step = ""
+        end
+
+        function ToggleHftRFPT2()
+            HftRFPT2 = not HftRFPT2
+            NextStep = "HuntForTheRingMenu"
+            Step = ""
+        end
+
+        function Continue()
+            self.clearButtons()
+            printToAll("The Shadow received " .. SPTCount .. " Action Tokens from The Hunt for the Ring.")
+            if HftRSPT1 then
+                getObjectFromGUID(IDs.HftR.ShadowToken1).setPositionSmooth({12.5, 1.02, -33}, false, true)
+            end
+
+            if HftRSPT2 then
+                getObjectFromGUID(IDs.HftR.ShadowToken2).setPositionSmooth({12.5, 1.02, -35}, false, true)
+            end
+
+            printToAll("The Free Peoples received " .. FPTCount .. " Action Tokens from The Hunt for the Ring.")
+            if CompactMode then
+                if HftRFPT1 then
+                    getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({-13, 1.02, -33}, false, true)
+                end
+
+                if HftRFPT2 then
+                    getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({-13, 1.02, -35}, false, true)
+                end
+            else
+                if HftRFPT1 then
+                    getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({-17, 1.02, 27.5}, false, true)
+                end
+
+                if HftRFPT2 then
+                    getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({-19, 1.02, 27.5}, false, true)
+                end
+            end
+
+            NextStep = "TFoEMenu"
+            Step = ""
+        end
+    else --proceed...
+        Global.call("RemoveObjectFromGame", {Description = "HftR;"})
+        NextStep = "TFoEMenu"
+        Step = ""
+    end
 end
 
 function GatherActionDiceCoroutine()
