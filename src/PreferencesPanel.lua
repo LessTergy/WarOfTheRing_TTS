@@ -790,39 +790,6 @@ function FigureScaleDown()
     startLuaCoroutine(self, "ChangeFigureScaleCoroutine")
 end
 
-function NewCharacters3D()
-    function Characters3DCoroutine()
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "ApplyPreferences",
-                function_owner = self,
-                label = "Please Wait\nApplying Preferences...",
-                position = {0, 0.1, 0},
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = {1, 1, 1}
-            }
-        )
-        Characters = "3D"
-        local ObjList = {}
-        for I, Item in pairs(getObjectFromGUID("0e5fd1")).getObjects() do
-            if string.find(Item.description, "3D;") ~= nil then
-                if string.find(Item.description, "Minion;") ~= nil or string.find(Item.description, "Character;") ~= nil then
-                    table.insert(ObjList, Item.guid)
-                end
-            end
-        end
-        --for I,Item
-        coroutine.yield(0)
-
-        MainMenu()
-    end
-
-    startLuaCoroutine(self, "Characters3DCoroutine")
-end
-
 function Characters3D()
     Characters = "3D"
     Apply = true
@@ -1073,22 +1040,24 @@ function ToggleDicePanels()
     local DPO = nil --dice panel object
     local DPS = {} --dice panel spots
     local DPY = 0 --dice panel fpp y rotation
+    local ComponentsBag = getObjectFromGUID("0e5fd1")
+
     for O, Obj in pairs(getAllObjects()) do
         if Obj.getName() == "(Free Peoples Combat Die)" or Obj.getName() == "(Shadow Combat Die)" then
             Obj.destruct()
         end
     end
-    --for O,Obj
+
     if DicePanels == "Sic" then
         DicePanels = "Strips"
         if getObjectFromGUID("4b6f4c") ~= nil then
-            getObjectFromGUID("0e5fd1").setLock(false)
-            getObjectFromGUID("0e5fd1").putObject(getObjectFromGUID("4b6f4c"))
+            ComponentsBag.setLock(false)
+            ComponentsBag.putObject(getObjectFromGUID("4b6f4c"))
         end
 
         if getObjectFromGUID("92a611") ~= nil then
-            getObjectFromGUID("0e5fd1").setLock(false)
-            getObjectFromGUID("0e5fd1").putObject(getObjectFromGUID("92a611"))
+            ComponentsBag.setLock(false)
+            ComponentsBag.putObject(getObjectFromGUID("92a611"))
         end
 
         if Global.getVar("CompactMode") then
@@ -1113,7 +1082,7 @@ function ToggleDicePanels()
         if getObjectFromGUID("9847f7") ~= nil then
             DPO = getObjectFromGUID("9847f7")
         else
-            DPO = getObjectFromGUID("0e5fd1").takeObject({guid = "9847f7", position = DPS.Red, rotation = {0, 180, 0}})
+            DPO = ComponentsBag.takeObject({guid = "9847f7", position = DPS.Red, rotation = {0, 180, 0}})
         end
 
         if DPO ~= nil then
@@ -1126,8 +1095,8 @@ function ToggleDicePanels()
         if getObjectFromGUID("63319b") ~= nil then
             DPO = getObjectFromGUID("63319b")
         else
-            DPO =
-                getObjectFromGUID("0e5fd1").takeObject({guid = "63319b", position = DPS.Black, rotation = {0, 180, 0}})
+            DPO = 
+                ComponentsBag.takeObject({guid = "63319b", position = DPS.Black, rotation = {0, 180, 0}})
         end
 
         if DPO ~= nil then
@@ -1140,7 +1109,7 @@ function ToggleDicePanels()
         if getObjectFromGUID("637507") ~= nil then
             DPO = getObjectFromGUID("637507")
         else
-            DPO = getObjectFromGUID("0e5fd1").takeObject({guid = "637507", position = DPS.Blue, rotation = {0, DPY, 0}})
+            DPO = ComponentsBag.takeObject({guid = "637507", position = DPS.Blue, rotation = {0, DPY, 0}})
         end
 
         if DPO ~= nil then
@@ -1153,8 +1122,8 @@ function ToggleDicePanels()
         if getObjectFromGUID("f50dab") ~= nil then
             DPO = getObjectFromGUID("f50dab")
         else
-            DPO =
-                getObjectFromGUID("0e5fd1").takeObject({guid = "f50dab", position = DPS.White, rotation = {0, DPY, 0}})
+            DPO = 
+                ComponentsBag.takeObject({guid = "f50dab", position = DPS.White, rotation = {0, DPY, 0}})
         end
 
         if DPO ~= nil then
@@ -1165,23 +1134,23 @@ function ToggleDicePanels()
     else --assume was strips..
         DicePanels = "Sic"
         if getObjectFromGUID("637507") ~= nil then
-            getObjectFromGUID("0e5fd1").setLock(false)
-            getObjectFromGUID("0e5fd1").putObject(getObjectFromGUID("637507"))
+            ComponentsBag.setLock(false)
+            ComponentsBag.putObject(getObjectFromGUID("637507"))
         end
 
         if getObjectFromGUID("f50dab") ~= nil then
-            getObjectFromGUID("0e5fd1").setLock(false)
-            getObjectFromGUID("0e5fd1").putObject(getObjectFromGUID("f50dab"))
+            ComponentsBag.setLock(false)
+            ComponentsBag.putObject(getObjectFromGUID("f50dab"))
         end
 
         if getObjectFromGUID("9847f7") ~= nil then
-            getObjectFromGUID("0e5fd1").setLock(false)
-            getObjectFromGUID("0e5fd1").putObject(getObjectFromGUID("9847f7"))
+            ComponentsBag.setLock(false)
+            ComponentsBag.putObject(getObjectFromGUID("9847f7"))
         end
 
         if getObjectFromGUID("63319b") ~= nil then
-            getObjectFromGUID("0e5fd1").setLock(false)
-            getObjectFromGUID("0e5fd1").putObject(getObjectFromGUID("63319b"))
+            ComponentsBag.setLock(false)
+            ComponentsBag.putObject(getObjectFromGUID("63319b"))
         end
 
         if Global.getVar("CompactMode") then
@@ -1196,7 +1165,7 @@ function ToggleDicePanels()
         if getObjectFromGUID("92a611") ~= nil then
             DPO = getObjectFromGUID("92a611")
         else
-            DPO = getObjectFromGUID("0e5fd1").takeObject({guid = "92a611", position = DPS.S, rotation = {0, 0, 0}})
+            DPO = ComponentsBag.takeObject({guid = "92a611", position = DPS.S, rotation = {0, 0, 0}})
         end
 
         if DPO ~= nil then
@@ -1209,7 +1178,7 @@ function ToggleDicePanels()
         if getObjectFromGUID("4b6f4c") ~= nil then
             DPO = getObjectFromGUID("4b6f4c")
         else
-            DPO = getObjectFromGUID("0e5fd1").takeObject({guid = "4b6f4c", position = DPS.F, rotation = {0, DPY, 0}})
+            DPO = ComponentsBag.takeObject({guid = "4b6f4c", position = DPS.F, rotation = {0, DPY, 0}})
         end
 
         if DPO ~= nil then
@@ -1238,6 +1207,7 @@ function ApplyButton()
             font_color = {1, 1, 1}
         }
     )
+
     function ApplyPreferencesCoroutine()
         local SoundCube = getObjectFromGUID("74cc15")
         --Sound
@@ -1258,14 +1228,15 @@ function ApplyButton()
         --sound cube.
         coroutine.yield(0)
         --get out new figurine templates...
-        local ComponentBag = getObjectFromGUID("0e5fd1")
+        local ComponentsBag = getObjectFromGUID("0e5fd1")
         local TemplateList = {}
         local TempX = 80
         local ObjectList = getAllObjects()
+
         --ARMIES (Regular;Elite;Leader;)...
         coroutine.yield(0)
         --get out army templates...
-        for I, Item in pairs(ComponentBag.getObjects()) do
+        for I, Item in pairs(ComponentsBag.getObjects()) do
             if
                 Item.name ~= "Nazgûl" and
                     (string.find(Item.description, "Regular;") ~= nil or string.find(Item.description, "Elite;") ~= nil or
@@ -1279,7 +1250,7 @@ function ApplyButton()
                  then
                     TempX = TempX - 1
                     local TempObj =
-                        ComponentBag.takeObject(
+                        ComponentsBag.takeObject(
                         {guid = Item.guid, smooth = false, position = {TempX, -2, -60}, rotation = {0, 180, 0}}
                     )
                     coroutine.yield(0)
@@ -1292,7 +1263,7 @@ function ApplyButton()
             end
             -- if item.type
         end
-        --for I,Item
+
         coroutine.yield(0)
         --go through templatelist and replace matching components...
         for T = 1, #TemplateList do
@@ -1309,20 +1280,17 @@ function ApplyButton()
                     NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
                     Obj.destruct()
                 end
-                -- if matching
             end
-            --for O,Obj
-            ComponentBag.putObject(Template)
+
+            ComponentsBag.putObject(Template)
             coroutine.yield(0)
         end
-        --for T
 
-        --Characters (Characters;Companions;Rulers;Minions;)...
         coroutine.yield(0)
         TemplateList = {}
         TempX = 80
         --get out character templates...
-        for I, Item in pairs(ComponentBag.getObjects()) do
+        for I, Item in pairs(ComponentsBag.getObjects()) do
             if
                 Item.name ~= "Nazgûl" and
                     (string.find(Item.description, "Character;") ~= nil or
@@ -1336,7 +1304,7 @@ function ApplyButton()
                  then
                     TempX = TempX - 1
                     local TempObj =
-                        ComponentBag.takeObject(
+                        ComponentsBag.takeObject(
                         {guid = Item.guid, smooth = false, position = {TempX, -2, -61}, rotation = {0, 180, 0}}
                     )
                     coroutine.yield(0)
@@ -1345,12 +1313,11 @@ function ApplyButton()
                     TempObj.setRotation({0, 180, 0})
                     table.insert(TemplateList, TempObj.getGUID())
                 end
-            -- if correct state?
             end
-            -- if item.type
         end
-        --for I,Item
+
         coroutine.yield(0)
+
         --go through templatelist and replace matching components...
         for T = 1, #TemplateList do
             local Template = getObjectFromGUID(TemplateList[T])
@@ -1366,20 +1333,18 @@ function ApplyButton()
                     NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
                     Obj.destruct()
                 end
-                -- if matching
             end
-            --for O,Obj
-            ComponentBag.putObject(Template)
+
+            ComponentsBag.putObject(Template)
             coroutine.yield(0)
         end
-        --for T
 
         --Factions...
         coroutine.yield(0)
         TemplateList = {}
         TempX = 80
         --get out faction templates...
-        for I, Item in pairs(ComponentBag.getObjects()) do
+        for I, Item in pairs(ComponentsBag.getObjects()) do
             if Item.name ~= "Nazgûl" and (string.find(Item.description, "Faction;") ~= nil) then
                 --correct state?
                 if
@@ -1389,7 +1354,7 @@ function ApplyButton()
                  then
                     TempX = TempX - 1
                     local TempObj =
-                        ComponentBag.takeObject(
+                        ComponentsBag.takeObject(
                         {guid = Item.guid, smooth = false, position = {TempX, -2, -62}, rotation = {0, 180, 0}}
                     )
                     coroutine.yield(0)
@@ -1398,11 +1363,9 @@ function ApplyButton()
                     TempObj.setRotation({0, 180, 0})
                     table.insert(TemplateList, TempObj.getGUID())
                 end
-            -- if correct state?
             end
-            -- if item.type
         end
-        --for I,Item
+
         coroutine.yield(0)
         --go through templatelist and replace matching components...
         for T = 1, #TemplateList do
@@ -1419,20 +1382,18 @@ function ApplyButton()
                     NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
                     Obj.destruct()
                 end
-                -- if matching
             end
-            --for O,Obj
-            ComponentBag.putObject(Template)
+
+            ComponentsBag.putObject(Template)
             coroutine.yield(0)
         end
-        --for T
 
         --Nazgul...
         coroutine.yield(0)
         TemplateList = {}
         TempX = 80
         --get out nazgul templates...
-        for I, Item in pairs(ComponentBag.getObjects()) do
+        for I, Item in pairs(ComponentsBag.getObjects()) do
             if Item.name == "Nazgûl" and (string.find(Item.description, "Leader;") ~= nil) then
                 --correct state?
                 if
@@ -1443,7 +1404,7 @@ function ApplyButton()
                  then
                     TempX = TempX - 1
                     local TempObj =
-                        ComponentBag.takeObject(
+                        ComponentsBag.takeObject(
                         {guid = Item.guid, smooth = false, position = {TempX, -2, -63}, rotation = {0, 180, 0}}
                     )
                     coroutine.yield(0)
@@ -1454,7 +1415,7 @@ function ApplyButton()
                 end
             end
         end
-        --for I,Item
+
         coroutine.yield(0)
         --go through templatelist and replace matching components...
         for T = 1, #TemplateList do
@@ -1472,7 +1433,7 @@ function ApplyButton()
                     Obj.destruct()
                 end
             end
-            ComponentBag.putObject(Template)
+            ComponentsBag.putObject(Template)
             coroutine.yield(0)
         end
 
@@ -1579,16 +1540,16 @@ function ApplyButton()
                             (Dice ~= "Anniversary" and string.find(Obj.getDescription(), "Anniversary;") ~= nil)
                      then
                         --look in dice bag for replacement...
-                        for I, Item in pairs(getObjectFromGUID("0e5fd1").getObjects()) do
+                        for I, Item in pairs(ComponentsBag.getObjects()) do
                             --match? same description (except anniversary tag) and either anniversary or not anniversary...
                             if
                                 string.gsub(Obj.getDescription(), "Anniversary;", "") ==
-                                    string.gsub(Item.description, "Anniversary;", "") and
+                                    string.gsub(Item.description, "Anniversary;", "") and 
                                     ((Dice == "Anniversary" and string.find(Item.description, "Anniversary;") ~= nil) or
-                                        (Dice ~= "Anniversary" and string.find(Item.description, "Anniversary;") == nil))
+                                    (Dice ~= "Anniversary" and string.find(Item.description, "Anniversary;") == nil))
                              then
-                                NewObj =
-                                    getObjectFromGUID("0e5fd1").takeObject(
+                                NewObj = 
+                                    ComponentsBag.takeObject(
                                     {
                                         guid = Item.guid,
                                         position = Obj.getPosition(),
