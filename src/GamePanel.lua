@@ -24,16 +24,18 @@ Treebeard = 2 --0:None,1:Original,2:Revised;
 ArtAlternateCards = false
 FlagString = "" --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
 --Bags...
-RemovedBagID = "416864"
+GraveBagId = "416864"
 --Units...
 UnitType = "3D"
 UnitSize = 1
 UnitSizeStep = 0
+
 --Tables...
 Leader = {
     FreePeoples = "Gondor",
     Shadow = "The Witch-king"
 }
+
 CompanionNames = {
     "Gandalf the Grey: The Grey Wanderer",
     "Strider: Ranger of the North",
@@ -44,6 +46,7 @@ CompanionNames = {
     "Meriadoc Brandybuck: Hobbit Companion",
     "The Ring-bearers (Frodo & Samwise)"
 }
+
 Fellowship = {
     Gandalf = "The Grey Wanderer",
     Strider = "Ranger of the North",
@@ -68,6 +71,7 @@ Companions = {
     Gollum = {Title = "", Fellowship = false},
     TheRingBearers = {Title = "Frodo & Samwise", Fellowship = true}
 }
+
 ShadowDicePool = {} --pool of dice rolled
 FreePeoplesDicePool = {} --pool of dice rolled
 HuntBoxShadowDice = {} --table of dice ids
@@ -173,9 +177,7 @@ IDs = {
         FreePeoplesFactionDeck = "6897dc",
         ShadowFactionDeck = "f8a472",
         FreePeoplesCallToBattleDeck = "d9956f",
-        --"205edd",
         ShadowCallToBattleDeck = "501b50",
-        --"1e8e10",
         FreePeoplesEventCards = "cd7757",
         ShadowEventCards = "8abdc7",
         NotOnAnybodysSideCard = "a9fc55",
@@ -370,7 +372,6 @@ Spots = {
         {11, 1.6, -27.35}
     }
 }
---Spots.
 
 function onload()
     if Player.White.seated then
@@ -679,36 +680,6 @@ function ProcessNextStep()
             )
         end
 
-        function UnitSizeUp()
-            UnitSize = UnitSize + 0.1
-            UnitSizeStep = 1.1
-            startLuaCoroutine(self, "ChangeUnitSizeCoroutine")
-        end
-
-        function UnitSizeDown()
-            UnitSize = UnitSize - 0.1
-            UnitSizeStep = 0.9
-            startLuaCoroutine(self, "ChangeUnitSizeCoroutine")
-        end
-
-        function Units2D()
-            UnitType = "2D"
-            startLuaCoroutine(self, "ChangeUnitTypeCoroutine")
-            NextStep = "BeginMenu"
-        end
-
-        function Units3D()
-            UnitType = "3D"
-            startLuaCoroutine(self, "ChangeUnitTypeCoroutine")
-            NextStep = "BeginMenu"
-        end
-
-        function UnitsMarble()
-            UnitType = "Marble"
-            startLuaCoroutine(self, "ChangeUnitTypeCoroutine")
-            NextStep = "BeginMenu"
-        end
-
         function ClickBegin()
             self.clearButtons()
             Global.call("PlaySound", {ID = 0})
@@ -730,12 +701,9 @@ function ProcessNextStep()
                 Global.setVar("Mute", true)
             else
                 if Global.getVar("Mute") then
-                    --The World is changed...
                     Global.setVar("Mute", false)
                     getObjectFromGUID(Global.getVar("SoundCubeID")).setDescription("SoundCube;")
-                    Global.call("PlaySound", {ID = 35})
                 else
-                    --Global.call("PlaySound",{ID=32})--silence...
                     Global.setVar("Mute", true)
                     getObjectFromGUID(Global.getVar("SoundCubeID")).setDescription("SoundCube;Muted;")
                 end
@@ -2488,8 +2456,8 @@ function ProcessNextStep()
             if NewCities then
                 Global.call("SetupTFoENewCities")
             else
-                getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID("c537fa"))
-                getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID("2df5ce"))
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("c537fa"))
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("2df5ce"))
             end
 
             --replace cards...
@@ -2546,7 +2514,7 @@ function ProcessNextStep()
                     )
                 end
 
-                getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID("78f279"))
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("78f279"))
             end
 
             if getObjectFromGUID("af7f13") ~= nil then
@@ -2558,42 +2526,42 @@ function ProcessNextStep()
                     )
                 end
 
-                getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID("af7f13"))
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("af7f13"))
             end
 
             -- If KoME+TFoE then remove Dain and Brand from the game...
             if KoME then
                 printToAll("The Fate of Erebor removes King Brand and King Dain Ironfoot from the game.", {1, 1, 0})
                 if getObjectFromGUID(IDs.Companions.Brand) ~= nil then
-                    getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID(IDs.Companions.Brand))
+                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Brand))
                 end
 
                 if getObjectFromGUID(IDs.Companions.Dain) ~= nil then
-                    getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID(IDs.Companions.Dain))
+                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Dain))
                 end
 
                 if getObjectFromGUID("43a6a7") ~= nil then
-                    getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID("43a6a7"))
+                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("43a6a7"))
                 end
 
                 if getObjectFromGUID("754777") ~= nil then
-                    getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID("754777"))
+                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("754777"))
                 end
 
                 if getObjectFromGUID("a90518") ~= nil then
-                    getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID("a90518"))
+                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("a90518"))
                 end
 
                 if getObjectFromGUID("d1aa1a") ~= nil then
-                    getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID("d1aa1a"))
+                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d1aa1a"))
                 end
 
                 if getObjectFromGUID("55b8d8") ~= nil then
-                    getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID("55b8d8"))
+                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("55b8d8"))
                 end
 
                 if getObjectFromGUID("9bdfb0") ~= nil then
-                    getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID("9bdfb0"))
+                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("9bdfb0"))
                 end
             end
         else --clean up TFoE components...
@@ -2613,7 +2581,7 @@ function ProcessNextStep()
             )
             for _, Obj in pairs(getAllObjects()) do
                 if string.find(Obj.getDescription(), "TFoE;") ~= nil then
-                    getObjectFromGUID(RemovedBagID).putObject(Obj)
+                    getObjectFromGUID(GraveBagId).putObject(Obj)
                 end
             end
 
@@ -2656,7 +2624,7 @@ function ProcessNextStep()
                     false
                 )
                 getObjectFromGUID(IDs.LoME.ElvenRings[R]).setRotation({0, 90, 0})
-                getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID(IDs.ElvenRings[R]))
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.ElvenRings[R]))
                 coroutine.yield(0)
             end
 
@@ -2708,7 +2676,7 @@ function ProcessNextStep()
             )
             for _, Obj in pairs(getAllObjects()) do
                 if string.find(Obj.getDescription(), "LoME;") ~= nil then
-                    getObjectFromGUID(RemovedBagID).putObject(Obj)
+                    getObjectFromGUID(GraveBagId).putObject(Obj)
                 end
             end
 
@@ -2831,7 +2799,7 @@ function ProcessNextStep()
             )
             for _, Obj in pairs(getAllObjects()) do
                 if string.find(Obj.getDescription(), "WoME;") ~= nil then
-                    getObjectFromGUID(RemovedBagID).putObject(Obj)
+                    getObjectFromGUID(GraveBagId).putObject(Obj)
                 end
             end
 
@@ -2960,7 +2928,7 @@ function ProcessNextStep()
             )
             for _, Obj in pairs(getAllObjects()) do
                 if string.find(Obj.getDescription(), "KoME;") ~= nil then
-                    getObjectFromGUID(RemovedBagID).putObject(Obj)
+                    getObjectFromGUID(GraveBagId).putObject(Obj)
                 end
             end
 
@@ -3343,7 +3311,7 @@ function ProcessNextStep()
 
                 Obj.setRotation({0, 0, 180})
                 coroutine.yield(0)
-                getObjectFromGUID(RemovedBagID).putObject(Obj)
+                getObjectFromGUID(GraveBagId).putObject(Obj)
                 repeat --waiting for the card to vanish, Entrox Licher
                     coroutine.yield(0)
                 until Obj == nil
@@ -3359,7 +3327,7 @@ function ProcessNextStep()
         for C = 2, #IDs.CompanionCards do
             coroutine.yield(0)
             local CardObj =
-                getObjectFromGUID(RemovedBagID).takeObject(
+                getObjectFromGUID(GraveBagId).takeObject(
                 {
                     smooth = true,
                     guid = IDs.CompanionCards[C],
@@ -3381,7 +3349,7 @@ function ProcessNextStep()
         coroutine.yield(0)
         --drop guide on top of the stack face up...
         local CardObj =
-            getObjectFromGUID(RemovedBagID).takeObject(
+            getObjectFromGUID(GraveBagId).takeObject(
             {smooth = true, guid = IDs.CompanionCards[1], rotation = {0, 180, 0}, position = {32.9, 9, 20.15}}
         )
         coroutine.yield(0)
@@ -5838,8 +5806,8 @@ function ProcessNextStep()
                         printToAll(
                             "The Shadow receive no Shadow Tokens. (There were no Companions declared outside the Fellowship)."
                         )
-                        getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
-                        getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
+                        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
+                        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
                         Step = ""
                     elseif TokenCount == 1 then
                         printToAll(
@@ -5903,14 +5871,14 @@ function ProcessNextStep()
                         function ChooseShadowToken1()
                             self.clearButtons()
                             getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({12.5, 1.02, -29}, false, true)
-                            getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
+                            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
                             Step = ""
                         end
 
                         function ChooseShadowToken2()
                             self.clearButtons()
                             getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({12.5, 1.02, -29}, false, true)
-                            getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
+                            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
                             Step = ""
                         end
                     else --shadow gets both tokens...
@@ -6414,12 +6382,12 @@ function GatherActionDiceCoroutine()
                         Obj.hit_object.getName() ..
                             " from the game. (The Witch-King is in play, and a [Remove](*) was rolled and chosen."
                 )
-                getObjectFromGUID(RemovedBagID).putObject(Obj.hit_object)
+                getObjectFromGUID(GraveBagId).putObject(Obj.hit_object)
             elseif
                 InPlay({Name = "King: The Black Captain", Description = "Minion;"}) and
                     Obj.hit_object.getGUID() == IDs.GothmogDice
              then
-                getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID(IDs.GothmogDice))
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.GothmogDice))
                 broadcastToAll(
                     "The Witch-King: The Black Captain has entered play.  Gothmog's die has been eliminated."
                 )
@@ -6462,12 +6430,12 @@ function GatherActionDiceCoroutine()
                         Obj.hit_object.getName() ..
                             " from the game. (The Witch-King is in play, and a [Remove](*) was rolled and chosen."
                 )
-                getObjectFromGUID(RemovedBagID).putObject(Obj.hit_object)
+                getObjectFromGUID(GraveBagId).putObject(Obj.hit_object)
             elseif
                 InPlay({Name = "King: The Black Captain", Description = "Minion;"}) and
                     Obj.hit_object.getGUID() == IDs.GothmogDice
              then
-                getObjectFromGUID(RemovedBagID).putObject(getObjectFromGUID(IDs.GothmogDice))
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.GothmogDice))
                 broadcastToAll(
                     "The Witch-King: The Black Captain has entered play.  Gothmog's die has been eliminated."
                 )
@@ -6606,7 +6574,7 @@ function GatherActionDiceCoroutine()
                         Obj.hit_object.getName() ..
                             " from the game. (Gandalf the White is in play, and a [Remove](*) was rolled and chosen."
                 )
-                getObjectFromGUID(RemovedBagID).putObject(Obj.hit_object)
+                getObjectFromGUID(GraveBagId).putObject(Obj.hit_object)
             else
                 --stage the dice to the outer area...
                 DiceIndex = DiceIndex + 1
@@ -6669,7 +6637,7 @@ function GatherActionDiceCoroutine()
                         Obj.hit_object.getName() ..
                             " from the game. (Gandalf the White is in play, and a [Remove](*) was rolled and chosen."
                 )
-                getObjectFromGUID(RemovedBagID).putObject(Obj.hit_object)
+                getObjectFromGUID(GraveBagId).putObject(Obj.hit_object)
             end
 
             --stage the dice to the outer area...
