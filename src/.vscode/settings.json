@@ -1,0 +1,13 @@
+{
+    "Lua.diagnostics.globals": [
+        "self",
+        "Global",
+        "Wait",
+        "getAllObjects",
+        "startLuaCoroutine",
+        "printToAll",
+        "getObjectFromGUID",
+        "Physics",
+        "onLoad"
+    ]
+}
