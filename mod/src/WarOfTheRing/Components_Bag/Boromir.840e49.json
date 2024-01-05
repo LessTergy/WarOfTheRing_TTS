@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Boromir.840e49.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

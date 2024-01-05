@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Treebeard_Tree-herd.964d05.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

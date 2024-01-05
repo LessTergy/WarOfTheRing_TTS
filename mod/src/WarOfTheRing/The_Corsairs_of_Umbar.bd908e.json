@@ -1,0 +1,55 @@
+{
+  "Object": {
+    "GUID": "bd908e",
+    "Name": "Custom_Assetbundle",
+    "Transform": {
+      "posX": 24.6791973,
+      "posY": 0.9480721,
+      "posZ": -38.87365,
+      "rotX": 0.00000686793828,
+      "rotY": 180.000031,
+      "rotZ": -0.00000247033381,
+      "scaleX": 0.2475004,
+      "scaleY": 0.2475004,
+      "scaleZ": 0.2475004
+    },
+    "Nickname": "The Corsairs of Umbar",
+    "Description": "Faction;3D;Corsairs;Shadow;WoME;",
+    "GMNotes": "Region:;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.0274509974,
+      "g": 0.011765,
+      "b": 0.007843
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomAssetbundle": {
+      "AssetbundleURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176103163/451957D4B9A6DD5612831ACC7A8A7B39BAB433B6/",
+      "AssetbundleSecondaryURL": "",
+      "MaterialIndex": 4,
+      "TypeIndex": 1,
+      "LoopingEffectIndex": 0
+    },
+    "LuaScript": "#include ./The_Corsairs_of_Umbar.bd908e.lua",
+    "LuaScriptState": "",
+    "XmlUI": ""
+  },
+  "StatesPaths": {}
+}

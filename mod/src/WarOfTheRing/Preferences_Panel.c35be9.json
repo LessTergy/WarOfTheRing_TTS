@@ -15,7 +15,7 @@
     },
     "Nickname": "Preferences Panel",
     "Description": "Panel;Preferences;",
-    "GMNotes": "Scale:100;Characters:3D;Nazgul:3D;Armies:3D;Factions:3D;Mountains:3D;MtDoom:3D;Settlements:Flat;Sound:On;Scream:Once;Warnings:On;Dice:Anniversary;",
+    "GMNotes": "Scale:100;Characters:3D;Nazgul:3D;Armies:3D;Factions:3D;Mountains:3D;MtDoom:3D;Settlements:Flat;Sound:On;Scream:Once;Warnings:On;Dice:Original;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,

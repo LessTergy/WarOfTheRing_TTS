@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Dwarf_Regular.30bb27.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

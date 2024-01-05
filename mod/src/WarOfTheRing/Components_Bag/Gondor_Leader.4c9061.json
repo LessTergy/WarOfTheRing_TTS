@@ -3,32 +3,32 @@
     "GUID": "4c9061",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 86.33007,
-      "posY": 3.103823,
-      "posZ": -72.82425,
-      "rotX": 0.0000389396737,
-      "rotY": 89.9981842,
-      "rotZ": 0.00005222195,
+      "posX": 68,
+      "posY": -2,
+      "posZ": -60,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
       "scaleX": 0.6,
       "scaleY": 0.6,
       "scaleZ": 0.6
     },
     "Nickname": "Gondor Leader",
     "Description": "Leader;3D;Gondor;FreePeoples;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
       "z": 0
     },
     "ColorDiffuse": {
-      "r": 0.2823401,
+      "r": 0.28234005,
       "g": 0.003921569,
       "b": 1
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": false,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./Gondor_Leader.4c9061.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [
@@ -105,7 +105,7 @@
           "TypeIndex": 1,
           "CastShadows": true
         },
-        "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+        "LuaScript": "",
         "LuaScriptState": "",
         "XmlUI": "",
         "PhysicsMaterial": {

@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Dwarf_Elite.0ea697.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

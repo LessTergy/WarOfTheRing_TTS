@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Legolas.cb7ce5.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

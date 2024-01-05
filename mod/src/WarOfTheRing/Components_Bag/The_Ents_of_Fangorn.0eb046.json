@@ -3,19 +3,19 @@
     "GUID": "0eb046",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 85.330925,
-      "posY": 3.11277127,
-      "posZ": -57.6951141,
-      "rotX": -0.00327057461,
+      "posX": 75,
+      "posY": -2,
+      "posZ": -62,
+      "rotX": 0,
       "rotY": 180,
-      "rotZ": 0.00156664953,
+      "rotZ": 0,
       "scaleX": 0.3,
       "scaleY": 0.3,
       "scaleZ": 0.3
     },
     "Nickname": "The Ents of Fangorn",
     "Description": "Faction;3D;Ents;FreePeoples;WoME;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
@@ -28,7 +28,7 @@
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": true,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./The_Ents_of_Fangorn.0eb046.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [

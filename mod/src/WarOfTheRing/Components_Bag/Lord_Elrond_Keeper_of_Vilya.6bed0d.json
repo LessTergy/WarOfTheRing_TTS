@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Lord_Elrond_Keeper_of_Vilya.6bed0d.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

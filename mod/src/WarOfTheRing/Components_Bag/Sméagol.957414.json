@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Sméagol.957414.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

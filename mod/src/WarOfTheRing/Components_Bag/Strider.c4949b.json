@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Strider.c4949b.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

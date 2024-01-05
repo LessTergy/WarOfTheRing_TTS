@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Ugluk_Chieftain_of_the_Uruk-Hai.a2ca2b.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

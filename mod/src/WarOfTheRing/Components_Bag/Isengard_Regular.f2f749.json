@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Isengard_Regular.f2f749.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./The_Hillmen_of_Dunland.059fe0.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

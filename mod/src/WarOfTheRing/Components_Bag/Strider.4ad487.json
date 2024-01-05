@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Strider.4ad487.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

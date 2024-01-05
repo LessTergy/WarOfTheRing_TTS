@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Gollum.5d7909.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

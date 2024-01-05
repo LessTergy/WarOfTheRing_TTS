@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Nazgûl.8ffd8c.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

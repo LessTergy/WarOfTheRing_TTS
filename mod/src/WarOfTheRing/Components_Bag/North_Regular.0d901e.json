@@ -3,32 +3,32 @@
     "GUID": "0d901e",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 83.73397,
-      "posY": 3.090493,
-      "posZ": -85.43805,
-      "rotX": 3.01776737e-7,
-      "rotY": 89.9999847,
-      "rotZ": 0.00000533406046,
+      "posX": 74,
+      "posY": -2,
+      "posZ": -60,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
       "scaleX": 0.35,
       "scaleY": 0.35,
       "scaleZ": 0.35
     },
     "Nickname": "North Regular",
     "Description": "Regular;3D;North;FreePeoples;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
       "z": 0
     },
     "ColorDiffuse": {
-      "r": 0.117590614,
+      "r": 0.117590554,
       "g": 0.5294118,
       "b": 1
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": false,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./North_Regular.0d901e.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [

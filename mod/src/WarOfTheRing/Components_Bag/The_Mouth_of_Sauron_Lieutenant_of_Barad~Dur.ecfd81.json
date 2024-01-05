@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./The_Mouth_of_Sauron_Lieutenant_of_Barad~Dur.ecfd81.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

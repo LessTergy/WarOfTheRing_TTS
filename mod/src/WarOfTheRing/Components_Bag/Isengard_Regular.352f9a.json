@@ -3,19 +3,19 @@
     "GUID": "352f9a",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 76.82139,
-      "posY": 3.08662653,
-      "posZ": -81.0124054,
-      "rotX": 0.0000201970252,
-      "rotY": 270.000031,
-      "rotZ": -0.00000150343328,
+      "posX": 66,
+      "posY": -2,
+      "posZ": -60,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
       "scaleX": 0.346499979,
       "scaleY": 0.346499979,
       "scaleZ": 0.346499979
     },
     "Nickname": "Isengard Regular",
     "Description": "Regular;3D;Isengard;Shadow;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
@@ -24,11 +24,11 @@
     "ColorDiffuse": {
       "r": 0.905,
       "g": 0.898,
-      "b": 0.171947151
+      "b": 0.171947092
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": false,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./Isengard_Regular.352f9a.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [

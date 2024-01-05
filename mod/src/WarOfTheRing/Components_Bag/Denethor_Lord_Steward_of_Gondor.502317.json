@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Denethor_Lord_Steward_of_Gondor.502317.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

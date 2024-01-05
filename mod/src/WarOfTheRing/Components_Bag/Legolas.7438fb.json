@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Legolas.7438fb.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

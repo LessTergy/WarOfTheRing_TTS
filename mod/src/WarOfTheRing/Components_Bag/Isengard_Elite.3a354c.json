@@ -3,19 +3,19 @@
     "GUID": "3a354c",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 76.71989,
-      "posY": 3.09441948,
-      "posZ": -75.12903,
-      "rotX": 0.000003258016,
-      "rotY": 269.997345,
-      "rotZ": 0.000009215415,
+      "posX": 67,
+      "posY": -2,
+      "posZ": -60,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
       "scaleX": 0.49999997,
       "scaleY": 0.5,
       "scaleZ": 0.495
     },
     "Nickname": "Isengard Elite",
     "Description": "Elite;3D;Isengard;Shadow;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
@@ -24,11 +24,11 @@
     "ColorDiffuse": {
       "r": 0.905,
       "g": 0.898,
-      "b": 0.171947151
+      "b": 0.171947092
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": false,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./Isengard_Elite.3a354c.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [

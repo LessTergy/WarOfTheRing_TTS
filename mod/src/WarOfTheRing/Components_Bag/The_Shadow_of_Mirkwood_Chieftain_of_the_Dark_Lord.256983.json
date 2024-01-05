@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./The_Shadow_of_Mirkwood_Chieftain_of_the_Dark_Lord.256983.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

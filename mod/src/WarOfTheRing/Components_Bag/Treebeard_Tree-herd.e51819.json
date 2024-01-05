@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Treebeard_Tree-herd.e51819.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

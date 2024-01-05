@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Rohan_Elite.37c92c.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

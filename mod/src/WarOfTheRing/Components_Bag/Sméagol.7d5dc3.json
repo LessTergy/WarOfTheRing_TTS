@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Sméagol.7d5dc3.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

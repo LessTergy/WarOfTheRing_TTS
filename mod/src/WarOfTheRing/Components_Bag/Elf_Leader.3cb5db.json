@@ -3,32 +3,32 @@
     "GUID": "3cb5db",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 84.8539047,
-      "posY": 3.099499,
-      "posZ": -72.88872,
-      "rotX": 0.00000740409223,
-      "rotY": 90.00104,
-      "rotZ": -0.000008616389,
+      "posX": 69,
+      "posY": -2,
+      "posZ": -60,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
       "scaleX": 0.6,
       "scaleY": 0.6,
       "scaleZ": 0.6
     },
     "Nickname": "Elf Leader",
     "Description": "Leader;3D;Elf;FreePeoples;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
       "z": 0
     },
     "ColorDiffuse": {
-      "r": 0.09796635,
+      "r": 0.0979663059,
       "g": 0.8397212,
-      "b": 0.136565089
+      "b": 0.13656503
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": false,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./Elf_Leader.3cb5db.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [

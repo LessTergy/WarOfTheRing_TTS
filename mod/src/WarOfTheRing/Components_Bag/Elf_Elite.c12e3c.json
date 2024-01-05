@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Elf_Elite.c12e3c.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

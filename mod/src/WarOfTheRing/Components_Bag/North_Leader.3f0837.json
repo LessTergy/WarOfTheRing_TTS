@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./North_Leader.3f0837.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

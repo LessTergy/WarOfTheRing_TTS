@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Lady_Galadriel_Keeper_of_Nenya.4aa546.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

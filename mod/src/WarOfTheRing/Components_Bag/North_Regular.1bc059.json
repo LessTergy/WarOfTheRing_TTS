@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./North_Regular.1bc059.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

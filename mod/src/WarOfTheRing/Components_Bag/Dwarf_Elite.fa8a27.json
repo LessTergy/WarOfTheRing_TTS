@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Dwarf_Elite.fa8a27.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

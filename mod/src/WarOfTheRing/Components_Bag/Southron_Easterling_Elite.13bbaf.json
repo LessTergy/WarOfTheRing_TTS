@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Southron_Easterling_Elite.13bbaf.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

@@ -3,19 +3,19 @@
     "GUID": "5c66ce",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 81.15398,
-      "posY": 3.08578825,
-      "posZ": -85.5432,
-      "rotX": 0.000008950034,
+      "posX": 76,
+      "posY": -2,
+      "posZ": -60,
+      "rotX": 0,
       "rotY": 180,
-      "rotZ": -0.00000387621776,
+      "rotZ": 0,
       "scaleX": 0.33,
       "scaleY": 0.33,
       "scaleZ": 0.33
     },
     "Nickname": "Dwarf Regular",
     "Description": "Regular;3D;Dwarves;FreePeoples;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
@@ -23,12 +23,12 @@
     },
     "ColorDiffuse": {
       "r": 0.5411765,
-      "g": 0.2940616,
-      "b": 0.129358619
+      "g": 0.294061542,
+      "b": 0.12935856
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": false,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./Dwarf_Regular.5c66ce.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [

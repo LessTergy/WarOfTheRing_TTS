@@ -3,32 +3,32 @@
     "GUID": "6ea000",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 83.13842,
-      "posY": 3.09771538,
-      "posZ": -79.4781647,
-      "rotX": 0.00000694912751,
-      "rotY": 90.00213,
-      "rotZ": -0.0000018531872,
+      "posX": 79,
+      "posY": -2,
+      "posZ": -60,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
       "scaleX": 0.49999997,
       "scaleY": 0.5,
       "scaleZ": 0.495
     },
     "Nickname": "North Elite",
     "Description": "Elite;3D;North;FreePeoples;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
       "z": 0
     },
     "ColorDiffuse": {
-      "r": 0.117590614,
+      "r": 0.117590554,
       "g": 0.5294118,
       "b": 1
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": false,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./North_Elite.6ea000.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [

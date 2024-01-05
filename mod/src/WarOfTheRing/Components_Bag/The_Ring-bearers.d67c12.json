@@ -3,19 +3,19 @@
     "GUID": "d67c12",
     "Name": "Figurine_Custom",
     "Transform": {
-      "posX": 102.243446,
-      "posY": 16.060957,
-      "posZ": -71.01772,
-      "rotX": 0.000005366285,
-      "rotY": 180.0157,
-      "rotZ": -0.00000448157652,
+      "posX": 86.95809,
+      "posY": 3.102257,
+      "posZ": -65.2102661,
+      "rotX": 358.849274,
+      "rotY": 179.625687,
+      "rotZ": 359.533875,
       "scaleX": 0.6,
       "scaleY": 0.6,
       "scaleZ": 0.6
     },
     "Nickname": "The Ring-bearers",
     "Description": "Character;2D;FreePeoples;",
-    "GMNotes": "Region:;",
+    "GMNotes": "Region:out of play;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./The_Ring-bearers.d67c12.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

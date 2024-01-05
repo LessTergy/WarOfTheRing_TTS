@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./The_Black_Serpent_Chieftain_of_the_Haradrim.255578.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

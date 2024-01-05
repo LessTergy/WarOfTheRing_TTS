@@ -1,0 +1,125 @@
+{
+  "Object": {
+    "GUID": "446519",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 26.2242279,
+      "posY": 1.72847331,
+      "posZ": -27.3982983,
+      "rotX": -0.000210694881,
+      "rotY": -0.00122293306,
+      "rotZ": -0.004070695,
+      "scaleX": 0.4,
+      "scaleY": 0.4,
+      "scaleZ": 0.4
+    },
+    "Nickname": "The Mouth of Sauron: Lieutenant of Barad~Dur",
+    "Description": "Minion;3D;Shadow;",
+    "GMNotes": "Region:;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.9999998,
+      "g": 0.9921749,
+      "b": 0.9999998
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176166057/7037B07D7F0CA8F826D1513CCFC756B030D6D090/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176166374/79BD56C28BCE6A1B0808D0F2AF36A29EED7E37C0/",
+      "NormalURL": "",
+      "ColliderURL": "",
+      "Convex": true,
+      "MaterialIndex": 3,
+      "TypeIndex": 1,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./The_Mouth_of_Sauron_Lieutenant_of_Barad~Dur.446519.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "97771d",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": -0.0700042248,
+          "posY": -1.79125309,
+          "posZ": 0.19549939,
+          "rotX": 0.0002075754,
+          "rotY": 0.00259731058,
+          "rotZ": 0.00407173159,
+          "scaleX": 1.5,
+          "scaleY": 2.5,
+          "scaleZ": 1.5
+        },
+        "Nickname": "Character Base",
+        "Description": "",
+        "GMNotes": "",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 0,
+          "g": 0,
+          "b": 0
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "DiffuseURL": "",
+          "NormalURL": "",
+          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "Convex": true,
+          "MaterialIndex": 1,
+          "TypeIndex": 1,
+          "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

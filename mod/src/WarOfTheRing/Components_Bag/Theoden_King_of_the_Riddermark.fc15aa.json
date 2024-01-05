@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Theoden_King_of_the_Riddermark.fc15aa.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

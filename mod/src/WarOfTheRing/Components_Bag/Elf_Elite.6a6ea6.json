@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Elf_Elite.6a6ea6.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

@@ -3,19 +3,19 @@
     "GUID": "0155a6",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 86.41513,
-      "posY": 3.113163,
-      "posZ": -61.39555,
-      "rotX": 0.000007315409,
-      "rotY": 180.000015,
-      "rotZ": -2.68518619e-7,
+      "posX": 79,
+      "posY": -2,
+      "posZ": -61,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
       "scaleX": 0.594000041,
       "scaleY": 0.594000041,
       "scaleZ": 0.594000041
     },
     "Nickname": "Balrog: Evil of the Ancient World",
     "Description": "Minion;3D;Shadow;LoME;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
@@ -28,7 +28,7 @@
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": true,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./Balrog_Evil_of_the_Ancient_World.0155a6.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [
@@ -105,7 +105,7 @@
           "TypeIndex": 1,
           "CastShadows": true
         },
-        "LuaScript": "PickedUp = false\r\n\r\nfunction onPickUp(player_color)\r\n  if player_color == \"Red\" or player_color == \"Yellow\" then\r\n    PickedUp = true\r\n  end--if\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  --if was picked up by shadow player...\r\n  if PickedUp then\r\n    --if dropped into play...\r\n    if self.getPosition().x < Global.getVar(\"BoardX\") and self.getPosition().x > -Global.getVar(\"BoardX\") and self.getPosition().z < Global.getVar(\"BoardZ\") and self.getPosition().z > -Global.getVar(\"BoardZ\") then\r\n      Global.call(\"PlaySound\",{ID=8})--nazgul scream\r\n    end--if\r\n  end--if\r\n  PickedUp = false\r\nend--function",
+        "LuaScript": "",
         "LuaScriptState": "",
         "XmlUI": ""
       }

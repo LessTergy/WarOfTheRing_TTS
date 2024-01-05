@@ -1,0 +1,115 @@
+{
+  "Object": {
+    "GUID": "326332",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 46.5136642,
+      "posY": 1.01264524,
+      "posZ": -27.582716,
+      "rotX": -7.88453463e-7,
+      "rotY": 179.999969,
+      "rotZ": 0.00000130818034,
+      "scaleX": 0.594000041,
+      "scaleY": 0.594000041,
+      "scaleZ": 0.594000041
+    },
+    "Nickname": "Balrog: Evil of the Ancient World",
+    "Description": "Minion;3D;Shadow;LoME;",
+    "GMNotes": "Region:;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.9999998,
+      "g": 0.9921673,
+      "b": 0.9999998
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/853845649154027747/9F488F4AF4E56A750AC0981420B50A6C2BDB7235/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/853845649154029732/7FCF60E9C85E6821A15F2C3BFFC5B7CC8676291A/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/853845469457434572/AA6E5ED3E5D6F61AFADFC47218B26DE95BFF2AC9/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Balrog_Evil_of_the_Ancient_World.326332.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "f673a5",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": 0,
+          "posY": -0.0285714027,
+          "posZ": 0,
+          "rotX": 0,
+          "rotY": 0,
+          "rotZ": 0,
+          "scaleX": 1.14285731,
+          "scaleY": 1.14285719,
+          "scaleZ": 1.14285731
+        },
+        "Nickname": "Nazgûl",
+        "Description": "Leader;2D;Nazgul;Sauron;Shadow;",
+        "GMNotes": "",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 0,
+          "g": 0,
+          "b": 0
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "DiffuseURL": "",
+          "NormalURL": "",
+          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "Convex": true,
+          "MaterialIndex": 1,
+          "TypeIndex": 1,
+          "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

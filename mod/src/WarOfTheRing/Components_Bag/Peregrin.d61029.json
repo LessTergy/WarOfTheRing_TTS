@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Peregrin.d61029.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

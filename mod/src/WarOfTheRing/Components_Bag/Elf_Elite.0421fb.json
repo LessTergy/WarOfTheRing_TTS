@@ -3,32 +3,32 @@
     "GUID": "0421fb",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 84.8007,
-      "posY": 3.094418,
-      "posZ": -79.7130356,
-      "rotX": 0.00000760800731,
-      "rotY": 89.99807,
-      "rotZ": -0.00000911372354,
+      "posX": 78,
+      "posY": -2,
+      "posZ": -60,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
       "scaleX": 0.49999997,
       "scaleY": 0.5,
       "scaleZ": 0.495
     },
     "Nickname": "Elf Elite",
     "Description": "Elite;3D;Elf;FreePeoples;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
       "z": 0
     },
     "ColorDiffuse": {
-      "r": 0.09406351,
+      "r": 0.09406347,
       "g": 0.8392157,
-      "b": 0.133280069
+      "b": 0.133280009
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": false,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./Elf_Elite.0421fb.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [

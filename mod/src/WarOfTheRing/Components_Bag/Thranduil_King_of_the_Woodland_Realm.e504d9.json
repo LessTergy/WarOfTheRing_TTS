@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Thranduil_King_of_the_Woodland_Realm.e504d9.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

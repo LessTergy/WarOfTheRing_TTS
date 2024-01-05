@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./North_Regular.9a8dc6.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

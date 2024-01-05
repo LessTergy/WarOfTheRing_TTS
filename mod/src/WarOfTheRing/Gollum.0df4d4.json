@@ -3,12 +3,12 @@
     "GUID": "0df4d4",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 1.49991179,
-      "posY": 1.06137443,
-      "posZ": 27.5010033,
-      "rotX": -0.0002872172,
-      "rotY": 0.00208093761,
-      "rotZ": 0.000494899461,
+      "posX": 1.45262051,
+      "posY": 1.06137419,
+      "posZ": 27.4903526,
+      "rotX": 0.0000386566353,
+      "rotY": 0.00107883429,
+      "rotZ": 0.0000487282559,
       "scaleX": 0.198,
       "scaleY": 0.198,
       "scaleZ": 0.198
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "",
+    "LuaScript": "#include ./Gollum.0df4d4.lua",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [
@@ -58,19 +58,19 @@
         "GUID": "f2f05c",
         "Name": "Custom_Model",
         "Transform": {
-          "posX": -0.02901699,
-          "posY": -0.249496639,
-          "posZ": -0.009518452,
-          "rotX": 0.0004952422,
+          "posX": -0.0290156752,
+          "posY": -0.249495357,
+          "posZ": -0.009518196,
+          "rotX": 0.00004849126,
           "rotY": 89.98438,
-          "rotZ": 0.000288574054,
-          "scaleX": 2.52525187,
+          "rotZ": -0.0000397999356,
+          "scaleX": 2.52525163,
           "scaleY": 5.050505,
-          "scaleZ": 2.52525187
+          "scaleZ": 2.52525163
         },
-        "Nickname": "Medium Base",
+        "Nickname": "Character Base",
         "Description": "",
-        "GMNotes": "Region:;",
+        "GMNotes": "",
         "AltLookAngle": {
           "x": 0,
           "y": 0,
@@ -105,7 +105,7 @@
           "TypeIndex": 1,
           "CastShadows": true
         },
-        "LuaScript": "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function",
+        "LuaScript": "",
         "LuaScriptState": "",
         "XmlUI": ""
       }

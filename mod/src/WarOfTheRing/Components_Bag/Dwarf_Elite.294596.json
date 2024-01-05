@@ -3,19 +3,19 @@
     "GUID": "294596",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 80.5529251,
-      "posY": 3.09441924,
-      "posZ": -79.4441452,
-      "rotX": 0.0000176454359,
-      "rotY": 90.00187,
-      "rotZ": -0.00000532319245,
+      "posX": 77,
+      "posY": -2,
+      "posZ": -60,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
       "scaleX": 0.5,
       "scaleY": 0.5,
       "scaleZ": 0.5
     },
     "Nickname": "Dwarf Elite",
     "Description": "Elite;3D;Dwarves;FreePeoples;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
@@ -23,12 +23,12 @@
     },
     "ColorDiffuse": {
       "r": 0.5411765,
-      "g": 0.2940616,
-      "b": 0.129358619
+      "g": 0.294061542,
+      "b": 0.12935856
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": false,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./Dwarf_Elite.294596.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [

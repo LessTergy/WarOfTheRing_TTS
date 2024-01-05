@@ -3,19 +3,19 @@
     "GUID": "05be15",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 76.93748,
-      "posY": 3.09441757,
-      "posZ": -77.8366547,
-      "rotX": 8.166108e-7,
-      "rotY": 269.999756,
-      "rotZ": 0.00000159428782,
+      "posX": 65,
+      "posY": -2,
+      "posZ": -60,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
       "scaleX": 0.5,
       "scaleY": 0.5,
       "scaleZ": 0.5
     },
     "Nickname": "Sauron Elite",
     "Description": "Elite;3D;Sauron;Shadow;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
@@ -23,12 +23,12 @@
     },
     "ColorDiffuse": {
       "r": 0.856,
-      "g": 0.0999465957,
-      "b": 0.093946375
+      "g": 0.09994655,
+      "b": 0.0939463153
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": false,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./Sauron_Elite.05be15.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [

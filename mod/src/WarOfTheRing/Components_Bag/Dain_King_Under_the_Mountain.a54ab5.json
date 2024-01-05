@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Dain_King_Under_the_Mountain.a54ab5.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

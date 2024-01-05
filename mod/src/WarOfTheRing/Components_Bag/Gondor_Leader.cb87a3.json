@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Gondor_Leader.cb87a3.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

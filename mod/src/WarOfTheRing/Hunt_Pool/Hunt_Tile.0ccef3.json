@@ -3,12 +3,12 @@
     "GUID": "0ccef3",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": -43.253376,
-      "posY": 4.08329,
-      "posZ": -23.4454575,
-      "rotX": -3.89356728e-7,
-      "rotY": 180,
-      "rotZ": 5.87108069e-8,
+      "posX": -39.8177719,
+      "posY": 5.764828,
+      "posZ": -17.7607975,
+      "rotX": 0.767134666,
+      "rotY": 180.057968,
+      "rotZ": 359.8153,
       "scaleX": 0.62499994,
       "scaleY": 0.62499994,
       "scaleZ": 0.62499994
@@ -46,8 +46,18 @@
       "NormalURL": "",
       "ColliderURL": "",
       "Convex": true,
-      "MaterialIndex": 0,
+      "MaterialIndex": 3,
       "TypeIndex": 0,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
       "CastShadows": true
     },
     "LuaScript": "",

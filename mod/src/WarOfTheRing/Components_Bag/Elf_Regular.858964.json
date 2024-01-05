@@ -3,32 +3,32 @@
     "GUID": "858964",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 85.0682144,
-      "posY": 3.08662558,
-      "posZ": -85.42943,
-      "rotX": 0.00000530499074,
-      "rotY": 90.00001,
-      "rotZ": 0.00000201765943,
+      "posX": 75,
+      "posY": -2,
+      "posZ": -60,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
       "scaleX": 0.346499979,
       "scaleY": 0.346499979,
       "scaleZ": 0.346499979
     },
     "Nickname": "Elf Regular",
     "Description": "Regular;3D;Elf;FreePeoples;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
       "z": 0
     },
     "ColorDiffuse": {
-      "r": 0.09406351,
+      "r": 0.09406347,
       "g": 0.8392157,
-      "b": 0.133280069
+      "b": 0.133280009
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": false,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./Elf_Regular.858964.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [

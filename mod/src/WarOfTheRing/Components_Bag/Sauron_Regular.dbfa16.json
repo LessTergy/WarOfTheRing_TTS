@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Sauron_Regular.dbfa16.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

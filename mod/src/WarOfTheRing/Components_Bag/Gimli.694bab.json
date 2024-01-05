@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Gimli.694bab.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

@@ -1,0 +1,125 @@
+{
+  "Object": {
+    "GUID": "5f3e69",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": -41.23739,
+      "posY": 0.9653275,
+      "posZ": -2.0591886,
+      "rotX": -0.00309407525,
+      "rotY": 179.999924,
+      "rotZ": -0.00000346635147,
+      "scaleX": 0.8,
+      "scaleY": 0.8,
+      "scaleZ": 0.8
+    },
+    "Nickname": "Gondor Elite",
+    "Description": "Elite;3D;Gondor;FreePeoples;",
+    "GMNotes": "Region:Gondor Reinforcements;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/929311364902567649/8683C4894589A37BD6CE17F8ED2B8FF46B60173C/",
+      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1487831460518205177/CE333517029126B33EA5EC2688F9151C37FD95B4/",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/929311364902567649/8683C4894589A37BD6CE17F8ED2B8FF46B60173C/",
+      "Convex": true,
+      "MaterialIndex": 3,
+      "TypeIndex": 1,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Gondor_Elite.5f3e69.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "249df9",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": -0.0005107356,
+          "posY": 0.0375002623,
+          "posZ": -0.010766957,
+          "rotX": -0.000008548918,
+          "rotY": 0.00207979255,
+          "rotZ": -9.12885838e-8,
+          "scaleX": 0.625,
+          "scaleY": 0.625,
+          "scaleZ": 0.625
+        },
+        "Nickname": "Army Base",
+        "Description": "",
+        "GMNotes": "",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 0.282330036,
+          "g": 0.003921569,
+          "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "DiffuseURL": "",
+          "NormalURL": "",
+          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "Convex": true,
+          "MaterialIndex": 1,
+          "TypeIndex": 1,
+          "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

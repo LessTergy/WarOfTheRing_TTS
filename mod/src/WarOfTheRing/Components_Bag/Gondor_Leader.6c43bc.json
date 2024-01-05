@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Gondor_Leader.6c43bc.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./The_Witch-King_The_Black_Captain.5aff93.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

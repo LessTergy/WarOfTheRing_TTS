@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Balrog_Evil_of_the_Ancient_World.60d004.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Gandalf_the_Grey.e5b564.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

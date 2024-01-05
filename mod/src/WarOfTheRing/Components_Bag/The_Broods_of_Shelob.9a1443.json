@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./The_Broods_of_Shelob.9a1443.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

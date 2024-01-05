@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Gondor_Elite.719a4c.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

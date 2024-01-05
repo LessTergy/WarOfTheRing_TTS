@@ -1,0 +1,112 @@
+{
+  "Object": {
+    "GUID": "4bd72b",
+    "Name": "Custom_Assetbundle",
+    "Transform": {
+      "posX": 16.44277,
+      "posY": 0.9739244,
+      "posZ": 27.4227142,
+      "rotX": 0.009232278,
+      "rotY": 89.99965,
+      "rotZ": 0.005464482,
+      "scaleX": 0.5,
+      "scaleY": 0.5,
+      "scaleZ": 0.5
+    },
+    "Nickname": "Lady Galadriel: Keeper of Nenya",
+    "Description": "Character;3D;FreePeoples;LoME;",
+    "GMNotes": "Region:;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": true,
+    "Snap": true,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": true,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomAssetbundle": {
+      "AssetbundleURL": "http://cloud-3.steamusercontent.com/ugc/948467195537807498/78AF9F44FCF5F463DB8239205A93D377697217E9/",
+      "AssetbundleSecondaryURL": "",
+      "MaterialIndex": 0,
+      "TypeIndex": 1,
+      "LoopingEffectIndex": 0
+    },
+    "LuaScript": "#include ./Lady_Galadriel_Keeper_of_Nenya.4bd72b.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "a222f0",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": -0.155131757,
+          "posY": 0.0761208758,
+          "posZ": 0.0415612757,
+          "rotX": -0.00546576967,
+          "rotY": 270.001862,
+          "rotZ": 0.009233222,
+          "scaleX": 0.999999762,
+          "scaleY": 2,
+          "scaleZ": 0.999999762
+        },
+        "Nickname": "Character Base",
+        "Description": "",
+        "GMNotes": "",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "DiffuseURL": "",
+          "NormalURL": "",
+          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+          "Convex": true,
+          "MaterialIndex": 4,
+          "TypeIndex": 1,
+          "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

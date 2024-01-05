@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Isengard_Regular.136014.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

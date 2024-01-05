@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Meriadoc.929feb.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

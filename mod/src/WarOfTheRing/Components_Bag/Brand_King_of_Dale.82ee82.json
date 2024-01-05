@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Brand_King_of_Dale.82ee82.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

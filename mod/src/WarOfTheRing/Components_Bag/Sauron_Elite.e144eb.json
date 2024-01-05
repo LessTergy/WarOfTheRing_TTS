@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Sauron_Elite.e144eb.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

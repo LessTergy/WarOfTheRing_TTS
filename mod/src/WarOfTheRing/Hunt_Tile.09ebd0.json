@@ -6,9 +6,9 @@
       "posX": -38.9851227,
       "posY": 1.0225,
       "posZ": -11.9986382,
-      "rotX": 1.70891809e-7,
+      "rotX": 2.71917855e-7,
       "rotY": 180,
-      "rotZ": -6.381681e-8,
+      "rotZ": -3.584812e-8,
       "scaleX": 0.62499994,
       "scaleY": 0.62499994,
       "scaleZ": 0.62499994
@@ -46,8 +46,18 @@
       "NormalURL": "",
       "ColliderURL": "",
       "Convex": true,
-      "MaterialIndex": 0,
+      "MaterialIndex": 3,
       "TypeIndex": 0,
+      "CustomShader": {
+        "SpecularColor": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "SpecularIntensity": 0,
+        "SpecularSharpness": 2,
+        "FresnelStrength": 0
+      },
       "CastShadows": true
     },
     "LuaScript": "",

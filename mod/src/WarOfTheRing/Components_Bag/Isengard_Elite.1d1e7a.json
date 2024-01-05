@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Isengard_Elite.1d1e7a.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

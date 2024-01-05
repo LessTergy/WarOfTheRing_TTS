@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Sauron_Elite.045d98.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

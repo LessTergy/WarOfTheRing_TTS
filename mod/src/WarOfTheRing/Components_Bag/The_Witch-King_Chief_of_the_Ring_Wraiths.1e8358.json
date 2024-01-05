@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./The_Witch-King_Chief_of_the_Ring_Wraiths.1e8358.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

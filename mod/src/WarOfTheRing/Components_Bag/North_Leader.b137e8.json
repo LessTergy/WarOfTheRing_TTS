@@ -3,32 +3,32 @@
     "GUID": "b137e8",
     "Name": "Custom_Model",
     "Transform": {
-      "posX": 83.0269547,
-      "posY": 3.10012412,
-      "posZ": -72.72565,
-      "rotX": 0.01840064,
-      "rotY": 89.99995,
-      "rotZ": 0.008333429,
+      "posX": 71,
+      "posY": -2,
+      "posZ": -60,
+      "rotX": 0,
+      "rotY": 180,
+      "rotZ": 0,
       "scaleX": 0.6,
       "scaleY": 0.6,
       "scaleZ": 0.6
     },
     "Nickname": "North Leader",
     "Description": "Leader;3D;North;FreePeoples;",
-    "GMNotes": "Region:out of play;",
+    "GMNotes": "Region:;",
     "AltLookAngle": {
       "x": 0,
       "y": 0,
       "z": 0
     },
     "ColorDiffuse": {
-      "r": 0.117590614,
+      "r": 0.117590554,
       "g": 0.5294118,
       "b": 1
     },
     "LayoutGroupSortIndex": 0,
     "Value": 0,
-    "Locked": false,
+    "Locked": true,
     "Grid": false,
     "Snap": false,
     "IgnoreFoW": false,
@@ -50,7 +50,7 @@
       "TypeIndex": 1,
       "CastShadows": true
     },
-    "LuaScript": "#include ./North_Leader.b137e8.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": "",
     "ChildObjects": [

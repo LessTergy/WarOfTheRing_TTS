@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Sauron_Regular.3b26a6.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

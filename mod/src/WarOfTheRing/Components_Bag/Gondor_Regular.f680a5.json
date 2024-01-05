@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Gondor_Regular.f680a5.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./The_Corsairs_of_Umbar.9fedc7.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

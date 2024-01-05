@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./North_Leader.ef1705.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

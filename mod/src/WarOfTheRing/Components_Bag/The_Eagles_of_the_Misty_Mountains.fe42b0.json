@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./The_Eagles_of_the_Misty_Mountains.fe42b0.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

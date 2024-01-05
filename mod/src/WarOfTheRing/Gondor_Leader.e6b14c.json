@@ -1,0 +1,195 @@
+{
+  "Object": {
+    "GUID": "e6b14c",
+    "Name": "Custom_Model",
+    "Transform": {
+      "posX": 12.1576319,
+      "posY": 0.9947819,
+      "posZ": -8.069783,
+      "rotX": 0.00000310491373,
+      "rotY": 180.000031,
+      "rotZ": 0.00007931257,
+      "scaleX": 0.6,
+      "scaleY": 0.6,
+      "scaleZ": 0.6
+    },
+    "Nickname": "Gondor Leader",
+    "Description": "Leader;3D;Gondor;FreePeoples;",
+    "GMNotes": "Region:Minas Tirith;",
+    "AltLookAngle": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "ColorDiffuse": {
+      "r": 0.28234,
+      "g": 0.003921569,
+      "b": 1
+    },
+    "LayoutGroupSortIndex": 0,
+    "Value": 0,
+    "Locked": false,
+    "Grid": false,
+    "Snap": false,
+    "IgnoreFoW": false,
+    "MeasureMovement": false,
+    "DragSelectable": true,
+    "Autoraise": true,
+    "Sticky": false,
+    "Tooltip": true,
+    "GridProjection": false,
+    "HideWhenFaceDown": false,
+    "Hands": false,
+    "CustomMesh": {
+      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "DiffuseURL": "",
+      "NormalURL": "",
+      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+      "Convex": true,
+      "MaterialIndex": 1,
+      "TypeIndex": 1,
+      "CastShadows": true
+    },
+    "LuaScript": "#include ./Gondor_Leader.e6b14c.lua",
+    "LuaScriptState": "",
+    "XmlUI": "",
+    "ChildObjects": [
+      {
+        "GUID": "dd7099",
+        "Name": "Custom_Model",
+        "Transform": {
+          "posX": -0.241845146,
+          "posY": 0.6198184,
+          "posZ": 0.279140949,
+          "rotX": -5.211841e-7,
+          "rotY": 359.974762,
+          "rotZ": 0.00000238324583,
+          "scaleX": 0.8389829,
+          "scaleY": 0.8333332,
+          "scaleZ": 0.833333135
+        },
+        "Nickname": "Gondor Leader flag",
+        "Description": "Leader;3D;Gondor;FreePeoples;",
+        "GMNotes": "Region:;",
+        "AltLookAngle": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "ColorDiffuse": {
+          "r": 0.759581864,
+          "g": 0.759581864,
+          "b": 0.759581864
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517557599/596B4072CFDAC18A2DB023C90F7A56D57CE1C37F/",
+          "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1487831460518160445/9904CD996A5F736516F356AADA217D019D2397C9/",
+          "NormalURL": "",
+          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053954234/528C7ED29B3CF8D33D68E922DB6BE961459E3ACC/",
+          "Convex": true,
+          "MaterialIndex": 1,
+          "TypeIndex": 1,
+          "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "PhysicsMaterial": {
+          "StaticFriction": 0.6,
+          "DynamicFriction": 0.6,
+          "Bounciness": 0,
+          "FrictionCombine": 0,
+          "BounceCombine": 0
+        },
+        "Rigidbody": {
+          "Mass": 0,
+          "Drag": 0.1,
+          "AngularDrag": 0.1,
+          "UseGravity": true
+        },
+        "ChildObjects": [
+          {
+            "GUID": "2dfb14",
+            "Name": "Custom_Model",
+            "Transform": {
+              "posX": 0.2937958,
+              "posY": -0.810345769,
+              "posZ": -0.335098684,
+              "rotX": 4.796527e-7,
+              "rotY": 0.0252890028,
+              "rotZ": 6.131078e-9,
+              "scaleX": 2.000003,
+              "scaleY": 2.00000072,
+              "scaleZ": 2.000003
+            },
+            "Nickname": "Gondor Leader model",
+            "Description": "Leader;3D;Gondor;FreePeoples;",
+            "GMNotes": "",
+            "AltLookAngle": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "ColorDiffuse": {
+              "r": 1,
+              "g": 1,
+              "b": 1
+            },
+            "LayoutGroupSortIndex": 0,
+            "Value": 0,
+            "Locked": true,
+            "Grid": true,
+            "Snap": false,
+            "IgnoreFoW": false,
+            "MeasureMovement": false,
+            "DragSelectable": true,
+            "Autoraise": true,
+            "Sticky": false,
+            "Tooltip": true,
+            "GridProjection": false,
+            "HideWhenFaceDown": false,
+            "Hands": false,
+            "CustomMesh": {
+              "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460518182143/AD0D4DED7CAB58B0A382C89D251EF1280A38F50A/",
+              "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1487831460518205177/CE333517029126B33EA5EC2688F9151C37FD95B4/",
+              "NormalURL": "",
+              "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053954234/528C7ED29B3CF8D33D68E922DB6BE961459E3ACC/",
+              "Convex": true,
+              "MaterialIndex": 3,
+              "TypeIndex": 1,
+              "CustomShader": {
+                "SpecularColor": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+              },
+              "CastShadows": true
+            },
+            "LuaScript": "",
+            "LuaScriptState": "",
+            "XmlUI": ""
+          }
+        ]
+      }
+    ]
+  },
+  "StatesPaths": {}
+}

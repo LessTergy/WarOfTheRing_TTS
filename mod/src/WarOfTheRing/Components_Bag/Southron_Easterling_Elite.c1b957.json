@@ -60,7 +60,7 @@
       },
       "CastShadows": true
     },
-    "LuaScript": "#include ./Southron_Easterling_Elite.c1b957.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },

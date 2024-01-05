@@ -46,7 +46,7 @@
       "ImageScalar": 1,
       "WidthScale": 0
     },
-    "LuaScript": "#include ./Gothmog_Lieutenant_of_Morgul.d3004b.lua",
+    "LuaScript": "",
     "LuaScriptState": "",
     "XmlUI": ""
   },
