@@ -1,50 +1,3 @@
--- Bundled by luabundle {"rootModuleName":"UnitsController.df91dd.lua","version":"1.6.0"}
-local __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (function(superRequire)
-	local loadingPlaceholder = {[{}] = true}
-
-	local register
-	local modules = {}
-
-	local require
-	local loaded = {}
-
-	register = function(name, body)
-		if not modules[name] then
-			modules[name] = body
-		end
-	end
-
-	require = function(name)
-		local loadedModule = loaded[name]
-
-		if loadedModule then
-			if loadedModule == loadingPlaceholder then
-				return nil
-			end
-		else
-			if not modules[name] then
-				if not superRequire then
-					local identifier = type(name) == 'string' and '\"' .. name .. '\"' or tostring(name)
-					error('Tried to require ' .. identifier .. ', but no such module has been registered')
-				else
-					return superRequire(name)
-				end
-			end
-
-			loaded[name] = loadingPlaceholder
-			loadedModule = modules[name](require, loaded, register, modules)
-			loaded[name] = loadedModule
-		end
-
-		return loadedModule
-	end
-
-	return require, loaded, register, modules
-end)(nil)
-__bundle_register("UnitsController.df91dd.lua", function(require, _LOADED, __bundle_register, __bundle_modules)
-require("UnitsController")
-end)
-__bundle_register("UnitsController", function(require, _LOADED, __bundle_register, __bundle_modules)
 unitLuaScript = "PickedUp = false\r\n\r\nfunction onLoad()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Load\"})\r\nend--function\r\n\r\nfunction onPickUp(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Pickup\",Color=player_color})\r\nend--function\r\n\r\nfunction onDrop(player_color)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Drop\",Color=player_color})\r\nend--function\r\n\r\nfunction onCollisionEnter(collision_info)\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Collide\",Info=collision_info})\r\nend--if\r\n\r\nfunction onDestroy()\r\n  Global.call(\"UnitEvent\",{UnitObj=self,Event=\"Destroy\"})\r\nend--function"
 
 ArmyUnits = {
@@ -404,5 +357,3 @@ function getAllUnits()
     end
     return arr
 end
-end)
-return __bundle_require("UnitsController.df91dd.lua")
