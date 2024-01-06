@@ -1,1 +1,99 @@
-{"CURRENT_PANEL":"General","CURRENT_ROLL_ID":3,"HISTORY":[{"adjust_requested":false,"cleared":true,"completed":true,"failed":false,"friendly_hits":0,"misses_to_hits":0,"on_roll_step":false,"one_hits_self":false,"reroll_count":5,"reroll_dice":[],"reroll_die_hits":0,"reroll_qty":3,"reroll_results":[4,3,2],"reroll_to_hit":5,"roll_count":5,"roll_dice":[],"roll_die_hits":2,"roll_results":[6,6,3,3,2],"roll_to_hit":5,"six_hits_twice":false,"total_hits":2,"type":"Combat"},{"adjust_requested":false,"cleared":true,"completed":true,"failed":false,"friendly_hits":0,"misses_to_hits":0,"on_roll_step":false,"one_hits_self":false,"reroll_count":5,"reroll_dice":[],"reroll_die_hits":0,"reroll_qty":2,"reroll_results":[4,2],"reroll_to_hit":5,"roll_count":5,"roll_dice":[],"roll_die_hits":3,"roll_results":[6,6,4,3,5],"roll_to_hit":5,"six_hits_twice":false,"total_hits":3,"type":"Combat"},{"adjust_requested":false,"cleared":true,"completed":true,"failed":false,"friendly_hits":0,"misses_to_hits":0,"on_roll_step":false,"one_hits_self":false,"reroll_count":0,"reroll_dice":[],"reroll_die_hits":0,"reroll_qty":0,"reroll_results":[],"reroll_to_hit":0,"roll_count":1,"roll_dice":[],"roll_die_hits":1,"roll_results":[6],"roll_to_hit":5,"six_hits_twice":false,"total_hits":1,"type":"General"}]}
+{
+    "CURRENT_PANEL": "General",
+    "CURRENT_ROLL_ID": 3,
+    "HISTORY": [
+        {
+            "adjust_requested": false,
+            "cleared": true,
+            "completed": true,
+            "failed": false,
+            "friendly_hits": 0,
+            "misses_to_hits": 0,
+            "on_roll_step": false,
+            "one_hits_self": false,
+            "reroll_count": 5,
+            "reroll_dice": [],
+            "reroll_die_hits": 0,
+            "reroll_qty": 3,
+            "reroll_results": [
+                4,
+                3,
+                2
+            ],
+            "reroll_to_hit": 5,
+            "roll_count": 5,
+            "roll_dice": [],
+            "roll_die_hits": 2,
+            "roll_results": [
+                6,
+                6,
+                3,
+                3,
+                2
+            ],
+            "roll_to_hit": 5,
+            "six_hits_twice": false,
+            "total_hits": 2,
+            "type": "Combat"
+        },
+        {
+            "adjust_requested": false,
+            "cleared": true,
+            "completed": true,
+            "failed": false,
+            "friendly_hits": 0,
+            "misses_to_hits": 0,
+            "on_roll_step": false,
+            "one_hits_self": false,
+            "reroll_count": 5,
+            "reroll_dice": [],
+            "reroll_die_hits": 0,
+            "reroll_qty": 2,
+            "reroll_results": [
+                4,
+                2
+            ],
+            "reroll_to_hit": 5,
+            "roll_count": 5,
+            "roll_dice": [],
+            "roll_die_hits": 3,
+            "roll_results": [
+                6,
+                6,
+                4,
+                3,
+                5
+            ],
+            "roll_to_hit": 5,
+            "six_hits_twice": false,
+            "total_hits": 3,
+            "type": "Combat"
+        },
+        {
+            "adjust_requested": false,
+            "cleared": true,
+            "completed": true,
+            "failed": false,
+            "friendly_hits": 0,
+            "misses_to_hits": 0,
+            "on_roll_step": false,
+            "one_hits_self": false,
+            "reroll_count": 0,
+            "reroll_dice": [],
+            "reroll_die_hits": 0,
+            "reroll_qty": 0,
+            "reroll_results": [],
+            "reroll_to_hit": 0,
+            "roll_count": 1,
+            "roll_dice": [],
+            "roll_die_hits": 1,
+            "roll_results": [
+                6
+            ],
+            "roll_to_hit": 5,
+            "six_hits_twice": false,
+            "total_hits": 1,
+            "type": "General"
+        }
+    ]
+}
