@@ -21,7 +21,7 @@ function onDrop(player_color)
     local CorruptionTrack = math.floor((getObjectFromGUID("abe1b3").getPosition().x-5.0)/1.58)
     if CorruptionTrack < 0 then CorruptionTrack = 0 elseif CorruptionTrack > 12 then CorruptionTrack = 12 end--if
     getObjectFromGUID("6158a0").setVar("CorruptionTrack",CorruptionTrack)
-    if OldValue != CorruptionTrack then
+    if OldValue ~= CorruptionTrack then
       broadcastToAll(player_color.." Player moved the Corruption Counter from "..tostring(OldValue).." to "..tostring(CorruptionTrack)..".", {1,1,0})
     end--if
   end--function 

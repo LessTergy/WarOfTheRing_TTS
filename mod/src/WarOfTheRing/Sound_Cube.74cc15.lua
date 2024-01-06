@@ -23,7 +23,7 @@ function onload()
     end--if
     Menu()
     --update main board also?
-    if string.find(getObjectFromGUID(Global.getVar("GamePanelID")).getDescription(),"Step:BeginMenu;") != nil then
+    if string.find(getObjectFromGUID(Global.getVar("GamePanelID")).getDescription(),"Step:BeginMenu;") ~= nil then
         getObjectFromGUID(Global.getVar("GamePanelID")).setVar("NextStep","BeginMenu")
         getObjectFromGUID(Global.getVar("GamePanelID")).setVar("Step","")
     end--if

@@ -26,35 +26,35 @@ function RefreshPanel()
     TheodenID = IDs.Companions.Theoden
     ThranduilID = IDs.Companions.Thranduil
     HuntPoolID = IDs.HuntTileBag
-    if getObjectFromGUID(BrandID) != nil then
+    if getObjectFromGUID(BrandID) ~= nil then
         if getObjectFromGUID(BrandID).getName() == "Brand: King of Dale (Awakened)" then
             self.createButton({click_function="RefreshPanel",function_owner=self,label="Awakened",position={-0.15,0.2,-0.69},scale={0.2,0.2,0.2},width=0,height=0,font_size=150,font_color={1,1,1}})
         elseif getObjectFromGUID(BrandID).getName() == "Brand: Corrupted Ruler" then            
             self.createButton({click_function="RefreshPanel",function_owner=self,label="Corrupted",position={-0.15,0.2,-0.53},scale={0.2,0.2,0.2},width=0,height=0,font_size=150,font_color={0,0,0}})
         end--if
     end--if
-    if getObjectFromGUID(DainID) != nil then
+    if getObjectFromGUID(DainID) ~= nil then
         if getObjectFromGUID(DainID).getName() == "Dain: King Under the Mountain (Awakened)" then            
             self.createButton({click_function="RefreshPanel",function_owner=self,label="Awakened",position={-0.15,0.2,-0.37},scale={0.2,0.2,0.2},width=0,height=0,font_size=150,font_color={1,1,1}})
         elseif getObjectFromGUID(DainID).getName() == "Dain: Corrupted Ruler" then            
             self.createButton({click_function="RefreshPanel",function_owner=self,label="Corrupted",position={-0.15,0.2,-0.19},scale={0.2,0.2,0.2},width=0,height=0,font_size=150,font_color={0,0,0}})
         end--if
     end--if
-    if getObjectFromGUID(DenethorID) != nil then
+    if getObjectFromGUID(DenethorID) ~= nil then
         if getObjectFromGUID(DenethorID).getName() == "Denethor: Lord Steward of Gondor (Awakened)" then  
             self.createButton({click_function="RefreshPanel",function_owner=self,label="Awakened",position={-0.15,0.2,-0.02},scale={0.2,0.2,0.2},width=0,height=0,font_size=150,font_color={1,1,1}})
         elseif getObjectFromGUID(DenethorID).getName() == "Denethor: Corrupted Ruler" then          
             self.createButton({click_function="RefreshPanel",function_owner=self,label="Corrupted",position={-0.15,0.2,0.13},scale={0.2,0.2,0.2},width=0,height=0,font_size=150,font_color={0,0,0}})
         end--if
     end--if
-    if getObjectFromGUID(TheodenID) != nil then
+    if getObjectFromGUID(TheodenID) ~= nil then
         if getObjectFromGUID(TheodenID).getName() == "Theoden: King of the Riddermark (Awakened)" then
             self.createButton({click_function="RefreshPanel",function_owner=self,label="Awakened",position={-0.15,0.2,0.32},scale={0.2,0.2,0.2},width=0,height=0,font_size=150,font_color={1,1,1}})
         elseif getObjectFromGUID(TheodenID).getName() == "Theoden: Corrupted Ruler" then            
             self.createButton({click_function="RefreshPanel",function_owner=self,label="Corrupted",position={-0.15,0.2,0.47},scale={0.2,0.2,0.2},width=0,height=0,font_size=150,font_color={0,0,0}})
         end--if
     end--if
-    if getObjectFromGUID(ThranduilID) != nil then
+    if getObjectFromGUID(ThranduilID) ~= nil then
         if getObjectFromGUID(ThranduilID).getName() == "Thranduil: King of the Woodland Realm (Awakened)" then            
             self.createButton({click_function="RefreshPanel",function_owner=self,label="Awakened",position={-0.15,0.2,0.65},scale={0.2,0.2,0.2},width=0,height=0,font_size=150,font_color={1,1,1}})
         elseif getObjectFromGUID(ThranduilID).getName() == "Thranduil: Corrupted Ruler" then            
@@ -83,7 +83,7 @@ end--funtion
 function DrawTileCorruption(Object,PlayerColor)
     function DrawTileCorruptionCoroutine()
         local HuntPool = getObjectFromGUID(HuntPoolID)
-        if HuntPool != nil then
+        if HuntPool ~= nil then
             --any tiles left?
             if HuntPool.getQuantity() < 1 then
                 printToAll("Hunt Pool is empty.")
@@ -123,9 +123,9 @@ end--function
 function GrayBrand()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     BrandID = IDs.Companions.Brand
-    if getObjectFromGUID(BrandID) != nil then
+    if getObjectFromGUID(BrandID) ~= nil then
         getObjectFromGUID(BrandID).setName("Brand: King of Dale")
-        if string.find(getObjectFromGUID(BrandID).getDescription(),"Marble;") != nil then
+        if string.find(getObjectFromGUID(BrandID).getDescription(),"Marble;") ~= nil then
             getObjectFromGUID(BrandID).setColorTint({0.75,0.75,0.75})
         else
             getObjectFromGUID(BrandID).setColorTint({0.5,0.5,0.5})
@@ -137,9 +137,9 @@ end--function
 function GrayDain()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     DainID = IDs.Companions.Dain
-    if getObjectFromGUID(DainID) != nil then
+    if getObjectFromGUID(DainID) ~= nil then
         getObjectFromGUID(DainID).setName("Dain: King Under the Mountain")
-        if string.find(getObjectFromGUID(DainID).getDescription(),"Marble;") != nil then
+        if string.find(getObjectFromGUID(DainID).getDescription(),"Marble;") ~= nil then
             getObjectFromGUID(DainID).setColorTint({0.75,0.75,0.75})
         else
             getObjectFromGUID(DainID).setColorTint({0.5,0.5,0.5})
@@ -151,9 +151,9 @@ end--function
 function GrayDenethor()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     DenethorID = IDs.Companions.Denethor
-    if getObjectFromGUID(DenethorID) != nil then
+    if getObjectFromGUID(DenethorID) ~= nil then
         getObjectFromGUID(DenethorID).setName("Denethor: Lord Steward of Gondor")
-        if string.find(getObjectFromGUID(DenethorID).getDescription(),"Marble;") != nil then
+        if string.find(getObjectFromGUID(DenethorID).getDescription(),"Marble;") ~= nil then
             getObjectFromGUID(DenethorID).setColorTint({0.75,0.75,0.75})
         else
             getObjectFromGUID(DenethorID).setColorTint({0.5,0.5,0.5})
@@ -165,9 +165,9 @@ end--function
 function GrayTheoden()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     TheodenID = IDs.Companions.Theoden
-    if getObjectFromGUID(TheodenID) != nil then
+    if getObjectFromGUID(TheodenID) ~= nil then
         getObjectFromGUID(TheodenID).setName("Theoden: King of the Riddermark")
-        if string.find(getObjectFromGUID(TheodenID).getDescription(),"Marble;") != nil then
+        if string.find(getObjectFromGUID(TheodenID).getDescription(),"Marble;") ~= nil then
             getObjectFromGUID(TheodenID).setColorTint({0.75,0.75,0.75})
         else
             getObjectFromGUID(TheodenID).setColorTint({0.5,0.5,0.5})
@@ -179,9 +179,9 @@ end--function
 function GrayThranduil()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     ThranduilID = IDs.Companions.Thranduil
-    if getObjectFromGUID(ThranduilID) != nil then
+    if getObjectFromGUID(ThranduilID) ~= nil then
         getObjectFromGUID(ThranduilID).setName("Thranduil: King of the Woodland Realm")
-        if string.find(getObjectFromGUID(ThranduilID).getDescription(),"Marble;") != nil then
+        if string.find(getObjectFromGUID(ThranduilID).getDescription(),"Marble;") ~= nil then
             getObjectFromGUID(ThranduilID).setColorTint({0.75,0.75,0.75})
         else
             getObjectFromGUID(ThranduilID).setColorTint({0.5,0.5,0.5})
@@ -193,7 +193,7 @@ end--function
 function WhiteBrand()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     BrandID = IDs.Companions.Brand
-    if getObjectFromGUID(BrandID) != nil then
+    if getObjectFromGUID(BrandID) ~= nil then
         getObjectFromGUID(BrandID).setName("Brand: King of Dale (Awakened)")
         getObjectFromGUID(BrandID).setColorTint({1,1,1})
         getObjectFromGUID("74cc15").AssetBundle.playTriggerEffect(42)
@@ -204,7 +204,7 @@ end--function
 function WhiteDain()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     DainID = IDs.Companions.Dain
-    if getObjectFromGUID(DainID) != nil then
+    if getObjectFromGUID(DainID) ~= nil then
         getObjectFromGUID(DainID).setName("Dain: King Under the Mountain (Awakened)")
         getObjectFromGUID(DainID).setColorTint({1,1,1})
         getObjectFromGUID("74cc15").AssetBundle.playTriggerEffect(44)
@@ -215,7 +215,7 @@ end--function
 function WhiteDenethor()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     DenethorID = IDs.Companions.Denethor
-    if getObjectFromGUID(DenethorID) != nil then
+    if getObjectFromGUID(DenethorID) ~= nil then
         getObjectFromGUID(DenethorID).setName("Denethor: Lord Steward of Gondor (Awakened)")
         getObjectFromGUID(DenethorID).setColorTint({1,1,1})
         getObjectFromGUID("74cc15").AssetBundle.playTriggerEffect(46)
@@ -226,7 +226,7 @@ end--function
 function WhiteTheoden()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     TheodenID = IDs.Companions.Theoden
-    if getObjectFromGUID(TheodenID) != nil then
+    if getObjectFromGUID(TheodenID) ~= nil then
         getObjectFromGUID(TheodenID).setName("Theoden: King of the Riddermark (Awakened)")
         getObjectFromGUID(TheodenID).setColorTint({1,1,1})
         getObjectFromGUID("74cc15").AssetBundle.playTriggerEffect(48)
@@ -237,7 +237,7 @@ end--function
 function WhiteThranduil()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     ThranduilID = IDs.Companions.Thranduil
-    if getObjectFromGUID(ThranduilID) != nil then
+    if getObjectFromGUID(ThranduilID) ~= nil then
         getObjectFromGUID(ThranduilID).setName("Thranduil: King of the Woodland Realm (Awakened)")
         getObjectFromGUID(ThranduilID).setColorTint({1,1,1})
         getObjectFromGUID("74cc15").AssetBundle.playTriggerEffect(50)
@@ -249,9 +249,9 @@ end--function
 function BlackBrand()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     BrandID = IDs.Companions.Brand
-    if getObjectFromGUID(BrandID) != nil then
+    if getObjectFromGUID(BrandID) ~= nil then
         getObjectFromGUID(BrandID).setName("Brand: Corrupted Ruler")
-        if string.find(getObjectFromGUID(BrandID).getDescription(),"Marble;") != nil then
+        if string.find(getObjectFromGUID(BrandID).getDescription(),"Marble;") ~= nil then
             getObjectFromGUID(BrandID).setColorTint({0.25,0.25,0.25})
         else
             getObjectFromGUID(BrandID).setColorTint({0,0,0})
@@ -264,9 +264,9 @@ end--function
 function BlackDain()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     DainID = IDs.Companions.Dain
-    if getObjectFromGUID(DainID) != nil then
+    if getObjectFromGUID(DainID) ~= nil then
         getObjectFromGUID(DainID).setName("Dain: Corrupted Ruler")
-        if string.find(getObjectFromGUID(DainID).getDescription(),"Marble;") != nil then
+        if string.find(getObjectFromGUID(DainID).getDescription(),"Marble;") ~= nil then
             getObjectFromGUID(DainID).setColorTint({0.25,0.25,0.25})
         else
             getObjectFromGUID(DainID).setColorTint({0,0,0})
@@ -279,9 +279,9 @@ end--function
 function BlackDenethor()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     DenethorID = IDs.Companions.Denethor
-    if getObjectFromGUID(DenethorID) != nil then
+    if getObjectFromGUID(DenethorID) ~= nil then
         getObjectFromGUID(DenethorID).setName("Denethor: Corrupted Ruler")
-        if string.find(getObjectFromGUID(DenethorID).getDescription(),"Marble;") != nil then
+        if string.find(getObjectFromGUID(DenethorID).getDescription(),"Marble;") ~= nil then
             getObjectFromGUID(DenethorID).setColorTint({0.25,0.25,0.25})
         else
             getObjectFromGUID(DenethorID).setColorTint({0,0,0})
@@ -294,9 +294,9 @@ end--function
 function BlackTheoden()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     TheodenID = IDs.Companions.Theoden
-    if getObjectFromGUID(TheodenID) != nil then
+    if getObjectFromGUID(TheodenID) ~= nil then
         getObjectFromGUID(TheodenID).setName("Theoden: Corrupted Ruler")
-        if string.find(getObjectFromGUID(TheodenID).getDescription(),"Marble;") != nil then
+        if string.find(getObjectFromGUID(TheodenID).getDescription(),"Marble;") ~= nil then
             getObjectFromGUID(TheodenID).setColorTint({0.25,0.25,0.25})
         else
             getObjectFromGUID(TheodenID).setColorTint({0,0,0})
@@ -309,9 +309,9 @@ end--function
 function BlackThranduil()
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     ThranduilID = IDs.Companions.Thranduil
-    if getObjectFromGUID(ThranduilID) != nil then
+    if getObjectFromGUID(ThranduilID) ~= nil then
         getObjectFromGUID(ThranduilID).setName("Thranduil: Corrupted Ruler")
-        if string.find(getObjectFromGUID(ThranduilID).getDescription(),"Marble;") != nil then
+        if string.find(getObjectFromGUID(ThranduilID).getDescription(),"Marble;") ~= nil then
             getObjectFromGUID(ThranduilID).setColorTint({0.25,0.25,0.25})
         else
             getObjectFromGUID(ThranduilID).setColorTint({0,0,0})

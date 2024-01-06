@@ -46,7 +46,7 @@ end--function
         if Color == "Green" then HandID = "588435" end--if
         for _,Obj in pairs(getObjectFromGUID(HandID).getObjects()) do
           if Obj.type == "Card" then
-            if string.find(Obj.getDescription(),"Card;CallToBattle;") != nil and string.find(Obj.getDescription(),Side) != nil then
+            if string.find(Obj.getDescription(),"Card;CallToBattle;") ~= nil and string.find(Obj.getDescription(),Side) ~= nil then
               Obj.setPosition(self.getPosition())
               Obj.setRotation({0,self.getRotation().y,180})
               --coroutine.yield(0)
@@ -59,7 +59,7 @@ end--function
         repeat
           DeckID = GetDeckID()
           coroutine.yield(0)
-        until DeckID != nil
+        until DeckID ~= nil
         return 1
       end--function
       startLuaCoroutine(self,"ReturnCardsCoroutine")
@@ -75,7 +75,7 @@ function GetDeckID()
       Obj.hit_object.setName(Side.." Call to Battle Cards (WoME)")
       Obj.hit_object.setDescription("Deck;CallToBattle;"..Side..";WoME;")
       local GamePanelID = Global.getVar("GamePanelID")
-      if getObjectFromGUID(GamePanelID) != nil then
+      if getObjectFromGUID(GamePanelID) ~= nil then
         local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
         IDs.WoME[Side.."CallToBattleDeck"] = Obj.hit_object.getGUID()
         getObjectFromGUID(GamePanelID).setTable("IDs",IDs)

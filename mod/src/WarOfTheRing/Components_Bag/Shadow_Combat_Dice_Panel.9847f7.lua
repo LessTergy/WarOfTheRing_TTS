@@ -15,7 +15,7 @@ Gap = 1.5
 Radians = math.pi / 180
 
 function onLoad(save_state)
-    if string.find(self.getDescription(),"Shadow;") != nil then
+    if string.find(self.getDescription(),"Shadow;") ~= nil then
         Side = "Shadow"
         SideName = "Shadow"
     else

@@ -3,7 +3,7 @@ Side = ""
 ThisDiceRolling = false
 
 function onLoad()
-  if string.find(self.getDescription(),"Shadow;") != nil then
+  if string.find(self.getDescription(),"Shadow;") ~= nil then
     Side = "Shadow"
   else
     Side = "FreePeoples"
@@ -14,14 +14,14 @@ end--function
 
 function onDestroy()
   --remove this die if it was rolling...
-  if ThisDiceRolling and getObjectFromGUID(PanelID) != nil  then
+  if ThisDiceRolling and getObjectFromGUID(PanelID) ~= nil  then
     getObjectFromGUID(PanelID).call("DeleteRoll",{DiceID=self.getGUID()})
   end--if
 end--function
 
 function Roll()
   self.roll()
-  if not ThisDiceRolling and getObjectFromGUID(PanelID) != nil then
+  if not ThisDiceRolling and getObjectFromGUID(PanelID) ~= nil then
     ThisDiceRolling = true
     getObjectFromGUID(PanelID).call("InsertRoll",{DiceID=self.getGUID()})
     Wait.condition(DoneRolling,RollWatcher)
@@ -29,7 +29,7 @@ function Roll()
 end--function
 
 function onRandomize(player_color)
-  if not ThisDiceRolling and getObjectFromGUID(PanelID) != nil then
+  if not ThisDiceRolling and getObjectFromGUID(PanelID) ~= nil then
     ThisDiceRolling = true
     getObjectFromGUID(PanelID).call("InsertRoll",{DiceID=self.getGUID()})
     Wait.condition(DoneRolling,RollWatcher)
@@ -41,7 +41,7 @@ function RollWatcher()
 end--function
 
 function DoneRolling()
-  if getObjectFromGUID(PanelID) != nil then
+  if getObjectFromGUID(PanelID) ~= nil then
     getObjectFromGUID(PanelID).call("ReportRoll",{DiceID=self.getGUID()})
   end--if
   ThisDiceRolling = false

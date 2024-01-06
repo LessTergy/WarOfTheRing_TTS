@@ -2,7 +2,7 @@ Side = ""
 ThisDiceRolling = false
 
 function onLoad()
-  if string.find(self.getDescription(),"Shadow;") != nil then
+  if string.find(self.getDescription(),"Shadow;") ~= nil then
     Side = "Shadow"
   else
     Side = "FreePeoples"
