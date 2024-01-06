@@ -1,0 +1,18 @@
+{
+    "Lua.diagnostics.globals": [
+        "self",
+        "Global",
+        "Wait",
+        "getAllObjects",
+        "startLuaCoroutine",
+        "printToAll",
+        "getObjectFromGUID",
+        "Physics",
+        "onLoad",
+        "onPickUp",
+        "onDrop",
+        "broadcastToAll",
+        "onCollisionEnter"
+    ],
+    "Lua.runtime.version": "Lua 5.2"
+}
