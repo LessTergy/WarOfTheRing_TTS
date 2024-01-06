@@ -13,7 +13,7 @@
       "scaleY": 1,
       "scaleZ": 1.8
     },
-    "Nickname": "FreePeoples Event Discards go here",
+    "Nickname": "FreePeoples Event Discards",
     "Description": "DiscardSpot;Event;FreePeoples;",
     "GMNotes": "",
     "AltLookAngle": {
@@ -52,7 +52,7 @@
         "Stackable": false
       }
     },
-    "LuaScript": "#include ./FreePeoples_Event_Discards_go_here.b18c8a.lua",
+    "LuaScript": "#include ./FreePeoples_Event_Discard.b18c8a.lua",
     "LuaScriptState": "",
     "XmlUI": "",
     "AttachedSnapPoints": [
