@@ -12,7 +12,8 @@
         "onPickUp",
         "onDrop",
         "broadcastToAll",
-        "onCollisionEnter"
+        "onCollisionEnter",
+        "onDestroy"
     ],
     "Lua.runtime.version": "Lua 5.2"
 }
