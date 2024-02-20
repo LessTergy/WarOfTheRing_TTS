@@ -1094,7 +1094,7 @@ function ApplyButton()
             for _, Obj in pairs(ObjectList) do
                 if
                     Template.getName() == Obj.getName() and
-                        (Obj.type == "Figurine" or Obj.type == "rpgFigurine" or Obj.type == "Tileset")
+                        ObjectIsFigurineOrTileset(Obj)
                  then
                     local NewObj = Template.clone({position = Obj.getPosition()})
                     NewObj.setLock(false)
@@ -1150,7 +1150,7 @@ function ApplyButton()
             for _, Obj in pairs(ObjectList) do
                 if
                     Template.getName() == Obj.getName() and
-                        (Obj.type == "Figurine" or Obj.type == "rpgFigurine" or Obj.type == "Tileset")
+                        ObjectIsFigurineOrTileset(Obj)
                  then
                     local NewObj = Template.clone({position = Obj.getPosition()})
                     NewObj.setLock(false)
@@ -1201,7 +1201,7 @@ function ApplyButton()
             for O, Obj in pairs(ObjectList) do
                 if
                     Template.getName() == Obj.getName() and
-                        (Obj.type == "Figurine" or Obj.type == "rpgFigurine" or Obj.type == "Tileset")
+                        ObjectIsFigurineOrTileset(Obj)
                  then
                     local NewObj = Template.clone({position = Obj.getPosition()})
                     NewObj.setLock(false)
@@ -1253,7 +1253,7 @@ function ApplyButton()
             for O, Obj in pairs(ObjectList) do
                 if
                     Template.getName() == Obj.getName() and Template.getDescription() ~= Obj.getDescription() and
-                        (Obj.type == "Figurine" or Obj.type == "rpgFigurine" or Obj.type == "Tileset")
+                        ObjectIsFigurineOrTileset(Obj)
                  then
                     local NewObj = Template.clone({position = Obj.getPosition()})
                     NewObj.setLock(false)
@@ -1272,15 +1272,7 @@ function ApplyButton()
         local Group = 10
 
         for _, Obj in pairs(ObjectList) do
-            if
-                string.find(Obj.getDescription(), "Faction;") == nil and
-                    string.find(Obj.getDescription(), "Character;") == nil and
-                    string.find(Obj.getDescription(), "Minion;") == nil and
-                    string.find(Obj.getDescription(), "Regular;") == nil and
-                    string.find(Obj.getDescription(), "Elite;") == nil and
-                    string.find(Obj.getDescription(), "Leader;") == nil and
-                    string.find(Obj.getDescription(), "Minion;") == nil
-             then
+            if not ObjectIsUnit(Obj) then
                 if Obj.type == "Tile" and string.find(Obj.getDescription(), "Stronghold;") ~= nil and Obj.getLock() then
                     Obj.setRotationSmooth({0, 180, 0}, false, false)
                     if Settlements == "3D" then
@@ -1337,7 +1329,7 @@ function ApplyButton()
                     Obj.setRotationSmooth({0, 180, 0}, false, false)
                     if Settlements == "3D" then
                         Obj.setPosition({Obj.getPosition().x, 1.01, Obj.getPosition().z})
-                        for SO, SubObj in pairs(
+                        for _, SubObj in pairs(
                             Physics.cast(
                                 {
                                     origin = Obj.getPosition(),
@@ -1626,24 +1618,33 @@ function ChangeFigureScaleCoroutine()
             font_color = {1, 1, 1}
         }
     )
+
     coroutine.yield(0)
+
     for _, Obj in pairs(getAllObjects()) do
-        if
-            (Obj.type == "Figurine" or Obj.type == "rpgFigurine" or Obj.type == "Tileset") and
-                (string.find(Obj.getDescription(), "Character;") ~= nil or
-                    string.find(Obj.getDescription(), "Minion;") ~= nil or
-                    string.find(Obj.getDescription(), "Faction;") ~= nil or
-                    string.find(Obj.getDescription(), "Regular;") ~= nil or
-                    string.find(Obj.getDescription(), "Elite;") ~= nil or
-                    string.find(Obj.getDescription(), "Leader;") ~= nil)
-         then
+        if ObjectIsFigurineOrTileset(Obj) and ObjectIsUnit(Obj) then
             Obj.setScale({Obj.getScale().x * ScaleMult, Obj.getScale().y * ScaleMult, Obj.getScale().z * ScaleMult})
         end
     end
-    --for
+
     coroutine.yield(0)
+
     print("FigureScale:", string.format("%.0f", FigureScale))
     Global.call("UpdateTag", {Text = self.getGMNotes(), Tag = "Scale", Value = string.format("%.0f", FigureScale)})
     MainMenu()
     return 1
+end
+
+function ObjectIsFigurineOrTileset(Obj)
+    return Obj.type == "Figurine" or Obj.type == "rpgFigurine" or Obj.type == "Tileset"
+end
+
+function ObjectIsUnit(Obj)
+    local description = Obj.getDescription()
+    return string.find(description, "Character;") ~= nil or
+        string.find(description, "Minion;") ~= nil or
+        string.find(description, "Faction;") ~= nil or
+        string.find(description, "Regular;") ~= nil or
+        string.find(description, "Elite;") ~= nil or
+        string.find(description, "Leader;") ~= nil
 end
