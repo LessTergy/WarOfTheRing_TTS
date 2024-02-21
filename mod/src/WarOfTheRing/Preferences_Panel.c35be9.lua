@@ -1,3 +1,42 @@
+local Settings = {
+    FigureScale = "100",
+    CharactersType = "3D",
+    NazgulsType = "3D",
+    ArmiesType = "3D",
+    FactionsType = "3D",
+    MountDoomType = "3D",
+    SettlementsType = "3D",
+    DiceType = "Original"
+}
+
+local ArmiesSearchConfig = {
+    IncludingName = nil,
+    ExcludingName = "Nazgûl",
+    Patterns = {"Regular;", "Elite;", "Leader;"},
+    PositionOffset = 0
+}
+
+local CharactersSearchConfig = {
+    IncludingName = nil,
+    ExcludingName = "Nazgûl",
+    Patterns = {"Character;", "Minion;"},
+    PositionOffset = 1
+}
+
+local FactionsSearchConfig = {
+    IncludingName = nil,
+    ExcludingName = "Nazgûl",
+    Patterns = {"Faction;"},
+    PositionOffset = 2
+}
+
+local NazgulSearchConfig = {
+    IncludingName = "Nazgûl",
+    ExcludingName = nil,
+    Patterns = {"Leader;"},
+    PositionOffset = 3
+}
+
 local SettlementsConfigs = {
     Stronghold = {PositionY_3D = 1.16, PositionY_Flat = 0.78, Size = {1.8, 1, 1.8}},
     City = {PositionY_3D = 1.09, PositionY_Flat = 0.85, Size = {1.8, 1, 1.1}},
@@ -9,21 +48,14 @@ function onLoad(save_state)
 end
 
 function InitPreferences()
-    FigureScale = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Scale", Default = "100"})
-    --100
-    CharactersSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Characters", Default = "3D"})
-    --3D,2D,Square
-    NazgulSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Nazgul", Default = "3D"})
-    --3D,2D,Round,Square
-    ArmiesSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Armies", Default = "3D"})
-    --3D,2D,Round
-    FactionsSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Factions", Default = "3D"})
-    --Flat,3D
-    MountDoomSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "MtDoom", Default = "3D"})
-    --Flat,3D
-    SettlementsSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Settlements", Default = "3D"})
-    --Flat,3D
-    DiceSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Dice", Default = "Original"})
+    Settings.FigureScale = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Scale", Default = "100"})
+    Settings.CharactersType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Characters", Default = "3D"})
+    Settings.NazgulsType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Nazgul", Default = "3D"})
+    Settings.ArmiesType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Armies", Default = "3D"})
+    Settings.FactionsType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Factions", Default = "3D"})
+    Settings.MountDoomType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "MtDoom", Default = "3D"})
+    Settings.SettlementsType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Settlements", Default = "3D"})
+    Settings.DiceType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Dice", Default = "Original"})
 
     --Original,Anniversary
     if getObjectFromGUID("4b6f4c") == nil then
@@ -45,10 +77,10 @@ function InitPreferences()
     --On,Off
     Global.setVar("RulesWarnings", WarningsSettingType == "On")
     ApplySettingsFlag = false
-    MainMenu()
+    UpdatePanel()
 end
 
-function MainMenu()
+function UpdatePanel()
     local Characters3DColor = {1, 1, 1}
     local Characters2DColor = {1, 1, 1}
     local CharactersSquareColor = {1, 1, 1}
@@ -77,47 +109,47 @@ function MainMenu()
     local DiceAnniversaryColor = {1, 1, 1}
 
     --set button colors to match selections...
-    if CharactersSettingType == "2D" then
+    if Settings.CharactersType == "2D" then
         Characters2DColor = {1, 1, 0}
-    elseif CharactersSettingType == "Square" then
+    elseif Settings.CharactersType == "Square" then
         CharactersSquareColor = {1, 1, 0}
     else
         Characters3DColor = {1, 1, 0}
     end
 
-    if NazgulSettingType == "2D" then
+    if Settings.NazgulsType == "2D" then
         Nazgul2DColor = {1, 1, 0}
-    elseif NazgulSettingType == "Round" then
+    elseif Settings.NazgulsType == "Round" then
         NazgulRoundColor = {1, 1, 0}
-    elseif NazgulSettingType == "Square" then
+    elseif Settings.NazgulsType == "Square" then
         NazgulSquareColor = {1, 1, 0}
     else
         Nazgul3DColor = {1, 1, 0}
     end
 
-    if ArmiesSettingType == "2D" then
+    if Settings.ArmiesType == "2D" then
         Armies2DColor = {1, 1, 0}
-    elseif ArmiesSettingType == "Round" then
+    elseif Settings.ArmiesType == "Round" then
         ArmiesRoundColor = {1, 1, 0}
     else
         Armies3DColor = {1, 1, 0}
     end
 
-    if FactionsSettingType == "2D" then
+    if Settings.FactionsType == "2D" then
         Factions2DColor = {1, 1, 0}
-    elseif FactionsSettingType == "Round" then
+    elseif Settings.FactionsType == "Round" then
         FactionsRoundColor = {1, 1, 0}
     else
         Factions3DColor = {1, 1, 0}
     end
 
-    if MountDoomSettingType == "3D" then
+    if Settings.MountDoomType == "3D" then
         MtDoom3DColor = {1, 1, 0}
     else
         MtDoomFlatColor = {1, 1, 0}
     end
 
-    if SettlementsSettingType == "3D" then
+    if Settings.SettlementsType == "3D" then
         Settlements3DColor = {1, 1, 0}
     else
         SettlementsFlatColor = {1, 1, 0}
@@ -146,7 +178,7 @@ function MainMenu()
         WarningsOffColor = {1, 1, 0}
     end
 
-    if DiceSettingType == "Anniversary" then
+    if Settings.DiceType == "Anniversary" then
         DiceAnniversaryColor = {1, 1, 0}
     else
         DiceOriginalColor = {1, 1, 0}
@@ -188,7 +220,7 @@ function MainMenu()
         {
             click_function = "FigureScaleUp",
             function_owner = self,
-            label = FigureScale .. "%",
+            label = Settings.FigureScale .. "%",
             position = {-0.75, 0.1, -1.3},
             scale = {0.5, 0.5, 0.5},
             font_color = {1, 1, 1},
@@ -670,14 +702,12 @@ function MainMenu()
 end
 
 function FigureScaleUp()
-    FigureScale = FigureScale + 5
-    ScaleMult = 1.05
+    Settings.FigureScale = Settings.FigureScale + 5
     startLuaCoroutine(self, "ChangeFigureScaleCoroutine")
 end
 
 function FigureScaleDown()
-    FigureScale = FigureScale - 5
-    ScaleMult = 0.95
+    Settings.FigureScale = Settings.FigureScale - 5
     startLuaCoroutine(self, "ChangeFigureScaleCoroutine")
 end
 
@@ -696,7 +726,7 @@ function NewCharacters3D()
                 font_color = {1, 1, 1}
             }
         )
-        CharactersSettingType = "3D"
+        Settings.CharactersType = "3D"
         local ObjList = {}
         for _, Item in pairs(getObjectFromGUID("0e5fd1")).getObjects() do
             if string.find(Item.description, "3D;") ~= nil then
@@ -708,166 +738,166 @@ function NewCharacters3D()
         --for I,Item
         coroutine.yield(0)
 
-        MainMenu()
+        UpdatePanel()
     end
 
     startLuaCoroutine(self, "Characters3DCoroutine")
 end
 
 function Characters3D()
-    CharactersSettingType = "3D"
+    Settings.CharactersType = "3D"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function Characters2D()
-    CharactersSettingType = "2D"
+    Settings.CharactersType = "2D"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function CharactersSquare()
-    CharactersSettingType = "Square"
+    Settings.CharactersType = "Square"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function Nazgul3D()
-    NazgulSettingType = "3D"
+    Settings.NazgulsType = "3D"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function Nazgul2D()
-    NazgulSettingType = "2D"
+    Settings.NazgulsType = "2D"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function NazgulRound()
-    NazgulSettingType = "Round"
+    Settings.NazgulsType = "Round"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function NazgulSquare()
-    NazgulSettingType = "Square"
+    Settings.NazgulsType = "Square"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function Armies3D()
-    ArmiesSettingType = "3D"
+    Settings.ArmiesType = "3D"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function Armies2D()
-    ArmiesSettingType = "2D"
+    Settings.ArmiesType = "2D"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function ArmiesRound()
-    ArmiesSettingType = "Round"
+    Settings.ArmiesType = "Round"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function Factions3D()
-    FactionsSettingType = "3D"
+    Settings.FactionsType = "3D"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function Factions2D()
-    FactionsSettingType = "2D"
+    Settings.FactionsType = "2D"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function FactionsRound()
-    FactionsSettingType = "Round"
+    Settings.FactionsType = "Round"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function MtDoom3D()
-    MountDoomSettingType = "3D"
+    Settings.MountDoomType = "3D"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function MtDoomFlat()
-    MountDoomSettingType = "Flat"
+    Settings.MountDoomType = "Flat"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function Settlements3D()
-    SettlementsSettingType = "3D"
+    Settings.SettlementsType = "3D"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function SettlementsFlat()
-    SettlementsSettingType = "Flat"
+    Settings.SettlementsType = "Flat"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function SoundEffectsOn()
     Sound = "On"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function SoundEffectsOff()
     Sound = "Off"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function ScreamAlways()
     ScreamSettingType = "Always"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function ScreamOnce()
     ScreamSettingType = "Once"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function ScreamNever()
     ScreamSettingType = "Never"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function WarningsOn()
     WarningsSettingType = "On"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function WarningsOff()
     WarningsSettingType = "Off"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function DiceOriginal()
-    DiceSettingType = "Original"
+    Settings.DiceType = "Original"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function DiceAnniversary()
-    DiceSettingType = "Anniversary"
+    Settings.DiceType = "Anniversary"
     ApplySettingsFlag = true
-    MainMenu()
+    UpdatePanel()
 end
 
 function ToggleDicePanels()
@@ -1065,12 +1095,12 @@ function ApplyButton()
         local AllObjects = getAllObjects()
 
         UpdateArmies(ComponentBag, AllObjects)
-        UpdateCharacters()
-        UpdateFactions()
-        UpdateNazguls()
+        UpdateCharacters(ComponentBag, AllObjects)
+        UpdateFactions(ComponentBag, AllObjects)
+        UpdateNazguls(ComponentBag, AllObjects)
 
-        UpdateSettlements()
-        UpdateDices()
+        UpdateSettlements(AllObjects)
+        UpdateDices(AllObjects)
 
         coroutine.yield(0)
         UpdateMountDoom()
@@ -1081,233 +1111,118 @@ function ApplyButton()
 
         ApplySettingsFlag = false
         printToAll("Changes to Preferences Completed.")
-        MainMenu()
+        UpdatePanel()
         return 1
     end
 
     startLuaCoroutine(self, "ApplyPreferencesCoroutine")
 end
 
-function UpdateArmies(ComponentBag, AllObjects)
-    -- Regular;Elite;Leader;
-    -- but not Nazgul
-    
-    coroutine.yield(0)
-    local TemplateList = {}
-    local TempX = 80
-
-    --get out army templates...
-    for _, Item in pairs(ComponentBag.getObjects()) do
-        if
-            Item.name ~= "Nazgûl" and
-                (string.find(Item.description, "Regular;") ~= nil or string.find(Item.description, "Elite;") ~= nil or
-                    string.find(Item.description, "Leader;") ~= nil)
-         then
-            if
-                (ArmiesSettingType == "2D" and string.find(Item.description, "2D;") ~= nil) or
-                    (ArmiesSettingType == "3D" and string.find(Item.description, "3D;") ~= nil) or
-                    (ArmiesSettingType == "Round" and string.find(Item.description, "Marble;") ~= nil)
-             then
-                TempX = TempX - 1
-                local TempObj = ComponentBag.takeObject({
-                    guid = Item.guid,
-                    smooth = false,
-                    position = {TempX, -2, -60},
-                    rotation = {0, 180, 0}
-                })
-
-                coroutine.yield(0)
-                TempObj.setLock(true)
-                TempObj.setPosition({TempX, -2, -60})
-                TempObj.setRotation({0, 180, 0})
-                table.insert(TemplateList, TempObj.getGUID())
-            end
-        end
-    end
-
+function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
     coroutine.yield(0)
 
-    -- replace
-    for T = 1, #TemplateList do
-        local Template = getObjectFromGUID(TemplateList[T])
-        printToAll("Updating " .. Template.getName() .. "...")
-
-        for _, Obj in pairs(AllObjects) do
-            if Template.getName() == Obj.getName() and ObjectIsFigurineOrTileset(Obj) then
-                local NewObj = Template.clone({position = Obj.getPosition()})
-                NewObj.setLock(false)
-                NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
-                Obj.destruct()
-            end
-        end
-
-        ComponentBag.putObject(Template)
-        coroutine.yield(0)
-    end
-end
-
-function UpdateCharacters()
-    --Characters (Characters;Companions;Rulers;Minions;)...
-    coroutine.yield(0)
-    local TemplateList = {}
-    TempX = 80
-
-    --get out character templates...
-    for _, Item in pairs(ComponentBag.getObjects()) do
-        if
-            Item.name ~= "Nazgûl" and
-                (string.find(Item.description, "Character;") ~= nil or string.find(Item.description, "Minion;") ~= nil)
-         then
-            --correct state?
-            if
-                (CharactersSettingType == "2D" and string.find(Item.description, "2D;") ~= nil) or
-                    (CharactersSettingType == "3D" and string.find(Item.description, "3D;") ~= nil) or
-                    (CharactersSettingType == "Square" and string.find(Item.description, "Marble;") ~= nil)
-             then
-                TempX = TempX - 1
-                local TempObj = ComponentBag.takeObject({
-                    guid = Item.guid,
-                    smooth = false,
-                    position = {TempX, -2, -61},
-                    rotation = {0, 180, 0}
-                })
-                coroutine.yield(0)
-                TempObj.setLock(true)
-                TempObj.setPosition({TempX, -2, -61})
-                TempObj.setRotation({0, 180, 0})
-                table.insert(TemplateList, TempObj.getGUID())
-            end
-        end
-    end
-
+    local TemplateList = GetObjectsFromComponentBag(ComponentBag, SearchConfig, SettingType)
     coroutine.yield(0)
 
-    --go through templatelist and replace matching components...
     for I = 1, #TemplateList do
         local Template = getObjectFromGUID(TemplateList[I])
         printToAll("Updating " .. Template.getName() .. "...")
 
         --go through all objects and look for those to replace...
         for _, Obj in pairs(AllObjects) do
-            if Template.getName() == Obj.getName() and ObjectIsFigurineOrTileset(Obj) then
-                local NewObj = Template.clone({position = Obj.getPosition()})
-                NewObj.setLock(false)
-                NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
-                Obj.destruct()
+            if not ObjectIsFigurineOrTileset(Obj) then
+                goto continue
             end
+
+            if Template.getName() ~= Obj.getName() then
+                goto continue
+            end
+
+            if Template.getDescription() == Obj.getDescription() then
+                goto continue
+            end
+
+            local NewObj = Template.clone({position = Obj.getPosition()})
+            NewObj.setLock(false)
+            NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
+            Obj.destruct()
+
+            ::continue::
         end
+
         ComponentBag.putObject(Template)
         coroutine.yield(0)
     end
 end
 
-function UpdateFactions()
-    --Factions...
-    coroutine.yield(0)
-    TemplateList = {}
-    TempX = 80
+function GetObjectsFromComponentBag(ComponentBag, SearchConfig, SettingType)
+    local SearchList = {}
+    local settingPattern = SettingType .. ";"
 
-    --get out faction templates...
     for _, Item in pairs(ComponentBag.getObjects()) do
-        if Item.name ~= "Nazgûl" and (string.find(Item.description, "Faction;") ~= nil) then
-            --correct state?
-            if
-                (FactionsSettingType == "2D" and string.find(Item.description, "2D;") ~= nil) or
-                    (FactionsSettingType == "3D" and string.find(Item.description, "3D;") ~= nil) or
-                    (FactionsSettingType == "Round" and string.find(Item.description, "Marble;") ~= nil)
-             then
-                TempX = TempX - 1
-                local TempObj =
-                    ComponentBag.takeObject(
-                    {guid = Item.guid, smooth = false, position = {TempX, -2, -62}, rotation = {0, 180, 0}}
-                )
-                coroutine.yield(0)
-                TempObj.setLock(true)
-                TempObj.setPosition({TempX, -2, -62})
-                TempObj.setRotation({0, 180, 0})
-                table.insert(TemplateList, TempObj.getGUID())
+        if SearchConfig.ExcludingName ~= nil and Item.name == SearchConfig.ExcludingName then
+            goto continue
+        end
+
+        if (SearchConfig.IncludingName ~= nil and SearchConfig.IncludingName) then
+            goto continue
+        end
+
+        local exactSettingType = string.find(Item.description, settingPattern) ~= nil
+        if not exactSettingType then
+            goto continue
+        end
+
+        for _, Pattern in pairs(SearchConfig.Patterns) do
+            if string.find(Item.description, Pattern) ~= nil then
+                table.insert(SearchList, Item.guid)
+                goto continue
             end
         end
+        
+        ::continue::
     end
 
-    coroutine.yield(0)
+    local OffsetX = 80
+    local TemplateList = {}
 
-    --go through templatelist and replace matching components...
-    for T = 1, #TemplateList do
-        local Template = getObjectFromGUID(TemplateList[T])
-        printToAll("Updating " .. Template.getName() .. "...")
+    for _, Item in pairs(SearchList) do
+        OffsetX = OffsetX - 1
+        local TempObj = ComponentBag.takeObject({
+            guid = Item.guid,
+            smooth = false,
+            position = {OffsetX, -2, -60},
+            rotation = {0, 180, 0}
+        })
 
-        --go through all objects and look for those to replace...
-        for O, Obj in pairs(AllObjects) do
-            if Template.getName() == Obj.getName() and ObjectIsFigurineOrTileset(Obj) then
-                local NewObj = Template.clone({position = Obj.getPosition()})
-                NewObj.setLock(false)
-                NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
-                Obj.destruct()
-            end
-        end
-
-        ComponentBag.putObject(Template)
         coroutine.yield(0)
+        TempObj.setLock(true)
+        local zPosition = -60 - SearchConfig.PositionOffset;
+        TempObj.setPosition({OffsetX, -2, zPosition})
+        TempObj.setRotation({0, 180, 0})
+        table.insert(TemplateList, TempObj.getGUID())
     end
+
+    return TemplateList
 end
 
-function UpdateNazguls()
-    --Nazgul...
-    coroutine.yield(0)
-    TemplateList = {}
-    TempX = 80
-
-    --get out nazgul templates...
-    for _, Item in pairs(ComponentBag.getObjects()) do
-        if Item.name == "Nazgûl" and (string.find(Item.description, "Leader;") ~= nil) then
-            if
-                (NazgulSettingType == "2D" and string.find(Item.description, "2D;") ~= nil) or
-                    (NazgulSettingType == "3D" and string.find(Item.description, "3D;") ~= nil) or
-                    (NazgulSettingType == "Square" and string.find(Item.description, "Square;") ~= nil) or
-                    (NazgulSettingType == "Round" and string.find(Item.description, "Round;") ~= nil)
-             then
-                TempX = TempX - 1
-                local TempObj =
-                    ComponentBag.takeObject(
-                    {guid = Item.guid, smooth = false, position = {TempX, -2, -63}, rotation = {0, 180, 0}}
-                )
-                coroutine.yield(0)
-                TempObj.setLock(true)
-                TempObj.setPosition({TempX, -2, -63})
-                TempObj.setRotation({0, 180, 0})
-                table.insert(TemplateList, TempObj.getGUID())
-            end
-        end
-    end
-
-    coroutine.yield(0)
-
-    --go through templatelist and replace matching components...
-    for T = 1, #TemplateList do
-        local Template = getObjectFromGUID(TemplateList[T])
-        printToAll("Updating " .. Template.getName() .. "...")
-
-        --go through all objects and look for those to replace...
-        for O, Obj in pairs(AllObjects) do
-            if
-                Template.getName() == Obj.getName() and Template.getDescription() ~= Obj.getDescription() and
-                    ObjectIsFigurineOrTileset(Obj)
-             then
-                local NewObj = Template.clone({position = Obj.getPosition()})
-                NewObj.setLock(false)
-                NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
-                Obj.destruct()
-            end
-        end
-        ComponentBag.putObject(Template)
-        coroutine.yield(0)
-    end
-
-    coroutine.yield(0)
+function UpdateArmies(ComponentBag, AllObjects)
+    ReplaceObjects(ComponentBag, AllObjects, ArmiesSearchConfig, Settings.ArmiesType)
 end
 
-function UpdateSettlements()
+function UpdateCharacters(ComponentBag, AllObjects)
+    ReplaceObjects(ComponentBag, AllObjects, CharactersSearchConfig, Settings.CharactersType)
+end
+
+function UpdateFactions(ComponentBag, AllObjects)
+    ReplaceObjects(ComponentBag, AllObjects, FactionsSearchConfig, Settings.FactionsType)
+end
+
+function UpdateNazguls(ComponentBag, AllObjects)
+    ReplaceObjects(ComponentBag, AllObjects, NazgulSearchConfig, Settings.NazgulsType)
+end
+
+function UpdateSettlements(AllObjects)
     local Group = 10
 
     for _, Obj in pairs(AllObjects) do
@@ -1322,7 +1237,7 @@ function UpdateSettlements()
     end
 end
 
-function UpdateDices()
+function UpdateDices(AllObjects)
     local Group = 10
 
     for _, Obj in pairs(AllObjects) do
@@ -1362,11 +1277,11 @@ function TryUpdateSettlementObject(Obj)
     return false
 end
 
-function UpdateSettlementObject(Obj, config)
+function UpdateSettlementObject(Obj, Config)
     Obj.setRotationSmooth({0, 180, 0}, false, false)
 
-    if SettlementsSettingType == "3D" then
-        Obj.setPosition({Obj.getPosition().x, config.PositionY_3D, Obj.getPosition().z})
+    if Settings.SettlementsType == "3D" then
+        Obj.setPosition({Obj.getPosition().x, Config.PositionY_3D, Obj.getPosition().z})
 
         local conflictedObjects =
             Physics.cast(
@@ -1374,7 +1289,7 @@ function UpdateSettlementObject(Obj, config)
                 origin = Obj.getPosition(),
                 direction = {0, 1, 0},
                 type = 3,
-                size = config.Size,
+                size = Config.Size,
                 orientation = {0, 0, 0},
                 max_distance = 0,
                 debug = true
@@ -1387,20 +1302,20 @@ function UpdateSettlementObject(Obj, config)
             end
         end
     else
-        Obj.setPositionSmooth({Obj.getPosition().x, config.PositionY_Flat, Obj.getPosition().z}, false, false)
+        Obj.setPositionSmooth({Obj.getPosition().x, Config.PositionY_Flat, Obj.getPosition().z}, false, false)
     end
 end
 
-function TryUpdateDiceObject(oldDiceObj)
-    if ObjectIsUnit(oldDiceObj) then
+function TryUpdateDiceObject(OldDiceObj)
+    if ObjectIsUnit(OldDiceObj) then
         return false
     end
 
-    if oldDiceObj.type ~= "Dice" then
+    if OldDiceObj.type ~= "Dice" then
         return false
     end
 
-    local description = oldDiceObj.getDescription()
+    local description = OldDiceObj.getDescription()
 
     if string.find(description, "Combat;") ~= nil then
         return false
@@ -1408,7 +1323,7 @@ function TryUpdateDiceObject(oldDiceObj)
 
     local newDiceObj = nil
     local isAnniversaryDiceObject = string.find(description, "Anniversary;") ~= nil
-    local isAnniversarySetting = DiceSettingType == "Anniversary"
+    local isAnniversarySetting = Settings.DiceType == "Anniversary"
     local needSwap = isAnniversaryDiceObject ~= isAnniversarySetting
 
     if not needSwap then
@@ -1432,16 +1347,16 @@ function TryUpdateDiceObject(oldDiceObj)
             newDiceObj = ComponentBag.takeObject(
                 {
                     guid = Item.guid,
-                    position = oldDiceObj.getPosition(),
-                    rotation = oldDiceObj.getRotation(),
+                    position = OldDiceObj.getPosition(),
+                    rotation = OldDiceObj.getRotation(),
                     smooth = true
                 }
             )
 
             coroutine.yield(0)
-            Global.call("SetDiceFace", {Dice = newDiceObj, Value = oldDiceObj.getRotationValue()})
+            Global.call("SetDiceFace", {Dice = newDiceObj, Value = OldDiceObj.getRotationValue()})
 
-            ComponentBag.putObject(oldDiceObj)
+            ComponentBag.putObject(OldDiceObj)
             coroutine.yield(0)
 
             UpdateDiceId(description, newDiceObj, IDs)
@@ -1474,7 +1389,7 @@ function GetDiceIndex(description)
 end
 
 function UpdateMountDoom()
-    if MountDoomSettingType == "Flat" then
+    if Settings.MountDoomType == "Flat" then
         if getObjectFromGUID("76fca0") ~= nil then
             getObjectFromGUID("416864").putObject(getObjectFromGUID("76fca0"))
         end
@@ -1561,16 +1476,16 @@ function RecordPreferences()
     --record settings...
     Global.setVar("RulesWarnings", WarningsSettingType == "On")
     local Notes = "Scale:" .. FigureScale .. ";"
-    Notes = Notes .. "Characters:" .. CharactersSettingType .. ";"
-    Notes = Notes .. "Nazgul:" .. NazgulSettingType .. ";"
-    Notes = Notes .. "Armies:" .. ArmiesSettingType .. ";"
-    Notes = Notes .. "Factions:" .. FactionsSettingType .. ";"
+    Notes = Notes .. "Characters:" .. Settings.CharactersType .. ";"
+    Notes = Notes .. "Nazgul:" .. Settings.NazgulsType .. ";"
+    Notes = Notes .. "Armies:" .. Settings.ArmiesType .. ";"
+    Notes = Notes .. "Factions:" .. Settings.FactionsType .. ";"
     if ModelLockSetting then
         Notes = Notes .. "ModelLock:1;"
     end
     -- if models locked.
-    Notes = Notes .. "MtDoom:" .. MountDoomSettingType .. ";"
-    Notes = Notes .. "Settlements:" .. SettlementsSettingType .. ";"
+    Notes = Notes .. "MtDoom:" .. Settings.MountDoomType .. ";"
+    Notes = Notes .. "Settlements:" .. Settings.SettlementsType .. ";"
     if Sound then
         Notes = Notes .. "Sound:On;"
     else
@@ -1579,7 +1494,7 @@ function RecordPreferences()
 
     Notes = Notes .. "Scream:" .. ScreamSettingType .. ";"
     Notes = Notes .. "Warnings:" .. WarningsSettingType .. ";"
-    Notes = Notes .. "Dice:" .. DiceSettingType .. ";"
+    Notes = Notes .. "Dice:" .. Settings.DiceType .. ";"
     self.setGMNotes(Notes)
 end
 
@@ -1602,15 +1517,15 @@ function ChangeFigureScaleCoroutine()
 
     for _, Obj in pairs(getAllObjects()) do
         if ObjectIsFigurineOrTileset(Obj) and ObjectIsUnit(Obj) then
-            Obj.setScale({Obj.getScale().x * ScaleMult, Obj.getScale().y * ScaleMult, Obj.getScale().z * ScaleMult})
+            --Obj.setScale({Obj.getScale().x * ScaleMult, Obj.getScale().y * ScaleMult, Obj.getScale().z * ScaleMult})
         end
     end
 
     coroutine.yield(0)
 
-    print("FigureScale:", string.format("%.0f", FigureScale))
-    Global.call("UpdateTag", {Text = self.getGMNotes(), Tag = "Scale", Value = string.format("%.0f", FigureScale)})
-    MainMenu()
+    print("FigureScale:", string.format("%.0f", Settings.FigureScale))
+    Global.call("UpdateTag", {Text = self.getGMNotes(), Tag = "Scale", Value = string.format("%.0f", Settings.FigureScale)})
+    UpdatePanel()
     return 1
 end
 
