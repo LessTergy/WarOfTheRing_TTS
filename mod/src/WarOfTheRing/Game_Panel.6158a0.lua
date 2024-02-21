@@ -73,8 +73,8 @@ Companions = {
 
 ShadowDicePool = {} --pool of dice rolled
 FreePeoplesDicePool = {} --pool of dice rolled
-HuntBoxShadowDice = {} --table of dice ids
-HuntBoxFreePeoplesDice = {} --table of dice ids
+HuntBoxShadowDiceArray = {} --table of dice ids
+HuntBoxFreePeoplesDiceArray = {} --table of dice ids
 IDs = {
     ShadowActionDice = {
         "1bddf0",
@@ -1730,7 +1730,7 @@ function ProcessNextStep()
             end
         end
 
-        for D = 1, 99 do
+        for I = 1, 99 do
             coroutine.yield(0)
         end
         -- for D
@@ -1978,7 +1978,7 @@ function ProcessNextStep()
                 font_color = {1, 1, 1}
             }
         )
-        for D = 1, 99 do
+        for I = 1, 99 do
             coroutine.yield(0)
         end
         -- for D
@@ -2007,7 +2007,7 @@ function ProcessNextStep()
             end
         end
 
-        for D = 1, 30 do
+        for I = 1, 30 do
             coroutine.yield(0)
         end
 
@@ -2307,7 +2307,7 @@ function ProcessNextStep()
             Global.call("RemoveObjectFromGame", {ID = "471b96"})
             Global.call("RemoveObjectFromGame", {ID = "28f260"})
             --re-move combat dice panels (they seem to get lag/stuck in certain games)...
-            for D = 1, 30 do
+            for I = 1, 30 do
                 coroutine.yield(0)
             end
 
@@ -2392,7 +2392,7 @@ function ProcessNextStep()
                 font_color = {1, 1, 1}
             }
         )
-        for D = 1, 99 do
+        for I = 1, 99 do
             coroutine.yield(0)
         end
         -- for D
@@ -4656,13 +4656,17 @@ function ProcessNextStep()
                 tooltip = "Click Continue when Phase 3 steps are complete."
             }
         )
-        HuntBoxShadowDice = {}
-        HuntBoxFreePeoplesDice = {}
+        HuntBoxShadowDiceArray = {}
+        HuntBoxFreePeoplesDiceArray = {}
+
         if FreePeoplesHuntDiceCount > 0 then
             --allocate the first Shadow dice to the hunt box...
-            HuntBoxShadowDice = {IDs.ShadowActionDice[1]}
-            getObjectFromGUID(IDs.ShadowActionDice[1]).setPositionSmooth(Spots.ShadowHuntBoxDice[1], false, false)
-            getObjectFromGUID(IDs.ShadowActionDice[1]).setRotation({90, 0, 0})
+            local shadowDiceId = IDs.ShadowActionDice[1]
+            HuntBoxShadowDiceArray = {shadowDiceId}
+
+            local shadowDice = getObjectFromGUID(shadowDiceId)
+            shadowDice.setPositionSmooth(Spots.ShadowHuntBoxDice[1], false, false)
+            shadowDice.setRotation({90, 0, 0})
         end
 
         function Continue()
@@ -6439,10 +6443,10 @@ function GatherActionDiceCoroutine()
     DiceIndex = 0
 
     --FP gathers 4 base dice...
-    for D = 1, 4 do
-        if getObjectFromGUID(IDs.FreePeoplesActionDice[D]) ~= nil then
+    for I = 1, 4 do
+        if getObjectFromGUID(IDs.FreePeoplesActionDice[I]) ~= nil then
             DiceIndex = DiceIndex + 1
-            getObjectFromGUID(IDs.FreePeoplesActionDice[D]).setPositionSmooth(
+            getObjectFromGUID(IDs.FreePeoplesActionDice[I]).setPositionSmooth(
                 Spots.FreePeoplesDiceBox[DiceIndex],
                 false,
                 true
@@ -6535,11 +6539,11 @@ function GatherActionDiceCoroutine()
     coroutine.yield(0)
     --Shadow Peoples gathers 7 base dice...
     DiceIndex = 0
-    for D = 1, 7 do
-        if getObjectFromGUID(IDs.ShadowActionDice[D]) ~= nil then
+    for I = 1, 7 do
+        if getObjectFromGUID(IDs.ShadowActionDice[I]) ~= nil then
             DiceIndex = DiceIndex + 1
-            getObjectFromGUID(IDs.ShadowActionDice[D]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex])
-            getObjectFromGUID(IDs.ShadowActionDice[D]).setRotation({0, SR, 0})
+            getObjectFromGUID(IDs.ShadowActionDice[I]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex])
+            getObjectFromGUID(IDs.ShadowActionDice[I]).setRotation({0, SR, 0})
         else
             print("Uhoh! Can't find Shadow Action Dice #" .. D .. "!")
         end
@@ -6678,11 +6682,11 @@ function RollActionDiceCoroutine()
     end
 
     --roll ShadowDice...
-    for D = 1, #ShadowDicePool do
-        getObjectFromGUID(ShadowDicePool[D]).randomize()
+    for I = 1, #ShadowDicePool do
+        getObjectFromGUID(ShadowDicePool[I]).randomize()
         Wait.time(
             function()
-                getObjectFromGUID(ShadowDicePool[D]).randomize()
+                getObjectFromGUID(ShadowDicePool[I]).randomize()
             end,
             0.5
         )
@@ -6690,11 +6694,11 @@ function RollActionDiceCoroutine()
 
     coroutine.yield(0)
     --roll FreePeoplesDice
-    for D = 1, #FreePeoplesDicePool do
-        getObjectFromGUID(FreePeoplesDicePool[D]).randomize()
+    for I = 1, #FreePeoplesDicePool do
+        getObjectFromGUID(FreePeoplesDicePool[I]).randomize()
         Wait.time(
             function()
-                getObjectFromGUID(FreePeoplesDicePool[D]).randomize()
+                getObjectFromGUID(FreePeoplesDicePool[I]).randomize()
             end,
             0.5
         )
@@ -6705,16 +6709,16 @@ function RollActionDiceCoroutine()
     repeat
         coroutine.yield(0)
         Done = true --assume true until proven false.
-        for D = 1, #ShadowDicePool do
-            if not getObjectFromGUID(ShadowDicePool[D]).resting then
+        for I = 1, #ShadowDicePool do
+            if not getObjectFromGUID(ShadowDicePool[I]).resting then
                 Done = false
                 break
             end
         end
 
         if Done then
-            for D = 1, #FreePeoplesDicePool do
-                if not getObjectFromGUID(FreePeoplesDicePool[D]).resting then
+            for I = 1, #FreePeoplesDicePool do
+                if not getObjectFromGUID(FreePeoplesDicePool[I]).resting then
                     Done = false
                     break
                 end
@@ -6722,8 +6726,8 @@ function RollActionDiceCoroutine()
         end
     until Done
     --update huntbox dice tables...
-    HuntBoxShadowDice = {}
-    HuntBoxFreePeoplesDice = {}
+    HuntBoxShadowDiceArray = {}
+    HuntBoxFreePeoplesDiceArray = {}
     for _, Obj in pairs(
         Physics.cast(
             {
@@ -6741,49 +6745,49 @@ function RollActionDiceCoroutine()
             string.find(Obj.hit_object.getDescription(), "Dice;") ~= nil and
                 string.find(Obj.hit_object.getDescription(), "Shadow;") ~= nil
          then
-            table.insert(HuntBoxShadowDice, Obj.hit_object.getGUID())
+            table.insert(HuntBoxShadowDiceArray, Obj.hit_object.getGUID())
         end
 
         if
             string.find(Obj.hit_object.getDescription(), "Dice;") ~= nil and
                 string.find(Obj.hit_object.getDescription(), "FreePeoples;") ~= nil
          then
-            table.insert(HuntBoxFreePeoplesDice, Obj.hit_object.getGUID())
+            table.insert(HuntBoxFreePeoplesDiceArray, Obj.hit_object.getGUID())
         end
     end
 
     local ResultText = "\nThe Shadow Rolled: "
     --organize shadow action dice...
-    for D = 1, #ShadowDicePool do
-        getObjectFromGUID(ShadowDicePool[D]).setPosition(Spots.ShadowDiceBox[D])
-        ResultText = ResultText .. " [" .. getObjectFromGUID(ShadowDicePool[D]).getRotationValue() .. "]"
+    for I = 1, #ShadowDicePool do
+        getObjectFromGUID(ShadowDicePool[I]).setPosition(Spots.ShadowDiceBox[I])
+        ResultText = ResultText .. " [" .. getObjectFromGUID(ShadowDicePool[I]).getRotationValue() .. "]"
         --eye result?
-        if string.find(getObjectFromGUID(ShadowDicePool[D]).getRotationValue(), "Eye") ~= nil then
-            table.insert(HuntBoxShadowDice, ShadowDicePool[D])
+        if string.find(getObjectFromGUID(ShadowDicePool[I]).getRotationValue(), "Eye") ~= nil then
+            table.insert(HuntBoxShadowDiceArray, ShadowDicePool[I])
         end
     end
 
     printToAll(ResultText, {1, 0.3, 0.3})
     ResultText = "\nThe Free Peoples Rolled: "
     --organize FP action dice...
-    for D = 1, #FreePeoplesDicePool do
-        ResultText = ResultText .. " [" .. getObjectFromGUID(FreePeoplesDicePool[D]).getRotationValue() .. "]"
+    for I = 1, #FreePeoplesDicePool do
+        ResultText = ResultText .. " [" .. getObjectFromGUID(FreePeoplesDicePool[I]).getRotationValue() .. "]"
         --eye result?
-        if string.find(getObjectFromGUID(FreePeoplesDicePool[D]).getRotationValue(), "Eye") ~= nil then
-            table.insert(HuntBoxFreePeoplesDice, FreePeoplesDicePool[D])
+        if string.find(getObjectFromGUID(FreePeoplesDicePool[I]).getRotationValue(), "Eye") ~= nil then
+            table.insert(HuntBoxFreePeoplesDiceArray, FreePeoplesDicePool[I])
         end
     end
 
     printToAll(ResultText, {0.3, 0.3, 1})
     --update huntbox again to pick up newly rolled eyes...
-    for D = 1, #HuntBoxShadowDice do
-        getObjectFromGUID(HuntBoxShadowDice[D]).setPositionSmooth(Spots.ShadowHuntBoxDice[D], false, true)
-        Global.call("SetDiceFace", {Dice = getObjectFromGUID(HuntBoxShadowDice[D]), Value = "Eye"})
+    for I = 1, #HuntBoxShadowDiceArray do
+        getObjectFromGUID(HuntBoxShadowDiceArray[I]).setPositionSmooth(Spots.ShadowHuntBoxDice[I], false, true)
+        Global.call("SetDiceFace", {Dice = getObjectFromGUID(HuntBoxShadowDiceArray[I]), Value = "Eye"})
     end
 
-    for D = 1, #HuntBoxFreePeoplesDice do
-        getObjectFromGUID(HuntBoxFreePeoplesDice[D]).setPositionSmooth(Spots.FreePeoplesHuntBoxDice[D], false, true)
-        Global.call("SetDiceFace", {Dice = getObjectFromGUID(HuntBoxShadowDice[D]), Value = "Eye"})
+    for I = 1, #HuntBoxFreePeoplesDiceArray do
+        getObjectFromGUID(HuntBoxFreePeoplesDiceArray[I]).setPositionSmooth(Spots.FreePeoplesHuntBoxDice[I], false, true)
+        Global.call("SetDiceFace", {Dice = getObjectFromGUID(HuntBoxShadowDiceArray[I]), Value = "Eye"})
     end
 
     --line up action dice by type...
@@ -6791,25 +6795,25 @@ function RollActionDiceCoroutine()
     local FPDI = 0 --FP dice index
     for DF = 1, 6 do
         --line up shadow action dice...
-        for D = 1, #ShadowDicePool do
+        for I = 1, #ShadowDicePool do
             --ignore eyes and group by face...
             if
-                getObjectFromGUID(ShadowDicePool[D]).getValue() == DF and
-                    string.find(getObjectFromGUID(ShadowDicePool[D]).getRotationValue(), "Eye") == nil
+                getObjectFromGUID(ShadowDicePool[I]).getValue() == DF and
+                    string.find(getObjectFromGUID(ShadowDicePool[I]).getRotationValue(), "Eye") == nil
              then
                 SDI = SDI + 1
                 if CompactMode then
-                    getObjectFromGUID(ShadowDicePool[D]).setPosition(Spots.CompactShadowDiceLine[SDI])
+                    getObjectFromGUID(ShadowDicePool[I]).setPosition(Spots.CompactShadowDiceLine[SDI])
                 else
-                    getObjectFromGUID(ShadowDicePool[D]).setPosition(Spots.ShadowDiceBox[SDI])
+                    getObjectFromGUID(ShadowDicePool[I]).setPosition(Spots.ShadowDiceBox[SDI])
                 end
 
                 --align Y rotation (don't use set dice face funtion!)
-                getObjectFromGUID(ShadowDicePool[D]).setRotationSmooth(
+                getObjectFromGUID(ShadowDicePool[I]).setRotationSmooth(
                     {
-                        getObjectFromGUID(ShadowDicePool[D]).getRotation().x,
+                        getObjectFromGUID(ShadowDicePool[I]).getRotation().x,
                         SR,
-                        getObjectFromGUID(ShadowDicePool[D]).getRotation().z
+                        getObjectFromGUID(ShadowDicePool[I]).getRotation().z
                     },
                     false,
                     false
@@ -6818,25 +6822,25 @@ function RollActionDiceCoroutine()
         end
 
         --organize FP action dice...
-        for D = 1, #FreePeoplesDicePool do
+        for I = 1, #FreePeoplesDicePool do
             --ignore eyes and group by face...
             if
-                getObjectFromGUID(FreePeoplesDicePool[D]).getValue() == DF and
-                    string.find(getObjectFromGUID(FreePeoplesDicePool[D]).getRotationValue(), "Eye") == nil
+                getObjectFromGUID(FreePeoplesDicePool[I]).getValue() == DF and
+                    string.find(getObjectFromGUID(FreePeoplesDicePool[I]).getRotationValue(), "Eye") == nil
              then
                 FPDI = FPDI + 1
                 if CompactMode then
-                    getObjectFromGUID(FreePeoplesDicePool[D]).setPosition(Spots.CompactFreePeoplesDiceLine[FPDI])
+                    getObjectFromGUID(FreePeoplesDicePool[I]).setPosition(Spots.CompactFreePeoplesDiceLine[FPDI])
                 else
-                    getObjectFromGUID(FreePeoplesDicePool[D]).setPosition(Spots.FreePeoplesDiceBox[FPDI])
+                    getObjectFromGUID(FreePeoplesDicePool[I]).setPosition(Spots.FreePeoplesDiceBox[FPDI])
                 end
 
                 --align Y rotation (don't use set dice face funtion!)
-                getObjectFromGUID(FreePeoplesDicePool[D]).setRotationSmooth(
+                getObjectFromGUID(FreePeoplesDicePool[I]).setRotationSmooth(
                     {
-                        getObjectFromGUID(FreePeoplesDicePool[D]).getRotation().x,
+                        getObjectFromGUID(FreePeoplesDicePool[I]).getRotation().x,
                         FR,
-                        getObjectFromGUID(FreePeoplesDicePool[D]).getRotation().z
+                        getObjectFromGUID(FreePeoplesDicePool[I]).getRotation().z
                     },
                     false,
                     false
@@ -6846,21 +6850,21 @@ function RollActionDiceCoroutine()
     end
 
     --update dice stats...
-    for D = 1, #FreePeoplesDicePool do
+    for I = 1, #FreePeoplesDicePool do
         Global.call(
             "UpdateDiceStats",
             {
-                Result = getObjectFromGUID(FreePeoplesDicePool[D]).getRotationValue(),
+                Result = getObjectFromGUID(FreePeoplesDicePool[I]).getRotationValue(),
                 Type = "Action",
                 Side = "FreePeoples"
             }
         )
     end
 
-    for D = 1, #ShadowDicePool do
+    for I = 1, #ShadowDicePool do
         Global.call(
             "UpdateDiceStats",
-            {Result = getObjectFromGUID(ShadowDicePool[D]).getRotationValue(), Type = "Action", Side = "Shadow"}
+            {Result = getObjectFromGUID(ShadowDicePool[I]).getRotationValue(), Type = "Action", Side = "Shadow"}
         )
     end
 

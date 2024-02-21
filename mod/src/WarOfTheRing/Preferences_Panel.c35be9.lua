@@ -1,3 +1,9 @@
+local SettlementsConfigs = {
+    Stronghold = {PositionY_3D = 1.16, PositionY_Flat = 0.78, Size = {1.8, 1, 1.8}},
+    City = {PositionY_3D = 1.09, PositionY_Flat = 0.85, Size = {1.8, 1, 1.1}},
+    Fortification = {PositionY_3D = 1.01, PositionY_Flat = 0.93, Size = {1.8, 1, 1.1}}
+}
+
 function onLoad(save_state)
     InitPreferences()
 end
@@ -5,19 +11,20 @@ end
 function InitPreferences()
     FigureScale = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Scale", Default = "100"})
     --100
-    Characters = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Characters", Default = "3D"})
+    CharactersSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Characters", Default = "3D"})
     --3D,2D,Square
-    Nazgul = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Nazgul", Default = "3D"})
+    NazgulSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Nazgul", Default = "3D"})
     --3D,2D,Round,Square
-    Armies = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Armies", Default = "3D"})
+    ArmiesSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Armies", Default = "3D"})
     --3D,2D,Round
-    Factions = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Factions", Default = "3D"})
+    FactionsSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Factions", Default = "3D"})
     --Flat,3D
-    MtDoom = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "MtDoom", Default = "3D"})
+    MountDoomSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "MtDoom", Default = "3D"})
     --Flat,3D
-    Settlements = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Settlements", Default = "3D"})
+    SettlementsSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Settlements", Default = "3D"})
     --Flat,3D
-    Dice = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Dice", Default = "Original"})
+    DiceSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Dice", Default = "Original"})
+
     --Original,Anniversary
     if getObjectFromGUID("4b6f4c") == nil then
         DicePanels = "Strips"
@@ -25,18 +32,19 @@ function InitPreferences()
         DicePanels = "Sic"
     end
 
-    ModelLock = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "ModelLock", Default = "0"}) == "1"
+    ModelLockSetting = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "ModelLock", Default = "0"}) == "1"
     if Global.getVar("Mute") then
         Sound = "Off"
     else
         Sound = "On"
     end
-    Scream = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Scream", Default = "Once"})
+
+    ScreamSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Scream", Default = "Once"})
     --Always,Once,Never
-    Warnings = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Warnings", Default = "On"})
+    WarningsSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Warnings", Default = "On"})
     --On,Off
-    Global.setVar("RulesWarnings", Warnings == "On")
-    Apply = false
+    Global.setVar("RulesWarnings", WarningsSettingType == "On")
+    ApplySettingsFlag = false
     MainMenu()
 end
 
@@ -67,56 +75,57 @@ function MainMenu()
     local WarningsOffColor = {1, 1, 1}
     local DiceOriginalColor = {1, 1, 1}
     local DiceAnniversaryColor = {1, 1, 1}
+
     --set button colors to match selections...
-    if Characters == "2D" then
+    if CharactersSettingType == "2D" then
         Characters2DColor = {1, 1, 0}
-    elseif Characters == "Square" then
+    elseif CharactersSettingType == "Square" then
         CharactersSquareColor = {1, 1, 0}
     else
         Characters3DColor = {1, 1, 0}
     end
 
-    if Nazgul == "2D" then
+    if NazgulSettingType == "2D" then
         Nazgul2DColor = {1, 1, 0}
-    elseif Nazgul == "Round" then
+    elseif NazgulSettingType == "Round" then
         NazgulRoundColor = {1, 1, 0}
-    elseif Nazgul == "Square" then
+    elseif NazgulSettingType == "Square" then
         NazgulSquareColor = {1, 1, 0}
     else
         Nazgul3DColor = {1, 1, 0}
     end
 
-    if Armies == "2D" then
+    if ArmiesSettingType == "2D" then
         Armies2DColor = {1, 1, 0}
-    elseif Armies == "Round" then
+    elseif ArmiesSettingType == "Round" then
         ArmiesRoundColor = {1, 1, 0}
     else
         Armies3DColor = {1, 1, 0}
     end
 
-    if Factions == "2D" then
+    if FactionsSettingType == "2D" then
         Factions2DColor = {1, 1, 0}
-    elseif Factions == "Round" then
+    elseif FactionsSettingType == "Round" then
         FactionsRoundColor = {1, 1, 0}
     else
         Factions3DColor = {1, 1, 0}
     end
 
-    if MtDoom == "3D" then
+    if MountDoomSettingType == "3D" then
         MtDoom3DColor = {1, 1, 0}
     else
         MtDoomFlatColor = {1, 1, 0}
     end
 
-    if Settlements == "3D" then
+    if SettlementsSettingType == "3D" then
         Settlements3DColor = {1, 1, 0}
     else
         SettlementsFlatColor = {1, 1, 0}
     end
 
-    if Scream == "Always" then
+    if ScreamSettingType == "Always" then
         ScreamAlwaysColor = {1, 1, 0}
-    elseif Scream == "Once" then
+    elseif ScreamSettingType == "Once" then
         ScreamOnceColor = {1, 1, 0}
     else
         ScreamNeverColor = {1, 1, 0}
@@ -131,13 +140,13 @@ function MainMenu()
         SoundOnColor = {1, 1, 0}
     end
 
-    if Warnings == "On" then
+    if WarningsSettingType == "On" then
         WarningsOnColor = {1, 1, 0}
     else
         WarningsOffColor = {1, 1, 0}
     end
 
-    if Dice == "Anniversary" then
+    if DiceSettingType == "Anniversary" then
         DiceAnniversaryColor = {1, 1, 0}
     else
         DiceOriginalColor = {1, 1, 0}
@@ -626,7 +635,7 @@ function MainMenu()
     end
 
     --apply...
-    if Apply then
+    if ApplySettingsFlag then
         self.createButton(
             {
                 click_function = "ApplyButton",
@@ -687,7 +696,7 @@ function NewCharacters3D()
                 font_color = {1, 1, 1}
             }
         )
-        Characters = "3D"
+        CharactersSettingType = "3D"
         local ObjList = {}
         for _, Item in pairs(getObjectFromGUID("0e5fd1")).getObjects() do
             if string.find(Item.description, "3D;") ~= nil then
@@ -706,158 +715,158 @@ function NewCharacters3D()
 end
 
 function Characters3D()
-    Characters = "3D"
-    Apply = true
+    CharactersSettingType = "3D"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function Characters2D()
-    Characters = "2D"
-    Apply = true
+    CharactersSettingType = "2D"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function CharactersSquare()
-    Characters = "Square"
-    Apply = true
+    CharactersSettingType = "Square"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function Nazgul3D()
-    Nazgul = "3D"
-    Apply = true
+    NazgulSettingType = "3D"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function Nazgul2D()
-    Nazgul = "2D"
-    Apply = true
+    NazgulSettingType = "2D"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function NazgulRound()
-    Nazgul = "Round"
-    Apply = true
+    NazgulSettingType = "Round"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function NazgulSquare()
-    Nazgul = "Square"
-    Apply = true
+    NazgulSettingType = "Square"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function Armies3D()
-    Armies = "3D"
-    Apply = true
+    ArmiesSettingType = "3D"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function Armies2D()
-    Armies = "2D"
-    Apply = true
+    ArmiesSettingType = "2D"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function ArmiesRound()
-    Armies = "Round"
-    Apply = true
+    ArmiesSettingType = "Round"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function Factions3D()
-    Factions = "3D"
-    Apply = true
+    FactionsSettingType = "3D"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function Factions2D()
-    Factions = "2D"
-    Apply = true
+    FactionsSettingType = "2D"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function FactionsRound()
-    Factions = "Round"
-    Apply = true
+    FactionsSettingType = "Round"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function MtDoom3D()
-    MtDoom = "3D"
-    Apply = true
+    MountDoomSettingType = "3D"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function MtDoomFlat()
-    MtDoom = "Flat"
-    Apply = true
+    MountDoomSettingType = "Flat"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function Settlements3D()
-    Settlements = "3D"
-    Apply = true
+    SettlementsSettingType = "3D"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function SettlementsFlat()
-    Settlements = "Flat"
-    Apply = true
+    SettlementsSettingType = "Flat"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function SoundEffectsOn()
     Sound = "On"
-    Apply = true
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function SoundEffectsOff()
     Sound = "Off"
-    Apply = true
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function ScreamAlways()
-    Scream = "Always"
-    Apply = true
+    ScreamSettingType = "Always"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function ScreamOnce()
-    Scream = "Once"
-    Apply = true
+    ScreamSettingType = "Once"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function ScreamNever()
-    Scream = "Never"
-    Apply = true
+    ScreamSettingType = "Never"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function WarningsOn()
-    Warnings = "On"
-    Apply = true
+    WarningsSettingType = "On"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function WarningsOff()
-    Warnings = "Off"
-    Apply = true
+    WarningsSettingType = "Off"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function DiceOriginal()
-    Dice = "Original"
-    Apply = true
+    DiceSettingType = "Original"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
 function DiceAnniversary()
-    Dice = "Anniversary"
-    Apply = true
+    DiceSettingType = "Anniversary"
+    ApplySettingsFlag = true
     MainMenu()
 end
 
@@ -865,12 +874,13 @@ function ToggleDicePanels()
     local DPO = nil --dice panel object
     local DPS = {} --dice panel spots
     local DPY = 0 --dice panel fpp y rotation
-    for O, Obj in pairs(getAllObjects()) do
+
+    for _, Obj in pairs(getAllObjects()) do
         if Obj.getName() == "(Free Peoples Combat Die)" or Obj.getName() == "(Shadow Combat Die)" then
             Obj.destruct()
         end
     end
-    --for O,Obj
+
     if DicePanels == "Sic" then
         DicePanels = "Strips"
         if getObjectFromGUID("4b6f4c") ~= nil then
@@ -1030,6 +1040,7 @@ function ApplyButton()
             font_color = {1, 1, 1}
         }
     )
+
     function ApplyPreferencesCoroutine()
         local SoundCube = getObjectFromGUID("74cc15")
         --Sound
@@ -1051,524 +1062,24 @@ function ApplyButton()
         coroutine.yield(0)
         --get out new figurine templates...
         local ComponentBag = getObjectFromGUID("0e5fd1")
-        local TemplateList = {}
-        local TempX = 80
-        local ObjectList = getAllObjects()
+        local AllObjects = getAllObjects()
 
-        --ARMIES (Regular;Elite;Leader;)...
-        coroutine.yield(0)
-        --get out army templates...
-        for _, Item in pairs(ComponentBag.getObjects()) do
-            if
-                Item.name ~= "Nazgûl" and
-                    (string.find(Item.description, "Regular;") ~= nil or string.find(Item.description, "Elite;") ~= nil or
-                        string.find(Item.description, "Leader;") ~= nil)
-             then
-                if
-                    (Armies == "2D" and string.find(Item.description, "2D;") ~= nil) or
-                        (Armies == "3D" and string.find(Item.description, "3D;") ~= nil) or
-                        (Armies == "Round" and string.find(Item.description, "Marble;") ~= nil)
-                 then
-                    TempX = TempX - 1
-                    local TempObj =
-                        ComponentBag.takeObject(
-                        {guid = Item.guid, smooth = false, position = {TempX, -2, -60}, rotation = {0, 180, 0}}
-                    )
-                    coroutine.yield(0)
-                    TempObj.setLock(true)
-                    TempObj.setPosition({TempX, -2, -60})
-                    TempObj.setRotation({0, 180, 0})
-                    table.insert(TemplateList, TempObj.getGUID())
-                end
-            end
-        end
+        UpdateArmies(ComponentBag, AllObjects)
+        UpdateCharacters()
+        UpdateFactions()
+        UpdateNazguls()
+
+        UpdateSettlements()
+        UpdateDices()
 
         coroutine.yield(0)
-
-        --go through templatelist and replace matching components...
-        for T = 1, #TemplateList do
-            local Template = getObjectFromGUID(TemplateList[T])
-            printToAll("Updating " .. Template.getName() .. "...")
-
-            --go through all objects and look for those to replace...
-            for _, Obj in pairs(ObjectList) do
-                if
-                    Template.getName() == Obj.getName() and
-                        ObjectIsFigurineOrTileset(Obj)
-                 then
-                    local NewObj = Template.clone({position = Obj.getPosition()})
-                    NewObj.setLock(false)
-                    NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
-                    Obj.destruct()
-                end
-            end
-
-            ComponentBag.putObject(Template)
-            coroutine.yield(0)
-        end
-
-        --Characters (Characters;Companions;Rulers;Minions;)...
-        coroutine.yield(0)
-        TemplateList = {}
-        TempX = 80
-
-        --get out character templates...
-        for _, Item in pairs(ComponentBag.getObjects()) do
-            if
-                Item.name ~= "Nazgûl" and
-                    (string.find(Item.description, "Character;") ~= nil or
-                        string.find(Item.description, "Minion;") ~= nil)
-             then
-                --correct state?
-                if
-                    (Characters == "2D" and string.find(Item.description, "2D;") ~= nil) or
-                        (Characters == "3D" and string.find(Item.description, "3D;") ~= nil) or
-                        (Characters == "Square" and string.find(Item.description, "Marble;") ~= nil)
-                 then
-                    TempX = TempX - 1
-                    local TempObj =
-                        ComponentBag.takeObject(
-                        {guid = Item.guid, smooth = false, position = {TempX, -2, -61}, rotation = {0, 180, 0}}
-                    )
-                    coroutine.yield(0)
-                    TempObj.setLock(true)
-                    TempObj.setPosition({TempX, -2, -61})
-                    TempObj.setRotation({0, 180, 0})
-                    table.insert(TemplateList, TempObj.getGUID())
-                end
-            end
-        end
-
-        coroutine.yield(0)
-
-        --go through templatelist and replace matching components...
-        for T = 1, #TemplateList do
-            local Template = getObjectFromGUID(TemplateList[T])
-            printToAll("Updating " .. Template.getName() .. "...")
-
-            --go through all objects and look for those to replace...
-            for _, Obj in pairs(ObjectList) do
-                if
-                    Template.getName() == Obj.getName() and
-                        ObjectIsFigurineOrTileset(Obj)
-                 then
-                    local NewObj = Template.clone({position = Obj.getPosition()})
-                    NewObj.setLock(false)
-                    NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
-                    Obj.destruct()
-                end
-            end
-            ComponentBag.putObject(Template)
-            coroutine.yield(0)
-        end
-
-        --Factions...
-        coroutine.yield(0)
-        TemplateList = {}
-        TempX = 80
-
-        --get out faction templates...
-        for _, Item in pairs(ComponentBag.getObjects()) do
-            if Item.name ~= "Nazgûl" and (string.find(Item.description, "Faction;") ~= nil) then
-                --correct state?
-                if
-                    (Factions == "2D" and string.find(Item.description, "2D;") ~= nil) or
-                        (Factions == "3D" and string.find(Item.description, "3D;") ~= nil) or
-                        (Factions == "Round" and string.find(Item.description, "Marble;") ~= nil)
-                 then
-                    TempX = TempX - 1
-                    local TempObj =
-                        ComponentBag.takeObject(
-                        {guid = Item.guid, smooth = false, position = {TempX, -2, -62}, rotation = {0, 180, 0}}
-                    )
-                    coroutine.yield(0)
-                    TempObj.setLock(true)
-                    TempObj.setPosition({TempX, -2, -62})
-                    TempObj.setRotation({0, 180, 0})
-                    table.insert(TemplateList, TempObj.getGUID())
-                end
-            end
-        end
-
-        coroutine.yield(0)
-
-        --go through templatelist and replace matching components...
-        for T = 1, #TemplateList do
-            local Template = getObjectFromGUID(TemplateList[T])
-            printToAll("Updating " .. Template.getName() .. "...")
-
-            --go through all objects and look for those to replace...
-            for O, Obj in pairs(ObjectList) do
-                if
-                    Template.getName() == Obj.getName() and
-                        ObjectIsFigurineOrTileset(Obj)
-                 then
-                    local NewObj = Template.clone({position = Obj.getPosition()})
-                    NewObj.setLock(false)
-                    NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
-                    Obj.destruct()
-                end
-            end
-
-            ComponentBag.putObject(Template)
-            coroutine.yield(0)
-        end
-
-        --Nazgul...
-        coroutine.yield(0)
-        TemplateList = {}
-        TempX = 80
-
-        --get out nazgul templates...
-        for _, Item in pairs(ComponentBag.getObjects()) do
-            if Item.name == "Nazgûl" and (string.find(Item.description, "Leader;") ~= nil) then
-                if
-                    (Nazgul == "2D" and string.find(Item.description, "2D;") ~= nil) or
-                        (Nazgul == "3D" and string.find(Item.description, "3D;") ~= nil) or
-                        (Nazgul == "Square" and string.find(Item.description, "Square;") ~= nil) or
-                        (Nazgul == "Round" and string.find(Item.description, "Round;") ~= nil)
-                 then
-                    TempX = TempX - 1
-                    local TempObj =
-                        ComponentBag.takeObject(
-                        {guid = Item.guid, smooth = false, position = {TempX, -2, -63}, rotation = {0, 180, 0}}
-                    )
-                    coroutine.yield(0)
-                    TempObj.setLock(true)
-                    TempObj.setPosition({TempX, -2, -63})
-                    TempObj.setRotation({0, 180, 0})
-                    table.insert(TemplateList, TempObj.getGUID())
-                end
-            end
-        end
-
-        coroutine.yield(0)
-
-        --go through templatelist and replace matching components...
-        for T = 1, #TemplateList do
-            local Template = getObjectFromGUID(TemplateList[T])
-            printToAll("Updating " .. Template.getName() .. "...")
-
-            --go through all objects and look for those to replace...
-            for O, Obj in pairs(ObjectList) do
-                if
-                    Template.getName() == Obj.getName() and Template.getDescription() ~= Obj.getDescription() and
-                        ObjectIsFigurineOrTileset(Obj)
-                 then
-                    local NewObj = Template.clone({position = Obj.getPosition()})
-                    NewObj.setLock(false)
-                    NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
-                    Obj.destruct()
-                end
-            end
-            ComponentBag.putObject(Template)
-            coroutine.yield(0)
-        end
-
-        coroutine.yield(0)
-
-        --go through all objects...
-        --change in groups of this number for speed.
-        local Group = 10
-
-        for _, Obj in pairs(ObjectList) do
-            if not ObjectIsUnit(Obj) then
-                if Obj.type == "Tile" and string.find(Obj.getDescription(), "Stronghold;") ~= nil and Obj.getLock() then
-                    Obj.setRotationSmooth({0, 180, 0}, false, false)
-                    if Settlements == "3D" then
-                        Obj.setPosition({Obj.getPosition().x, 1.16, Obj.getPosition().z})
-                        for _, SubObj in pairs(
-                            Physics.cast(
-                                {
-                                    origin = Obj.getPosition(),
-                                    direction = {0, 1, 0},
-                                    type = 3,
-                                    size = {1.8, 1, 1.8},
-                                    orientation = {0, 0, 0},
-                                    max_distance = 0,
-                                    debug = true
-                                }
-                            )
-                        ) do
-                            if SubObj.hit_object.getLock() == false then
-                                SubObj.hit_object.translate({0, 1, 0})
-                            end
-                        end
-                    else
-                        Obj.setPositionSmooth({Obj.getPosition().x, 0.78, Obj.getPosition().z}, false, false)
-                    end
-
-                    coroutine.yield(0)
-                elseif Obj.type == "Tile" and string.find(Obj.getDescription(), "City;") ~= nil and Obj.getLock() then
-                    Obj.setRotationSmooth({0, 180, 0}, false, false)
-                    if Settlements == "3D" then
-                        Obj.setPosition({Obj.getPosition().x, 1.09, Obj.getPosition().z})
-                        for SO, SubObj in pairs(
-                            Physics.cast(
-                                {
-                                    origin = Obj.getPosition(),
-                                    direction = {0, 1, 0},
-                                    type = 3,
-                                    size = {1.8, 1, 1.1},
-                                    orientation = {0, 0, 0},
-                                    max_distance = 0,
-                                    debug = true
-                                }
-                            )
-                        ) do
-                            if SubObj.hit_object.getLock() == false then
-                                SubObj.hit_object.translate({0, 1, 0})
-                            end
-                        end
-                    else
-                        Obj.setPositionSmooth({Obj.getPosition().x, 0.85, Obj.getPosition().z}, false, false)
-                    end
-
-                    coroutine.yield(0)
-                elseif Obj.type == "Tile" and Obj.getName() == "Fortification" then
-                    Obj.setRotationSmooth({0, 180, 0}, false, false)
-                    if Settlements == "3D" then
-                        Obj.setPosition({Obj.getPosition().x, 1.01, Obj.getPosition().z})
-                        for _, SubObj in pairs(
-                            Physics.cast(
-                                {
-                                    origin = Obj.getPosition(),
-                                    direction = {0, 1, 0},
-                                    type = 3,
-                                    size = {1.8, 1, 1.1},
-                                    orientation = {0, 0, 0},
-                                    max_distance = 0,
-                                    debug = true
-                                }
-                            )
-                        ) do
-                            if SubObj.hit_object.getLock() == false then
-                                SubObj.hit_object.translate({0, 1, 0})
-                            end
-                        end
-                    else
-                        Obj.setPositionSmooth({Obj.getPosition().x, 0.93, Obj.getPosition().z}, false, false)
-                    end
-
-                    coroutine.yield(0)
-                elseif Obj.type == "Dice" and string.find(Obj.getDescription(), "Combat;") == nil then
-                    local NewObj = nil
-                    --need to swap?
-                    if
-                        (Dice == "Anniversary" and string.find(Obj.getDescription(), "Anniversary;") == nil) or
-                            (Dice ~= "Anniversary" and string.find(Obj.getDescription(), "Anniversary;") ~= nil)
-                     then
-                        --look in dice bag for replacement...
-                        for I, Item in pairs(getObjectFromGUID("0e5fd1").getObjects()) do
-                            --match? same description (except anniversary tag) and either anniversary or not anniversary...
-                            if
-                                string.gsub(Obj.getDescription(), "Anniversary;", "") ==
-                                    string.gsub(Item.description, "Anniversary;", "") and
-                                    ((Dice == "Anniversary" and string.find(Item.description, "Anniversary;") ~= nil) or
-                                        (Dice ~= "Anniversary" and string.find(Item.description, "Anniversary;") == nil))
-                             then
-                                NewObj =
-                                    getObjectFromGUID("0e5fd1").takeObject(
-                                    {
-                                        guid = Item.guid,
-                                        position = Obj.getPosition(),
-                                        rotation = Obj.getRotation(),
-                                        smooth = true
-                                    }
-                                )
-                                coroutine.yield(0)
-                                Global.call("SetDiceFace", {Dice = NewObj, Value = Obj.getRotationValue()})
-                                if NewObj ~= nil then
-                                    getObjectFromGUID("0e5fd1").putObject(Obj)
-                                    coroutine.yield(0)
-                                    local IDs = getObjectFromGUID("6158a0").getTable("IDs")
-                                    if
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;Shadow;1of10;"
-                                     then
-                                        IDs.ShadowActionDice[1] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;Shadow;2of10;"
-                                     then
-                                        IDs.ShadowActionDice[2] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;Shadow;3of10;"
-                                     then
-                                        IDs.ShadowActionDice[3] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;Shadow;4of10;"
-                                     then
-                                        IDs.ShadowActionDice[4] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;Shadow;5of10;"
-                                     then
-                                        IDs.ShadowActionDice[5] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;Shadow;6of10;"
-                                     then
-                                        IDs.ShadowActionDice[6] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;Shadow;7of10;"
-                                     then
-                                        IDs.ShadowActionDice[7] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;Shadow;8of10;"
-                                     then
-                                        IDs.ShadowActionDice[8] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;Shadow;9of10;"
-                                     then
-                                        IDs.ShadowActionDice[9] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;Shadow;10of10;"
-                                     then
-                                        IDs.ShadowActionDice[10] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;FreePeoples;1of6;"
-                                     then
-                                        IDs.FreePeoplesActionDice[1] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;FreePeoples;2of6;"
-                                     then
-                                        IDs.FreePeoplesActionDice[2] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;FreePeoples;3of6;"
-                                     then
-                                        IDs.FreePeoplesActionDice[3] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;FreePeoples;4of6;"
-                                     then
-                                        IDs.FreePeoplesActionDice[4] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;FreePeoples;5of6;"
-                                     then
-                                        IDs.FreePeoplesActionDice[5] = NewObj.getGUID()
-                                    elseif
-                                        string.gsub(NewObj.getDescription(), "Anniversary;", "") ==
-                                            "Dice;Action;FreePeoples;6of6;"
-                                     then
-                                        IDs.FreePeoplesActionDice[6] = NewObj.getGUID()
-                                    end
-
-                                    getObjectFromGUID("6158a0").setTable("IDs", IDs)
-                                    break
-                                end
-                            end
-                        end
-                    end
-                end
-
-                Group = Group - 1
-                if Group < 0 then
-                    coroutine.yield(0)
-                    Group = 10
-                end
-            end
-        end
-
-        coroutine.yield(0)
-
-        --Mt Doom...
-        if MtDoom == "Flat" then
-            if getObjectFromGUID("76fca0") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("76fca0"))
-            end
-
-            coroutine.yield(0)
-            if getObjectFromGUID("7b7ed8") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("7b7ed8"))
-            end
-
-            coroutine.yield(0)
-            if getObjectFromGUID("873d56") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("873d56"))
-            end
-
-            coroutine.yield(0)
-            if getObjectFromGUID("ec1790") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("ec1790"))
-            end
-
-            coroutine.yield(0)
-            if getObjectFromGUID("a8c069") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("a8c069"))
-            end
-
-            coroutine.yield(0)
-            if getObjectFromGUID("03e684") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("03e684"))
-            end
-
-            coroutine.yield(0)
-        else
-            if getObjectFromGUID("03e684") == nil then
-                getObjectFromGUID("416864").takeObject(
-                    {smooth = false, guid = "03e684", position = {24.8, 1.01, -9.85}, rotation = {0, 180, 0}}
-                )
-                getObjectFromGUID("03e684").setLock(true)
-            end
-
-            coroutine.yield(0)
-            if getObjectFromGUID("a8c069") == nil then
-                getObjectFromGUID("416864").takeObject(
-                    {smooth = false, guid = "a8c069", position = {24.8, 1.11, -9.85}, rotation = {0, 180, 0}}
-                )
-                getObjectFromGUID("a8c069").setLock(true)
-            end
-
-            coroutine.yield(0)
-            if getObjectFromGUID("ec1790") == nil then
-                getObjectFromGUID("416864").takeObject(
-                    {smooth = false, guid = "ec1790", position = {24.8, 1.21, -9.85}, rotation = {0, 180, 0}}
-                )
-                getObjectFromGUID("ec1790").setLock(true)
-            end
-
-            coroutine.yield(0)
-            if getObjectFromGUID("873d56") == nil then
-                getObjectFromGUID("416864").takeObject(
-                    {smooth = false, guid = "873d56", position = {24.8, 1.31, -9.85}, rotation = {0, 180, 0}}
-                )
-                getObjectFromGUID("873d56").setLock(true)
-            end
-
-            coroutine.yield(0)
-            if getObjectFromGUID("7b7ed8") == nil then
-                getObjectFromGUID("416864").takeObject(
-                    {smooth = false, guid = "7b7ed8", position = {24.8, 1.41, -9.85}, rotation = {0, 180, 0}}
-                )
-                getObjectFromGUID("7b7ed8").setLock(true)
-            end
-
-            coroutine.yield(0)
-            if getObjectFromGUID("76fca0") == nil then
-                getObjectFromGUID("416864").takeObject(
-                    {smooth = false, guid = "76fca0", position = {24.8, 1.56, -9.85}, rotation = {0, 180, 0}}
-                )
-                getObjectFromGUID("76fca0").setLock(true)
-            end
-
-            coroutine.yield(0)
-        end
+        UpdateMountDoom()
 
         Global.call("InitComponents")
         RecordPreferences()
         coroutine.yield(0)
-        Apply = false
+
+        ApplySettingsFlag = false
         printToAll("Changes to Preferences Completed.")
         MainMenu()
         return 1
@@ -1577,30 +1088,498 @@ function ApplyButton()
     startLuaCoroutine(self, "ApplyPreferencesCoroutine")
 end
 
+function UpdateArmies(ComponentBag, AllObjects)
+    -- Regular;Elite;Leader;
+    -- but not Nazgul
+    
+    coroutine.yield(0)
+    local TemplateList = {}
+    local TempX = 80
+
+    --get out army templates...
+    for _, Item in pairs(ComponentBag.getObjects()) do
+        if
+            Item.name ~= "Nazgûl" and
+                (string.find(Item.description, "Regular;") ~= nil or string.find(Item.description, "Elite;") ~= nil or
+                    string.find(Item.description, "Leader;") ~= nil)
+         then
+            if
+                (ArmiesSettingType == "2D" and string.find(Item.description, "2D;") ~= nil) or
+                    (ArmiesSettingType == "3D" and string.find(Item.description, "3D;") ~= nil) or
+                    (ArmiesSettingType == "Round" and string.find(Item.description, "Marble;") ~= nil)
+             then
+                TempX = TempX - 1
+                local TempObj = ComponentBag.takeObject({
+                    guid = Item.guid,
+                    smooth = false,
+                    position = {TempX, -2, -60},
+                    rotation = {0, 180, 0}
+                })
+
+                coroutine.yield(0)
+                TempObj.setLock(true)
+                TempObj.setPosition({TempX, -2, -60})
+                TempObj.setRotation({0, 180, 0})
+                table.insert(TemplateList, TempObj.getGUID())
+            end
+        end
+    end
+
+    coroutine.yield(0)
+
+    -- replace
+    for T = 1, #TemplateList do
+        local Template = getObjectFromGUID(TemplateList[T])
+        printToAll("Updating " .. Template.getName() .. "...")
+
+        for _, Obj in pairs(AllObjects) do
+            if Template.getName() == Obj.getName() and ObjectIsFigurineOrTileset(Obj) then
+                local NewObj = Template.clone({position = Obj.getPosition()})
+                NewObj.setLock(false)
+                NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
+                Obj.destruct()
+            end
+        end
+
+        ComponentBag.putObject(Template)
+        coroutine.yield(0)
+    end
+end
+
+function UpdateCharacters()
+    --Characters (Characters;Companions;Rulers;Minions;)...
+    coroutine.yield(0)
+    local TemplateList = {}
+    TempX = 80
+
+    --get out character templates...
+    for _, Item in pairs(ComponentBag.getObjects()) do
+        if
+            Item.name ~= "Nazgûl" and
+                (string.find(Item.description, "Character;") ~= nil or string.find(Item.description, "Minion;") ~= nil)
+         then
+            --correct state?
+            if
+                (CharactersSettingType == "2D" and string.find(Item.description, "2D;") ~= nil) or
+                    (CharactersSettingType == "3D" and string.find(Item.description, "3D;") ~= nil) or
+                    (CharactersSettingType == "Square" and string.find(Item.description, "Marble;") ~= nil)
+             then
+                TempX = TempX - 1
+                local TempObj = ComponentBag.takeObject({
+                    guid = Item.guid,
+                    smooth = false,
+                    position = {TempX, -2, -61},
+                    rotation = {0, 180, 0}
+                })
+                coroutine.yield(0)
+                TempObj.setLock(true)
+                TempObj.setPosition({TempX, -2, -61})
+                TempObj.setRotation({0, 180, 0})
+                table.insert(TemplateList, TempObj.getGUID())
+            end
+        end
+    end
+
+    coroutine.yield(0)
+
+    --go through templatelist and replace matching components...
+    for I = 1, #TemplateList do
+        local Template = getObjectFromGUID(TemplateList[I])
+        printToAll("Updating " .. Template.getName() .. "...")
+
+        --go through all objects and look for those to replace...
+        for _, Obj in pairs(AllObjects) do
+            if Template.getName() == Obj.getName() and ObjectIsFigurineOrTileset(Obj) then
+                local NewObj = Template.clone({position = Obj.getPosition()})
+                NewObj.setLock(false)
+                NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
+                Obj.destruct()
+            end
+        end
+        ComponentBag.putObject(Template)
+        coroutine.yield(0)
+    end
+end
+
+function UpdateFactions()
+    --Factions...
+    coroutine.yield(0)
+    TemplateList = {}
+    TempX = 80
+
+    --get out faction templates...
+    for _, Item in pairs(ComponentBag.getObjects()) do
+        if Item.name ~= "Nazgûl" and (string.find(Item.description, "Faction;") ~= nil) then
+            --correct state?
+            if
+                (FactionsSettingType == "2D" and string.find(Item.description, "2D;") ~= nil) or
+                    (FactionsSettingType == "3D" and string.find(Item.description, "3D;") ~= nil) or
+                    (FactionsSettingType == "Round" and string.find(Item.description, "Marble;") ~= nil)
+             then
+                TempX = TempX - 1
+                local TempObj =
+                    ComponentBag.takeObject(
+                    {guid = Item.guid, smooth = false, position = {TempX, -2, -62}, rotation = {0, 180, 0}}
+                )
+                coroutine.yield(0)
+                TempObj.setLock(true)
+                TempObj.setPosition({TempX, -2, -62})
+                TempObj.setRotation({0, 180, 0})
+                table.insert(TemplateList, TempObj.getGUID())
+            end
+        end
+    end
+
+    coroutine.yield(0)
+
+    --go through templatelist and replace matching components...
+    for T = 1, #TemplateList do
+        local Template = getObjectFromGUID(TemplateList[T])
+        printToAll("Updating " .. Template.getName() .. "...")
+
+        --go through all objects and look for those to replace...
+        for O, Obj in pairs(AllObjects) do
+            if Template.getName() == Obj.getName() and ObjectIsFigurineOrTileset(Obj) then
+                local NewObj = Template.clone({position = Obj.getPosition()})
+                NewObj.setLock(false)
+                NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
+                Obj.destruct()
+            end
+        end
+
+        ComponentBag.putObject(Template)
+        coroutine.yield(0)
+    end
+end
+
+function UpdateNazguls()
+    --Nazgul...
+    coroutine.yield(0)
+    TemplateList = {}
+    TempX = 80
+
+    --get out nazgul templates...
+    for _, Item in pairs(ComponentBag.getObjects()) do
+        if Item.name == "Nazgûl" and (string.find(Item.description, "Leader;") ~= nil) then
+            if
+                (NazgulSettingType == "2D" and string.find(Item.description, "2D;") ~= nil) or
+                    (NazgulSettingType == "3D" and string.find(Item.description, "3D;") ~= nil) or
+                    (NazgulSettingType == "Square" and string.find(Item.description, "Square;") ~= nil) or
+                    (NazgulSettingType == "Round" and string.find(Item.description, "Round;") ~= nil)
+             then
+                TempX = TempX - 1
+                local TempObj =
+                    ComponentBag.takeObject(
+                    {guid = Item.guid, smooth = false, position = {TempX, -2, -63}, rotation = {0, 180, 0}}
+                )
+                coroutine.yield(0)
+                TempObj.setLock(true)
+                TempObj.setPosition({TempX, -2, -63})
+                TempObj.setRotation({0, 180, 0})
+                table.insert(TemplateList, TempObj.getGUID())
+            end
+        end
+    end
+
+    coroutine.yield(0)
+
+    --go through templatelist and replace matching components...
+    for T = 1, #TemplateList do
+        local Template = getObjectFromGUID(TemplateList[T])
+        printToAll("Updating " .. Template.getName() .. "...")
+
+        --go through all objects and look for those to replace...
+        for O, Obj in pairs(AllObjects) do
+            if
+                Template.getName() == Obj.getName() and Template.getDescription() ~= Obj.getDescription() and
+                    ObjectIsFigurineOrTileset(Obj)
+             then
+                local NewObj = Template.clone({position = Obj.getPosition()})
+                NewObj.setLock(false)
+                NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
+                Obj.destruct()
+            end
+        end
+        ComponentBag.putObject(Template)
+        coroutine.yield(0)
+    end
+
+    coroutine.yield(0)
+end
+
+function UpdateSettlements()
+    local Group = 10
+
+    for _, Obj in pairs(AllObjects) do
+        TryUpdateSettlementObject(Obj)
+        coroutine.yield(0)
+
+        Group = Group - 1
+        if Group < 0 then
+            coroutine.yield(0)
+            Group = 10
+        end
+    end
+end
+
+function UpdateDices()
+    local Group = 10
+
+    for _, Obj in pairs(AllObjects) do
+        TryUpdateDiceObject(Obj)
+        coroutine.yield(0)
+
+        Group = Group - 1
+        if Group < 0 then
+            coroutine.yield(0)
+            Group = 10
+        end
+    end
+end
+
+function TryUpdateSettlementObject(Obj)
+    if ObjectIsUnit(Obj) then
+        return false
+    end
+
+    if not (Obj.type == "Tile" and Obj.getLock) then
+        return false
+    end
+
+    local description = Obj.getDescription()
+
+    if string.find(description, "Stronghold;") then
+        UpdateSettlementObject(Obj, SettlementsConfigs.Stronghold)
+        return true
+    elseif string.find(description, "City;") then
+        UpdateSettlementObject(Obj, SettlementsConfigs.City)
+        return true
+    elseif Obj.getName() == "Fortification" then
+        UpdateSettlementObject(Obj, SettlementsConfigs.Fortification)
+        return true
+    end
+
+    return false
+end
+
+function UpdateSettlementObject(Obj, config)
+    Obj.setRotationSmooth({0, 180, 0}, false, false)
+
+    if SettlementsSettingType == "3D" then
+        Obj.setPosition({Obj.getPosition().x, config.PositionY_3D, Obj.getPosition().z})
+
+        local conflictedObjects =
+            Physics.cast(
+            {
+                origin = Obj.getPosition(),
+                direction = {0, 1, 0},
+                type = 3,
+                size = config.Size,
+                orientation = {0, 0, 0},
+                max_distance = 0,
+                debug = true
+            }
+        )
+
+        for _, SubObj in pairs(conflictedObjects) do
+            if SubObj.hit_object.getLock() == false then
+                SubObj.hit_object.translate({0, 1, 0})
+            end
+        end
+    else
+        Obj.setPositionSmooth({Obj.getPosition().x, config.PositionY_Flat, Obj.getPosition().z}, false, false)
+    end
+end
+
+function TryUpdateDiceObject(oldDiceObj)
+    if ObjectIsUnit(oldDiceObj) then
+        return false
+    end
+
+    if oldDiceObj.type ~= "Dice" then
+        return false
+    end
+
+    local description = oldDiceObj.getDescription()
+
+    if string.find(description, "Combat;") ~= nil then
+        return false
+    end
+
+    local newDiceObj = nil
+    local isAnniversaryDiceObject = string.find(description, "Anniversary;") ~= nil
+    local isAnniversarySetting = DiceSettingType == "Anniversary"
+    local needSwap = isAnniversaryDiceObject ~= isAnniversarySetting
+
+    if not needSwap then
+        return false
+    end
+
+    --look in dice bag for replacement...
+    local ComponentBag = getObjectFromGUID("0e5fd1")
+    local GamePanelID = "6158a0"
+    local GamePanel = getObjectFromGUID(GamePanelID)
+    local IDs = GamePanel.getTable("IDs")
+
+    for _, Item in pairs(ComponentBag.getObjects()) do
+        --match? same description (except anniversary tag) and either anniversary or not anniversary...
+        local isSameDiceIndex =
+            string.gsub(description, "Anniversary;", "") == string.gsub(Item.description, "Anniversary;", "")
+        local isAnniversaryDice = string.find(Item.description, "Anniversary;") ~= nil
+        local isAnotherDiceType = isAnniversarySetting ~= isAnniversaryDice
+
+        if isSameDiceIndex and isAnotherDiceType then
+            newDiceObj = ComponentBag.takeObject(
+                {
+                    guid = Item.guid,
+                    position = oldDiceObj.getPosition(),
+                    rotation = oldDiceObj.getRotation(),
+                    smooth = true
+                }
+            )
+
+            coroutine.yield(0)
+            Global.call("SetDiceFace", {Dice = newDiceObj, Value = oldDiceObj.getRotationValue()})
+
+            ComponentBag.putObject(oldDiceObj)
+            coroutine.yield(0)
+
+            UpdateDiceId(description, newDiceObj, IDs)
+
+            GamePanel.setTable("IDs", IDs)
+            break
+        end
+    end
+end
+
+function UpdateDiceId(description, newDiceObj, IDs)
+    local isShadowDice = string.find(description, "Shadow;") ~= nil
+    local isFreePeopleDice = string.find(description, "FreePeoples;") ~= nil
+    local diceArray = {}
+    local diceIndex = GetDiceIndex(description)
+
+    if isShadowDice then
+        diceArray = IDs.ShadowActionDice
+    elseif isFreePeopleDice then
+        diceArray = IDs.FreePeoplesActionDice
+    end
+
+    diceArray[diceIndex] = newDiceObj.getGUID()
+end
+
+function GetDiceIndex(description)
+    local pattern = "(%d+)of%d+;"
+    local number = string.match(description, pattern)
+    return tonumber(number)
+end
+
+function UpdateMountDoom()
+    if MountDoomSettingType == "Flat" then
+        if getObjectFromGUID("76fca0") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("76fca0"))
+        end
+
+        coroutine.yield(0)
+        if getObjectFromGUID("7b7ed8") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("7b7ed8"))
+        end
+
+        coroutine.yield(0)
+        if getObjectFromGUID("873d56") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("873d56"))
+        end
+
+        coroutine.yield(0)
+        if getObjectFromGUID("ec1790") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("ec1790"))
+        end
+
+        coroutine.yield(0)
+        if getObjectFromGUID("a8c069") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("a8c069"))
+        end
+
+        coroutine.yield(0)
+        if getObjectFromGUID("03e684") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("03e684"))
+        end
+
+        coroutine.yield(0)
+    else
+        if getObjectFromGUID("03e684") == nil then
+            getObjectFromGUID("416864").takeObject(
+                {smooth = false, guid = "03e684", position = {24.8, 1.01, -9.85}, rotation = {0, 180, 0}}
+            )
+            getObjectFromGUID("03e684").setLock(true)
+        end
+
+        coroutine.yield(0)
+        if getObjectFromGUID("a8c069") == nil then
+            getObjectFromGUID("416864").takeObject(
+                {smooth = false, guid = "a8c069", position = {24.8, 1.11, -9.85}, rotation = {0, 180, 0}}
+            )
+            getObjectFromGUID("a8c069").setLock(true)
+        end
+
+        coroutine.yield(0)
+        if getObjectFromGUID("ec1790") == nil then
+            getObjectFromGUID("416864").takeObject(
+                {smooth = false, guid = "ec1790", position = {24.8, 1.21, -9.85}, rotation = {0, 180, 0}}
+            )
+            getObjectFromGUID("ec1790").setLock(true)
+        end
+
+        coroutine.yield(0)
+        if getObjectFromGUID("873d56") == nil then
+            getObjectFromGUID("416864").takeObject(
+                {smooth = false, guid = "873d56", position = {24.8, 1.31, -9.85}, rotation = {0, 180, 0}}
+            )
+            getObjectFromGUID("873d56").setLock(true)
+        end
+
+        coroutine.yield(0)
+        if getObjectFromGUID("7b7ed8") == nil then
+            getObjectFromGUID("416864").takeObject(
+                {smooth = false, guid = "7b7ed8", position = {24.8, 1.41, -9.85}, rotation = {0, 180, 0}}
+            )
+            getObjectFromGUID("7b7ed8").setLock(true)
+        end
+
+        coroutine.yield(0)
+        if getObjectFromGUID("76fca0") == nil then
+            getObjectFromGUID("416864").takeObject(
+                {smooth = false, guid = "76fca0", position = {24.8, 1.56, -9.85}, rotation = {0, 180, 0}}
+            )
+            getObjectFromGUID("76fca0").setLock(true)
+        end
+
+        coroutine.yield(0)
+    end
+end
+
 function RecordPreferences()
     --record settings...
-    Global.setVar("RulesWarnings", Warnings == "On")
+    Global.setVar("RulesWarnings", WarningsSettingType == "On")
     local Notes = "Scale:" .. FigureScale .. ";"
-    Notes = Notes .. "Characters:" .. Characters .. ";"
-    Notes = Notes .. "Nazgul:" .. Nazgul .. ";"
-    Notes = Notes .. "Armies:" .. Armies .. ";"
-    Notes = Notes .. "Factions:" .. Factions .. ";"
-    if ModelLock then
+    Notes = Notes .. "Characters:" .. CharactersSettingType .. ";"
+    Notes = Notes .. "Nazgul:" .. NazgulSettingType .. ";"
+    Notes = Notes .. "Armies:" .. ArmiesSettingType .. ";"
+    Notes = Notes .. "Factions:" .. FactionsSettingType .. ";"
+    if ModelLockSetting then
         Notes = Notes .. "ModelLock:1;"
     end
     -- if models locked.
-    Notes = Notes .. "Mountains:" .. Mountains .. ";"
-    Notes = Notes .. "MtDoom:" .. MtDoom .. ";"
-    Notes = Notes .. "Settlements:" .. Settlements .. ";"
+    Notes = Notes .. "MtDoom:" .. MountDoomSettingType .. ";"
+    Notes = Notes .. "Settlements:" .. SettlementsSettingType .. ";"
     if Sound then
         Notes = Notes .. "Sound:On;"
     else
         Notes = Notes .. "Sound:Off;"
     end
 
-    Notes = Notes .. "Scream:" .. Scream .. ";"
-    Notes = Notes .. "Warnings:" .. Warnings .. ";"
-    Notes = Notes .. "Dice:" .. Dice .. ";"
+    Notes = Notes .. "Scream:" .. ScreamSettingType .. ";"
+    Notes = Notes .. "Warnings:" .. WarningsSettingType .. ";"
+    Notes = Notes .. "Dice:" .. DiceSettingType .. ";"
     self.setGMNotes(Notes)
 end
 
@@ -1641,7 +1620,7 @@ end
 
 function ObjectIsUnit(Obj)
     local description = Obj.getDescription()
-    return string.find(description, "Character;") ~= nil or
+    return string.find(description, "Character;") ~= nil or 
         string.find(description, "Minion;") ~= nil or
         string.find(description, "Faction;") ~= nil or
         string.find(description, "Regular;") ~= nil or

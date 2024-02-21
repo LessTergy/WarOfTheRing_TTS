@@ -101,9 +101,9 @@ function onCollisionEnter(collision_info)
             --increment the free peoples hunt dice count...
             GamePanel.setVar("FreePeoplesHuntDiceCount",GamePanel.getVar("FreePeoplesHuntDiceCount")+1)
             --get next open spot in the hunt box and place the die there... 
-            for D = 1,#Spots.FreePeoplesHuntBoxDice do
+            for I = 1, #Spots.FreePeoplesHuntBoxDice do
                 local OK = true
-                for O,Obj in pairs(Physics.cast({origin={Spots.FreePeoplesHuntBoxDice[D][1],1.5,Spots.FreePeoplesHuntBoxDice[D][3]},direction={0,1,0},size={1,1,1},orientation={0,0,0},type=3,max_distance=0,debug=false})) do
+                for O,Obj in pairs(Physics.cast({origin={Spots.FreePeoplesHuntBoxDice[I][1],1.5,Spots.FreePeoplesHuntBoxDice[I][3]},direction={0,1,0},size={1,1,1},orientation={0,0,0},type=3,max_distance=0,debug=false})) do
                     if string.find(Obj.hit_object.getDescription(),"Dice;") ~= nil then
                         OK = false
                         break
@@ -111,7 +111,7 @@ function onCollisionEnter(collision_info)
                 end--for
                 if OK then
                     Placed = true
-                    collision_info.collision_object.setPositionSmooth(Spots.FreePeoplesHuntBoxDice[D],false,true)
+                    collision_info.collision_object.setPositionSmooth(Spots.FreePeoplesHuntBoxDice[I],false,true)
                     collision_info.collision_object.setRotation({collision_info.collision_object.getRotation().x,0,collision_info.collision_object.getRotation().z})
                     break
                 end--if

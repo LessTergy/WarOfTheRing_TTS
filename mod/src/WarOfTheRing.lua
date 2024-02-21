@@ -14261,7 +14261,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
         -- fellowship is broken...
         -- Gandalf the Grey is gone...
         local CardObj = SeparateCompanionFromFellowship("Gandalf the Grey")
-        for D = 1, 30 do
+        for I = 1, 30 do
             coroutine.yield(0)
         end
 
@@ -14269,14 +14269,14 @@ function SetupBotF() -- setup the breaking of the fellowship.
         coroutine.yield(0)
         -- boromir is dead...
         local CardObj = SeparateCompanionFromFellowship("Boromir")
-        for D = 1, 30 do
+        for I = 1, 30 do
             coroutine.yield(0)
         end
 
         KillCompanionCard(CardObj)
         coroutine.yield(0)
         SeparateCompanionFromFellowship("Strider")
-        for D = 1, 30 do
+        for I = 1, 30 do
             coroutine.yield(0)
         end
 
@@ -14292,7 +14292,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
             }
         )
         SeparateCompanionFromFellowship("Legolas")
-        for D = 1, 30 do
+        for I = 1, 30 do
             coroutine.yield(0)
         end
 
@@ -14308,7 +14308,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
             }
         )
         SeparateCompanionFromFellowship("Gimli")
-        for D = 1, 30 do
+        for I = 1, 30 do
             coroutine.yield(0)
         end
 
@@ -14323,7 +14323,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 Position = {6.9, 1.76, -1.85}
             }
         )
-        for D = 1, 30 do
+        for I = 1, 30 do
             coroutine.yield(0)
         end
 
@@ -14340,7 +14340,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
             }
         )
         SeparateCompanionFromFellowship("Meriadoc")
-        for D = 1, 30 do
+        for I = 1, 30 do
             coroutine.yield(0)
         end
 
@@ -14355,7 +14355,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
             }
         )
         SeparateCompanionFromFellowship("Peregrin")
-        for D = 1, 30 do
+        for I = 1, 30 do
             coroutine.yield(0)
         end
 
@@ -16717,18 +16717,18 @@ function ReportDiceStats(PanelObj, PlayerColor)
         printToColor("-- -- -- ", PlayerColor, {0.4, 0.4, 1})
         printToColor("Free Peoples Combat Dice Stats:", PlayerColor, {0.4, 0.4, 1})
         if Dice.Stats.Combat.FreePeoples.RollCount > 0 then
-            for D = 1, 6 do
+            for I = 1, 6 do
                 printToColor(
                     " " ..
                         D ..
                             ": " ..
                                 string.format(
                                     "%.1f",
-                                    100 * Dice.Stats.Combat.FreePeoples.Results[D] /
+                                    100 * Dice.Stats.Combat.FreePeoples.Results[I] /
                                         Dice.Stats.Combat.FreePeoples.RollCount
                                 ) ..
                                     "% (" ..
-                                        Dice.Stats.Combat.FreePeoples.Results[D] ..
+                                        Dice.Stats.Combat.FreePeoples.Results[I] ..
                                             "/" .. Dice.Stats.Combat.FreePeoples.RollCount .. ")",
                     PlayerColor,
                     {0.4, 0.4, 1}
@@ -16741,17 +16741,17 @@ function ReportDiceStats(PanelObj, PlayerColor)
         printToColor("-- -- -- ", PlayerColor, {1, 0.4, 0.4})
         printToColor("Shadow Combat Dice Stats:", PlayerColor, {1, 0.4, 0.4})
         if Dice.Stats.Combat.Shadow.RollCount > 0 then
-            for D = 1, 6 do
+            for I = 1, 6 do
                 printToColor(
                     " " ..
                         D ..
                             ": " ..
                                 string.format(
                                     "%.1f",
-                                    100 * Dice.Stats.Combat.Shadow.Results[D] / Dice.Stats.Combat.Shadow.RollCount
+                                    100 * Dice.Stats.Combat.Shadow.Results[I] / Dice.Stats.Combat.Shadow.RollCount
                                 ) ..
                                     "% (" ..
-                                        Dice.Stats.Combat.Shadow.Results[D] ..
+                                        Dice.Stats.Combat.Shadow.Results[I] ..
                                             "/" .. Dice.Stats.Combat.Shadow.RollCount .. ")",
                     PlayerColor,
                     {1, 0.4, 0.4}
