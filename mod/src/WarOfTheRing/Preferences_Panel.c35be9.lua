@@ -1130,6 +1130,8 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
 
         --go through all objects and look for those to replace...
         for _, Obj in pairs(AllObjects) do
+            local NewObj = nil
+
             if not ObjectIsFigurineOrTileset(Obj) then
                 goto continue
             end
@@ -1142,7 +1144,7 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
                 goto continue
             end
 
-            local NewObj = Template.clone({position = Obj.getPosition()})
+            NewObj = Template.clone({position = Obj.getPosition()})
             NewObj.setLock(false)
             NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
             Obj.destruct()
@@ -1168,8 +1170,8 @@ function GetObjectsFromComponentBag(ComponentBag, SearchConfig, SettingType)
             goto continue
         end
 
-        local exactSettingType = string.find(Item.description, settingPattern) ~= nil
-        if not exactSettingType then
+        -- same type as setting
+        if string.find(Item.description, settingPattern) == nil then
             goto continue
         end
 
