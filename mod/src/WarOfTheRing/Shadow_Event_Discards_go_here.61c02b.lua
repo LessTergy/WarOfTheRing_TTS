@@ -1,6 +1,6 @@
 Side = "Shadow"
 
-function onload()
+function onLoad()
   UpdateText()
 end--function
 

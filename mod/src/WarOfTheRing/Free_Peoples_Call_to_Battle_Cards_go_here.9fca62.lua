@@ -1,7 +1,7 @@
 Side = "FreePeoples"
 DeckID = ""
 
-function onload()
+function onLoad()
   ShowButtons()
 end--function
 

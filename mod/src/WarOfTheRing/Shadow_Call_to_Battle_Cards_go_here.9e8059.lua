@@ -1,7 +1,7 @@
 Side = "Shadow"
 DeckID = ""
 
-function onload()
+function onLoad()
   self.clearButtons()
   self.createButton({click_function="Nothing",function_owner=self,label="Call to\nBattle\nCards",position={0,0.3,-0.9},width=0,height=0,font_size=250,font_color={1,1,1,0.5}})
   self.createButton({click_function="AddToHand",function_owner=self,label="Add to Hand",position={0,0.3,0.7},width=900,height=300,color={1,1,1,0.7},font_size=125})

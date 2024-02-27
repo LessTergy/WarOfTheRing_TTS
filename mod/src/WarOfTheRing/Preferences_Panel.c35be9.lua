@@ -1,4 +1,4 @@
-local Settings = {
+Settings = {
     FigureScale = "100",
     CharactersType = "3D",
     NazgulsType = "3D",
@@ -1105,7 +1105,7 @@ function ApplyButton()
         coroutine.yield(0)
         UpdateMountDoom()
 
-        Global.call("InitComponents")
+        Global.call("UpdateIDs")
         RecordPreferences()
         coroutine.yield(0)
 
@@ -1121,7 +1121,7 @@ end
 function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
     coroutine.yield(0)
 
-    local TemplateList = GetObjectsFromComponentBag(ComponentBag, SearchConfig, SettingType)
+    local TemplateList = GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
     coroutine.yield(0)
 
     for I = 1, #TemplateList do
@@ -1132,7 +1132,7 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
         for _, Obj in pairs(AllObjects) do
             local NewObj = nil
 
-            if not ObjectIsFigurineOrTileset(Obj) then
+            if not ObjectIsFigurine(Obj) then
                 goto continue
             end
 
@@ -1157,7 +1157,7 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
     end
 end
 
-function GetObjectsFromComponentBag(ComponentBag, SearchConfig, SettingType)
+function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
     local SearchList = {}
     local settingPattern = SettingType .. ";"
 
@@ -1518,7 +1518,7 @@ function ChangeFigureScaleCoroutine()
     coroutine.yield(0)
 
     for _, Obj in pairs(getAllObjects()) do
-        if ObjectIsFigurineOrTileset(Obj) and ObjectIsUnit(Obj) then
+        if ObjectIsFigurine(Obj) and ObjectIsUnit(Obj) then
             --Obj.setScale({Obj.getScale().x * ScaleMult, Obj.getScale().y * ScaleMult, Obj.getScale().z * ScaleMult})
         end
     end
@@ -1531,7 +1531,7 @@ function ChangeFigureScaleCoroutine()
     return 1
 end
 
-function ObjectIsFigurineOrTileset(Obj)
+function ObjectIsFigurine(Obj)
     return Obj.type == "Figurine" or Obj.type == "rpgFigurine" or Obj.type == "Tileset"
 end
 

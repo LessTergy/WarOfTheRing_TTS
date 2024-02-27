@@ -1,41 +1,38 @@
-Step = ""
-NextStep = ""
-ResumeStep = "" --use this to remember the previous step during an interruption.
-Versus = "1v1" --1v1,1v2,2v2  FvP
-CompactMode = false --play in compact mode...
-GuideName = "Gandalf the Grey: The Grey Wanderer"
-FreePeoplesVP = 0
-ShadowVP = 0
-CorruptionTrack = 0
-FellowshipTrack = 0
-FreePeoplesHuntDiceCount = 0 --how many free peoples dice were retrieved from the hunt box from last turn.
-ShadowHuntDiceCount = 0
-Round = 0
+require('!/UnitsController')
+
+local Step = ""
+local NextStep = ""
+local Versus = "1v1" --1v1, 1v2, 2v2, FvP
+local CompactMode = false
+local GuideName = "Gandalf the Grey: The Grey Wanderer"
+local FreePeoplesVP = 0
+local ShadowVP = 0
+local CorruptionTrack = 0
+local FellowshipTrack = 0
+local FreePeoplesHuntDiceCount = 0 --how many free peoples dice were retrieved from the hunt box from last turn.
+local ShadowHuntDiceCount = 0
+local Round = 0
 
 --expansions
-LoME = false --Lords of Middle-earth
-WoME = false --warriors of middle-earth
-KoME = false --kings of middle-earth
-TFoE = false --the fate of erebor
-HftR = false --hunt for the ring
-NewCities = true --the New Cities optional setup from The Fate of Erebor.
-BoTF = false --the breaking of the fellowship.
-Treebeard = 2 --0:None,1:Original,2:Revised;
-FlagString = "" --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
---Bags...
-GraveBagId = "416864"
---Units...
-UnitType = "3D"
-UnitSize = 1
-UnitSizeStep = 0
+local LoME = false --Lords of Middle-earth
+local WoME = false --warriors of middle-earth
+local KoME = false --kings of middle-earth
+local TFoE = false --the fate of erebor
+local HftR = false --hunt for the ring
+local NewCities = true --the New Cities optional setup from The Fate of Erebor.
+local BotF = false -- the breaking of the fellowship.
+local Treebeard = 2 --0:None,1:Original,2:Revised;
+local FlagString = "" --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
 
---Tables...
-Leader = {
+--Bags...
+local GraveBagId = "416864"
+
+local PlayersLeader = {
     FreePeoples = "Gondor",
     Shadow = "The Witch-king"
 }
 
-CompanionNames = {
+local CompanionNames = {
     "Gandalf the Grey: The Grey Wanderer",
     "Strider: Ranger of the North",
     "Legolas: Son of Thranduil",
@@ -46,20 +43,9 @@ CompanionNames = {
     "The Ring-bearers (Frodo & Samwise)"
 }
 
-Fellowship = {
-    Gandalf = "The Grey Wanderer",
-    Strider = "Ranger of the North",
-    Legolas = "Son of Thranduil",
-    Gimli = "Son of Gloin",
-    Boromir = "Son of Denethor",
-    Peregrin = "Hobbit Companion",
-    Meriadoc = "Hobbit Companion",
-    Gollum = "",
-    TheRingBearers = "Frodo & Samwise"
-}
-FellowshipCount = 8
-OutsideFellowship = {Meriadoc = false, Peregrin = false, Boromir = false, Gimli = false, Legolas = false} --list companions outside the fellowship
-Companions = {
+local FellowshipCount = 8
+
+local Companions = {
     Gandalf = {Title = "The Grey Wanderer", Fellowship = true},
     Strider = {Title = "Ranger of the North", Fellowship = true},
     Legolas = {Title = "Son of Thranduil", Fellowship = true},
@@ -71,10 +57,11 @@ Companions = {
     TheRingBearers = {Title = "Frodo & Samwise", Fellowship = true}
 }
 
-ShadowDicePool = {} --pool of dice rolled
-FreePeoplesDicePool = {} --pool of dice rolled
-HuntBoxShadowDiceArray = {} --table of dice ids
-HuntBoxFreePeoplesDiceArray = {} --table of dice ids
+local ShadowDicePool = {} --pool of dice rolled
+local FreePeoplesDicePool = {} --pool of dice rolled
+local HuntBoxShadowDiceArray = {} --table of dice ids
+local HuntBoxFreePeoplesDiceArray = {} --table of dice ids
+
 IDs = {
     ShadowActionDice = {
         "1bddf0",
@@ -207,8 +194,8 @@ IDs = {
         FreePeoplesToken2 = "e233d5" --draw event card
     }
 }
---Spots...
-Spots = {
+
+local Spots = {
     GamePanel = {
         All = {Position = {54, 13, 0}, Rotation = {90, 270, 0}, Scale = {7, 1, 7}},
         FreePeoples = {Position = {0, 12, 25}, Rotation = {90, 0, 0}, Scale = {5, 1, 5}},
@@ -372,7 +359,7 @@ Spots = {
     }
 }
 
-function onload()
+function onLoad()
     if Player.White.seated then
         Player.White.changeColor("Grey")
     end
@@ -383,6 +370,7 @@ function onload()
     Turn = ReadTag({Text = self.getDescription(), Var = "Turn", Default = 0})
     NextStep = ReadTag({Text = self.getDescription(), Var = "Step", Default = ""})
     Mute = string.find(getObjectFromGUID(Global.getVar("SoundCubeID")).getDescription(), "Muted;") ~= nil
+
     --detect expansions...
     LoME = string.find(self.getDescription(), "LoME;") ~= nil
     WoME = string.find(self.getDescription(), "WoME;") ~= nil
@@ -390,8 +378,10 @@ function onload()
     TFoE = string.find(self.getDescription(), "TFoE;") ~= nil
     BotF = string.find(self.getDescription(), "BotF;") ~= nil
     HftR = string.find(self.getDescription(), "HftR;") ~= nil
+
     CompactMode = string.find(self.getDescription(), "Compact;") ~= nil
     FlagString = ""
+
     if LoME then
         FlagString = FlagString .. "LoME;"
     end
@@ -435,17 +425,10 @@ function onload()
     Global.setVar("BotF", BotF)
     Global.setVar("HftR", HftR)
     Global.setVar("CompactMode", CompactMode)
-    --initialize components...
-    Global.call("InitComponents")
-    playIntroSound()
-    startLuaCoroutine(self, "MainCoroutine")
-end
 
-function playIntroSound()
-    -- The World is changed...
-    if NextStep == "BeginMenu" then
-        -- Global.call("PlaySound", {ID = 35})
-    end
+    --initialize components...
+    Global.call("UpdateIDs")
+    startLuaCoroutine(self, "MainCoroutine")
 end
 
 function onPlayerChangeColor(PlayerColor)
@@ -468,23 +451,25 @@ end
 function ProcessNextStep()
     coroutine.yield(0)
     log("ProcessNextStep:" .. NextStep)
+
     --debug
     Step = NextStep
     self.setDescription(
         "Panel;Round:" .. Round .. ";Phase:" .. Phase .. ";Turn:" .. Turn .. ";Step:" .. Step .. ";" .. FlagString
     )
+
     --assume new game setup...
-    if Step == "" then 
+    if Step == "" then
         NextStep = "BeginMenu"
         Step = ""
     elseif Step == "BeginMenu" then
-        createBeginMenu()
+        CreateBeginMenu()
     elseif Step == "PlayersMenu" then
-        createPlayersMenu()
+        CreatePlayersMenu()
     elseif Step == "ExpansionMenu" then
-        createExpansionMenu()
+        CreateExpansionMenu()
     elseif Step == "HuntForTheRingMenu" then
-        createHuntForTheRingMenu()
+        CreateHuntForTheRingMenu()
     elseif Step == "TFoEMenu" then
         self.clearButtons()
         if TFoE then
@@ -1306,14 +1291,14 @@ function ProcessNextStep()
             --change next step to Alternate Companions Menu...
             NextStep = "AlternateCompanionsMenu"
             --Replace Elven Rings...
-            for R = 1, 3 do
-                getObjectFromGUID(IDs.LoME.ElvenRings[R]).setPositionSmooth(
-                    getObjectFromGUID(IDs.ElvenRings[R]).getPosition(),
+            for I = 1, 3 do
+                getObjectFromGUID(IDs.LoME.ElvenRings[I]).setPositionSmooth(
+                    getObjectFromGUID(IDs.ElvenRings[I]).getPosition(),
                     false,
                     false
                 )
-                getObjectFromGUID(IDs.LoME.ElvenRings[R]).setRotation({0, 90, 0})
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.ElvenRings[R]))
+                getObjectFromGUID(IDs.LoME.ElvenRings[I]).setRotation({0, 90, 0})
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.ElvenRings[I]))
                 coroutine.yield(0)
             end
 
@@ -2367,186 +2352,8 @@ function ProcessNextStep()
             Step = ""
         end
     elseif Step == "ValidateArmies" then
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Army Setup Validation:",
-                position = {0, 0.1, -1.4},
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = {1, 1, 1}
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Please Wait\nChecking Army Setup...",
-                position = {0, 0.1, -0.5},
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = {1, 1, 1}
-            }
-        )
-        for I = 1, 99 do
-            coroutine.yield(0)
-        end
-        -- for D
-        local ErrorLog = "" --blank is good.
-        local Regions = Global.getTable("Regions")
-        for O, Obj in pairs(getAllObjects()) do
-            --object is an amry unit?
-            if
-                string.find(Obj.getDescription(), "Regular;") ~= nil or
-                    string.find(Obj.getDescription(), "Elite;") ~= nil or
-                    string.find(Obj.getDescription(), "Leader;") ~= nil
-             then
-                local Region = Global.call("GetGridRegion", {Position = Obj.getPosition()})
-                Obj.setGMNotes("Region:" .. Region .. ";")
-                --object has a region?
-                if Regions[Region] ~= nil then
-                    --correct nation?
-                    local Nation = Regions[Region].Nation
-                    if Nation == "Elves" then
-                        Nation = "Elf"
-                    end
-
-                    if Nation == "Dwarves" then
-                        Nation = "Dwarf"
-                    end
-
-                    if Region == "Osgiliath" then
-                        Nation = "Gondor"
-                    end
-
-                    if Region == "North Ithilien" then
-                        Nation = "Sauron"
-                    end
-
-                    if Region == "South Ithilien" then
-                        Nation = "Southron/Easterling"
-                    end
-
-                    if Region == "West Harondor" then
-                        Nation = "Southron/Easterling"
-                    end
-
-                    if Region == "Dagorlad" then
-                        Nation = "Southron/Easterling"
-                    end
-
-                    if Obj.getName() == Nation .. " Regular" then
-                        Regions[Region].Detected.R = Regions[Region].Detected.R + 1
-                    elseif Obj.getName() == Nation .. " Elite" then
-                        Regions[Region].Detected.E = Regions[Region].Detected.E + 1
-                    elseif Obj.getName() == Nation .. " Leader" then
-                        Regions[Region].Detected.L = Regions[Region].Detected.L + 1
-                    elseif Obj.getName() == "Nazgûl" then
-                        Regions[Region].Detected.L = Regions[Region].Detected.L + 1
-                    else --wrong unit faction...
-                        print(Region, ":'", Obj.getName(), "' ~= '", Nation, " Regular/Elite/Leader'")
-                        Regions[Region].Detected.X = Regions[Region].Detected.X + 1
-                    end
-                end
-            end
-        end
-        -- for O,Obj
-        --go through each region...
-        for R, RR in pairs(Regions) do
-            --validate by region...
-            if RR.Detected.X > 0 then
-                ErrorLog = ErrorLog .. "\n" .. R .. " has " .. RR.Detected.X .. " incorrect Army Unit(s)."
-            end
-
-            if RR.Starting.R ~= RR.Detected.R then
-                ErrorLog =
-                    ErrorLog .. "\n" .. R .. " has " .. RR.Detected.R .. " of " .. RR.Starting.R .. " Regular(s)."
-            end
-
-            if RR.Starting.E ~= RR.Detected.E then
-                ErrorLog = ErrorLog .. "\n" .. R .. " has " .. RR.Detected.E .. " of " .. RR.Starting.E .. " Elite(s)."
-            end
-
-            if RR.Starting.L ~= RR.Detected.L then
-                ErrorLog = ErrorLog .. "\n" .. R .. " has " .. RR.Detected.L .. " of " .. RR.Starting.L .. " Leader(s)."
-            end
-
-            --RR.Detected = {X=0,R=0,E=0,L=0} --reset detection.
-        end
-        -- for R,RR
-        --error(s)?
-        if ErrorLog == "" then
-            printToAll("Army Setup appears correct.", {0, 1, 0})
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Army Setup appears correct.",
-                    position = {0, 0.1, 0.5},
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = {1, 1, 1}
-                }
-            )
-            --self.createButton({click_function="Continue",function_owner=self,label="Continue",position={0,0.1,1.4},width=1600,height=200,color={1,1,1},font_size=100})
-            NextStep = "SetupCompleteMenu"
-            Step = ""
-        else --report errors...
-            broadcastToAll("Problem detected with Army Setup!", {1, 1, 0})
-            printToAll(ErrorLog, {1, 1, 0})
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = ErrorLog,
-                    position = {0, 0.1, 0},
-                    width = 0,
-                    height = 0,
-                    font_size = 50,
-                    font_color = {1, 1, 1}
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Continue",
-                    function_owner = self,
-                    label = "Ignore (Continue)",
-                    position = {-1, 0.1, 1.4},
-                    width = 900,
-                    height = 200,
-                    color = {1, 1, 0},
-                    font_size = 100
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Validate",
-                    function_owner = self,
-                    label = "Validate Setup",
-                    position = {1, 0.1, 1.4},
-                    width = 900,
-                    height = 200,
-                    color = {1, 1, 1},
-                    font_size = 100
-                }
-            )
-        end
-
-        function Validate()
-            NextStep = "ValidateArmies"
-            Step = ""
-        end
-
-        function Continue()
-            self.clearButtons()
-            NextStep = "SetupCompleteMenu"
-            Step = ""
-        end
+        SpawnArmies()
+        ValidateArmyStep()
     elseif Step == "SetupCompleteMenu" then
         self.clearButtons()
         self.createButton(
@@ -2718,30 +2525,30 @@ function ProcessNextStep()
             printToAll("Turn " .. Turn .. " has started.")
             --pass leader tokens?...
             if Turn == 1 or Versus == "1v1" then
-                Leader.FreePeoples = "Gondor"
-                Leader.Shadow = "The Witch-king"
+                PlayersLeader.FreePeoples = "Gondor"
+                PlayersLeader.Shadow = "The Witch-king"
             elseif Versus == "1v2" then
-                Leader.FreePeoples = "Gondor"
-                if Leader.Shadow == "The Witch-king" then
-                    Leader.Shadow = "Saruman"
+                PlayersLeader.FreePeoples = "Gondor"
+                if PlayersLeader.Shadow == "The Witch-king" then
+                    PlayersLeader.Shadow = "Saruman"
                 else
-                    Leader.Shadow = "The Witch-king"
+                    PlayersLeader.Shadow = "The Witch-king"
                 end
             else
-                if Leader.Shadow == "The Witch-king" then
-                    Leader.Shadow = "Saruman"
+                if PlayersLeader.Shadow == "The Witch-king" then
+                    PlayersLeader.Shadow = "Saruman"
                 else
-                    Leader.Shadow = "The Witch-king"
+                    PlayersLeader.Shadow = "The Witch-king"
                 end
 
-                if Leader.FreePeoples == "Gondor" then
-                    Leader.FreePeoples = "Rohan"
+                if PlayersLeader.FreePeoples == "Gondor" then
+                    PlayersLeader.FreePeoples = "Rohan"
                 else
-                    Leader.FreePeoples = "Gondor"
+                    PlayersLeader.FreePeoples = "Gondor"
                 end
             end
 
-            if Leader.FreePeoples == "Gondor" and Versus == "2v2" then
+            if PlayersLeader.FreePeoples == "Gondor" and Versus == "2v2" then
                 getObjectFromGUID(IDs.FreePeoplesLeaderToken).setPositionSmooth(Spots.LeadingPlayerGondor, false, false)
                 printToAll("Gondor Player (Blue) has the Free Peoples Leading Player Token.", Player["Blue"].color)
             elseif Versus == "2v2" then
@@ -2749,7 +2556,7 @@ function ProcessNextStep()
                 printToAll("Rohan Player (Green) has the Free Peoples Leading Player Token.", Player["Green"].color)
             end
 
-            if Leader.Shadow == "The Witch-king" and Versus ~= "1v1" then
+            if PlayersLeader.Shadow == "The Witch-king" and Versus ~= "1v1" then
                 getObjectFromGUID(IDs.ShadowLeaderToken).setPositionSmooth(Spots.LeadingPlayerWitchKing, false, false)
                 printToAll("The Witch-king Player (Red) has the Shadow Leading Player Token.", Player["Red"].color)
             elseif Versus ~= "1v1" then
@@ -3025,7 +2832,7 @@ function ProcessNextStep()
                     )
                 else
                     --draw a shadow faction card for the leading shadow player...
-                    if WoME and Leader.Shadow == "The Witch-king" then
+                    if WoME and PlayersLeader.Shadow == "The Witch-king" then
                         DrawFromDeck(
                             {
                                 deckname = "Faction",
@@ -3150,7 +2957,7 @@ function ProcessNextStep()
                     )
                 else
                     --draw a faction card for each leading player...
-                    if Leader.FreePeoples == "Gondor" and WoME then
+                    if PlayersLeader.FreePeoples == "Gondor" and WoME then
                         DrawFromDeck(
                             {
                                 deckname = "Faction",
@@ -3172,7 +2979,7 @@ function ProcessNextStep()
                         )
                     end
 
-                    if Leader.Shadow == "The Witch-king" and WoME then
+                    if PlayersLeader.Shadow == "The Witch-king" and WoME then
                         DrawFromDeck(
                             {
                                 deckname = "Faction",
@@ -5037,7 +4844,7 @@ function ProcessNextStep()
     return 1
 end
 
-function createBeginMenu()
+function CreateBeginMenu()
     LoME = false
     WoME = false
     self.clearButtons()
@@ -5212,7 +5019,7 @@ function createBeginMenu()
             tooltip = "Turn off scripting."
         }
     )
-    
+
     if Global.getVar("Mute") then
         self.createButton(
             {
@@ -5245,8 +5052,8 @@ function createBeginMenu()
 
     function ClickBegin()
         self.clearButtons()
-        Global.call("PlaySound", {ID = 0})
         --Music Violin
+        Global.call("PlaySound", {ID = 0})
         NextStep = "PlayersMenu"
         Step = ""
     end
@@ -5278,7 +5085,7 @@ function createBeginMenu()
     end
 end
 
-function createPlayersMenu()
+function CreatePlayersMenu()
     self.clearButtons()
     self.createButton(
         {
@@ -5597,7 +5404,7 @@ function createPlayersMenu()
     end
 end
 
-function createExpansionMenu()
+function CreateExpansionMenu()
     self.clearButtons()
     self.createButton(
         {
@@ -5848,7 +5655,7 @@ function createExpansionMenu()
     end
 end
 
-function createHuntForTheRingMenu()
+function CreateHuntForTheRingMenu()
     self.clearButtons()
     SPTCount = 0
     FPTCount = 0
@@ -6080,6 +5887,187 @@ function createHuntForTheRingMenu()
         NextStep = "TFoEMenu"
         Step = ""
     end
+end
+
+function ValidateArmyStep()
+    self.clearButtons()
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Army Setup Validation:",
+                position = {0, 0.1, -1.4},
+                width = 0,
+                height = 0,
+                font_size = 150,
+                font_color = {1, 1, 1}
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Please Wait\nChecking Army Setup...",
+                position = {0, 0.1, -0.5},
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = {1, 1, 1}
+            }
+        )
+        for I = 1, 99 do
+            coroutine.yield(0)
+        end
+
+        local ErrorLog = ""
+        local Regions = Global.getTable("Regions")
+
+        for _, Obj in pairs(getAllObjects()) do
+            --object is an amry unit?
+            if
+                string.find(Obj.getDescription(), "Regular;") ~= nil or
+                    string.find(Obj.getDescription(), "Elite;") ~= nil or
+                    string.find(Obj.getDescription(), "Leader;") ~= nil
+             then
+                local RegionName = Global.call("GetGridRegion", {Position = Obj.getPosition()})
+                Obj.setGMNotes("Region:" .. RegionName .. ";")
+
+                --object has a region?
+                if Regions[RegionName] ~= nil then
+                    --correct nation?
+                    local Nation = Regions[RegionName].Nation
+                    if Nation == "Elves" then
+                        Nation = "Elf"
+                    end
+
+                    if Nation == "Dwarves" then
+                        Nation = "Dwarf"
+                    end
+
+                    if RegionName == "Osgiliath" then
+                        Nation = "Gondor"
+                    end
+
+                    if RegionName == "North Ithilien" then
+                        Nation = "Sauron"
+                    end
+
+                    if RegionName == "South Ithilien" then
+                        Nation = "Southron/Easterling"
+                    end
+
+                    if RegionName == "West Harondor" then
+                        Nation = "Southron/Easterling"
+                    end
+
+                    if RegionName == "Dagorlad" then
+                        Nation = "Southron/Easterling"
+                    end
+
+                    if Obj.getName() == Nation .. " Regular" then
+                        Regions[RegionName].Detected.R = Regions[RegionName].Detected.R + 1
+                    elseif Obj.getName() == Nation .. " Elite" then
+                        Regions[RegionName].Detected.E = Regions[RegionName].Detected.E + 1
+                    elseif Obj.getName() == Nation .. " Leader" then
+                        Regions[RegionName].Detected.L = Regions[RegionName].Detected.L + 1
+                    elseif Obj.getName() == "Nazgûl" then
+                        Regions[RegionName].Detected.L = Regions[RegionName].Detected.L + 1
+                    else --wrong unit faction...
+                        print(RegionName, ":'", Obj.getName(), "' ~= '", Nation, " Regular/Elite/Leader'")
+                        Regions[RegionName].Detected.X = Regions[RegionName].Detected.X + 1
+                    end
+                end
+            end
+        end
+
+        --go through each region...
+        for I, Region in pairs(Regions) do
+            --validate by region...
+            if Region.Detected.X > 0 then
+                ErrorLog = ErrorLog .. "\n" .. I .. " has " .. Region.Detected.X .. " incorrect Army Unit(s)."
+            end
+
+            if Region.Starting.R ~= Region.Detected.R then
+                ErrorLog =
+                    ErrorLog .. "\n" .. I .. " has " .. Region.Detected.R .. " of " .. Region.Starting.R .. " Regular(s)."
+            end
+
+            if Region.Starting.E ~= Region.Detected.E then
+                ErrorLog = ErrorLog .. "\n" .. I .. " has " .. Region.Detected.E .. " of " .. Region.Starting.E .. " Elite(s)."
+            end
+
+            if Region.Starting.L ~= Region.Detected.L then
+                ErrorLog = ErrorLog .. "\n" .. I .. " has " .. Region.Detected.L .. " of " .. Region.Starting.L .. " Leader(s)."
+            end
+        end
+
+        if ErrorLog == "" then
+            printToAll("Army Setup appears correct.", {0, 1, 0})
+            self.createButton(
+                {
+                    click_function = "Nothing",
+                    function_owner = self,
+                    label = "Army Setup appears correct.",
+                    position = {0, 0.1, 0.5},
+                    width = 0,
+                    height = 0,
+                    font_size = 100,
+                    font_color = {1, 1, 1}
+                }
+            )
+            NextStep = "SetupCompleteMenu"
+            Step = ""
+        else
+            broadcastToAll("Problem detected with Army Setup!", {1, 1, 0})
+            printToAll(ErrorLog, {1, 1, 0})
+            self.createButton(
+                {
+                    click_function = "Nothing",
+                    function_owner = self,
+                    label = ErrorLog,
+                    position = {0, 0.1, 0},
+                    width = 0,
+                    height = 0,
+                    font_size = 50,
+                    font_color = {1, 1, 1}
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "Continue",
+                    function_owner = self,
+                    label = "Ignore (Continue)",
+                    position = {-1, 0.1, 1.4},
+                    width = 900,
+                    height = 200,
+                    color = {1, 1, 0},
+                    font_size = 100
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "Validate",
+                    function_owner = self,
+                    label = "Validate Setup",
+                    position = {1, 0.1, 1.4},
+                    width = 900,
+                    height = 200,
+                    color = {1, 1, 1},
+                    font_size = 100
+                }
+            )
+        end
+
+        function Validate()
+            NextStep = "ValidateArmies"
+            Step = ""
+        end
+
+        function Continue()
+            self.clearButtons()
+            NextStep = "SetupCompleteMenu"
+            Step = ""
+        end
 end
 
 function GatherActionDiceCoroutine()
@@ -6786,7 +6774,11 @@ function RollActionDiceCoroutine()
     end
 
     for I = 1, #HuntBoxFreePeoplesDiceArray do
-        getObjectFromGUID(HuntBoxFreePeoplesDiceArray[I]).setPositionSmooth(Spots.FreePeoplesHuntBoxDice[I], false, true)
+        getObjectFromGUID(HuntBoxFreePeoplesDiceArray[I]).setPositionSmooth(
+            Spots.FreePeoplesHuntBoxDice[I],
+            false,
+            true
+        )
         Global.call("SetDiceFace", {Dice = getObjectFromGUID(HuntBoxShadowDiceArray[I]), Value = "Eye"})
     end
 
@@ -6973,7 +6965,7 @@ function FactionActive(Params)
     end
 end
 
--- Params: id="",=position={x,y,z},name="",description=""
+-- Params: id="", position={x,y,z}, name="", description=""
 function CheckDeck(Params)
     -- If the deck no longer exists, try to re-detect it at the specified position and return it's ID (or null if none found)...
     if getObjectFromGUID(Params.id) ~= nil then

@@ -1,4 +1,4 @@
-function onload()
+function onLoad()
     Menu()
   end--function
   

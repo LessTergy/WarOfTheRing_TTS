@@ -1,13 +1,12 @@
 HuntBoxZoneID = "b06145"
--- old:"077148"
+
 GamePanelID = "6158a0"
 SoundCubeID = "74cc15"
 TFoERegionOverlayID = "d5aeaa"
 TFoEStrongholdOverlayID = "7d50c0"
-TFoECity1OverLayID = "c537fa"
-TFoECity2OverlayID = "2df5ce"
 FellowshipRedZoneID = "458285"
 FellowshipYellowZoneID = "652513"
+
 -- Turn info
 Round = 0
 Turn = 0 -- count of turns
@@ -23,11 +22,14 @@ BotF = false
 TFoE = false
 KoME = false
 Scripting = true
+
 -- boardsize
 BoardX = 36.5
 BoardZ = 25.0
+
 -- victorypoints...
 VictoryPoints = {Shadow = 0, FreePeoples = 0}
+
 -- dice table...
 Dice = {
     Action = {
@@ -67,8 +69,9 @@ Dice = {
     }
     -- Stats
 }
--- Dice
+
 Nations = {"Dwarves", "Elves", "Gondor", "North", "Rohan", "Haradrim", "Isengard", "Sauron"}
+
 PoliticalTrack = {
     -- Political Track Levels: 0=AtWar,1-3=AtPeace (1=closest to war)
     Gondor = {ID = "8ab5c1", Active = false, Level = 2, AtWar = false},
@@ -80,6 +83,7 @@ PoliticalTrack = {
     Isengard = {ID = "7f39c1", Active = true, Level = 1, AtWar = false},
     Haradrim = {ID = "52aff9", Active = true, Level = 2, AtWar = false}
 }
+
 Regions = {}
 Grid = {}
 RulesWarnings = true
@@ -108,72 +112,6 @@ Spots = {
                 {-57, 6, -25},
                 {-62, 6, -25}
             }
-        },
-        Shadow = {
-            UsedDiceArea = {4.3, 0.92, -32.75},
-            Caracters = {
-                {16.5, 0.97, -33},
-                {21.5, 0.97, -33},
-                {26.5, 0.97, -33},
-                {31.5, 0.97, -33},
-                {36.5, 0.97, -33},
-                {41.5, 0.97, -33},
-                {46.5, 0.97, -33},
-                {51.5, 0.97, -33}
-            },
-            Factions = {},
-            Dice = {
-                Action = {
-                    Rolled = {
-                        {0.5, 1.56, -26.6},
-                        {2.0, 1.56, -26.6},
-                        {3.5, 1.56, -26.6},
-                        {5.0, 1.56, -26.6},
-                        {6.5, 1.56, -26.6},
-                        {8.0, 1.56, -26.6},
-                        {9.5, 1.56, -26.6},
-                        {11.0, 1.56, -26.6},
-                        {12.5, 1.56, -26.6},
-                        {14.0, 1.56, -26.6}
-                    }
-                }
-            },
-            Decks = {
-                CallToBattle = {2.50, 0.95, -45.00}
-            }
-        },
-        FreePeoples = {
-            Compact = {
-                UsedDiceArea = {-5.1, 0.92, -32.75},
-                Characters = {
-                    {-16.5, 0.97, -33},
-                    {-21.5, 0.97, -33},
-                    {-26.5, 0.97, -33},
-                    {-31.5, 0.97, -33},
-                    {-36.5, 0.97, -33},
-                    {-41.5, 0.97, -33}
-                },
-                Factions = {},
-                Dice = {
-                    Action = {
-                        Rolled = {
-                            {-0.5, 1.56, -26.6},
-                            {-2.0, 1.56, -26.6},
-                            {-3.5, 1.56, -26.6},
-                            {-5.0, 1.56, -26.6},
-                            {-6.5, 1.56, -26.6},
-                            {-8.0, 1.56, -26.6},
-                            {-9.5, 1.56, -26.6},
-                            {-11.0, 1.56, -26.6},
-                            {-12.5, 1.56, -26.6},
-                            {-14.0, 1.56, -26.6}
-                        }
-                    }
-                },
-                Decks = {
-                    CallToBattle = {-3.50, 0.95, -45.00}
-                }
-            }
         }
     },
     CompanionCards = {
@@ -199,423 +137,29 @@ Spots = {
             {16.5, 6, 26},
             {11.5, 6, 26}
         }
-    },
-    Setup = {
-        Character = {
-            ["The Ring-bearers"] = {-0.94, 1.01, 15.96},
-            ["Gandalf the Grey"] = {27.03, 0.89, 16.25},
-            ["Strider"] = {28.35, 1.01, 16.15},
-            ["Legolas"] = {26.69, 1.01, 17.23},
-            ["Boromir"] = {27.75, 1.01, 17.30},
-            ["Gimli"] = {28.75, 1.01, 17.31},
-            ["Peregrin"] = {27.24, 1.01, 18.43},
-            ["Meriadoc"] = {28.32, 1.01, 18.44},
-            ["Aragorn: Heir to Isildur"] = {-8.47, 1.01, 27.51},
-            ["Gandalf the White: Emissary from the West"] = {-3.56, 1.01, 27.49},
-            ["Gollum"] = {1.50, 1.06, 27.50},
-            ["Sméagol"] = {6.50, 1.06, 27.50},
-            ["Lord Elrond: Keeper of Vilya"] = {11.46, 1.01, 27.50},
-            ["Lady Galadriel: Keeper of Nenya"] = {16.48, 1.05, 27.51},
-            ["Treebeard: Tree-herd"] = {-13.44, 1.01, 27.54},
-            ["Saruman: Corrupted Wizard"] = {16.48, 1.01, -27.30},
-            ["The Witch-King: The Black Captain"] = {21.50, 1.01, -27.17},
-            ["The Mouth of Sauron: Lieutenant of Barad~Dur"] = {26.43, 1.01, -27.43},
-            ["The Witch-King: Chief of the Ring Wraiths"] = {31.44, 1.01, -27.37},
-            ["The Mouth of Sauron: Black Númenórean"] = {36.53, 1.01, -27.30},
-            ["Gothmog: Lieutenant of Morgul"] = {41.56, 1.01, -27.45},
-            ["Balrog: Evil of the Ancient World"] = {46.50, 1.01, -27.56}
-        },
-        -- character
-        Dwarf = {
-            Regular = {
-                {-42.82, 1, 13.68},
-                {-42.74, 1, 12.23},
-                -- reserves
-                {-19.33, 0.98, 15.50},
-                -- ered luin
-                {17.79, 0.98, 17.77},
-                -- erebor
-                {20.09, 0.98, 18.92}
-                -- iron hills
-            },
-            -- regular
-            Elite = {
-                {-39.83, 1.00, 13.95},
-                {-40.50, 1.00, 12.96},
-                {-39.76, 1.00, 11.94},
-                -- reserves
-                {15.98, 1, 18.94},
-                {16.88, 1, 18.17}
-                -- erebor
-            },
-            -- elite
-            Leader = {
-                {-37.74, 1.00, 13.99},
-                {-38.49, 1.00, 12.96},
-                {-37.70, 1.00, 11.98},
-                -- reserves
-                {15.44, 1, 20.15}
-                -- erebor
-            }
-            -- leader
-        },
-        -- dwarf
-        Elf = {
-            Regular = {
-                {15.44, 1, 20.15},
-                {-42.70, 1, 8.19},
-                -- reserves
-                {-21.84, 0.98, 10.80},
-                -- grey havens
-                {12.16, 0.98, 17.75},
-                -- woodland realm
-                {4.70, 0.98, 5.38}
-                -- lorien
-            },
-            -- regular
-            Elite = {
-                {-39.32, 1.00, 10.00},
-                {-39.22, 1.00, 7.98},
-                {-37.80, 1.00, 9.99},
-                {-37.70, 1.00, 7.96},
-                -- reserves
-                {-21.62, 1, 9.74},
-                -- grey havens
-                {0.51, 1, 19.32},
-                {1.65, 1, 18.97},
-                -- rivendell
-                {13.48, 1, 17.75},
-                -- woodland realm
-                {2.47, 1, 7.54},
-                {2.29, 1, 6.37}
-                -- lorien
-            },
-            -- elite
-            Leader = {
-                {-20.58, 1, 10.56},
-                -- grey havens
-                {2.06, 1, 17.77},
-                -- rivendell
-                {12.15, 1.00, 15.71},
-                -- woodland realm
-                {5.50, 1, 6.36}
-                -- lorien
-            }
-            -- leader
-        },
-        -- elf
-        North = {
-            Regular = {
-                {-43.01, 1, 6.04},
-                {-43.01, 1, 4.90},
-                {-43.09, 1, 3.85},
-                {-42.12, 1, 6.04},
-                {-42.09, 1, 4.89},
-                {-42.07, 1, 3.90},
-                -- reserves
-                {-13.64, 0.98, 12.18},
-                -- the shire
-                {-7.81, 0.98, 16.68},
-                -- bree
-                {6.98, 0.98, 19.48},
-                -- carrock
-                {18.97, 0.98, 14.72}
-                -- dale
-            },
-            -- regular
-            Elite = {
-                {-41.05, 1.00, 6.07},
-                {-40.99, 1.00, 3.91},
-                {-39.71, 1.00, 6.08},
-                {-39.80, 1.00, 3.95},
-                -- reserves
-                {-11.61, 1, 18.37}
-                -- north downs
-            },
-            -- elite
-            Leader = {
-                {-37.67, 1.00, 5.91},
-                {-38.58, 1.00, 4.98},
-                {-37.76, 1.00, 4.00},
-                -- reserves
-                {19.14, 1, 15.84}
-                -- dale
-            }
-            -- leader
-        },
-        -- north
-        Rohan = {
-            Regular = {
-                {-43.28, 1.00, 1.92},
-                {-43.28, 1.00, 0.92},
-                {-43.28, 1.00, -0.08},
-                {-42.37, 1.00, 1.93},
-                {-42.39, 1.00, 0.92},
-                {-42.39, 1.00, -0.13},
-                -- reserves
-                {-1.68, 1, -4.28},
-                {-0.87, 1, -4.07},
-                -- fords of isen
-                {1.34, 1, -5.12},
-                -- helm's deep
-                {5.76, 1, -5.15}
-                -- edoras
-            },
-            -- regular
-            Elite = {
-                {-41.16, 1.00, 1.85},
-                {-39.93, 1.00, 1.93},
-                {-40.95, 1.00, 0.08},
-                {-39.74, 1.00, 0.11},
-                -- reserves
-                {4.18, 1, -6.35}
-                -- edoras
-            },
-            -- elite
-            Leader = {
-                {-37.83, 1.00, 1.91},
-                {-38.80, 1.00, 0.90},
-                {-37.78, 1.00, -0.03},
-                -- reserves
-                {-4.63, 1, -4.65}
-                -- fords of isen
-            }
-            -- leader
-        },
-        -- rohan
-        Gondor = {
-            Regular = {
-                {-43.24, 1.00, -2.05},
-                {-43.24, 1.00, -3.05},
-                {-43.24, 1.00, -4.05},
-                {-42.34, 1.00, -2.05},
-                {-42.34, 1.00, -3.05},
-                {-42.34, 1.00, -4.05},
-                -- reserves
-                {1.85, 1, -15.81},
-                {2.73, 1, -15.87},
-                {3.72, 1, -15.85},
-                -- dol amroth
-                {9.77, 1, -15.74},
-                -- pelargir
-                {14.26, 1, -12.00},
-                {13.84, 1, -12.82},
-                -- osgiliath
-                {11.24, 1, -11.69},
-                {12.05, 1, -11.67},
-                {12.87, 1, -11.82}
-                -- minas tirith
-            },
-            -- regular
-            Elite = {
-                {-41.24, 1.00, -2.06},
-                {-41.29, 1.00, -4.01},
-                {-39.97, 1.00, -2.03},
-                {-40.08, 1.00, -3.99},
-                -- reserves
-                {13.28, 1, -8.78}
-                -- minas tirith
-            },
-            -- elite
-            Leader = {
-                {-37.86, 1.00, -2.10},
-                {-38.87, 1.00, -3.04},
-                {-37.79, 1.00, -4.00},
-                -- reserves
-                {12.16, 1, -8.07}
-                -- minas tirith
-            }
-            -- leader
-        },
-        -- gondor
-        Isengard = {
-            Regular = {
-                {42.00, 1, 6.00},
-                {43.00, 1, 6.00},
-                {42.00, 1, 4.00},
-                {43.00, 1, 4.00},
-                {42.00, 1, 2.00},
-                {43.00, 1, 2.00},
-                -- reserves
-                {-4.19, 0.98, 6.06},
-                -- north dunland
-                {-4.87, 0.98, 2.83},
-                -- south dunland
-                {-4.00, 0.98, -0.94},
-                {-4.04, 0.98, -1.73},
-                {-4.11, 0.98, -2.57},
-                {-3.46, 0.98, -3.17}
-                -- orthanc
-            },
-            -- regular
-            Elite = {
-                {37.50, 1.00, 6.00},
-                {38.50, 1.00, 5.00},
-                {37.50, 1.00, 4.00},
-                {38.50, 1.00, 3.00},
-                {37.50, 1.00, 2.00},
-                -- reserves
-                {-1.38, 0.99, -2.82}
-                -- orthanc
-            }
-            -- elite
-        },
-        -- isengard
-        Haradrim = {
-            Regular = {
-                {42.00, 1, 0.00},
-                {43.00, 1, 0.00},
-                {42.00, 1, -1.00},
-                {43.00, 1, -1.00},
-                {42.00, 1, -2.00},
-                {43.00, 1, -2.00},
-                {42.00, 1, -3.00},
-                {43.00, 1, -3.00},
-                {42.00, 1, -4.00},
-                {43.00, 1, -4.00},
-                -- reserves
-                {25.19, 0.98, 9.95},
-                {26.13, 0.98, 9.95},
-                -- north rhun
-                {29.30, 0.98, 5.03},
-                {29.35, 0.98, 4.24},
-                {29.37, 0.98, 3.37},
-                -- south rhun
-                {6.68, 0.98, -23.96},
-                {7.65, 0.98, -23.92},
-                {8.70, 0.98, -23.87},
-                -- umbar
-                {14.36, 0.98, -22.16},
-                {15.16, 0.98, -21.93},
-                {15.94, 0.98, -21.66},
-                -- near harad
-                {20.02, 0.98, -21.32},
-                {20.54, 0.98, -20.53},
-                {20.96, 0.98, -21.35}
-                -- far harad
-            },
-            -- regular
-            Elite = {
-                {38.00, 0.99, 0.00},
-                {38.00, 0.99, -2.00},
-                {37.97, 0.99, -3.84},
-                -- reserves
-                {20.96, 0.98, -21.35},
-                -- south rhun
-                {13.43, 0.98, -22.74},
-                -- near harad
-                {21.17, 0.98, -19.62}
-                -- far harad
-            }
-            -- elite
-        },
-        -- haradrim
-        Sauron = {
-            Regular = {
-                {42.88, 1.00, -5.52},
-                {41.88, 1.00, -6.02},
-                {42.88, 1.00, -6.52},
-                {42.88, 1.00, -7.52},
-                {42.88, 1.00, -8.52},
-                {42.88, 1.00, -9.51},
-                {41.88, 1.00, -10.01},
-                {42.88, 1.00, -10.51},
-                -- reserves
-                {-2.49, 0.99, 23.25},
-                {-2.55, 0.99, 22.44},
-                -- mount gundabad
-                {0.37, 0.99, 10.63},
-                {0.47, 0.99, 9.84},
-                -- moria
-                {9.32, 0.99, 5.46},
-                {9.95, 0.99, 4.95},
-                {10.71, 0.99, 4.73},
-                {11.49, 0.99, 4.57},
-                {12.28, 0.99, 4.65},
-                -- dol guldur
-                {19.99, 0.99, -15.46},
-                {20.85, 0.99, -15.50},
-                -- nurn
-                {21.64, 0.99, -13.40},
-                {22.89, 0.99, -13.47},
-                {24.16, 0.99, -13.26},
-                -- gorgoroth
-                {18.63, 0.99, -10.06},
-                {18.72, 0.99, -10.93},
-                {20.10, 0.99, -11.68},
-                {21.39, 0.99, -10.45},
-                {21.39, 0.99, -10.45},
-                -- minas morgul
-                {22.97, 0.99, -4.96},
-                {22.18, 0.99, -5.22},
-                {21.80, 0.99, -6.13},
-                {22.60, 0.99, -6.07},
-                {22.06, 0.99, -6.95},
-                -- morannon
-                {25.01, 0.99, -5.01},
-                {27.93, 0.99, -4.50},
-                {27.77, 0.99, -5.71},
-                {28.04, 0.99, -6.64}
-                -- barad~dur
-            },
-            -- regular
-            Elite = {
-                {37.50, 1.00, -5.80},
-                {37.50, 1.00, -7.30},
-                {37.50, 1.00, -8.75},
-                {37.50, 1.00, -10.20},
-                -- reserves
-                {9.73, 0.99, 6.46},
-                -- dol guldur
-                {24.77, 0.99, -6.01}
-                -- barad~dur
-            },
-            -- elite
-            Nazgul = {
-                {37.57, 1.00, -11.96},
-                {38.94, 1.00, -12.04},
-                {37.57, 1.00, -13.98},
-                {38.90, 1.00, -14.05},
-                -- reserves
-                {26.78, 1.00, -6.01},
-                -- barad~dur
-                {19.06, 0.99, -4.48},
-                -- morannon
-                {19.37, 0.99, -9.06},
-                -- minas morgul
-                {10.97, 0.99, 8.24}
-                -- dol guldur
-            }
-            -- nazgul
-        }
-        -- mordor
     }
-    -- setup
 }
--- Spots
 
-function onload()
+function onLoad()
     if getObjectFromGUID(GamePanelID) == nil then
         Scripting = false
     end
 
     InitMap()
-    -- startLuaCoroutine(Global,"Test1CR")
     FreezeObjects()
-    -- RedActionDice = {"70881c","6c2954","47a70c","7910fe","31cd52","a4ad18","cf8525","5048cd","119c78","96404d"}
-    -- -RedDiceHuntBoxSpots = {{ID="",Spot={-30.85,1.56,-18.30}},{ID="",Spot={-29.475,1.56,-18.30}},{ID="",Spot={-28.10,1.56,-18.30}},{ID="",Spot={-30.85,1.56,-19.8}},{ID="",Spot={-29.475,1.56,-19.8}},{ID="",Spot={-28.10,1.56,-19.8}},{ID="",Spot={-30.85,1.56,-21.3}},{ID="",Spot={-29.475,1.56,-21.3}},{ID="",Spot={-28.10,1.56,-21.3}},{ID="",Spot={-30.85,1.56,-22.8}},{ID="",Spot={-29.475,1.56,-22.8}},{ID="",Spot={-28.10,1.56,-22.8}}}
-    -- -BlueDiceHuntBoxSpots = {{ID="",Spot={-34.85,1.56,-18.30}},{ID="",Spot={-33.475,1.56,-18.30}},{ID="",Spot={-32.10,1.56,-18.30}},{ID="",Spot={-34.85,1.56,-19.8}},{ID="",Spot={-33.475,1.56,-19.8}},{ID="",Spot={-32.10,1.56,-19.8}},{ID="",Spot={-34.85,1.56,-21.3}},{ID="",Spot={-33.475,1.56,-21.3}},{ID="",Spot={-32.10,1.56,-21.3}},{ID="",Spot={-34.85,1.56,-22.8}},{ID="",Spot={-33.475,1.56,-22.8}},{ID="",Spot={-32.10,1.56,-22.8}}}
+    
     getObjectFromGUID(FellowshipRedZoneID).setPosition({36.5, -2, 26.5})
     getObjectFromGUID(FellowshipRedZoneID).setScale({35, 1, 1})
     getObjectFromGUID(FellowshipYellowZoneID).setPosition({36.35, -2, 26.5})
     getObjectFromGUID(FellowshipYellowZoneID).setScale({35, 1, 1})
 end
 
-function InitComponents()
+function UpdateIDs()
     -- look for all known game components and upate their IDs...
-    log("Initializing Components...")
+    log("Updating Components IDs...")
+
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
-    for O, Obj in pairs(getAllObjects()) do
+    for _, Obj in pairs(getAllObjects()) do
         if Obj.type == "Card" then
             -- ignore cards.
             -- DICE
@@ -12431,14 +11975,13 @@ function InitMap()
     Grid[157][84] = "Nazgul Reinforcements"
 end
 
--- {Position={x,y,z}}
+-- {Position = {x,y,z}}
 function GetGridRegion(Params) 
     local X = math.floor((Params.Position[1] + 43.65) / 0.557)
     local Z = math.floor((Params.Position[3] - 25.74) / -0.481)
     if Grid[X] ~= nil then
         if Grid[X][Z] ~= nil then
             if #Grid[X][Z] > 0 then
-                -- log("Debug:"..X..","..Z..":"..Grid[X][Z])
                 return Grid[X][Z]
             end
         end
@@ -12912,12 +12455,15 @@ function SetupTFoE()
             -- remove FP Erebor box
             RemoveObjectFromGame({ID = "8f175c"})
             -- remove Dale City
-            getObjectFromGUID("55e47b").setLock(true)
-            getObjectFromGUID("55e47b").setRotation({0, 180, 0})
-            if getObjectFromGUID("c35be9").getVar("Settlements") == "Flat" then
-                getObjectFromGUID("55e47b").setPosition({17.92, 0.78, 20.87})
+
+            local EreborSettlement = getObjectFromGUID("55e47b")
+            EreborSettlement.setLock(true)
+            EreborSettlement.setRotation({0, 180, 0})
+
+            if SettlementsAreFlat() then
+                EreborSettlement.setPosition({17.92, 0.78, 20.87})
             else
-                getObjectFromGUID("55e47b").setPosition({17.92, 1.16, 20.87})
+                EreborSettlement.setPosition({17.92, 1.16, 20.87})
             end
 
             coroutine.yield(0)
@@ -12935,7 +12481,7 @@ function SetupTFoE()
             if getObjectFromGUID("7318b5") ~= nil then
                 getObjectFromGUID("7318b5").setLock(true)
                 getObjectFromGUID("7318b5").setRotation({0, 180, 0})
-                if getObjectFromGUID("c35be9").getVar("Settlements") == "Flat" then
+                if SettlementsAreFlat() then
                     -- Iron Hills 3d city
                     getObjectFromGUID("7318b5").setPosition({21.92, 0.85, 21.1}, false, true)
                 else
@@ -13160,7 +12706,7 @@ function SetupTFoE()
         -- spawn Dale 3d fortification...
         local Fort = getObjectFromGUID("42366d").clone({position = {17.65, 1.01, 15.43}})
         Fort.setLock(true)
-        if getObjectFromGUID("c35be9").getVar("Settlements") == "Flat" then
+        if SettlementsAreFlat() then
             Fort.setPosition({17.65, 0.93, 15.43})
         else
             Fort.setPosition({17.65, 1.01, 15.43})
@@ -13177,7 +12723,7 @@ function SetupTFoENewCities()
     if getObjectFromGUID("c537fa") ~= nil then
         getObjectFromGUID("c537fa").setLock(true)
         getObjectFromGUID("c537fa").setRotation({0, 180, 0})
-        if getObjectFromGUID("c35be9").getVar("Settlements") == "Flat" then
+        if SettlementsAreFlat() then
             getObjectFromGUID("c537fa").setPositionSmooth({-19.3, 0.84, 17.18}, false, true)
         else
             getObjectFromGUID("c537fa").setPositionSmooth({-19.3, 1.08, 17.18}, false, true)
@@ -13203,7 +12749,7 @@ function SetupTFoENewCities()
     if getObjectFromGUID("2df5ce") ~= nil then
         getObjectFromGUID("2df5ce").setLock(true)
         getObjectFromGUID("2df5ce").setRotation({0, 180, 0})
-        if getObjectFromGUID("c35be9").getVar("Settlements") == "Flat" then
+        if SettlementsAreFlat() then
             getObjectFromGUID("2df5ce").setPositionSmooth({27.28, 0.84, 0.83}, false, true)
         else
             getObjectFromGUID("2df5ce").setPositionSmooth({27.28, 1.08, 0.83}, false, true)
@@ -13248,7 +12794,7 @@ function CorruptHelmsDeep()
         getObjectFromGUID("011a2a").setRotation({0, 180, 0})
         getObjectFromGUID("011a2a").setPosition({0.24, 0.78, -5.49})
         coroutine.yield(0)
-        if getObjectFromGUID("c35be9").getVar("Settlements") ~= "Flat" then
+        if not SettlementsAreFlat() then
             getObjectFromGUID("011a2a").setPositionSmooth({0.24, 1.16, -5.49}, false, false)
         end
 
@@ -13299,7 +12845,7 @@ function RestoreHelmsDeep()
         getObjectFromGUID("ef398b").setPosition({-0.19, 0.77, -5.57}, false, false)
         getObjectFromGUID("ef398b").setRotation({0, 180, 0})
         coroutine.yield(0)
-        if getObjectFromGUID("c35be9").getVar("Settlements") ~= "Flat" then
+        if not SettlementsAreFlat() then
             getObjectFromGUID("ef398b").setPositionSmooth({-0.19, 1.16, -5.57}, false, false)
         end
 
@@ -17669,4 +17215,9 @@ function setDiceRoller(side_to_count, info)
     end
     getObjectFromGUID(roller_guid).call("switchToCombat", {Strength = strength, Leadership = leadership})
 end
--- END ARMY COUNTING SCRIPT v2
+
+function SettlementsAreFlat()
+    local preferencesPanel = getObjectFromGUID("c35be9")
+    local settings = preferencesPanel.getTable("Settings")
+    return settings.SettlementsType == "Flat"
+end

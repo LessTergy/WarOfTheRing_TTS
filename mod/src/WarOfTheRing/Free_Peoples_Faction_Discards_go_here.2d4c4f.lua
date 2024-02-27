@@ -1,6 +1,6 @@
 Side = "FreePeoples"
 
-function onload()
+function onLoad()
   UpdateText()
 end--function
 
