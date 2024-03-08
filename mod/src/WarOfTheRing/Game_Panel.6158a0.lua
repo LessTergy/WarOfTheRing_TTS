@@ -2055,7 +2055,7 @@ function ProcessNextStep()
             end
         until Done
         Global.call("FellowshipMenu")
-        NextStep = "ValidateArmies"
+        NextStep = "SetupArmies"
         --compact mode?
         if Versus == "1v1 Compact Mode" then
             broadcastToAll("Compact Mode 1v1:\nPlacing Players next to each other...")
@@ -2065,7 +2065,8 @@ function ProcessNextStep()
             Spots.FreePeoplesDiceBox = Spots.CompactFreePeoplesUsedDice
             --relocate Blue hand...
             coroutine.yield(0)
-            Global.call("MoveObject", { ID = "63b83a", Position = { -25, 3, -57 }, Rotation = { 0, 0, 0 }, Smooth = false })
+            Global.call("MoveObject",
+                { ID = "63b83a", Position = { -25, 3, -57 }, Rotation = { 0, 0, 0 }, Smooth = false })
             --blue hand
             --swap blue to green, then back to move player to the correct spot...
             coroutine.yield(0)
@@ -2358,9 +2359,8 @@ function ProcessNextStep()
         else
             Step = ""
         end
-    elseif Step == "ValidateArmies" then
+    elseif Step == "SetupArmies" then
         SpawnArmies()
-        ValidateArmyStep()
     elseif Step == "SetupCompleteMenu" then
         self.clearButtons()
         self.createButton(
@@ -5909,192 +5909,9 @@ function CreateHuntForTheRingMenu()
             NextStep = "TFoEMenu"
             Step = ""
         end
-    else --proceed...
+    else
         Global.call("RemoveObjectFromGame", { Description = "HftR;" })
         NextStep = "TFoEMenu"
-        Step = ""
-    end
-end
-
-function ValidateArmyStep()
-    self.clearButtons()
-    self.createButton(
-        {
-            click_function = "Nothing",
-            function_owner = self,
-            label = "Army Setup Validation:",
-            position = { 0, 0.1, -1.4 },
-            width = 0,
-            height = 0,
-            font_size = 150,
-            font_color = { 1, 1, 1 }
-        }
-    )
-    self.createButton(
-        {
-            click_function = "Nothing",
-            function_owner = self,
-            label = "Please Wait\nChecking Army Setup...",
-            position = { 0, 0.1, -0.5 },
-            width = 0,
-            height = 0,
-            font_size = 100,
-            font_color = { 1, 1, 1 }
-        }
-    )
-    for I = 1, 99 do
-        coroutine.yield(0)
-    end
-
-    local ErrorLog = ""
-    local Regions = Global.getTable("Regions")
-
-    for _, Obj in pairs(getAllObjects()) do
-        --object is an amry unit?
-        if
-            string.find(Obj.getDescription(), "Regular;") ~= nil or
-            string.find(Obj.getDescription(), "Elite;") ~= nil or
-            string.find(Obj.getDescription(), "Leader;") ~= nil
-        then
-            local RegionName = Global.call("GetGridRegion", { Position = Obj.getPosition() })
-            Obj.setGMNotes("Region:" .. RegionName .. ";")
-
-            --object has a region?
-            if Regions[RegionName] ~= nil then
-                --correct nation?
-                local Nation = Regions[RegionName].Nation
-                if Nation == "Elves" then
-                    Nation = "Elf"
-                end
-
-                if Nation == "Dwarves" then
-                    Nation = "Dwarf"
-                end
-
-                if RegionName == "Osgiliath" then
-                    Nation = "Gondor"
-                end
-
-                if RegionName == "North Ithilien" then
-                    Nation = "Sauron"
-                end
-
-                if RegionName == "South Ithilien" then
-                    Nation = "Southron/Easterling"
-                end
-
-                if RegionName == "West Harondor" then
-                    Nation = "Southron/Easterling"
-                end
-
-                if RegionName == "Dagorlad" then
-                    Nation = "Southron/Easterling"
-                end
-
-                if Obj.getName() == Nation .. " Regular" then
-                    Regions[RegionName].Detected.R = Regions[RegionName].Detected.R + 1
-                elseif Obj.getName() == Nation .. " Elite" then
-                    Regions[RegionName].Detected.E = Regions[RegionName].Detected.E + 1
-                elseif Obj.getName() == Nation .. " Leader" then
-                    Regions[RegionName].Detected.L = Regions[RegionName].Detected.L + 1
-                elseif Obj.getName() == "Nazgûl" then
-                    Regions[RegionName].Detected.L = Regions[RegionName].Detected.L + 1
-                else     --wrong unit faction...
-                    print(RegionName, ":'", Obj.getName(), "' ~= '", Nation, " Regular/Elite/Leader'")
-                    Regions[RegionName].Detected.X = Regions[RegionName].Detected.X + 1
-                end
-            end
-        end
-    end
-
-    --go through each region...
-    for I, Region in pairs(Regions) do
-        --validate by region...
-        if Region.Detected.X > 0 then
-            ErrorLog = ErrorLog .. "\n" .. I .. " has " .. Region.Detected.X .. " incorrect Army Unit(s)."
-        end
-
-        if Region.Starting.R ~= Region.Detected.R then
-            ErrorLog =
-                ErrorLog .. "\n" .. I .. " has " .. Region.Detected.R .. " of " .. Region.Starting.R .. " Regular(s)."
-        end
-
-        if Region.Starting.E ~= Region.Detected.E then
-            ErrorLog = ErrorLog ..
-            "\n" .. I .. " has " .. Region.Detected.E .. " of " .. Region.Starting.E .. " Elite(s)."
-        end
-
-        if Region.Starting.L ~= Region.Detected.L then
-            ErrorLog = ErrorLog ..
-            "\n" .. I .. " has " .. Region.Detected.L .. " of " .. Region.Starting.L .. " Leader(s)."
-        end
-    end
-
-    if ErrorLog == "" then
-        printToAll("Army Setup appears correct.", { 0, 1, 0 })
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Army Setup appears correct.",
-                position = { 0, 0.1, 0.5 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        NextStep = "SetupCompleteMenu"
-        Step = ""
-    else
-        broadcastToAll("Problem detected with Army Setup!", { 1, 1, 0 })
-        printToAll(ErrorLog, { 1, 1, 0 })
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = ErrorLog,
-                position = { 0, 0.1, 0 },
-                width = 0,
-                height = 0,
-                font_size = 50,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Continue",
-                function_owner = self,
-                label = "Ignore (Continue)",
-                position = { -1, 0.1, 1.4 },
-                width = 900,
-                height = 200,
-                color = { 1, 1, 0 },
-                font_size = 100
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Validate",
-                function_owner = self,
-                label = "Validate Setup",
-                position = { 1, 0.1, 1.4 },
-                width = 900,
-                height = 200,
-                color = { 1, 1, 1 },
-                font_size = 100
-            }
-        )
-    end
-
-    function Validate()
-        NextStep = "ValidateArmies"
-        Step = ""
-    end
-
-    function Continue()
-        self.clearButtons()
-        NextStep = "SetupCompleteMenu"
         Step = ""
     end
 end
