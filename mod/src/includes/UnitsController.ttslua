@@ -1223,15 +1223,16 @@ function SpawnArmy(ArmyConfig, SettingType)
     local ComponentBag = getObjectFromGUID("0e5fd1")
 
     local Template = GetObjectFromComponentBag(ComponentBag, ArmyConfig, SettingType)
+    coroutine.yield(0)
+
+    if Template == nil then
+        return
+    end
 
     for _, Position in pairs(ArmyConfig.Positions) do
         local NewObj = Template.clone({ position = Position })
         NewObj.setLock(false)
         NewObj.setPosition({ Position.x, Position.y + 1, Position.z })
-    end
-
-    if Template == nil then
-        return
     end
 
     Template.setLock(false)
@@ -1260,7 +1261,6 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
 
         for _, Pattern in pairs(SearchConfig.Patterns) do
             if string.find(Item.description, Pattern) == nil then
-                log(Item.description .. " not contains " .. Pattern)
                 goto continue
             end
         end
