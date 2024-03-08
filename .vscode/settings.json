@@ -19,7 +19,9 @@
         "printToColor",
         "vector",
         "Player",
-        "log"
+        "log",
+        "onSave",
+        "JSON"
     ],
     "Lua.runtime.version": "Lua 5.2",
 
