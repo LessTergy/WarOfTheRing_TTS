@@ -13,7 +13,47 @@
         "onDrop",
         "broadcastToAll",
         "onCollisionEnter",
-        "onDestroy"
+        "onDestroy",
+        "onObjectEnterZone",
+        "onObjectSearchEnd",
+        "printToColor",
+        "vector",
+        "Player",
+        "log"
     ],
-    "Lua.runtime.version": "Lua 5.2"
+    "Lua.runtime.version": "Lua 5.2",
+
+    // Formatting.
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[lua]": {
+        "editor.defaultFormatter": "CppCXY.emmylua-codestyle"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "always",
+        "source.fixAll.eslint": "always",
+        "source.fixAll.tslint": "always",
+        "source.organizeImports": "always"
+    },
+    "editor.formatOnSave": true,
+    "prettier.ignorePath": ".gitignore",
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+
+    // Linting.
+    "eslint.validate": ["javascript", "json", "typescript"],
+    "eslint.lintTask.enable": true,
+    "editor.tabSize": 4,
+    "files.associations": {
+        "*.ttslua": "lua"
+    },
+    "editor.detectIndentation": false
 }
