@@ -1134,7 +1134,7 @@ local HaradrimEliteConfig = {
 }
 
 local NazgulConfig = {
-    Name = "Nazgûl",
+    Name = "Nazgul",
     Patterns = {
         "Leader",
         "Sauron"
@@ -1230,6 +1230,10 @@ function SpawnArmy(ArmyConfig, SettingType)
         NewObj.setPosition({ Position.x, Position.y + 1, Position.z })
     end
 
+    if Template == nil then
+        return
+    end
+
     Template.setLock(false)
     ComponentBag.putObject(Template)
 end
@@ -1240,7 +1244,7 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
 
     for _, Item in pairs(ComponentBag.getObjects()) do
         if result ~= nil then
-            log("Find.break - " .. SearchConfig.Name)
+            log("Find unit successful - " .. SearchConfig.Name)
             break
         end
 
@@ -1251,7 +1255,6 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
 
         -- same type as setting
         if string.find(Item.description, settingPattern) == nil then
-            log(Item.description .. " not contains " .. settingPattern)
             goto continue
         end
 
