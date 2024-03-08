@@ -14,15 +14,15 @@ local ShadowHuntDiceCount = 0
 local Round = 0
 
 --expansions
-local LoME = false --Lords of Middle-earth
-local WoME = false --warriors of middle-earth
-local KoME = false --kings of middle-earth
-local TFoE = false --the fate of erebor
-local HftR = false --hunt for the ring
+local LoME = false     --Lords of Middle-earth
+local WoME = false     --warriors of middle-earth
+local KoME = false     --kings of middle-earth
+local TFoE = false     --the fate of erebor
+local HftR = false     --hunt for the ring
 local NewCities = true --the New Cities optional setup from The Fate of Erebor.
-local BotF = false -- the breaking of the fellowship.
-local Treebeard = 2 --0:None,1:Original,2:Revised;
-local FlagString = "" --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
+local BotF = false     -- the breaking of the fellowship.
+local Treebeard = 2    --0:None,1:Original,2:Revised;
+local FlagString = ""  --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
 
 --Bags...
 local GraveBagId = "416864"
@@ -46,20 +46,20 @@ local CompanionNames = {
 local FellowshipCount = 8
 
 local Companions = {
-    Gandalf = {Title = "The Grey Wanderer", Fellowship = true},
-    Strider = {Title = "Ranger of the North", Fellowship = true},
-    Legolas = {Title = "Son of Thranduil", Fellowship = true},
-    Gimli = {Title = "Son of Gloin", Fellowship = true},
-    Boromir = {Title = "Son of Denethor", Fellowship = true},
-    Peregrin = {Title = "Hobbit Companion", Fellowship = true},
-    Meriadoc = {Title = "Hobbit Companion", Fellowship = true},
-    Gollum = {Title = "", Fellowship = false},
-    TheRingBearers = {Title = "Frodo & Samwise", Fellowship = true}
+    Gandalf = { Title = "The Grey Wanderer", Fellowship = true },
+    Strider = { Title = "Ranger of the North", Fellowship = true },
+    Legolas = { Title = "Son of Thranduil", Fellowship = true },
+    Gimli = { Title = "Son of Gloin", Fellowship = true },
+    Boromir = { Title = "Son of Denethor", Fellowship = true },
+    Peregrin = { Title = "Hobbit Companion", Fellowship = true },
+    Meriadoc = { Title = "Hobbit Companion", Fellowship = true },
+    Gollum = { Title = "", Fellowship = false },
+    TheRingBearers = { Title = "Frodo & Samwise", Fellowship = true }
 }
 
-local ShadowDicePool = {} --pool of dice rolled
-local FreePeoplesDicePool = {} --pool of dice rolled
-local HuntBoxShadowDiceArray = {} --table of dice ids
+local ShadowDicePool = {}              --pool of dice rolled
+local FreePeoplesDicePool = {}         --pool of dice rolled
+local HuntBoxShadowDiceArray = {}      --table of dice ids
 local HuntBoxFreePeoplesDiceArray = {} --table of dice ids
 
 IDs = {
@@ -75,7 +75,7 @@ IDs = {
         "245f9e",
         "e7e08d"
     },
-    FreePeoplesActionDice = {"e204e9", "008051", "5251fb", "0527bf", "9d66fb", "6b32fb"},
+    FreePeoplesActionDice = { "e204e9", "008051", "5251fb", "0527bf", "9d66fb", "6b32fb" },
     ShadowFactionDice = "20aa4b",
     FreePeoplesFactionDice = "c3d1a5",
     GothmogDice = "89655f",
@@ -132,8 +132,8 @@ IDs = {
         RingBearers = "a456d0"
     },
     --cards
-    CompanionCards = {"d760ee", "6098c7", "a0deb9", "78f279", "02f2cc", "fcbc2d", "dd1dde", "a456d0"},
-    ElvenRings = {"a37c58", "d67bac", "1cc52c"},
+    CompanionCards = { "d760ee", "6098c7", "a0deb9", "78f279", "02f2cc", "fcbc2d", "dd1dde", "a456d0" },
+    ElvenRings = { "a37c58", "d67bac", "1cc52c" },
     FreePeoplesCharacterEventDeck = "ba06c3",
     FreePeoplesStrategyEventDeck = "240819",
     ShadowCharacterEventDeck = "8c377e",
@@ -150,14 +150,14 @@ IDs = {
     FreePeoplesLeaderToken = "74461e",
     ShadowLeaderToken = "a25766",
     LoME = {
-        ElvenRings = {"5e79a3", "08d651", "359ca2"},
+        ElvenRings = { "5e79a3", "08d651", "359ca2" },
         FreePeoplesStrategyEventCards = "f8df2d",
         FreePeoplesCharacterEventCards = "846b48",
         ShadowStrategyEventCards = "b83789",
         ShadowCharacterEventCards = "35ef06",
-        SmeagolTiles = {"2d25c5", "07eee5", "7bb73b", "2fff89"},
+        SmeagolTiles = { "2d25c5", "07eee5", "7bb73b", "2fff89" },
         ShadowToken1 = "d8b25b", --Move Nazgul and Minions
-        ShadowToken2 = "55ee6d" --Advance a Shadow Nation on the Political Track
+        ShadowToken2 = "55ee6d"  --Advance a Shadow Nation on the Political Track
     },
     WoME = {
         FreePeoplesFactionDeck = "6897dc",
@@ -179,7 +179,7 @@ IDs = {
         ShadowCallToBattleSpot = "9e8059"
     },
     KoME = {
-        RulerTokens = {Brand = "754777", Dain = "554922", Denethor = "f6198a", Theoden = "19e479", Thranduil = "518ae6"}
+        RulerTokens = { Brand = "754777", Dain = "554922", Denethor = "f6198a", Theoden = "19e479", Thranduil = "518ae6" }
     },
     --KoME
     TFoE = {
@@ -188,174 +188,174 @@ IDs = {
         ShadowStrategyEventCards = "a3e82e"
     },
     HftR = {
-        ShadowToken1 = "e121d4", --Advance a Shadow Nation on the Political Track
-        ShadowToken2 = "124e70", --Move Nazgul and Minions
+        ShadowToken1 = "e121d4",      --Advance a Shadow Nation on the Political Track
+        ShadowToken2 = "124e70",      --Move Nazgul and Minions
         FreePeoplesToken1 = "7b62e4", --Advance a Shadow Nation on the Political Track
-        FreePeoplesToken2 = "e233d5" --draw event card
+        FreePeoplesToken2 = "e233d5"  --draw event card
     }
 }
 
 local Spots = {
     GamePanel = {
-        All = {Position = {54, 13, 0}, Rotation = {90, 270, 0}, Scale = {7, 1, 7}},
-        FreePeoples = {Position = {0, 12, 25}, Rotation = {90, 0, 0}, Scale = {5, 1, 5}},
-        Shadow = {Position = {0, 12, -25}, Rotation = {90, 0, 180}, Scale = {5, 1, 5}},
-        Gondor = {Position = {-14, 12, 25}, Rotation = {90, 0, 0}, Scale = {5, 1, 5}},
-        Rohan = {Position = {14, 12, 25}, Rotation = {90, 0, 0}, Scale = {5, 1, 5}},
-        TheWitchKing = {Position = {14, 12, -25}, Rotation = {90, 0, 180}, Scale = {5, 1, 5}},
-        Saruman = {Position = {-14, 12, -25}, Rotation = {90, 0, 180}, Scale = {5, 1, 5}}
+        All = { Position = { 54, 13, 0 }, Rotation = { 90, 270, 0 }, Scale = { 7, 1, 7 } },
+        FreePeoples = { Position = { 0, 12, 25 }, Rotation = { 90, 0, 0 }, Scale = { 5, 1, 5 } },
+        Shadow = { Position = { 0, 12, -25 }, Rotation = { 90, 0, 180 }, Scale = { 5, 1, 5 } },
+        Gondor = { Position = { -14, 12, 25 }, Rotation = { 90, 0, 0 }, Scale = { 5, 1, 5 } },
+        Rohan = { Position = { 14, 12, 25 }, Rotation = { 90, 0, 0 }, Scale = { 5, 1, 5 } },
+        TheWitchKing = { Position = { 14, 12, -25 }, Rotation = { 90, 0, 180 }, Scale = { 5, 1, 5 } },
+        Saruman = { Position = { -14, 12, -25 }, Rotation = { 90, 0, 180 }, Scale = { 5, 1, 5 } }
     },
-    ElvenRings = {{-17.2, 1.01, 23.50}, {-19.00, 1.01, 23.50}, {-20.4, 1.01, 23.50}},
-    FreePeoplesCharacterEventDeck = {-34.00, 1.11, 20.5},
-    ShadowCharacterEventDeck = {27.95, 1.11, -20.3},
-    FreePeoplesStrategyEventDeck = {-28.35, 1.11, 20.5},
-    ShadowStrategyEventDeck = {33.45, 1.11, -20.3},
-    FreePeoplesFactionDeck = {-40.65, 1.09, 20.5},
-    ShadowFactionDeck = {40.10, 1.09, -20.3},
-    LeadingPlayerGondor = {-18, 1.01, 65.6},
-    LeadingPlayerRohan = {31.5, 1.01, 65.6},
-    LeadingPlayerWitchKing = {17.5, 1.01, -65.6},
+    ElvenRings = { { -17.2, 1.01, 23.50 }, { -19.00, 1.01, 23.50 }, { -20.4, 1.01, 23.50 } },
+    FreePeoplesCharacterEventDeck = { -34.00, 1.11, 20.5 },
+    ShadowCharacterEventDeck = { 27.95, 1.11, -20.3 },
+    FreePeoplesStrategyEventDeck = { -28.35, 1.11, 20.5 },
+    ShadowStrategyEventDeck = { 33.45, 1.11, -20.3 },
+    FreePeoplesFactionDeck = { -40.65, 1.09, 20.5 },
+    ShadowFactionDeck = { 40.10, 1.09, -20.3 },
+    LeadingPlayerGondor = { -18, 1.01, 65.6 },
+    LeadingPlayerRohan = { 31.5, 1.01, 65.6 },
+    LeadingPlayerWitchKing = { 17.5, 1.01, -65.6 },
     ShadowDiceBox = {
-        {-52, 1.78, -28.5},
-        {-49.5, 1.78, -28.5},
-        {-47, 1.78, -28.5},
-        {-52, 1.78, -31},
-        {-49.5, 1.78, -31},
-        {-47, 1.78, -31},
-        {-52, 1.78, -33.5},
-        {-49.5, 1.78, -33.5},
-        {-47, 1.78, -33.5},
-        {-52.5, 1.78, -35.5},
-        {-50.5, 1.78, -35.5},
-        {-48.5, 1.78, -35.55},
-        {-46.5, 1.78, -35.5}
+        { -52,   1.78, -28.5 },
+        { -49.5, 1.78, -28.5 },
+        { -47,   1.78, -28.5 },
+        { -52,   1.78, -31 },
+        { -49.5, 1.78, -31 },
+        { -47,   1.78, -31 },
+        { -52,   1.78, -33.5 },
+        { -49.5, 1.78, -33.5 },
+        { -47,   1.78, -33.5 },
+        { -52.5, 1.78, -35.5 },
+        { -50.5, 1.78, -35.5 },
+        { -48.5, 1.78, -35.55 },
+        { -46.5, 1.78, -35.5 }
     },
     FreePeoplesDiceBox = {
-        {-52, 1.78, 28.5},
-        {-49.5, 1.78, 28.5},
-        {-47, 1.78, 28.5},
-        {-52, 1.78, 31},
-        {-49.5, 1.78, 31},
-        {-47, 1.78, 31},
-        {-52, 1.78, 33.5},
-        {-49.5, 1.78, 33.5},
-        {-47, 1.78, 33.5},
-        {-49.5, 1.78, 32.75},
-        {-47.5, 1.78, 35.75}
+        { -52,   1.78, 28.5 },
+        { -49.5, 1.78, 28.5 },
+        { -47,   1.78, 28.5 },
+        { -52,   1.78, 31 },
+        { -49.5, 1.78, 31 },
+        { -47,   1.78, 31 },
+        { -52,   1.78, 33.5 },
+        { -49.5, 1.78, 33.5 },
+        { -47,   1.78, 33.5 },
+        { -49.5, 1.78, 32.75 },
+        { -47.5, 1.78, 35.75 }
     },
     ShadowDiceOut = {
-        {-51.5, 3, -41.75},
-        {-49.5, 3, -41.75},
-        {-47.5, 3, -41.75},
-        {-51.5, 3, -43.75},
-        {-49.5, 3, -43.75},
-        {-47.5, 3, -43.75},
-        {-51.5, 3, -45.75},
-        {-49.5, 3, -45.75},
-        {-47.5, 3, -45.75},
-        {-51.5, 3, -47.75},
-        {-49.5, 3, -47.75},
-        {-47.5, 3, -47.75},
-        {-51.5, 3, -49.75}
+        { -51.5, 3, -41.75 },
+        { -49.5, 3, -41.75 },
+        { -47.5, 3, -41.75 },
+        { -51.5, 3, -43.75 },
+        { -49.5, 3, -43.75 },
+        { -47.5, 3, -43.75 },
+        { -51.5, 3, -45.75 },
+        { -49.5, 3, -45.75 },
+        { -47.5, 3, -45.75 },
+        { -51.5, 3, -47.75 },
+        { -49.5, 3, -47.75 },
+        { -47.5, 3, -47.75 },
+        { -51.5, 3, -49.75 }
     },
     FreePeoplesDiceOut = {
-        {-51.5, 3, 41.75},
-        {-49.5, 3, 41.75},
-        {-47.5, 3, 41.75},
-        {-51.5, 3, 43.75},
-        {-49.5, 3, 43.75},
-        {-47.5, 3, 43.75},
-        {-51.5, 3, 45.75},
-        {-49.5, 3, 45.75},
-        {-47.5, 3, 45.75},
-        {-51.5, 3, 47.75},
-        {-49.5, 3, 47.75},
-        {-47.5, 3, 47.75},
-        {-51.5, 3, 49.75}
+        { -51.5, 3, 41.75 },
+        { -49.5, 3, 41.75 },
+        { -47.5, 3, 41.75 },
+        { -51.5, 3, 43.75 },
+        { -49.5, 3, 43.75 },
+        { -47.5, 3, 43.75 },
+        { -51.5, 3, 45.75 },
+        { -49.5, 3, 45.75 },
+        { -47.5, 3, 45.75 },
+        { -51.5, 3, 47.75 },
+        { -49.5, 3, 47.75 },
+        { -47.5, 3, 47.75 },
+        { -51.5, 3, 49.75 }
     },
     ShadowHuntBoxDice = {
-        {-30.8, 3, -18.3},
-        {-29.45, 3, -18.3},
-        {-28.1, 3, -18.3},
-        {-30.8, 3, -19.7},
-        {-29.45, 3, -19.7},
-        {-28.1, 3, -19.7},
-        {-30.8, 3, -21.1},
-        {-29.45, 3, -21.1},
-        {-28.1, 3, -21.1},
-        {-30.8, 3, -22.5},
-        {-29.45, 3, -22.5},
-        {-28.1, 3, -22.5},
-        {-30.8, 3, -23.85},
-        {-29.45, 3, -23.85},
-        {-28.1, 3, -23.85},
-        {-32.15, 3, -23.85}
+        { -30.8,  3, -18.3 },
+        { -29.45, 3, -18.3 },
+        { -28.1,  3, -18.3 },
+        { -30.8,  3, -19.7 },
+        { -29.45, 3, -19.7 },
+        { -28.1,  3, -19.7 },
+        { -30.8,  3, -21.1 },
+        { -29.45, 3, -21.1 },
+        { -28.1,  3, -21.1 },
+        { -30.8,  3, -22.5 },
+        { -29.45, 3, -22.5 },
+        { -28.1,  3, -22.5 },
+        { -30.8,  3, -23.85 },
+        { -29.45, 3, -23.85 },
+        { -28.1,  3, -23.85 },
+        { -32.15, 3, -23.85 }
     },
     FreePeoplesHuntBoxDice = {
-        {-35.2, 3, -18.3},
-        {-33.8, 3, -18.3},
-        {-32.4, 3, -18.3},
-        {-35.2, 3, -19.7},
-        {-33.8, 3, -19.7},
-        {-32.4, 3, -19.7},
-        {-35.2, 3, -21.1},
-        {-33.8, 3, -21.1},
-        {-32.4, 3, -21.1}
+        { -35.2, 3, -18.3 },
+        { -33.8, 3, -18.3 },
+        { -32.4, 3, -18.3 },
+        { -35.2, 3, -19.7 },
+        { -33.8, 3, -19.7 },
+        { -32.4, 3, -19.7 },
+        { -35.2, 3, -21.1 },
+        { -33.8, 3, -21.1 },
+        { -32.4, 3, -21.1 }
     },
     CompactFreePeoplesUsedDice = {
-        {-7.5, 1.6, -30},
-        {-5, 1.6, -30},
-        {-2.5, 1.6, -30},
-        {-7.5, 1.6, -32},
-        {-5, 1.6, -32},
-        {-2.5, 1.6, -32},
-        {-7.5, 1.6, -34},
-        {-5, 1.6, -34},
-        {-2.5, 1.6, -34},
-        {-7.5, 1.6, -36}
+        { -7.5, 1.6, -30 },
+        { -5,   1.6, -30 },
+        { -2.5, 1.6, -30 },
+        { -7.5, 1.6, -32 },
+        { -5,   1.6, -32 },
+        { -2.5, 1.6, -32 },
+        { -7.5, 1.6, -34 },
+        { -5,   1.6, -34 },
+        { -2.5, 1.6, -34 },
+        { -7.5, 1.6, -36 }
     },
     CompactFreePeoplesDiceLine = {
-        {-9.5, 1.6, -25.6},
-        {-7.75, 1.6, -25.6},
-        {-6, 1.6, -25.6},
-        {-4.2, 1.6, -25.6},
-        {-2.5, 1.6, -25.6},
-        {-9.5, 1.6, -27.35},
-        {-7.75, 1.6, -27.35},
-        {-6, 1.6, -27.35},
-        {-4.25, 1.6, -27.35},
-        {-2.5, 1.6, -27.35}
+        { -9.5,  1.6, -25.6 },
+        { -7.75, 1.6, -25.6 },
+        { -6,    1.6, -25.6 },
+        { -4.2,  1.6, -25.6 },
+        { -2.5,  1.6, -25.6 },
+        { -9.5,  1.6, -27.35 },
+        { -7.75, 1.6, -27.35 },
+        { -6,    1.6, -27.35 },
+        { -4.25, 1.6, -27.35 },
+        { -2.5,  1.6, -27.35 }
     },
     CompactShadowUsedDice = {
-        {1, 1.6, -30},
-        {3.1, 1.6, -30},
-        {5.2, 1.6, -30},
-        {7.3, 1.6, -30},
-        {1, 1.6, -32},
-        {3.1, 1.6, -32},
-        {5.2, 1.6, -32},
-        {7.3, 1.6, -32},
-        {1, 1.6, -34},
-        {3.1, 1.6, -34},
-        {5.2, 1.6, -34},
-        {7.3, 1.6, -34},
-        {7.3, 1.6, -36}
+        { 1,   1.6, -30 },
+        { 3.1, 1.6, -30 },
+        { 5.2, 1.6, -30 },
+        { 7.3, 1.6, -30 },
+        { 1,   1.6, -32 },
+        { 3.1, 1.6, -32 },
+        { 5.2, 1.6, -32 },
+        { 7.3, 1.6, -32 },
+        { 1,   1.6, -34 },
+        { 3.1, 1.6, -34 },
+        { 5.2, 1.6, -34 },
+        { 7.3, 1.6, -34 },
+        { 7.3, 1.6, -36 }
     },
     CompactShadowDiceLine = {
-        {0.5, 1.6, -25.6},
-        {2.25, 1.6, -25.6},
-        {4, 1.6, -25.6},
-        {5.75, 1.6, -25.6},
-        {7.5, 1.6, -25.6},
-        {9.25, 1.6, -25.6},
-        {11, 1.6, -25.6},
-        {0.5, 1.6, -27.35},
-        {2.25, 1.6, -27.35},
-        {4, 1.6, -27.35},
-        {5.75, 1.6, -27.35},
-        {7.5, 1.6, -27.35},
-        {9.25, 1.6, -27.35},
-        {11, 1.6, -27.35}
+        { 0.5,  1.6, -25.6 },
+        { 2.25, 1.6, -25.6 },
+        { 4,    1.6, -25.6 },
+        { 5.75, 1.6, -25.6 },
+        { 7.5,  1.6, -25.6 },
+        { 9.25, 1.6, -25.6 },
+        { 11,   1.6, -25.6 },
+        { 0.5,  1.6, -27.35 },
+        { 2.25, 1.6, -27.35 },
+        { 4,    1.6, -27.35 },
+        { 5.75, 1.6, -27.35 },
+        { 7.5,  1.6, -27.35 },
+        { 9.25, 1.6, -27.35 },
+        { 11,   1.6, -27.35 }
     }
 }
 
@@ -365,10 +365,10 @@ function onLoad()
     end
 
     --detect round,Phase, and Step...
-    Round = ReadTag({Text = self.getDescription(), Var = "Round", Default = 0})
-    Phase = ReadTag({Text = self.getDescription(), Var = "Phase", Default = 0})
-    Turn = ReadTag({Text = self.getDescription(), Var = "Turn", Default = 0})
-    NextStep = ReadTag({Text = self.getDescription(), Var = "Step", Default = ""})
+    Round = ReadTag({ Text = self.getDescription(), Var = "Round", Default = 0 })
+    Phase = ReadTag({ Text = self.getDescription(), Var = "Phase", Default = 0 })
+    Turn = ReadTag({ Text = self.getDescription(), Var = "Turn", Default = 0 })
+    NextStep = ReadTag({ Text = self.getDescription(), Var = "Step", Default = "" })
     Mute = string.find(getObjectFromGUID(Global.getVar("SoundCubeID")).getDescription(), "Muted;") ~= nil
 
     --detect expansions...
@@ -478,11 +478,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "The Fate of Erebor",
-                    position = {0, 0.1, -1.3},
+                    position = { 0, 0.1, -1.3 },
                     width = 0,
                     height = 0,
                     font_size = 150,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             if NewCities then
@@ -491,12 +491,13 @@ function ProcessNextStep()
                         click_function = "ToggleNewCities",
                         function_owner = self,
                         label = "Included: New Cities",
-                        position = {0, 0.1, 0},
+                        position = { 0, 0.1, 0 },
                         width = 1400,
                         height = 100,
-                        color = {1, 1, 0},
+                        color = { 1, 1, 0 },
                         font_size = 100,
-                        tooltip = "Click to exclude.\nNew Cities is an optional setup in The Fate of Erebor, that changes the Towns of Ered Luin and South Rhun to Cities."
+                        tooltip =
+                        "Click to exclude.\nNew Cities is an optional setup in The Fate of Erebor, that changes the Towns of Ered Luin and South Rhun to Cities."
                     }
                 )
             else
@@ -505,12 +506,13 @@ function ProcessNextStep()
                         click_function = "ToggleNewCities",
                         function_owner = self,
                         label = "Excluded: New Cities",
-                        position = {0, 0.1, 0},
+                        position = { 0, 0.1, 0 },
                         width = 1400,
                         height = 100,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 100,
-                        tooltip = "Click to include.\nNew Cities is an optional setup in The Fate of Erebor, that changes the Towns of Ered Luin and South Rhun to Cities."
+                        tooltip =
+                        "Click to include.\nNew Cities is an optional setup in The Fate of Erebor, that changes the Towns of Ered Luin and South Rhun to Cities."
                     }
                 )
             end
@@ -520,10 +522,10 @@ function ProcessNextStep()
                     click_function = "Continue",
                     function_owner = self,
                     label = "Continue",
-                    position = {0, 0.1, 1.3},
+                    position = { 0, 0.1, 1.3 },
                     width = 1800,
                     height = 200,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 100
                 }
             )
@@ -553,11 +555,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Choose Treebeard Content:",
-                position = {0, 0.1, -1.3},
+                position = { 0, 0.1, -1.3 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         if WoME then
@@ -566,11 +568,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "(Warriors of Middle-Earth Treebeard)",
-                    position = {0, 0.1, -1},
+                    position = { 0, 0.1, -1 },
                     width = 0,
                     height = 0,
                     font_size = 100,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             if Treebeard == 1 then --original WM...
@@ -579,10 +581,10 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard1",
                         function_owner = self,
                         label = "Selected: Original Treebeard",
-                        position = {0, 0.1, -0.6},
+                        position = { 0, 0.1, -0.6 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 0},
+                        color = { 1, 1, 0 },
                         font_size = 80,
                         tooltip = "Select the Original Treebeard Character Card from Warriors of Middle-Earth."
                     }
@@ -592,12 +594,13 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard2",
                         function_owner = self,
                         label = "Revised Treebeard",
-                        position = {0, 0.1, -0.3},
+                        position = { 0, 0.1, -0.3 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 80,
-                        tooltip = "Select the Revised Treebeard Character Card from Warriors of Middle-Earth.\n(adds Root and Branch! ability)."
+                        tooltip =
+                        "Select the Revised Treebeard Character Card from Warriors of Middle-Earth.\n(adds Root and Branch! ability)."
                     }
                 )
             elseif Treebeard == 2 then --revised WM...
@@ -606,10 +609,10 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard1",
                         function_owner = self,
                         label = "Original Treebeard",
-                        position = {0, 0.1, -0.6},
+                        position = { 0, 0.1, -0.6 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 80,
                         tooltip = "Select the Original Treebeard Character Card from Warriors of Middle-Earth."
                     }
@@ -619,12 +622,13 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard2",
                         function_owner = self,
                         label = "Selected: Revised Treebeard",
-                        position = {0, 0.1, -0.3},
+                        position = { 0, 0.1, -0.3 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 0},
+                        color = { 1, 1, 0 },
                         font_size = 80,
-                        tooltip = "Select the Revised Treebeard Character Card from Warriors of Middle-Earth.\n(adds Root and Branch! ability)."
+                        tooltip =
+                        "Select the Revised Treebeard Character Card from Warriors of Middle-Earth.\n(adds Root and Branch! ability)."
                     }
                 )
             end
@@ -634,11 +638,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "(Promotional Treebeard Card)",
-                    position = {0, 0.1, -1},
+                    position = { 0, 0.1, -1 },
                     width = 0,
                     height = 0,
                     font_size = 100,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             if Treebeard == 0 then --no treebeard...
@@ -647,10 +651,10 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard0",
                         function_owner = self,
                         label = "Selected: No Treebeard",
-                        position = {0, 0.1, -0.6},
+                        position = { 0, 0.1, -0.6 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 0},
+                        color = { 1, 1, 0 },
                         font_size = 80,
                         tooltip = "Do not include Treebeard Promotional Character Card."
                     }
@@ -660,10 +664,10 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard1",
                         function_owner = self,
                         label = "Original Treebeard",
-                        position = {0, 0.1, -0.3},
+                        position = { 0, 0.1, -0.3 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 80,
                         tooltip = "Select the Original Promotional Treebeard Character Card."
                     }
@@ -673,12 +677,13 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard2",
                         function_owner = self,
                         label = "Revised Treebeard",
-                        position = {0, 0.1, 0},
+                        position = { 0, 0.1, 0 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 80,
-                        tooltip = "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
+                        tooltip =
+                        "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
                     }
                 )
             elseif Treebeard == 1 then --original Promo...
@@ -687,10 +692,10 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard0",
                         function_owner = self,
                         label = "No Treebeard",
-                        position = {0, 0.1, -0.6},
+                        position = { 0, 0.1, -0.6 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 80,
                         tooltip = "Do not include Treebeard Promotional Character Card."
                     }
@@ -700,10 +705,10 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard1",
                         function_owner = self,
                         label = "Selected: Original Treebeard",
-                        position = {0, 0.1, -0.3},
+                        position = { 0, 0.1, -0.3 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 0},
+                        color = { 1, 1, 0 },
                         font_size = 80,
                         tooltip = "Select the Original Promotional Treebeard Character Card."
                     }
@@ -713,12 +718,13 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard2",
                         function_owner = self,
                         label = "Revised Treebeard",
-                        position = {0, 0.1, 0},
+                        position = { 0, 0.1, 0 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 80,
-                        tooltip = "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
+                        tooltip =
+                        "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
                     }
                 )
             elseif Treebeard == 2 then --revised Promo...
@@ -727,10 +733,10 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard0",
                         function_owner = self,
                         label = "No Treebeard",
-                        position = {0, 0.1, -0.6},
+                        position = { 0, 0.1, -0.6 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 80,
                         tooltip = "Do not include Treebeard Promotional Character Card."
                     }
@@ -740,10 +746,10 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard1",
                         function_owner = self,
                         label = "Original Treebeard",
-                        position = {0, 0.1, -0.3},
+                        position = { 0, 0.1, -0.3 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 80,
                         tooltip = "Select the Original Promotional Treebeard Character Card."
                     }
@@ -753,12 +759,13 @@ function ProcessNextStep()
                         click_function = "SelectTreebeard2",
                         function_owner = self,
                         label = "Selected: Revised Treebeard",
-                        position = {0, 0.1, 0},
+                        position = { 0, 0.1, 0 },
                         width = 1800,
                         height = 150,
-                        color = {1, 1, 0},
+                        color = { 1, 1, 0 },
                         font_size = 80,
-                        tooltip = "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
+                        tooltip =
+                        "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
                     }
                 )
             end
@@ -769,10 +776,10 @@ function ProcessNextStep()
                 click_function = "Continue",
                 function_owner = self,
                 label = "Continue",
-                position = {0, 0.1, 1.3},
+                position = { 0, 0.1, 1.3 },
                 width = 1800,
                 height = 200,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 100,
                 tooltip = "Continue Setup with the currently selected Treebeard option."
             }
@@ -827,11 +834,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Free Peoples\nChoose Fellowship Guide:",
-                    position = {0, 0.1, -1.2},
+                    position = { 0, 0.1, -1.2 },
                     width = 0,
                     height = 0,
                     font_size = 150,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             self.createButton(
@@ -839,12 +846,12 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Free Peoples\nare choosing the\nFellowship Guide...",
-                    position = {0, -0.1, -0},
-                    rotation = {180, 180, 0},
+                    position = { 0, -0.1, -0 },
+                    rotation = { 180, 180, 0 },
                     width = 0,
                     height = 0,
                     font_size = 150,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             if CompanionNames[1] == "Gandalf the Grey: The Grey Wanderer" then
@@ -853,10 +860,10 @@ function ProcessNextStep()
                         click_function = "ChooseTheGreyWanderer",
                         function_owner = self,
                         label = "Gandalf the Grey: The Grey Wanderer",
-                        position = {0, 0.1, -0.6},
+                        position = { 0, 0.1, -0.6 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 0},
+                        color = { 1, 1, 0 },
                         font_size = 75,
                         tooltip = "(Original Character)"
                     }
@@ -866,10 +873,10 @@ function ProcessNextStep()
                         click_function = "ChooseKeeperOfNarya",
                         function_owner = self,
                         label = "Gandalf the Grey: Keeper of Narya*",
-                        position = {0, 0.1, -0.3},
+                        position = { 0, 0.1, -0.3 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 75,
                         tooltip = "(Lords of Middle-Earth Character)"
                     }
@@ -879,10 +886,10 @@ function ProcessNextStep()
                         click_function = "ChooseRangerOfTheNorth",
                         function_owner = self,
                         label = "Strider: Ranger of the North",
-                        position = {0, 0.1, 0},
+                        position = { 0, 0.1, 0 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 75,
                         tooltip = "(Original Character)"
                     }
@@ -892,10 +899,10 @@ function ProcessNextStep()
                         click_function = "ChooseDunadan",
                         function_owner = self,
                         label = "Strider: Dunadan*",
-                        position = {0, 0.1, 0.3},
+                        position = { 0, 0.1, 0.3 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 75,
                         tooltip = "(Lords of Middle-Earth Character)"
                     }
@@ -906,10 +913,10 @@ function ProcessNextStep()
                         click_function = "ChooseTheGreyWanderer",
                         function_owner = self,
                         label = "Gandalf the Grey: The Grey Wanderer",
-                        position = {0, 0.1, -0.6},
+                        position = { 0, 0.1, -0.6 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 75,
                         tooltip = "(Original Character)"
                     }
@@ -919,10 +926,10 @@ function ProcessNextStep()
                         click_function = "ChooseKeeperOfNarya",
                         function_owner = self,
                         label = "Gandalf the Grey: Keeper of Narya*",
-                        position = {0, 0.1, -0.3},
+                        position = { 0, 0.1, -0.3 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 0},
+                        color = { 1, 1, 0 },
                         font_size = 75,
                         tooltip = "(Lords of Middle-Earth Character)"
                     }
@@ -932,10 +939,10 @@ function ProcessNextStep()
                         click_function = "ChooseRangerOfTheNorth",
                         function_owner = self,
                         label = "Strider: Ranger of the North",
-                        position = {0, 0.1, 0},
+                        position = { 0, 0.1, 0 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 75,
                         tooltip = "(Original Character)"
                     }
@@ -945,10 +952,10 @@ function ProcessNextStep()
                         click_function = "ChooseDunadan",
                         function_owner = self,
                         label = "Strider: Dunadan*",
-                        position = {0, 0.1, 0.3},
+                        position = { 0, 0.1, 0.3 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 75,
                         tooltip = "(Lords of Middle-Earth Character)"
                     }
@@ -959,10 +966,10 @@ function ProcessNextStep()
                         click_function = "ChooseTheGreyWanderer",
                         function_owner = self,
                         label = "Gandalf the Grey: The Grey Wanderer",
-                        position = {0, 0.1, -0.6},
+                        position = { 0, 0.1, -0.6 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 75,
                         tooltip = "(Original Character)"
                     }
@@ -972,10 +979,10 @@ function ProcessNextStep()
                         click_function = "ChooseKeeperOfNarya",
                         function_owner = self,
                         label = "Gandalf the Grey: Keeper of Narya*",
-                        position = {0, 0.1, -0.3},
+                        position = { 0, 0.1, -0.3 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 75,
                         tooltip = "(Lords of Middle-Earth Character)"
                     }
@@ -985,10 +992,10 @@ function ProcessNextStep()
                         click_function = "ChooseRangerOfTheNorth",
                         function_owner = self,
                         label = "Strider: Ranger of the North",
-                        position = {0, 0.1, 0},
+                        position = { 0, 0.1, 0 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 0},
+                        color = { 1, 1, 0 },
                         font_size = 75,
                         tooltip = "(Original Character)"
                     }
@@ -998,10 +1005,10 @@ function ProcessNextStep()
                         click_function = "ChooseDunadan",
                         function_owner = self,
                         label = "Strider: Dunadan*",
-                        position = {0, 0.1, 0.3},
+                        position = { 0, 0.1, 0.3 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 75,
                         tooltip = "(Lords of Middle-Earth Character)"
                     }
@@ -1012,10 +1019,10 @@ function ProcessNextStep()
                         click_function = "ChooseTheGreyWanderer",
                         function_owner = self,
                         label = "Gandalf the Grey: The Grey Wanderer",
-                        position = {0, 0.1, -0.6},
+                        position = { 0, 0.1, -0.6 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 75,
                         tooltip = "(Original Character)"
                     }
@@ -1025,10 +1032,10 @@ function ProcessNextStep()
                         click_function = "ChooseKeeperOfNarya",
                         function_owner = self,
                         label = "Gandalf the Grey: Keeper of Narya*",
-                        position = {0, 0.1, -0.3},
+                        position = { 0, 0.1, -0.3 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 75,
                         tooltip = "(Lords of Middle-Earth Character)"
                     }
@@ -1038,10 +1045,10 @@ function ProcessNextStep()
                         click_function = "ChooseRangerOfTheNorth",
                         function_owner = self,
                         label = "Strider: Ranger of the North",
-                        position = {0, 0.1, 0},
+                        position = { 0, 0.1, 0 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 1},
+                        color = { 1, 1, 1 },
                         font_size = 75,
                         tooltip = "(Original Character)"
                     }
@@ -1051,10 +1058,10 @@ function ProcessNextStep()
                         click_function = "ChooseDunadan",
                         function_owner = self,
                         label = "Strider: Dunadan*",
-                        position = {0, 0.1, 0.3},
+                        position = { 0, 0.1, 0.3 },
                         width = 1600,
                         height = 150,
-                        color = {1, 1, 0},
+                        color = { 1, 1, 0 },
                         font_size = 75,
                         tooltip = "(Lords of Middle-Earth Character)"
                     }
@@ -1066,11 +1073,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "* Lords of Middle Earth Expansion Character.",
-                    position = {0, 0.1, 0.9},
+                    position = { 0, 0.1, 0.9 },
                     width = 0,
                     height = 0,
                     font_size = 50,
-                    font_color = {1, 1, 0}
+                    font_color = { 1, 1, 0 }
                 }
             )
             self.createButton(
@@ -1078,10 +1085,10 @@ function ProcessNextStep()
                     click_function = "Continue",
                     function_owner = self,
                     label = "Continue",
-                    position = {0, 0.1, 1.2},
+                    position = { 0, 0.1, 1.2 },
                     width = 1600,
                     height = 200,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 100
                 }
             )
@@ -1149,33 +1156,33 @@ function ProcessNextStep()
             --Remove Free Peoples Strategy Event Card #4, #19, and #22, then remove FP character card #17...
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesCharacterEventDeck, Name = "There and Back Again", Description = "#17;"}
+                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "There and Back Again", Description = "#17;" }
             )
             coroutine.yield(0)
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Book of Mazarbul", Description = "#4;"}
+                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Book of Mazarbul", Description = "#4;" }
             )
             coroutine.yield(0)
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;"}
+                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
             )
             coroutine.yield(0)
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;"}
+                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
             )
             coroutine.yield(0)
             --Remove Shadow Event Card #20 and #22 (Orcs Multiplying Again & Monsters Roused)...
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.ShadowStrategyEventDeck, Name = "Orcs Multiplying Again", Description = "#20;"}
+                { BagID = IDs.ShadowStrategyEventDeck, Name = "Orcs Multiplying Again", Description = "#20;" }
             )
             coroutine.yield(0)
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.ShadowStrategyEventDeck, Name = "Monsters Roused", Description = "#22;"}
+                { BagID = IDs.ShadowStrategyEventDeck, Name = "Monsters Roused", Description = "#22;" }
             )
             coroutine.yield(0)
             --Remove old Gimli Character Cards...
@@ -1205,7 +1212,7 @@ function ProcessNextStep()
 
             -- If KoME+TFoE then remove Dain and Brand from the game...
             if KoME then
-                printToAll("The Fate of Erebor removes King Brand and King Dain Ironfoot from the game.", {1, 1, 0})
+                printToAll("The Fate of Erebor removes King Brand and King Dain Ironfoot from the game.", { 1, 1, 0 })
                 if getObjectFromGUID(IDs.Companions.Brand) ~= nil then
                     getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Brand))
                 end
@@ -1246,11 +1253,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Putting away\nThe Fate of Erebor\nMini-Expansion Content...",
-                    position = {0, 0.1, 0},
+                    position = { 0, 0.1, 0 },
                     width = 0,
                     height = 0,
                     font_size = 100,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             for _, Obj in pairs(getAllObjects()) do
@@ -1281,11 +1288,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Setting up\nLords of Middle-Earth\nExpansion Content...",
-                    position = {0, 0.1, 0},
+                    position = { 0, 0.1, 0 },
                     width = 0,
                     height = 0,
                     font_size = 100,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             --change next step to Alternate Companions Menu...
@@ -1297,7 +1304,7 @@ function ProcessNextStep()
                     false,
                     false
                 )
-                getObjectFromGUID(IDs.LoME.ElvenRings[I]).setRotation({0, 90, 0})
+                getObjectFromGUID(IDs.LoME.ElvenRings[I]).setRotation({ 0, 90, 0 })
                 getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.ElvenRings[I]))
                 coroutine.yield(0)
             end
@@ -1341,11 +1348,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Putting away\nLords of Middle-Earth\nExpansion Content...",
-                    position = {0, 0.1, 0},
+                    position = { 0, 0.1, 0 },
                     width = 0,
                     height = 0,
                     font_size = 100,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             for _, Obj in pairs(getAllObjects()) do
@@ -1379,11 +1386,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Setting up\nWarriors of Middle-Earth\nExpansion Content...",
-                    position = {0, 0.1, 0},
+                    position = { 0, 0.1, 0 },
                     width = 0,
                     height = 0,
                     font_size = 100,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             --Remove FP cards
@@ -1391,27 +1398,27 @@ function ProcessNextStep()
             --debuggg
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Gwaihir the Windlord", Description = "#15;"}
+                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Gwaihir the Windlord", Description = "#15;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Eagles are Coming!", Description = "#18;"}
+                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Eagles are Coming!", Description = "#18;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Treebeard", Description = "#19;"}
+                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Treebeard", Description = "#19;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Huorns", Description = "#20;"}
+                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Huorns", Description = "#20;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Entmoot", Description = "#21;"}
+                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Entmoot", Description = "#21;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Dead Men of Dunharrow", Description = "#22;"}
+                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Dead Men of Dunharrow", Description = "#22;" }
             )
             coroutine.yield(0)
             --Remove S cards
@@ -1419,15 +1426,15 @@ function ProcessNextStep()
             --debuggg
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.ShadowCharacterEventDeck, Name = "Shelob's Lair", Description = "#1;"}
+                { BagID = IDs.ShadowCharacterEventDeck, Name = "Shelob's Lair", Description = "#1;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.ShadowStrategyEventDeck, Name = "Corsairs of Umbar", Description = "#10;"}
+                { BagID = IDs.ShadowStrategyEventDeck, Name = "Corsairs of Umbar", Description = "#10;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.ShadowStrategyEventDeck, Name = "Rage of the Dunlendings", Description = "#11;"}
+                { BagID = IDs.ShadowStrategyEventDeck, Name = "Rage of the Dunlendings", Description = "#11;" }
             )
             coroutine.yield(0)
             --Add New cards
@@ -1464,11 +1471,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Putting away\nWarriors of Middle-Earth\nExpansion Content...",
-                    position = {0, 0.1, 0},
+                    position = { 0, 0.1, 0 },
                     width = 0,
                     height = 0,
                     font_size = 100,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             for _, Obj in pairs(getAllObjects()) do
@@ -1478,8 +1485,8 @@ function ProcessNextStep()
             end
 
             --Move Event Discard Spots..
-            getObjectFromGUID("61c02b").setPosition({40.25, 0.92, -20.00})
-            getObjectFromGUID("b18c8a").setPosition({-40.25, 0.92, 20.00})
+            getObjectFromGUID("61c02b").setPosition({ 40.25, 0.92, -20.00 })
+            getObjectFromGUID("b18c8a").setPosition({ -40.25, 0.92, 20.00 })
             --wait for cleanup to finish...
             local Done = true
             repeat
@@ -1504,11 +1511,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Setting up\nKings of Middle-Earth\nExpansion Content...",
-                    position = {0, 0.1, 0},
+                    position = { 0, 0.1, 0 },
                     width = 0,
                     height = 0,
                     font_size = 100,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             --add KoME hunt tiles into hunt pool...
@@ -1523,56 +1530,56 @@ function ProcessNextStep()
             --Remove Event Cards...
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesCharacterEventDeck, Name = "House of the Stewards", Description = "#23;"}
+                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "House of the Stewards", Description = "#23;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Wisdom of Elrond", Description = "#8;"}
+                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Wisdom of Elrond", Description = "#8;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Riders of Theoden", Description = "#16;"}
+                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Riders of Theoden", Description = "#16;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Thranduil's Archers", Description = "#24;"}
+                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Thranduil's Archers", Description = "#24;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.ShadowStrategyEventDeck, Name = "Return to Valinor", Description = "#1;"}
+                { BagID = IDs.ShadowStrategyEventDeck, Name = "Return to Valinor", Description = "#1;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.ShadowStrategyEventDeck, Name = "Denethor's Folly", Description = "#3;"}
+                { BagID = IDs.ShadowStrategyEventDeck, Name = "Denethor's Folly", Description = "#3;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.ShadowStrategyEventDeck, Name = "Threats and Promises", Description = "#5;"}
+                { BagID = IDs.ShadowStrategyEventDeck, Name = "Threats and Promises", Description = "#5;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.ShadowStrategyEventDeck, Name = "Stormcrow", Description = "#6;"}
+                { BagID = IDs.ShadowStrategyEventDeck, Name = "Stormcrow", Description = "#6;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                {BagID = IDs.ShadowStrategyEventDeck, Name = "The King is Revealed", Description = "#18;"}
+                { BagID = IDs.ShadowStrategyEventDeck, Name = "The King is Revealed", Description = "#18;" }
             )
             -- If The Fate of Erebot is used then do not swap 2 of the cards (King Brands MEn and Dain Ironfoot's Guard)...
             if TFoE then
                 --remove the new cards, we will keep old ones...
-                Global.call("RemoveObjectFromGame", {BagID = "890b46", Name = "King Brand's Men", Description = "#19;"})
+                Global.call("RemoveObjectFromGame", { BagID = "890b46", Name = "King Brand's Men", Description = "#19;" })
                 Global.call(
                     "RemoveObjectFromGame",
-                    {BagID = "890b46", Name = "Dain Ironfoot's Guard", Description = "#22;"}
+                    { BagID = "890b46", Name = "Dain Ironfoot's Guard", Description = "#22;" }
                 )
             else --remove the 2 base cards, they will be replaced with the KoME new cards...
                 Global.call(
                     "RemoveObjectFromGame",
-                    {BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;"}
+                    { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
                 )
                 Global.call(
                     "RemoveObjectFromGame",
-                    {BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;"}
+                    { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
                 )
             end
 
@@ -1593,11 +1600,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Putting away\nKings of Middle-Earth\nExpansion Content...",
-                    position = {0, 0.1, 0},
+                    position = { 0, 0.1, 0 },
                     width = 0,
                     height = 0,
                     font_size = 100,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             for _, Obj in pairs(getAllObjects()) do
@@ -1625,8 +1632,8 @@ function ProcessNextStep()
         if WoME then
             if Treebeard == 1 then
                 --WM1/1R
-                getObjectFromGUID("8f8093").setPosition({-13.5, 0.97, 33}, false, false)
-                getObjectFromGUID("8f8093").setRotation({0, 0, 180}, false, false)
+                getObjectFromGUID("8f8093").setPosition({ -13.5, 0.97, 33 }, false, false)
+                getObjectFromGUID("8f8093").setRotation({ 0, 0, 180 }, false, false)
                 if getObjectFromGUID("185612") ~= nil then
                     getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
                 end
@@ -1640,8 +1647,8 @@ function ProcessNextStep()
                 end
             else
                 --PROMO1R
-                getObjectFromGUID("d7264c").setPosition({-13.5, 0.97, 33}, false, false)
-                getObjectFromGUID("d7264c").setRotation({0, 0, 180}, false, false)
+                getObjectFromGUID("d7264c").setPosition({ -13.5, 0.97, 33 }, false, false)
+                getObjectFromGUID("d7264c").setRotation({ 0, 0, 180 }, false, false)
                 if getObjectFromGUID("8f8093") ~= nil then
                     getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
                 end
@@ -1656,8 +1663,8 @@ function ProcessNextStep()
             end
         elseif Treebeard == 1 then
             --WM1/1R
-            getObjectFromGUID("185612").setPosition({-13.5, 0.97, 33}, false, false)
-            getObjectFromGUID("185612").setRotation({0, 0, 180}, false, false)
+            getObjectFromGUID("185612").setPosition({ -13.5, 0.97, 33 }, false, false)
+            getObjectFromGUID("185612").setRotation({ 0, 0, 180 }, false, false)
             if getObjectFromGUID("8f8093") ~= nil then
                 getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
             end
@@ -1671,8 +1678,8 @@ function ProcessNextStep()
             end
         elseif Treebeard == 2 then
             --WM1/1R
-            getObjectFromGUID("3d93f2").setPosition({-13.5, 0.97, 33}, false, false)
-            getObjectFromGUID("3d93f2").setRotation({0, 0, 180}, false, false)
+            getObjectFromGUID("3d93f2").setPosition({ -13.5, 0.97, 33 }, false, false)
+            getObjectFromGUID("3d93f2").setRotation({ 0, 0, 180 }, false, false)
             if getObjectFromGUID("8f8093") ~= nil then
                 getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
             end
@@ -1732,11 +1739,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Choose Alternate Companions:",
-                    position = {0, 0.1, -1.45},
+                    position = { 0, 0.1, -1.45 },
                     width = 0,
                     height = 0,
                     font_size = 150,
-                    font_color = {0.3, 0.3, 1}
+                    font_color = { 0.3, 0.3, 1 }
                 }
             )
             self.createButton(
@@ -1744,12 +1751,12 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Free Peoples Player\nis secretly choosing\nAlternate Companions...",
-                    position = {0, -0.1, -0},
-                    rotation = {180, 180, 0},
+                    position = { 0, -0.1, -0 },
+                    rotation = { 180, 180, 0 },
                     width = 0,
                     height = 0,
                     font_size = 150,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             self.createButton(
@@ -1757,11 +1764,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Fellowship Guide: " .. CompanionNames[1],
-                    position = {0, 0.1, -1.2},
+                    position = { 0, 0.1, -1.2 },
                     width = 0,
                     height = 0,
                     font_size = 75,
-                    font_color = {1, 1, 0}
+                    font_color = { 1, 1, 0 }
                 }
             )
             self.createButton(
@@ -1769,10 +1776,10 @@ function ProcessNextStep()
                     click_function = "ToggleGandalfStrider",
                     function_owner = self,
                     label = CompanionNames[2],
-                    position = {0, 0.1, -0.9},
+                    position = { 0, 0.1, -0.9 },
                     width = 1800,
                     height = 150,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 75,
                     tooltip = "Click to change."
                 }
@@ -1782,10 +1789,10 @@ function ProcessNextStep()
                     click_function = "ToggleLegolas",
                     function_owner = self,
                     label = CompanionNames[3],
-                    position = {0, 0.1, -0.6},
+                    position = { 0, 0.1, -0.6 },
                     width = 1800,
                     height = 150,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 75,
                     tooltip = "Click to change."
                 }
@@ -1795,10 +1802,10 @@ function ProcessNextStep()
                     click_function = "ToggleGimli",
                     function_owner = self,
                     label = CompanionNames[4],
-                    position = {0, 0.1, -0.3},
+                    position = { 0, 0.1, -0.3 },
                     width = 1800,
                     height = 150,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 75,
                     tooltip = "Click to change."
                 }
@@ -1808,10 +1815,10 @@ function ProcessNextStep()
                     click_function = "ToggleBoromir",
                     function_owner = self,
                     label = CompanionNames[5],
-                    position = {0, 0.1, 0},
+                    position = { 0, 0.1, 0 },
                     width = 1800,
                     height = 150,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 75,
                     tooltip = "Click to change."
                 }
@@ -1821,10 +1828,10 @@ function ProcessNextStep()
                     click_function = "TogglePeregrin",
                     function_owner = self,
                     label = CompanionNames[6],
-                    position = {0, 0.1, 0.3},
+                    position = { 0, 0.1, 0.3 },
                     width = 1800,
                     height = 150,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 75,
                     tooltip = "Click to change."
                 }
@@ -1834,10 +1841,10 @@ function ProcessNextStep()
                     click_function = "ToggleMeriadoc",
                     function_owner = self,
                     label = CompanionNames[7],
-                    position = {0, 0.1, 0.6},
+                    position = { 0, 0.1, 0.6 },
                     width = 1800,
                     height = 150,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 75,
                     tooltip = "Click to change."
                 }
@@ -1847,10 +1854,10 @@ function ProcessNextStep()
                     click_function = "Continue",
                     function_owner = self,
                     label = "Continue",
-                    position = {0, 0.1, 1.2},
+                    position = { 0, 0.1, 1.2 },
                     width = 1800,
                     height = 200,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 100
                 }
             )
@@ -1859,11 +1866,11 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "* Lords of Middle Earth Expansion Character.",
-                    position = {0, 0.1, 0.9},
+                    position = { 0, 0.1, 0.9 },
                     width = 0,
                     height = 0,
                     font_size = 50,
-                    font_color = {1, 1, 0}
+                    font_color = { 1, 1, 0 }
                 }
             )
         end
@@ -1956,11 +1963,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Setting up the Fellowship...",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         for I = 1, 99 do
@@ -1972,9 +1979,9 @@ function ProcessNextStep()
             -- If companion card (but not Gollum)...
             if
                 Obj.type == "Card" and string.find(Obj.getDescription(), "Companion;") ~= nil and
-                    string.find(Obj.getName(), "Gollum") == nil and
-                    string.find(Obj.getName(), "Sméagol") == nil
-             then
+                string.find(Obj.getName(), "Gollum") == nil and
+                string.find(Obj.getName(), "Sméagol") == nil
+            then
                 for C = 1, #CompanionNames do
                     if Obj.getName() == CompanionNames[C] then
                         IDs.CompanionCards[C] = Obj.getGUID()
@@ -1983,7 +1990,7 @@ function ProcessNextStep()
                     end
                 end
 
-                Obj.setRotation({0, 0, 180})
+                Obj.setRotation({ 0, 0, 180 })
                 coroutine.yield(0)
                 getObjectFromGUID(GraveBagId).putObject(Obj)
                 repeat --waiting for the card to vanish, Entrox Licher
@@ -2002,18 +2009,18 @@ function ProcessNextStep()
             coroutine.yield(0)
             local CardObj =
                 getObjectFromGUID(GraveBagId).takeObject(
-                {
-                    smooth = true,
-                    guid = IDs.CompanionCards[C],
-                    rotation = {0, 180, 180},
-                    position = {32.9, 3 - 0.2 * C, 20.15}
-                }
-            )
+                    {
+                        smooth = true,
+                        guid = IDs.CompanionCards[C],
+                        rotation = { 0, 180, 180 },
+                        position = { 32.9, 3 - 0.2 * C, 20.15 }
+                    }
+                )
             --ring-bearers?
             if CardObj.getName() == "The Ring-bearers (Frodo & Samwise)" then
                 coroutine.yield(0)
-                CardObj.setRotation({0, 180, 0})
-                CardObj.setPosition({32.9, 0.97, 20.15})
+                CardObj.setRotation({ 0, 180, 0 })
+                CardObj.setPosition({ 32.9, 0.97, 20.15 })
                 CardObj.setLock(true)
             else
                 CardObj.setDescription(CardObj.getDescription() .. "Fellowship;")
@@ -2024,8 +2031,8 @@ function ProcessNextStep()
         --drop guide on top of the stack face up...
         local CardObj =
             getObjectFromGUID(GraveBagId).takeObject(
-            {smooth = true, guid = IDs.CompanionCards[1], rotation = {0, 180, 0}, position = {32.9, 9, 20.15}}
-        )
+                { smooth = true, guid = IDs.CompanionCards[1], rotation = { 0, 180, 0 }, position = { 32.9, 9, 20.15 } }
+            )
         coroutine.yield(0)
         CardObj.setDescription(CardObj.getDescription() .. "Fellowship;")
         --wait for fellowship guide card to exist...
@@ -2034,7 +2041,7 @@ function ProcessNextStep()
         until getObjectFromGUID(IDs.CompanionCards[1]) ~= nil
         --wait for fellowship guide card to reach their destination before continuing...
         local Done = false
-        Global.call("PlaySound", {ID = 1})
+        Global.call("PlaySound", { ID = 1 })
         --Music Title
         repeat
             coroutine.yield(0)
@@ -2058,7 +2065,7 @@ function ProcessNextStep()
             Spots.FreePeoplesDiceBox = Spots.CompactFreePeoplesUsedDice
             --relocate Blue hand...
             coroutine.yield(0)
-            Global.call("MoveObject", {ID = "63b83a", Position = {-25, 3, -57}, Rotation = {0, 0, 0}, Smooth = false})
+            Global.call("MoveObject", { ID = "63b83a", Position = { -25, 3, -57 }, Rotation = { 0, 0, 0 }, Smooth = false })
             --blue hand
             --swap blue to green, then back to move player to the correct spot...
             coroutine.yield(0)
@@ -2074,27 +2081,27 @@ function ProcessNextStep()
             -- for O,Obj
             Global.call(
                 "MoveObject",
-                {ID = "637507", Position = {-23.75, 1.01, -15.75}, Rotation = {0, 180, 0}, Smooth = false}
+                { ID = "637507", Position = { -23.75, 1.01, -15.75 }, Rotation = { 0, 180, 0 }, Smooth = false }
             )
             Global.call(
                 "MoveObject",
-                {ID = "f50dab", Position = {-23.75, 1.01, -17.25}, Rotation = {0, 180, 0}, Smooth = false}
+                { ID = "f50dab", Position = { -23.75, 1.01, -17.25 }, Rotation = { 0, 180, 0 }, Smooth = false }
             )
             Global.call(
                 "MoveObject",
-                {ID = "9847f7", Position = {-3, 1.01, -21.5}, Rotation = {0, 180, 0}, Smooth = false}
+                { ID = "9847f7", Position = { -3, 1.01, -21.5 }, Rotation = { 0, 180, 0 }, Smooth = false }
             )
             Global.call(
                 "MoveObject",
-                {ID = "63319b", Position = {-3, 1.01, -23}, Rotation = {0, 180, 0}, Smooth = false}
+                { ID = "63319b", Position = { -3, 1.01, -23 }, Rotation = { 0, 180, 0 }, Smooth = false }
             )
             Global.call(
                 "MoveObject",
-                {ID = "92a611", Position = {-1.9, 1.01, -21.5}, Rotation = {0, 0, 0}, Smooth = false}
+                { ID = "92a611", Position = { -1.9, 1.01, -21.5 }, Rotation = { 0, 0, 0 }, Smooth = false }
             )
             Global.call(
                 "MoveObject",
-                {ID = "4b6f4c", Position = {-23.7, 1.01, -14.2}, Rotation = {0, 0, 0}, Smooth = false}
+                { ID = "4b6f4c", Position = { -23.7, 1.01, -14.2 }, Rotation = { 0, 0, 0 }, Smooth = false }
             )
             local CombatDiceIndex = 0
             --move shadow objects first...
@@ -2104,7 +2111,7 @@ function ProcessNextStep()
                     --which object type is it?
                     if Obj.getName() == "(Shadow Combat Die)" then
                         CombatDiceIndex = CombatDiceIndex + 1
-                        Obj.setPosition({-6 + CombatDiceIndex, 1.5, -22})
+                        Obj.setPosition({ -6 + CombatDiceIndex, 1.5, -22 })
                         coroutine.yield(0)
                     elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;1of10;") ~= nil then
                         Obj.setPosition(Spots.CompactShadowDiceLine[1])
@@ -2133,16 +2140,16 @@ function ProcessNextStep()
                     --which object type is it?
                     if
                         (Obj.type == "Tile" and string.find(Obj.getDescription(), "FactionCard;") ~= nil) or
-                            (Obj.type == "Figurine" and string.find(Obj.getDescription(), "Faction;") ~= nil) or
-                            string.find(Obj.getDescription(), "Faction;2D;") ~= nil or
-                            string.find(Obj.getDescription(), "Faction;3D;") ~= nil
-                     then
+                        (Obj.type == "Figurine" and string.find(Obj.getDescription(), "Faction;") ~= nil) or
+                        string.find(Obj.getDescription(), "Faction;2D;") ~= nil or
+                        string.find(Obj.getDescription(), "Faction;3D;") ~= nil
+                    then
                         Global.call(
                             "MoveObject",
                             {
                                 ID = Obj.getGUID(),
-                                Position = {Obj.getPosition().x - 5, Obj.getPosition().y, -Obj.getPosition().z},
-                                Rotation = {0, 180, 0},
+                                Position = { Obj.getPosition().x - 5, Obj.getPosition().y, -Obj.getPosition().z },
+                                Rotation = { 0, 180, 0 },
                                 Smooth = false
                             }
                         )
@@ -2150,87 +2157,87 @@ function ProcessNextStep()
                     elseif Obj.getDescription() == "DeckSpot;CallToBattle;FreePeoples;WoME;" then
                         Global.call(
                             "MoveObject",
-                            {ID = Obj.getGUID(), Position = {-3, 0.95, -45}, Rotation = {0, 180, 0}, Smooth = false}
+                            { ID = Obj.getGUID(), Position = { -3, 0.95, -45 }, Rotation = { 0, 180, 0 }, Smooth = false }
                         )
                     elseif Obj.getDescription() == "Deck;CallToBattle;FreePeoples;WoME;" then
                         Global.call(
                             "MoveObject",
-                            {ID = Obj.getGUID(), Position = {-3, 3, -45}, Rotation = {0, 180, 180}, Smooth = false}
+                            { ID = Obj.getGUID(), Position = { -3, 3, -45 }, Rotation = { 0, 180, 180 }, Smooth = false }
                         )
                     elseif Obj.getName() == "(Free Peoples Faction Die)" then
-                        Global.call("MoveObject", {ID = Obj.getGUID(), Position = {-8, 1.6, -41.5}, Smooth = false})
+                        Global.call("MoveObject", { ID = Obj.getGUID(), Position = { -8, 1.6, -41.5 }, Smooth = false })
                         coroutine.yield(0)
                     elseif
                         (Obj.getName() == "Gandalf the White: Emissary from the West" and
                             (not BotF or Obj.type ~= "Figurine")) or
-                            Obj.getName() == "Aragorn: Heir to Isildur" or
-                            ((Obj.getName() == "Gollum: Slave of the Ring" or Obj.getName() == "Gollum") and not BotF) or
-                            string.find(Obj.getDescription(), "Dice;Action;FreePeoples;5of6;") ~= nil or
-                            string.find(Obj.getDescription(), "Dice;Action;FreePeoples;6of6;") ~= nil or
-                            Obj.getName() == "Lady Galadriel: Keeper of Nenya" or
-                            Obj.getName() == "Lord Elrond: Keeper of Vilya" or
-                            Obj.getName() == "Sméagol: Tamed Wretch" or
-                            Obj.getName() == "Sméagol" or
-                            Obj.getName() == "(Vilya Action Die)" or
-                            Obj.getName() == "(Nenya Action Die)" or
-                            Obj.getName() == "Treebeard: Tree-herd" or
-                            Obj.getName() == "Sméagol Hunt Tile"
-                     then
+                        Obj.getName() == "Aragorn: Heir to Isildur" or
+                        ((Obj.getName() == "Gollum: Slave of the Ring" or Obj.getName() == "Gollum") and not BotF) or
+                        string.find(Obj.getDescription(), "Dice;Action;FreePeoples;5of6;") ~= nil or
+                        string.find(Obj.getDescription(), "Dice;Action;FreePeoples;6of6;") ~= nil or
+                        Obj.getName() == "Lady Galadriel: Keeper of Nenya" or
+                        Obj.getName() == "Lord Elrond: Keeper of Vilya" or
+                        Obj.getName() == "Sméagol: Tamed Wretch" or
+                        Obj.getName() == "Sméagol" or
+                        Obj.getName() == "(Vilya Action Die)" or
+                        Obj.getName() == "(Nenya Action Die)" or
+                        Obj.getName() == "Treebeard: Tree-herd" or
+                        Obj.getName() == "Sméagol Hunt Tile"
+                    then
                         Global.call(
                             "MoveObject",
                             {
                                 ID = Obj.getGUID(),
-                                Position = {Obj.getPosition().x - 33, Obj.getPosition().y, -Obj.getPosition().z},
-                                Rotation = {Obj.getRotation().x, 180, Obj.getRotation().z},
+                                Position = { Obj.getPosition().x - 33, Obj.getPosition().y, -Obj.getPosition().z },
+                                Rotation = { Obj.getRotation().x, 180, Obj.getRotation().z },
                                 Smooth = false
                             }
                         )
                         coroutine.yield(0)
                     elseif Obj.getName() == "(Narya Action Die)" then
-                        Global.call("MoveObject", {ID = Obj.getGUID(), Position = {-44.5, 1.6, -39}, Smooth = false})
+                        Global.call("MoveObject", { ID = Obj.getGUID(), Position = { -44.5, 1.6, -39 }, Smooth = false })
                     elseif Obj.getName() == "(Free Peoples Combat Die)" then
                         CombatDiceIndex = CombatDiceIndex + 1
                         Global.call(
                             "MoveObject",
-                            {ID = Obj.getGUID(), Position = {-27 + CombatDiceIndex, 1.5, -15}, Smooth = false}
+                            { ID = Obj.getGUID(), Position = { -27 + CombatDiceIndex, 1.5, -15 }, Smooth = false }
                         )
                         coroutine.yield(0)
                     elseif string.find(Obj.getDescription(), "Dice;Action;FreePeoples;1of6;") ~= nil then
                         Global.call(
                             "MoveObject",
-                            {ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[1], Smooth = false}
+                            { ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[1], Smooth = false }
                         )
                     elseif string.find(Obj.getDescription(), "Dice;Action;FreePeoples;2of6;") ~= nil then
                         Global.call(
                             "MoveObject",
-                            {ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[2], Smooth = false}
+                            { ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[2], Smooth = false }
                         )
                     elseif string.find(Obj.getDescription(), "Dice;Action;FreePeoples;3of6;") ~= nil then
                         Global.call(
                             "MoveObject",
-                            {ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[3], Smooth = false}
+                            { ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[3], Smooth = false }
                         )
                     elseif string.find(Obj.getDescription(), "Dice;Action;FreePeoples;4of6;") ~= nil then
                         Global.call(
                             "MoveObject",
-                            {ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[4], Smooth = false}
+                            { ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[4], Smooth = false }
                         )
                     elseif Obj.getName() == "(Free Peoples Ruler Die)" then
-                        Global.call("MoveObject", {ID = Obj.getGUID(), Position = {-47.5, 1.6, -39}, Smooth = false})
+                        Global.call("MoveObject", { ID = Obj.getGUID(), Position = { -47.5, 1.6, -39 }, Smooth = false })
                     elseif
                         Obj.type == "Card" and
-                            (Obj.getName() == "Brand: King of Dale" or
-                                Obj.getName() == "Dain Ironfoot: King Under the Mountain" or
-                                Obj.getName() == "Denethor: Lord Steward of Gondor" or
-                                Obj.getName() == "Theoden: King of the Riddermark" or
-                                Obj.getName() == "Thranduil: King of the Woodland Realm")
-                     then
+                        (Obj.getName() == "Brand: King of Dale" or
+                            Obj.getName() == "Dain Ironfoot: King Under the Mountain" or
+                            Obj.getName() == "Denethor: Lord Steward of Gondor" or
+                            Obj.getName() == "Theoden: King of the Riddermark" or
+                            Obj.getName() == "Thranduil: King of the Woodland Realm")
+                    then
                         Global.call(
                             "MoveObject",
                             {
                                 ID = Obj.getGUID(),
-                                Position = {Obj.getPosition().x - 9.5, Obj.getPosition().y, -Obj.getPosition().z + 12},
-                                Rotation = {Obj.getRotation().x, 180, Obj.getRotation().z},
+                                Position = { Obj.getPosition().x - 9.5, Obj.getPosition().y, -Obj.getPosition().z + 12 },
+                                Rotation = { Obj.getRotation().x, 180, Obj.getRotation().z },
                                 Smooth = false
                             }
                         )
@@ -2240,8 +2247,8 @@ function ProcessNextStep()
                         "MoveObject",
                         {
                             ID = Obj.getGUID(),
-                            Position = {Obj.getPosition().x - 9.5, Obj.getPosition().y, -Obj.getPosition().z + 0.4},
-                            Rotation = {0, 90, 0},
+                            Position = { Obj.getPosition().x - 9.5, Obj.getPosition().y, -Obj.getPosition().z + 0.4 },
+                            Rotation = { 0, 90, 0 },
                             Smooth = false
                         }
                     )
@@ -2250,7 +2257,7 @@ function ProcessNextStep()
                         "MoveObject",
                         {
                             ID = Obj.getGUID(),
-                            Position = {Obj.getPosition().x - 41.5, Obj.getPosition().y, Obj.getPosition().z},
+                            Position = { Obj.getPosition().x - 41.5, Obj.getPosition().y, Obj.getPosition().z },
                             Rotation = Obj.getRotation(),
                             Smooth = false
                         }
@@ -2258,90 +2265,90 @@ function ProcessNextStep()
                 end
             end
 
-            Global.call("MoveObject", {ID = "9a56a5", Position = {58, 1.57, -60}, Smooth = false})
+            Global.call("MoveObject", { ID = "9a56a5", Position = { 58, 1.57, -60 }, Smooth = false })
             --Red Action Dice Box.
-            Global.call("MoveObject", {ID = "46d2fc", Position = {-58, 1.57, -60}, Smooth = false})
+            Global.call("MoveObject", { ID = "46d2fc", Position = { -58, 1.57, -60 }, Smooth = false })
             --Red Action Dice Box.
             --relocate used dice areas...
             Global.call(
                 "MoveObject",
-                {ID = "028249", Position = {-5.1, 0.95, -32.75}, Rotation = {0, 180, 0}, Smooth = false}
+                { ID = "028249", Position = { -5.1, 0.95, -32.75 }, Rotation = { 0, 180, 0 }, Smooth = false }
             )
             --blue area
             Global.call(
                 "MoveObject",
-                {ID = "75024a", Position = {9.9, 0.95, -31.81}, Rotation = {0, 180, 0}, Smooth = false}
+                { ID = "75024a", Position = { 9.9, 0.95, -31.81 }, Rotation = { 0, 180, 0 }, Smooth = false }
             )
             --blue area
             Global.call(
                 "MoveObject",
-                {ID = "9a38bc", Position = {4.3, 0.95, -32.75}, Rotation = {0, 180, 0}, Smooth = false}
+                { ID = "9a38bc", Position = { 4.3, 0.95, -32.75 }, Rotation = { 0, 180, 0 }, Smooth = false }
             )
             --red area
             Global.call(
                 "MoveObject",
-                {ID = "2916b7", Position = {-10.72, 0.95, -31.81}, Rotation = {0, 180, 0}, Smooth = false}
+                { ID = "2916b7", Position = { -10.72, 0.95, -31.81 }, Rotation = { 0, 180, 0 }, Smooth = false }
             )
             --red area
             Global.call(
                 "MoveObject",
-                {ID = "dcf102", Position = {-10.72, 0.95, -36.48}, Rotation = {0, 180, 0}, Smooth = false}
+                { ID = "dcf102", Position = { -10.72, 0.95, -36.48 }, Rotation = { 0, 180, 0 }, Smooth = false }
             )
             --blue area
             --remove certain components...
-            Global.call("RemoveObjectFromGame", {ID = "471b96"})
-            Global.call("RemoveObjectFromGame", {ID = "28f260"})
+            Global.call("RemoveObjectFromGame", { ID = "471b96" })
+            Global.call("RemoveObjectFromGame", { ID = "28f260" })
             --re-move combat dice panels (they seem to get lag/stuck in certain games)...
             for I = 1, 30 do
                 coroutine.yield(0)
             end
 
             if getObjectFromGUID("637507") ~= nil then
-                getObjectFromGUID("637507").setPosition({-23.75, 1.01, -15.75})
+                getObjectFromGUID("637507").setPosition({ -23.75, 1.01, -15.75 })
             end
 
             if getObjectFromGUID("637507") ~= nil then
-                getObjectFromGUID("637507").setRotation({0, 180, 0})
+                getObjectFromGUID("637507").setRotation({ 0, 180, 0 })
             end
 
             if getObjectFromGUID("f50dab") ~= nil then
-                getObjectFromGUID("f50dab").setPosition({-23.75, 1.01, -17.25})
+                getObjectFromGUID("f50dab").setPosition({ -23.75, 1.01, -17.25 })
             end
 
             if getObjectFromGUID("f50dab") ~= nil then
-                getObjectFromGUID("f50dab").setRotation({0, 180, 0})
+                getObjectFromGUID("f50dab").setRotation({ 0, 180, 0 })
             end
 
             if getObjectFromGUID("9847f7") ~= nil then
-                getObjectFromGUID("9847f7").setPosition({-3, 1.01, -21.5})
+                getObjectFromGUID("9847f7").setPosition({ -3, 1.01, -21.5 })
             end
 
             if getObjectFromGUID("9847f7") ~= nil then
-                getObjectFromGUID("9847f7").setRotation({0, 180, 0})
+                getObjectFromGUID("9847f7").setRotation({ 0, 180, 0 })
             end
 
             if getObjectFromGUID("63319b") ~= nil then
-                getObjectFromGUID("63319b").setPosition({-3, 1.01, -23})
+                getObjectFromGUID("63319b").setPosition({ -3, 1.01, -23 })
             end
 
             if getObjectFromGUID("63319b") ~= nil then
-                getObjectFromGUID("63319b").setRotation({0, 180, 0})
+                getObjectFromGUID("63319b").setRotation({ 0, 180, 0 })
             end
 
             if getObjectFromGUID("92a611") ~= nil then
-                getObjectFromGUID("92a611").setPosition({-1.9, 1.01, -21.5})
+                getObjectFromGUID("92a611").setPosition({ -1.9, 1.01, -21.5 })
             end
 
             if getObjectFromGUID("92a611") ~= nil then
-                getObjectFromGUID("92a611").setRotation({0, 0, 0})
+                getObjectFromGUID("92a611").setRotation({ 0, 0, 0 })
             end
 
             if getObjectFromGUID("4b6f4c") ~= nil then
-                getObjectFromGUID("4b6f4c").setPosition({-23.7, 1.01, -14.2})
+                getObjectFromGUID("4b6f4c").setPosition({ -23.7, 1.01, -14.2 })
             end
 
             if getObjectFromGUID("4b6f4c") ~= nil then
-                getObjectFromGUID("4b6f4c").setRotation({0, 0, 0})
+                getObjectFromGUID("4b6f4c").setRotation({ 0, 0, 0 })
             end
         end
 
@@ -2361,11 +2368,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Choose Scripting Level:",
-                position = {0, 0.1, -1.3},
+                position = { 0, 0.1, -1.3 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -2373,10 +2380,10 @@ function ProcessNextStep()
                 click_function = "FullScripts",
                 function_owner = self,
                 label = "Full Scripted Turns",
-                position = {0, 0.1, -0.5},
+                position = { 0, 0.1, -0.5 },
                 width = 1500,
                 height = 350,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 150,
                 tooltip = "Click to play game with full scripting assistance."
             }
@@ -2386,10 +2393,10 @@ function ProcessNextStep()
                 click_function = "BasicScripts",
                 function_owner = self,
                 label = "Basic Scripts Only",
-                position = {0, 0.1, 0.5},
+                position = { 0, 0.1, 0.5 },
                 width = 1500,
                 height = 350,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 150,
                 tooltip = "Click to play game with minimal scripting assistance."
             }
@@ -2468,10 +2475,10 @@ function ProcessNextStep()
                 click_function = "StartTurn",
                 function_owner = self,
                 label = "Start Turn " .. Turn,
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 400,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 250,
                 tooltip = "Click to Start Turn " .. Turn
             }
@@ -2510,14 +2517,14 @@ function ProcessNextStep()
                 function_owner = self,
                 label = "Fellowship Track: " ..
                     FellowshipTrack ..
-                        "\nCorruption Track: " ..
-                            CorruptionTrack ..
-                                "\n\nShadow Victory Points: " ..
-                                    ShadowVP .. " of 10\nFree Peoples Victory Points: " .. FreePeoplesVP .. " of 4",
-                position = {0, 0.1, -0.9},
+                    "\nCorruption Track: " ..
+                    CorruptionTrack ..
+                    "\n\nShadow Victory Points: " ..
+                    ShadowVP .. " of 10\nFree Peoples Victory Points: " .. FreePeoplesVP .. " of 4",
+                position = { 0, 0.1, -0.9 },
                 width = 0,
                 height = 0,
-                font_color = {0.9, 0.9, 0.9},
+                font_color = { 0.9, 0.9, 0.9 },
                 font_size = 75
             }
         )
@@ -2566,59 +2573,59 @@ function ProcessNextStep()
             --look for missing decks...
             IDs.FreePeoplesCharacterEventDeck =
                 CheckDeck(
-                {
-                    id = IDs.FreePeoplesCharacterEventDeck,
-                    position = Spots.FreePeoplesCharacterEventDeck,
-                    name = "Free Peoples Character Event Deck",
-                    description = "Deck;Event;Character;FreePeoples;"
-                }
-            )
+                    {
+                        id = IDs.FreePeoplesCharacterEventDeck,
+                        position = Spots.FreePeoplesCharacterEventDeck,
+                        name = "Free Peoples Character Event Deck",
+                        description = "Deck;Event;Character;FreePeoples;"
+                    }
+                )
             IDs.ShadowCharacterEventDeck =
                 CheckDeck(
-                {
-                    id = IDs.ShadowCharacterEventDeck,
-                    position = Spots.ShadowCharacterEventDeck,
-                    name = "Shadow Character Event Deck",
-                    description = "Deck;Event;Character;Shadow;"
-                }
-            )
+                    {
+                        id = IDs.ShadowCharacterEventDeck,
+                        position = Spots.ShadowCharacterEventDeck,
+                        name = "Shadow Character Event Deck",
+                        description = "Deck;Event;Character;Shadow;"
+                    }
+                )
             IDs.FreePeoplesStrategyEventDeck =
                 CheckDeck(
-                {
-                    id = IDs.FreePeoplesStrategyEventDeck,
-                    position = Spots.FreePeoplesStrategyEventDeck,
-                    name = "Free Peoples Strategy Event Deck",
-                    description = "Deck;Event;Strategy;FreePeoples;"
-                }
-            )
+                    {
+                        id = IDs.FreePeoplesStrategyEventDeck,
+                        position = Spots.FreePeoplesStrategyEventDeck,
+                        name = "Free Peoples Strategy Event Deck",
+                        description = "Deck;Event;Strategy;FreePeoples;"
+                    }
+                )
             IDs.ShadowStrategyEventDeck =
                 CheckDeck(
-                {
-                    id = IDs.ShadowStrategyEventDeck,
-                    position = Spots.ShadowStrategyEventDeck,
-                    name = "Shadow Strategy Event Deck",
-                    description = "Deck;Event;Strategy;Shadow;"
-                }
-            )
+                    {
+                        id = IDs.ShadowStrategyEventDeck,
+                        position = Spots.ShadowStrategyEventDeck,
+                        name = "Shadow Strategy Event Deck",
+                        description = "Deck;Event;Strategy;Shadow;"
+                    }
+                )
             if WoME then
                 IDs.WoME.FreePeoplesFactionDeck =
                     CheckDeck(
-                    {
-                        id = IDs.WoME.FreePeoplesFactionDeck,
-                        position = Spots.FreePeoplesFactionDeck,
-                        name = "Free Peoples Faction Deck",
-                        description = "Deck;Faction;FreePeoples;WoME;"
-                    }
-                )
+                        {
+                            id = IDs.WoME.FreePeoplesFactionDeck,
+                            position = Spots.FreePeoplesFactionDeck,
+                            name = "Free Peoples Faction Deck",
+                            description = "Deck;Faction;FreePeoples;WoME;"
+                        }
+                    )
                 IDs.WoME.ShadowFactionDeck =
                     CheckDeck(
-                    {
-                        id = IDs.WoME.ShadowFactionDeck,
-                        position = Spots.ShadowFactionDeck,
-                        name = "Shadow Faction Deck",
-                        description = "Deck;Faction;Shadow;WoME;"
-                    }
-                )
+                        {
+                            id = IDs.WoME.ShadowFactionDeck,
+                            position = Spots.ShadowFactionDeck,
+                            name = "Shadow Faction Deck",
+                            description = "Deck;Faction;Shadow;WoME;"
+                        }
+                    )
             end
 
             --look for missing dice...
@@ -2639,11 +2646,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Phase 1) Recover Action Dice\nand Draw Event Cards",
-                position = {0, 0.1, -1.3},
+                position = { 0, 0.1, -1.3 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -2651,10 +2658,10 @@ function ProcessNextStep()
                 click_function = "PerformPhase1",
                 function_owner = self,
                 label = "Perform Phase 1:\nRecover Action Dice and\nDraw Event Cards.",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 400,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 100,
                 tooltip = "Have the script perform all Phase 1 steps for you."
             }
@@ -2664,10 +2671,10 @@ function ProcessNextStep()
                 click_function = "Continue",
                 function_owner = self,
                 label = "Continue",
-                position = {0, 0.1, 1},
+                position = { 0, 0.1, 1 },
                 width = 1600,
                 height = 200,
-                color = {1, 1, 1.2},
+                color = { 1, 1, 1.2 },
                 font_size = 100,
                 tooltip = "Click Continue after all Phase 1 steps are completed."
             }
@@ -3017,11 +3024,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples Player\nDraw Starting Event Cards:",
-                position = {0, 0.1, -1.2},
+                position = { 0, 0.1, -1.2 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -3029,12 +3036,12 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples Player\nis choosing which\nEvent Cards to Draw...",
-                position = {0, -0.1, -0},
-                rotation = {180, 180, 0},
+                position = { 0, -0.1, -0 },
+                rotation = { 180, 180, 0 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {0.5, 0.5, 1}
+                font_color = { 0.5, 0.5, 1 }
             }
         )
         self.createButton(
@@ -3042,10 +3049,10 @@ function ProcessNextStep()
                 click_function = "DrawC1S3",
                 function_owner = self,
                 label = "Draw: 1 Character + 3 Strategy",
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 1 Character Event Card and 3 Strategy Event Cards."
             }
@@ -3055,10 +3062,10 @@ function ProcessNextStep()
                 click_function = "DrawC2S2",
                 function_owner = self,
                 label = "Draw: 2 Character + 2 Strategy",
-                position = {0, 0.1, -0.3},
+                position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 2 Character Event Cards and 2 Strategy Event Cards."
             }
@@ -3068,10 +3075,10 @@ function ProcessNextStep()
                 click_function = "DrawC3S1",
                 function_owner = self,
                 label = "Draw: 3 Character + 1 Strategy",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 3 Character Event Cards and 1 Strategy Event Card."
             }
@@ -3080,12 +3087,13 @@ function ProcessNextStep()
             {
                 click_function = "Nothing",
                 function_owner = self,
-                label = "The Breaking of the Fellowship (Turn 1 Only)\nThe Free Peoples player draws four Event Cards.\nAll cards must be drawn before looking at them.\nAt least 1 card from each deck must be drawn.",
-                position = {0, 0.1, 1},
+                label =
+                "The Breaking of the Fellowship (Turn 1 Only)\nThe Free Peoples player draws four Event Cards.\nAll cards must be drawn before looking at them.\nAt least 1 card from each deck must be drawn.",
+                position = { 0, 0.1, 1 },
                 width = 0,
                 height = 0,
                 font_size = 50,
-                font_color = {1, 1, 0}
+                font_color = { 1, 1, 0 }
             }
         )
         if Versus == "1v1" then
@@ -3106,7 +3114,7 @@ function ProcessNextStep()
                 }
             )
             DrawFromDeck(
-                {deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 3, player = "Blue"}
+                { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 3, player = "Blue" }
             )
             Step = ""
         end
@@ -3114,10 +3122,10 @@ function ProcessNextStep()
         function DrawC2S2()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Blue"}
+                { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Blue" }
             )
             DrawFromDeck(
-                {deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue"}
+                { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue" }
             )
             Step = ""
         end
@@ -3125,7 +3133,7 @@ function ProcessNextStep()
         function DrawC3S1()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 3, player = "Blue"}
+                { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 3, player = "Blue" }
             )
             DrawFromDeck(
                 {
@@ -3147,11 +3155,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Shadow Player\nDraw Starting Event Cards:",
-                position = {0, 0.1, -1.2},
+                position = { 0, 0.1, -1.2 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 0, 0}
+                font_color = { 1, 0, 0 }
             }
         )
         self.createButton(
@@ -3159,12 +3167,12 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Shadow Player\nis choosing which\nEvent Cards to Draw...",
-                position = {0, -0.1, 0},
-                rotation = {180, 180, 0},
+                position = { 0, -0.1, 0 },
+                rotation = { 180, 180, 0 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {1, 0.5, 0.5}
+                font_color = { 1, 0.5, 0.5 }
             }
         )
         self.createButton(
@@ -3172,10 +3180,10 @@ function ProcessNextStep()
                 click_function = "DrawC1S5",
                 function_owner = self,
                 label = "Draw: 1 Character + 5 Strategy",
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = {1, 0.5, 0.5},
+                color = { 1, 0.5, 0.5 },
                 font_size = 75,
                 tooltip = "Draw 1 Character Event Card and 5 Strategy Event Cards."
             }
@@ -3185,10 +3193,10 @@ function ProcessNextStep()
                 click_function = "DrawC2S4",
                 function_owner = self,
                 label = "Draw: 2 Character + 4 Strategy",
-                position = {0, 0.1, -0.3},
+                position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = {1, 0.5, 0.5},
+                color = { 1, 0.5, 0.5 },
                 font_size = 75,
                 tooltip = "Draw 2 Character Event Cards and 4 Strategy Event Cards."
             }
@@ -3198,10 +3206,10 @@ function ProcessNextStep()
                 click_function = "DrawC3S3",
                 function_owner = self,
                 label = "Draw: 3 Character + 3 Strategy",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = {1, 0.5, 0.5},
+                color = { 1, 0.5, 0.5 },
                 font_size = 75,
                 tooltip = "Draw 3 Character Event Cards and 3 Strategy Event Cards."
             }
@@ -3211,10 +3219,10 @@ function ProcessNextStep()
                 click_function = "DrawC4S2",
                 function_owner = self,
                 label = "Draw: 4 Character + 2 Strategy",
-                position = {0, 0.1, 0.3},
+                position = { 0, 0.1, 0.3 },
                 width = 1600,
                 height = 150,
-                color = {1, 0.5, 0.5},
+                color = { 1, 0.5, 0.5 },
                 font_size = 75,
                 tooltip = "Draw 4 Character Event Cards and 2 Strategy Event Cards."
             }
@@ -3224,10 +3232,10 @@ function ProcessNextStep()
                 click_function = "DrawC5S1",
                 function_owner = self,
                 label = "Draw: 5 Character + 1 Strategy",
-                position = {0, 0.1, 0.6},
+                position = { 0, 0.1, 0.6 },
                 width = 1600,
                 height = 150,
-                color = {1, 0.5, 0.5},
+                color = { 1, 0.5, 0.5 },
                 font_size = 75,
                 tooltip = "Draw 5 Character Event Cards and 1 Strategy Event Card."
             }
@@ -3236,12 +3244,13 @@ function ProcessNextStep()
             {
                 click_function = "Nothing",
                 function_owner = self,
-                label = "The Breaking of the Fellowship (Turn 1 Only)\nThe Shadow player draws six Event Cards.\nAll cards must be drawn before looking at them.\nAt least 1 card from each deck must be drawn.",
-                position = {0, 0.1, 1},
+                label =
+                "The Breaking of the Fellowship (Turn 1 Only)\nThe Shadow player draws six Event Cards.\nAll cards must be drawn before looking at them.\nAt least 1 card from each deck must be drawn.",
+                position = { 0, 0.1, 1 },
                 width = 0,
                 height = 0,
                 font_size = 50,
-                font_color = {1, 1, 0}
+                font_color = { 1, 1, 0 }
             }
         )
         NextStep = "Phase2"
@@ -3256,41 +3265,41 @@ function ProcessNextStep()
                     player = "Red"
                 }
             )
-            DrawFromDeck({deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 5, player = "Red"})
+            DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 5, player = "Red" })
             Step = ""
         end
 
         function DrawC2S4()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Red"}
+                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Red" }
             )
-            DrawFromDeck({deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 4, player = "Red"})
+            DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 4, player = "Red" })
             Step = ""
         end
 
         function DrawC3S3()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Red"}
+                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Red" }
             )
-            DrawFromDeck({deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Red"})
+            DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Red" })
             Step = ""
         end
 
         function DrawC4S2()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 4, player = "Red"}
+                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 4, player = "Red" }
             )
-            DrawFromDeck({deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Red"})
+            DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Red" })
             Step = ""
         end
 
         function DrawC5S1()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 5, player = "Red"}
+                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 5, player = "Red" }
             )
             DrawFromDeck(
                 {
@@ -3315,11 +3324,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples: Gondor (Blue) Player\nDraw Starting Event Cards:",
-                position = {0, 0.1, -1.2},
+                position = { 0, 0.1, -1.2 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -3327,12 +3336,12 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples\nGondor (Blue) Player\nis choosing which\nEvent Cards to Draw...",
-                position = {0, -0.1, -0},
-                rotation = {180, 180, 0},
+                position = { 0, -0.1, -0 },
+                rotation = { 180, 180, 0 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {0.5, 0.5, 1}
+                font_color = { 0.5, 0.5, 1 }
             }
         )
         self.createButton(
@@ -3340,10 +3349,10 @@ function ProcessNextStep()
                 click_function = "DrawC2S0",
                 function_owner = self,
                 label = "Draw: 2 Character",
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 2 Character Event Cards and 0 Strategy Event Cards."
             }
@@ -3353,10 +3362,10 @@ function ProcessNextStep()
                 click_function = "DrawC1S1",
                 function_owner = self,
                 label = "Draw: 1 Character + 1 Strategy",
-                position = {0, 0.1, -0.3},
+                position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 1 Character Event Card and 1 Strategy Event Card."
             }
@@ -3366,10 +3375,10 @@ function ProcessNextStep()
                 click_function = "DrawC0S2",
                 function_owner = self,
                 label = "Draw: 2 Strategy",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 2 Strategy Event Cards and 0 Character Event Cards."
             }
@@ -3378,19 +3387,20 @@ function ProcessNextStep()
             {
                 click_function = "Nothing",
                 function_owner = self,
-                label = "The Breaking of the Fellowship (Turn 1 Only)\nThe Free Peoples players draw two Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 4 total from each deck.",
-                position = {0, 0.1, 1},
+                label =
+                "The Breaking of the Fellowship (Turn 1 Only)\nThe Free Peoples players draw two Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 4 total from each deck.",
+                position = { 0, 0.1, 1 },
                 width = 0,
                 height = 0,
                 font_size = 50,
-                font_color = {1, 1, 0}
+                font_color = { 1, 1, 0 }
             }
         )
         NextStep = "Phase1_BotF_RohanDrawMenu"
         function DrawC2S0()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Blue"}
+                { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Blue" }
             )
             CharacterCardCount = 2
             Step = ""
@@ -3424,7 +3434,7 @@ function ProcessNextStep()
         function DrawC0S2()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue"}
+                { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue" }
             )
             StrategyCardCount = 2
             Step = ""
@@ -3439,11 +3449,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples: Rohan (Green) Player\nDraw Starting Event Cards:",
-                position = {0, 0.1, -1.2},
+                position = { 0, 0.1, -1.2 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -3451,12 +3461,12 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples\nGRohan (Green) Player\nis choosing which\nEvent Cards to Draw...",
-                position = {0, -0.1, -0},
-                rotation = {180, 180, 0},
+                position = { 0, -0.1, -0 },
+                rotation = { 180, 180, 0 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {0.5, 1, 0.5}
+                font_color = { 0.5, 1, 0.5 }
             }
         )
         if StrategyCardCount > 0 then
@@ -3465,10 +3475,10 @@ function ProcessNextStep()
                     click_function = "DrawC2S0",
                     function_owner = self,
                     label = "Draw: 2 Character",
-                    position = {0, 0.1, -0.6},
+                    position = { 0, 0.1, -0.6 },
                     width = 1600,
                     height = 150,
-                    color = {0.7, 0.7, 1},
+                    color = { 0.7, 0.7, 1 },
                     font_size = 75,
                     tooltip = "Draw 2 Character Event Card and 0 Strategy Event Cards."
                 }
@@ -3480,10 +3490,10 @@ function ProcessNextStep()
                 click_function = "DrawC1S1",
                 function_owner = self,
                 label = "Draw: 1 Character + 1 Strategy",
-                position = {0, 0.1, -0.3},
+                position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 1 Character Event Card and 1 Strategy Event Card."
             }
@@ -3494,10 +3504,10 @@ function ProcessNextStep()
                     click_function = "DrawC0S2",
                     function_owner = self,
                     label = "Draw: 2 Strategy",
-                    position = {0, 0.1, 0},
+                    position = { 0, 0.1, 0 },
                     width = 1600,
                     height = 150,
-                    color = {0.7, 0.7, 1},
+                    color = { 0.7, 0.7, 1 },
                     font_size = 75,
                     tooltip = "Draw 2 Strategy Event Cards and 0 Character Event Cards."
                 }
@@ -3508,19 +3518,20 @@ function ProcessNextStep()
             {
                 click_function = "Nothing",
                 function_owner = self,
-                label = "The Breaking of the Fellowship (Turn 1 Only)\nThe Free Peoples players draw two Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 4 total from each deck.",
-                position = {0, 0.1, 1},
+                label =
+                "The Breaking of the Fellowship (Turn 1 Only)\nThe Free Peoples players draw two Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 4 total from each deck.",
+                position = { 0, 0.1, 1 },
                 width = 0,
                 height = 0,
                 font_size = 50,
-                font_color = {1, 1, 0}
+                font_color = { 1, 1, 0 }
             }
         )
         NextStep = "Phase1_BotF_TheWitchKingDrawMenu"
         function DrawC2S0()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Green"}
+                { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Green" }
             )
             Step = ""
         end
@@ -3551,7 +3562,7 @@ function ProcessNextStep()
         function DrawC0S2()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Green"}
+                { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Green" }
             )
             Step = ""
         end
@@ -3567,11 +3578,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Shadow: The Witch-King (Red) Player\nDraw Starting Event Cards:",
-                position = {0, 0.1, -1.2},
+                position = { 0, 0.1, -1.2 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -3579,12 +3590,12 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples\nThe Witch-King (Red) Player\nis choosing which\nEvent Cards to Draw...",
-                position = {0, -0.1, -0},
-                rotation = {180, 180, 0},
+                position = { 0, -0.1, -0 },
+                rotation = { 180, 180, 0 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {1, 0.5, 0.5}
+                font_color = { 1, 0.5, 0.5 }
             }
         )
         self.createButton(
@@ -3592,10 +3603,10 @@ function ProcessNextStep()
                 click_function = "DrawC3S0",
                 function_owner = self,
                 label = "Draw: 3 Character",
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 3 Character Event Cards and 0 Strategy Event Cards."
             }
@@ -3605,10 +3616,10 @@ function ProcessNextStep()
                 click_function = "DrawC2S1",
                 function_owner = self,
                 label = "Draw: 2 Character + 1 Strategy",
-                position = {0, 0.1, -0.3},
+                position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 2 Character Event Cards and 1 Strategy Event Card."
             }
@@ -3618,10 +3629,10 @@ function ProcessNextStep()
                 click_function = "DrawC1S2",
                 function_owner = self,
                 label = "Draw: 1 Character + 2 Strategy",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 1 Character Event Card and 2 Strategy Event Cards."
             }
@@ -3631,10 +3642,10 @@ function ProcessNextStep()
                 click_function = "DrawC0S3",
                 function_owner = self,
                 label = "Draw: 3 Strategy",
-                position = {0, 0.1, 0.3},
+                position = { 0, 0.1, 0.3 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 3 Strategy Event Cards and 0 Character Event Cards."
             }
@@ -3643,19 +3654,20 @@ function ProcessNextStep()
             {
                 click_function = "Nothing",
                 function_owner = self,
-                label = "The Breaking of the Fellowship (Turn 1 Only)\nThe Shadow players draw three Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 6 total from each deck.",
-                position = {0, 0.1, 1},
+                label =
+                "The Breaking of the Fellowship (Turn 1 Only)\nThe Shadow players draw three Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 6 total from each deck.",
+                position = { 0, 0.1, 1 },
                 width = 0,
                 height = 0,
                 font_size = 50,
-                font_color = {1, 1, 0}
+                font_color = { 1, 1, 0 }
             }
         )
         NextStep = "Phase1_BotF_SarumanDrawMenu"
         function DrawC3S0()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Red"}
+                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Red" }
             )
             CharacterCardCount = 3
             Step = ""
@@ -3664,7 +3676,7 @@ function ProcessNextStep()
         function DrawC2S1()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Red"}
+                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Red" }
             )
             DrawFromDeck(
                 {
@@ -3691,7 +3703,7 @@ function ProcessNextStep()
                     player = "Red"
                 }
             )
-            DrawFromDeck({deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Red"})
+            DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Red" })
             CharacterCardCount = 1
             StrategyCardCount = 2
             Step = ""
@@ -3699,7 +3711,7 @@ function ProcessNextStep()
 
         function DrawC0S3()
             self.clearButtons()
-            DrawFromDeck({deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Red"})
+            DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Red" })
             StrategyCardCount = 3
             Step = ""
         end
@@ -3713,11 +3725,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Shadow: Saruman (Yellow) Player\nDraw Starting Event Cards:",
-                position = {0, 0.1, -1.2},
+                position = { 0, 0.1, -1.2 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -3725,12 +3737,12 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples\nSaruman (Yellow) Player\nis choosing which\nEvent Cards to Draw...",
-                position = {0, -0.1, -0},
-                rotation = {180, 180, 0},
+                position = { 0, -0.1, -0 },
+                rotation = { 180, 180, 0 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {1, 1, 0}
+                font_color = { 1, 1, 0 }
             }
         )
         if StrategyCardCount > 0 then
@@ -3739,10 +3751,10 @@ function ProcessNextStep()
                     click_function = "DrawC3S0",
                     function_owner = self,
                     label = "Draw: 3 Character",
-                    position = {0, 0.1, -0.6},
+                    position = { 0, 0.1, -0.6 },
                     width = 1600,
                     height = 150,
-                    color = {0.7, 0.7, 1},
+                    color = { 0.7, 0.7, 1 },
                     font_size = 75,
                     tooltip = "Draw 3 Character Event Cards and 0 Strategy Event Cards."
                 }
@@ -3754,10 +3766,10 @@ function ProcessNextStep()
                 click_function = "DrawC2S1",
                 function_owner = self,
                 label = "Draw: 2 Character + 1 Strategy",
-                position = {0, 0.1, -0.3},
+                position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 2 Character Event Cards and 1 Strategy Event Card."
             }
@@ -3767,10 +3779,10 @@ function ProcessNextStep()
                 click_function = "DrawC1S2",
                 function_owner = self,
                 label = "Draw: 1 Character + 2 Strategy",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
                 tooltip = "Draw 1 Character Event Card and 2 Strategy Event Cards."
             }
@@ -3781,10 +3793,10 @@ function ProcessNextStep()
                     click_function = "DrawC0S3",
                     function_owner = self,
                     label = "Draw: 3 Strategy",
-                    position = {0, 0.1, 0.3},
+                    position = { 0, 0.1, 0.3 },
                     width = 1600,
                     height = 150,
-                    color = {0.7, 0.7, 1},
+                    color = { 0.7, 0.7, 1 },
                     font_size = 75,
                     tooltip = "Draw 3 Strategy Event Cards and 0 Character Event Cards."
                 }
@@ -3795,19 +3807,20 @@ function ProcessNextStep()
             {
                 click_function = "Nothing",
                 function_owner = self,
-                label = "The Breaking of the Fellowship (Turn 1 Only)\nThe Shadow players draw three Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 6 total from each deck.",
-                position = {0, 0.1, 1},
+                label =
+                "The Breaking of the Fellowship (Turn 1 Only)\nThe Shadow players draw three Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 6 total from each deck.",
+                position = { 0, 0.1, 1 },
                 width = 0,
                 height = 0,
                 font_size = 50,
-                font_color = {1, 1, 0}
+                font_color = { 1, 1, 0 }
             }
         )
         NextStep = "Phase2"
         function DrawC3S0()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Yellow"}
+                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Yellow" }
             )
             CharacterCardCount = 3
             Step = ""
@@ -3816,7 +3829,7 @@ function ProcessNextStep()
         function DrawC2S1()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Yellow"}
+                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Yellow" }
             )
             DrawFromDeck(
                 {
@@ -3844,7 +3857,7 @@ function ProcessNextStep()
                 }
             )
             DrawFromDeck(
-                {deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Yellow"}
+                { deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Yellow" }
             )
             CharacterCardCount = 1
             StrategyCardCount = 2
@@ -3854,7 +3867,7 @@ function ProcessNextStep()
         function DrawC0S3()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Yellow"}
+                { deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Yellow" }
             )
             StrategyCardCount = 3
             Step = ""
@@ -3869,11 +3882,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples: Gondor (Blue) Player\nChoose which type of Event Card to draw:",
-                position = {0, 0.1, -1.2},
+                position = { 0, 0.1, -1.2 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {0.5, 0.5, 1}
+                font_color = { 0.5, 0.5, 1 }
             }
         )
         self.createButton(
@@ -3881,12 +3894,12 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "The Free Peoples\nGondor (Blue) Player\nis deciding which type\nof event card to draw...",
-                position = {0, -0.1, 0},
-                rotation = {180, 180, 0},
+                position = { 0, -0.1, 0 },
+                rotation = { 180, 180, 0 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {0.5, 0.5, 1}
+                font_color = { 0.5, 0.5, 1 }
             }
         )
         self.createButton(
@@ -3894,13 +3907,13 @@ function ProcessNextStep()
                 click_function = "DrawCharacter",
                 function_owner = self,
                 label = "Draw\nCharacter\nEvent\nCard",
-                position = {-0.75, 0.1, 0},
-                rotation = {0, 0, 0},
+                position = { -0.75, 0.1, 0 },
+                rotation = { 0, 0, 0 },
                 width = 500,
                 height = 900,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -3908,13 +3921,13 @@ function ProcessNextStep()
                 click_function = "DrawStrategy",
                 function_owner = self,
                 label = "Draw\nStrategy\nEvent\nCard",
-                position = {0.75, 0.1, 0},
-                rotation = {0, 0, 0},
+                position = { 0.75, 0.1, 0 },
+                rotation = { 0, 0, 0 },
                 width = 500,
                 height = 900,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         function DrawCharacter()
@@ -3956,11 +3969,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples: Rohan (Green) Player\nChoose which type of Event Card to draw:",
-                position = {0, 0.1, -1.2},
+                position = { 0, 0.1, -1.2 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {0, 1, 0}
+                font_color = { 0, 1, 0 }
             }
         )
         self.createButton(
@@ -3968,12 +3981,12 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "The Free Peoples\nRohan (Green) Player\nis deciding which type\nof event card to draw...",
-                position = {0, -0.1, 0},
-                rotation = {180, 180, 0},
+                position = { 0, -0.1, 0 },
+                rotation = { 180, 180, 0 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {0, 1, 0}
+                font_color = { 0, 1, 0 }
             }
         )
         self.createButton(
@@ -3981,13 +3994,13 @@ function ProcessNextStep()
                 click_function = "DrawCharacter",
                 function_owner = self,
                 label = "Draw\nCharacter\nEvent\nCard",
-                position = {-0.75, 0.1, 0},
-                rotation = {0, 0, 0},
+                position = { -0.75, 0.1, 0 },
+                rotation = { 0, 0, 0 },
                 width = 500,
                 height = 900,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -3995,19 +4008,19 @@ function ProcessNextStep()
                 click_function = "DrawStrategy",
                 function_owner = self,
                 label = "Draw\nStrategy\nEvent\nCard",
-                position = {0.75, 0.1, 0},
-                rotation = {0, 0, 0},
+                position = { 0.75, 0.1, 0 },
+                rotation = { 0, 0, 0 },
                 width = 500,
                 height = 900,
-                color = {0.7, 0.7, 1},
+                color = { 0.7, 0.7, 1 },
                 font_size = 75,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         function DrawCharacter()
             self.clearButtons()
             DrawFromDeck(
-                {deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 1, player = "Green"}
+                { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 1, player = "Green" }
             )
             NextStep = "Phase1_TheWitchKingDrawMenu"
             Step = ""
@@ -4037,11 +4050,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Shadow: The Witch-king (Red) Player\nChoose which type of Event Card to draw:",
-                position = {0, 0.1, -1.2},
+                position = { 0, 0.1, -1.2 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 0, 0}
+                font_color = { 1, 0, 0 }
             }
         )
         self.createButton(
@@ -4049,12 +4062,12 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Shadow\nThe Witch-king (Red) Player\nis deciding which type\nof event card to draw...",
-                position = {0, -0.1, 0},
-                rotation = {180, 180, 0},
+                position = { 0, -0.1, 0 },
+                rotation = { 180, 180, 0 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {1, 0, 0}
+                font_color = { 1, 0, 0 }
             }
         )
         self.createButton(
@@ -4062,13 +4075,13 @@ function ProcessNextStep()
                 click_function = "DrawCharacter",
                 function_owner = self,
                 label = "Draw\nCharacter\nEvent\nCard",
-                position = {-0.75, 0.1, 0},
-                rotation = {0, 0, 0},
+                position = { -0.75, 0.1, 0 },
+                rotation = { 0, 0, 0 },
                 width = 500,
                 height = 900,
-                color = {1, 0.5, 0.5},
+                color = { 1, 0.5, 0.5 },
                 font_size = 75,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -4076,13 +4089,13 @@ function ProcessNextStep()
                 click_function = "DrawStrategy",
                 function_owner = self,
                 label = "Draw\nStrategy\nEvent\nCard",
-                position = {0.75, 0.1, 0},
-                rotation = {0, 0, 0},
+                position = { 0.75, 0.1, 0 },
+                rotation = { 0, 0, 0 },
                 width = 500,
                 height = 900,
-                color = {1, 0.5, 0.5},
+                color = { 1, 0.5, 0.5 },
                 font_size = 75,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         function DrawCharacter()
@@ -4124,11 +4137,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Shadow: Saruman (Yellow) Player\nChoose which type of Event Card to draw:",
-                position = {0, 0.1, -1.2},
+                position = { 0, 0.1, -1.2 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 0}
+                font_color = { 1, 1, 0 }
             }
         )
         self.createButton(
@@ -4136,12 +4149,12 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Shadow\nSaruman (Yellow) Player\nis deciding which type\nof event card to draw...",
-                position = {0, -0.1, 0},
-                rotation = {180, 180, 0},
+                position = { 0, -0.1, 0 },
+                rotation = { 180, 180, 0 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {1, 1, 0}
+                font_color = { 1, 1, 0 }
             }
         )
         self.createButton(
@@ -4149,13 +4162,13 @@ function ProcessNextStep()
                 click_function = "DrawCharacter",
                 function_owner = self,
                 label = "Draw\nCharacter\nEvent\nCard",
-                position = {-0.75, 0.1, 0},
-                rotation = {0, 0, 0},
+                position = { -0.75, 0.1, 0 },
+                rotation = { 0, 0, 0 },
                 width = 500,
                 height = 900,
-                color = {1, 0.5, 0.5},
+                color = { 1, 0.5, 0.5 },
                 font_size = 75,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -4163,13 +4176,13 @@ function ProcessNextStep()
                 click_function = "DrawStrategy",
                 function_owner = self,
                 label = "Draw\nStrategy\nEvent\nCard",
-                position = {0.75, 0.1, 0},
-                rotation = {0, 0, 0},
+                position = { 0.75, 0.1, 0 },
+                rotation = { 0, 0, 0 },
                 width = 500,
                 height = 900,
-                color = {1, 0.5, 0.5},
+                color = { 1, 0.5, 0.5 },
                 font_size = 75,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         function DrawCharacter()
@@ -4214,18 +4227,18 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Phase 2) Fellowship Phase",
-                position = {0, 0.1, -1.4},
+                position = { 0, 0.1, -1.4 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         local Phase2Text =
-            "Free Peoples may now:\n\nDeclare the position of the Fellowship.\nChange the Guide of the Fellowship."
+        "Free Peoples may now:\n\nDeclare the position of the Fellowship.\nChange the Guide of the Fellowship."
         if BotF then
             Phase2Text =
-                "Free Peoples may now:\n\nDeclare the position of the Fellowship.\n\n(The Fellowship is Broken, Gollum is the Guide)."
+            "Free Peoples may now:\n\nDeclare the position of the Fellowship.\n\n(The Fellowship is Broken, Gollum is the Guide)."
         elseif Turn == 1 and LoME and not BotF then
             Phase2Text =
                 Phase2Text ..
@@ -4237,11 +4250,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = Phase2Text,
-                position = {0, 0.1, -0.1},
+                position = { 0, 0.1, -0.1 },
                 width = 0,
                 height = 0,
                 font_size = 75,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -4249,10 +4262,10 @@ function ProcessNextStep()
                 click_function = "Continue",
                 function_owner = self,
                 label = "Continue",
-                position = {0, 0.1, 1.2},
+                position = { 0, 0.1, 1.2 },
                 width = 1600,
                 height = 200,
-                color = {1, 1, 1.2},
+                color = { 1, 1, 1.2 },
                 font_size = 100,
                 tooltip = "Click Continue when Phase 2 steps are complete."
             }
@@ -4269,30 +4282,30 @@ function ProcessNextStep()
                         "Shadow Tokens from Lords of Middle-Earth are not used in the Breaking of the Fellowship scenario."
                     )
                     Step = ""
-                else --look for seperated companions...
+                else                    --look for seperated companions...
                     FellowshipCount = 8 --start with 8 in the fellowship.
                     local TokenCount = 0
-                    if not InFellowship({Name = "Meriadoc"}) then
+                    if not InFellowship({ Name = "Meriadoc" }) then
                         TokenCount = TokenCount + 1
                         FellowshipCount = FellowshipCount - 1
                     end
 
-                    if not InFellowship({Name = "Peregrin"}) then
+                    if not InFellowship({ Name = "Peregrin" }) then
                         TokenCount = TokenCount + 1
                         FellowshipCount = FellowshipCount - 1
                     end
 
-                    if not InFellowship({Name = "Boromir"}) then
+                    if not InFellowship({ Name = "Boromir" }) then
                         TokenCount = TokenCount + 1
                         FellowshipCount = FellowshipCount - 1
                     end
 
-                    if not InFellowship({Name = "Gimli"}) then
+                    if not InFellowship({ Name = "Gimli" }) then
                         TokenCount = TokenCount + 1
                         FellowshipCount = FellowshipCount - 1
                     end
 
-                    if not InFellowship({Name = "Legolas"}) then
+                    if not InFellowship({ Name = "Legolas" }) then
                         TokenCount = TokenCount + 1
                         FellowshipCount = FellowshipCount - 1
                     end
@@ -4316,11 +4329,11 @@ function ProcessNextStep()
                                 click_function = "Nothing",
                                 function_owner = self,
                                 label = "Shadow Player: Choose 1 Shadow Token:",
-                                position = {0, 0.1, -1.3},
+                                position = { 0, 0.1, -1.3 },
                                 width = 0,
                                 height = 0,
                                 font_size = 100,
-                                font_color = {1, 1, 1}
+                                font_color = { 1, 1, 1 }
                             }
                         )
                         self.createButton(
@@ -4328,12 +4341,12 @@ function ProcessNextStep()
                                 click_function = "Nothing",
                                 function_owner = self,
                                 label = "Shadow is choosing\na Shadow Token...",
-                                position = {0, -0.1, 0},
-                                rotation = {180, 180, 0},
+                                position = { 0, -0.1, 0 },
+                                rotation = { 180, 180, 0 },
                                 width = 0,
                                 height = 0,
                                 font_size = 150,
-                                font_color = {1, 0.5, 0.5}
+                                font_color = { 1, 0.5, 0.5 }
                             }
                         )
                         self.createButton(
@@ -4341,12 +4354,12 @@ function ProcessNextStep()
                                 click_function = "ChooseShadowToken1",
                                 function_owner = self,
                                 label = "Move Nazgul and Minions (Shadow Token)",
-                                position = {0, 0.1, -0.3},
+                                position = { 0, 0.1, -0.3 },
                                 width = 1500,
                                 height = 250,
                                 font_size = 75,
-                                color = {1, 0, 0},
-                                font_color = {1, 1, 0},
+                                color = { 1, 0, 0 },
+                                font_color = { 1, 1, 0 },
                                 tooltip = "Choose the Shadow Token that can Move Nazgul and Minions."
                             }
                         )
@@ -4355,25 +4368,26 @@ function ProcessNextStep()
                                 click_function = "ChooseShadowToken2",
                                 function_owner = self,
                                 label = "Advance a Shadow Nation on the\nPolitical Track (Shadow Token)",
-                                position = {0, 0.1, 0.3},
+                                position = { 0, 0.1, 0.3 },
                                 width = 1500,
                                 height = 250,
                                 font_size = 75,
-                                color = {1, 0, 0},
-                                font_color = {1, 1, 0},
-                                tooltip = "Choose the Shadow Token that can Advance a Shadow Nation on the\nPolitical Track."
+                                color = { 1, 0, 0 },
+                                font_color = { 1, 1, 0 },
+                                tooltip =
+                                "Choose the Shadow Token that can Advance a Shadow Nation on the\nPolitical Track."
                             }
                         )
                         function ChooseShadowToken1()
                             self.clearButtons()
-                            getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({12.5, 1.02, -29}, false, true)
+                            getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
                             getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
                             Step = ""
                         end
 
                         function ChooseShadowToken2()
                             self.clearButtons()
-                            getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({12.5, 1.02, -29}, false, true)
+                            getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
                             getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
                             Step = ""
                         end
@@ -4381,8 +4395,8 @@ function ProcessNextStep()
                         printToAll(
                             "The Shadow receive both Shadow Tokens. (There were 2 or more Companions declared outside the Fellowship)."
                         )
-                        getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({12.5, 1.02, -29}, false, true)
-                        getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({12.5, 1.02, -31}, false, true)
+                        getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
+                        getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -31 }, false, true)
                         Step = ""
                     end
                 end
@@ -4402,11 +4416,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Phase 3) Hunt Allocation.",
-                position = {0, 0.1, -1.4},
+                position = { 0, 0.1, -1.4 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         FellowshipCount = #GetFellowshipCompanions()
@@ -4443,11 +4457,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = Phase3Text,
-                position = {0, 0.1, -0.1},
+                position = { 0, 0.1, -0.1 },
                 width = 0,
                 height = 0,
                 font_size = 75,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -4455,10 +4469,10 @@ function ProcessNextStep()
                 click_function = "Continue",
                 function_owner = self,
                 label = "Continue",
-                position = {0, 0.1, 1.2},
+                position = { 0, 0.1, 1.2 },
                 width = 1600,
                 height = 200,
-                color = {1, 1, 1.2},
+                color = { 1, 1, 1.2 },
                 font_size = 100,
                 tooltip = "Click Continue when Phase 3 steps are complete."
             }
@@ -4469,11 +4483,11 @@ function ProcessNextStep()
         if FreePeoplesHuntDiceCount > 0 then
             --allocate the first Shadow dice to the hunt box...
             local shadowDiceId = IDs.ShadowActionDice[1]
-            HuntBoxShadowDiceArray = {shadowDiceId}
+            HuntBoxShadowDiceArray = { shadowDiceId }
 
             local shadowDice = getObjectFromGUID(shadowDiceId)
             shadowDice.setPositionSmooth(Spots.ShadowHuntBoxDice[1], false, false)
-            shadowDice.setRotation({90, 0, 0})
+            shadowDice.setRotation({ 90, 0, 0 })
         end
 
         function Continue()
@@ -4492,11 +4506,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Phase 4) Action Roll.",
-                position = {0, 0.1, -1.4},
+                position = { 0, 0.1, -1.4 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -4504,10 +4518,10 @@ function ProcessNextStep()
                 click_function = "PerformPhase4",
                 function_owner = self,
                 label = "Perform Phase 4:\nRoll Action Dice.",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 400,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 100,
                 tooltip = "Click to roll all Action Dice in the Dice Boxes."
             }
@@ -4517,10 +4531,10 @@ function ProcessNextStep()
                 click_function = "Continue",
                 function_owner = self,
                 label = "Continue",
-                position = {0, 0.1, 1.2},
+                position = { 0, 0.1, 1.2 },
                 width = 1600,
                 height = 200,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 100
             }
         )
@@ -4530,7 +4544,7 @@ function ProcessNextStep()
             --auto advance to next step after 2 seconds...
             NextStep = "Phase5"
             Wait.time(
-                function()
+                function ()
                     Step = ""
                 end,
                 2
@@ -4553,11 +4567,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Phase 5) Action Resolution.",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -4565,10 +4579,10 @@ function ProcessNextStep()
                 click_function = "Continue",
                 function_owner = self,
                 label = "Continue",
-                position = {0, 0.1, 1.2},
+                position = { 0, 0.1, 1.2 },
                 width = 1600,
                 height = 200,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 100
             }
         )
@@ -4617,15 +4631,15 @@ function ProcessNextStep()
                 function_owner = self,
                 label = "Phase 6) Victory Check.\n\nFellowship Track: " ..
                     FellowshipTrack ..
-                        " of 12\nCorruption Track: " ..
-                            CorruptionTrack ..
-                                " of 12\n\nShadow Victory Points: " ..
-                                    ShadowVP .. " of 10\nFree Peoples Victory Points: " .. FreePeoplesVP .. " of 4",
-                position = {0, 0.1, 0},
+                    " of 12\nCorruption Track: " ..
+                    CorruptionTrack ..
+                    " of 12\n\nShadow Victory Points: " ..
+                    ShadowVP .. " of 10\nFree Peoples Victory Points: " .. FreePeoplesVP .. " of 4",
+                position = { 0, 0.1, 0 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -4633,22 +4647,22 @@ function ProcessNextStep()
                 click_function = "Continue",
                 function_owner = self,
                 label = "Continue",
-                position = {0, 0.1, 1.2},
+                position = { 0, 0.1, 1.2 },
                 width = 1600,
                 height = 200,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 100
             }
         )
         --check military victory...
         if ShadowVP >= 10 then
             --isengard...
-            broadcastToAll("Shadow Military Victory Detected!", {1, 1, 0})
-            Global.call("PlaySound", {ID = 5})
+            broadcastToAll("Shadow Military Victory Detected!", { 1, 1, 0 })
+            Global.call("PlaySound", { ID = 5 })
         elseif FreePeoplesVP >= 4 then
-            broadcastToAll("Free Peoples Military Victory Detected!", {1, 1, 0})
-            Global.call("PlaySound", {ID = 3})
-        --riders of rohan...
+            broadcastToAll("Free Peoples Military Victory Detected!", { 1, 1, 0 })
+            Global.call("PlaySound", { ID = 3 })
+            --riders of rohan...
         end
 
         function Continue()
@@ -4667,11 +4681,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Basic Scripts:",
-                position = {0, 0.1, -1.2},
+                position = { 0, 0.1, -1.2 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -4679,10 +4693,10 @@ function ProcessNextStep()
                 click_function = "BasicGatherActionDice",
                 function_owner = self,
                 label = "Gather Action Dice",
-                position = {0, 0.1, -0.9},
+                position = { 0, 0.1, -0.9 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
                 tooltip = "Gather Action Dice for all players and increment the round count by 1."
             }
@@ -4692,10 +4706,10 @@ function ProcessNextStep()
                 click_function = "BasicRollActionDice",
                 function_owner = self,
                 label = "Roll Action Dice",
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
                 tooltip = "Roll Action Dice."
             }
@@ -4706,12 +4720,12 @@ function ProcessNextStep()
                     click_function = "BasicGatherActionDice",
                     function_owner = self,
                     label = "Gather Action Dice",
-                    position = {5.45, 54.5, 1.72},
-                    rotation = {90, 270, 0},
-                    scale = {2, 0.5, 0.5},
+                    position = { 5.45, 54.5, 1.72 },
+                    rotation = { 90, 270, 0 },
+                    scale = { 2, 0.5, 0.5 },
                     width = 1000,
                     height = 100,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 100,
                     tooltip = "Gather Action Dice for all players and increment the round count by 1."
                 }
@@ -4721,12 +4735,12 @@ function ProcessNextStep()
                     click_function = "BasicRollActionDice",
                     function_owner = self,
                     label = "Roll Action Dice",
-                    position = {5.65, 54.5, 1.72},
-                    rotation = {90, 270, 0},
-                    scale = {2, 0.5, 0.5},
+                    position = { 5.65, 54.5, 1.72 },
+                    rotation = { 90, 270, 0 },
+                    scale = { 2, 0.5, 0.5 },
                     width = 1000,
                     height = 100,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 100,
                     tooltip = "Roll Action Dice for all players."
                 }
@@ -4738,11 +4752,11 @@ function ProcessNextStep()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Round: " .. Round,
-                position = {0, 0.1, 1},
+                position = { 0, 0.1, 1 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -4750,13 +4764,14 @@ function ProcessNextStep()
                 click_function = "IncRound",
                 function_owner = self,
                 label = "+",
-                position = {0.75, 0.1, 1},
-                color = {1, 1, 1},
+                position = { 0.75, 0.1, 1 },
+                color = { 1, 1, 1 },
                 width = 100,
                 height = 100,
                 font_size = 100,
-                font_color = {0, 0, 0},
-                tooltip = "Increment round count by 1.\n(Clicking Gather Action Dice automatically increments the round count)."
+                font_color = { 0, 0, 0 },
+                tooltip =
+                "Increment round count by 1.\n(Clicking Gather Action Dice automatically increments the round count)."
             }
         )
         self.createButton(
@@ -4764,12 +4779,12 @@ function ProcessNextStep()
                 click_function = "DecRound",
                 function_owner = self,
                 label = "-",
-                position = {-0.75, 0.1, 1},
-                color = {1, 1, 1},
+                position = { -0.75, 0.1, 1 },
+                color = { 1, 1, 1 },
                 width = 100,
                 height = 100,
                 font_size = 100,
-                font_color = {0, 0, 0},
+                font_color = { 0, 0, 0 },
                 tooltip = "Decrement round count by 1."
             }
         )
@@ -4780,18 +4795,18 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Gathering Action Dice...",
-                    position = {0, 0.1, -0.5},
+                    position = { 0, 0.1, -0.5 },
                     width = 0,
                     height = 0,
                     font_size = 100,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             Round = Round + 1
             NextStep = "BasicMenu"
             startLuaCoroutine(self, "GatherActionDiceCoroutine")
             Wait.time(
-                function()
+                function ()
                     Step = ""
                 end,
                 2
@@ -4805,17 +4820,17 @@ function ProcessNextStep()
                     click_function = "Nothing",
                     function_owner = self,
                     label = "Rolling Action Dice...",
-                    position = {0, 0.1, -0.5},
+                    position = { 0, 0.1, -0.5 },
                     width = 0,
                     height = 0,
                     font_size = 100,
-                    font_color = {1, 1, 1}
+                    font_color = { 1, 1, 1 }
                 }
             )
             NextStep = "BasicMenu"
             startLuaCoroutine(self, "RollActionDiceCoroutine")
             Wait.time(
-                function()
+                function ()
                     Step = ""
                 end,
                 2
@@ -4854,13 +4869,13 @@ function CreateBeginMenu()
             click_function = "Nothing",
             function_owner = self,
             label = "Blue Seat\nFree Peoples Player 1 (Gondor)",
-            position = {-7.6, 79, 1.7},
-            rotation = {90, 90, 0},
-            scale = {4, 1, 1},
+            position = { -7.6, 79, 1.7 },
+            rotation = { 90, 90, 0 },
+            scale = { 4, 1, 1 },
             width = 0,
             height = 0,
             font_size = 150,
-            font_color = {0.4, 0.4, 1}
+            font_color = { 0.4, 0.4, 1 }
         }
     )
     self.createButton(
@@ -4868,13 +4883,13 @@ function CreateBeginMenu()
             click_function = "Nothing",
             function_owner = self,
             label = "Red Seat\nShadow Player 1 (Witch-King)",
-            position = {7.6, 28, 1.7},
-            rotation = {90, 270, 0},
-            scale = {4, 1, 1},
+            position = { 7.6, 28, 1.7 },
+            rotation = { 90, 270, 0 },
+            scale = { 4, 1, 1 },
             width = 0,
             height = 0,
             font_size = 150,
-            font_color = {1, 0, 0}
+            font_color = { 1, 0, 0 }
         }
     )
     self.createButton(
@@ -4882,13 +4897,13 @@ function CreateBeginMenu()
             click_function = "Nothing",
             function_owner = self,
             label = "Yellow Seat\nShadow Player 2 (Saruman)",
-            position = {7.6, 79, 1.7},
-            rotation = {90, 270, 0},
-            scale = {4, 1, 1},
+            position = { 7.6, 79, 1.7 },
+            rotation = { 90, 270, 0 },
+            scale = { 4, 1, 1 },
             width = 0,
             height = 0,
             font_size = 150,
-            font_color = {1, 1, 0}
+            font_color = { 1, 1, 0 }
         }
     )
     self.createButton(
@@ -4896,13 +4911,13 @@ function CreateBeginMenu()
             click_function = "Nothing",
             function_owner = self,
             label = "Green Seat\nFree Peoples Player 2 (Rohan)",
-            position = {-7.6, 28, 1.7},
-            rotation = {90, 90, 0},
-            scale = {4, 1, 1},
+            position = { -7.6, 28, 1.7 },
+            rotation = { 90, 90, 0 },
+            scale = { 4, 1, 1 },
             width = 0,
             height = 0,
             font_size = 150,
-            font_color = {0, 1, 0}
+            font_color = { 0, 1, 0 }
         }
     )
 
@@ -4912,11 +4927,11 @@ function CreateBeginMenu()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Shadow (Player 1): " .. Player.Red.steam_name,
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 0.4, 0.4}
+                font_color = { 1, 0.4, 0.4 }
             }
         )
     else
@@ -4925,11 +4940,11 @@ function CreateBeginMenu()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Shadow (Player 1): Choose red seat",
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 0.4, 0.4}
+                font_color = { 1, 0.4, 0.4 }
             }
         )
     end
@@ -4940,11 +4955,11 @@ function CreateBeginMenu()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples (Player 2): " .. Player.Blue.steam_name,
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {0.4, 0.4, 1}
+                font_color = { 0.4, 0.4, 1 }
             }
         )
     else
@@ -4953,11 +4968,11 @@ function CreateBeginMenu()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples (Player 2): Choose blue seat",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {0.4, 0.4, 1}
+                font_color = { 0.4, 0.4, 1 }
             }
         )
     end
@@ -4968,11 +4983,11 @@ function CreateBeginMenu()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Shadow (Player 3): " .. Player.Yellow.steam_name,
-                position = {0, 0.1, -0.4},
+                position = { 0, 0.1, -0.4 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {1, 1, 0.4}
+                font_color = { 1, 1, 0.4 }
             }
         )
     end
@@ -4983,11 +4998,11 @@ function CreateBeginMenu()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Free Peoples (Player 4): " .. Player.Green.steam_name,
-                position = {0, 0.1, 0.2},
+                position = { 0, 0.1, 0.2 },
                 width = 0,
                 height = 0,
                 font_size = 100,
-                font_color = {0.4, 1, 0.4}
+                font_color = { 0.4, 1, 0.4 }
             }
         )
     end
@@ -4997,11 +5012,11 @@ function CreateBeginMenu()
             click_function = "ClickBegin",
             function_owner = self,
             label = "Begin the Journey",
-            position = {0, 0.1, 0.75},
+            position = { 0, 0.1, 0.75 },
             width = 1500,
             height = 300,
             font_size = 175,
-            color = {1, 1, 1},
+            color = { 1, 1, 1 },
             tooltip = "Start setting up the game with Scripted assistance."
         }
     )
@@ -5011,11 +5026,11 @@ function CreateBeginMenu()
             click_function = "ClickNoScripting",
             function_owner = self,
             label = "No Scripting Please",
-            position = {-0.8, 0.1, 1.4},
+            position = { -0.8, 0.1, 1.4 },
             width = 600,
             height = 100,
             font_size = 50,
-            color = {1, 1, 1},
+            color = { 1, 1, 1 },
             tooltip = "Turn off scripting."
         }
     )
@@ -5026,11 +5041,11 @@ function CreateBeginMenu()
                 click_function = "ToggleMute",
                 function_owner = self,
                 label = "Sound Effects: OFF",
-                position = {0.8, 0.1, 1.4},
+                position = { 0.8, 0.1, 1.4 },
                 width = 600,
                 height = 100,
                 font_size = 50,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 tooltip = "Click to toggle Sound Effects ON."
             }
         )
@@ -5040,11 +5055,11 @@ function CreateBeginMenu()
                 click_function = "ToggleMute",
                 function_owner = self,
                 label = "Sound Effects: ON",
-                position = {0.8, 0.1, 1.4},
+                position = { 0.8, 0.1, 1.4 },
                 width = 600,
                 height = 100,
                 font_size = 50,
-                color = {1, 1, 0},
+                color = { 1, 1, 0 },
                 tooltip = "Click to toggle Sound Effects OFF."
             }
         )
@@ -5053,7 +5068,7 @@ function CreateBeginMenu()
     function ClickBegin()
         self.clearButtons()
         --Music Violin
-        Global.call("PlaySound", {ID = 0})
+        Global.call("PlaySound", { ID = 0 })
         NextStep = "PlayersMenu"
         Step = ""
     end
@@ -5092,11 +5107,11 @@ function CreatePlayersMenu()
             click_function = "Nothing",
             function_owner = self,
             label = "How Many Players?",
-            position = {0, 0.1, -1.2},
+            position = { 0, 0.1, -1.2 },
             width = 0,
             height = 0,
             font_size = 150,
-            font_color = {1, 1, 1}
+            font_color = { 1, 1, 1 }
         }
     )
 
@@ -5106,10 +5121,10 @@ function CreatePlayersMenu()
                 click_function = "Choose1v1",
                 function_owner = self,
                 label = "2-Player (1 vs 1)",
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 0},
+                color = { 1, 1, 0 },
                 font_size = 75,
                 tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
             }
@@ -5119,12 +5134,13 @@ function CreatePlayersMenu()
                 click_function = "Choose1v2",
                 function_owner = self,
                 label = "3-Player (1 vs 2)",
-                position = {0, 0.1, -0.3},
+                position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
-                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
+                tooltip =
+                "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
             }
         )
         self.createButton(
@@ -5132,12 +5148,13 @@ function CreatePlayersMenu()
                 click_function = "Choose2v2",
                 function_owner = self,
                 label = "4-Player (2 vs 2)",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
-                tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
+                tooltip =
+                "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
             }
         )
         self.createButton(
@@ -5145,12 +5162,13 @@ function CreatePlayersMenu()
                 click_function = "Choose1v1Compact",
                 function_owner = self,
                 label = "2-Player (Compact Mode)",
-                position = {0, 0.1, 0.5},
+                position = { 0, 0.1, 0.5 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
-                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
+                tooltip =
+                "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
             }
         )
     elseif Versus == "1v2" then
@@ -5159,10 +5177,10 @@ function CreatePlayersMenu()
                 click_function = "Choose1v1",
                 function_owner = self,
                 label = "2-Player (1 vs 1)",
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
                 tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
             }
@@ -5172,12 +5190,13 @@ function CreatePlayersMenu()
                 click_function = "Choose1v2",
                 function_owner = self,
                 label = "3-Player (1 vs 2)",
-                position = {0, 0.1, -0.3},
+                position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 0},
+                color = { 1, 1, 0 },
                 font_size = 75,
-                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
+                tooltip =
+                "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
             }
         )
         self.createButton(
@@ -5185,12 +5204,13 @@ function CreatePlayersMenu()
                 click_function = "Choose2v2",
                 function_owner = self,
                 label = "4-Player (2 vs 2)",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
-                tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
+                tooltip =
+                "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
             }
         )
         self.createButton(
@@ -5198,12 +5218,13 @@ function CreatePlayersMenu()
                 click_function = "Choose1v1Compact",
                 function_owner = self,
                 label = "2-Player (Compact Mode)",
-                position = {0, 0.1, 0.5},
+                position = { 0, 0.1, 0.5 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
-                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
+                tooltip =
+                "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
             }
         )
     elseif Versus == "2v2" then
@@ -5212,10 +5233,10 @@ function CreatePlayersMenu()
                 click_function = "Choose1v1",
                 function_owner = self,
                 label = "2-Player (1 vs 1)",
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
                 tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
             }
@@ -5225,12 +5246,13 @@ function CreatePlayersMenu()
                 click_function = "Choose1v2",
                 function_owner = self,
                 label = "3-Player (1 vs 2)",
-                position = {0, 0.1, -0.3},
+                position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
-                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
+                tooltip =
+                "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
             }
         )
         self.createButton(
@@ -5238,12 +5260,13 @@ function CreatePlayersMenu()
                 click_function = "Choose2v2",
                 function_owner = self,
                 label = "4-Player (2 vs 2)",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 0},
+                color = { 1, 1, 0 },
                 font_size = 75,
-                tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
+                tooltip =
+                "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
             }
         )
         self.createButton(
@@ -5251,12 +5274,13 @@ function CreatePlayersMenu()
                 click_function = "Choose1v1Compact",
                 function_owner = self,
                 label = "2-Player (Compact Mode)",
-                position = {0, 0.1, 0.5},
+                position = { 0, 0.1, 0.5 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
-                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
+                tooltip =
+                "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
             }
         )
     elseif Versus == "1v1 Compact Mode" then
@@ -5265,10 +5289,10 @@ function CreatePlayersMenu()
                 click_function = "Choose1v1",
                 function_owner = self,
                 label = "2-Player (1 vs 1)",
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
                 tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
             }
@@ -5278,12 +5302,13 @@ function CreatePlayersMenu()
                 click_function = "Choose1v2",
                 function_owner = self,
                 label = "3-Player (1 vs 2)",
-                position = {0, 0.1, -0.3},
+                position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
-                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
+                tooltip =
+                "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
             }
         )
         self.createButton(
@@ -5291,12 +5316,13 @@ function CreatePlayersMenu()
                 click_function = "Choose2v2",
                 function_owner = self,
                 label = "4-Player (2 vs 2)",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 75,
-                tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
+                tooltip =
+                "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
             }
         )
         self.createButton(
@@ -5304,12 +5330,13 @@ function CreatePlayersMenu()
                 click_function = "Choose1v1Compact",
                 function_owner = self,
                 label = "2-Player (Compact Mode)",
-                position = {0, 0.1, 0.5},
+                position = { 0, 0.1, 0.5 },
                 width = 1600,
                 height = 150,
-                color = {1, 1, 0},
+                color = { 1, 1, 0 },
                 font_size = 75,
-                tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
+                tooltip =
+                "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
             }
         )
     end
@@ -5319,10 +5346,10 @@ function CreatePlayersMenu()
             click_function = "Continue",
             function_owner = self,
             label = "Continue (" .. Versus .. ")",
-            position = {0, 0.1, 1},
+            position = { 0, 0.1, 1 },
             width = 1600,
             height = 200,
-            color = {1, 1, 1},
+            color = { 1, 1, 1 },
             font_size = 100
         }
     )
@@ -5397,7 +5424,7 @@ function CreatePlayersMenu()
             getObjectFromGUID("c6a821").destruct()
             --remove Blue Label
             getObjectFromGUID("a3fdbb").destruct()
-        --remove Green Label
+            --remove Green Label
         end
 
         Step = ""
@@ -5411,11 +5438,11 @@ function CreateExpansionMenu()
             click_function = "Nothing",
             function_owner = self,
             label = "Expansion Content?",
-            position = {0, 0.1, -1.3},
+            position = { 0, 0.1, -1.3 },
             width = 0,
             height = 0,
             font_size = 150,
-            font_color = {1, 1, 1}
+            font_color = { 1, 1, 1 }
         }
     )
 
@@ -5425,10 +5452,10 @@ function CreateExpansionMenu()
                 click_function = "ToggleLoME",
                 function_owner = self,
                 label = "Included: Lords of Middle-Earth",
-                position = {0, 0.1, -0.9},
+                position = { 0, 0.1, -0.9 },
                 width = 1800,
                 height = 150,
-                color = {1, 1, 0},
+                color = { 1, 1, 0 },
                 font_size = 80,
                 tooltip = "Click to exclude."
             }
@@ -5439,10 +5466,10 @@ function CreateExpansionMenu()
                 click_function = "ToggleLoME",
                 function_owner = self,
                 label = "Excluded: Lords of Middle-Earth",
-                position = {0, 0.1, -0.9},
+                position = { 0, 0.1, -0.9 },
                 width = 1800,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 80,
                 tooltip = "Click to include."
             }
@@ -5455,10 +5482,10 @@ function CreateExpansionMenu()
                 click_function = "ToggleWoME",
                 function_owner = self,
                 label = "Included: Warriors of Middle-Earth",
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 1800,
                 height = 150,
-                color = {1, 1, 0},
+                color = { 1, 1, 0 },
                 font_size = 80,
                 tooltip = "Click to exclude."
             }
@@ -5469,10 +5496,10 @@ function CreateExpansionMenu()
                 click_function = "ToggleWoME",
                 function_owner = self,
                 label = "Excluded: Warriors of Middle-Earth",
-                position = {0, 0.1, -0.6},
+                position = { 0, 0.1, -0.6 },
                 width = 1800,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 80,
                 tooltip = "Click to include."
             }
@@ -5485,10 +5512,10 @@ function CreateExpansionMenu()
                 click_function = "ToggleKoME",
                 function_owner = self,
                 label = "Included: Kings of Middle-Earth",
-                position = {0, 0.1, -0.3},
+                position = { 0, 0.1, -0.3 },
                 width = 1800,
                 height = 150,
-                color = {1, 1, 0},
+                color = { 1, 1, 0 },
                 font_size = 80,
                 tooltip = "Click to exclude."
             }
@@ -5499,10 +5526,10 @@ function CreateExpansionMenu()
                 click_function = "ToggleKoME",
                 function_owner = self,
                 label = "Excluded: Kings of Middle-Earth",
-                position = {0, 0.1, -0.3},
+                position = { 0, 0.1, -0.3 },
                 width = 1800,
                 height = 150,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 80,
                 tooltip = "Click to include."
             }
@@ -5515,10 +5542,10 @@ function CreateExpansionMenu()
                 click_function = "ToggleBotF",
                 function_owner = self,
                 label = "Included: The Breaking of the Fellowship",
-                position = {0, 0.1, 0.05},
+                position = { 0, 0.1, 0.05 },
                 width = 1400,
                 height = 100,
-                color = {1, 1, 0},
+                color = { 1, 1, 0 },
                 font_size = 70,
                 tooltip = "Click to exclude: The Breaking of the Fellowship (a mini-expansion)."
             }
@@ -5529,10 +5556,10 @@ function CreateExpansionMenu()
                 click_function = "ToggleBotF",
                 function_owner = self,
                 label = "Excluded: The Breaking of the Fellowship",
-                position = {0, 0.1, 0.05},
+                position = { 0, 0.1, 0.05 },
                 width = 1400,
                 height = 100,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 70,
                 tooltip = "Click to include: The Breaking of the Fellowship (a mini-expansion)."
             }
@@ -5545,10 +5572,10 @@ function CreateExpansionMenu()
                 click_function = "ToggleHftR",
                 function_owner = self,
                 label = "Included: The Hunt for the Ring",
-                position = {0, 0.1, 0.35},
+                position = { 0, 0.1, 0.35 },
                 width = 1400,
                 height = 100,
-                color = {1, 1, 0},
+                color = { 1, 1, 0 },
                 font_size = 70,
                 tooltip = "Click to exclude.\nTThis is a mini-expansion from The Hunt for the Ring."
             }
@@ -5559,10 +5586,10 @@ function CreateExpansionMenu()
                 click_function = "ToggleHftR",
                 function_owner = self,
                 label = "Excluded: The Hunt for the Ring",
-                position = {0, 0.1, 0.35},
+                position = { 0, 0.1, 0.35 },
                 width = 1400,
                 height = 100,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 70,
                 tooltip = "Click to include.\nThis is a mini-expansion from The Hunt for the Ring."
             }
@@ -5575,10 +5602,10 @@ function CreateExpansionMenu()
                 click_function = "ToggleTFoE",
                 function_owner = self,
                 label = "Included: The Fate of Erebor",
-                position = {0, 0.1, 0.65},
+                position = { 0, 0.1, 0.65 },
                 width = 1400,
                 height = 100,
-                color = {1, 1, 0},
+                color = { 1, 1, 0 },
                 font_size = 70,
                 tooltip = "Click to exclude.\nThe Fate of Erebor is a mini-expansion from the Battle of the Five Armies."
             }
@@ -5589,10 +5616,10 @@ function CreateExpansionMenu()
                 click_function = "ToggleTFoE",
                 function_owner = self,
                 label = "Excluded: The Fate of Erebor",
-                position = {0, 0.1, 0.65},
+                position = { 0, 0.1, 0.65 },
                 width = 1400,
                 height = 100,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 70,
                 tooltip = "Click to include.\nThe Fate of Erebor is a mini-expansion from the Battle of the Five Armies."
             }
@@ -5604,10 +5631,10 @@ function CreateExpansionMenu()
             click_function = "Continue",
             function_owner = self,
             label = "Continue",
-            position = {0, 0.1, 1.3},
+            position = { 0, 0.1, 1.3 },
             width = 1800,
             height = 200,
-            color = {1, 1, 1},
+            color = { 1, 1, 1 },
             font_size = 100
         }
     )
@@ -5666,11 +5693,11 @@ function CreateHuntForTheRingMenu()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Hunt for the Ring",
-                position = {0, 0.1, -1.3},
+                position = { 0, 0.1, -1.3 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         if HftRSPT1 then
@@ -5680,11 +5707,11 @@ function CreateHuntForTheRingMenu()
                     click_function = "ToggleHftRSPT1",
                     function_owner = self,
                     label = "Included: Shadow Token (Advance political track)",
-                    position = {0, 0.1, -0.8},
+                    position = { 0, 0.1, -0.8 },
                     width = 1800,
                     height = 150,
-                    color = {1, 0.4, 0.4},
-                    font_color = {1, 1, 0},
+                    color = { 1, 0.4, 0.4 },
+                    font_color = { 1, 1, 0 },
                     font_size = 70,
                     tooltip = "Click to exclude this token."
                 }
@@ -5695,10 +5722,10 @@ function CreateHuntForTheRingMenu()
                     click_function = "ToggleHftRSPT1",
                     function_owner = self,
                     label = "Excluded: Shadow Token (Advance political track)",
-                    position = {0, 0.1, -0.8},
+                    position = { 0, 0.1, -0.8 },
                     width = 1800,
                     height = 150,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 70,
                     tooltip = "Click to include this token."
                 }
@@ -5712,11 +5739,11 @@ function CreateHuntForTheRingMenu()
                     click_function = "ToggleHftRSPT2",
                     function_owner = self,
                     label = "Included: Shadow Token (Move Nazgul and minions)",
-                    position = {0, 0.1, -0.5},
+                    position = { 0, 0.1, -0.5 },
                     width = 1800,
                     height = 150,
-                    color = {1, 0.4, 0.4},
-                    font_color = {1, 1, 0},
+                    color = { 1, 0.4, 0.4 },
+                    font_color = { 1, 1, 0 },
                     font_size = 70,
                     tooltip = "Click to exclude this token."
                 }
@@ -5727,10 +5754,10 @@ function CreateHuntForTheRingMenu()
                     click_function = "ToggleHftRSPT2",
                     function_owner = self,
                     label = "Excluded: Shadow Token (Move Nazgul and minions)",
-                    position = {0, 0.1, -0.5},
+                    position = { 0, 0.1, -0.5 },
                     width = 1800,
                     height = 150,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 70,
                     tooltip = "Click to include this token."
                 }
@@ -5744,11 +5771,11 @@ function CreateHuntForTheRingMenu()
                     click_function = "ToggleHftRFPT1",
                     function_owner = self,
                     label = "Included: Free Peoples Token (Advance political track)",
-                    position = {0, 0.1, 0},
+                    position = { 0, 0.1, 0 },
                     width = 1800,
                     height = 150,
-                    color = {0.4, 0.4, 1},
-                    font_color = {1, 1, 0},
+                    color = { 0.4, 0.4, 1 },
+                    font_color = { 1, 1, 0 },
                     font_size = 70,
                     tooltip = "Click to exclude this token."
                 }
@@ -5759,10 +5786,10 @@ function CreateHuntForTheRingMenu()
                     click_function = "ToggleHftRFPT1",
                     function_owner = self,
                     label = "Excluded: Free Peoples Token (Advance political track)",
-                    position = {0, 0.1, 0},
+                    position = { 0, 0.1, 0 },
                     width = 1800,
                     height = 150,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 70,
                     tooltip = "Click to include this token."
                 }
@@ -5776,11 +5803,11 @@ function CreateHuntForTheRingMenu()
                     click_function = "ToggleHftRFPT2",
                     function_owner = self,
                     label = "Included: Free Peoples Token (Draw event card)",
-                    position = {0, 0.1, 0.3},
+                    position = { 0, 0.1, 0.3 },
                     width = 1800,
                     height = 150,
-                    color = {0.4, 0.4, 1},
-                    font_color = {1, 1, 0},
+                    color = { 0.4, 0.4, 1 },
+                    font_color = { 1, 1, 0 },
                     font_size = 70,
                     tooltip = "Click to exclude this token."
                 }
@@ -5791,10 +5818,10 @@ function CreateHuntForTheRingMenu()
                     click_function = "ToggleHftRFPT2",
                     function_owner = self,
                     label = "Excluded: Free Peoples Token (Draw event card)",
-                    position = {0, 0.1, 0.3},
+                    position = { 0, 0.1, 0.3 },
                     width = 1800,
                     height = 150,
-                    color = {1, 1, 1},
+                    color = { 1, 1, 1 },
                     font_size = 70,
                     tooltip = "Click to include this token."
                 }
@@ -5806,11 +5833,11 @@ function CreateHuntForTheRingMenu()
                 click_function = "Nothing",
                 function_owner = self,
                 label = "Shadow has " .. SPTCount .. " tokens. Free Peoples has " .. FPTCount .. " tokens.",
-                position = {0, 0.1, 1},
+                position = { 0, 0.1, 1 },
                 width = 0,
                 height = 0,
                 font_size = 70,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         self.createButton(
@@ -5818,10 +5845,10 @@ function CreateHuntForTheRingMenu()
                 click_function = "Continue",
                 function_owner = self,
                 label = "Continue",
-                position = {0, 0.1, 1.3},
+                position = { 0, 0.1, 1.3 },
                 width = 1800,
                 height = 200,
-                color = {1, 1, 1},
+                color = { 1, 1, 1 },
                 font_size = 100
             }
         )
@@ -5853,29 +5880,29 @@ function CreateHuntForTheRingMenu()
             self.clearButtons()
             printToAll("The Shadow received " .. SPTCount .. " Action Tokens from The Hunt for the Ring.")
             if HftRSPT1 then
-                getObjectFromGUID(IDs.HftR.ShadowToken1).setPositionSmooth({12.5, 1.02, -33}, false, true)
+                getObjectFromGUID(IDs.HftR.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -33 }, false, true)
             end
 
             if HftRSPT2 then
-                getObjectFromGUID(IDs.HftR.ShadowToken2).setPositionSmooth({12.5, 1.02, -35}, false, true)
+                getObjectFromGUID(IDs.HftR.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -35 }, false, true)
             end
 
             printToAll("The Free Peoples received " .. FPTCount .. " Action Tokens from The Hunt for the Ring.")
             if CompactMode then
                 if HftRFPT1 then
-                    getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({-13, 1.02, -33}, false, true)
+                    getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({ -13, 1.02, -33 }, false, true)
                 end
 
                 if HftRFPT2 then
-                    getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({-13, 1.02, -35}, false, true)
+                    getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({ -13, 1.02, -35 }, false, true)
                 end
             else
                 if HftRFPT1 then
-                    getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({-17, 1.02, 27.5}, false, true)
+                    getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({ -17, 1.02, 27.5 }, false, true)
                 end
 
                 if HftRFPT2 then
-                    getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({-19, 1.02, 27.5}, false, true)
+                    getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({ -19, 1.02, 27.5 }, false, true)
                 end
             end
 
@@ -5883,7 +5910,7 @@ function CreateHuntForTheRingMenu()
             Step = ""
         end
     else --proceed...
-        Global.call("RemoveObjectFromGame", {Description = "HftR;"})
+        Global.call("RemoveObjectFromGame", { Description = "HftR;" })
         NextStep = "TFoEMenu"
         Step = ""
     end
@@ -5891,188 +5918,190 @@ end
 
 function ValidateArmyStep()
     self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Army Setup Validation:",
-                position = {0, 0.1, -1.4},
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = {1, 1, 1}
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Please Wait\nChecking Army Setup...",
-                position = {0, 0.1, -0.5},
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = {1, 1, 1}
-            }
-        )
-        for I = 1, 99 do
-            coroutine.yield(0)
-        end
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Army Setup Validation:",
+            position = { 0, 0.1, -1.4 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Please Wait\nChecking Army Setup...",
+            position = { 0, 0.1, -0.5 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    for I = 1, 99 do
+        coroutine.yield(0)
+    end
 
-        local ErrorLog = ""
-        local Regions = Global.getTable("Regions")
+    local ErrorLog = ""
+    local Regions = Global.getTable("Regions")
 
-        for _, Obj in pairs(getAllObjects()) do
-            --object is an amry unit?
-            if
-                string.find(Obj.getDescription(), "Regular;") ~= nil or
-                    string.find(Obj.getDescription(), "Elite;") ~= nil or
-                    string.find(Obj.getDescription(), "Leader;") ~= nil
-             then
-                local RegionName = Global.call("GetGridRegion", {Position = Obj.getPosition()})
-                Obj.setGMNotes("Region:" .. RegionName .. ";")
+    for _, Obj in pairs(getAllObjects()) do
+        --object is an amry unit?
+        if
+            string.find(Obj.getDescription(), "Regular;") ~= nil or
+            string.find(Obj.getDescription(), "Elite;") ~= nil or
+            string.find(Obj.getDescription(), "Leader;") ~= nil
+        then
+            local RegionName = Global.call("GetGridRegion", { Position = Obj.getPosition() })
+            Obj.setGMNotes("Region:" .. RegionName .. ";")
 
-                --object has a region?
-                if Regions[RegionName] ~= nil then
-                    --correct nation?
-                    local Nation = Regions[RegionName].Nation
-                    if Nation == "Elves" then
-                        Nation = "Elf"
-                    end
+            --object has a region?
+            if Regions[RegionName] ~= nil then
+                --correct nation?
+                local Nation = Regions[RegionName].Nation
+                if Nation == "Elves" then
+                    Nation = "Elf"
+                end
 
-                    if Nation == "Dwarves" then
-                        Nation = "Dwarf"
-                    end
+                if Nation == "Dwarves" then
+                    Nation = "Dwarf"
+                end
 
-                    if RegionName == "Osgiliath" then
-                        Nation = "Gondor"
-                    end
+                if RegionName == "Osgiliath" then
+                    Nation = "Gondor"
+                end
 
-                    if RegionName == "North Ithilien" then
-                        Nation = "Sauron"
-                    end
+                if RegionName == "North Ithilien" then
+                    Nation = "Sauron"
+                end
 
-                    if RegionName == "South Ithilien" then
-                        Nation = "Southron/Easterling"
-                    end
+                if RegionName == "South Ithilien" then
+                    Nation = "Southron/Easterling"
+                end
 
-                    if RegionName == "West Harondor" then
-                        Nation = "Southron/Easterling"
-                    end
+                if RegionName == "West Harondor" then
+                    Nation = "Southron/Easterling"
+                end
 
-                    if RegionName == "Dagorlad" then
-                        Nation = "Southron/Easterling"
-                    end
+                if RegionName == "Dagorlad" then
+                    Nation = "Southron/Easterling"
+                end
 
-                    if Obj.getName() == Nation .. " Regular" then
-                        Regions[RegionName].Detected.R = Regions[RegionName].Detected.R + 1
-                    elseif Obj.getName() == Nation .. " Elite" then
-                        Regions[RegionName].Detected.E = Regions[RegionName].Detected.E + 1
-                    elseif Obj.getName() == Nation .. " Leader" then
-                        Regions[RegionName].Detected.L = Regions[RegionName].Detected.L + 1
-                    elseif Obj.getName() == "Nazgûl" then
-                        Regions[RegionName].Detected.L = Regions[RegionName].Detected.L + 1
-                    else --wrong unit faction...
-                        print(RegionName, ":'", Obj.getName(), "' ~= '", Nation, " Regular/Elite/Leader'")
-                        Regions[RegionName].Detected.X = Regions[RegionName].Detected.X + 1
-                    end
+                if Obj.getName() == Nation .. " Regular" then
+                    Regions[RegionName].Detected.R = Regions[RegionName].Detected.R + 1
+                elseif Obj.getName() == Nation .. " Elite" then
+                    Regions[RegionName].Detected.E = Regions[RegionName].Detected.E + 1
+                elseif Obj.getName() == Nation .. " Leader" then
+                    Regions[RegionName].Detected.L = Regions[RegionName].Detected.L + 1
+                elseif Obj.getName() == "Nazgûl" then
+                    Regions[RegionName].Detected.L = Regions[RegionName].Detected.L + 1
+                else     --wrong unit faction...
+                    print(RegionName, ":'", Obj.getName(), "' ~= '", Nation, " Regular/Elite/Leader'")
+                    Regions[RegionName].Detected.X = Regions[RegionName].Detected.X + 1
                 end
             end
         end
+    end
 
-        --go through each region...
-        for I, Region in pairs(Regions) do
-            --validate by region...
-            if Region.Detected.X > 0 then
-                ErrorLog = ErrorLog .. "\n" .. I .. " has " .. Region.Detected.X .. " incorrect Army Unit(s)."
-            end
-
-            if Region.Starting.R ~= Region.Detected.R then
-                ErrorLog =
-                    ErrorLog .. "\n" .. I .. " has " .. Region.Detected.R .. " of " .. Region.Starting.R .. " Regular(s)."
-            end
-
-            if Region.Starting.E ~= Region.Detected.E then
-                ErrorLog = ErrorLog .. "\n" .. I .. " has " .. Region.Detected.E .. " of " .. Region.Starting.E .. " Elite(s)."
-            end
-
-            if Region.Starting.L ~= Region.Detected.L then
-                ErrorLog = ErrorLog .. "\n" .. I .. " has " .. Region.Detected.L .. " of " .. Region.Starting.L .. " Leader(s)."
-            end
+    --go through each region...
+    for I, Region in pairs(Regions) do
+        --validate by region...
+        if Region.Detected.X > 0 then
+            ErrorLog = ErrorLog .. "\n" .. I .. " has " .. Region.Detected.X .. " incorrect Army Unit(s)."
         end
 
-        if ErrorLog == "" then
-            printToAll("Army Setup appears correct.", {0, 1, 0})
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Army Setup appears correct.",
-                    position = {0, 0.1, 0.5},
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = {1, 1, 1}
-                }
-            )
-            NextStep = "SetupCompleteMenu"
-            Step = ""
-        else
-            broadcastToAll("Problem detected with Army Setup!", {1, 1, 0})
-            printToAll(ErrorLog, {1, 1, 0})
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = ErrorLog,
-                    position = {0, 0.1, 0},
-                    width = 0,
-                    height = 0,
-                    font_size = 50,
-                    font_color = {1, 1, 1}
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Continue",
-                    function_owner = self,
-                    label = "Ignore (Continue)",
-                    position = {-1, 0.1, 1.4},
-                    width = 900,
-                    height = 200,
-                    color = {1, 1, 0},
-                    font_size = 100
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Validate",
-                    function_owner = self,
-                    label = "Validate Setup",
-                    position = {1, 0.1, 1.4},
-                    width = 900,
-                    height = 200,
-                    color = {1, 1, 1},
-                    font_size = 100
-                }
-            )
+        if Region.Starting.R ~= Region.Detected.R then
+            ErrorLog =
+                ErrorLog .. "\n" .. I .. " has " .. Region.Detected.R .. " of " .. Region.Starting.R .. " Regular(s)."
         end
 
-        function Validate()
-            NextStep = "ValidateArmies"
-            Step = ""
+        if Region.Starting.E ~= Region.Detected.E then
+            ErrorLog = ErrorLog ..
+            "\n" .. I .. " has " .. Region.Detected.E .. " of " .. Region.Starting.E .. " Elite(s)."
         end
 
-        function Continue()
-            self.clearButtons()
-            NextStep = "SetupCompleteMenu"
-            Step = ""
+        if Region.Starting.L ~= Region.Detected.L then
+            ErrorLog = ErrorLog ..
+            "\n" .. I .. " has " .. Region.Detected.L .. " of " .. Region.Starting.L .. " Leader(s)."
         end
+    end
+
+    if ErrorLog == "" then
+        printToAll("Army Setup appears correct.", { 0, 1, 0 })
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Army Setup appears correct.",
+                position = { 0, 0.1, 0.5 },
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        NextStep = "SetupCompleteMenu"
+        Step = ""
+    else
+        broadcastToAll("Problem detected with Army Setup!", { 1, 1, 0 })
+        printToAll(ErrorLog, { 1, 1, 0 })
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = ErrorLog,
+                position = { 0, 0.1, 0 },
+                width = 0,
+                height = 0,
+                font_size = 50,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Continue",
+                function_owner = self,
+                label = "Ignore (Continue)",
+                position = { -1, 0.1, 1.4 },
+                width = 900,
+                height = 200,
+                color = { 1, 1, 0 },
+                font_size = 100
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Validate",
+                function_owner = self,
+                label = "Validate Setup",
+                position = { 1, 0.1, 1.4 },
+                width = 900,
+                height = 200,
+                color = { 1, 1, 1 },
+                font_size = 100
+            }
+        )
+    end
+
+    function Validate()
+        NextStep = "ValidateArmies"
+        Step = ""
+    end
+
+    function Continue()
+        self.clearButtons()
+        NextStep = "SetupCompleteMenu"
+        Step = ""
+    end
 end
 
 function GatherActionDiceCoroutine()
     local FR = 180 --FPP Dice Y orientation.
-    local SR = 0 --SP Dice Y orientation
+    local SR = 0   --SP Dice Y orientation
     if CompactMode then
         FR = FR + 180
     end
@@ -6087,10 +6116,10 @@ function GatherActionDiceCoroutine()
         Physics.cast(
             {
                 origin = getObjectFromGUID(IDs.ShadowUsedDiceArea).getPosition(),
-                direction = {0, 1, 0},
+                direction = { 0, 1, 0 },
                 type = 3,
-                size = {9, 5, 9},
-                orientation = {0, 0, 0},
+                size = { 9, 5, 9 },
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -6100,19 +6129,19 @@ function GatherActionDiceCoroutine()
             --does the dice have a remove face and the witch-king is in play?
             if
                 string.find(Obj.hit_object.getRotationValue(), "Remove") ~= nil and
-                    InPlay({Name = "The Witch", Description = "Minion;"})
-             then
+                InPlay({ Name = "The Witch", Description = "Minion;" })
+            then
                 --then eliminate the die...
                 printToAll(
                     "Removing " ..
-                        Obj.hit_object.getName() ..
-                            " from the game. (The Witch-King is in play, and a [Remove](*) was rolled and chosen."
+                    Obj.hit_object.getName() ..
+                    " from the game. (The Witch-King is in play, and a [Remove](*) was rolled and chosen."
                 )
                 getObjectFromGUID(GraveBagId).putObject(Obj.hit_object)
             elseif
-                InPlay({Name = "King: The Black Captain", Description = "Minion;"}) and
-                    Obj.hit_object.getGUID() == IDs.GothmogDice
-             then
+                InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
+                Obj.hit_object.getGUID() == IDs.GothmogDice
+            then
                 getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.GothmogDice))
                 broadcastToAll(
                     "The Witch-King: The Black Captain has entered play.  Gothmog's die has been eliminated."
@@ -6121,7 +6150,7 @@ function GatherActionDiceCoroutine()
                 --stage the dice to the outer area...
                 DiceIndex = DiceIndex + 1
                 Obj.hit_object.setPositionSmooth(Spots.ShadowDiceOut[DiceIndex], false, true)
-                Obj.hit_object.setRotation({0, SR, 0})
+                Obj.hit_object.setRotation({ 0, SR, 0 })
             end
         end
     end
@@ -6131,11 +6160,11 @@ function GatherActionDiceCoroutine()
     for O, Obj in pairs(
         Physics.cast(
             {
-                origin = {-31.66, 1.02, -20.80},
-                direction = {0, 1, 0},
+                origin = { -31.66, 1.02, -20.80 },
+                direction = { 0, 1, 0 },
                 type = 3,
-                size = {9, 5, 7},
-                orientation = {0, 0, 0},
+                size = { 9, 5, 7 },
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -6143,24 +6172,24 @@ function GatherActionDiceCoroutine()
     ) do
         if
             DiceIndex < #Spots.ShadowDiceOut and string.find(Obj.hit_object.getDescription(), "Dice;") ~= nil and
-                string.find(Obj.hit_object.getDescription(), "Shadow;") ~= nil
-         then
+            string.find(Obj.hit_object.getDescription(), "Shadow;") ~= nil
+        then
             --does the dice have a remove face and the witch-king is in play?
             if
                 string.find(Obj.hit_object.getRotationValue(), "Remove") ~= nil and
-                    InPlay({Name = "The Witch", Description = "Minion;"})
-             then
+                InPlay({ Name = "The Witch", Description = "Minion;" })
+            then
                 --then eliminate the die...
                 printToAll(
                     "Removing " ..
-                        Obj.hit_object.getName() ..
-                            " from the game. (The Witch-King is in play, and a [Remove](*) was rolled and chosen."
+                    Obj.hit_object.getName() ..
+                    " from the game. (The Witch-King is in play, and a [Remove](*) was rolled and chosen."
                 )
                 getObjectFromGUID(GraveBagId).putObject(Obj.hit_object)
             elseif
-                InPlay({Name = "King: The Black Captain", Description = "Minion;"}) and
-                    Obj.hit_object.getGUID() == IDs.GothmogDice
-             then
+                InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
+                Obj.hit_object.getGUID() == IDs.GothmogDice
+            then
                 getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.GothmogDice))
                 broadcastToAll(
                     "The Witch-King: The Black Captain has entered play.  Gothmog's die has been eliminated."
@@ -6171,7 +6200,7 @@ function GatherActionDiceCoroutine()
             DiceIndex = DiceIndex + 1
             ShadowHuntDiceCount = ShadowHuntDiceCount + 1
             Obj.hit_object.setPositionSmooth(Spots.ShadowDiceOut[DiceIndex], false, true)
-            Obj.hit_object.setRotation({0, SR, 0})
+            Obj.hit_object.setRotation({ 0, SR, 0 })
         end
     end
 
@@ -6183,19 +6212,19 @@ function GatherActionDiceCoroutine()
                 if string.find(Obj.getDescription(), "Dice;") ~= nil then
                     if
                         DiceIndex < #Spots.ShadowDiceOut and
-                            (string.find(Obj.getDescription(), "Action;") ~= nil or
-                                string.find(Obj.getDescription(), "Faction;") ~= nil) and
-                            string.find(Obj.getDescription(), "Shadow;") ~= nil
-                     then
+                        (string.find(Obj.getDescription(), "Action;") ~= nil or
+                            string.find(Obj.getDescription(), "Faction;") ~= nil) and
+                        string.find(Obj.getDescription(), "Shadow;") ~= nil
+                    then
                         if
-                            InPlay({Name = "King: The Black Captain", Description = "Minion;"}) and
-                                Obj.getGUID() == IDs.GothmogDice
-                         then
+                            InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
+                            Obj.getGUID() == IDs.GothmogDice
+                        then
                             --do not gather gothmog when the black captain is in play...
                         else
                             DiceIndex = DiceIndex + 1
                             Obj.setPositionSmooth(Spots.ShadowDiceOut[DiceIndex], false, true)
-                            Obj.setRotation({0, SR, 0})
+                            Obj.setRotation({ 0, SR, 0 })
                         end
                     end
                 end
@@ -6209,11 +6238,11 @@ function GatherActionDiceCoroutine()
         for O, Obj in pairs(
             Physics.cast(
                 {
-                    origin = {0, 1, -26},
-                    direction = {0, 1, 0},
+                    origin = { 0, 1, -26 },
+                    direction = { 0, 1, 0 },
                     type = 3,
-                    size = {27, 3, 3},
-                    orientation = {0, 0, 0},
+                    size = { 27, 3, 3 },
+                    orientation = { 0, 0, 0 },
                     max_distance = 0,
                     debug = false
                 }
@@ -6222,19 +6251,19 @@ function GatherActionDiceCoroutine()
             if string.find(Obj.hit_object.getDescription(), "Dice;") ~= nil then
                 if
                     DiceIndex < #Spots.ShadowDiceOut and
-                        (string.find(Obj.hit_object.getDescription(), "Action;") ~= nil or
-                            string.find(Obj.hit_object.getDescription(), "Faction;") ~= nil) and
-                        string.find(Obj.hit_object.getDescription(), "Shadow;") ~= nil
-                 then
+                    (string.find(Obj.hit_object.getDescription(), "Action;") ~= nil or
+                        string.find(Obj.hit_object.getDescription(), "Faction;") ~= nil) and
+                    string.find(Obj.hit_object.getDescription(), "Shadow;") ~= nil
+                then
                     if
-                        InPlay({Name = "King: The Black Captain", Description = "Minion;"}) and
-                            Obj.hit_object.getGUID() == IDs.GothmogDice
-                     then
+                        InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
+                        Obj.hit_object.getGUID() == IDs.GothmogDice
+                    then
                         --do not gather gothmog when the black captain is in play...
                     else
                         DiceIndex = DiceIndex + 1
                         Obj.hit_object.setPositionSmooth(Spots.ShadowDiceOut[DiceIndex], false, true)
-                        Obj.hit_object.setRotation({0, SR, 0})
+                        Obj.hit_object.setRotation({ 0, SR, 0 })
                     end
                 end
             end
@@ -6248,10 +6277,10 @@ function GatherActionDiceCoroutine()
         Physics.cast(
             {
                 origin = getObjectFromGUID(IDs.ShadowDiceBox).getPosition(),
-                direction = {0, 1, 0},
+                direction = { 0, 1, 0 },
                 type = 3,
-                size = {10, 5, 13},
-                orientation = {0, 0, 0},
+                size = { 10, 5, 13 },
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = true
             }
@@ -6259,14 +6288,14 @@ function GatherActionDiceCoroutine()
     ) do
         if DiceIndex < #Spots.ShadowDiceOut and string.find(Obj.hit_object.getDescription(), "Dice;") ~= nil then
             if
-                InPlay({Name = "King: The Black Captain", Description = "Minion;"}) and
-                    Obj.hit_object.getGUID() == IDs.GothmogDice
-             then
+                InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
+                Obj.hit_object.getGUID() == IDs.GothmogDice
+            then
                 --do not gather gothmog when the black captain is in play...
             else
                 DiceIndex = DiceIndex + 1
                 Obj.hit_object.setPositionSmooth(Spots.ShadowDiceOut[DiceIndex], false, true)
-                Obj.hit_object.setRotation({0, SR, 0})
+                Obj.hit_object.setRotation({ 0, SR, 0 })
             end
         end
     end
@@ -6279,10 +6308,10 @@ function GatherActionDiceCoroutine()
         Physics.cast(
             {
                 origin = getObjectFromGUID(IDs.FreePeoplesUsedDiceArea).getPosition(),
-                direction = {0, 1, 0},
+                direction = { 0, 1, 0 },
                 type = 3,
-                size = {9, 5, 9},
-                orientation = {0, 0, 0},
+                size = { 9, 5, 9 },
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -6292,20 +6321,20 @@ function GatherActionDiceCoroutine()
             --does the dice have a remove face and gandalf the white is in play?
             if
                 string.find(Obj.hit_object.getRotationValue(), "Remove") ~= nil and
-                    InPlay({Name = "Gandalf the White: Emissary from the West", Description = "Character;"})
-             then
+                InPlay({ Name = "Gandalf the White: Emissary from the West", Description = "Character;" })
+            then
                 --then eliminate the die...
                 printToAll(
                     "Removing " ..
-                        Obj.hit_object.getName() ..
-                            " from the game. (Gandalf the White is in play, and a [Remove](*) was rolled and chosen."
+                    Obj.hit_object.getName() ..
+                    " from the game. (Gandalf the White is in play, and a [Remove](*) was rolled and chosen."
                 )
                 getObjectFromGUID(GraveBagId).putObject(Obj.hit_object)
             else
                 --stage the dice to the outer area...
                 DiceIndex = DiceIndex + 1
                 Obj.hit_object.setPositionSmooth(Spots.FreePeoplesDiceOut[DiceIndex], false, true)
-                Obj.hit_object.setRotation({0, FR, 0})
+                Obj.hit_object.setRotation({ 0, FR, 0 })
             end
         end
     end
@@ -6316,10 +6345,10 @@ function GatherActionDiceCoroutine()
         Physics.cast(
             {
                 origin = getObjectFromGUID(IDs.FreePeoplesDiceBox).getPosition(),
-                direction = {0, 1, 0},
+                direction = { 0, 1, 0 },
                 type = 3,
-                size = {10, 5, 13},
-                orientation = {0, 0, 0},
+                size = { 10, 5, 13 },
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -6329,7 +6358,7 @@ function GatherActionDiceCoroutine()
             --stage the dice to the outer area...
             DiceIndex = DiceIndex + 1
             Obj.hit_object.setPositionSmooth(Spots.FreePeoplesDiceOut[DiceIndex], false, true)
-            Obj.hit_object.setRotation({0, FR, 0})
+            Obj.hit_object.setRotation({ 0, FR, 0 })
         end
     end
 
@@ -6338,11 +6367,11 @@ function GatherActionDiceCoroutine()
     for _, Obj in pairs(
         Physics.cast(
             {
-                origin = {-31.66, 1.02, -20.80},
-                direction = {0, 1, 0},
+                origin = { -31.66, 1.02, -20.80 },
+                direction = { 0, 1, 0 },
                 type = 3,
-                size = {9, 5, 7},
-                orientation = {0, 0, 0},
+                size = { 9, 5, 7 },
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -6350,18 +6379,18 @@ function GatherActionDiceCoroutine()
     ) do
         if
             DiceIndex < #Spots.FreePeoplesDiceOut and string.find(Obj.hit_object.getDescription(), "Dice;") ~= nil and
-                string.find(Obj.hit_object.getDescription(), "FreePeoples;") ~= nil
-         then
+            string.find(Obj.hit_object.getDescription(), "FreePeoples;") ~= nil
+        then
             --does the dice have a remove face and gandalf the white is in play?
             if
                 string.find(Obj.hit_object.getRotationValue(), "Remove") ~= nil and
-                    InPlay({Name = "Gandalf the White: Emissary from the West", Description = "Character;"})
-             then
+                InPlay({ Name = "Gandalf the White: Emissary from the West", Description = "Character;" })
+            then
                 --then eliminate the die...
                 printToAll(
                     "Removing " ..
-                        Obj.hit_object.getName() ..
-                            " from the game. (Gandalf the White is in play, and a [Remove](*) was rolled and chosen."
+                    Obj.hit_object.getName() ..
+                    " from the game. (Gandalf the White is in play, and a [Remove](*) was rolled and chosen."
                 )
                 getObjectFromGUID(GraveBagId).putObject(Obj.hit_object)
             end
@@ -6370,7 +6399,7 @@ function GatherActionDiceCoroutine()
             DiceIndex = DiceIndex + 1
             FreePeoplesHuntDiceCount = FreePeoplesHuntDiceCount + 1
             Obj.hit_object.setPositionSmooth(Spots.FreePeoplesDiceOut[DiceIndex], false, true)
-            Obj.hit_object.setRotation({0, FR, 0})
+            Obj.hit_object.setRotation({ 0, FR, 0 })
         end
     end
 
@@ -6382,13 +6411,13 @@ function GatherActionDiceCoroutine()
                 if string.find(Obj.getDescription(), "Dice;") ~= nil then
                     if
                         DiceIndex < #Spots.FreePeoplesDiceOut and
-                            (string.find(Obj.getDescription(), "Action;") ~= nil or
-                                string.find(Obj.getDescription(), "Faction;") ~= nil) and
-                            string.find(Obj.getDescription(), "FreePeoples;") ~= nil
-                     then
+                        (string.find(Obj.getDescription(), "Action;") ~= nil or
+                            string.find(Obj.getDescription(), "Faction;") ~= nil) and
+                        string.find(Obj.getDescription(), "FreePeoples;") ~= nil
+                    then
                         DiceIndex = DiceIndex + 1
                         Obj.setPositionSmooth(Spots.FreePeoplesDiceOut[DiceIndex], false, true)
-                        Obj.setRotation({0, FR, 0})
+                        Obj.setRotation({ 0, FR, 0 })
                     end
                 end
             end
@@ -6401,11 +6430,11 @@ function GatherActionDiceCoroutine()
         for O, Obj in pairs(
             Physics.cast(
                 {
-                    origin = {0, 1, -26},
-                    direction = {0, 1, 0},
+                    origin = { 0, 1, -26 },
+                    direction = { 0, 1, 0 },
                     type = 3,
-                    size = {27, 3, 3},
-                    orientation = {0, 0, 0},
+                    size = { 27, 3, 3 },
+                    orientation = { 0, 0, 0 },
                     max_distance = 0,
                     debug = false
                 }
@@ -6414,13 +6443,13 @@ function GatherActionDiceCoroutine()
             if string.find(Obj.hit_object.getDescription(), "Dice;") ~= nil then
                 if
                     DiceIndex < #Spots.FreePeoplesDiceOut and
-                        (string.find(Obj.hit_object.getDescription(), "Action;") ~= nil or
-                            string.find(Obj.hit_object.getDescription(), "Faction;") ~= nil) and
-                        string.find(Obj.hit_object.getDescription(), "FreePeoples;") ~= nil
-                 then
+                    (string.find(Obj.hit_object.getDescription(), "Action;") ~= nil or
+                        string.find(Obj.hit_object.getDescription(), "Faction;") ~= nil) and
+                    string.find(Obj.hit_object.getDescription(), "FreePeoples;") ~= nil
+                then
                     DiceIndex = DiceIndex + 1
                     Obj.hit_object.setPositionSmooth(Spots.FreePeoplesDiceOut[DiceIndex], false, true)
-                    Obj.hit_object.setRotation({0, FR, 0})
+                    Obj.hit_object.setRotation({ 0, FR, 0 })
                 end
             end
         end
@@ -6446,7 +6475,7 @@ function GatherActionDiceCoroutine()
 
     coroutine.yield(0)
     --FP gathers +1 extra dice if Gandalf the White is in play...
-    if InPlay({Name = "Gandalf the White: Emissary from the West", Description = "Character;"}) then
+    if InPlay({ Name = "Gandalf the White: Emissary from the West", Description = "Character;" }) then
         if getObjectFromGUID(IDs.FreePeoplesActionDice[5]) ~= nil then
             DiceIndex = DiceIndex + 1
             getObjectFromGUID(IDs.FreePeoplesActionDice[5]).setPositionSmooth(
@@ -6460,7 +6489,7 @@ function GatherActionDiceCoroutine()
     end
     coroutine.yield(0)
     --FP gathers +1 extra dice if Aragorn is in play...
-    if InPlay({Name = "Aragorn: Heir to Isildur", Description = "Character;"}) then
+    if InPlay({ Name = "Aragorn: Heir to Isildur", Description = "Character;" }) then
         if getObjectFromGUID(IDs.FreePeoplesActionDice[6]) ~= nil then
             DiceIndex = DiceIndex + 1
             getObjectFromGUID(IDs.FreePeoplesActionDice[6]).setPositionSmooth(
@@ -6476,8 +6505,8 @@ function GatherActionDiceCoroutine()
     --FP gathers Narya action dice if gandalf the gray (keeper of narya) is the guide during the recover action, and there was at least 1 FP dice in the hunt box, and dice is not removed from game (Narya is in the pool if it is round 1 and Gandalf keeper is the guide)...
     if
         GuideName == "Gandalf the Grey: Keeper of Narya" and
-            (FreePeoplesHuntDiceCount > 0 and getObjectFromGUID(IDs.NaryaDice) ~= nil or Round == 1)
-     then
+        (FreePeoplesHuntDiceCount > 0 and getObjectFromGUID(IDs.NaryaDice) ~= nil or Round == 1)
+    then
         DiceIndex = DiceIndex + 1
         getObjectFromGUID(IDs.NaryaDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false, true)
     end
@@ -6485,9 +6514,9 @@ function GatherActionDiceCoroutine()
     coroutine.yield(0)
     --FP add the Nenya dice if lady Galadriel is in play, and dice is not removed from game...
     if
-        InPlay({Name = "Lady Galadriel: Keeper of Nenya", Description = "Character;"}) and
-            getObjectFromGUID(IDs.NenyaDice) ~= nil
-     then
+        InPlay({ Name = "Lady Galadriel: Keeper of Nenya", Description = "Character;" }) and
+        getObjectFromGUID(IDs.NenyaDice) ~= nil
+    then
         DiceIndex = DiceIndex + 1
         getObjectFromGUID(IDs.NenyaDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false, true)
     end
@@ -6495,16 +6524,16 @@ function GatherActionDiceCoroutine()
     coroutine.yield(0)
     --FP add the Vilya dice if Lord Elrond is in play, and dice is not removed from game...
     if
-        InPlay({Name = "Lord Elrond: Keeper of Vilya", Description = "Character;"}) and
-            getObjectFromGUID(IDs.VilyaDice) ~= nil
-     then
+        InPlay({ Name = "Lord Elrond: Keeper of Vilya", Description = "Character;" }) and
+        getObjectFromGUID(IDs.VilyaDice) ~= nil
+    then
         DiceIndex = DiceIndex + 1
         getObjectFromGUID(IDs.VilyaDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false, true)
     end
 
     coroutine.yield(0)
     --FP gathers faction dice if a faction is any FP faction card is flipped over (active)...
-    if FactionActive({Faction = "DeadMen"}) or FactionActive({Faction = "Ents"}) or FactionActive({Faction = "Eagles"}) then
+    if FactionActive({ Faction = "DeadMen" }) or FactionActive({ Faction = "Ents" }) or FactionActive({ Faction = "Eagles" }) then
         if getObjectFromGUID(IDs.FreePeoplesFactionDice) ~= nil then
             DiceIndex = DiceIndex + 1
             getObjectFromGUID(IDs.FreePeoplesFactionDice).setPositionSmooth(
@@ -6519,7 +6548,7 @@ function GatherActionDiceCoroutine()
 
     coroutine.yield(0)
     --FP add the ruler dice if a Awakened Ruler is in play...
-    if getObjectFromGUID(IDs.FreePeoplesRulerDice) ~= nil and InPlay({Name = "(Awakened)", Description = "Ruler;"}) then
+    if getObjectFromGUID(IDs.FreePeoplesRulerDice) ~= nil and InPlay({ Name = "(Awakened)", Description = "Ruler;" }) then
         DiceIndex = DiceIndex + 1
         getObjectFromGUID(IDs.FreePeoplesRulerDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false, true)
     end
@@ -6531,7 +6560,7 @@ function GatherActionDiceCoroutine()
         if getObjectFromGUID(IDs.ShadowActionDice[I]) ~= nil then
             DiceIndex = DiceIndex + 1
             getObjectFromGUID(IDs.ShadowActionDice[I]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex])
-            getObjectFromGUID(IDs.ShadowActionDice[I]).setRotation({0, SR, 0})
+            getObjectFromGUID(IDs.ShadowActionDice[I]).setRotation({ 0, SR, 0 })
         else
             print("Uhoh! Can't find Shadow Action Dice #" .. D .. "!")
         end
@@ -6539,7 +6568,7 @@ function GatherActionDiceCoroutine()
 
     coroutine.yield(0)
     --Shadow add +1 extra dice if Saruman is in play...
-    if InPlay({Name = "Saruman: Corrupted Wizard", Description = "Minion;"}) then
+    if InPlay({ Name = "Saruman: Corrupted Wizard", Description = "Minion;" }) then
         if getObjectFromGUID(IDs.ShadowActionDice[8]) ~= nil then
             DiceIndex = DiceIndex + 1
             getObjectFromGUID(IDs.ShadowActionDice[8]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
@@ -6549,7 +6578,7 @@ function GatherActionDiceCoroutine()
     end
     coroutine.yield(0)
     --Shadow add +1 extra dice if a Witch-king minion is in play...
-    if InPlay({Name = "The Witch", Description = "Minion;"}) then
+    if InPlay({ Name = "The Witch", Description = "Minion;" }) then
         if getObjectFromGUID(IDs.ShadowActionDice[9]) ~= nil then
             DiceIndex = DiceIndex + 1
             getObjectFromGUID(IDs.ShadowActionDice[9]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
@@ -6559,7 +6588,7 @@ function GatherActionDiceCoroutine()
     end
     coroutine.yield(0)
     --Shadow add +1 extra dice if a Mouth of Sauron minion is in play...
-    if InPlay({Name = "The Mouth of Sauron", Description = "Minion;"}) then
+    if InPlay({ Name = "The Mouth of Sauron", Description = "Minion;" }) then
         if getObjectFromGUID(IDs.ShadowActionDice[10]) ~= nil then
             DiceIndex = DiceIndex + 1
             getObjectFromGUID(IDs.ShadowActionDice[10]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
@@ -6570,9 +6599,9 @@ function GatherActionDiceCoroutine()
     coroutine.yield(0)
     --Shadow add Balrog dice if Balrog is in play, and dice is not removed from game...
     if
-        InPlay({Name = "Balrog: Evil of the Ancient World", Description = "Minion;"}) and
-            getObjectFromGUID(IDs.BalrogDice) ~= nil
-     then
+        InPlay({ Name = "Balrog: Evil of the Ancient World", Description = "Minion;" }) and
+        getObjectFromGUID(IDs.BalrogDice) ~= nil
+    then
         DiceIndex = DiceIndex + 1
         getObjectFromGUID(IDs.BalrogDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
     end
@@ -6580,16 +6609,16 @@ function GatherActionDiceCoroutine()
     coroutine.yield(0)
     --Shadow add Gothmog dice if Gothmog is in play, and dice is not removed from game...
     if
-        InPlay({Name = "Gothmog: Lieutenant of Morgul", Description = "Minion;"}) and
-            getObjectFromGUID(IDs.GothmogDice) ~= nil
-     then
+        InPlay({ Name = "Gothmog: Lieutenant of Morgul", Description = "Minion;" }) and
+        getObjectFromGUID(IDs.GothmogDice) ~= nil
+    then
         DiceIndex = DiceIndex + 1
         getObjectFromGUID(IDs.GothmogDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
     end
 
     coroutine.yield(0)
     --Shadow add the ruler dice if an Dark Chieftain Ruler is in play...
-    if getObjectFromGUID(IDs.ShadowRulerDice) ~= nil and InPlay({Description = "DarkChieftain;"}) then
+    if getObjectFromGUID(IDs.ShadowRulerDice) ~= nil and InPlay({ Description = "DarkChieftain;" }) then
         DiceIndex = DiceIndex + 1
         getObjectFromGUID(IDs.ShadowRulerDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
     end
@@ -6597,9 +6626,9 @@ function GatherActionDiceCoroutine()
     coroutine.yield(0)
     --FP gathers faction dice if a faction is any FP faction card is flipped over (active)...
     if
-        FactionActive({Faction = "Spiders"}) or FactionActive({Faction = "Corsairs"}) or
-            FactionActive({Faction = "Dunlendings"})
-     then
+        FactionActive({ Faction = "Spiders" }) or FactionActive({ Faction = "Corsairs" }) or
+        FactionActive({ Faction = "Dunlendings" })
+    then
         if getObjectFromGUID(IDs.ShadowFactionDice) ~= nil then
             DiceIndex = DiceIndex + 1
             getObjectFromGUID(IDs.ShadowFactionDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
@@ -6614,7 +6643,7 @@ end
 
 function RollActionDiceCoroutine()
     local FR = 180 --FPP Dice Y orientation.
-    local SR = 0 --SP Dice Y orientation
+    local SR = 0   --SP Dice Y orientation
     if CompactMode then
         FR = FR + 180
     end
@@ -6622,11 +6651,11 @@ function RollActionDiceCoroutine()
     --roll, then organize all dice in the Diceboxes...
     local ShadowRollAreaPosition = getObjectFromGUID(IDs.ShadowDiceBox).getPosition()
     local FreePeoplesRollAreaPosition = getObjectFromGUID(IDs.FreePeoplesDiceBox).getPosition()
-    local RollAreaSize = {10, 5, 13}
+    local RollAreaSize = { 10, 5, 13 }
     if CompactMode then
         ShadowRollAreaPosition = getObjectFromGUID(IDs.ShadowUsedDiceArea).getPosition()
         FreePeoplesRollAreaPosition = getObjectFromGUID(IDs.FreePeoplesUsedDiceArea).getPosition()
-        RollAreaSize = {9, 5, 9}
+        RollAreaSize = { 9, 5, 9 }
     end
 
     --roll shadow action dice...
@@ -6635,10 +6664,10 @@ function RollActionDiceCoroutine()
         Physics.cast(
             {
                 origin = ShadowRollAreaPosition,
-                direction = {0, 1, 0},
+                direction = { 0, 1, 0 },
                 type = 3,
                 size = RollAreaSize,
-                orientation = {0, 0, 0},
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -6655,10 +6684,10 @@ function RollActionDiceCoroutine()
         Physics.cast(
             {
                 origin = FreePeoplesRollAreaPosition,
-                direction = {0, 1, 0},
+                direction = { 0, 1, 0 },
                 type = 3,
                 size = RollAreaSize,
-                orientation = {0, 0, 0},
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -6673,7 +6702,7 @@ function RollActionDiceCoroutine()
     for I = 1, #ShadowDicePool do
         getObjectFromGUID(ShadowDicePool[I]).randomize()
         Wait.time(
-            function()
+            function ()
                 getObjectFromGUID(ShadowDicePool[I]).randomize()
             end,
             0.5
@@ -6685,7 +6714,7 @@ function RollActionDiceCoroutine()
     for I = 1, #FreePeoplesDicePool do
         getObjectFromGUID(FreePeoplesDicePool[I]).randomize()
         Wait.time(
-            function()
+            function ()
                 getObjectFromGUID(FreePeoplesDicePool[I]).randomize()
             end,
             0.5
@@ -6719,11 +6748,11 @@ function RollActionDiceCoroutine()
     for _, Obj in pairs(
         Physics.cast(
             {
-                origin = {-31.66, 1.02, -20.80},
-                direction = {0, 1, 0},
+                origin = { -31.66, 1.02, -20.80 },
+                direction = { 0, 1, 0 },
                 type = 3,
-                size = {9, 1, 7},
-                orientation = {0, 0, 0},
+                size = { 9, 1, 7 },
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -6731,15 +6760,15 @@ function RollActionDiceCoroutine()
     ) do
         if
             string.find(Obj.hit_object.getDescription(), "Dice;") ~= nil and
-                string.find(Obj.hit_object.getDescription(), "Shadow;") ~= nil
-         then
+            string.find(Obj.hit_object.getDescription(), "Shadow;") ~= nil
+        then
             table.insert(HuntBoxShadowDiceArray, Obj.hit_object.getGUID())
         end
 
         if
             string.find(Obj.hit_object.getDescription(), "Dice;") ~= nil and
-                string.find(Obj.hit_object.getDescription(), "FreePeoples;") ~= nil
-         then
+            string.find(Obj.hit_object.getDescription(), "FreePeoples;") ~= nil
+        then
             table.insert(HuntBoxFreePeoplesDiceArray, Obj.hit_object.getGUID())
         end
     end
@@ -6755,7 +6784,7 @@ function RollActionDiceCoroutine()
         end
     end
 
-    printToAll(ResultText, {1, 0.3, 0.3})
+    printToAll(ResultText, { 1, 0.3, 0.3 })
     ResultText = "\nThe Free Peoples Rolled: "
     --organize FP action dice...
     for I = 1, #FreePeoplesDicePool do
@@ -6766,11 +6795,11 @@ function RollActionDiceCoroutine()
         end
     end
 
-    printToAll(ResultText, {0.3, 0.3, 1})
+    printToAll(ResultText, { 0.3, 0.3, 1 })
     --update huntbox again to pick up newly rolled eyes...
     for I = 1, #HuntBoxShadowDiceArray do
         getObjectFromGUID(HuntBoxShadowDiceArray[I]).setPositionSmooth(Spots.ShadowHuntBoxDice[I], false, true)
-        Global.call("SetDiceFace", {Dice = getObjectFromGUID(HuntBoxShadowDiceArray[I]), Value = "Eye"})
+        Global.call("SetDiceFace", { Dice = getObjectFromGUID(HuntBoxShadowDiceArray[I]), Value = "Eye" })
     end
 
     for I = 1, #HuntBoxFreePeoplesDiceArray do
@@ -6779,11 +6808,11 @@ function RollActionDiceCoroutine()
             false,
             true
         )
-        Global.call("SetDiceFace", {Dice = getObjectFromGUID(HuntBoxShadowDiceArray[I]), Value = "Eye"})
+        Global.call("SetDiceFace", { Dice = getObjectFromGUID(HuntBoxShadowDiceArray[I]), Value = "Eye" })
     end
 
     --line up action dice by type...
-    local SDI = 0 --shadow dice index
+    local SDI = 0  --shadow dice index
     local FPDI = 0 --FP dice index
     for DF = 1, 6 do
         --line up shadow action dice...
@@ -6791,8 +6820,8 @@ function RollActionDiceCoroutine()
             --ignore eyes and group by face...
             if
                 getObjectFromGUID(ShadowDicePool[I]).getValue() == DF and
-                    string.find(getObjectFromGUID(ShadowDicePool[I]).getRotationValue(), "Eye") == nil
-             then
+                string.find(getObjectFromGUID(ShadowDicePool[I]).getRotationValue(), "Eye") == nil
+            then
                 SDI = SDI + 1
                 if CompactMode then
                     getObjectFromGUID(ShadowDicePool[I]).setPosition(Spots.CompactShadowDiceLine[SDI])
@@ -6818,8 +6847,8 @@ function RollActionDiceCoroutine()
             --ignore eyes and group by face...
             if
                 getObjectFromGUID(FreePeoplesDicePool[I]).getValue() == DF and
-                    string.find(getObjectFromGUID(FreePeoplesDicePool[I]).getRotationValue(), "Eye") == nil
-             then
+                string.find(getObjectFromGUID(FreePeoplesDicePool[I]).getRotationValue(), "Eye") == nil
+            then
                 FPDI = FPDI + 1
                 if CompactMode then
                     getObjectFromGUID(FreePeoplesDicePool[I]).setPosition(Spots.CompactFreePeoplesDiceLine[FPDI])
@@ -6856,7 +6885,7 @@ function RollActionDiceCoroutine()
     for I = 1, #ShadowDicePool do
         Global.call(
             "UpdateDiceStats",
-            {Result = getObjectFromGUID(ShadowDicePool[I]).getRotationValue(), Type = "Action", Side = "Shadow"}
+            { Result = getObjectFromGUID(ShadowDicePool[I]).getRotationValue(), Type = "Action", Side = "Shadow" }
         )
     end
 
@@ -6883,9 +6912,9 @@ function InPlay(Params)
             if Obj.getPosition().x >= -37 and Obj.getPosition().x <= 37 then
                 if
                     (Params.ID == "" or Obj.getGUID() == Params.ID) and
-                        (Params.Name == "" or string.find(Obj.getName(), Params.Name) ~= nil) and
-                        (Params.Description == "" or string.find(Obj.getDescription(), Params.Description) ~= nil)
-                 then
+                    (Params.Name == "" or string.find(Obj.getName(), Params.Name) ~= nil) and
+                    (Params.Description == "" or string.find(Obj.getDescription(), Params.Description) ~= nil)
+                then
                     return true
                 end
             end
@@ -6900,11 +6929,11 @@ function InFellowship(Params)
     for _, Obj in pairs(
         Physics.cast(
             {
-                origin = {27.59, 0.86, 20.04},
-                direction = {0, 1, 0},
+                origin = { 27.59, 0.86, 20.04 },
+                direction = { 0, 1, 0 },
                 type = 3,
-                size = {3, 2, 9.5},
-                orientation = {0, 0, 0},
+                size = { 3, 2, 9.5 },
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -6924,11 +6953,11 @@ function GetFellowshipCompanions()
     for _, Obj in pairs(
         Physics.cast(
             {
-                origin = {27.6, 0.86, 20},
-                direction = {0, 1, 0},
+                origin = { 27.6, 0.86, 20 },
+                direction = { 0, 1, 0 },
                 type = 3,
-                size = {3, 2, 9.5},
-                orientation = {0, 0, 0},
+                size = { 3, 2, 9.5 },
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -6957,8 +6986,8 @@ function FactionActive(Params)
     --make sure faction card is flipped over...
     if
         getObjectFromGUID(IDs.WoME[Params.Faction .. "FactionCard"]).getRotation().z >= 90 and
-            getObjectFromGUID(IDs.WoME[Params.Faction .. "FactionCard"]).getRotation().z <= 270
-     then
+        getObjectFromGUID(IDs.WoME[Params.Faction .. "FactionCard"]).getRotation().z <= 270
+    then
         return true
     else
         return false
@@ -6976,10 +7005,10 @@ function CheckDeck(Params)
                 Physics.cast(
                     {
                         origin = position,
-                        direction = {0, 1, 0},
+                        direction = { 0, 1, 0 },
                         type = 2,
-                        size = {1, 1, 1},
-                        orientation = {0, 0, 0},
+                        size = { 1, 1, 1 },
+                        orientation = { 0, 0, 0 },
                         max_distance = 0,
                         debug = false
                     }
@@ -7021,10 +7050,10 @@ function DrawFromDeck(Params)
                 Physics.cast(
                     {
                         origin = Params.deckspot,
-                        direction = {0, 1, 0},
+                        direction = { 0, 1, 0 },
                         type = 2,
-                        size = {1, 1, 1},
-                        orientation = {0, 0, 0},
+                        size = { 1, 1, 1 },
+                        orientation = { 0, 0, 0 },
                         max_distance = 0,
                         debug = true
                     }
@@ -7044,10 +7073,10 @@ function DrawFromDeck(Params)
                     Physics.cast(
                         {
                             origin = Params.deckspot,
-                            direction = {0, 1, 0},
+                            direction = { 0, 1, 0 },
                             type = 2,
-                            size = {1, 1, 1},
-                            orientation = {0, 0, 0},
+                            size = { 1, 1, 1 },
+                            orientation = { 0, 0, 0 },
                             max_distance = 0,
                             debug = true
                         }
