@@ -1,7 +1,7 @@
 Settings = {
     FigureScale = "100",
     CharactersType = "3D",
-    NazgulsType = "3D",
+    NazgulType = "3D",
     ArmiesType = "3D",
     FactionsType = "3D",
     MountDoomType = "3D",
@@ -12,35 +12,35 @@ Settings = {
 local ArmiesSearchConfig = {
     IncludingName = nil,
     ExcludingName = "Nazgûl",
-    Patterns = {"Regular;", "Elite;", "Leader;"},
+    Patterns = { "Regular;", "Elite;", "Leader;" },
     PositionOffset = 0
 }
 
 local CharactersSearchConfig = {
     IncludingName = nil,
     ExcludingName = "Nazgûl",
-    Patterns = {"Character;", "Minion;"},
+    Patterns = { "Character;", "Minion;" },
     PositionOffset = 1
 }
 
 local FactionsSearchConfig = {
     IncludingName = nil,
     ExcludingName = "Nazgûl",
-    Patterns = {"Faction;"},
+    Patterns = { "Faction;" },
     PositionOffset = 2
 }
 
 local NazgulSearchConfig = {
     IncludingName = "Nazgûl",
     ExcludingName = nil,
-    Patterns = {"Leader;"},
+    Patterns = { "Leader;" },
     PositionOffset = 3
 }
 
 local SettlementsConfigs = {
-    Stronghold = {PositionY_3D = 1.16, PositionY_Flat = 0.78, Size = {1.8, 1, 1.8}},
-    City = {PositionY_3D = 1.09, PositionY_Flat = 0.85, Size = {1.8, 1, 1.1}},
-    Fortification = {PositionY_3D = 1.01, PositionY_Flat = 0.93, Size = {1.8, 1, 1.1}}
+    Stronghold = { PositionY_3D = 1.16, PositionY_Flat = 0.78, Size = { 1.8, 1, 1.8 } },
+    City = { PositionY_3D = 1.09, PositionY_Flat = 0.85, Size = { 1.8, 1, 1.1 } },
+    Fortification = { PositionY_3D = 1.01, PositionY_Flat = 0.93, Size = { 1.8, 1, 1.1 } }
 }
 
 function onLoad(save_state)
@@ -48,14 +48,14 @@ function onLoad(save_state)
 end
 
 function InitPreferences()
-    Settings.FigureScale = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Scale", Default = "100"})
-    Settings.CharactersType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Characters", Default = "3D"})
-    Settings.NazgulsType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Nazgul", Default = "3D"})
-    Settings.ArmiesType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Armies", Default = "3D"})
-    Settings.FactionsType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Factions", Default = "3D"})
-    Settings.MountDoomType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "MtDoom", Default = "3D"})
-    Settings.SettlementsType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Settlements", Default = "3D"})
-    Settings.DiceType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Dice", Default = "Original"})
+    Settings.FigureScale = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "Scale", Default = "100" })
+    Settings.CharactersType = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "Characters", Default = "3D" })
+    Settings.NazgulType = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "Nazgul", Default = "3D" })
+    Settings.ArmiesType = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "Armies", Default = "3D" })
+    Settings.FactionsType = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "Factions", Default = "3D" })
+    Settings.MountDoomType = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "MtDoom", Default = "3D" })
+    Settings.SettlementsType = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "Settlements", Default = "3D" })
+    Settings.DiceType = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "Dice", Default = "Original" })
 
     --Original,Anniversary
     if getObjectFromGUID("4b6f4c") == nil then
@@ -64,16 +64,16 @@ function InitPreferences()
         DicePanels = "Sic"
     end
 
-    ModelLockSetting = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "ModelLock", Default = "0"}) == "1"
+    ModelLockSetting = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "ModelLock", Default = "0" }) == "1"
     if Global.getVar("Mute") then
         Sound = "Off"
     else
         Sound = "On"
     end
 
-    ScreamSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Scream", Default = "Once"})
+    ScreamSettingType = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "Scream", Default = "Once" })
     --Always,Once,Never
-    WarningsSettingType = Global.call("ReadTag", {Text = self.getGMNotes(), Var = "Warnings", Default = "On"})
+    WarningsSettingType = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "Warnings", Default = "On" })
     --On,Off
     Global.setVar("RulesWarnings", WarningsSettingType == "On")
     ApplySettingsFlag = false
@@ -81,107 +81,107 @@ function InitPreferences()
 end
 
 function UpdatePanel()
-    local Characters3DColor = {1, 1, 1}
-    local Characters2DColor = {1, 1, 1}
-    local CharactersSquareColor = {1, 1, 1}
-    local Nazgul3DColor = {1, 1, 1}
-    local Nazgul2DColor = {1, 1, 1}
-    local NazgulRoundColor = {1, 1, 1}
-    local NazgulSquareColor = {1, 1, 1}
-    local Armies3DColor = {1, 1, 1}
-    local Armies2DColor = {1, 1, 1}
-    local ArmiesRoundColor = {1, 1, 1}
-    local Factions3DColor = {1, 1, 1}
-    local Factions2DColor = {1, 1, 1}
-    local FactionsRoundColor = {1, 1, 1}
-    local MtDoomFlatColor = {1, 1, 1}
-    local MtDoom3DColor = {1, 1, 1}
-    local SettlementsFlatColor = {1, 1, 1}
-    local Settlements3DColor = {1, 1, 1}
-    local SoundOnColor = {1, 1, 1}
-    local SoundOffColor = {1, 1, 1}
-    local ScreamAlwaysColor = {1, 1, 1}
-    local ScreamOnceColor = {1, 1, 1}
-    local ScreamNeverColor = {1, 1, 1}
-    local WarningsOnColor = {1, 1, 1}
-    local WarningsOffColor = {1, 1, 1}
-    local DiceOriginalColor = {1, 1, 1}
-    local DiceAnniversaryColor = {1, 1, 1}
+    local Characters3DColor = { 1, 1, 1 }
+    local Characters2DColor = { 1, 1, 1 }
+    local CharactersSquareColor = { 1, 1, 1 }
+    local Nazgul3DColor = { 1, 1, 1 }
+    local Nazgul2DColor = { 1, 1, 1 }
+    local NazgulRoundColor = { 1, 1, 1 }
+    local NazgulSquareColor = { 1, 1, 1 }
+    local Armies3DColor = { 1, 1, 1 }
+    local Armies2DColor = { 1, 1, 1 }
+    local ArmiesRoundColor = { 1, 1, 1 }
+    local Factions3DColor = { 1, 1, 1 }
+    local Factions2DColor = { 1, 1, 1 }
+    local FactionsRoundColor = { 1, 1, 1 }
+    local MtDoomFlatColor = { 1, 1, 1 }
+    local MtDoom3DColor = { 1, 1, 1 }
+    local SettlementsFlatColor = { 1, 1, 1 }
+    local Settlements3DColor = { 1, 1, 1 }
+    local SoundOnColor = { 1, 1, 1 }
+    local SoundOffColor = { 1, 1, 1 }
+    local ScreamAlwaysColor = { 1, 1, 1 }
+    local ScreamOnceColor = { 1, 1, 1 }
+    local ScreamNeverColor = { 1, 1, 1 }
+    local WarningsOnColor = { 1, 1, 1 }
+    local WarningsOffColor = { 1, 1, 1 }
+    local DiceOriginalColor = { 1, 1, 1 }
+    local DiceAnniversaryColor = { 1, 1, 1 }
 
     --set button colors to match selections...
     if Settings.CharactersType == "2D" then
-        Characters2DColor = {1, 1, 0}
+        Characters2DColor = { 1, 1, 0 }
     elseif Settings.CharactersType == "Square" then
-        CharactersSquareColor = {1, 1, 0}
+        CharactersSquareColor = { 1, 1, 0 }
     else
-        Characters3DColor = {1, 1, 0}
+        Characters3DColor = { 1, 1, 0 }
     end
 
-    if Settings.NazgulsType == "2D" then
-        Nazgul2DColor = {1, 1, 0}
-    elseif Settings.NazgulsType == "Round" then
-        NazgulRoundColor = {1, 1, 0}
-    elseif Settings.NazgulsType == "Square" then
-        NazgulSquareColor = {1, 1, 0}
+    if Settings.NazgulType == "2D" then
+        Nazgul2DColor = { 1, 1, 0 }
+    elseif Settings.NazgulType == "Round" then
+        NazgulRoundColor = { 1, 1, 0 }
+    elseif Settings.NazgulType == "Square" then
+        NazgulSquareColor = { 1, 1, 0 }
     else
-        Nazgul3DColor = {1, 1, 0}
+        Nazgul3DColor = { 1, 1, 0 }
     end
 
     if Settings.ArmiesType == "2D" then
-        Armies2DColor = {1, 1, 0}
+        Armies2DColor = { 1, 1, 0 }
     elseif Settings.ArmiesType == "Round" then
-        ArmiesRoundColor = {1, 1, 0}
+        ArmiesRoundColor = { 1, 1, 0 }
     else
-        Armies3DColor = {1, 1, 0}
+        Armies3DColor = { 1, 1, 0 }
     end
 
     if Settings.FactionsType == "2D" then
-        Factions2DColor = {1, 1, 0}
+        Factions2DColor = { 1, 1, 0 }
     elseif Settings.FactionsType == "Round" then
-        FactionsRoundColor = {1, 1, 0}
+        FactionsRoundColor = { 1, 1, 0 }
     else
-        Factions3DColor = {1, 1, 0}
+        Factions3DColor = { 1, 1, 0 }
     end
 
     if Settings.MountDoomType == "3D" then
-        MtDoom3DColor = {1, 1, 0}
+        MtDoom3DColor = { 1, 1, 0 }
     else
-        MtDoomFlatColor = {1, 1, 0}
+        MtDoomFlatColor = { 1, 1, 0 }
     end
 
     if Settings.SettlementsType == "3D" then
-        Settlements3DColor = {1, 1, 0}
+        Settlements3DColor = { 1, 1, 0 }
     else
-        SettlementsFlatColor = {1, 1, 0}
+        SettlementsFlatColor = { 1, 1, 0 }
     end
 
     if ScreamSettingType == "Always" then
-        ScreamAlwaysColor = {1, 1, 0}
+        ScreamAlwaysColor = { 1, 1, 0 }
     elseif ScreamSettingType == "Once" then
-        ScreamOnceColor = {1, 1, 0}
+        ScreamOnceColor = { 1, 1, 0 }
     else
-        ScreamNeverColor = {1, 1, 0}
+        ScreamNeverColor = { 1, 1, 0 }
     end
 
     if Sound == "Off" then
-        SoundOffColor = {1, 1, 0}
-        ScreamAlwaysColor = {0.5, 0.5, 0.5}
-        ScreamOnceColor = {0.5, 0.5, 0.5}
-        ScreamNeverColor = {0.5, 0.5, 0.5}
+        SoundOffColor = { 1, 1, 0 }
+        ScreamAlwaysColor = { 0.5, 0.5, 0.5 }
+        ScreamOnceColor = { 0.5, 0.5, 0.5 }
+        ScreamNeverColor = { 0.5, 0.5, 0.5 }
     else
-        SoundOnColor = {1, 1, 0}
+        SoundOnColor = { 1, 1, 0 }
     end
 
     if WarningsSettingType == "On" then
-        WarningsOnColor = {1, 1, 0}
+        WarningsOnColor = { 1, 1, 0 }
     else
-        WarningsOffColor = {1, 1, 0}
+        WarningsOffColor = { 1, 1, 0 }
     end
 
     if Settings.DiceType == "Anniversary" then
-        DiceAnniversaryColor = {1, 1, 0}
+        DiceAnniversaryColor = { 1, 1, 0 }
     else
-        DiceOriginalColor = {1, 1, 0}
+        DiceOriginalColor = { 1, 1, 0 }
     end
 
     self.clearButtons()
@@ -191,10 +191,10 @@ function UpdatePanel()
             click_function = "FigureScaleDown",
             function_owner = self,
             label = "-",
-            position = {-1, 0.1, -1.3},
-            scale = {0.5, 0.5, 0.5},
-            color = {1, 1, 1},
-            font_color = {0, 0, 0},
+            position = { -1, 0.1, -1.3 },
+            scale = { 0.5, 0.5, 0.5 },
+            color = { 1, 1, 1 },
+            font_color = { 0, 0, 0 },
             width = 150,
             height = 150,
             font_size = 150,
@@ -206,10 +206,10 @@ function UpdatePanel()
             click_function = "FigureScaleUp",
             function_owner = self,
             label = "+",
-            position = {-0.5, 0.1, -1.3},
-            scale = {0.5, 0.5, 0.5},
-            color = {1, 1, 1},
-            font_color = {0, 0, 0},
+            position = { -0.5, 0.1, -1.3 },
+            scale = { 0.5, 0.5, 0.5 },
+            color = { 1, 1, 1 },
+            font_color = { 0, 0, 0 },
             width = 150,
             height = 150,
             font_size = 150,
@@ -221,9 +221,9 @@ function UpdatePanel()
             click_function = "FigureScaleUp",
             function_owner = self,
             label = Settings.FigureScale .. "%",
-            position = {-0.75, 0.1, -1.3},
-            scale = {0.5, 0.5, 0.5},
-            font_color = {1, 1, 1},
+            position = { -0.75, 0.1, -1.3 },
+            scale = { 0.5, 0.5, 0.5 },
+            font_color = { 1, 1, 1 },
             width = 0,
             height = 0,
             font_size = 100
@@ -235,10 +235,10 @@ function UpdatePanel()
             click_function = "Armies3D",
             function_owner = self,
             label = "3D Models",
-            position = {-0.9, 0.1, -1.1},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.9, 0.1, -1.1 },
+            scale = { 0.5, 0.5, 0.5 },
             color = Armies3DColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -250,10 +250,10 @@ function UpdatePanel()
             click_function = "Armies2D",
             function_owner = self,
             label = "2D Models",
-            position = {-0.2, 0.1, -1.1},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.2, 0.1, -1.1 },
+            scale = { 0.5, 0.5, 0.5 },
             color = Armies2DColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -265,10 +265,10 @@ function UpdatePanel()
             click_function = "ArmiesRound",
             function_owner = self,
             label = "Round",
-            position = {0.5, 0.1, -1.1},
-            scale = {0.5, 0.5, 0.5},
+            position = { 0.5, 0.1, -1.1 },
+            scale = { 0.5, 0.5, 0.5 },
             color = ArmiesRoundColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -281,10 +281,10 @@ function UpdatePanel()
             click_function = "Characters3D",
             function_owner = self,
             label = "3D Models",
-            position = {-0.9, 0.1, -0.925},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.9, 0.1, -0.925 },
+            scale = { 0.5, 0.5, 0.5 },
             color = Characters3DColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -296,10 +296,10 @@ function UpdatePanel()
             click_function = "Characters2D",
             function_owner = self,
             label = "2D Models",
-            position = {-0.2, 0.1, -0.925},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.2, 0.1, -0.925 },
+            scale = { 0.5, 0.5, 0.5 },
             color = Characters2DColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -311,10 +311,10 @@ function UpdatePanel()
             click_function = "CharactersSquare",
             function_owner = self,
             label = "Square",
-            position = {0.5, 0.1, -0.925},
-            scale = {0.5, 0.5, 0.5},
+            position = { 0.5, 0.1, -0.925 },
+            scale = { 0.5, 0.5, 0.5 },
             color = CharactersSquareColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -327,10 +327,10 @@ function UpdatePanel()
             click_function = "Factions3D",
             function_owner = self,
             label = "3D Models",
-            position = {-0.9, 0.1, -0.75},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.9, 0.1, -0.75 },
+            scale = { 0.5, 0.5, 0.5 },
             color = Factions3DColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -342,10 +342,10 @@ function UpdatePanel()
             click_function = "Factions2D",
             function_owner = self,
             label = "2D Models",
-            position = {-0.2, 0.1, -0.75},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.2, 0.1, -0.75 },
+            scale = { 0.5, 0.5, 0.5 },
             color = Factions2DColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -357,10 +357,10 @@ function UpdatePanel()
             click_function = "FactionsRound",
             function_owner = self,
             label = "Round",
-            position = {0.5, 0.1, -0.75},
-            scale = {0.5, 0.5, 0.5},
+            position = { 0.5, 0.1, -0.75 },
+            scale = { 0.5, 0.5, 0.5 },
             color = FactionsRoundColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -373,10 +373,10 @@ function UpdatePanel()
             click_function = "Nazgul3D",
             function_owner = self,
             label = "3D Models",
-            position = {-0.9, 0.1, -0.575},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.9, 0.1, -0.575 },
+            scale = { 0.5, 0.5, 0.5 },
             color = Nazgul3DColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -388,10 +388,10 @@ function UpdatePanel()
             click_function = "Nazgul2D",
             function_owner = self,
             label = "2D Models",
-            position = {-0.2, 0.1, -0.575},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.2, 0.1, -0.575 },
+            scale = { 0.5, 0.5, 0.5 },
             color = Nazgul2DColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -403,10 +403,10 @@ function UpdatePanel()
             click_function = "NazgulRound",
             function_owner = self,
             label = "Round",
-            position = {0.5, 0.1, -0.575},
-            scale = {0.5, 0.5, 0.5},
+            position = { 0.5, 0.1, -0.575 },
+            scale = { 0.5, 0.5, 0.5 },
             color = NazgulRoundColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -418,10 +418,10 @@ function UpdatePanel()
             click_function = "NazgulSquare",
             function_owner = self,
             label = "Square",
-            position = {1.2, 0.1, -0.575},
-            scale = {0.5, 0.5, 0.5},
+            position = { 1.2, 0.1, -0.575 },
+            scale = { 0.5, 0.5, 0.5 },
             color = NazgulSquareColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -436,10 +436,10 @@ function UpdatePanel()
             click_function = "MtDoom3D",
             function_owner = self,
             label = "3D",
-            position = {-0.4, 0.1, -0.025},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.4, 0.1, -0.025 },
+            scale = { 0.5, 0.5, 0.5 },
             color = MtDoom3DColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -451,10 +451,10 @@ function UpdatePanel()
             click_function = "MtDoomFlat",
             function_owner = self,
             label = "Flat",
-            position = {0.3, 0.1, -0.025},
-            scale = {0.5, 0.5, 0.5},
+            position = { 0.3, 0.1, -0.025 },
+            scale = { 0.5, 0.5, 0.5 },
             color = MtDoomFlatColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -467,10 +467,10 @@ function UpdatePanel()
             click_function = "Settlements3D",
             function_owner = self,
             label = "3D",
-            position = {-0.4, 0.1, 0.15},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.4, 0.1, 0.15 },
+            scale = { 0.5, 0.5, 0.5 },
             color = Settlements3DColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -482,10 +482,10 @@ function UpdatePanel()
             click_function = "SettlementsFlat",
             function_owner = self,
             label = "Flat",
-            position = {0.3, 0.1, 0.15},
-            scale = {0.5, 0.5, 0.5},
+            position = { 0.3, 0.1, 0.15 },
+            scale = { 0.5, 0.5, 0.5 },
             color = SettlementsFlatColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -498,10 +498,10 @@ function UpdatePanel()
             click_function = "SoundEffectsOn",
             function_owner = self,
             label = "On",
-            position = {-0.6, 0.1, 0.515},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.6, 0.1, 0.515 },
+            scale = { 0.5, 0.5, 0.5 },
             color = SoundOnColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -513,10 +513,10 @@ function UpdatePanel()
             click_function = "SoundEffectsOff",
             function_owner = self,
             label = "Off",
-            position = {0.1, 0.1, 0.515},
-            scale = {0.5, 0.5, 0.5},
+            position = { 0.1, 0.1, 0.515 },
+            scale = { 0.5, 0.5, 0.5 },
             color = SoundOffColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -529,10 +529,10 @@ function UpdatePanel()
             click_function = "ScreamAlways",
             function_owner = self,
             label = "Always",
-            position = {-0.6, 0.1, 0.695},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.6, 0.1, 0.695 },
+            scale = { 0.5, 0.5, 0.5 },
             color = ScreamAlwaysColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -544,10 +544,10 @@ function UpdatePanel()
             click_function = "ScreamOnce",
             function_owner = self,
             label = "Once",
-            position = {0.1, 0.1, 0.695},
-            scale = {0.5, 0.5, 0.5},
+            position = { 0.1, 0.1, 0.695 },
+            scale = { 0.5, 0.5, 0.5 },
             color = ScreamOnceColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -559,10 +559,10 @@ function UpdatePanel()
             click_function = "ScreamNever",
             function_owner = self,
             label = "Never",
-            position = {0.8, 0.1, 0.695},
-            scale = {0.5, 0.5, 0.5},
+            position = { 0.8, 0.1, 0.695 },
+            scale = { 0.5, 0.5, 0.5 },
             color = ScreamNeverColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -575,10 +575,10 @@ function UpdatePanel()
             click_function = "WarningsOn",
             function_owner = self,
             label = "On",
-            position = {-0.6, 0.1, 1.05},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.6, 0.1, 1.05 },
+            scale = { 0.5, 0.5, 0.5 },
             color = WarningsOnColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -590,10 +590,10 @@ function UpdatePanel()
             click_function = "WarningsOff",
             function_owner = self,
             label = "Off",
-            position = {0.1, 0.1, 1.05},
-            scale = {0.5, 0.5, 0.5},
+            position = { 0.1, 0.1, 1.05 },
+            scale = { 0.5, 0.5, 0.5 },
             color = WarningsOffColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -606,10 +606,10 @@ function UpdatePanel()
             click_function = "DiceOriginal",
             function_owner = self,
             label = "Original",
-            position = {-1.2, 0.1, 1.33},
-            scale = {0.5, 0.5, 0.5},
+            position = { -1.2, 0.1, 1.33 },
+            scale = { 0.5, 0.5, 0.5 },
             color = DiceOriginalColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -621,10 +621,10 @@ function UpdatePanel()
             click_function = "DiceAnniversary",
             function_owner = self,
             label = "Anniversary",
-            position = {-0.5, 0.1, 1.33},
-            scale = {0.5, 0.5, 0.5},
+            position = { -0.5, 0.1, 1.33 },
+            scale = { 0.5, 0.5, 0.5 },
             color = DiceAnniversaryColor,
-            font_color = {0, 0, 0},
+            font_color = { 0, 0, 0 },
             width = 650,
             height = 150,
             font_size = 100,
@@ -638,10 +638,10 @@ function UpdatePanel()
                 click_function = "ToggleDicePanels",
                 function_owner = self,
                 label = "Use Sic Dice Panels",
-                position = {-0.85, 0.1, 1.5},
-                scale = {0.5, 0.5, 0.5},
-                color = {1, 1, 1},
-                font_color = {0, 0, 0},
+                position = { -0.85, 0.1, 1.5 },
+                scale = { 0.5, 0.5, 0.5 },
+                color = { 1, 1, 1 },
+                font_color = { 0, 0, 0 },
                 width = 1300,
                 height = 150,
                 font_size = 100,
@@ -654,10 +654,10 @@ function UpdatePanel()
                 click_function = "ToggleDicePanels",
                 function_owner = self,
                 label = "Use Dice Panel Strips",
-                position = {-0.85, 0.1, 1.5},
-                scale = {0.5, 0.5, 0.5},
-                color = {1, 1, 1},
-                font_color = {0, 0, 0},
+                position = { -0.85, 0.1, 1.5 },
+                scale = { 0.5, 0.5, 0.5 },
+                color = { 1, 1, 1 },
+                font_color = { 0, 0, 0 },
                 width = 1300,
                 height = 150,
                 font_size = 100,
@@ -673,10 +673,10 @@ function UpdatePanel()
                 click_function = "ApplyButton",
                 function_owner = self,
                 label = "Apply",
-                position = {1.5, 0.1, 1.4},
-                scale = {0.5, 0.5, 0.5},
-                color = {1, 1, 0},
-                font_color = {0, 0, 0},
+                position = { 1.5, 0.1, 1.4 },
+                scale = { 0.5, 0.5, 0.5 },
+                color = { 1, 1, 0 },
+                font_color = { 0, 0, 0 },
                 width = 800,
                 height = 250,
                 font_size = 150,
@@ -688,10 +688,10 @@ function UpdatePanel()
                 click_function = "CancelButton",
                 function_owner = self,
                 label = "Cancel",
-                position = {0.5, 0.1, 1.4},
-                scale = {0.5, 0.5, 0.5},
-                color = {1, 1, 1},
-                font_color = {0, 0, 0},
+                position = { 0.5, 0.1, 1.4 },
+                scale = { 0.5, 0.5, 0.5 },
+                color = { 1, 1, 1 },
+                font_color = { 0, 0, 0 },
                 width = 800,
                 height = 250,
                 font_size = 150,
@@ -719,11 +719,11 @@ function NewCharacters3D()
                 click_function = "ApplyPreferences",
                 function_owner = self,
                 label = "Please Wait\nApplying Preferences...",
-                position = {0, 0.1, 0},
+                position = { 0, 0.1, 0 },
                 width = 0,
                 height = 0,
                 font_size = 150,
-                font_color = {1, 1, 1}
+                font_color = { 1, 1, 1 }
             }
         )
         Settings.CharactersType = "3D"
@@ -763,25 +763,25 @@ function CharactersSquare()
 end
 
 function Nazgul3D()
-    Settings.NazgulsType = "3D"
+    Settings.NazgulType = "3D"
     ApplySettingsFlag = true
     UpdatePanel()
 end
 
 function Nazgul2D()
-    Settings.NazgulsType = "2D"
+    Settings.NazgulType = "2D"
     ApplySettingsFlag = true
     UpdatePanel()
 end
 
 function NazgulRound()
-    Settings.NazgulsType = "Round"
+    Settings.NazgulType = "Round"
     ApplySettingsFlag = true
     UpdatePanel()
 end
 
 function NazgulSquare()
-    Settings.NazgulsType = "Square"
+    Settings.NazgulType = "Square"
     ApplySettingsFlag = true
     UpdatePanel()
 end
@@ -902,8 +902,8 @@ end
 
 function ToggleDicePanels()
     local DPO = nil --dice panel object
-    local DPS = {} --dice panel spots
-    local DPY = 0 --dice panel fpp y rotation
+    local DPS = {}  --dice panel spots
+    local DPY = 0   --dice panel fpp y rotation
 
     for _, Obj in pairs(getAllObjects()) do
         if Obj.getName() == "(Free Peoples Combat Die)" or Obj.getName() == "(Shadow Combat Die)" then
@@ -925,18 +925,18 @@ function ToggleDicePanels()
 
         if Global.getVar("CompactMode") then
             DPS = {
-                Red = {-3, 1.01, -21.5},
-                Black = {-3, 1.01, -23},
-                Blue = {-23.75, 1.01, -15.75},
-                White = {-23.75, 1.01, -17.25}
+                Red = { -3, 1.01, -21.5 },
+                Black = { -3, 1.01, -23 },
+                Blue = { -23.75, 1.01, -15.75 },
+                White = { -23.75, 1.01, -17.25 }
             }
             DPY = 180
         else --not compact mode...
             DPS = {
-                Red = {-60, 1.14, -35.5},
-                Black = {-60, 1.14, -37},
-                Blue = {-60, 1.14, 35.5},
-                White = {-60, 1.14, 37}
+                Red = { -60, 1.14, -35.5 },
+                Black = { -60, 1.14, -37 },
+                Blue = { -60, 1.14, 35.5 },
+                White = { -60, 1.14, 37 }
             }
             DPY = 0
         end
@@ -945,12 +945,12 @@ function ToggleDicePanels()
         if getObjectFromGUID("9847f7") ~= nil then
             DPO = getObjectFromGUID("9847f7")
         else
-            DPO = getObjectFromGUID("0e5fd1").takeObject({guid = "9847f7", position = DPS.Red, rotation = {0, 180, 0}})
+            DPO = getObjectFromGUID("0e5fd1").takeObject({ guid = "9847f7", position = DPS.Red, rotation = { 0, 180, 0 } })
         end
 
         if DPO ~= nil then
             DPO.setPosition(DPS.Red)
-            DPO.setRotation({0, 180, 0})
+            DPO.setRotation({ 0, 180, 0 })
             DPO.setLock(true)
         end
 
@@ -959,12 +959,12 @@ function ToggleDicePanels()
             DPO = getObjectFromGUID("63319b")
         else
             DPO =
-                getObjectFromGUID("0e5fd1").takeObject({guid = "63319b", position = DPS.Black, rotation = {0, 180, 0}})
+                getObjectFromGUID("0e5fd1").takeObject({ guid = "63319b", position = DPS.Black, rotation = { 0, 180, 0 } })
         end
 
         if DPO ~= nil then
             DPO.setPosition(DPS.Black)
-            DPO.setRotation({0, 180, 0})
+            DPO.setRotation({ 0, 180, 0 })
             DPO.setLock(true)
         end
 
@@ -972,12 +972,12 @@ function ToggleDicePanels()
         if getObjectFromGUID("637507") ~= nil then
             DPO = getObjectFromGUID("637507")
         else
-            DPO = getObjectFromGUID("0e5fd1").takeObject({guid = "637507", position = DPS.Blue, rotation = {0, DPY, 0}})
+            DPO = getObjectFromGUID("0e5fd1").takeObject({ guid = "637507", position = DPS.Blue, rotation = { 0, DPY, 0 } })
         end
 
         if DPO ~= nil then
             DPO.setPosition(DPS.Blue)
-            DPO.setRotation({0, DPY, 0})
+            DPO.setRotation({ 0, DPY, 0 })
             DPO.setLock(true)
         end
 
@@ -986,12 +986,12 @@ function ToggleDicePanels()
             DPO = getObjectFromGUID("f50dab")
         else
             DPO =
-                getObjectFromGUID("0e5fd1").takeObject({guid = "f50dab", position = DPS.White, rotation = {0, DPY, 0}})
+                getObjectFromGUID("0e5fd1").takeObject({ guid = "f50dab", position = DPS.White, rotation = { 0, DPY, 0 } })
         end
 
         if DPO ~= nil then
             DPO.setPosition(DPS.White)
-            DPO.setRotation({0, DPY, 0})
+            DPO.setRotation({ 0, DPY, 0 })
             DPO.setLock(true)
         end
     else --assume was strips..
@@ -1017,10 +1017,10 @@ function ToggleDicePanels()
         end
 
         if Global.getVar("CompactMode") then
-            DPS = {F = {-23.7, 1.01, -14.2}, S = {-1.9, 1.01, -21.5}}
+            DPS = { F = { -23.7, 1.01, -14.2 }, S = { -1.9, 1.01, -21.5 } }
             DPY = 0
         else --not compact mode...
-            DPS = {F = {-60, 1.14, 34}, S = {-60, 1.14, -34}}
+            DPS = { F = { -60, 1.14, 34 }, S = { -60, 1.14, -34 } }
             DPY = 180
         end
 
@@ -1028,12 +1028,12 @@ function ToggleDicePanels()
         if getObjectFromGUID("92a611") ~= nil then
             DPO = getObjectFromGUID("92a611")
         else
-            DPO = getObjectFromGUID("0e5fd1").takeObject({guid = "92a611", position = DPS.S, rotation = {0, 0, 0}})
+            DPO = getObjectFromGUID("0e5fd1").takeObject({ guid = "92a611", position = DPS.S, rotation = { 0, 0, 0 } })
         end
 
         if DPO ~= nil then
             DPO.setPosition(DPS.S)
-            DPO.setRotation({0, 0, 0})
+            DPO.setRotation({ 0, 0, 0 })
             DPO.setLock(true)
         end
 
@@ -1041,12 +1041,12 @@ function ToggleDicePanels()
         if getObjectFromGUID("4b6f4c") ~= nil then
             DPO = getObjectFromGUID("4b6f4c")
         else
-            DPO = getObjectFromGUID("0e5fd1").takeObject({guid = "4b6f4c", position = DPS.F, rotation = {0, DPY, 0}})
+            DPO = getObjectFromGUID("0e5fd1").takeObject({ guid = "4b6f4c", position = DPS.F, rotation = { 0, DPY, 0 } })
         end
 
         if DPO ~= nil then
             DPO.setPosition(DPS.F)
-            DPO.setRotation({0, DPY, 0})
+            DPO.setRotation({ 0, DPY, 0 })
             DPO.setLock(true)
         end
     end
@@ -1063,11 +1063,11 @@ function ApplyButton()
             click_function = "ApplyPreferences",
             function_owner = self,
             label = "Please Wait\nApplying Preferences...",
-            position = {0, 0.1, 0},
+            position = { 0, 0.1, 0 },
             width = 0,
             height = 0,
             font_size = 150,
-            font_color = {1, 1, 1}
+            font_color = { 1, 1, 1 }
         }
     )
 
@@ -1081,14 +1081,13 @@ function ApplyButton()
         elseif Sound == "On" then
             Global.setVar("Mute", false)
             SoundCube.setDescription("SoundCube;")
+            SoundCube.call("Menu")
         else
             Sound = "Off"
             Global.setVar("Mute", true)
             SoundCube.setDescription("SoundCube;Muted;")
         end
 
-        SoundCube.call("Menu")
-        --sound cube.
         coroutine.yield(0)
         --get out new figurine templates...
         local ComponentBag = getObjectFromGUID("0e5fd1")
@@ -1097,7 +1096,7 @@ function ApplyButton()
         UpdateArmies(ComponentBag, AllObjects)
         UpdateCharacters(ComponentBag, AllObjects)
         UpdateFactions(ComponentBag, AllObjects)
-        UpdateNazguls(ComponentBag, AllObjects)
+        UpdateNazgul(ComponentBag, AllObjects)
 
         UpdateSettlements(AllObjects)
         UpdateDices(AllObjects)
@@ -1144,9 +1143,9 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
                 goto continue
             end
 
-            NewObj = Template.clone({position = Obj.getPosition()})
+            NewObj = Template.clone({ position = Obj.getPosition() })
             NewObj.setLock(false)
-            NewObj.setPosition({Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z})
+            NewObj.setPosition({ Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z })
             Obj.destruct()
 
             ::continue::
@@ -1181,7 +1180,7 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
                 goto continue
             end
         end
-        
+
         ::continue::
     end
 
@@ -1193,15 +1192,15 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
         local TempObj = ComponentBag.takeObject({
             guid = Item.guid,
             smooth = false,
-            position = {OffsetX, -2, -60},
-            rotation = {0, 180, 0}
+            position = { OffsetX, -2, -60 },
+            rotation = { 0, 180, 0 }
         })
 
         coroutine.yield(0)
         TempObj.setLock(true)
         local zPosition = -60 - SearchConfig.PositionOffset;
-        TempObj.setPosition({OffsetX, -2, zPosition})
-        TempObj.setRotation({0, 180, 0})
+        TempObj.setPosition({ OffsetX, -2, zPosition })
+        TempObj.setRotation({ 0, 180, 0 })
         table.insert(TemplateList, TempObj.getGUID())
     end
 
@@ -1220,8 +1219,8 @@ function UpdateFactions(ComponentBag, AllObjects)
     ReplaceObjects(ComponentBag, AllObjects, FactionsSearchConfig, Settings.FactionsType)
 end
 
-function UpdateNazguls(ComponentBag, AllObjects)
-    ReplaceObjects(ComponentBag, AllObjects, NazgulSearchConfig, Settings.NazgulsType)
+function UpdateNazgul(ComponentBag, AllObjects)
+    ReplaceObjects(ComponentBag, AllObjects, NazgulSearchConfig, Settings.NazgulType)
 end
 
 function UpdateSettlements(AllObjects)
@@ -1280,31 +1279,31 @@ function TryUpdateSettlementObject(Obj)
 end
 
 function UpdateSettlementObject(Obj, Config)
-    Obj.setRotationSmooth({0, 180, 0}, false, false)
+    Obj.setRotationSmooth({ 0, 180, 0 }, false, false)
 
     if Settings.SettlementsType == "3D" then
-        Obj.setPosition({Obj.getPosition().x, Config.PositionY_3D, Obj.getPosition().z})
+        Obj.setPosition({ Obj.getPosition().x, Config.PositionY_3D, Obj.getPosition().z })
 
         local conflictedObjects =
             Physics.cast(
-            {
-                origin = Obj.getPosition(),
-                direction = {0, 1, 0},
-                type = 3,
-                size = Config.Size,
-                orientation = {0, 0, 0},
-                max_distance = 0,
-                debug = true
-            }
-        )
+                {
+                    origin = Obj.getPosition(),
+                    direction = { 0, 1, 0 },
+                    type = 3,
+                    size = Config.Size,
+                    orientation = { 0, 0, 0 },
+                    max_distance = 0,
+                    debug = true
+                }
+            )
 
         for _, SubObj in pairs(conflictedObjects) do
             if SubObj.hit_object.getLock() == false then
-                SubObj.hit_object.translate({0, 1, 0})
+                SubObj.hit_object.translate({ 0, 1, 0 })
             end
         end
     else
-        Obj.setPositionSmooth({Obj.getPosition().x, Config.PositionY_Flat, Obj.getPosition().z}, false, false)
+        Obj.setPositionSmooth({ Obj.getPosition().x, Config.PositionY_Flat, Obj.getPosition().z }, false, false)
     end
 end
 
@@ -1356,7 +1355,7 @@ function TryUpdateDiceObject(OldDiceObj)
             )
 
             coroutine.yield(0)
-            Global.call("SetDiceFace", {Dice = newDiceObj, Value = OldDiceObj.getRotationValue()})
+            Global.call("SetDiceFace", { Dice = newDiceObj, Value = OldDiceObj.getRotationValue() })
 
             ComponentBag.putObject(OldDiceObj)
             coroutine.yield(0)
@@ -1425,7 +1424,7 @@ function UpdateMountDoom()
     else
         if getObjectFromGUID("03e684") == nil then
             getObjectFromGUID("416864").takeObject(
-                {smooth = false, guid = "03e684", position = {24.8, 1.01, -9.85}, rotation = {0, 180, 0}}
+                { smooth = false, guid = "03e684", position = { 24.8, 1.01, -9.85 }, rotation = { 0, 180, 0 } }
             )
             getObjectFromGUID("03e684").setLock(true)
         end
@@ -1433,7 +1432,7 @@ function UpdateMountDoom()
         coroutine.yield(0)
         if getObjectFromGUID("a8c069") == nil then
             getObjectFromGUID("416864").takeObject(
-                {smooth = false, guid = "a8c069", position = {24.8, 1.11, -9.85}, rotation = {0, 180, 0}}
+                { smooth = false, guid = "a8c069", position = { 24.8, 1.11, -9.85 }, rotation = { 0, 180, 0 } }
             )
             getObjectFromGUID("a8c069").setLock(true)
         end
@@ -1441,7 +1440,7 @@ function UpdateMountDoom()
         coroutine.yield(0)
         if getObjectFromGUID("ec1790") == nil then
             getObjectFromGUID("416864").takeObject(
-                {smooth = false, guid = "ec1790", position = {24.8, 1.21, -9.85}, rotation = {0, 180, 0}}
+                { smooth = false, guid = "ec1790", position = { 24.8, 1.21, -9.85 }, rotation = { 0, 180, 0 } }
             )
             getObjectFromGUID("ec1790").setLock(true)
         end
@@ -1449,7 +1448,7 @@ function UpdateMountDoom()
         coroutine.yield(0)
         if getObjectFromGUID("873d56") == nil then
             getObjectFromGUID("416864").takeObject(
-                {smooth = false, guid = "873d56", position = {24.8, 1.31, -9.85}, rotation = {0, 180, 0}}
+                { smooth = false, guid = "873d56", position = { 24.8, 1.31, -9.85 }, rotation = { 0, 180, 0 } }
             )
             getObjectFromGUID("873d56").setLock(true)
         end
@@ -1457,7 +1456,7 @@ function UpdateMountDoom()
         coroutine.yield(0)
         if getObjectFromGUID("7b7ed8") == nil then
             getObjectFromGUID("416864").takeObject(
-                {smooth = false, guid = "7b7ed8", position = {24.8, 1.41, -9.85}, rotation = {0, 180, 0}}
+                { smooth = false, guid = "7b7ed8", position = { 24.8, 1.41, -9.85 }, rotation = { 0, 180, 0 } }
             )
             getObjectFromGUID("7b7ed8").setLock(true)
         end
@@ -1465,7 +1464,7 @@ function UpdateMountDoom()
         coroutine.yield(0)
         if getObjectFromGUID("76fca0") == nil then
             getObjectFromGUID("416864").takeObject(
-                {smooth = false, guid = "76fca0", position = {24.8, 1.56, -9.85}, rotation = {0, 180, 0}}
+                { smooth = false, guid = "76fca0", position = { 24.8, 1.56, -9.85 }, rotation = { 0, 180, 0 } }
             )
             getObjectFromGUID("76fca0").setLock(true)
         end
@@ -1477,9 +1476,10 @@ end
 function RecordPreferences()
     --record settings...
     Global.setVar("RulesWarnings", WarningsSettingType == "On")
-    local Notes = "Scale:" .. FigureScale .. ";"
+    local Notes = ""
+    --Notes = Notes .. "Scale:" .. FigureScale .. ";"
     Notes = Notes .. "Characters:" .. Settings.CharactersType .. ";"
-    Notes = Notes .. "Nazgul:" .. Settings.NazgulsType .. ";"
+    Notes = Notes .. "Nazgul:" .. Settings.NazgulType .. ";"
     Notes = Notes .. "Armies:" .. Settings.ArmiesType .. ";"
     Notes = Notes .. "Factions:" .. Settings.FactionsType .. ";"
     if ModelLockSetting then
@@ -1507,11 +1507,11 @@ function ChangeFigureScaleCoroutine()
             click_function = "Nothing",
             function_owner = self,
             label = "Please Wait...\n\n(Changing Figure Scale)...",
-            position = {0, 0.1, 0},
+            position = { 0, 0.1, 0 },
             width = 0,
             height = 0,
             font_size = 100,
-            font_color = {1, 1, 1}
+            font_color = { 1, 1, 1 }
         }
     )
 
@@ -1526,7 +1526,8 @@ function ChangeFigureScaleCoroutine()
     coroutine.yield(0)
 
     print("FigureScale:", string.format("%.0f", Settings.FigureScale))
-    Global.call("UpdateTag", {Text = self.getGMNotes(), Tag = "Scale", Value = string.format("%.0f", Settings.FigureScale)})
+    Global.call("UpdateTag",
+        { Text = self.getGMNotes(), Tag = "Scale", Value = string.format("%.0f", Settings.FigureScale) })
     UpdatePanel()
     return 1
 end
@@ -1537,7 +1538,7 @@ end
 
 function ObjectIsUnit(Obj)
     local description = Obj.getDescription()
-    return string.find(description, "Character;") ~= nil or 
+    return string.find(description, "Character;") ~= nil or
         string.find(description, "Minion;") ~= nil or
         string.find(description, "Faction;") ~= nil or
         string.find(description, "Regular;") ~= nil or

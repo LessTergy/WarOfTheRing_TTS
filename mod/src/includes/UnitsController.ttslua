@@ -1216,7 +1216,7 @@ function SpawnArmies()
     SpawnArmy(HaradrimRegularConfig, settings.ArmiesType)
     SpawnArmy(HaradrimEliteConfig, settings.ArmiesType)
 
-    SpawnArmy(NazgulConfig, settings.NazgulsType)
+    SpawnArmy(NazgulConfig, settings.NazgulType)
 end
 
 function SpawnArmy(ArmyConfig, SettingType)
@@ -1225,9 +1225,9 @@ function SpawnArmy(ArmyConfig, SettingType)
     local Template = GetObjectFromComponentBag(ComponentBag, ArmyConfig, SettingType)
 
     for _, Position in pairs(ArmyConfig.Positions) do
-        local NewObj = Template.clone({position = Position})
+        local NewObj = Template.clone({ position = Position })
         NewObj.setLock(false)
-        NewObj.setPosition({Position.x, Position.y + 1, Position.z})
+        NewObj.setPosition({ Position.x, Position.y + 1, Position.z })
     end
 
     Template.setLock(false)
@@ -1259,15 +1259,15 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
         end
 
         result = Item
-        
+
         ::continue::
     end
 
     local Template = ComponentBag.takeObject({
         guid = result.guid,
         smooth = false,
-        position = {80, -2, -60},
-        rotation = {0, 180, 0}
+        position = { 80, -2, -60 },
+        rotation = { 0, 180, 0 }
     })
     Template.setLock(true)
 

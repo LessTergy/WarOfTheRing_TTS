@@ -9,8 +9,8 @@ FellowshipYellowZoneID = "652513"
 
 -- Turn info
 Round = 0
-Turn = 0 -- count of turns
-Phase = 0 -- tracks phase of the turn (1-6)
+Turn = 0     -- count of turns
+Phase = 0    -- tracks phase of the turn (1-6)
 Mute = false -- mute sound?
 Guide = ""
 GuideLevel = 0
@@ -28,7 +28,7 @@ BoardX = 36.5
 BoardZ = 25.0
 
 -- victorypoints...
-VictoryPoints = {Shadow = 0, FreePeoples = 0}
+VictoryPoints = { Shadow = 0, FreePeoples = 0 }
 
 -- dice table...
 Dice = {
@@ -38,8 +38,8 @@ Dice = {
             -- Side
             Rolling = false,
             RollingTable = {}, -- list of combat dice actively rolling.
-            RolledTable = {}, -- list of combat dice finished rolling.
-            ResultTable = {}, -- table of roll results.
+            RolledTable = {},  -- list of combat dice finished rolling.
+            ResultTable = {},  -- table of roll results.
             ResultText = ""
         },
         -- Shadow
@@ -47,22 +47,22 @@ Dice = {
             -- Player
             Rolling = false,
             RollingTable = {}, -- list of combat dice actively rolling.
-            RolledTable = {}, -- list of combat dice finished rolling.
-            ResultTable = {}, -- table of roll results.
+            RolledTable = {},  -- list of combat dice finished rolling.
+            ResultTable = {},  -- table of roll results.
             ResultText = ""
         }
         -- FreePeoples
     },
     Stats = {
         Combat = {
-            FreePeoples = {RollCount = 0, Results = {0, 0, 0, 0, 0, 0}},
-            Shadow = {RollCount = 0, Results = {0, 0, 0, 0, 0, 0}}
+            FreePeoples = { RollCount = 0, Results = { 0, 0, 0, 0, 0, 0 } },
+            Shadow = { RollCount = 0, Results = { 0, 0, 0, 0, 0, 0 } }
         },
         -- Combat
         Action = {
-            Shadow = {RollCount = 0, Results = {}},
+            Shadow = { RollCount = 0, Results = {} },
             -- {Face="",Count=0}
-            FreePeoples = {RollCount = 0, Results = {}}
+            FreePeoples = { RollCount = 0, Results = {} }
             -- {Face="",Count=0}
         }
         -- Action
@@ -70,18 +70,18 @@ Dice = {
     -- Stats
 }
 
-Nations = {"Dwarves", "Elves", "Gondor", "North", "Rohan", "Haradrim", "Isengard", "Sauron"}
+Nations = { "Dwarves", "Elves", "Gondor", "North", "Rohan", "Haradrim", "Isengard", "Sauron" }
 
 PoliticalTrack = {
     -- Political Track Levels: 0=AtWar,1-3=AtPeace (1=closest to war)
-    Gondor = {ID = "8ab5c1", Active = false, Level = 2, AtWar = false},
-    Rohan = {ID = "f5ca1b", Active = false, Level = 3, AtWar = false},
-    North = {ID = "07e059", Active = false, Level = 3, AtWar = false},
-    Dwarves = {ID = "a55f2c", Active = false, Level = 3, AtWar = false},
-    Elves = {ID = "fc2440", Active = true, Level = 3, AtWar = false},
-    Sauron = {ID = "75a065", Active = true, Level = 1, AtWar = false},
-    Isengard = {ID = "7f39c1", Active = true, Level = 1, AtWar = false},
-    Haradrim = {ID = "52aff9", Active = true, Level = 2, AtWar = false}
+    Gondor = { ID = "8ab5c1", Active = false, Level = 2, AtWar = false },
+    Rohan = { ID = "f5ca1b", Active = false, Level = 3, AtWar = false },
+    North = { ID = "07e059", Active = false, Level = 3, AtWar = false },
+    Dwarves = { ID = "a55f2c", Active = false, Level = 3, AtWar = false },
+    Elves = { ID = "fc2440", Active = true, Level = 3, AtWar = false },
+    Sauron = { ID = "75a065", Active = true, Level = 1, AtWar = false },
+    Isengard = { ID = "7f39c1", Active = true, Level = 1, AtWar = false },
+    Haradrim = { ID = "52aff9", Active = true, Level = 2, AtWar = false }
 }
 
 Regions = {}
@@ -91,51 +91,51 @@ Spots = {
     Compact = {
         CompanionCards = {
             Separated = {
-                {-51.5, 0.98, -33},
-                {-56.5, 0.98, -33},
-                {-61.5, 0.98, -33},
-                {-46.5, 0.98, -45},
-                {-51.5, 0.98, -45},
-                {-56.5, 0.98, -45},
-                {-61.5, 0.98, -45},
-                {-66.5, 0.98, -45},
-                {-71.5, 0.98, -45}
+                { -51.5, 0.98, -33 },
+                { -56.5, 0.98, -33 },
+                { -61.5, 0.98, -33 },
+                { -46.5, 0.98, -45 },
+                { -51.5, 0.98, -45 },
+                { -56.5, 0.98, -45 },
+                { -61.5, 0.98, -45 },
+                { -66.5, 0.98, -45 },
+                { -71.5, 0.98, -45 }
             },
             Searched = {
-                {-52, 6, -25},
-                {-47, 6, -25},
-                {-42, 6, -25},
-                {-37, 6, -25},
-                {-32, 6, -25},
-                {-27, 6, -25},
-                {-22, 6, -25},
-                {-57, 6, -25},
-                {-62, 6, -25}
+                { -52, 6, -25 },
+                { -47, 6, -25 },
+                { -42, 6, -25 },
+                { -37, 6, -25 },
+                { -32, 6, -25 },
+                { -27, 6, -25 },
+                { -22, 6, -25 },
+                { -57, 6, -25 },
+                { -62, 6, -25 }
             }
         }
     },
     CompanionCards = {
         Separated = {
-            {21.5, 0.97, 33},
-            {26.5, 0.97, 33},
-            {31.5, 0.97, 33},
-            {36.5, 0.97, 33},
-            {41.5, 0.97, 33},
-            {46.5, 0.97, 33},
-            {51.5, 0.97, 33},
-            {16.5, 0.97, 33},
-            {11.5, 0.97, 33}
+            { 21.5, 0.97, 33 },
+            { 26.5, 0.97, 33 },
+            { 31.5, 0.97, 33 },
+            { 36.5, 0.97, 33 },
+            { 41.5, 0.97, 33 },
+            { 46.5, 0.97, 33 },
+            { 51.5, 0.97, 33 },
+            { 16.5, 0.97, 33 },
+            { 11.5, 0.97, 33 }
         },
         Searched = {
-            {21.5, 6, 26},
-            {26.5, 6, 26},
-            {31.5, 6, 26},
-            {36.5, 6, 26},
-            {41.5, 6, 26},
-            {46.5, 6, 26},
-            {51.5, 6, 26},
-            {16.5, 6, 26},
-            {11.5, 6, 26}
+            { 21.5, 6, 26 },
+            { 26.5, 6, 26 },
+            { 31.5, 6, 26 },
+            { 36.5, 6, 26 },
+            { 41.5, 6, 26 },
+            { 46.5, 6, 26 },
+            { 51.5, 6, 26 },
+            { 16.5, 6, 26 },
+            { 11.5, 6, 26 }
         }
     }
 }
@@ -147,11 +147,11 @@ function onLoad()
 
     InitMap()
     FreezeObjects()
-    
-    getObjectFromGUID(FellowshipRedZoneID).setPosition({36.5, -2, 26.5})
-    getObjectFromGUID(FellowshipRedZoneID).setScale({35, 1, 1})
-    getObjectFromGUID(FellowshipYellowZoneID).setPosition({36.35, -2, 26.5})
-    getObjectFromGUID(FellowshipYellowZoneID).setScale({35, 1, 1})
+
+    getObjectFromGUID(FellowshipRedZoneID).setPosition({ 36.5, -2, 26.5 })
+    getObjectFromGUID(FellowshipRedZoneID).setScale({ 35, 1, 1 })
+    getObjectFromGUID(FellowshipYellowZoneID).setPosition({ 36.35, -2, 26.5 })
+    getObjectFromGUID(FellowshipYellowZoneID).setScale({ 35, 1, 1 })
 end
 
 function UpdateIDs()
@@ -222,32 +222,32 @@ function UpdateIDs()
             IDs.Companions.TheRingBearers = Obj.getGUID()
         elseif
             Obj.getName() == "Gandalf the White: Emissary from the West" and
-                string.find(Obj.getDescription(), "Character;") ~= nil and
-                string.find(Obj.getDescription(), "Token;") == nil
-         then
+            string.find(Obj.getDescription(), "Character;") ~= nil and
+            string.find(Obj.getDescription(), "Token;") == nil
+        then
             IDs.Companions.GandalfTheWhite = Obj.getGUID()
         elseif
             Obj.getName() == "Gandalf the White: Emissary from the West" and
-                string.find(Obj.getDescription(), "Character;Token;") ~= nil
-         then
+            string.find(Obj.getDescription(), "Character;Token;") ~= nil
+        then
             IDs.Companions.GandalfTheWhiteToken = Obj.getGUID()
         elseif
             Obj.getName() == "Aragorn: Heir to Isildur" and string.find(Obj.getDescription(), "Character;") ~= nil and
-                string.find(Obj.getDescription(), "Token;") == nil
-         then
+            string.find(Obj.getDescription(), "Token;") == nil
+        then
             IDs.Companions.Aragorn = Obj.getGUID()
         elseif
             Obj.getName() == "Aragorn: Heir to Isildur" and string.find(Obj.getDescription(), "Character;Token;") ~= nil
-         then
+        then
             IDs.Companions.AragornToken = Obj.getGUID()
         elseif
             Obj.getName() == "Lady Galadriel: Keeper of Nenya" and
-                string.find(Obj.getDescription(), "Character;") ~= nil
-         then
+            string.find(Obj.getDescription(), "Character;") ~= nil
+        then
             IDs.Companions.LadyGaladriel = Obj.getGUID()
         elseif
             Obj.getName() == "Lord Elrond: Keeper of Vilya" and string.find(Obj.getDescription(), "Character;") ~= nil
-         then
+        then
             IDs.Companions.LordElrond = Obj.getGUID()
         elseif Obj.getName() == "Gandalf the Grey" and string.find(Obj.getDescription(), "Character;") ~= nil then
             IDs.Companions.GandalfTheGrey = Obj.getGUID()
@@ -267,8 +267,8 @@ function UpdateIDs()
             IDs.Companions.Gollum = Obj.getGUID()
         elseif
             Obj.getName() == "Sméagol" and string.find(Obj.getDescription(), "Character;") ~= nil and
-                string.find(Obj.getDescription(), "Counter;") == nil
-         then
+            string.find(Obj.getDescription(), "Counter;") == nil
+        then
             IDs.Companions.Smeagol = Obj.getGUID()
         elseif Obj.getName() == "Sméagol" and string.find(Obj.getDescription(), "Counter;Companion;") ~= nil then
             IDs.Companions.SmeagolToken = Obj.getGUID()
@@ -284,49 +284,49 @@ function UpdateIDs()
             IDs.Companions.Theoden = Obj.getGUID()
         elseif
             string.find(Obj.getName(), "Thranduil:") ~= nil and string.find(Obj.getDescription(), "Character;") ~= nil
-         then
+        then
             -- MINIONS
             IDs.Companions.Thranduil = Obj.getGUID()
         elseif Obj.getName() == "Saruman: Corrupted Wizard" and string.find(Obj.getDescription(), "Minion;") ~= nil then
             IDs.Companions.Saruman = Obj.getGUID()
         elseif
             Obj.getName() == "The Witch-King: The Black Captain" and string.find(Obj.getDescription(), "Minion;") ~= nil
-         then
+        then
             IDs.Minions.TheWitchKing = Obj.getGUID()
         elseif
             Obj.getName() == "The Mouth of Sauron: Lieutenant of Barad~Dur" and
-                string.find(Obj.getDescription(), "Minion;") ~= nil
-         then
+            string.find(Obj.getDescription(), "Minion;") ~= nil
+        then
             IDs.Minions.TheMouthOfSauron = Obj.getGUID()
         elseif
             Obj.getName() == "The Witch-King: Chief of the Ring Wraiths" and
-                string.find(Obj.getDescription(), "Minion;") ~= nil
-         then
+            string.find(Obj.getDescription(), "Minion;") ~= nil
+        then
             IDs.Minions.TheWitchKingCotR = Obj.getGUID()
         elseif
             Obj.getName() == "The Mouth of Sauron: Black Númenórean" and
-                string.find(Obj.getDescription(), "Minion;") ~= nil
-         then
+            string.find(Obj.getDescription(), "Minion;") ~= nil
+        then
             IDs.Minions.TheMouthOfSauronBN = Obj.getGUID()
         elseif Obj.getName() == "Gothmog: Lieutenant of Morgul" and string.find(Obj.getDescription(), "Minion;") ~= nil then
             IDs.Minions.Gothmog = Obj.getGUID()
         elseif
             Obj.getName() == "Balrog: Evil of the Ancient World" and string.find(Obj.getDescription(), "Minion;") ~= nil
-         then
+        then
             IDs.Minions.TheBalrog = Obj.getGUID()
         elseif
             Obj.getName() == "The Black Serpent: Chieftain of the Haradrim" and
-                string.find(Obj.getDescription(), "Minion;") ~= nil
-         then
+            string.find(Obj.getDescription(), "Minion;") ~= nil
+        then
             IDs.Minions.TheBlackSerpent = Obj.getGUID()
         elseif
             Obj.getName() == "The Shadow of Mirkwood: Chieftain of the Dark Lord" and
-                string.find(Obj.getDescription(), "Minion;") ~= nil
-         then
+            string.find(Obj.getDescription(), "Minion;") ~= nil
+        then
             IDs.Minions.TheShadowOfMirkwood = Obj.getGUID()
         elseif
             Obj.getName() == "Ugluk: Chieftain of the Uruk-Hai" and string.find(Obj.getDescription(), "Minion;") ~= nil
-         then
+        then
             IDs.Minions.Ugluk = Obj.getGUID()
         end
     end
@@ -342,8 +342,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Anfalas"] = {
         Nation = "Gondor",
@@ -352,8 +352,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Angmar"] = {
         Nation = "Sauron",
@@ -362,8 +362,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "City",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Arnor"] = {
         Nation = "",
@@ -372,8 +372,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Ash Mountains"] = {
         Nation = "",
@@ -382,8 +382,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Barad~Dur"] = {
         Nation = "Sauron",
@@ -392,8 +392,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 4, E = 1, L = 1}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 4, E = 1, L = 1 }
     }
     Regions["Bree"] = {
         Nation = "North",
@@ -402,8 +402,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 0, L = 0 }
     }
     Regions["Buchland"] = {
         Nation = "North",
@@ -412,8 +412,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Cardolan"] = {
         Nation = "",
@@ -422,8 +422,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Carrock"] = {
         Nation = "North",
@@ -432,8 +432,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 0, L = 0 }
     }
     Regions["Crack of Doom"] = {
         Nation = "",
@@ -442,8 +442,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Track",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Dagorlad"] = {
         Nation = "",
@@ -452,8 +452,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Dale"] = {
         Nation = "North",
@@ -462,8 +462,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "City",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 0, L = 1}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 0, L = 1 }
     }
     Regions["Dead Marshes"] = {
         Nation = "",
@@ -472,8 +472,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Dimrill Dale"] = {
         Nation = "",
@@ -482,8 +482,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Dol Amroth"] = {
         Nation = "Gondor",
@@ -492,8 +492,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 3, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 3, E = 0, L = 0 }
     }
     Regions["Dol Guldur"] = {
         Nation = "Sauron",
@@ -502,8 +502,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 5, E = 1, L = 1}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 5, E = 1, L = 1 }
     }
     Regions["Druadan Forest"] = {
         Nation = "Gondor",
@@ -512,8 +512,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Druwaith Iaur"] = {
         Nation = "",
@@ -522,8 +522,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Eagles' Eyrie"] = {
         Nation = "",
@@ -532,8 +532,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["East Harondor"] = {
         Nation = "",
@@ -542,8 +542,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["East Rhun"] = {
         Nation = "Southron/Easterling",
@@ -552,8 +552,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Eastemnet"] = {
         Nation = "Rohan",
@@ -562,8 +562,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Eastern Brown Lands"] = {
         Nation = "",
@@ -572,8 +572,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Eastern Emyn Muil"] = {
         Nation = "",
@@ -582,8 +582,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Eastern Mirkwood"] = {
         Nation = "",
@@ -592,8 +592,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Edoras"] = {
         Nation = "Rohan",
@@ -602,8 +602,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "City",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 1, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 1, L = 0 }
     }
     Regions["Enedwaith"] = {
         Nation = "",
@@ -612,8 +612,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Erebor"] = {
         Nation = "Dwarves",
@@ -622,8 +622,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 2, L = 1}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 2, L = 1 }
     }
     Regions["Erech"] = {
         Nation = "Gondor",
@@ -632,8 +632,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Ered Luin"] = {
         Nation = "Dwarves",
@@ -642,8 +642,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 0, L = 0 }
     }
     Regions["Ettenmoors"] = {
         Nation = "",
@@ -652,8 +652,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Evendim"] = {
         Nation = "",
@@ -662,8 +662,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Fangorn"] = {
         Nation = "",
@@ -672,8 +672,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Far Harad"] = {
         Nation = "Southron/Easterling",
@@ -682,8 +682,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "City",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 3, E = 1, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 3, E = 1, L = 0 }
     }
     Regions["Folde"] = {
         Nation = "Rohan",
@@ -692,8 +692,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Fords of Bruinen"] = {
         Nation = "",
@@ -702,8 +702,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Fords of Isen"] = {
         Nation = "Rohan",
@@ -712,8 +712,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Fortification",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 2, E = 0, L = 1}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 2, E = 0, L = 1 }
     }
     Regions["Forlindon"] = {
         Nation = "",
@@ -722,8 +722,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Gap of Rohan"] = {
         Nation = "Isengard",
@@ -732,8 +732,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Gladden Fields"] = {
         Nation = "",
@@ -742,8 +742,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Goblin's Gate"] = {
         Nation = "",
@@ -752,8 +752,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Gorgoroth"] = {
         Nation = "Sauron",
@@ -762,8 +762,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 3, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 3, E = 0, L = 0 }
     }
     Regions["Grey Havens"] = {
         Nation = "Elves",
@@ -772,8 +772,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 1, L = 1}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 1, L = 1 }
     }
     Regions["Harlindon"] = {
         Nation = "",
@@ -782,8 +782,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Helm's Deep"] = {
         Nation = "Rohan",
@@ -792,8 +792,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 0, L = 0 }
     }
     Regions["High Pass"] = {
         Nation = "",
@@ -802,8 +802,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Hollin"] = {
         Nation = "",
@@ -812,8 +812,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Iron Hills"] = {
         Nation = "Dwarves",
@@ -822,8 +822,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 0, L = 0 }
     }
     Regions["Khand"] = {
         Nation = "Southron/Easterling",
@@ -832,8 +832,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Lamedon"] = {
         Nation = "Gondor",
@@ -842,8 +842,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Lorien"] = {
         Nation = "Elves",
@@ -852,8 +852,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 2, L = 1}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 2, L = 1 }
     }
     Regions["Lossarnach"] = {
         Nation = "Gondor",
@@ -862,8 +862,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Minas Morgul"] = {
         Nation = "Sauron",
@@ -872,8 +872,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 5, E = 0, L = 1}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 5, E = 0, L = 1 }
     }
     Regions["Minas Tirith"] = {
         Nation = "Gondor",
@@ -882,8 +882,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 3, E = 1, L = 1}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 3, E = 1, L = 1 }
     }
     Regions["Minbiriath"] = {
         Nation = "",
@@ -892,8 +892,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Morannon"] = {
         Nation = "Sauron",
@@ -902,8 +902,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 5, E = 0, L = 1}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 5, E = 0, L = 1 }
     }
     Regions["Moria"] = {
         Nation = "Sauron",
@@ -912,8 +912,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 2, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 2, E = 0, L = 0 }
     }
     Regions["Mount Doom 1"] = {
         Nation = "",
@@ -922,8 +922,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Track",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Mount Doom 2"] = {
         Nation = "",
@@ -932,8 +932,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Track",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Mount Doom 3"] = {
         Nation = "",
@@ -942,8 +942,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Track",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Mount Doom 4"] = {
         Nation = "",
@@ -952,8 +952,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Track",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Mount Doom 5"] = {
         Nation = "",
@@ -962,8 +962,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Track",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Mount Gram"] = {
         Nation = "Sauron",
@@ -972,8 +972,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Mount Gundabad"] = {
         Nation = "Sauron",
@@ -982,8 +982,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 2, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 2, E = 0, L = 0 }
     }
     Regions["Narrows of the Forest"] = {
         Nation = "",
@@ -992,8 +992,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Near Harad"] = {
         Nation = "Southron/Easterling",
@@ -1002,8 +1002,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 3, E = 1, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 3, E = 1, L = 0 }
     }
     Regions["Noman-Lands"] = {
         Nation = "",
@@ -1012,8 +1012,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["North Anduin Vale"] = {
         Nation = "",
@@ -1022,8 +1022,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["North Downs"] = {
         Nation = "North",
@@ -1032,8 +1032,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 1, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 1, L = 0 }
     }
     Regions["North Dunland"] = {
         Nation = "Isengard",
@@ -1042,8 +1042,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 0, L = 0 }
     }
     Regions["North Ered Luin"] = {
         Nation = "Dwarves",
@@ -1052,8 +1052,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["North Ithilien"] = {
         Nation = "",
@@ -1062,8 +1062,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["North Rhun"] = {
         Nation = "Southron/Easterling",
@@ -1072,8 +1072,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 2, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 2, E = 0, L = 0 }
     }
     Regions["Northern Dorwinion"] = {
         Nation = "",
@@ -1082,8 +1082,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Northern Mirkwood"] = {
         Nation = "",
@@ -1092,8 +1092,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Northern Rhovanion"] = {
         Nation = "",
@@ -1102,8 +1102,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Nurn"] = {
         Nation = "Sauron",
@@ -1112,8 +1112,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 2, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 2, E = 0, L = 0 }
     }
     Regions["Old Ford"] = {
         Nation = "",
@@ -1122,8 +1122,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Old Forest"] = {
         Nation = "",
@@ -1132,8 +1132,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Old Forest Road"] = {
         Nation = "North",
@@ -1142,8 +1142,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Orthanc"] = {
         Nation = "Isengard",
@@ -1152,8 +1152,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 4, E = 1, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 4, E = 1, L = 0 }
     }
     Regions["Osgiliath"] = {
         Nation = "",
@@ -1162,8 +1162,8 @@ function InitMap()
         Control = "",
         Settlement = "Fortification",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 2, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 2, E = 0, L = 0 }
     }
     Regions["Parth Celebrant"] = {
         Nation = "",
@@ -1172,8 +1172,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Pelargir"] = {
         Nation = "Gondor",
@@ -1182,8 +1182,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "City",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 0, L = 0 }
     }
     Regions["Rhosgobel"] = {
         Nation = "North",
@@ -1192,8 +1192,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Rivendell"] = {
         Nation = "Elves",
@@ -1202,8 +1202,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 2, L = 1}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 2, L = 1 }
     }
     Regions["South Andium Vale"] = {
         Nation = "",
@@ -1212,8 +1212,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["South Downs"] = {
         Nation = "",
@@ -1222,8 +1222,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["South Dunland"] = {
         Nation = "Isengard",
@@ -1232,8 +1232,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 0, L = 0 }
     }
     Regions["South Ered Luin"] = {
         Nation = "",
@@ -1242,8 +1242,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["South Ithilien"] = {
         Nation = "",
@@ -1252,8 +1252,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["South Rhun"] = {
         Nation = "Southron/Easterling",
@@ -1262,8 +1262,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 3, E = 1, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 3, E = 1, L = 0 }
     }
     Regions["Southern Dorwinion"] = {
         Nation = "",
@@ -1272,8 +1272,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Southern Murkwood"] = {
         Nation = "",
@@ -1282,8 +1282,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Southern Rhovanion"] = {
         Nation = "",
@@ -1292,8 +1292,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Tharbad"] = {
         Nation = "",
@@ -1302,8 +1302,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["The Shire"] = {
         Nation = "North",
@@ -1312,8 +1312,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "City",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 0, L = 0 }
     }
     Regions["Tower Hills"] = {
         Nation = "",
@@ -1322,8 +1322,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Trollshaws"] = {
         Nation = "",
@@ -1332,8 +1332,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Umbar"] = {
         Nation = "Southron/Easterling",
@@ -1342,8 +1342,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "Stronghold",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 3, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 3, E = 0, L = 0 }
     }
     Regions["Vale of the Carnen"] = {
         Nation = "",
@@ -1352,8 +1352,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Vale of the Celduin"] = {
         Nation = "",
@@ -1362,8 +1362,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Weather Hills"] = {
         Nation = "",
@@ -1372,8 +1372,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["West Harondor"] = {
         Nation = "",
@@ -1382,8 +1382,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Westemnet"] = {
         Nation = "Rohan",
@@ -1392,8 +1392,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "Town",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Western Brown Lands"] = {
         Nation = "",
@@ -1402,8 +1402,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Western Emyn Muil"] = {
         Nation = "",
@@ -1412,8 +1412,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Western Mirkwood"] = {
         Nation = "",
@@ -1422,8 +1422,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Withered Heath"] = {
         Nation = "",
@@ -1432,8 +1432,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Woodland Realm"] = {
         Nation = "Elves",
@@ -1442,8 +1442,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Region",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 1, E = 1, L = 1}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 1, E = 1, L = 1 }
     }
     Regions["Army 1 Free Peoples"] = {
         Nation = "",
@@ -1452,8 +1452,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Army",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Army 1 Shadow"] = {
         Nation = "",
@@ -1462,8 +1462,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "",
         Type = "Army",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Army 2 Free Peoples"] = {
         Nation = "",
@@ -1472,8 +1472,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Army",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Army 2 Shadow"] = {
         Nation = "",
@@ -1482,8 +1482,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "",
         Type = "Army",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Army 3 Free Peoples"] = {
         Nation = "",
@@ -1492,8 +1492,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Army",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Army 3 Shadow"] = {
         Nation = "",
@@ -1502,8 +1502,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "",
         Type = "Army",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Dol Amroth Stronghold"] = {
         Nation = "",
@@ -1512,8 +1512,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Stronghold",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Erebor Stronghold"] = {
         Nation = "",
@@ -1522,8 +1522,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Stronghold",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Grey Havens Stronghold"] = {
         Nation = "",
@@ -1532,8 +1532,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Stronghold",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Helm's Deep Stronghold"] = {
         Nation = "",
@@ -1542,8 +1542,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Stronghold",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Lorien Stronghold"] = {
         Nation = "",
@@ -1552,8 +1552,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Stronghold",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Minas Tirith Stronghold"] = {
         Nation = "",
@@ -1562,8 +1562,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Stronghold",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Rivendell Stronghold"] = {
         Nation = "",
@@ -1572,8 +1572,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Stronghold",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Woodland Realm Stronghold"] = {
         Nation = "",
@@ -1582,8 +1582,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Stronghold",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Shadow Stronghold 1"] = {
         Nation = "",
@@ -1592,8 +1592,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "",
         Type = "Stronghold",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Shadow Stronghold 2"] = {
         Nation = "",
@@ -1602,8 +1602,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "",
         Type = "Stronghold",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     Regions["Dwarven Reinforcements"] = {
         Nation = "Dwarves",
@@ -1612,8 +1612,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Reinforcements",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 2, E = 3, L = 3}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 2, E = 3, L = 3 }
     }
     Regions["Elven Reinforcements"] = {
         Nation = "Elves",
@@ -1622,8 +1622,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Reinforcements",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 2, E = 4, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 2, E = 4, L = 0 }
     }
     Regions["Gondor Reinforcements"] = {
         Nation = "Gondor",
@@ -1632,8 +1632,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Reinforcements",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 6, E = 4, L = 3}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 6, E = 4, L = 3 }
     }
     Regions["North Reinforcements"] = {
         Nation = "North",
@@ -1642,8 +1642,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Reinforcements",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 6, E = 4, L = 3}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 6, E = 4, L = 3 }
     }
     Regions["Rohan Reinforcements"] = {
         Nation = "Rohan",
@@ -1652,8 +1652,8 @@ function InitMap()
         Control = "FreePeoples",
         Settlement = "",
         Type = "Reinforcements",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 6, E = 4, L = 3}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 6, E = 4, L = 3 }
     }
     Regions["Haradrim Reinforcements"] = {
         Nation = "Southron/Easterling",
@@ -1662,8 +1662,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "",
         Type = "Reinforcements",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 10, E = 3, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 10, E = 3, L = 0 }
     }
     Regions["Isengard Reinforcements"] = {
         Nation = "Isengard",
@@ -1672,8 +1672,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "",
         Type = "Reinforcements",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 6, E = 5, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 6, E = 5, L = 0 }
     }
     Regions["Nazgul Reinforcements"] = {
         Nation = "Sauron",
@@ -1682,8 +1682,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "",
         Type = "Reinforcements",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 4}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 4 }
     }
     Regions["Sauron Reinforcements"] = {
         Nation = "Sauron",
@@ -1692,8 +1692,8 @@ function InitMap()
         Control = "Shadow",
         Settlement = "",
         Type = "Reinforcements",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 8, E = 4, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 8, E = 4, L = 0 }
     }
     Regions["Fellowship Box"] = {
         Nation = "",
@@ -1702,8 +1702,8 @@ function InitMap()
         Control = "",
         Settlement = "",
         Type = "Box",
-        Detected = {X = 0, R = 0, E = 0, L = 0},
-        Starting = {R = 0, E = 0, L = 0}
+        Detected = { X = 0, R = 0, E = 0, L = 0 },
+        Starting = { R = 0, E = 0, L = 0 }
     }
     for X = 0, 157 do
         Grid[X] = {}
@@ -11976,7 +11976,7 @@ function InitMap()
 end
 
 -- {Position = {x,y,z}}
-function GetGridRegion(Params) 
+function GetGridRegion(Params)
     local X = math.floor((Params.Position[1] + 43.65) / 0.557)
     local Z = math.floor((Params.Position[3] - 25.74) / -0.481)
     if Grid[X] ~= nil then
@@ -11996,7 +11996,7 @@ function GetNationFromText(Text)
             return Nations[F]
         end
     end
-    
+
     if string.find(Text, "Elf;") ~= nil then
         return "Elves"
     end
@@ -12032,7 +12032,7 @@ function GetSideFromText(Text)
             end
         end
     end
-    
+
     return ""
 end
 
@@ -12052,49 +12052,49 @@ function onObjectEnterZone(zone, enter_object)
     if Scripting then
         if zone.getGUID() == HuntBoxZoneID then
             if enter_object.getName() == "Shadow Action Dice" then
-                printToAll("Shadow Action Dice added to the Hunt Box.", {1, 0.4, 0.4})
+                printToAll("Shadow Action Dice added to the Hunt Box.", { 1, 0.4, 0.4 })
                 enter_object.setGMNotes("HuntBox;")
             elseif enter_object.getName() == "(Shadow Faction Die)" then
-                printToAll("Shadow Faction Die added to the Hunt Box.", {1, 0.4, 0.4})
+                printToAll("Shadow Faction Die added to the Hunt Box.", { 1, 0.4, 0.4 })
                 enter_object.setGMNotes("HuntBox;")
             elseif enter_object.getName() == "(Balrog Die)" then
-                printToAll("Balrog Die added to the Hunt Box.", {1, 0.4, 0.4})
+                printToAll("Balrog Die added to the Hunt Box.", { 1, 0.4, 0.4 })
                 enter_object.setGMNotes("HuntBox;")
             elseif enter_object.getName() == "(Gothmog Die)" then
-                printToAll("Gothmog Die added to the Hunt Box.", {1, 0.4, 0.4})
+                printToAll("Gothmog Die added to the Hunt Box.", { 1, 0.4, 0.4 })
                 enter_object.setGMNotes("HuntBox;")
             elseif enter_object.getName() == "(Free Peoples Action Die)" then
-                printToAll("Free Peoples Action Die added to the Hunt Box.", {0.4, 0.4, 1})
+                printToAll("Free Peoples Action Die added to the Hunt Box.", { 0.4, 0.4, 1 })
                 enter_object.setGMNotes("HuntBox;")
             elseif enter_object.getName() == "(Vilya Action Die)" then
-                printToAll("Vilya Action Die added to the Hunt Box.", {0.4, 0.4, 1})
+                printToAll("Vilya Action Die added to the Hunt Box.", { 0.4, 0.4, 1 })
                 enter_object.setGMNotes("HuntBox;")
             elseif enter_object.getName() == "(Nenya Action Die)" then
-                printToAll("Nenya Action Die added to the Hunt Box.", {0.4, 0.4, 1})
+                printToAll("Nenya Action Die added to the Hunt Box.", { 0.4, 0.4, 1 })
                 enter_object.setGMNotes("HuntBox;")
             elseif enter_object.getName() == "(Narya Action Die)" then
-                printToAll("Narya Action Die added to the Hunt Box.", {0.4, 0.4, 1})
+                printToAll("Narya Action Die added to the Hunt Box.", { 0.4, 0.4, 1 })
                 enter_object.setGMNotes("HuntBox;")
             end
         elseif zone.getGUID() == "ba2c6e" then -- Shadow side of huntbox
-            SetDiceFace({Dice = enter_object, Value = "Eye"})
+            SetDiceFace({ Dice = enter_object, Value = "Eye" })
         elseif zone.getGUID() == "9aab75" then -- FP side of huntbox
             -- DO NOTHING:SetDiceFace({Dice=enter_object,Value="Character"})
         elseif zone.getGUID() == "822861" then -- red hand
-            CheckHandLimit({HandID = "822861", HandColor = "Red"})
+            CheckHandLimit({ HandID = "822861", HandColor = "Red" })
         elseif zone.getGUID() == "63b83a" then -- blue hand
-            CheckHandLimit({HandID = "63b83a", HandColor = "Blue"})
+            CheckHandLimit({ HandID = "63b83a", HandColor = "Blue" })
         elseif zone.getGUID() == "71d77a" then -- yellow hand
-            CheckHandLimit({HandID = "71d77a", HandColor = "Yellow"})
+            CheckHandLimit({ HandID = "71d77a", HandColor = "Yellow" })
         elseif zone.getGUID() == "588435" then -- green hand
-            CheckHandLimit({HandID = "588435", HandColor = "Green"})
+            CheckHandLimit({ HandID = "588435", HandColor = "Green" })
         elseif zone.getGUID() == "128335" then -- fellowship card zone...
             -- card and companion tag, but not already tagged as fellowship?
             if
                 enter_object.type == "Card" and enter_object.getName() ~= "The Ring-bearers (Frodo & Samwise)" and
-                    string.find(enter_object.getDescription(), "Companion;") ~= nil and
-                    string.find(enter_object.getDescription(), "Fellowship;") == nil
-             then
+                string.find(enter_object.getDescription(), "Companion;") ~= nil and
+                string.find(enter_object.getDescription(), "Fellowship;") == nil
+            then
                 enter_object.setDescription(enter_object.getDescription() .. "Fellowship;")
                 FellowshipMenu()
             end
@@ -12106,56 +12106,56 @@ function onObjectLeaveZone(zone, leave_object)
     if Scripting then
         if zone.getGUID() == HuntBoxZoneID then
             if leave_object.getName() == "Shadow Action Dice" then
-                printToAll("Shadow Action Dice removed from the Hunt Box.", {1, 0.4, 0.4})
+                printToAll("Shadow Action Dice removed from the Hunt Box.", { 1, 0.4, 0.4 })
                 leave_object.setGMNotes("")
             elseif leave_object.getName() == "(Shadow Faction Die)" then
-                printToAll("Shadow Faction Die removed from the Hunt Box.", {1, 0.4, 0.4})
+                printToAll("Shadow Faction Die removed from the Hunt Box.", { 1, 0.4, 0.4 })
                 leave_object.setGMNotes("")
             elseif leave_object.getName() == "(Balrog Die)" then
-                printToAll("Balrog Die removed from the Hunt Box.", {1, 0.4, 0.4})
+                printToAll("Balrog Die removed from the Hunt Box.", { 1, 0.4, 0.4 })
                 leave_object.setGMNotes("")
             elseif leave_object.getName() == "(Gothmog Die)" then
-                printToAll("Gothmog Die removed from the Hunt Box.", {1, 0.4, 0.4})
+                printToAll("Gothmog Die removed from the Hunt Box.", { 1, 0.4, 0.4 })
                 leave_object.setGMNotes("")
             elseif leave_object.getName() == "(Free Peoples Action Die)" then
-                printToAll("Free Peoples Action Die recovered from the Hunt Box.", {0.4, 0.4, 1})
+                printToAll("Free Peoples Action Die recovered from the Hunt Box.", { 0.4, 0.4, 1 })
                 leave_object.setGMNotes("")
             elseif leave_object.getName() == "(Vilya Action Die)" then
-                printToAll("Vilya Action Die removed from the Hunt Box.", {0.4, 0.4, 1})
+                printToAll("Vilya Action Die removed from the Hunt Box.", { 0.4, 0.4, 1 })
                 leave_object.setGMNotes("")
             elseif leave_object.getName() == "(Nenya Action Die)" then
                 if leave_object.getRotationValue() == "Character + Remove" then
-                    printToAll("Nenya Action Die recovered from the Hunt Box.", {0.4, 0.4, 1})
+                    printToAll("Nenya Action Die recovered from the Hunt Box.", { 0.4, 0.4, 1 })
                 else
-                    printToAll("Nenya Action Die removed from the Hunt Box.", {0.4, 0.4, 1})
+                    printToAll("Nenya Action Die removed from the Hunt Box.", { 0.4, 0.4, 1 })
                 end
 
                 leave_object.setGMNotes("")
             elseif leave_object.getName() == "(Narya Action Die)" then
                 if leave_object.getRotationValue() == "Character" then
-                    printToAll("Narya Action Die recovered from the Hunt Box.", {0.4, 0.4, 1})
+                    printToAll("Narya Action Die recovered from the Hunt Box.", { 0.4, 0.4, 1 })
                 else
-                    printToAll("Narya Action Die removed from the Hunt Box.", {0.4, 0.4, 1})
+                    printToAll("Narya Action Die removed from the Hunt Box.", { 0.4, 0.4, 1 })
                 end
 
                 leave_object.setGMNotes("")
             end
         elseif zone.getGUID() == "822861" then -- red hand
-            CheckHandLimit({HandID = "822861", HandColor = "Red"})
+            CheckHandLimit({ HandID = "822861", HandColor = "Red" })
         elseif zone.getGUID() == "63b83a" then -- blue hand
-            CheckHandLimit({HandID = "63b83a", HandColor = "Blue"})
+            CheckHandLimit({ HandID = "63b83a", HandColor = "Blue" })
         elseif zone.getGUID() == "71d77a" then -- yellow hand
-            CheckHandLimit({HandID = "71d77a", HandColor = "Yellow"})
+            CheckHandLimit({ HandID = "71d77a", HandColor = "Yellow" })
         elseif zone.getGUID() == "588435" then -- green hand
-            CheckHandLimit({HandID = "588435", HandColor = "Green"})
+            CheckHandLimit({ HandID = "588435", HandColor = "Green" })
         elseif zone.getGUID() == "128335" then -- fellowship card zone...
             -- not actively searching the fellowship?
             if not SearchingFellowship then
                 -- card and and fellowship tag...
                 if
                     leave_object.type == "Card" and leave_object.getName() ~= "The Ring-bearers (Frodo & Samwise)" and
-                        string.find(leave_object.getDescription(), "Fellowship;") ~= nil
-                 then
+                    string.find(leave_object.getDescription(), "Fellowship;") ~= nil
+                then
                     leave_object.setDescription(string.gsub(leave_object.getDescription(), "Fellowship;", ""))
                     FellowshipMenu()
                 end
@@ -12168,39 +12168,39 @@ function onObjectLeaveContainer(Container, Leave_Object)
     if Scripting then
         if
             Container.getGUID() == "8c377e" or Container.getGUID() == "6508fd" or Container.getGUID() == "6d8b6f" or
-                Container.getGUID() == "f429d8"
-         then -- SP Event Decks
+            Container.getGUID() == "f429d8"
+        then -- SP Event Decks
             Leave_Object.clearButtons()
             Leave_Object.createButton(
                 {
                     click_function = "DiscardCard",
                     function_owner = Global,
                     label = "x",
-                    position = {-0.875, 0.2, 1.4},
+                    position = { -0.875, 0.2, 1.4 },
                     width = 150,
                     height = 100,
                     font_size = 100,
-                    color = {1, 0.5, 0.5},
-                    font_color = {0, 0, 0},
+                    color = { 1, 0.5, 0.5 },
+                    font_color = { 0, 0, 0 },
                     tooltip = "Discard"
                 }
             )
         elseif
             Container.getGUID() == "240819" or Container.getGUID() == "ba06c3" or Container.getGUID() == "992fc5" or
-                Container.getGUID() == "d3fdbc"
-         then -- FPP Event Decks
+            Container.getGUID() == "d3fdbc"
+        then -- FPP Event Decks
             Leave_Object.clearButtons()
             Leave_Object.createButton(
                 {
                     click_function = "DiscardCard",
                     function_owner = Global,
                     label = "x",
-                    position = {-0.875, 0.2, 1.4},
+                    position = { -0.875, 0.2, 1.4 },
                     width = 150,
                     height = 100,
                     font_size = 100,
-                    color = {0.5, 0.5, 1},
-                    font_color = {0, 0, 0},
+                    color = { 0.5, 0.5, 1 },
+                    font_color = { 0, 0, 0 },
                     tooltip = "Discard"
                 }
             )
@@ -12211,12 +12211,12 @@ function onObjectLeaveContainer(Container, Leave_Object)
                     click_function = "DiscardCard",
                     function_owner = Global,
                     label = "x",
-                    position = {-0.875, 0.2, 1.4},
+                    position = { -0.875, 0.2, 1.4 },
                     width = 150,
                     height = 100,
                     font_size = 100,
-                    color = {1, 0.5, 0.5},
-                    font_color = {0, 0, 0},
+                    color = { 1, 0.5, 0.5 },
+                    font_color = { 0, 0, 0 },
                     tooltip = "Discard"
                 }
             )
@@ -12227,12 +12227,12 @@ function onObjectLeaveContainer(Container, Leave_Object)
                     click_function = "DiscardCard",
                     function_owner = Global,
                     label = "x",
-                    position = {-0.875, 0.2, 1.4},
+                    position = { -0.875, 0.2, 1.4 },
                     width = 150,
                     height = 100,
                     font_size = 100,
-                    color = {0.5, 0.5, 1},
-                    font_color = {0, 0, 0},
+                    color = { 0.5, 0.5, 1 },
+                    font_color = { 0, 0, 0 },
                     tooltip = "Discard"
                 }
             )
@@ -12259,7 +12259,7 @@ function SetDiceFace(Params)
                 if string.find(FF.value, Params.Value) ~= nil then
                     if not CompactMode and string.find(Params.Dice.getDescription(), "FreePeoples;") ~= nil then
                         Params.Dice.setRotationSmooth(
-                            {FF.rotation[1], FF.rotation[2] + 180, FF.rotation[3]},
+                            { FF.rotation[1], FF.rotation[2] + 180, FF.rotation[3] },
                             false,
                             false
                         )
@@ -12285,8 +12285,8 @@ function CheckHandLimit(Params)
         if
             (getObjectFromGUID(GamePanelID).getVar("Versus") == "1v2" and
                 (Params.HandColor == "Red" or Params.HandColor == "Yellow")) or
-                getObjectFromGUID(GamePanelID).getVar("Versus") == "2v2"
-         then
+            getObjectFromGUID(GamePanelID).getVar("Versus") == "2v2"
+        then
             EventLimit = 4
             FactionLimit = 3
         end
@@ -12307,27 +12307,27 @@ function CheckHandLimit(Params)
             AlertText =
                 "Discard " ..
                 (EventCount - EventLimit) ..
-                    " Event Card(s) (In Hand: " .. EventCount .. ", Limit: " .. EventLimit .. ")"
+                " Event Card(s) (In Hand: " .. EventCount .. ", Limit: " .. EventLimit .. ")"
         end
 
         if FactionCount > FactionLimit then
             AlertText =
                 AlertText ..
                 "\nDiscard " ..
-                    (FactionCount - FactionLimit) ..
-                        " Faction Card(s) (In Hand: " .. FactionCount .. ", Limit: " .. FactionLimit .. ")"
+                (FactionCount - FactionLimit) ..
+                " Faction Card(s) (In Hand: " .. FactionCount .. ", Limit: " .. FactionLimit .. ")"
         end
 
         -- display alert?
         getObjectFromGUID(Params.HandID).clearButtons()
         if AlertText ~= "" and RulesWarnings then
-            local TextColor = {1, 1, 0, 0.9}
+            local TextColor = { 1, 1, 0, 0.9 }
             if Params.HandColor == "Red" then
-                TextColor = {1, 0, 0, 0.9}
+                TextColor = { 1, 0, 0, 0.9 }
             elseif Params.HandColor == "Blue" then
-                TextColor = {0, 0, 1, 0.9}
+                TextColor = { 0, 0, 1, 0.9 }
             elseif Params.HandColor == "Green" then
-                TextColor = {0, 1, 0, 0.9}
+                TextColor = { 0, 1, 0, 0.9 }
             end
 
             getObjectFromGUID(Params.HandID).createButton(
@@ -12335,13 +12335,13 @@ function CheckHandLimit(Params)
                     click_function = "Nothing",
                     function_owner = Global,
                     label = "HAND LIMIT EXCEEDED!",
-                    position = {0.002, 0, 3.002},
-                    scale = {0.25, 1, 1},
-                    rotation = {0, 180, 0},
+                    position = { 0.002, 0, 3.002 },
+                    scale = { 0.25, 1, 1 },
+                    rotation = { 0, 180, 0 },
                     width = 0,
                     height = 0,
                     font_size = 150,
-                    font_color = {0, 0, 0, 0.9}
+                    font_color = { 0, 0, 0, 0.9 }
                 }
             )
             getObjectFromGUID(Params.HandID).createButton(
@@ -12349,13 +12349,13 @@ function CheckHandLimit(Params)
                     click_function = "Nothing",
                     function_owner = Global,
                     label = AlertText,
-                    position = {0.002, 0, 2.502},
-                    scale = {0.25, 1, 1},
-                    rotation = {0, 180, 0},
+                    position = { 0.002, 0, 2.502 },
+                    scale = { 0.25, 1, 1 },
+                    rotation = { 0, 180, 0 },
                     width = 0,
                     height = 0,
                     font_size = 75,
-                    font_color = {0, 0, 0, 0.9}
+                    font_color = { 0, 0, 0, 0.9 }
                 }
             )
             getObjectFromGUID(Params.HandID).createButton(
@@ -12363,9 +12363,9 @@ function CheckHandLimit(Params)
                     click_function = "Nothing",
                     function_owner = Global,
                     label = "HAND LIMIT EXCEEDED!",
-                    position = {0, 0.002, 3},
-                    scale = {0.25, 1, 1},
-                    rotation = {0, 180, 0},
+                    position = { 0, 0.002, 3 },
+                    scale = { 0.25, 1, 1 },
+                    rotation = { 0, 180, 0 },
                     width = 0,
                     height = 0,
                     font_size = 150,
@@ -12377,9 +12377,9 @@ function CheckHandLimit(Params)
                     click_function = "Nothing",
                     function_owner = Global,
                     label = AlertText,
-                    position = {0, 0.002, 2.5},
-                    scale = {0.25, 1, 1},
-                    rotation = {0, 180, 0},
+                    position = { 0, 0.002, 2.5 },
+                    scale = { 0.25, 1, 1 },
+                    rotation = { 0, 180, 0 },
                     width = 0,
                     height = 0,
                     font_size = 75,
@@ -12416,14 +12416,14 @@ function RemoveObjectFromGame(Params)
         for O, Obj in pairs(getAllObjects()) do
             if
                 (Obj.type == "Deck" or Obj.type == "Bag") and Obj ~= GraveObj and
-                    (Params.BagID == "" or Obj.getGUID() == Params.BagID)
-             then
+                (Params.BagID == "" or Obj.getGUID() == Params.BagID)
+            then
                 for I, Item in pairs(Obj.getObjects()) do
                     if
                         (Params.ID == "" or Params.ID == Item.guid) and (Params.Name == "" or Params.Name == Item.name) and
-                            (Params.Description == "" or string.find(Item.description, Params.Description) ~= nil)
-                     then
-                        local FoundObj = Obj.takeObject({guid = Item.guid})
+                        (Params.Description == "" or string.find(Item.description, Params.Description) ~= nil)
+                    then
+                        local FoundObj = Obj.takeObject({ guid = Item.guid })
                         -- print("Removing Item:",Item.guid," ",Item.name,"/",FoundObj.getGUID(),":",FoundObj.getName()," from Container:",Obj.getGUID())
                         GraveObj.putObject(FoundObj)
                         break
@@ -12431,8 +12431,8 @@ function RemoveObjectFromGame(Params)
                 end
             elseif
                 Params.ID == nil and (Params.Name == "" or Obj.getName() == Params.Name) and
-                    (Params.Description == "" or string.find(Obj.getDescription(), Params.Description) ~= nil)
-             then
+                (Params.Description == "" or string.find(Obj.getDescription(), Params.Description) ~= nil)
+            then
                 -- print("Removing Object::",Params.Name,"/",Obj.getGUID(),":",Obj.getName())
                 GraveObj.putObject(Obj)
                 break
@@ -12447,31 +12447,31 @@ function SetupTFoE()
         local OverlayToken = getObjectFromGUID(TFoERegionOverlayID)
         if OverlayToken ~= nil then
             OverlayToken.setLock(true)
-            OverlayToken.setPositionSmooth({19.8, 0.91, 17.5}, false, true)
-            OverlayToken.setRotation({0, 180, 0})
-            RemoveObjectFromGame({ID = "db77a1"})
+            OverlayToken.setPositionSmooth({ 19.8, 0.91, 17.5 }, false, true)
+            OverlayToken.setRotation({ 0, 180, 0 })
+            RemoveObjectFromGame({ ID = "db77a1" })
             -- remove FP Erebor
-            RemoveObjectFromGame({ID = "fb9626"})
+            RemoveObjectFromGame({ ID = "fb9626" })
             -- remove FP Erebor box
-            RemoveObjectFromGame({ID = "8f175c"})
+            RemoveObjectFromGame({ ID = "8f175c" })
             -- remove Dale City
 
             local EreborSettlement = getObjectFromGUID("55e47b")
             EreborSettlement.setLock(true)
-            EreborSettlement.setRotation({0, 180, 0})
+            EreborSettlement.setRotation({ 0, 180, 0 })
 
             if SettlementsAreFlat() then
-                EreborSettlement.setPosition({17.92, 0.78, 20.87})
+                EreborSettlement.setPosition({ 17.92, 0.78, 20.87 })
             else
-                EreborSettlement.setPosition({17.92, 1.16, 20.87})
+                EreborSettlement.setPosition({ 17.92, 1.16, 20.87 })
             end
 
             coroutine.yield(0)
             OverlayToken = getObjectFromGUID(TFoEStrongholdOverlayID)
             if OverlayToken ~= nil then
                 OverlayToken.setLock(true)
-                OverlayToken.setPositionSmooth({-34.75, 0.95, 13.15}, false, true)
-                OverlayToken.setRotation({0, 180, 0})
+                OverlayToken.setPositionSmooth({ -34.75, 0.95, 13.15 }, false, true)
+                OverlayToken.setRotation({ 0, 180, 0 })
             else
                 print("Uhoh! Could not locate The Fate of Erebor Stronghold Overlay!")
             end
@@ -12480,13 +12480,13 @@ function SetupTFoE()
             -- Iron Hills 3d city...
             if getObjectFromGUID("7318b5") ~= nil then
                 getObjectFromGUID("7318b5").setLock(true)
-                getObjectFromGUID("7318b5").setRotation({0, 180, 0})
+                getObjectFromGUID("7318b5").setRotation({ 0, 180, 0 })
                 if SettlementsAreFlat() then
                     -- Iron Hills 3d city
-                    getObjectFromGUID("7318b5").setPosition({21.92, 0.85, 21.1}, false, true)
+                    getObjectFromGUID("7318b5").setPosition({ 21.92, 0.85, 21.1 }, false, true)
                 else
                     -- Iron Hills 3d city
-                    getObjectFromGUID("7318b5").setPosition({21.92, 1.09, 21.1}, false, true)
+                    getObjectFromGUID("7318b5").setPosition({ 21.92, 1.09, 21.1 }, false, true)
                 end
             end
 
@@ -12494,22 +12494,22 @@ function SetupTFoE()
             -- activate dwarves political counter...
             if getObjectFromGUID("a55f2c") ~= nil then
                 printToAll("  Dwarves are Active on the Political Track...")
-                getObjectFromGUID("a55f2c").setRotation({0, 225, 180})
+                getObjectFromGUID("a55f2c").setRotation({ 0, 225, 180 })
             end
 
             coroutine.yield(0)
             -- udpate region markers...
             if getObjectFromGUID("d39196") ~= nil then
-                getObjectFromGUID("d39196").setPositionSmooth({18.35, 9, 21.32}, false, false)
+                getObjectFromGUID("d39196").setPositionSmooth({ 18.35, 9, 21.32 }, false, false)
                 -- move erebor marker
-                getObjectFromGUID("d39196").setRotation({0, 225, 0})
+                getObjectFromGUID("d39196").setRotation({ 0, 225, 0 })
             end
 
             coroutine.yield(0)
             if getObjectFromGUID("492ce6") ~= nil then
-                getObjectFromGUID("492ce6").setPositionSmooth({21.45, 9, 21.3}, false, false)
+                getObjectFromGUID("492ce6").setPositionSmooth({ 21.45, 9, 21.3 }, false, false)
                 -- move iron hills marker
-                getObjectFromGUID("492ce6").setRotation({0, 225, 180})
+                getObjectFromGUID("492ce6").setRotation({ 0, 225, 180 })
             end
 
             coroutine.yield(0)
@@ -12525,7 +12525,7 @@ function SetupTFoE()
                     FromLocation = "Dale",
                     ToLocation = "Carrock",
                     Smooth = true,
-                    Position = {7, 2, 21}
+                    Position = { 7, 2, 21 }
                 }
             )
             coroutine.yield(0)
@@ -12536,7 +12536,7 @@ function SetupTFoE()
                     FromLocation = "Dale",
                     ToLocation = "Carrock",
                     Smooth = true,
-                    Position = {6, 2, 20.75}
+                    Position = { 6, 2, 20.75 }
                 }
             )
             coroutine.yield(0)
@@ -12547,7 +12547,7 @@ function SetupTFoE()
                     FromLocation = "Erebor",
                     ToLocation = "Iron Hills",
                     Smooth = true,
-                    Position = {19, 2, 17.5}
+                    Position = { 19, 2, 17.5 }
                 }
             )
             coroutine.yield(0)
@@ -12558,7 +12558,7 @@ function SetupTFoE()
                     FromLocation = "Erebor",
                     ToLocation = "Dwarven Reinforcements",
                     Smooth = true,
-                    Position = {-41.75, 2, 14}
+                    Position = { -41.75, 2, 14 }
                 }
             )
             coroutine.yield(0)
@@ -12569,7 +12569,7 @@ function SetupTFoE()
                     FromLocation = "Erebor",
                     ToLocation = "Dwarven Reinforcements",
                     Smooth = true,
-                    Position = {-41.75, 2, 12}
+                    Position = { -41.75, 2, 12 }
                 }
             )
             coroutine.yield(0)
@@ -12580,7 +12580,7 @@ function SetupTFoE()
                     FromLocation = "Erebor",
                     ToLocation = "Iron Hills",
                     Smooth = true,
-                    Position = {20.5, 2, 18}
+                    Position = { 20.5, 2, 18 }
                 }
             )
             coroutine.yield(0)
@@ -12591,7 +12591,7 @@ function SetupTFoE()
                     FromLocation = "Dwarven Reinforcements",
                     ToLocation = "Ered Luin",
                     Smooth = true,
-                    Position = {-18.8, 2, 15.5}
+                    Position = { -18.8, 2, 15.5 }
                 }
             )
             coroutine.yield(0)
@@ -12602,7 +12602,7 @@ function SetupTFoE()
                     FromLocation = "Sauron Reinforcements",
                     ToLocation = "Erebor",
                     Smooth = true,
-                    Position = {16.6, 2, 18.5}
+                    Position = { 16.6, 2, 18.5 }
                 }
             )
             coroutine.yield(0)
@@ -12613,7 +12613,7 @@ function SetupTFoE()
                     FromLocation = "Sauron Reinforcements",
                     ToLocation = "Erebor",
                     Smooth = true,
-                    Position = {17.5, 2, 18}
+                    Position = { 17.5, 2, 18 }
                 }
             )
             coroutine.yield(0)
@@ -12625,8 +12625,8 @@ function SetupTFoE()
                 Control = "Shadow",
                 Settlement = "Stronghold",
                 Type = "Region",
-                Detected = {X = 0, R = 0, E = 0, L = 0},
-                Starting = {R = 2, E = 0, L = 0}
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 2, E = 0, L = 0 }
             }
             Regions["Iron Hills"] = {
                 Nation = "Dwarves",
@@ -12635,8 +12635,8 @@ function SetupTFoE()
                 Control = "FreePeoples",
                 Settlement = "City",
                 Type = "Region",
-                Detected = {X = 0, R = 0, E = 0, L = 0},
-                Starting = {R = 2, E = 0, L = 1}
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 2, E = 0, L = 1 }
             }
             Regions["Carrock"] = {
                 Nation = "North",
@@ -12645,8 +12645,8 @@ function SetupTFoE()
                 Control = "FreePeoples",
                 Settlement = "Town",
                 Type = "Region",
-                Detected = {X = 0, R = 0, E = 0, L = 0},
-                Starting = {R = 2, E = 0, L = 1}
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 2, E = 0, L = 1 }
             }
             Regions["Dale"] = {
                 Nation = "",
@@ -12655,8 +12655,8 @@ function SetupTFoE()
                 Control = "",
                 Settlement = "Fortification",
                 Type = "Region",
-                Detected = {X = 0, R = 0, E = 0, L = 0},
-                Starting = {R = 0, E = 0, L = 0}
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 0, E = 0, L = 0 }
             }
             Regions["Ered Luin"] = {
                 Nation = "Dwarves",
@@ -12665,8 +12665,8 @@ function SetupTFoE()
                 Control = "FreePeoples",
                 Settlement = "Town",
                 Type = "Region",
-                Detected = {X = 0, R = 0, E = 0, L = 0},
-                Starting = {R = 2, E = 0, L = 0}
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 2, E = 0, L = 0 }
             }
             Regions["Dwarven Reinforcements"] = {
                 Nation = "Dwarves",
@@ -12675,8 +12675,8 @@ function SetupTFoE()
                 Control = "FreePeoples",
                 Settlement = "",
                 Type = "Reinforcements",
-                Detected = {X = 0, R = 0, E = 0, L = 0},
-                Starting = {R = 1, E = 5, L = 3}
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 1, E = 5, L = 3 }
             }
             Regions["North Reinforcements"] = {
                 Nation = "North",
@@ -12685,8 +12685,8 @@ function SetupTFoE()
                 Control = "FreePeoples",
                 Settlement = "",
                 Type = "Reinforcements",
-                Detected = {X = 0, R = 0, E = 0, L = 0},
-                Starting = {R = 6, E = 4, L = 3}
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 6, E = 4, L = 3 }
             }
             Regions["Sauron Reinforcements"] = {
                 Nation = "Sauron",
@@ -12695,8 +12695,8 @@ function SetupTFoE()
                 Control = "Shadow",
                 Settlement = "",
                 Type = "Reinforcements",
-                Detected = {X = 0, R = 0, E = 0, L = 0},
-                Starting = {R = 6, E = 4, L = 0}
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 6, E = 4, L = 0 }
             }
         else -- uhoh!
             print("Uhoh! Could not locate The Fate of Erebor Regions Overlay!")
@@ -12704,15 +12704,15 @@ function SetupTFoE()
 
         coroutine.yield(0)
         -- spawn Dale 3d fortification...
-        local Fort = getObjectFromGUID("42366d").clone({position = {17.65, 1.01, 15.43}})
+        local Fort = getObjectFromGUID("42366d").clone({ position = { 17.65, 1.01, 15.43 } })
         Fort.setLock(true)
         if SettlementsAreFlat() then
-            Fort.setPosition({17.65, 0.93, 15.43})
+            Fort.setPosition({ 17.65, 0.93, 15.43 })
         else
-            Fort.setPosition({17.65, 1.01, 15.43})
+            Fort.setPosition({ 17.65, 1.01, 15.43 })
         end
 
-        Fort.setRotation({0, 180, 0})
+        Fort.setRotation({ 0, 180, 0 })
         return 1
     end
 
@@ -12722,11 +12722,11 @@ end
 function SetupTFoENewCities()
     if getObjectFromGUID("c537fa") ~= nil then
         getObjectFromGUID("c537fa").setLock(true)
-        getObjectFromGUID("c537fa").setRotation({0, 180, 0})
+        getObjectFromGUID("c537fa").setRotation({ 0, 180, 0 })
         if SettlementsAreFlat() then
-            getObjectFromGUID("c537fa").setPositionSmooth({-19.3, 0.84, 17.18}, false, true)
+            getObjectFromGUID("c537fa").setPositionSmooth({ -19.3, 0.84, 17.18 }, false, true)
         else
-            getObjectFromGUID("c537fa").setPositionSmooth({-19.3, 1.08, 17.18}, false, true)
+            getObjectFromGUID("c537fa").setPositionSmooth({ -19.3, 1.08, 17.18 }, false, true)
         end
 
         Regions["Ered Luin"] = {
@@ -12736,23 +12736,23 @@ function SetupTFoENewCities()
             Control = "FreePeoples",
             Settlement = "City",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 2, E = 0, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 2, E = 0, L = 0 }
         }
         if getObjectFromGUID("29981e") ~= nil then
-            getObjectFromGUID("29981e").setPositionSmooth({-19.72, 9, 17.36}, false, false)
+            getObjectFromGUID("29981e").setPositionSmooth({ -19.72, 9, 17.36 }, false, false)
             -- move marker
-            getObjectFromGUID("29981e").setRotation({0, 225, 180})
+            getObjectFromGUID("29981e").setRotation({ 0, 225, 180 })
         end
     end
 
     if getObjectFromGUID("2df5ce") ~= nil then
         getObjectFromGUID("2df5ce").setLock(true)
-        getObjectFromGUID("2df5ce").setRotation({0, 180, 0})
+        getObjectFromGUID("2df5ce").setRotation({ 0, 180, 0 })
         if SettlementsAreFlat() then
-            getObjectFromGUID("2df5ce").setPositionSmooth({27.28, 0.84, 0.83}, false, true)
+            getObjectFromGUID("2df5ce").setPositionSmooth({ 27.28, 0.84, 0.83 }, false, true)
         else
-            getObjectFromGUID("2df5ce").setPositionSmooth({27.28, 1.08, 0.83}, false, true)
+            getObjectFromGUID("2df5ce").setPositionSmooth({ 27.28, 1.08, 0.83 }, false, true)
         end
 
         Regions["South Rhun"] = {
@@ -12762,13 +12762,13 @@ function SetupTFoENewCities()
             Control = "Shadow",
             Settlement = "City",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 3, E = 1, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 3, E = 1, L = 0 }
         }
         if getObjectFromGUID("1d784f") ~= nil then
-            getObjectFromGUID("1d784f").setPositionSmooth({27.76, 9, 0.95}, false, false)
+            getObjectFromGUID("1d784f").setPositionSmooth({ 27.76, 9, 0.95 }, false, false)
             -- move marker
-            getObjectFromGUID("1d784f").setRotation({0, 225, 0})
+            getObjectFromGUID("1d784f").setRotation({ 0, 225, 0 })
         end
     end
 end
@@ -12779,42 +12779,42 @@ function CorruptHelmsDeep()
         -- move in shadow helms deep region overlay...
         getObjectFromGUID("534719").setLock(true)
         coroutine.yield(0)
-        getObjectFromGUID("534719").setPosition({0.09, 0.90, -6.21})
-        getObjectFromGUID("534719").setRotation({0, 180, 0})
+        getObjectFromGUID("534719").setPosition({ 0.09, 0.90, -6.21 })
+        getObjectFromGUID("534719").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
         -- move in shadow helms deep stronghold box...
         getObjectFromGUID("c9bcd7").setLock(true)
         coroutine.yield(0)
-        getObjectFromGUID("c9bcd7").setPosition({-34.75, 0.95, -6.50})
-        getObjectFromGUID("c9bcd7").setRotation({0, 180, 0})
+        getObjectFromGUID("c9bcd7").setPosition({ -34.75, 0.95, -6.50 })
+        getObjectFromGUID("c9bcd7").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
         -- move in shadow helms deep stronghold3d...
         getObjectFromGUID("011a2a").setLock(true)
         coroutine.yield(0)
-        getObjectFromGUID("011a2a").setRotation({0, 180, 0})
-        getObjectFromGUID("011a2a").setPosition({0.24, 0.78, -5.49})
+        getObjectFromGUID("011a2a").setRotation({ 0, 180, 0 })
+        getObjectFromGUID("011a2a").setPosition({ 0.24, 0.78, -5.49 })
         coroutine.yield(0)
         if not SettlementsAreFlat() then
-            getObjectFromGUID("011a2a").setPositionSmooth({0.24, 1.16, -5.49}, false, false)
+            getObjectFromGUID("011a2a").setPositionSmooth({ 0.24, 1.16, -5.49 }, false, false)
         end
 
         coroutine.yield(0)
         -- move out FP helms deep stronghold 3d...
         getObjectFromGUID("ef398b").setLock(false)
-        getObjectFromGUID("ef398b").setPositionSmooth({-60, 1.15, -12}, false, false)
-        getObjectFromGUID("ef398b").setRotation({0, 180, 0})
+        getObjectFromGUID("ef398b").setPositionSmooth({ -60, 1.15, -12 }, false, false)
+        getObjectFromGUID("ef398b").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
         -- move out FP helms deep stronghold box...
         getObjectFromGUID("231cc7").setLock(false)
-        getObjectFromGUID("231cc7").setPositionSmooth({-57, 1, -12}, false, false)
-        getObjectFromGUID("231cc7").setRotation({0, 180, 0})
+        getObjectFromGUID("231cc7").setPositionSmooth({ -57, 1, -12 }, false, false)
+        getObjectFromGUID("231cc7").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
         -- move and flip SettlementControlMarker
-        getObjectFromGUID("04cc5c").setPositionSmooth({0.71, 3, -5.03}, false, false)
-        getObjectFromGUID("04cc5c").setRotation({0, 225, 0})
+        getObjectFromGUID("04cc5c").setPositionSmooth({ 0.71, 3, -5.03 }, false, false)
+        getObjectFromGUID("04cc5c").setRotation({ 0, 225, 0 })
         coroutine.yield(0)
         -- announce corruption of helms deep...
-        printToAll("Helm's Deep has been corrupted to a Shadow Stronghold.", {1, 1, 0})
+        printToAll("Helm's Deep has been corrupted to a Shadow Stronghold.", { 1, 1, 0 })
         return 1
     end
 
@@ -12825,43 +12825,43 @@ function RestoreHelmsDeep()
     -- restore helms deep to a free peoples stronghold...
     function RestoreHelmsDeepCoroutine()
         -- move out shadow helms deep region overlay...
-        getObjectFromGUID("534719").setPositionSmooth({-61.8, 1, -17.81}, false, false)
-        getObjectFromGUID("534719").setRotation({0, 180, 0})
+        getObjectFromGUID("534719").setPositionSmooth({ -61.8, 1, -17.81 }, false, false)
+        getObjectFromGUID("534719").setRotation({ 0, 180, 0 })
         getObjectFromGUID("534719").setLock(false)
         coroutine.yield(0)
         -- move out shadow helms deep stronghold box...
-        getObjectFromGUID("c9bcd7").setPositionSmooth({-56.79, 1, -16.79}, false, false)
-        getObjectFromGUID("c9bcd7").setRotation({0, 180, 0})
+        getObjectFromGUID("c9bcd7").setPositionSmooth({ -56.79, 1, -16.79 }, false, false)
+        getObjectFromGUID("c9bcd7").setRotation({ 0, 180, 0 })
         getObjectFromGUID("c9bcd7").setLock(false)
         coroutine.yield(0)
         -- move out shadow helms deep stronghold3d...
-        getObjectFromGUID("011a2a").setRotation({0, 180, 0})
-        getObjectFromGUID("011a2a").setPositionSmooth({-61.65, 1.25, -17.08}, false, false)
+        getObjectFromGUID("011a2a").setRotation({ 0, 180, 0 })
+        getObjectFromGUID("011a2a").setPositionSmooth({ -61.65, 1.25, -17.08 }, false, false)
         getObjectFromGUID("011a2a").setLock(false)
         coroutine.yield(0)
         -- move in FP helms deep stronghold 3d...
         getObjectFromGUID("ef398b").setLock(true)
         coroutine.yield(0)
-        getObjectFromGUID("ef398b").setPosition({-0.19, 0.77, -5.57}, false, false)
-        getObjectFromGUID("ef398b").setRotation({0, 180, 0})
+        getObjectFromGUID("ef398b").setPosition({ -0.19, 0.77, -5.57 }, false, false)
+        getObjectFromGUID("ef398b").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
         if not SettlementsAreFlat() then
-            getObjectFromGUID("ef398b").setPositionSmooth({-0.19, 1.16, -5.57}, false, false)
+            getObjectFromGUID("ef398b").setPositionSmooth({ -0.19, 1.16, -5.57 }, false, false)
         end
 
         coroutine.yield(0)
         -- move in FP helms deep stronghold box...
         getObjectFromGUID("231cc7").setLock(true)
         coroutine.yield(0)
-        getObjectFromGUID("231cc7").setPosition({-34.75, 0.95, -6.50})
-        getObjectFromGUID("231cc7").setRotation({0, 180, 0})
+        getObjectFromGUID("231cc7").setPosition({ -34.75, 0.95, -6.50 })
+        getObjectFromGUID("231cc7").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
         -- move and flip SettlementControlMarker
-        getObjectFromGUID("04cc5c").setPositionSmooth({-0.64, 3, -5.12}, false, false)
-        getObjectFromGUID("04cc5c").setRotation({0, 225, 180})
+        getObjectFromGUID("04cc5c").setPositionSmooth({ -0.64, 3, -5.12 }, false, false)
+        getObjectFromGUID("04cc5c").setRotation({ 0, 225, 180 })
         coroutine.yield(0)
         -- announce restoration of helms deep...
-        printToAll("Helm's Deep has been restored to a Free People's Stronghold.", {1, 1, 0})
+        printToAll("Helm's Deep has been restored to a Free People's Stronghold.", { 1, 1, 0 })
         return 1
     end
 
@@ -12869,7 +12869,7 @@ function RestoreHelmsDeep()
 end
 
 --{Name="",FromLocation="",ToLocation="",Smooth=true,Position={x,y,z},Rotation={x,y,z}}
-function PositionUnit (Params)
+function PositionUnit(Params)
     local Result = false
     if Params.Smooth == nil then
         Params.Smooth = false
@@ -12904,7 +12904,7 @@ function PositionUnit (Params)
     if not Result then
         printToAll(
             "Failed to move " .. Params.Name .. " from " .. Params.FromLocation .. " to " .. Params.ToLocation .. "!",
-            {1, 0.75, 0.5}
+            { 1, 0.75, 0.5 }
         )
     end
 
@@ -12936,7 +12936,7 @@ end
 
 function SetupBotF() -- setup the breaking of the fellowship.
     function SetupBotFCoroutine()
-        printToAll("\nSetting up The Breaking of the Fellowship...\n", {0, 1, 0})
+        printToAll("\nSetting up The Breaking of the Fellowship...\n", { 0, 1, 0 })
         -- update region info...
         Regions["Rivendell"] = {
             Nation = "Elves",
@@ -12945,8 +12945,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "FreePeoples",
             Settlement = "Stronghold",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 0, E = 3, L = 1}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 3, L = 1 }
         }
         Regions["Woodland Realm"] = {
             Nation = "Elves",
@@ -12955,8 +12955,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "FreePeoples",
             Settlement = "",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 1, E = 2, L = 1}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 1, E = 2, L = 1 }
         }
         Regions["Elven Reinforcements"] = {
             Nation = "Elves",
@@ -12965,8 +12965,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "FreePeoples",
             Settlement = "",
             Type = "Reinforcements",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 2, E = 2, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 2, E = 2, L = 0 }
         }
         Regions["Westemnet"] = {
             Nation = "Rohan",
@@ -12975,8 +12975,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "FreePeoples",
             Settlement = "Town",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 0, E = 1, L = 1}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 1, L = 1 }
         }
         Regions["Rohan Reinforcements"] = {
             Nation = "Rohan",
@@ -12985,8 +12985,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "FreePeoples",
             Settlement = "",
             Type = "Reinforcements",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 6, E = 3, L = 2}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 6, E = 3, L = 2 }
         }
         Regions["North Dunland"] = {
             Nation = "Isengard",
@@ -12995,8 +12995,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Town",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 0, E = 0, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
         }
         Regions["South Dunland"] = {
             Nation = "Isengard",
@@ -13005,8 +13005,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Town",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 0, E = 0, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
         }
         Regions["Gap of Rohan"] = {
             Nation = "Isengard",
@@ -13015,8 +13015,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "",
             Settlement = "",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 6, E = 0, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 6, E = 0, L = 0 }
         }
         Regions["Orthanc"] = {
             Nation = "Isengard",
@@ -13025,8 +13025,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Stronghold",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 4, E = 1, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 4, E = 1, L = 0 }
         }
         Regions["Isengard Reinforcements"] = {
             Nation = "Isengard",
@@ -13035,8 +13035,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "",
             Type = "Reinforcements",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 2, E = 5, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 2, E = 5, L = 0 }
         }
         Regions["Barad~Dur"] = {
             Nation = "Sauron",
@@ -13045,8 +13045,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Stronghold",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 0, E = 0, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
         }
         Regions["Eastemnet"] = {
             Nation = "Rohan",
@@ -13055,8 +13055,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "",
             Settlement = "",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 0, E = 0, L = 1}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 1 }
         }
         Regions["Nurn"] = {
             Nation = "Sauron",
@@ -13065,8 +13065,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Town",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 0, E = 0, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
         }
         Regions["Gorgoroth"] = {
             Nation = "Sauron",
@@ -13075,8 +13075,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 4, E = 0, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 4, E = 0, L = 0 }
         }
         Regions["Minas Morgul"] = {
             Nation = "Sauron",
@@ -13085,8 +13085,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Stronghold",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 5, E = 1, L = 1}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 5, E = 1, L = 1 }
         }
         Regions["Moria"] = {
             Nation = "Sauron",
@@ -13095,8 +13095,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Stronghold",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 2, E = 1, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 2, E = 1, L = 0 }
         }
         Regions["Mount Gundabad"] = {
             Nation = "Sauron",
@@ -13105,8 +13105,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Stronghold",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 4, E = 0, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 4, E = 0, L = 0 }
         }
         Regions["Morannon"] = {
             Nation = "Sauron",
@@ -13115,8 +13115,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Stronghold",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 1, E = 1, L = 1}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 1, E = 1, L = 1 }
         }
         Regions["North Ithilien"] = {
             Nation = "",
@@ -13125,8 +13125,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "",
             Settlement = "",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 5, E = 1, L = 1}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 5, E = 1, L = 1 }
         }
         Regions["Nazgul Reinforcements"] = {
             Nation = "Sauron",
@@ -13135,8 +13135,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "",
             Type = "Reinforcements",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 0, E = 0, L = 1}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 1 }
         }
         Regions["Far Harad"] = {
             Nation = "Southron/Easterling",
@@ -13145,8 +13145,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "City",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 0, E = 0, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
         }
         Regions["Near Harad"] = {
             Nation = "Southron/Easterling",
@@ -13155,8 +13155,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Town",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 0, E = 0, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
         }
         Regions["Dagorlad"] = {
             Nation = "",
@@ -13165,8 +13165,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "",
             Settlement = "",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 5, E = 1, L = 1}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 5, E = 1, L = 1 }
         }
         Regions["North Rhun"] = {
             Nation = "Southron/Easterling",
@@ -13175,8 +13175,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Town",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 4, E = 1, L = 1}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 4, E = 1, L = 1 }
         }
         Regions["South Ithilien"] = {
             Nation = "",
@@ -13185,8 +13185,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "",
             Settlement = "",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 3, E = 1, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 3, E = 1, L = 0 }
         }
         Regions["South Rhun"] = {
             Nation = "Southron/Easterling",
@@ -13195,8 +13195,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Town",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 0, E = 0, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
         }
         Regions["Umbar"] = {
             Nation = "Southron/Easterling",
@@ -13205,8 +13205,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "Stronghold",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 5, E = 1, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 5, E = 1, L = 0 }
         }
         Regions["West Harondor"] = {
             Nation = "",
@@ -13215,8 +13215,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "",
             Settlement = "",
             Type = "Region",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 3, E = 1, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 3, E = 1, L = 0 }
         }
         Regions["Haradrim Reinforcements"] = {
             Nation = "Southron/Easterling",
@@ -13225,8 +13225,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Control = "Shadow",
             Settlement = "",
             Type = "Reinforcements",
-            Detected = {X = 0, R = 0, E = 0, L = 0},
-            Starting = {R = 4, E = 1, L = 0}
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 4, E = 1, L = 0 }
         }
         if getObjectFromGUID(GamePanelID).getVar("TFoE") then
             Regions["Sauron Reinforcements"] = {
@@ -13236,8 +13236,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 Control = "Shadow",
                 Settlement = "",
                 Type = "Reinforcements",
-                Detected = {X = 0, R = 0, E = 0, L = 0},
-                Starting = {R = 8, E = 1, L = 0}
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 8, E = 1, L = 0 }
             }
         else
             Regions["Sauron Reinforcements"] = {
@@ -13247,8 +13247,8 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 Control = "Shadow",
                 Settlement = "",
                 Type = "Reinforcements",
-                Detected = {X = 0, R = 0, E = 0, L = 0},
-                Starting = {R = 10, E = 1, L = 0}
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 10, E = 1, L = 0 }
             }
         end
 
@@ -13260,7 +13260,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Elven Reinforcements",
                 ToLocation = "Rivendell",
                 Smooth = true,
-                Position = {-0.17, 2, 17.66}
+                Position = { -0.17, 2, 17.66 }
             }
         )
         coroutine.yield(0)
@@ -13271,7 +13271,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Elven Reinforcements",
                 ToLocation = "Woodland Realm",
                 Smooth = true,
-                Position = {14.4, 2, 15.88}
+                Position = { 14.4, 2, 15.88 }
             }
         )
         coroutine.yield(0)
@@ -13282,7 +13282,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Rohan Reinforcements",
                 ToLocation = "Westemnet",
                 Smooth = true,
-                Position = {2.97, 2, -5}
+                Position = { 2.97, 2, -5 }
             }
         )
         coroutine.yield(0)
@@ -13293,7 +13293,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Rohan Reinforcements",
                 ToLocation = "Westemnet",
                 Smooth = true,
-                Position = {3.14, 2, -3.38}
+                Position = { 3.14, 2, -3.38 }
             }
         )
         coroutine.yield(0)
@@ -13304,7 +13304,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Isengard Reinforcements",
                 ToLocation = "Gap of Rohan",
                 Smooth = true,
-                Position = {-7.26, 2, -4.09}
+                Position = { -7.26, 2, -4.09 }
             }
         )
         coroutine.yield(0)
@@ -13314,7 +13314,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Isengard Reinforcements",
                 ToLocation = "Gap of Rohan",
                 Smooth = true,
-                Position = {-6.54, 2, -3.85}
+                Position = { -6.54, 2, -3.85 }
             }
         )
         coroutine.yield(0)
@@ -13324,7 +13324,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Isengard Reinforcements",
                 ToLocation = "Gap of Rohan",
                 Smooth = true,
-                Position = {-5.8, 2, -3.48}
+                Position = { -5.8, 2, -3.48 }
             }
         )
         coroutine.yield(0)
@@ -13334,7 +13334,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Isengard Reinforcements",
                 ToLocation = "Gap of Rohan",
                 Smooth = true,
-                Position = {-4.97, 2, -3.09}
+                Position = { -4.97, 2, -3.09 }
             }
         )
         coroutine.yield(0)
@@ -13345,7 +13345,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "North Dunland",
                 ToLocation = "Gap of Rohan",
                 Smooth = true,
-                Position = {-7.24, 2, -3.22}
+                Position = { -7.24, 2, -3.22 }
             }
         )
         coroutine.yield(0)
@@ -13356,7 +13356,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "South Dunland",
                 ToLocation = "Gap of Rohan",
                 Smooth = true,
-                Position = {-6.5, 2, -2.93}
+                Position = { -6.5, 2, -2.93 }
             }
         )
         coroutine.yield(0)
@@ -13367,7 +13367,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Nurn",
                 ToLocation = "Sauron Reinforcements",
                 Smooth = true,
-                Position = {42, 2, -7}
+                Position = { 42, 2, -7 }
             }
         )
         coroutine.yield(0)
@@ -13377,7 +13377,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Nurn",
                 ToLocation = "Sauron Reinforcements",
                 Smooth = true,
-                Position = {42, 2, -9}
+                Position = { 42, 2, -9 }
             }
         )
         coroutine.yield(0)
@@ -13388,7 +13388,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Barad~Dur",
                 ToLocation = "Eastemnet",
                 Smooth = true,
-                Position = {6.41, 2, 1.41}
+                Position = { 6.41, 2, 1.41 }
             }
         )
         coroutine.yield(0)
@@ -13399,7 +13399,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Barad~Dur",
                 ToLocation = "Gorgoroth",
                 Smooth = true,
-                Position = {25, 2, -12.64}
+                Position = { 25, 2, -12.64 }
             }
         )
         coroutine.yield(0)
@@ -13410,7 +13410,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Barad~Dur",
                 ToLocation = "North Ithilien",
                 Smooth = true,
-                Position = {16.21, 2, -8.73}
+                Position = { 16.21, 2, -8.73 }
             }
         )
         coroutine.yield(0)
@@ -13421,7 +13421,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Barad~Dur",
                 ToLocation = "Mount Gundabad",
                 Smooth = true,
-                Position = {-2.31, 2, 24.54}
+                Position = { -2.31, 2, 24.54 }
             }
         )
         coroutine.yield(0)
@@ -13431,7 +13431,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Barad~Dur",
                 ToLocation = "Mount Gundabad",
                 Smooth = true,
-                Position = {-1.21, 2, 24.73}
+                Position = { -1.21, 2, 24.73 }
             }
         )
         coroutine.yield(0)
@@ -13442,7 +13442,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Barad~Dur",
                 ToLocation = "Minas Morgul",
                 Smooth = true,
-                Position = {20.25, 2, -10.35}
+                Position = { 20.25, 2, -10.35 }
             }
         )
         coroutine.yield(0)
@@ -13453,7 +13453,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Morannon",
                 ToLocation = "North Ithilien",
                 Smooth = true,
-                Position = {16.94, 2, -9.05}
+                Position = { 16.94, 2, -9.05 }
             }
         )
         coroutine.yield(0)
@@ -13463,7 +13463,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Morannon",
                 ToLocation = "North Ithilien",
                 Smooth = true,
-                Position = {15.82, 2, -7.88}
+                Position = { 15.82, 2, -7.88 }
             }
         )
         coroutine.yield(0)
@@ -13473,7 +13473,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Morannon",
                 ToLocation = "North Ithilien",
                 Smooth = true,
-                Position = {15.42, 2, -7.06}
+                Position = { 15.42, 2, -7.06 }
             }
         )
         coroutine.yield(0)
@@ -13483,7 +13483,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Morannon",
                 ToLocation = "North Ithilien",
                 Smooth = true,
-                Position = {15.03, 2, -6.24}
+                Position = { 15.03, 2, -6.24 }
             }
         )
         coroutine.yield(0)
@@ -13494,7 +13494,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Sauron Reinforcements",
                 ToLocation = "North Ithilien",
                 Smooth = true,
-                Position = {16.99, 2, -7.49}
+                Position = { 16.99, 2, -7.49 }
             }
         )
         coroutine.yield(0)
@@ -13505,7 +13505,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Nazgul Reinforcements",
                 ToLocation = "North Ithilien",
                 Smooth = true,
-                Position = {16.61, 2, -5.17}
+                Position = { 16.61, 2, -5.17 }
             }
         )
         coroutine.yield(0)
@@ -13516,7 +13516,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Sauron Reinforcements",
                 ToLocation = "Morannon",
                 Smooth = true,
-                Position = {22.11, 2, -5.75}
+                Position = { 22.11, 2, -5.75 }
             }
         )
         coroutine.yield(0)
@@ -13527,7 +13527,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Sauron Reinforcements",
                 ToLocation = "Moria",
                 Smooth = true,
-                Position = {0.52, 2, 8.76}
+                Position = { 0.52, 2, 8.76 }
             }
         )
         coroutine.yield(0)
@@ -13538,7 +13538,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Nazgul Reinforcements",
                 ToLocation = "Dagorlad",
                 Smooth = true,
-                Position = {21.28, 2, -0.74}
+                Position = { 21.28, 2, -0.74 }
             }
         )
         coroutine.yield(0)
@@ -13549,7 +13549,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Nazgul Reinforcements",
                 ToLocation = "North Rhun",
                 Smooth = true,
-                Position = {26, 2, 13.38}
+                Position = { 26, 2, 13.38 }
             }
         )
         coroutine.yield(0)
@@ -13560,7 +13560,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "South Rhun",
                 ToLocation = "Dagorlad",
                 Smooth = true,
-                Position = {21.81, 2, -2.4}
+                Position = { 21.81, 2, -2.4 }
             }
         )
         coroutine.yield(0)
@@ -13571,7 +13571,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "South Rhun",
                 ToLocation = "Dagorlad",
                 Smooth = true,
-                Position = {19.14, 2, -0.61}
+                Position = { 19.14, 2, -0.61 }
             }
         )
         coroutine.yield(0)
@@ -13581,7 +13581,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "South Rhun",
                 ToLocation = "Dagorlad",
                 Smooth = true,
-                Position = {18.39, 2, -1.27}
+                Position = { 18.39, 2, -1.27 }
             }
         )
         coroutine.yield(0)
@@ -13591,7 +13591,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "South Rhun",
                 ToLocation = "Dagorlad",
                 Smooth = true,
-                Position = {19.27, 2, -1.44}
+                Position = { 19.27, 2, -1.44 }
             }
         )
         coroutine.yield(0)
@@ -13602,7 +13602,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Haradrim Reinforcements",
                 ToLocation = "Dagorlad",
                 Smooth = true,
-                Position = {20.2, 2, -0.68}
+                Position = { 20.2, 2, -0.68 }
             }
         )
         coroutine.yield(0)
@@ -13612,7 +13612,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Haradrim Reinforcements",
                 ToLocation = "Dagorlad",
                 Smooth = true,
-                Position = {20.35, 2, -2.25}
+                Position = { 20.35, 2, -2.25 }
             }
         )
         coroutine.yield(0)
@@ -13623,7 +13623,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Haradrim Reinforcements",
                 ToLocation = "North Rhun",
                 Smooth = true,
-                Position = {24.27, 2, 11.65}
+                Position = { 24.27, 2, 11.65 }
             }
         )
         coroutine.yield(0)
@@ -13634,7 +13634,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Haradrim Reinforcements",
                 ToLocation = "North Rhun",
                 Smooth = true,
-                Position = {25.22, 2, 8.93}
+                Position = { 25.22, 2, 8.93 }
             }
         )
         coroutine.yield(0)
@@ -13644,7 +13644,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Haradrim Reinforcements",
                 ToLocation = "North Rhun",
                 Smooth = true,
-                Position = {26.13, 2, 8.94}
+                Position = { 26.13, 2, 8.94 }
             }
         )
         coroutine.yield(0)
@@ -13655,7 +13655,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Far Harad",
                 ToLocation = "South Ithilien",
                 Smooth = true,
-                Position = {16.31, 2, -15.04}
+                Position = { 16.31, 2, -15.04 }
             }
         )
         coroutine.yield(0)
@@ -13666,7 +13666,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Far Harad",
                 ToLocation = "South Ithilien",
                 Smooth = true,
-                Position = {14.61, 2, -14.73}
+                Position = { 14.61, 2, -14.73 }
             }
         )
         coroutine.yield(0)
@@ -13676,7 +13676,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Far Harad",
                 ToLocation = "South Ithilien",
                 Smooth = true,
-                Position = {13.94, 2, -15.56}
+                Position = { 13.94, 2, -15.56 }
             }
         )
         coroutine.yield(0)
@@ -13686,7 +13686,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Far Harad",
                 ToLocation = "South Ithilien",
                 Smooth = true,
-                Position = {14.93, 2, -15.75}
+                Position = { 14.93, 2, -15.75 }
             }
         )
         coroutine.yield(0)
@@ -13697,7 +13697,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Near Harad",
                 ToLocation = "West Harondor",
                 Smooth = true,
-                Position = {13.05, 2, -18.33}
+                Position = { 13.05, 2, -18.33 }
             }
         )
         coroutine.yield(0)
@@ -13708,7 +13708,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Near Harad",
                 ToLocation = "West Harondor",
                 Smooth = true,
-                Position = {13, 2, -16.48}
+                Position = { 13, 2, -16.48 }
             }
         )
         coroutine.yield(0)
@@ -13718,7 +13718,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Near Harad",
                 ToLocation = "West Harondor",
                 Smooth = true,
-                Position = {12.21, 2, -16.99}
+                Position = { 12.21, 2, -16.99 }
             }
         )
         coroutine.yield(0)
@@ -13728,7 +13728,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Near Harad",
                 ToLocation = "West Harondor",
                 Smooth = true,
-                Position = {11.41, 2, -17.69}
+                Position = { 11.41, 2, -17.69 }
             }
         )
         coroutine.yield(0)
@@ -13739,7 +13739,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Haradrim Reinforcements",
                 ToLocation = "Umbar",
                 Smooth = true,
-                Position = {11.65, 2, -22.88}
+                Position = { 11.65, 2, -22.88 }
             }
         )
         coroutine.yield(0)
@@ -13750,7 +13750,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Haradrim Reinforcements",
                 ToLocation = "Umbar",
                 Smooth = true,
-                Position = {10.18, 2, -22.73}
+                Position = { 10.18, 2, -22.73 }
             }
         )
         coroutine.yield(0)
@@ -13760,7 +13760,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Haradrim Reinforcements",
                 ToLocation = "Umbar",
                 Smooth = true,
-                Position = {9.18, 2, -22.73}
+                Position = { 9.18, 2, -22.73 }
             }
         )
         coroutine.yield(0)
@@ -13772,26 +13772,26 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "",
                 ToLocation = "Orthanc",
                 Smooth = true,
-                Position = {-1, 1.76, -0.88}
+                Position = { -1, 1.76, -0.88 }
             }
         )
         coroutine.yield(0)
-        getObjectFromGUID("8039f2").setRotation({0, 180, 0})
+        getObjectFromGUID("8039f2").setRotation({ 0, 180, 0 })
         -- balrog is dead...
-        printToAll("The Balrog is Dead.", {1, 1, 0})
-        RemoveObjectFromGame({ID = "2c3907"})
+        printToAll("The Balrog is Dead.", { 1, 1, 0 })
+        RemoveObjectFromGame({ ID = "2c3907" })
         -- balrog figure 3d
-        RemoveObjectFromGame({ID = "ae8ad7"})
+        RemoveObjectFromGame({ ID = "ae8ad7" })
         -- balrog figure 2d
-        RemoveObjectFromGame({ID = "60d004"})
+        RemoveObjectFromGame({ ID = "60d004" })
         -- balrog figure marble
-        RemoveObjectFromGame({ID = "b9eda6"})
+        RemoveObjectFromGame({ ID = "b9eda6" })
         -- balrog dice
-        RemoveObjectFromGame({ID = "792f54"})
+        RemoveObjectFromGame({ ID = "792f54" })
         -- balrog status counter
-        RemoveObjectFromGame({ID = "b9f8d6"})
+        RemoveObjectFromGame({ ID = "b9f8d6" })
         -- balrog card
-        RemoveObjectFromGame({Name = "A Balrog is Come!"})
+        RemoveObjectFromGame({ Name = "A Balrog is Come!" })
         -- balrog event card-- b9f8d6
         -- move ring-bearers to Eastemnet {6.76, 1.00, -2.33}...
         -- MoveUnit("Ring-bearers","e76bc8","d67c12","b98185","","Rivendell","Eastemnet",{6.76, 1.00, -2.33})
@@ -13801,7 +13801,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Rivendell",
                 ToLocation = "Eastemnet",
                 Smooth = true,
-                Position = {9.1, 1.76, -2.7}
+                Position = { 9.1, 1.76, -2.7 }
             }
         )
         -- fellowship is broken...
@@ -13834,7 +13834,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Fellowship Box",
                 ToLocation = "Eastemnet",
                 Smooth = true,
-                Position = {6.4, 1.76, -0.85}
+                Position = { 6.4, 1.76, -0.85 }
             }
         )
         SeparateCompanionFromFellowship("Legolas")
@@ -13850,7 +13850,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Fellowship Box",
                 ToLocation = "Eastemnet",
                 Smooth = true,
-                Position = {5.6, 1.76, 0.15}
+                Position = { 5.6, 1.76, 0.15 }
             }
         )
         SeparateCompanionFromFellowship("Gimli")
@@ -13866,7 +13866,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Fellowship Box",
                 ToLocation = "Eastemnet",
                 Smooth = true,
-                Position = {6.9, 1.76, -1.85}
+                Position = { 6.9, 1.76, -1.85 }
             }
         )
         for I = 1, 30 do
@@ -13882,7 +13882,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Fellowship Box",
                 ToLocation = "Fangorn",
                 Smooth = true,
-                Position = {3.8, 1.76, 1.5}
+                Position = { 3.8, 1.76, 1.5 }
             }
         )
         SeparateCompanionFromFellowship("Meriadoc")
@@ -13897,7 +13897,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "Fellowship Box",
                 ToLocation = "Fangorn",
                 Smooth = true,
-                Position = {3.8, 1.76, 0.7}
+                Position = { 3.8, 1.76, 0.7 }
             }
         )
         SeparateCompanionFromFellowship("Peregrin")
@@ -13906,7 +13906,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
         end
 
         -- gandalf the white starts in Lorien...
-        printToAll("Gandalf the White has returned to Lorien.", {1, 1, 0})
+        printToAll("Gandalf the White has returned to Lorien.", { 1, 1, 0 })
         -- MoveUnit("Gandalf the White","0166c2","27d117","60bd5c","","out of play","Lorien",{4.46,1.41,8})
         PositionUnit(
             {
@@ -13914,19 +13914,19 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "",
                 ToLocation = "Lorien",
                 Smooth = true,
-                Position = {4.45, 1.76, 8}
+                Position = { 4.45, 1.76, 8 }
             }
         )
-        getObjectFromGUID("0546b6").setRotation({0, 0, 0})
+        getObjectFromGUID("0546b6").setRotation({ 0, 0, 0 })
         -- fellowship is revealed at step 0...
-        printToAll("The Fellowship starts Revealed at 0 on the Fellowship Track", {1, 1, 0})
-        getObjectFromGUID("6b62ef").setPositionSmooth({5.3, 1.01, 23.20}, false, false)
-        getObjectFromGUID("6b62ef").setRotation({0, 270, 0})
+        printToAll("The Fellowship starts Revealed at 0 on the Fellowship Track", { 1, 1, 0 })
+        getObjectFromGUID("6b62ef").setPositionSmooth({ 5.3, 1.01, 23.20 }, false, false)
+        getObjectFromGUID("6b62ef").setRotation({ 0, 270, 0 })
         -- corruption starts at 3...
-        printToAll("The Corruption of the Ring-bearer starts at 3.", {1, 1, 0})
-        getObjectFromGUID("abe1b3").setPositionSmooth({10.04, 1.01, 24.15}, false, false)
+        printToAll("The Corruption of the Ring-bearer starts at 3.", { 1, 1, 0 })
+        getObjectFromGUID("abe1b3").setPositionSmooth({ 10.04, 1.01, 24.15 }, false, false)
         -- gollum is the Fellowship Guide {27.65, 0.98, 17.00}...
-        printToAll("All Companions have left the Fellowship, and Gollum is the Guide.", {1, 1, 0})
+        printToAll("All Companions have left the Fellowship, and Gollum is the Guide.", { 1, 1, 0 })
         Guide = "Gollum: Slave of the Ring"
         GuideLevel = 0
         coroutine.yield(0)
@@ -13937,75 +13937,75 @@ function SetupBotF() -- setup the breaking of the fellowship.
                 FromLocation = "",
                 ToLocation = "Fellowship Box",
                 Smooth = true,
-                Position = {27.65, 1.76, 17}
+                Position = { 27.65, 1.76, 17 }
             }
         )
-        getObjectFromGUID("1c4127").setPosition({32.9, 3, 20.0})
-        getObjectFromGUID("1c4127").setRotation({0, 180, 0})
+        getObjectFromGUID("1c4127").setPosition({ 32.9, 3, 20.0 })
+        getObjectFromGUID("1c4127").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
         -- Sauron starts active and at war...
-        getObjectFromGUID("75a065").setPositionSmooth({34.25, 1.01, -7.26}, false, false)
+        getObjectFromGUID("75a065").setPositionSmooth({ 34.25, 1.01, -7.26 }, false, false)
         PoliticalTrack.Sauron.Level = 0
         PoliticalTrack.Sauron.AtWar = true
-        printToAll("Sauron is at War!", {1, 1, 0})
+        printToAll("Sauron is at War!", { 1, 1, 0 })
         coroutine.yield(0)
         -- Isengard starts active and at war...
-        getObjectFromGUID("7f39c1").setPositionSmooth({33.2, 1.01, -7.59}, false, false)
+        getObjectFromGUID("7f39c1").setPositionSmooth({ 33.2, 1.01, -7.59 }, false, false)
         PoliticalTrack.Isengard.Level = 0
         PoliticalTrack.Isengard.AtWar = true
-        printToAll("Isengard is at War!", {1, 1, 0})
+        printToAll("Isengard is at War!", { 1, 1, 0 })
         coroutine.yield(0)
         -- Haradrim starts active and at war...
-        getObjectFromGUID("52aff9").setPositionSmooth({35.34, 1.01, -7.59}, false, false)
+        getObjectFromGUID("52aff9").setPositionSmooth({ 35.34, 1.01, -7.59 }, false, false)
         PoliticalTrack.Haradrim.Level = 0
         PoliticalTrack.Haradrim.AtWar = true
-        printToAll("Haradrim are at War!", {1, 1, 0})
+        printToAll("Haradrim are at War!", { 1, 1, 0 })
         coroutine.yield(0)
         -- elves start active and at war...
-        getObjectFromGUID("fc2440").setPositionSmooth({33.18, 1.01, -5.47}, false, false)
+        getObjectFromGUID("fc2440").setPositionSmooth({ 33.18, 1.01, -5.47 }, false, false)
         PoliticalTrack.Elves.Level = 0
         PoliticalTrack.Elves.AtWar = true
-        printToAll("Elves are at War!", {1, 1, 0})
+        printToAll("Elves are at War!", { 1, 1, 0 })
         coroutine.yield(0)
         -- gondor start inactive at zone 1...
-        getObjectFromGUID("8ab5c1").setPositionSmooth({33.05, 1.01, -1.91}, false, false)
+        getObjectFromGUID("8ab5c1").setPositionSmooth({ 33.05, 1.01, -1.91 }, false, false)
         PoliticalTrack.Gondor.Level = 1
         PoliticalTrack.Gondor.AtWar = false
-        printToAll("Gondor starts further down the political track.", {1, 1, 0})
+        printToAll("Gondor starts further down the political track.", { 1, 1, 0 })
         coroutine.yield(0)
         -- The North start inactive at zone 2...
-        getObjectFromGUID("07e059").setPositionSmooth({35.34, 1.01, 1.71}, false, false)
+        getObjectFromGUID("07e059").setPositionSmooth({ 35.34, 1.01, 1.71 }, false, false)
         PoliticalTrack.North.Level = 2
         PoliticalTrack.North.AtWar = false
-        printToAll("The North starts further down the political track.", {1, 1, 0})
+        printToAll("The North starts further down the political track.", { 1, 1, 0 })
         coroutine.yield(0)
         -- Dwarves start inactive at zone 2...
-        getObjectFromGUID("a55f2c").setPositionSmooth({33.14, 1.01, 1.72}, false, false)
+        getObjectFromGUID("a55f2c").setPositionSmooth({ 33.14, 1.01, 1.72 }, false, false)
         PoliticalTrack.Dwarves.Level = 2
         PoliticalTrack.Dwarves.AtWar = false
-        printToAll("Dwarves start further down the political track.\n", {1, 1, 0})
+        printToAll("Dwarves start further down the political track.\n", { 1, 1, 0 })
         coroutine.yield(0)
         -- remove tiles...
         printToAll(
             "Removing standard Hunt Tiles from the Hunt Pool:\nOne Eye tile\nOne 1 Tile\nTwo 2 tiles\nTwo Zero/Reveal tiles\n"
         )
         getObjectFromGUID("002387").takeObject(
-            {smooth = true, guid = "8aaa0a", position = {-43.2, 1, -21}, rotation = {0, 180, 0}}
+            { smooth = true, guid = "8aaa0a", position = { -43.2, 1, -21 }, rotation = { 0, 180, 0 } }
         )
         getObjectFromGUID("002387").takeObject(
-            {smooth = true, guid = "b58a49", position = {-41.9, 1, -21}, rotation = {0, 180, 0}}
+            { smooth = true, guid = "b58a49", position = { -41.9, 1, -21 }, rotation = { 0, 180, 0 } }
         )
         getObjectFromGUID("002387").takeObject(
-            {smooth = true, guid = "9ec4f1", position = {-40.6, 1, -21}, rotation = {0, 180, 0}}
+            { smooth = true, guid = "9ec4f1", position = { -40.6, 1, -21 }, rotation = { 0, 180, 0 } }
         )
         getObjectFromGUID("002387").takeObject(
-            {smooth = true, guid = "5d8190", position = {-39.3, 1, -21}, rotation = {0, 180, 0}}
+            { smooth = true, guid = "5d8190", position = { -39.3, 1, -21 }, rotation = { 0, 180, 0 } }
         )
         getObjectFromGUID("002387").takeObject(
-            {smooth = true, guid = "a63100", position = {-38.0, 1, -21}, rotation = {0, 180, 0}}
+            { smooth = true, guid = "a63100", position = { -38.0, 1, -21 }, rotation = { 0, 180, 0 } }
         )
         getObjectFromGUID("002387").takeObject(
-            {smooth = true, guid = "71f5b1", position = {-43.2, 1, -22.5}, rotation = {0, 180, 0}}
+            { smooth = true, guid = "71f5b1", position = { -43.2, 1, -22.5 }, rotation = { 0, 180, 0 } }
         )
         coroutine.yield(0)
         -- add tiles...
@@ -14013,15 +14013,15 @@ function SetupBotF() -- setup the breaking of the fellowship.
             "Adding Special Tiles as played:\nZero Hunt tile (Elven Cloaks)\nZero Hunt tile (Elven Rope)\n-2 Hunt tile (Phial of Galadriel)\n"
         )
         if getObjectFromGUID("a31079") ~= nil then
-            getObjectFromGUID("a31079").setPositionSmooth({-41.9, 1, -22.5}, false, false)
+            getObjectFromGUID("a31079").setPositionSmooth({ -41.9, 1, -22.5 }, false, false)
         end
 
         if getObjectFromGUID("a31079") ~= nil then
-            getObjectFromGUID("be4e0f").setPositionSmooth({-40.6, 1, -22.5}, false, false)
+            getObjectFromGUID("be4e0f").setPositionSmooth({ -40.6, 1, -22.5 }, false, false)
         end
 
         if getObjectFromGUID("a31079") ~= nil then
-            getObjectFromGUID("8ff093").setPositionSmooth({-39.3, 1, -22.5}, false, false)
+            getObjectFromGUID("8ff093").setPositionSmooth({ -39.3, 1, -22.5 }, false, false)
         end
 
         coroutine.yield(0)
@@ -14029,57 +14029,57 @@ function SetupBotF() -- setup the breaking of the fellowship.
         printToAll(
             "Removing Free Peoples Character Event Cards:\nMithril Coat and Sting\nMirror of Galadriel\nElven Cloaks\nElven Rope\nPhial of Galadriel\n"
         )
-        RemoveObjectFromGame({ID = "357271", Name = "Mithril Coat and Sting"})
+        RemoveObjectFromGame({ ID = "357271", Name = "Mithril Coat and Sting" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "d870a1", Name = "Mirror of Galadriel"})
+        RemoveObjectFromGame({ ID = "d870a1", Name = "Mirror of Galadriel" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "b69f25", Name = "Elven Rope"})
+        RemoveObjectFromGame({ ID = "b69f25", Name = "Elven Rope" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "46f2ed", Name = "Elven Cloaks"})
+        RemoveObjectFromGame({ ID = "46f2ed", Name = "Elven Cloaks" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "b3797a", Name = "Phial of Galadriel"})
+        RemoveObjectFromGame({ ID = "b3797a", Name = "Phial of Galadriel" })
         coroutine.yield(0)
         printToAll("Removing Free Peoples Strategy Event Cards:\nMithril Coat and Sting\nMirror of Galadriel\n")
-        RemoveObjectFromGame({ID = "3e59da", Name = "A Power too Great"})
+        RemoveObjectFromGame({ ID = "3e59da", Name = "A Power too Great" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "619545", Name = "Kindred of Glorfindel"})
+        RemoveObjectFromGame({ ID = "619545", Name = "Kindred of Glorfindel" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "495aee", Name = "Eomer, Son of Eomund"})
+        RemoveObjectFromGame({ ID = "495aee", Name = "Eomer, Son of Eomund" })
         coroutine.yield(0)
         printToAll(
             "Removing Shadow Character Event Cards:\nFoul Thing from the Deep\nCruel Weather\nLure of the Ring\nThe Breaking of the Fellowship\nWorn With Sorrow and Toil\nFlocks of Crebain\nBalrog of Moria\n"
         )
-        RemoveObjectFromGame({ID = "4cd9f8", Name = "Cruel Weather"})
+        RemoveObjectFromGame({ ID = "4cd9f8", Name = "Cruel Weather" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "838f6e", Name = "Foul Thing from the Deep"})
+        RemoveObjectFromGame({ ID = "838f6e", Name = "Foul Thing from the Deep" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "77ff2b", Name = "Lure of the Ring"})
+        RemoveObjectFromGame({ ID = "77ff2b", Name = "Lure of the Ring" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "31ade1", Name = "The Breaking of the Fellowship"})
+        RemoveObjectFromGame({ ID = "31ade1", Name = "The Breaking of the Fellowship" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "49b1b4", Name = "Worn with Sorrow and Toil"})
+        RemoveObjectFromGame({ ID = "49b1b4", Name = "Worn with Sorrow and Toil" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "630487", Name = "Flocks of Crebain"})
+        RemoveObjectFromGame({ ID = "630487", Name = "Flocks of Crebain" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "c6b2ab", Name = "Balrog of Moria"})
+        RemoveObjectFromGame({ ID = "c6b2ab", Name = "Balrog of Moria" })
         coroutine.yield(0)
         printToAll("Removing Shadow Strategy Event Cards:\nReturn to Valinor\nRage of the Dunlendings\n")
-        RemoveObjectFromGame({ID = "7a96dc", Name = "Return to Valinor"})
+        RemoveObjectFromGame({ ID = "7a96dc", Name = "Return to Valinor" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ID = "92c6ed", Name = "Rage of the Dunlendings"})
+        RemoveObjectFromGame({ ID = "92c6ed", Name = "Rage of the Dunlendings" })
         coroutine.yield(0)
         -- put shadow cards into play...
         printToAll("Placing Shadow Event Cards into Play:\nThe Palantir of Orthanc\nWormtongue\nThreats and Promises\n")
         getObjectFromGUID("8c377e").takeObject(
-            {smooth = true, guid = "8d09a8", position = {-26.5, 1, -6}, rotation = {0, 180, 0}}
+            { smooth = true, guid = "8d09a8", position = { -26.5, 1, -6 }, rotation = { 0, 180, 0 } }
         )
         coroutine.yield(0)
         getObjectFromGUID("8c377e").takeObject(
-            {smooth = true, guid = "accb2a", position = {-21.5, 1, -6}, rotation = {0, 180, 0}}
+            { smooth = true, guid = "accb2a", position = { -21.5, 1, -6 }, rotation = { 0, 180, 0 } }
         )
         coroutine.yield(0)
         getObjectFromGUID("6508fd").takeObject(
-            {smooth = true, guid = "1608f1", position = {-16.5, 1, -6}, rotation = {0, 180, 0}}
+            { smooth = true, guid = "1608f1", position = { -16.5, 1, -6 }, rotation = { 0, 180, 0 } }
         )
         coroutine.yield(0)
         -- signal next step is ok to proceed...
@@ -14102,7 +14102,7 @@ function ShuffleHand(Params)
             local n = math.random(i)
             j[i], j[n] = j[n], j[i]
         end
-        
+
         return j
     end
 
@@ -14112,13 +14112,12 @@ function ShuffleHand(Params)
         for i, j in pairs(HandObj) do
             Card[i] = j.getPosition()
         end
-        
+
         local shuffledObj = SubShuffle(HandObj)
         local shuffledCard = SubShuffle(Card)
         for i, j in pairs(shuffledObj) do
             j.setPosition(shuffledCard[i])
         end
-    
     end
 end
 
@@ -14192,26 +14191,26 @@ function UnitEvent(Params)
                 )
             end
 
-            Params.UnitObj.setGMNotes("Region:" .. GetGridRegion({Position = Params.UnitObj.getPosition()}) .. ";")
+            Params.UnitObj.setGMNotes("Region:" .. GetGridRegion({ Position = Params.UnitObj.getPosition() }) .. ";")
         elseif Params.Event == "Pickup" then
             Params.UnitObj.setVar("PickedUp", true)
-            Params.UnitObj.setGMNotes("Region:" .. GetGridRegion({Position = Params.UnitObj.getPosition()}) .. ";")
+            Params.UnitObj.setGMNotes("Region:" .. GetGridRegion({ Position = Params.UnitObj.getPosition() }) .. ";")
         elseif Params.Event == "Drop" then
             if Params.UnitObj.getVar("PickedUp") then
                 Params.UnitObj.setVar("PickedUp", false)
                 -- remove picked up flag.
                 local LastRegion =
-                    ReadTag({Text = Params.UnitObj.getGMNotes(), Var = "Region", Default = "out of play"})
-                local Region = GetGridRegion({Position = Params.UnitObj.getPosition()})
+                    ReadTag({ Text = Params.UnitObj.getGMNotes(), Var = "Region", Default = "out of play" })
+                local Region = GetGridRegion({ Position = Params.UnitObj.getPosition() })
                 -- if unit changed regions...
                 if Region ~= LastRegion then
                     -- if dropped into play...
                     if
                         Region ~= "" and Params.UnitObj.getPosition().x < BoardX and
-                            Params.UnitObj.getPosition().x > -BoardX and
-                            Params.UnitObj.getPosition().z < BoardZ and
-                            Params.UnitObj.getPosition().z > -BoardZ
-                     then
+                        Params.UnitObj.getPosition().x > -BoardX and
+                        Params.UnitObj.getPosition().z < BoardZ and
+                        Params.UnitObj.getPosition().z > -BoardZ
+                    then
                         -- sound effect?
                         if Params.UnitObj.getName() == "Nazgûl" then
                             local Scream = getObjectFromGUID("c35be9").getVar("Scream")
@@ -14219,87 +14218,87 @@ function UnitEvent(Params)
                                 -- do not scream please.
                             elseif Scream == "Always" then
                                 -- scream
-                                PlaySound({ID = 8})
+                                PlaySound({ ID = 8 })
                             elseif Region ~= "Nazgul Reinforcements" and LastRegion == "Nazgul Reinforcements" then
-                                PlaySound({ID = 8})
-                            -- scream
+                                PlaySound({ ID = 8 })
+                                -- scream
                             end
                         elseif Params.UnitObj.getName() == "The Ring-bearers" and Region == "Mount Doom 1" then
-                            PlaySound({ID = 7})
+                            PlaySound({ ID = 7 })
                             -- cracks of doom.
-                            broadcastToAll("Reminder: Rebuild the Hunt Pool for the Mordor Track.", {1, 1, 0})
+                            broadcastToAll("Reminder: Rebuild the Hunt Pool for the Mordor Track.", { 1, 1, 0 })
                         elseif Params.UnitObj.getName() == "The Ring-bearers" and Region == "Crack of Doom" then
                             -- corruption 12?
                             if getObjectFromGUID("abe1b3").getPosition().x < 23.5 then
                                 -- ring destroyed!
                                 broadcastToAll(
                                     "Free Peoples Victory Detected!\n(The One Ring was destroyed)",
-                                    {1, 1, 0}
+                                    { 1, 1, 0 }
                                 )
-                                PlaySound({ID = 39})
+                                PlaySound({ ID = 39 })
                             else
                                 printToAll("The Ring-bearers reached the Crack of Doom, but were Corrupted!")
                             end
                         elseif LastRegion == "" and Region ~= "" then
                             if Params.UnitObj.getName() == "Gandalf the White: Emissary from the West" then
                                 -- i've been sent back...
-                                PlaySound({ID = 9})
+                                PlaySound({ ID = 9 })
                             elseif Params.UnitObj.getName() == "Aragorn: Heir to Isildur" then
                                 -- stand!
-                                PlaySound({ID = 31})
+                                PlaySound({ ID = 31 })
                             elseif Params.UnitObj.getName() == "Gollum" then -- "Gollum: Slave of the Ring" then
                                 -- gollum
-                                PlaySound({ID = 14})
+                                PlaySound({ ID = 14 })
                             elseif Params.UnitObj.getName() == "Sméagol" then -- "Sméagol: Tamed Wretch" then
                                 -- smeagol
-                                PlaySound({ID = 16})
+                                PlaySound({ ID = 16 })
                             elseif Params.UnitObj.getName() == "Lady Galadriel: Keeper of Nenya" then
                                 -- task...
-                                PlaySound({ID = 30})
+                                PlaySound({ ID = 30 })
                             elseif Params.UnitObj.getName() == "Lord Elrond: Keeper of Vilya" then
                                 -- unite...
-                                PlaySound({ID = 29})
+                                PlaySound({ ID = 29 })
                             elseif Params.UnitObj.getName() == "Treebeard: Tree-herd" then
                                 -- no curse...
-                                PlaySound({ID = 34})
+                                PlaySound({ ID = 34 })
                             elseif Params.UnitObj.getName() == "Saruman: Corrupted Wizard" then
                                 -- A new power...
-                                PlaySound({ID = 10})
+                                PlaySound({ ID = 10 })
                             elseif string.find(Params.UnitObj.getName(), "The Witch") ~= nil then
                                 -- break him...
-                                PlaySound({ID = 25})
+                                PlaySound({ ID = 25 })
                             elseif string.find(Params.UnitObj.getName(), "The Mouth of Sauron") ~= nil then
                                 -- welcome...
-                                PlaySound({ID = 27})
+                                PlaySound({ ID = 27 })
                             elseif Params.UnitObj.getName() == "Balrog: Evil of the Ancient World" then
                                 -- roar!
-                                PlaySound({ID = 28})
+                                PlaySound({ ID = 28 })
                             elseif Params.UnitObj.getName() == "Gothmog: Lieutenant of Morgul" then
                                 -- fear...
-                                PlaySound({ID = 26})
+                                PlaySound({ ID = 26 })
                             elseif Params.UnitObj.getName() == "Ugluk: Chieftain of the Uruk-Hai" then
                                 -- ugluk...
-                                PlaySound({ID = 54})
+                                PlaySound({ ID = 54 })
                             elseif Params.UnitObj.getName() == "The Shadow of Mirkwood: Chieftain of the Dark Lord" then
                                 -- vampire king...
-                                PlaySound({ID = 53})
+                                PlaySound({ ID = 53 })
                             elseif Params.UnitObj.getName() == "The Black Serpent: Chieftain of the Haradrim" then
-                                PlaySound({ID = 52})
-                            -- black serpent...
+                                PlaySound({ ID = 52 })
+                                -- black serpent...
                             end
-                        -- if character from out of play
+                            -- if character from out of play
                         end
                         -- if sound effect?
                         -- companion removed from fellowship?
                         if
                             LastRegion == "Fellowship Box" and
-                                string.find(Params.UnitObj.getDescription(), "Companion;") ~= nil
-                         then
+                            string.find(Params.UnitObj.getDescription(), "Companion;") ~= nil
+                        then
                             SeparateCompanionFromFellowship(Params.UnitObj.getName())
                         elseif
                             Region == "Fellowship Box" and
-                                string.find(Params.UnitObj.getDescription(), "Companion;") ~= nil
-                         then
+                            string.find(Params.UnitObj.getDescription(), "Companion;") ~= nil
+                        then
                             -- return companion to fellowship...
                             ReturnCompanionToFellowship(Params.UnitObj)
                         end
@@ -14320,8 +14319,8 @@ function UnitEvent(Params)
                                     if string.find(Obj.getGMNotes(), "Region:" .. Region .. ";") ~= nil then
                                         if
                                             string.find(Obj.getDescription(), "Regular;") ~= nil or
-                                                string.find(Obj.getDescription(), "Elite;") ~= nil
-                                         then
+                                            string.find(Obj.getDescription(), "Elite;") ~= nil
+                                        then
                                             if string.find(Obj.getDescription(), Side .. ";") ~= nil then
                                                 AllyArmyCount = AllyArmyCount + 1
                                             else
@@ -14335,21 +14334,21 @@ function UnitEvent(Params)
                                 -- what type of unit?
                                 if Params.UnitObj.getName() == "Saruman: Corrupted Wizard" then
                                     if Region ~= "Orthanc" then
-                                        broadcastToAll("Warning: Saruman can never leave Orthanc.", {1, 1, 0})
+                                        broadcastToAll("Warning: Saruman can never leave Orthanc.", { 1, 1, 0 })
                                     end
                                 elseif
                                     Params.UnitObj.getName() == "Nazgûl" or
-                                        string.find(Params.UnitObj.getName(), "The Witch-King") ~= nil
-                                 then
+                                    string.find(Params.UnitObj.getName(), "The Witch-King") ~= nil
+                                then
                                     -- Nazgul cannot enter region with a stronghold controlled by FP unless it is besieged...
                                     if
                                         Regions[Region].Settlement == "Stronghold" and
-                                            Regions[Region].Control == "FreePeoples" and
-                                            AllyArmyCount < 1
-                                     then
+                                        Regions[Region].Control == "FreePeoples" and
+                                        AllyArmyCount < 1
+                                    then
                                         printToAll(
                                             "Reminder: Nazgûl cannot enter a Region with a Stronghold controlled by the Free Peoples unless it is besieged.",
-                                            {1, 1, 0}
+                                            { 1, 1, 0 }
                                         )
                                     end
                                 elseif string.find(Params.UnitObj.getName(), "Minion;") ~= nil then
@@ -14360,8 +14359,8 @@ function UnitEvent(Params)
                                     -- regular or elite army unit?
                                     if
                                         string.find(Params.UnitObj.getDescription(), "Regular;") ~= nil or
-                                            string.find(Params.UnitObj.getDescription(), "Elite;") ~= nil
-                                     then
+                                        string.find(Params.UnitObj.getDescription(), "Elite;") ~= nil
+                                    then
                                         AllyArmyCount = AllyArmyCount + 1 -- include this unit in the stack count.
                                         if Params.Color ~= nil then
                                             printToAll("(Army Stack Count: " .. AllyArmyCount .. ")", Params.Color)
@@ -14373,7 +14372,7 @@ function UnitEvent(Params)
                                     if AllyArmyCount > 10 then
                                         broadcastToAll(
                                             "Warning: Army stacking limit of 10 exceeded at " .. Region .. ".",
-                                            {1, 1, 0}
+                                            { 1, 1, 0 }
                                         )
                                     end
 
@@ -14383,25 +14382,25 @@ function UnitEvent(Params)
                                         if not PoliticalTrack[UnitNation].AtWar then
                                             broadcastToAll(
                                                 "Warning: A " ..
-                                                    UnitNation ..
-                                                        " Unit entered another nation (" ..
-                                                            RegionNation .. "), but is not yet At War.",
-                                                {1, 1, 0}
+                                                UnitNation ..
+                                                " Unit entered another nation (" ..
+                                                RegionNation .. "), but is not yet At War.",
+                                                { 1, 1, 0 }
                                             )
                                         elseif not PoliticalTrack[RegionNation].Active then
                                             if
                                                 (UnitNation == "Haradrim" or UnitNation == "Isengard" or
                                                     UnitNation == "Sauron") and
-                                                    Regions[Region].Side == "FreePeoples" or
-                                                    (UnitNation == "Elves" or UnitNation == "Dwarves" or
-                                                        UnitNation == "North" or
-                                                        UnitNation == "Rohan" or
-                                                        UnitNation == "Gondor") and
-                                                        Regions[Region].Side == "Shadow"
-                                             then
+                                                Regions[Region].Side == "FreePeoples" or
+                                                (UnitNation == "Elves" or UnitNation == "Dwarves" or
+                                                    UnitNation == "North" or
+                                                    UnitNation == "Rohan" or
+                                                    UnitNation == "Gondor") and
+                                                Regions[Region].Side == "Shadow"
+                                            then
                                                 broadcastToAll(
                                                     "Reminder: Entering an opposing Nation's border usually Activates them.",
-                                                    {1, 1, 0}
+                                                    { 1, 1, 0 }
                                                 )
                                             end
                                         end
@@ -14418,11 +14417,11 @@ function UnitEvent(Params)
                         end
                     else -- dropped out of play...
                         if Params.UnitObj.getName() == "Gandalf the Grey" then
-                            PlaySound({ID = 6})
-                        -- sorrow
+                            PlaySound({ ID = 6 })
+                            -- sorrow
                         end
                     end
-                -- if dropped into play
+                    -- if dropped into play
                 end
                 -- if Region ~= LastRegion
                 if LastRegion == "" then
@@ -14438,9 +14437,9 @@ function UnitEvent(Params)
                 if Params.Color ~= nil then
                     printToAll(
                         "\n" ..
-                            Params.Color ..
-                                " Player moved " ..
-                                    Params.UnitObj.getName() .. " from " .. LastRegion .. " to " .. Region .. ".",
+                        Params.Color ..
+                        " Player moved " ..
+                        Params.UnitObj.getName() .. " from " .. LastRegion .. " to " .. Region .. ".",
                         Params.Color
                     )
                 else
@@ -14461,29 +14460,29 @@ function ArmyEvent(Params)
         local UnitNation = GetNationFromText(Params.ArmyObj.getDescription())
         local Side = GetSideFromText(UnitNation)
         if Params.Event == "Load" then
-            Params.ArmyObj.setGMNotes("Region:" .. GetGridRegion({Position = Params.ArmyObj.getPosition()}) .. ";")
+            Params.ArmyObj.setGMNotes("Region:" .. GetGridRegion({ Position = Params.ArmyObj.getPosition() }) .. ";")
         elseif Params.Event == "Pickup" then
             Params.ArmyObj.setVar("PickedUp", true)
-            Params.ArmyObj.setGMNotes("Region:" .. GetGridRegion({Position = Params.ArmyObj.getPosition()}) .. ";")
+            Params.ArmyObj.setGMNotes("Region:" .. GetGridRegion({ Position = Params.ArmyObj.getPosition() }) .. ";")
         elseif Params.Event == "Drop" then
             if Params.ArmyObj.getVar("PickedUp") then
                 Params.ArmyObj.setVar("PickedUp", false)
                 -- remove picked up flag.
                 local LastRegion =
-                    ReadTag({Text = Params.ArmyObj.getGMNotes(), Var = "Region", Default = "out of play"})
-                local Region = GetGridRegion({Position = Params.ArmyObj.getPosition()})
+                    ReadTag({ Text = Params.ArmyObj.getGMNotes(), Var = "Region", Default = "out of play" })
+                local Region = GetGridRegion({ Position = Params.ArmyObj.getPosition() })
                 -- if unit changed regions...
                 if Region ~= LastRegion then
                     -- if dropped into play...
                     if
                         Region ~= "" and Params.ArmyObj.getPosition().x < BoardX and
-                            Params.ArmyObj.getPosition().x > -BoardX and
-                            Params.ArmyObj.getPosition().z < BoardZ and
-                            Params.ArmyObj.getPosition().z > -BoardZ
-                     then
-                    -- allies in this region?
+                        Params.ArmyObj.getPosition().x > -BoardX and
+                        Params.ArmyObj.getPosition().z < BoardZ and
+                        Params.ArmyObj.getPosition().z > -BoardZ
+                    then
+                        -- allies in this region?
                     end
-                -- if dropped into play
+                    -- if dropped into play
                 end
 
                 if LastRegion == "" then
@@ -14499,9 +14498,9 @@ function ArmyEvent(Params)
                 if Params.Color ~= nil then
                     printToAll(
                         "\n" ..
-                            Params.Color ..
-                                " Player moved " ..
-                                    Params.ArmyObj.getName() .. " from " .. LastRegion .. " to " .. Region .. ".",
+                        Params.Color ..
+                        " Player moved " ..
+                        Params.ArmyObj.getName() .. " from " .. LastRegion .. " to " .. Region .. ".",
                         Params.Color
                     )
                 else
@@ -14519,8 +14518,8 @@ end
 -- {MarkerObj=Obj,Event="Load",Color="",Info=collision_info}  Load|Pickup|Drop|Collide|Destroy
 function SettlementControlMarkerEvent(Params)
     if Scripting then
-        local Region = GetGridRegion({Position = Params.MarkerObj.getPosition()})
-        local Control = ReadTag({Text = Params.MarkerObj.getGMNotes(), Var = "Control", Default = ""})
+        local Region = GetGridRegion({ Position = Params.MarkerObj.getPosition() })
+        local Control = ReadTag({ Text = Params.MarkerObj.getGMNotes(), Var = "Control", Default = "" })
         if Region ~= "" then
             Params.MarkerObj.setName(Region)
             Params.MarkerObj.setDescription(
@@ -14539,7 +14538,7 @@ function SettlementControlMarkerEvent(Params)
             elseif Params.Event == "Drop" then
                 if Params.MarkerObj.getVar("PickedUp") then
                     Params.MarkerObj.setVar("PickedUp", false)
-                -- remove picked up flag.
+                    -- remove picked up flag.
                 end
             elseif Params.Event == "Collide" then
                 -- control changed?
@@ -14567,7 +14566,7 @@ function SettlementControlMarkerEvent(Params)
                         else -- restore helms deep to free peoples...
                             RestoreHelmsDeep()
                         end
-                    -- if shadow controlled.
+                        -- if shadow controlled.
                     end
 
                     -- re-calc victory points...
@@ -14601,25 +14600,25 @@ function CalcVictoryPoints()
     end
 
     if VictoryPoints.FreePeoples == 0 then
-        getObjectFromGUID("d0b340").setPositionSmooth({-25.58, 1.01, -22.65}, false, false)
+        getObjectFromGUID("d0b340").setPositionSmooth({ -25.58, 1.01, -22.65 }, false, false)
     elseif VictoryPoints.FreePeoples >= 10 then
-        getObjectFromGUID("d0b340").setPositionSmooth({-7.2, 1.01, -22.65}, false, false)
+        getObjectFromGUID("d0b340").setPositionSmooth({ -7.2, 1.01, -22.65 }, false, false)
     else
         -- free peoples victory marker.
         getObjectFromGUID("d0b340").setPositionSmooth(
-            {-23 + VictoryPoints.FreePeoples * 1.58, 1.01, -22.65},
+            { -23 + VictoryPoints.FreePeoples * 1.58, 1.01, -22.65 },
             false,
             false
         )
     end
 
     if VictoryPoints.Shadow == 0 then
-        getObjectFromGUID("976dbc").setPositionSmooth({-25.58, 1.01, -23.65}, false, false)
+        getObjectFromGUID("976dbc").setPositionSmooth({ -25.58, 1.01, -23.65 }, false, false)
     elseif VictoryPoints.Shadow >= 10 then
-        getObjectFromGUID("976dbc").setPositionSmooth({-7.2, 1.01, -23.65}, false, false)
+        getObjectFromGUID("976dbc").setPositionSmooth({ -7.2, 1.01, -23.65 }, false, false)
     else
         -- shadow victory marker.
-        getObjectFromGUID("976dbc").setPositionSmooth({-23 + VictoryPoints.Shadow * 1.58, 1.01, -23.65}, false, false)
+        getObjectFromGUID("976dbc").setPositionSmooth({ -23 + VictoryPoints.Shadow * 1.58, 1.01, -23.65 }, false, false)
     end
 end
 
@@ -14630,9 +14629,9 @@ function PoliticalTokenEvent(Params)
         local Side = GetSideFromText(Nation)
         local Level = PoliticalTrack[Nation].Level
         local Active = PoliticalTrack[Nation].Active
-        local Color = {1, 0.5, 0.5}
+        local Color = { 1, 0.5, 0.5 }
         if Side == "FreePeoples" then
-            Color = {0.5, 0.5, 1}
+            Color = { 0.5, 0.5, 1 }
         end
 
         if Params.Event == "Load" then
@@ -14694,7 +14693,7 @@ function PoliticalTokenEvent(Params)
                     if not PoliticalTrack[Nation].Active then
                         broadcastToAll(
                             "Warning: " .. Nation .. " was set to At-War, but was not Active yet.",
-                            {1, 1, 0}
+                            { 1, 1, 0 }
                         )
                     end
 
@@ -14702,28 +14701,28 @@ function PoliticalTokenEvent(Params)
                     if Params.TokenObj.getVar("LastLevel") ~= PoliticalTrack[Nation].Level then
                         if Nation == "Dwarves" then
                             -- Far Over...
-                            Global.call("PlaySound", {ID = 24})
+                            Global.call("PlaySound", { ID = 24 })
                         elseif Nation == "Elves" then
                             -- Elven Horn
-                            Global.call("PlaySound", {ID = 22})
+                            Global.call("PlaySound", { ID = 22 })
                         elseif Nation == "Gondor" then
                             -- For Gondor!
-                            Global.call("PlaySound", {ID = 21})
+                            Global.call("PlaySound", { ID = 21 })
                         elseif Nation == "North" then
                             -- North Horn
-                            Global.call("PlaySound", {ID = 23})
+                            Global.call("PlaySound", { ID = 23 })
                         elseif Nation == "Rohan" then
                             -- rohan horn
-                            Global.call("PlaySound", {ID = 20})
+                            Global.call("PlaySound", { ID = 20 })
                         elseif Nation == "Haradrim" then
                             -- haradrim horn
-                            Global.call("PlaySound", {ID = 17})
+                            Global.call("PlaySound", { ID = 17 })
                         elseif Nation == "Isengard" then
                             -- isengard horn
-                            Global.call("PlaySound", {ID = 18})
+                            Global.call("PlaySound", { ID = 18 })
                         elseif Nation == "Sauron" then
-                            Global.call("PlaySound", {ID = 19})
-                        -- sauron music
+                            Global.call("PlaySound", { ID = 19 })
+                            -- sauron music
                         end
                     end
                 end
@@ -14759,8 +14758,8 @@ function MoveObject(Params)
         for SO, SubObj in pairs(getAllObjects()) do
             if
                 Params.Name ~= "" and SubObj.getName() == Params.Name and
-                    (Params.Type == "" or Params.Type == SubObj.type)
-             then
+                (Params.Type == "" or Params.Type == SubObj.type)
+            then
                 Obj = SubObj
                 break
             end
@@ -14793,13 +14792,13 @@ function StrongholdMenu(StrongholdObj)
                 click_function = "StrongholdMenu",
                 function_owner = Global,
                 label = "Besieged",
-                position = {0, 1.5, 0},
-                rotation = {270, 0, 0},
-                scale = {1, 1, 1},
+                position = { 0, 1.5, 0 },
+                rotation = { 270, 0, 0 },
+                scale = { 1, 1, 1 },
                 width = 0,
                 height = 0,
                 font_size = 500,
-                font_color = {1, 1, 0, 0.95}
+                font_color = { 1, 1, 0, 0.95 }
             }
         )
         FuncName = "EndSiege"
@@ -14817,11 +14816,11 @@ function StrongholdMenu(StrongholdObj)
             function_owner = Global,
             label = "",
             tooltip = ToolTip,
-            position = {0, 0.2, 0},
-            scale = {1, 1, 1},
+            position = { 0, 0.2, 0 },
+            scale = { 1, 1, 1 },
             width = 1400,
             height = 1400,
-            color = {1, 1, 1, 0}
+            color = { 1, 1, 1, 0 }
         }
     )
     local DstObj = getObjectFromGUID(StrongholdObj.getGMNotes())
@@ -14833,13 +14832,13 @@ function StrongholdMenu(StrongholdObj)
                 function_owner = Global,
                 label = ButtonLabel,
                 tooltip = ToolTip,
-                position = {2.1, 0, 0},
-                rotation = {0, 270, 0},
-                scale = {1, 1, 1},
+                position = { 2.1, 0, 0 },
+                rotation = { 0, 270, 0 },
+                scale = { 1, 1, 1 },
                 width = 1800,
                 height = 250,
                 font_size = 125,
-                color = {1, 1, 1, 0.8}
+                color = { 1, 1, 1, 0.8 }
             }
         )
         if string.find(DstObj.getDescription(), "Shadow;") ~= nil and StrongholdObj.getName() ~= "Erebor" then
@@ -14848,12 +14847,12 @@ function StrongholdMenu(StrongholdObj)
                     click_function = "StrongholdMenu",
                     function_owner = Global,
                     label = StrongholdObj.getName(),
-                    position = {0, 0.05, 2.2},
-                    scale = {1, 1, 1},
+                    position = { 0, 0.05, 2.2 },
+                    scale = { 1, 1, 1 },
                     width = 0,
                     height = 0,
                     font_size = 250,
-                    font_color = {1, 1, 0}
+                    font_color = { 1, 1, 0 }
                 }
             )
         end
@@ -14877,31 +14876,31 @@ function StartSiege(StrongholdObj)
                 if getObjectFromGUID("f994cb").getGMNotes() == "" then
                     DstObj = getObjectFromGUID("f994cb")
                     SiegeSpots = {
-                        {-30.8, 1.5, -10.2},
-                        {-32, 1.5, -9.15},
-                        {-30.8, 1.5, -9.15},
-                        {-29.5, 1.5, -9.15},
-                        {-32, 1.5, -10.2},
-                        {-29.5, 1.5, -10.2},
-                        {-32, 1.5, -11.25},
-                        {-30.8, 1.5, -11.25},
-                        {-29.5, 1.5, -11.25}
+                        { -30.8, 1.5, -10.2 },
+                        { -32,   1.5, -9.15 },
+                        { -30.8, 1.5, -9.15 },
+                        { -29.5, 1.5, -9.15 },
+                        { -32,   1.5, -10.2 },
+                        { -29.5, 1.5, -10.2 },
+                        { -32,   1.5, -11.25 },
+                        { -30.8, 1.5, -11.25 },
+                        { -29.5, 1.5, -11.25 }
                     }
                 elseif getObjectFromGUID("f84976").getGMNotes() == "" then
                     DstObj = getObjectFromGUID("f84976")
                     SiegeSpots = {
-                        {-30.8, 1.5, -14.1},
-                        {-32, 1.5, -13},
-                        {-30.8, 1.5, -13},
-                        {-29.5, 1.5, -13},
-                        {-32, 1.5, -14.1},
-                        {-29.5, 1.5, -14.1},
-                        {-32, 1.5, -15.2},
-                        {-30.8, 1.5, -15.2},
-                        {-29.5, 1.5, -15.2}
+                        { -30.8, 1.5, -14.1 },
+                        { -32,   1.5, -13 },
+                        { -30.8, 1.5, -13 },
+                        { -29.5, 1.5, -13 },
+                        { -32,   1.5, -14.1 },
+                        { -29.5, 1.5, -14.1 },
+                        { -32,   1.5, -15.2 },
+                        { -30.8, 1.5, -15.2 },
+                        { -29.5, 1.5, -15.2 }
                     }
                 else -- none available...
-                    printToAll("No available Shadow Strongholds.", {1, 1, 0})
+                    printToAll("No available Shadow Strongholds.", { 1, 1, 0 })
                 end
             end
         end
@@ -14920,8 +14919,8 @@ function StartSiege(StrongholdObj)
                 -- look for marker and units...
                 if
                     Obj.getName() == SrcObj.getName() and
-                        string.find(Obj.getDescription(), "SettlementControlMarker;") ~= nil
-                 then
+                    string.find(Obj.getDescription(), "SettlementControlMarker;") ~= nil
+                then
                     if Obj.getRotation().z > 90 and Obj.getRotation().z < 270 then
                         Side = "FreePeoples"
                     else
@@ -14939,22 +14938,22 @@ function StartSiege(StrongholdObj)
                     -- is object in the correct region?
                     if
                         string.find(Obj.getGMNotes(), "Region:" .. SrcObj.getName() .. ";") ~= nil or
-                            string.find(Obj.getGMNotes(), "Region:" .. SrcObj.getName() .. " Stronghold;") ~= nil
-                     then
+                        string.find(Obj.getGMNotes(), "Region:" .. SrcObj.getName() .. " Stronghold;") ~= nil
+                    then
                         -- is object on the correct side?
                         if string.find(Obj.getDescription(), Side .. ";") ~= nil then
                             -- is it a unit, and if so, which type?  Looking for Regular;Elite;Leader;Character;Minion;
                             if
                                 string.find(Obj.getDescription(), "Regular;") ~= nil or
-                                    string.find(Obj.getDescription(), "Elite;") ~= nil
-                             then
+                                string.find(Obj.getDescription(), "Elite;") ~= nil
+                            then
                                 ArmyCount = ArmyCount + 1
                                 table.insert(Units, Obj.getGUID())
                             elseif
                                 string.find(Obj.getDescription(), "Leader;") ~= nil or
-                                    string.find(Obj.getDescription(), "Character;") ~= nil or
-                                    string.find(Obj.getDescription(), "Minion;") ~= nil
-                             then
+                                string.find(Obj.getDescription(), "Character;") ~= nil or
+                                string.find(Obj.getDescription(), "Minion;") ~= nil
+                            then
                                 table.insert(Units, Obj.getGUID())
                             end
                         end
@@ -14963,7 +14962,7 @@ function StartSiege(StrongholdObj)
 
                 -- must be 5 or less army units...
                 if #Units <= 0 then
-                    printToAll("There are no Units to Retreat into Siege at " .. SrcObj.getName() .. ".", {1, 1, 0})
+                    printToAll("There are no Units to Retreat into Siege at " .. SrcObj.getName() .. ".", { 1, 1, 0 })
                 elseif ArmyCount <= 5 then
                     local Height = 1.5
                     local Index = 0
@@ -14976,27 +14975,27 @@ function StartSiege(StrongholdObj)
                         end
 
                         getObjectFromGUID(Units[U]).setPositionSmooth(
-                            {SiegeSpots[Index][1], Height, SiegeSpots[Index][3]},
+                            { SiegeSpots[Index][1], Height, SiegeSpots[Index][3] },
                             false,
                             false
                         )
-                        getObjectFromGUID(Units[U]).setRotationSmooth({0, 90, 0}, false, true)
+                        getObjectFromGUID(Units[U]).setRotationSmooth({ 0, 90, 0 }, false, true)
                         -- if not already in the Stronghold region square...
                         if
                             string.find(
                                 getObjectFromGUID(Units[U]).getGMNotes(),
                                 "Region:" .. SrcObj.getName() .. " Stronghold;"
                             ) == nil
-                         then
+                        then
                             -- change Region to Stronghold Box and update return info...
                             getObjectFromGUID(Units[U]).setGMNotes(
                                 "Region:" ..
-                                    SrcObj.getName() ..
-                                        " Stronghold;PX:" ..
-                                            string.format("%.3f", getObjectFromGUID(Units[U]).getPosition().x) ..
-                                                ";PZ:" ..
-                                                    string.format("%.3f", getObjectFromGUID(Units[U]).getPosition().z) ..
-                                                        ";"
+                                SrcObj.getName() ..
+                                " Stronghold;PX:" ..
+                                string.format("%.3f", getObjectFromGUID(Units[U]).getPosition().x) ..
+                                ";PZ:" ..
+                                string.format("%.3f", getObjectFromGUID(Units[U]).getPosition().z) ..
+                                ";"
                             )
                         end
 
@@ -15009,13 +15008,13 @@ function StartSiege(StrongholdObj)
                 else -- too many army units....
                     printToAll(
                         "Cannot Retreat into Siege at " ..
-                            SrcObj.getName() .. " because there are more than 5 Army Units (" .. ArmyCount .. ").",
-                        {1, 1, 0}
+                        SrcObj.getName() .. " because there are more than 5 Army Units (" .. ArmyCount .. ").",
+                        { 1, 1, 0 }
                     )
                 end
             else -- could not determine which side controls the stronghold...
                 print("Uhoh! Cannot find the Settlement Control Marker for: " .. SrcObj.getName() .. "!")
-            end -- if side?
+            end  -- if side?
             StrongholdMenu(SrcObj)
         end
 
@@ -15041,31 +15040,31 @@ function EndSiege(StrongholdObj)
                 if getObjectFromGUID("f994cb").getGMNotes() == "" then
                     DstObj = getObjectFromGUID("f994cb")
                     SiegeSpots = {
-                        {-30.8, 1.5, -10.2},
-                        {-32, 1.5, -9.15},
-                        {-30.8, 1.5, -9.15},
-                        {-29.5, 1.5, -9.15},
-                        {-32, 1.5, -10.2},
-                        {-29.5, 1.5, -10.2},
-                        {-32, 1.5, -11.25},
-                        {-30.8, 1.5, -11.25},
-                        {-29.5, 1.5, -11.25}
+                        { -30.8, 1.5, -10.2 },
+                        { -32,   1.5, -9.15 },
+                        { -30.8, 1.5, -9.15 },
+                        { -29.5, 1.5, -9.15 },
+                        { -32,   1.5, -10.2 },
+                        { -29.5, 1.5, -10.2 },
+                        { -32,   1.5, -11.25 },
+                        { -30.8, 1.5, -11.25 },
+                        { -29.5, 1.5, -11.25 }
                     }
                 elseif getObjectFromGUID("f84976").getGMNotes() == "" then
                     DstObj = getObjectFromGUID("f84976")
                     SiegeSpots = {
-                        {-30.8, 1.5, -14.1},
-                        {-32, 1.5, -13},
-                        {-30.8, 1.5, -13},
-                        {-29.5, 1.5, -13},
-                        {-32, 1.5, -14.1},
-                        {-29.5, 1.5, -14.1},
-                        {-32, 1.5, -15.2},
-                        {-30.8, 1.5, -15.2},
-                        {-29.5, 1.5, -15.2}
+                        { -30.8, 1.5, -14.1 },
+                        { -32,   1.5, -13 },
+                        { -30.8, 1.5, -13 },
+                        { -29.5, 1.5, -13 },
+                        { -32,   1.5, -14.1 },
+                        { -29.5, 1.5, -14.1 },
+                        { -32,   1.5, -15.2 },
+                        { -30.8, 1.5, -15.2 },
+                        { -29.5, 1.5, -15.2 }
                     }
                 else -- none available...
-                    printToAll("Not Sieged.", {1, 1, 0})
+                    printToAll("Not Sieged.", { 1, 1, 0 })
                 end
             end
         end
@@ -15080,8 +15079,8 @@ function EndSiege(StrongholdObj)
                 -- look for marker and units...
                 if
                     Obj.getName() == SrcObj.getName() and
-                        string.find(Obj.getDescription(), "SettlementControlMarker;") ~= nil
-                 then
+                    string.find(Obj.getDescription(), "SettlementControlMarker;") ~= nil
+                then
                     if Obj.getRotation().z > 90 and Obj.getRotation().z < 270 then
                         Side = "FreePeoples"
                     else
@@ -15100,12 +15099,12 @@ function EndSiege(StrongholdObj)
                     if string.find(Obj.getGMNotes(), "Region:Shadow Stronghold 1;") ~= nil then
                         Obj.setGMNotes(
                             "Region:" ..
-                                getObjectFromGUID(getObjectFromGUID("f994cb").getGMNotes()).getName() .. " Stronghold;"
+                            getObjectFromGUID(getObjectFromGUID("f994cb").getGMNotes()).getName() .. " Stronghold;"
                         )
                     elseif string.find(Obj.getGMNotes(), "Region:Shadow Stronghold 2;") ~= nil then
                         Obj.setGMNotes(
                             "Region:" ..
-                                getObjectFromGUID(getObjectFromGUID("f84976").getGMNotes()).getName() .. " Stronghold;"
+                            getObjectFromGUID(getObjectFromGUID("f84976").getGMNotes()).getName() .. " Stronghold;"
                         )
                     end
 
@@ -15114,20 +15113,20 @@ function EndSiege(StrongholdObj)
                         -- sieged unit?
                         if
                             string.find(Obj.getDescription(), "Regular;") ~= nil or
-                                string.find(Obj.getDescription(), "Elite;") ~= nil or
-                                string.find(Obj.getDescription(), "Leader;") ~= nil or
-                                string.find(Obj.getDescription(), "Character;") ~= nil or
-                                string.find(Obj.getDescription(), "Minion;") ~= nil
-                         then
+                            string.find(Obj.getDescription(), "Elite;") ~= nil or
+                            string.find(Obj.getDescription(), "Leader;") ~= nil or
+                            string.find(Obj.getDescription(), "Character;") ~= nil or
+                            string.find(Obj.getDescription(), "Minion;") ~= nil
+                        then
                             table.insert(SiegedUnits, Obj.getGUID())
                         end
                     elseif string.find(Obj.getGMNotes(), "Region:" .. SrcObj.getName() .. ";") ~= nil then
                         -- enemy army unit?
                         if
                             string.find(Obj.getDescription(), Side .. ";") == nil and
-                                (string.find(Obj.getDescription(), "Regular;") ~= nil or
-                                    string.find(Obj.getDescription(), "Elite;") ~= nil)
-                         then
+                            (string.find(Obj.getDescription(), "Regular;") ~= nil or
+                                string.find(Obj.getDescription(), "Elite;") ~= nil)
+                        then
                             table.insert(EnemyUnits, Obj.getGUID())
                         end
                     end
@@ -15139,26 +15138,26 @@ function EndSiege(StrongholdObj)
                 elseif #EnemyUnits > 0 then
                     printToAll(
                         "Cannot End Siege of " ..
-                            SrcObj.getName() .. ", because Enemy Army Units are still present (" .. #EnemyUnits .. ").",
-                        {1, 1, 0}
+                        SrcObj.getName() .. ", because Enemy Army Units are still present (" .. #EnemyUnits .. ").",
+                        { 1, 1, 0 }
                     )
                 else -- move sieged units back to board...
                     SrcObj.setDescription("Stronghold;")
                     for U = 1, #SiegedUnits do
                         -- has return position?
                         local PX =
-                            ReadTag({Text = getObjectFromGUID(SiegedUnits[U]).getGMNotes(), Var = "PX", Default = ""})
+                            ReadTag({ Text = getObjectFromGUID(SiegedUnits[U]).getGMNotes(), Var = "PX", Default = "" })
                         local PZ =
-                            ReadTag({Text = getObjectFromGUID(SiegedUnits[U]).getGMNotes(), Var = "PZ", Default = ""})
+                            ReadTag({ Text = getObjectFromGUID(SiegedUnits[U]).getGMNotes(), Var = "PZ", Default = "" })
                         if PX == "" or PZ == "" then
                             getObjectFromGUID(SiegedUnits[U]).setPositionSmooth(
-                                {SrcObj.getPosition().x - 0.7 + U * 0.2, U * 1.5, SrcObj.getPosition().z - 0.7},
+                                { SrcObj.getPosition().x - 0.7 + U * 0.2, U * 1.5, SrcObj.getPosition().z - 0.7 },
                                 false,
                                 false
                             )
                         else
                             getObjectFromGUID(SiegedUnits[U]).setPositionSmooth(
-                                {tonumber(PX), U * 1.5, tonumber(PZ)},
+                                { tonumber(PX), U * 1.5, tonumber(PZ) },
                                 false,
                                 false
                             )
@@ -15202,11 +15201,11 @@ function DetectGuide()
     for _, Obj in pairs(
         Physics.cast(
             {
-                origin = {32.9, 1, 20.0},
-                direction = {0, 1, 0},
+                origin = { 32.9, 1, 20.0 },
+                direction = { 0, 1, 0 },
                 type = 3,
-                size = {1, 10, 1},
-                orientation = {0, 0, 0},
+                size = { 1, 10, 1 },
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -15221,8 +15220,8 @@ function DetectGuide()
             if getObjectFromGUID(HighestID) ~= nil then
                 CardLevel =
                     tonumber(
-                    ReadTag({Text = getObjectFromGUID(HighestID).getDescription(), Var = "Level", Default = "0"})
-                )
+                        ReadTag({ Text = getObjectFromGUID(HighestID).getDescription(), Var = "Level", Default = "0" })
+                    )
             end
 
             if CardLevel > HighestLevel then
@@ -15236,7 +15235,7 @@ function DetectGuide()
                     -- go through deck to find the highest level...
 
                     for I, Item in pairs(Obj.hit_object.getObjects()) do
-                        CardLevel = tonumber(ReadTag({Text = Item.description, Var = "Level", Default = "0"}))
+                        CardLevel = tonumber(ReadTag({ Text = Item.description, Var = "Level", Default = "0" }))
                         if CardLevel > HighestLevel then
                             HighestLevel = CardLevel
                         end
@@ -15245,7 +15244,7 @@ function DetectGuide()
             end
         end
     end
-    
+
     Guide = ""
     GuildeLevel = 0
     if getObjectFromGUID(HighestID) ~= nil then
@@ -15253,20 +15252,20 @@ function DetectGuide()
         if TopCardName ~= "" and TopCardName ~= "The Ring-bearers (Frodo & Samwise)" then
             Guide = TopCardName
             GuideLevel =
-                tonumber(ReadTag({Text = getObjectFromGUID(HighestID).getDescription(), Var = "Level", Default = "0"}))
+                tonumber(ReadTag({ Text = getObjectFromGUID(HighestID).getDescription(), Var = "Level", Default = "0" }))
             -- printToAll("\n"..Guide.." (Level:"..GuideLevel..") is the Fellowship Guide.\n", {1,1,0})
             if Round ~= 0 and Guide ~= "Sméagol: Tamed Wretch" and HighestLevel > GuideLevel and RulesWarnings then
                 broadcastToAll(
                     "Warning: There are Companions in the Fellowship with a higher level than the Guide.\n(The Guide should be Level: " ..
-                        HighestLevel .. ").",
-                    {1, 1, 0}
+                    HighestLevel .. ").",
+                    { 1, 1, 0 }
                 )
             end
         end
     end
 
     if Guide == "" and Round > 0 then
-        printToAll("Warning: Could not determine the Fellowship Guide!", {1, 1, 0})
+        printToAll("Warning: Could not determine the Fellowship Guide!", { 1, 1, 0 })
     end
 
     return Guide
@@ -15282,11 +15281,11 @@ function FellowshipMenu()
                 click_function = "SearchFellowship",
                 function_owner = Global,
                 label = "Search Fellowship",
-                position = {0, 0, 2},
-                rotation = {0, 0, 0},
-                scale = {0.5, 0.5, 0.5},
-                color = {0.8, 0.8, 1},
-                font_color = {0, 0, 0},
+                position = { 0, 0, 2 },
+                rotation = { 0, 0, 0 },
+                scale = { 0.5, 0.5, 0.5 },
+                color = { 0.8, 0.8, 1 },
+                font_color = { 0, 0, 0 },
                 width = 1800,
                 height = 400,
                 font_size = 200,
@@ -15298,11 +15297,11 @@ function FellowshipMenu()
                 click_function = "SearchFellowship",
                 function_owner = Global,
                 label = "Search Fellowship",
-                position = {-37.5, 0, 16.7},
-                rotation = {0, 0, 0},
-                scale = {0.5, 0.5, 0.5},
-                color = {0.8, 0.8, 1},
-                font_color = {0, 0, 0},
+                position = { -37.5, 0, 16.7 },
+                rotation = { 0, 0, 0 },
+                scale = { 0.5, 0.5, 0.5 },
+                color = { 0.8, 0.8, 1 },
+                font_color = { 0, 0, 0 },
                 width = 1800,
                 height = 400,
                 font_size = 200,
@@ -15315,11 +15314,11 @@ function FellowshipMenu()
                 click_function = "SearchFellowship",
                 function_owner = Global,
                 label = "Search Fellowship",
-                position = {0, 0, -2},
-                rotation = {0, 0, 0},
-                scale = {0.5, 0.5, 0.5},
-                color = {0.8, 0.8, 1},
-                font_color = {0, 0, 0},
+                position = { 0, 0, -2 },
+                rotation = { 0, 0, 0 },
+                scale = { 0.5, 0.5, 0.5 },
+                color = { 0.8, 0.8, 1 },
+                font_color = { 0, 0, 0 },
                 width = 1800,
                 height = 400,
                 font_size = 200,
@@ -15335,11 +15334,11 @@ function FellowshipMenu()
     for O, Obj in pairs(
         Physics.cast(
             {
-                origin = {27.6, 1, 20.0},
-                direction = {0, 1, 0},
+                origin = { 27.6, 1, 20.0 },
+                direction = { 0, 1, 0 },
                 type = 3,
-                size = {3, 5, 9.5},
-                orientation = {0, 0, 0},
+                size = { 3, 5, 9.5 },
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -15347,17 +15346,17 @@ function FellowshipMenu()
     ) do
         if
             (Obj.hit_object.type == "Figurine" or Obj.hit_object.type == "Tileset") and
-                string.find(Obj.hit_object.getDescription(), "Character;") ~= nil
-         then
+            string.find(Obj.hit_object.getDescription(), "Character;") ~= nil
+        then
             CompanionCount = CompanionCount + 1
         end
     end
 
     -- no more companions?
     if CompanionCount < 1 then
-        MoveObject({Name = "Gollum", Type = "Figurine", Position = {27.55, 2, 17.45}, Rotation = {0, 0, 0}})
+        MoveObject({ Name = "Gollum", Type = "Figurine", Position = { 27.55, 2, 17.45 }, Rotation = { 0, 0, 0 } })
         MoveObject(
-            {Name = "Gollum: Slave of the Ring", Type = "Card", Position = {32.9, 2, 20.0}, Rotation = {0, 180, 0}}
+            { Name = "Gollum: Slave of the Ring", Type = "Card", Position = { 32.9, 2, 20.0 }, Rotation = { 0, 180, 0 } }
         )
         Guide = "Gollum: Slave of the Ring"
         GuideLevel = 0
@@ -15371,10 +15370,10 @@ function FellowshipMenu()
             click_function = "FellowshipMenu",
             function_owner = Global,
             label = tostring(CompanionCount),
-            position = {-2.35, 0, -1.3},
-            rotation = {0, 0, 0},
-            scale = {0.5, 0.5, 0.5},
-            font_color = {1, 1, 0.5},
+            position = { -2.35, 0, -1.3 },
+            rotation = { 0, 0, 0 },
+            scale = { 0.5, 0.5, 0.5 },
+            font_color = { 1, 1, 0.5 },
             width = 0,
             height = 0,
             font_size = 500,
@@ -15386,10 +15385,10 @@ function FellowshipMenu()
             click_function = "FellowshipMenu",
             function_owner = Global,
             label = Guide,
-            position = {1.4, 0, 0},
-            rotation = {0, 90, 0},
-            scale = {0.5, 0.5, 0.5},
-            font_color = {1, 1, 1},
+            position = { 1.4, 0, 0 },
+            rotation = { 0, 90, 0 },
+            scale = { 0.5, 0.5, 0.5 },
+            font_color = { 1, 1, 1 },
             width = 0,
             height = 0,
             font_size = 200
@@ -15404,12 +15403,12 @@ function SearchFellowship(ButtonObj, PlayerColor)
         getObjectFromGUID(IDs.Cards.RingBearers).clearButtons()
         local Index = 0
         local List = {}
-        local Order = {"Gandalf", "Strider", "Boromir", "Legolas", "Gimli", "Meriadoc", "Peregrin", "Sméagol", "Gollum"}
-        local Rotation = {80, 0, 0}
+        local Order = { "Gandalf", "Strider", "Boromir", "Legolas", "Gimli", "Meriadoc", "Peregrin", "Sméagol", "Gollum" }
+        local Rotation = { 80, 0, 0 }
         if CompactMode then
             -- getObjectFromGUID(FellowshipRedZoneID).setPosition({-36.35,1.6,-25.5})
             -- getObjectFromGUID(FellowshipYellowZoneID).setPosition({-36.35,1.6,-25.5})
-            Rotation = {80, 180, 0}
+            Rotation = { 80, 180, 0 }
         else
             -- getObjectFromGUID(FellowshipRedZoneID).setPosition({36.35,1.6,26.5})
             -- getObjectFromGUID(FellowshipYellowZoneID).setPosition({36.35,1.6,26.5})
@@ -15419,11 +15418,11 @@ function SearchFellowship(ButtonObj, PlayerColor)
         for O, Obj in pairs(
             Physics.cast(
                 {
-                    origin = {32.9, 1, 20.0},
-                    direction = {0, 1, 0},
+                    origin = { 32.9, 1, 20.0 },
+                    direction = { 0, 1, 0 },
                     type = 3,
-                    size = {5, 1, 9.5},
-                    orientation = {0, 0, 0},
+                    size = { 5, 1, 9.5 },
+                    orientation = { 0, 0, 0 },
                     max_distance = 0,
                     debug = false
                 }
@@ -15431,7 +15430,7 @@ function SearchFellowship(ButtonObj, PlayerColor)
         ) do
             if Obj.hit_object.type == "Card" and Obj.hit_object.getName() ~= "The Ring-bearers (Frodo & Samwise)" then
                 Index = Index + 1
-                Obj.hit_object.setHiddenFrom({"Red", "Yellow"})
+                Obj.hit_object.setHiddenFrom({ "Red", "Yellow" })
                 Obj.hit_object.setPositionSmooth(Spots.CompanionCards.Searched[Index], false, true)
                 Obj.hit_object.setRotationSmooth(Rotation, false, true)
                 Obj.hit_object.setLock(true)
@@ -15443,9 +15442,9 @@ function SearchFellowship(ButtonObj, PlayerColor)
                     Index = Index + 1
                     local CardObj =
                         Obj.hit_object.takeObject(
-                        {smooth = true, position = Spots.CompanionCards.Searched[Index], rotation = Rotation}
-                    )
-                    CardObj.setHiddenFrom({"Red", "Yellow"})
+                            { smooth = true, position = Spots.CompanionCards.Searched[Index], rotation = Rotation }
+                        )
+                    CardObj.setHiddenFrom({ "Red", "Yellow" })
                     CardObj.setLock(true)
                     CardObj.setPositionSmooth(Spots.CompanionCards.Searched[Index], false, true)
                     CardObj.setRotationSmooth(Rotation, false, true)
@@ -15458,9 +15457,9 @@ function SearchFellowship(ButtonObj, PlayerColor)
 
         Index = 0
 
-        local ButtonPosition = {0, 0, -2.5}
+        local ButtonPosition = { 0, 0, -2.5 }
         if CompactMode then
-            ButtonPosition = {-37.5, 0, 16.7}
+            ButtonPosition = { -37.5, 0, 16.7 }
         end
 
         getObjectFromGUID(IDs.Cards.RingBearers).createButton(
@@ -15469,10 +15468,10 @@ function SearchFellowship(ButtonObj, PlayerColor)
                 function_owner = Global,
                 label = "Done",
                 position = ButtonPosition,
-                rotation = {0, 0, 0},
-                scale = {0.5, 0.5, 0.5},
-                color = {0.8, 0.8, 1},
-                font_color = {0, 0, 0},
+                rotation = { 0, 0, 0 },
+                scale = { 0.5, 0.5, 0.5 },
+                color = { 0.8, 0.8, 1 },
+                font_color = { 0, 0, 0 },
                 width = 1800,
                 height = 400,
                 font_size = 200,
@@ -15483,9 +15482,9 @@ function SearchFellowship(ButtonObj, PlayerColor)
     end
 
     if PlayerColor == "Red" then
-        printToAll("Sauron cannot search the Fellowship.", {1, 1, 0})
+        printToAll("Sauron cannot search the Fellowship.", { 1, 1, 0 })
     elseif PlayerColor == "Yellow" then
-        printToAll("Saruman cannot search the Fellowship.", {1, 1, 0})
+        printToAll("Saruman cannot search the Fellowship.", { 1, 1, 0 })
     else
         startLuaCoroutine(Global, "SearchFellowshipCoroutine")
     end
@@ -15501,24 +15500,24 @@ function FellowshipCardMenu(CardObj)
                 click_function = "SearchFellowship",
                 function_owner = Global,
                 label = "Fellowship Guide",
-                position = {0, 0.2, -1.42},
-                scale = {0.5, 0.5, 0.5},
-                font_color = {1, 1, 0},
+                position = { 0, 0.2, -1.42 },
+                scale = { 0.5, 0.5, 0.5 },
+                font_color = { 1, 1, 0 },
                 width = 0,
                 height = 0,
                 font_size = 200
             }
         )
-    elseif tonumber(ReadTag({Text = CardObj.getDescription(), Var = "Level", Default = "0"})) >= GuideLevel then
+    elseif tonumber(ReadTag({ Text = CardObj.getDescription(), Var = "Level", Default = "0" })) >= GuideLevel then
         CardObj.createButton(
             {
                 click_function = "GuideTheFellowship",
                 function_owner = Global,
                 label = "Become the Guide",
-                position = {0, 0.2, -1.42},
-                scale = {0.5, 0.5, 0.5},
-                color = {1, 1, 1, 0.9},
-                font_color = {0, 0, 0},
+                position = { 0, 0.2, -1.42 },
+                scale = { 0.5, 0.5, 0.5 },
+                color = { 1, 1, 1, 0.9 },
+                font_color = { 0, 0, 0 },
                 width = 1800,
                 height = 250,
                 font_size = 200,
@@ -15531,10 +15530,10 @@ function FellowshipCardMenu(CardObj)
                 click_function = "GuideTheFellowship",
                 function_owner = Global,
                 label = "Become the Guide",
-                position = {0, 0.2, -1.42},
-                scale = {0.5, 0.5, 0.5},
-                color = {1, 1, 1, 0.6},
-                font_color = {0, 0, 0},
+                position = { 0, 0.2, -1.42 },
+                scale = { 0.5, 0.5, 0.5 },
+                color = { 1, 1, 1, 0.6 },
+                font_color = { 0, 0, 0 },
                 width = 1800,
                 height = 250,
                 font_size = 200,
@@ -15549,10 +15548,10 @@ function FellowshipCardMenu(CardObj)
                 click_function = "SeparateCardFromFellowship",
                 function_owner = Global,
                 label = "Separate",
-                position = {-0.2, 0.2, 1.1},
-                scale = {0.5, 0.5, 0.5},
-                color = {1, 1, 1, 0.9},
-                font_color = {0, 0, 0},
+                position = { -0.2, 0.2, 1.1 },
+                scale = { 0.5, 0.5, 0.5 },
+                color = { 1, 1, 1, 0.9 },
+                font_color = { 0, 0, 0 },
                 width = 1100,
                 height = 250,
                 font_size = 200,
@@ -15564,10 +15563,10 @@ function FellowshipCardMenu(CardObj)
                 click_function = "ConfirmCompanionDeath",
                 function_owner = Global,
                 label = "Dead",
-                position = {-0.2, 0.2, 1.4},
-                scale = {0.5, 0.5, 0.5},
-                color = {1, 1, 1, 0.9},
-                font_color = {0, 0, 0},
+                position = { -0.2, 0.2, 1.4 },
+                scale = { 0.5, 0.5, 0.5 },
+                color = { 1, 1, 1, 0.9 },
+                font_color = { 0, 0, 0 },
                 width = 1100,
                 height = 250,
                 font_size = 200,
@@ -15585,9 +15584,9 @@ function ConfirmCompanionDeath(CardObj)
             click_function = "ConfirmCompanionDeath",
             function_owner = Global,
             label = "Dead?",
-            position = {0, 0.2, 1.4},
-            scale = {0.5, 0.5, 0.5},
-            font_color = {1, 1, 0},
+            position = { 0, 0.2, 1.4 },
+            scale = { 0.5, 0.5, 0.5 },
+            font_color = { 1, 1, 0 },
             width = 0,
             height = 0,
             font_size = 200
@@ -15598,10 +15597,10 @@ function ConfirmCompanionDeath(CardObj)
             click_function = "KillCompanionCard",
             function_owner = Global,
             label = "Yes",
-            position = {0.7, 0.2, 1.4},
-            scale = {0.5, 0.5, 0.5},
-            color = {1, 1, 1, 0.9},
-            font_color = {0, 0, 0},
+            position = { 0.7, 0.2, 1.4 },
+            scale = { 0.5, 0.5, 0.5 },
+            color = { 1, 1, 1, 0.9 },
+            font_color = { 0, 0, 0 },
             width = 500,
             height = 250,
             font_size = 200,
@@ -15613,10 +15612,10 @@ function ConfirmCompanionDeath(CardObj)
             click_function = "FellowshipCardMenu",
             function_owner = Global,
             label = "No",
-            position = {-0.7, 0.2, 1.4},
-            scale = {0.5, 0.5, 0.5},
-            color = {1, 1, 1, 0.9},
-            font_color = {0, 0, 0},
+            position = { -0.7, 0.2, 1.4 },
+            scale = { 0.5, 0.5, 0.5 },
+            color = { 1, 1, 1, 0.9 },
+            font_color = { 0, 0, 0 },
             width = 500,
             height = 250,
             font_size = 200,
@@ -15627,7 +15626,7 @@ end
 
 function KillCompanionCard(CardObj)
     -- Kill this Companion, and remove from the game...
-    printToAll(CardObj.getName() .. " has died.", {1, 1, 0})
+    printToAll(CardObj.getName() .. " has died.", { 1, 1, 0 })
     -- guide died?
     if Guide == CardObj.getName() then
         Guide = ""
@@ -15639,7 +15638,7 @@ function KillCompanionCard(CardObj)
         if string.find(CardObj.getName(), Item.name) ~= nil then
             getObjectFromGUID("416864").putObject(
                 getObjectFromGUID("043c9c").takeObject(
-                    {guid = Item.guid, smooth = true, position = getObjectFromGUID("416864").getPosition()}
+                    { guid = Item.guid, smooth = true, position = getObjectFromGUID("416864").getPosition() }
                 )
             )
             break
@@ -15656,14 +15655,14 @@ function KillCompanionCard(CardObj)
     for O, Obj in pairs(getAllObjects()) do
         -- if Obj.getName() == "Boromir" then print(Obj.getName(),":",Obj.getGUID(),":",Obj.type) end
         if Obj.getName() == "Gandalf the Grey" then
-            PlaySound({ID = 6})
-        -- sorrow
+            PlaySound({ ID = 6 })
+            -- sorrow
         end
 
         if
             (Obj.type == "Figurine" or Obj.type == "Tileset") and string.find(CardObj.getName(), Obj.getName()) ~= nil and
-                string.find(Obj.getDescription(), "Companion;") ~= nil
-         then
+            string.find(Obj.getDescription(), "Companion;") ~= nil
+        then
             getObjectFromGUID("416864").putObject(Obj)
             break
         end
@@ -15679,9 +15678,9 @@ end
 
 function GuideTheFellowship(CardObj)
     Guide = CardObj.getName()
-    GuideLevel = tonumber(ReadTag({Text = CardObj.getDescription(), Var = "Level", Default = 0}))
+    GuideLevel = tonumber(ReadTag({ Text = CardObj.getDescription(), Var = "Level", Default = 0 }))
     -- broadcastToAll(Guide.." (Level:"..GuideLevel..") is now the Fellowship Guide.", {1,1,0})
-    
+
     for O, Obj in pairs(getAllObjects()) do
         if Obj.type == "Card" and string.find(Obj.getDescription(), "Fellowship;") ~= nil then
             -- buttons...
@@ -15693,24 +15692,24 @@ function GuideTheFellowship(CardObj)
                         click_function = "SearchFellowship",
                         function_owner = Global,
                         label = "Fellowship Guide",
-                        position = {0, 0.2, -1.42},
-                        scale = {0.5, 0.5, 0.5},
-                        font_color = {1, 1, 0},
+                        position = { 0, 0.2, -1.42 },
+                        scale = { 0.5, 0.5, 0.5 },
+                        font_color = { 1, 1, 0 },
                         width = 0,
                         height = 0,
                         font_size = 200
                     }
                 )
-            elseif tonumber(ReadTag({Text = Obj.getDescription(), Var = "Level", Default = "0"})) >= GuideLevel then
+            elseif tonumber(ReadTag({ Text = Obj.getDescription(), Var = "Level", Default = "0" })) >= GuideLevel then
                 Obj.createButton(
                     {
                         click_function = "GuideTheFellowship",
                         function_owner = Global,
                         label = "Become the Guide",
-                        position = {0, 0.2, -1.42},
-                        scale = {0.5, 0.5, 0.5},
-                        color = {1, 1, 1, 0.9},
-                        font_color = {0, 0, 0},
+                        position = { 0, 0.2, -1.42 },
+                        scale = { 0.5, 0.5, 0.5 },
+                        color = { 1, 1, 1, 0.9 },
+                        font_color = { 0, 0, 0 },
                         width = 1800,
                         height = 250,
                         font_size = 200,
@@ -15723,10 +15722,10 @@ function GuideTheFellowship(CardObj)
                         click_function = "GuideTheFellowship",
                         function_owner = Global,
                         label = "Become the Guide",
-                        position = {0, 0.2, -1.42},
-                        scale = {0.5, 0.5, 0.5},
-                        color = {1, 1, 1, 0.6},
-                        font_color = {0, 0, 0},
+                        position = { 0, 0.2, -1.42 },
+                        scale = { 0.5, 0.5, 0.5 },
+                        color = { 1, 1, 1, 0.6 },
+                        font_color = { 0, 0, 0 },
                         width = 1800,
                         height = 250,
                         font_size = 200,
@@ -15740,10 +15739,10 @@ function GuideTheFellowship(CardObj)
                     click_function = "SeparateCardFromFellowship",
                     function_owner = Global,
                     label = "Separate",
-                    position = {-0.2, 0.2, 1.2},
-                    scale = {0.5, 0.5, 0.5},
-                    color = {1, 1, 1, 0.9},
-                    font_color = {0, 0, 0},
+                    position = { -0.2, 0.2, 1.2 },
+                    scale = { 0.5, 0.5, 0.5 },
+                    color = { 1, 1, 1, 0.9 },
+                    font_color = { 0, 0, 0 },
                     width = 1100,
                     height = 250,
                     font_size = 200,
@@ -15756,9 +15755,9 @@ end
 
 function SeparateCompanionFromFellowship(CompanionName)
     -- describe action to players...
-    printToAll(CompanionName .. " separated from the Fellowship.", {0.4, 0.4, 1})
+    printToAll(CompanionName .. " separated from the Fellowship.", { 0.4, 0.4, 1 })
     if string.find(Guide, CompanionName) ~= nil then
-        printToAll(Guide .. " is no longer the Fellowship Guide.", {1, 1, 0})
+        printToAll(Guide .. " is no longer the Fellowship Guide.", { 1, 1, 0 })
         Guide = ""
         GuideLevel = 0
     end
@@ -15768,7 +15767,7 @@ function SeparateCompanionFromFellowship(CompanionName)
         if string.find(CompanionName, Item.name) ~= nil then
             getObjectFromGUID("416864").putObject(
                 getObjectFromGUID("043c9c").takeObject(
-                    {guid = Item.guid, smooth = true, position = getObjectFromGUID("416864").getPosition()}
+                    { guid = Item.guid, smooth = true, position = getObjectFromGUID("416864").getPosition() }
                 )
             )
             break
@@ -15781,8 +15780,8 @@ function SeparateCompanionFromFellowship(CompanionName)
     for O, Obj in pairs(getAllObjects()) do
         if
             Obj.type == "Card" and string.find(Obj.getName(), CompanionName) ~= nil and
-                string.find(Obj.getDescription(), "Fellowship;") ~= nil
-         then
+            string.find(Obj.getDescription(), "Fellowship;") ~= nil
+        then
             CardObj = Obj
             break
         end
@@ -15793,11 +15792,11 @@ function SeparateCompanionFromFellowship(CompanionName)
         for O, Obj in pairs(
             Physics.cast(
                 {
-                    origin = {32.9, 1, 20.0},
-                    direction = {0, 1, 0},
+                    origin = { 32.9, 1, 20.0 },
+                    direction = { 0, 1, 0 },
                     type = 3,
-                    size = {5, 1, 9.5},
-                    orientation = {0, 0, 0},
+                    size = { 5, 1, 9.5 },
+                    orientation = { 0, 0, 0 },
                     max_distance = 0,
                     debug = false
                 }
@@ -15805,14 +15804,14 @@ function SeparateCompanionFromFellowship(CompanionName)
         ) do
             if
                 Obj.hit_object.type == "Card" and string.find(Obj.hit_object.getName(), CompanionName) ~= nil and
-                    string.find(Obj.hit_object.getDescription(), "Companion;") ~= nil
-             then
+                string.find(Obj.hit_object.getDescription(), "Companion;") ~= nil
+            then
                 CardObj = Obj.hit_object
                 break
             elseif Obj.hit_object.type == "Deck" then
                 for I, Item in pairs(Obj.hit_object.getObjects()) do
                     if string.find(Item.name, CompanionName) ~= nil then
-                        CardObj = Obj.hit_object.takeObject({guid = Item.guid})
+                        CardObj = Obj.hit_object.takeObject({ guid = Item.guid })
                         break
                     end
                 end
@@ -15830,10 +15829,10 @@ function SeparateCompanionFromFellowship(CompanionName)
                 Physics.cast(
                     {
                         origin = Spots.CompanionCards.Separated[S],
-                        direction = {0, 1, 0},
+                        direction = { 0, 1, 0 },
                         type = 3,
-                        size = {1, 1, 1},
-                        orientation = {0, 0, 0},
+                        size = { 1, 1, 1 },
+                        orientation = { 0, 0, 0 },
                         max_distance = 0,
                         debug = false
                     }
@@ -15857,9 +15856,9 @@ function SeparateCompanionFromFellowship(CompanionName)
         -- move card from fellowship deck (or lineup) to the table face up...
         CardObj.setLock(false)
         if CompactMode then
-            CardObj.setRotationSmooth({0, 180, 0}, false, false)
+            CardObj.setRotationSmooth({ 0, 180, 0 }, false, false)
         else
-            CardObj.setRotationSmooth({0, 0, 0}, false, false)
+            CardObj.setRotationSmooth({ 0, 0, 0 }, false, false)
         end
 
         -- CardObj.setPositionSmooth(OpenSpot,false,false)
@@ -15878,19 +15877,19 @@ end
 
 function ReturnCompanionToFellowship(CompanionObj)
     -- CompantionObj is a figure dropped into the fellowhip box...
-    printToAll(CompanionObj.getName() .. " has joined the Fellowship.", {1, 1, 0})
+    printToAll(CompanionObj.getName() .. " has joined the Fellowship.", { 1, 1, 0 })
     -- does Gollum flee?
     if Guide == "Gollum: Slave of the Ring" then
         printToAll("Gollum flees the Fellowship!")
         MoveObject(
-            {Name = "Gollum", Type = "Figurine", Position = {39.5, 1.1, 20.0}, Rotation = {0, 0, 0}, smooth = true}
+            { Name = "Gollum", Type = "Figurine", Position = { 39.5, 1.1, 20.0 }, Rotation = { 0, 0, 0 }, smooth = true }
         )
         MoveObject(
             {
                 Name = "Gollum: Slave of the Ring",
                 Type = "Card",
-                Position = {39.5, 0.97, 20.0},
-                Rotation = {0, 180, 180},
+                Position = { 39.5, 0.97, 20.0 },
+                Rotation = { 0, 180, 180 },
                 smooth = true
             }
         )
@@ -15902,11 +15901,11 @@ function ReturnCompanionToFellowship(CompanionObj)
     for I, Item in pairs(getObjectFromGUID("416864").getObjects()) do
         if
             string.find(CompanionObj.getName(), Item.name) ~= nil and
-                string.find(Item.description, "Counter;Companion;") ~= nil
-         then
+            string.find(Item.description, "Counter;Companion;") ~= nil
+        then
             getObjectFromGUID("043c9c").putObject(
                 getObjectFromGUID("416864").takeObject(
-                    {guid = Item.guid, smooth = true, position = getObjectFromGUID("043c9c").getPosition()}
+                    { guid = Item.guid, smooth = true, position = getObjectFromGUID("043c9c").getPosition() }
                 )
             )
             break
@@ -15917,8 +15916,8 @@ function ReturnCompanionToFellowship(CompanionObj)
     for O, Obj in pairs(getAllObjects()) do
         if
             string.find(CompanionObj.getName(), Obj.getName()) ~= nil and
-                string.find(Obj.getDescription(), "Counter;Companion;") ~= nil
-         then
+            string.find(Obj.getDescription(), "Counter;Companion;") ~= nil
+        then
             getObjectFromGUID("043c9c").putObject(Obj)
             break
         end
@@ -15929,18 +15928,18 @@ function ReturnCompanionToFellowship(CompanionObj)
     for O, Obj in pairs(getAllObjects()) do
         if
             Obj.type == "Card" and string.find(Obj.getName(), CompanionObj.getName()) ~= nil and
-                string.find(Obj.getDescription(), "Separated;") ~= nil
-         then
+            string.find(Obj.getDescription(), "Separated;") ~= nil
+        then
             CardObj = Obj
             break
         elseif Obj.type == "Card" and CompanionObj.getName() == "Sméagol" and Obj.getName() == "Sméagol: Tamed Wretch" then
             Guide = "Sméagol: Tamed Wretch"
-            printToAll("Sméagol is now the Fellowship guide.", {1, 1, 0})
+            printToAll("Sméagol is now the Fellowship guide.", { 1, 1, 0 })
             CardObj = Obj
             break
         elseif
             Obj.type == "Card" and CompanionObj.getName() == "Gollum" and Obj.getName() == "Gollum: Slave of the Ring"
-         then
+        then
             CardObj = Obj
             break
         end
@@ -15957,11 +15956,11 @@ function ReturnCompanionToFellowship(CompanionObj)
             for O, Obj in pairs(
                 Physics.cast(
                     {
-                        origin = {32.9, 1, 20.0},
-                        direction = {0, 1, 0},
+                        origin = { 32.9, 1, 20.0 },
+                        direction = { 0, 1, 0 },
                         type = 3,
-                        size = {5, 1, 9.5},
-                        orientation = {0, 0, 0},
+                        size = { 5, 1, 9.5 },
+                        orientation = { 0, 0, 0 },
                         max_distance = 0,
                         debug = false
                     }
@@ -15981,8 +15980,8 @@ function ReturnCompanionToFellowship(CompanionObj)
             end
 
             -- place the card back into the fellowship...
-            CardObj.setPosition({32.9, 1.01, 20.0})
-            CardObj.setRotation({0, 180, 180})
+            CardObj.setPosition({ 32.9, 1.01, 20.0 })
+            CardObj.setRotation({ 0, 180, 180 })
             printToAll(CompanionObj.getName() .. "'s Card was placed into the Fellowship card stack.")
         end
     end
@@ -15995,7 +15994,7 @@ end
 function SeparateCardFromFellowship(CardObj)
     local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
     local RBObj = getObjectFromGUID(IDs.Companions.TheRingBearers)
-    local SeparateRegion = ReadTag({Text = RBObj.getGMNotes(), Var = "Region", Default = "(Unknown Region)"})
+    local SeparateRegion = ReadTag({ Text = RBObj.getGMNotes(), Var = "Region", Default = "(Unknown Region)" })
     local FellowshipTrack = math.floor((getObjectFromGUID("6b62ef").getPosition().x - 5.0) / 1.58)
     -- remove buttons from card...
     CardObj.clearButtons()
@@ -16003,12 +16002,12 @@ function SeparateCardFromFellowship(CardObj)
     -- describe action to players...
     printToAll(
         CardObj.getName() ..
-            " separated from the Fellowship at " ..
-                SeparateRegion .. ".\n(Fellowship Track was at: " .. FellowshipTrack .. ").",
-        {0.4, 0.4, 1}
+        " separated from the Fellowship at " ..
+        SeparateRegion .. ".\n(Fellowship Track was at: " .. FellowshipTrack .. ").",
+        { 0.4, 0.4, 1 }
     )
     if Guide == CardObj.getName() then
-        printToAll(CardObj.getName() .. " is no longer the Fellowship Guide.", {1, 1, 0})
+        printToAll(CardObj.getName() .. " is no longer the Fellowship Guide.", { 1, 1, 0 })
         Guide = ""
         GuideLevel = 0
     end
@@ -16018,7 +16017,7 @@ function SeparateCardFromFellowship(CardObj)
         if string.find(CardObj.getName(), Item.name) ~= nil then
             getObjectFromGUID("416864").putObject(
                 getObjectFromGUID("043c9c").takeObject(
-                    {guid = Item.guid, smooth = true, position = getObjectFromGUID("416864").getPosition()}
+                    { guid = Item.guid, smooth = true, position = getObjectFromGUID("416864").getPosition() }
                 )
             )
             break
@@ -16034,10 +16033,10 @@ function SeparateCardFromFellowship(CardObj)
             Physics.cast(
                 {
                     origin = Spots.CompanionCards.Separated[S],
-                    direction = {0, 1, 0},
+                    direction = { 0, 1, 0 },
                     type = 3,
-                    size = {1, 1, 1},
-                    orientation = {0, 0, 0},
+                    size = { 1, 1, 1 },
+                    orientation = { 0, 0, 0 },
                     max_distance = 0,
                     debug = false
                 }
@@ -16058,9 +16057,9 @@ function SeparateCardFromFellowship(CardObj)
     -- move card from fellowship deck (or lineup) to the table face up...
     CardObj.setLock(false)
     if CompactMode then
-        CardObj.setRotationSmooth({0, 180, 0}, false, false)
+        CardObj.setRotationSmooth({ 0, 180, 0 }, false, false)
     else
-        CardObj.setRotationSmooth({0, 0, 0}, false, false)
+        CardObj.setRotationSmooth({ 0, 0, 0 }, false, false)
     end
 
     CardObj.setPositionSmooth(OpenSpot, false, false)
@@ -16072,11 +16071,11 @@ function SeparateCardFromFellowship(CardObj)
     for O, Obj in pairs(
         Physics.cast(
             {
-                origin = {27.6, 1, 20.0},
-                direction = {0, 1, 0},
+                origin = { 27.6, 1, 20.0 },
+                direction = { 0, 1, 0 },
                 type = 3,
-                size = {3, 1, 9.5},
-                orientation = {0, 0, 0},
+                size = { 3, 1, 9.5 },
+                orientation = { 0, 0, 0 },
                 max_distance = 0,
                 debug = false
             }
@@ -16084,16 +16083,16 @@ function SeparateCardFromFellowship(CardObj)
     ) do
         if
             string.find(CardObj.getName(), Obj.hit_object.getName()) ~= nil and
-                (Obj.hit_object.type == "Figurine" or Obj.hit_object.type == "Tileset") and
-                string.find(Obj.hit_object.getDescription(), "Character;") ~= nil
-         then
-            Obj.hit_object.setPositionSmooth({OpenSpot[1], 1.1, OpenSpot[3] - 5}, false, false)
-            Obj.hit_object.setRotationSmooth({0, 0, 0}, false, false)
+            (Obj.hit_object.type == "Figurine" or Obj.hit_object.type == "Tileset") and
+            string.find(Obj.hit_object.getDescription(), "Character;") ~= nil
+        then
+            Obj.hit_object.setPositionSmooth({ OpenSpot[1], 1.1, OpenSpot[3] - 5 }, false, false)
+            Obj.hit_object.setRotationSmooth({ 0, 0, 0 }, false, false)
             if Player["Blue"].seated then
-                Player["Blue"].pingTable({OpenSpot[1], 1.1, OpenSpot[3] - 5})
+                Player["Blue"].pingTable({ OpenSpot[1], 1.1, OpenSpot[3] - 5 })
             end
 
-            printToAll("Place " .. CardObj.getName() .. " Figurine on the game board.", {0.4, 0.4, 1})
+            printToAll("Place " .. CardObj.getName() .. " Figurine on the game board.", { 0.4, 0.4, 1 })
             break
         end
     end
@@ -16109,12 +16108,12 @@ function BuildFellowshipDeck()
             Obj.clearButtons()
             Obj.setHiddenFrom()
             if Obj.getName() == Guide then
-                Obj.setPositionSmooth({32.9, 5, 20.0}, false, true)
-                Obj.setRotation({0, 180, 0})
+                Obj.setPositionSmooth({ 32.9, 5, 20.0 }, false, true)
+                Obj.setRotation({ 0, 180, 0 })
                 Obj.setLock(false)
             else
-                Obj.setPositionSmooth({32.9, 1 + Index * 0.2, 20.0}, false, true)
-                Obj.setRotation({0, 180, 180})
+                Obj.setPositionSmooth({ 32.9, 1 + Index * 0.2, 20.0 }, false, true)
+                Obj.setRotation({ 0, 180, 180 })
                 Obj.setLock(false)
             end
         end
@@ -16136,7 +16135,7 @@ function InsertActionRoll(Params)
             break
         end
     end
-    
+
     if not Dupe then
         table.insert(Dice.Action[Side].RollingTable, Params.DiceID)
         table.insert(Dice.Action[Side].RolledTable, Params.DiceID)
@@ -16156,14 +16155,13 @@ function DeleteActionRoll(Params)
             break
         end
     end
-    
+
     for R = 1, #Dice.Action[Side].RolledTable do
         if Dice.Action[Side].RolledTable[R] == Params.DiceID then
             table.remove(Dice.Action[Side].RolledTable, R)
             break
         end
     end
-    
 end
 
 -- {DiceID=""}
@@ -16177,7 +16175,6 @@ function ReportActionRoll(Params)
             break
         end
     end
-    
 end
 
 function RollActionDice(Side)
@@ -16194,9 +16191,9 @@ function RollActionDice(Side)
         -- while
         local SideName = "Shadow"
         if Side == "Shadow" then
-            DiceColor = {1, 0.4, 0.4}
+            DiceColor = { 1, 0.4, 0.4 }
         else -- assume FPP...
-            DiceColor = {0.4, 0.4, 1}
+            DiceColor = { 0.4, 0.4, 1 }
             SideName = "Free Peoples"
         end
 
@@ -16206,16 +16203,15 @@ function RollActionDice(Side)
             Dice.Action[Side].ResultText =
                 SideName ..
                 " Player rolled an Action Die: [" ..
-                    getObjectFromGUID(Dice.Action[Side].RolledTable[1]).getRotationValue() .. "]"
-            UpdateDiceStats({Result = Dice.Action[Side].ResultTable[1], Type = "Action", Side = Side})
+                getObjectFromGUID(Dice.Action[Side].RolledTable[1]).getRotationValue() .. "]"
+            UpdateDiceStats({ Result = Dice.Action[Side].ResultTable[1], Type = "Action", Side = Side })
         else
-            
             Dice.Action[Side].ResultText =
                 SideName .. " Player rolled " .. #Dice.Action[Side].RolledTable .. " Action Dice:\n"
             for R = 1, #Dice.Action[Side].ResultTable do
                 Dice.Action[Side].ResultText =
                     Dice.Action[Side].ResultText .. "[" .. Dice.Action[Side].ResultTable[R] .. "]  "
-                UpdateDiceStats({Result = Dice.Action[Side].ResultTable[R], Type = "Action", Side = Side})
+                UpdateDiceStats({ Result = Dice.Action[Side].ResultTable[R], Type = "Action", Side = Side })
             end
         end
 
@@ -16260,91 +16256,91 @@ function ReportDiceStats(PanelObj, PlayerColor)
         -- this player color is not seated.
         printToAll(PlayerColor .. " Player is not seated.")
     else -- print to player color only...
-        printToColor("-- -- -- ", PlayerColor, {0.4, 0.4, 1})
-        printToColor("Free Peoples Combat Dice Stats:", PlayerColor, {0.4, 0.4, 1})
+        printToColor("-- -- -- ", PlayerColor, { 0.4, 0.4, 1 })
+        printToColor("Free Peoples Combat Dice Stats:", PlayerColor, { 0.4, 0.4, 1 })
         if Dice.Stats.Combat.FreePeoples.RollCount > 0 then
             for I = 1, 6 do
                 printToColor(
                     " " ..
-                        D ..
-                            ": " ..
-                                string.format(
-                                    "%.1f",
-                                    100 * Dice.Stats.Combat.FreePeoples.Results[I] /
-                                        Dice.Stats.Combat.FreePeoples.RollCount
-                                ) ..
-                                    "% (" ..
-                                        Dice.Stats.Combat.FreePeoples.Results[I] ..
-                                            "/" .. Dice.Stats.Combat.FreePeoples.RollCount .. ")",
+                    D ..
+                    ": " ..
+                    string.format(
+                        "%.1f",
+                        100 * Dice.Stats.Combat.FreePeoples.Results[I] /
+                        Dice.Stats.Combat.FreePeoples.RollCount
+                    ) ..
+                    "% (" ..
+                    Dice.Stats.Combat.FreePeoples.Results[I] ..
+                    "/" .. Dice.Stats.Combat.FreePeoples.RollCount .. ")",
                     PlayerColor,
-                    {0.4, 0.4, 1}
+                    { 0.4, 0.4, 1 }
                 )
             end
         else -- no combat rolls yet.
-            printToColor("  (Zero Combat Rolls).", PlayerColor, {0.4, 0.4, 1})
+            printToColor("  (Zero Combat Rolls).", PlayerColor, { 0.4, 0.4, 1 })
         end
 
-        printToColor("-- -- -- ", PlayerColor, {1, 0.4, 0.4})
-        printToColor("Shadow Combat Dice Stats:", PlayerColor, {1, 0.4, 0.4})
+        printToColor("-- -- -- ", PlayerColor, { 1, 0.4, 0.4 })
+        printToColor("Shadow Combat Dice Stats:", PlayerColor, { 1, 0.4, 0.4 })
         if Dice.Stats.Combat.Shadow.RollCount > 0 then
             for I = 1, 6 do
                 printToColor(
                     " " ..
-                        D ..
-                            ": " ..
-                                string.format(
-                                    "%.1f",
-                                    100 * Dice.Stats.Combat.Shadow.Results[I] / Dice.Stats.Combat.Shadow.RollCount
-                                ) ..
-                                    "% (" ..
-                                        Dice.Stats.Combat.Shadow.Results[I] ..
-                                            "/" .. Dice.Stats.Combat.Shadow.RollCount .. ")",
+                    D ..
+                    ": " ..
+                    string.format(
+                        "%.1f",
+                        100 * Dice.Stats.Combat.Shadow.Results[I] / Dice.Stats.Combat.Shadow.RollCount
+                    ) ..
+                    "% (" ..
+                    Dice.Stats.Combat.Shadow.Results[I] ..
+                    "/" .. Dice.Stats.Combat.Shadow.RollCount .. ")",
                     PlayerColor,
-                    {1, 0.4, 0.4}
+                    { 1, 0.4, 0.4 }
                 )
             end
         else -- no combat rolls yet.
-            printToColor("  (Zero Combat Rolls).", PlayerColor, {1, 0.4, 0.4})
+            printToColor("  (Zero Combat Rolls).", PlayerColor, { 1, 0.4, 0.4 })
         end
 
-        printToColor("-- -- -- ", PlayerColor, {0.4, 0.4, 1})
-        printToColor("Free Peoples Action Dice Stats:", PlayerColor, {0.4, 0.4, 1})
+        printToColor("-- -- -- ", PlayerColor, { 0.4, 0.4, 1 })
+        printToColor("Free Peoples Action Dice Stats:", PlayerColor, { 0.4, 0.4, 1 })
         if Dice.Stats.Action.FreePeoples.RollCount > 0 then
             for Face, Count in pairs(Dice.Stats.Action.FreePeoples.Results) do
                 printToColor(
                     " " ..
-                        Face ..
-                            ": " ..
-                                string.format("%.1f", 100 * Count / Dice.Stats.Action.FreePeoples.RollCount) ..
-                                    "% (" .. Count .. "/" .. Dice.Stats.Action.FreePeoples.RollCount .. ")",
+                    Face ..
+                    ": " ..
+                    string.format("%.1f", 100 * Count / Dice.Stats.Action.FreePeoples.RollCount) ..
+                    "% (" .. Count .. "/" .. Dice.Stats.Action.FreePeoples.RollCount .. ")",
                     PlayerColor,
-                    {0.4, 0.4, 1}
+                    { 0.4, 0.4, 1 }
                 )
             end
         else -- no combat rolls yet.
-            printToColor("  (Zero Action Rolls).", PlayerColor, {0.4, 0.4, 1})
+            printToColor("  (Zero Action Rolls).", PlayerColor, { 0.4, 0.4, 1 })
         end
 
-        printToColor("-- -- -- ", PlayerColor, {1, 0.4, 0.4})
-        printToColor("Shadow Action Dice Stats:", PlayerColor, {1, 0.4, 0.4})
+        printToColor("-- -- -- ", PlayerColor, { 1, 0.4, 0.4 })
+        printToColor("Shadow Action Dice Stats:", PlayerColor, { 1, 0.4, 0.4 })
         if Dice.Stats.Action.Shadow.RollCount > 0 then
             for Face, Count in pairs(Dice.Stats.Action.Shadow.Results) do
                 printToColor(
                     " " ..
-                        Face ..
-                            ": " ..
-                                string.format("%.1f", 100 * Count / Dice.Stats.Action.Shadow.RollCount) ..
-                                    "% (" .. Count .. "/" .. Dice.Stats.Action.Shadow.RollCount .. ")",
+                    Face ..
+                    ": " ..
+                    string.format("%.1f", 100 * Count / Dice.Stats.Action.Shadow.RollCount) ..
+                    "% (" .. Count .. "/" .. Dice.Stats.Action.Shadow.RollCount .. ")",
                     PlayerColor,
-                    {1, 0.4, 0.4}
+                    { 1, 0.4, 0.4 }
                 )
             end
         else -- no combat rolls yet.
-            printToColor("  (Zero Action Rolls).", PlayerColor, {1, 0.4, 0.4})
+            printToColor("  (Zero Action Rolls).", PlayerColor, { 1, 0.4, 0.4 })
         end
 
         -- print blank line for spacing...
-        printToColor("\n", PlayerColor, {1, 0.4, 0.4})
+        printToColor("\n", PlayerColor, { 1, 0.4, 0.4 })
     end
 end
 
@@ -16371,15 +16367,15 @@ function DiscardCard(CardObj)
     if DiscardObj ~= nil then
         -- face up or down?
         if CardObj.getPosition().z < -50 or CardObj.getPosition().z > 50 then
-            CardObj.setRotation({DiscardObj.getRotation().x, DiscardObj.getRotation().y, 180})
+            CardObj.setRotation({ DiscardObj.getRotation().x, DiscardObj.getRotation().y, 180 })
         else -- facedown
-            CardObj.setRotation({DiscardObj.getRotation().x, DiscardObj.getRotation().y, 0})
+            CardObj.setRotation({ DiscardObj.getRotation().x, DiscardObj.getRotation().y, 0 })
         end
 
-        CardObj.setPosition({CardObj.getPosition().x, 6, CardObj.getPosition().z})
-        CardObj.setPositionSmooth({DiscardObj.getPosition().x, 3, DiscardObj.getPosition().z}, false, false)
+        CardObj.setPosition({ CardObj.getPosition().x, 6, CardObj.getPosition().z })
+        CardObj.setPositionSmooth({ DiscardObj.getPosition().x, 3, DiscardObj.getPosition().z }, false, false)
     else
-        printToAll("Unable to find the Discard Pile for this card.", {1, 1, 0})
+        printToAll("Unable to find the Discard Pile for this card.", { 1, 1, 0 })
     end
 end
 
@@ -16410,13 +16406,13 @@ local ELITES_BEHIND_REGULARS = true
 -- local ELITES_BEHIND_REGULARS = false
 
 PLAYER_SETTINGS = {
-    Red = {target_friendly_units = true},
-    Yellow = {target_friendly_units = true},
-    Green = {target_friendly_units = true},
-    Blue = {target_friendly_units = true}
+    Red = { target_friendly_units = true },
+    Yellow = { target_friendly_units = true },
+    Green = { target_friendly_units = true },
+    Blue = { target_friendly_units = true }
 }
 
-local NP_KEY_TO_SPIN_INDEX = {[8] = 0, [9] = 3, [6] = 6, [3] = 9, [2] = 12, [1] = 15, [4] = 18, [7] = 21}
+local NP_KEY_TO_SPIN_INDEX = { [8] = 0, [9] = 3, [6] = 6, [3] = 9, [2] = 12, [1] = 15, [4] = 18, [7] = 21 }
 
 local function getSide(desc)
     if (string.find(desc, "Shadow;") ~= nil) then
@@ -16560,8 +16556,8 @@ local function arrangeHeldUnits(np_key, player_color, holding)
     local sorting_friendly = PLAYER_SETTINGS[player_color]["target_friendly_units"]
     local sorting_sa = sorting_friendly and player_is_sa or not sorting_friendly and not player_is_sa
 
-    local units = {regular = {}, elite = {}, leader = {}, character = {}}
-    local max_unit_size = {regular = 0, elite = 0, leader = 0, character = 0}
+    local units = { regular = {}, elite = {}, leader = {}, character = {} }
+    local max_unit_size = { regular = 0, elite = 0, leader = 0, character = 0 }
 
     -- Iterates on all held objects
     local unit_count = 0
@@ -16575,7 +16571,7 @@ local function arrangeHeldUnits(np_key, player_color, holding)
             returnToBoard(obj, player_color)
         else
             -- Store the unit in a table along with its nation
-            local unit = {obj = obj, nation = getNation(side, desc)}
+            local unit = { obj = obj, nation = getNation(side, desc) }
             local type = getType(desc)
             table.insert(units[type], unit)
             -- Determine the size of the unit's base, write the maximum size to a table
@@ -16776,19 +16772,20 @@ function onScriptingButtonDown(index, player_color)
         end
     end
 end
+
 -- END OF ARMY FORMATION SCRIPT v7 =================================================================================================================
 
 -- ARMY COUNTING SCRIPT v2
 -- Settings
-local FP_COLOUR = {0.6, 0.6, 1}
-local SA_COLOUR = {1.0, 0.6, 0.6}
-local NOTES_COLOUR = {0.9, 0.9, 0.9}
-local WARNING_COLOUR = {0.9, 0.9, 0.1}
+local FP_COLOUR = { 0.6, 0.6, 1 }
+local SA_COLOUR = { 1.0, 0.6, 0.6 }
+local NOTES_COLOUR = { 0.9, 0.9, 0.9 }
+local WARNING_COLOUR = { 0.9, 0.9, 0.1 }
 local USE_SHORT_NOTES = true
 
 addHotkey(
     "Count Selected Units",
-    function(player_color, hovered_object, pointer_position, is_key_up)
+    function (player_color, hovered_object, pointer_position, is_key_up)
         countSelectedUnits(player_color)
     end
 )
@@ -16980,12 +16977,12 @@ function countSelectedUnits(player_color)
         bonus_strength = 0,
         possible_bonus_strength = 0,
         faction = {
-            dead_men = {qty = 0, note = "Dead Men"},
-            ents = {qty = 0, note = "Ents"},
-            eagles = {qty = 0, note = "Eagles"},
-            spiders = {qty = 0, note = "Spiders"},
-            corsairs = {qty = 0, note = "Corsairs"},
-            dunlendings = {qty = 0, note = "Dunlendings"}
+            dead_men = { qty = 0, note = "Dead Men" },
+            ents = { qty = 0, note = "Ents" },
+            eagles = { qty = 0, note = "Eagles" },
+            spiders = { qty = 0, note = "Spiders" },
+            corsairs = { qty = 0, note = "Corsairs" },
+            dunlendings = { qty = 0, note = "Dunlendings" }
         },
         has_faction_units = false,
         dead_men = 0,
@@ -17018,7 +17015,7 @@ function countSelectedUnits(player_color)
         end
 
         if (side == side_to_count and string.find(desc, "Card;") == nil) then
-            local location = GetGridRegion({Position = obj.getPosition()})
+            local location = GetGridRegion({ Position = obj.getPosition() })
             if (string.find(desc, "Regular;") ~= nil) then
                 table.insert(locations, location)
                 info.regulars = info.regulars + 1
@@ -17031,9 +17028,9 @@ function countSelectedUnits(player_color)
                     (name == "Isengard Elite" and
                         getObjectFromGUID(GamePanelID).call(
                             "InPlay",
-                            {Name = "Saruman: Corrupted Wizard", Description = "Minion;"}
+                            { Name = "Saruman: Corrupted Wizard", Description = "Minion;" }
                         ))
-                 then
+                then
                     info.leaders = info.leaders + 1
                     info.leadership = info.leadership + 1
                     info.isengard_elites_and_saruman_in_play = true
@@ -17154,14 +17151,14 @@ function printArmyInfo(side_to_count, info)
     printToAll("Location: " .. info.max_loc_name, colour)
     printToAll(
         "R/E/L: " ..
-            info.regulars ..
-                "/" .. info.elites .. "/" .. info.leaders .. "      Size: " .. (info.regulars + info.elites) .. "/10",
+        info.regulars ..
+        "/" .. info.elites .. "/" .. info.leaders .. "      Size: " .. (info.regulars + info.elites) .. "/10",
         colour
     )
     printToAll(
         "Strength: " ..
-            (info.regulars + info.elites + info.bonus_strength) ..
-                possible_bonus_strength .. "    Leadership: " .. info.leadership,
+        (info.regulars + info.elites + info.bonus_strength) ..
+        possible_bonus_strength .. "    Leadership: " .. info.leadership,
         colour
     )
     if (side_to_count == "sa") then
@@ -17213,7 +17210,7 @@ function setDiceRoller(side_to_count, info)
     if (side_to_count == "sa") then
         roller_guid = "92a611"
     end
-    getObjectFromGUID(roller_guid).call("switchToCombat", {Strength = strength, Leadership = leadership})
+    getObjectFromGUID(roller_guid).call("switchToCombat", { Strength = strength, Leadership = leadership })
 end
 
 function SettlementsAreFlat()
