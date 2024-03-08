@@ -2055,7 +2055,7 @@ function ProcessNextStep()
             end
         until Done
         Global.call("FellowshipMenu")
-        NextStep = "SetupArmies"
+        NextStep = "SetupUnits"
         --compact mode?
         if Versus == "1v1 Compact Mode" then
             broadcastToAll("Compact Mode 1v1:\nPlacing Players next to each other...")
@@ -2359,8 +2359,8 @@ function ProcessNextStep()
         else
             Step = ""
         end
-    elseif Step == "SetupArmies" then
-        SpawnArmies()
+    elseif Step == "SetupUnits" then
+        UnitsSetupStep()
     elseif Step == "SetupCompleteMenu" then
         self.clearButtons()
         self.createButton(
@@ -4857,6 +4857,39 @@ function ProcessNextStep()
     end
 
     return 1
+end
+
+function UnitsSetupStep()
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Units Setup:",
+            position = { 0, 0.1, -1.4 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Please Wait\nSpawn Units...",
+            position = { 0, 0.1, -0.5 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+
+    SpawnArmies()
+
+    NextStep = "SetupCompleteMenu"
+    Step = ""
 end
 
 function CreateBeginMenu()
