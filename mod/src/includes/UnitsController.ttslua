@@ -1240,20 +1240,24 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
 
     for _, Item in pairs(ComponentBag.getObjects()) do
         if result ~= nil then
+            log("Find.break - " .. SearchConfig.Name)
             break
         end
 
         if (SearchConfig.Name ~= Item.name) then
+            log(SearchConfig.Name .. " ~= " .. Item.name)
             goto continue
         end
 
         -- same type as setting
         if string.find(Item.description, settingPattern) == nil then
+            log(Item.description .. " not contains " .. settingPattern)
             goto continue
         end
 
         for _, Pattern in pairs(SearchConfig.Patterns) do
             if string.find(Item.description, Pattern) == nil then
+                log(Item.description .. " not contains " .. Pattern)
                 goto continue
             end
         end
@@ -1261,6 +1265,11 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
         result = Item
 
         ::continue::
+    end
+
+    if result == nil then
+        log("Can't find object in bag: SearchConfig.Name - " .. SearchConfig.Name)
+        return nil
     end
 
     local Template = ComponentBag.takeObject({
