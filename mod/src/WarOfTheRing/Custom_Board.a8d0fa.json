@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "a8d0fa",
-    "Name": "Custom_Board",
-    "Transform": {
-      "posX": 4.915205e-17,
-      "posY": 0,
-      "posZ": 0,
-      "rotX": 0,
-      "rotY": 180,
-      "rotZ": 0,
-      "scaleX": 5,
-      "scaleY": 1,
-      "scaleZ": 5
+    "Object": {
+        "GUID": "a8d0fa",
+        "Name": "Custom_Board",
+        "Transform": {
+            "posX": 0,
+            "posY": -3.85,
+            "posZ": 0,
+            "rotX": 0,
+            "rotY": 180,
+            "rotZ": 0,
+            "scaleX": 8.2,
+            "scaleY": 8.2,
+            "scaleZ": 8.2
+        },
+        "Nickname": "",
+        "Description": "Table;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.7867647,
+            "g": 0.7867647,
+            "b": 0.7867647
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": false,
+        "Autoraise": false,
+        "Sticky": true,
+        "Tooltip": false,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1753569772060536262/33CCED4977D69E85242276EEE3697FD9AECCFB41/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 1.31018519
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "",
-    "Description": "Table;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.7867647,
-      "g": 0.7867647,
-      "b": 0.7867647
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": false,
-    "Autoraise": false,
-    "Sticky": true,
-    "Tooltip": false,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1753569772060536262/33CCED4977D69E85242276EEE3697FD9AECCFB41/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 1.31018519
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }
