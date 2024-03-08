@@ -3,7 +3,7 @@ OldValue = 0
 
 function onLoad()
     Wait.frames(
-        function()
+        function ()
             Colliding = false
         end,
         2
@@ -32,12 +32,13 @@ function onDrop(player_color)
         if OldValue ~= FellowshipTrack then
             broadcastToAll(
                 player_color ..
-                    " Player set the Fellowship Track from " ..
-                        tostring(OldValue) .. " to " .. tostring(FellowshipTrack) .. ".",
-                {1, 1, 0}
+                " Player set the Fellowship Track from " ..
+                tostring(OldValue) .. " to " .. tostring(FellowshipTrack) .. ".",
+                { 1, 1, 0 }
             )
         end
     end
+
     Wait.time(AnnounceDrop, 0.5)
 end
 
@@ -46,13 +47,13 @@ function onCollisionEnter(collision_info)
         Colliding = true
         if self.getRotation().z < 90 or self.getRotation().z > 270 then
             -- I see you!
-            Global.call("PlaySound", {ID = 13})
-            printToAll("Fellowship is Revealed.", {1, 1, 0})
+            Global.call("PlaySound", { ID = 13 })
+            printToAll("Fellowship is Revealed.", { 1, 1, 0 })
         else
-            printToAll("Fellowship is Hidden.", {1, 1, 0})
+            printToAll("Fellowship is Hidden.", { 1, 1, 0 })
         end
         Wait.time(
-            function()
+            function ()
                 Colliding = false
             end,
             0.5

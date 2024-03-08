@@ -36,33 +36,50 @@ MISSES_TO_HITS = 0
 
 -- Sound effects
 BATTLE_NOISE_CUBE_GUID = '507f2b'
-BATTLE_HITS_CUBE_GUIDS = {'5bea69', '94d153', '739b9e', '1202a1', '9f8bae', '380278', '1d727f', 'de57a1', '586a5a', '34dbdd'}
+BATTLE_HITS_CUBE_GUIDS = { '5bea69', '94d153', '739b9e', '1202a1', '9f8bae', '380278', '1d727f', 'de57a1', '586a5a',
+    '34dbdd' }
 BATTLE_NOISE_CUBE = nil
 BATTLE_HITS_CUBES = {}
 BATTLE_HITS_COUNT = 5
 
 -- UI
 CURRENT_PANEL = ''
-PANEL_NAMES = {'General', 'Combat', 'Hunt'}
+PANEL_NAMES = { 'General', 'Combat', 'Hunt' }
 SIDE_SA = false
 
 COLOURS = nil
-COLOURS_SA = {btn_standard = '#a1572d', btn_selected = '#db6d30', btn_bottom = '#db6d30', btn_bottom_ready = '#208820',
-              txt_standard = '#000000', txt_selected = '#EEEEEE'}
-COLOURS_FP = {btn_standard = '#638489', btn_selected = '#839797', btn_bottom = '#839797', btn_bottom_ready = '#208820',
-              txt_standard = '#000000', txt_selected = '#EEEEEE'}
+COLOURS_SA = {
+    btn_standard = '#a1572d',
+    btn_selected = '#db6d30',
+    btn_bottom = '#db6d30',
+    btn_bottom_ready = '#208820',
+    txt_standard = '#000000',
+    txt_selected = '#EEEEEE'
+}
+COLOURS_FP = {
+    btn_standard = '#638489',
+    btn_selected = '#839797',
+    btn_bottom = '#839797',
+    btn_bottom_ready = '#208820',
+    txt_standard = '#000000',
+    txt_selected = '#EEEEEE'
+}
 
-BUTTON_COUNTS = {General = {RollCount = {1, 5}, RollToHit = {2, 9}},
-                 Combat = {RollCount = {0, 5}, RollToHit = {2, 6}, RerollCount = {0, 5}, RerollToHit = {2, 6}, MissesToHits = {0, 2}},
-                 Hunt = {RollCount = {1, 5}, RollToHit = {2, 6}, RerollCount = {0, 3}}}
-BUTTON_DEFAULTS = {General = {roll_count = 1, roll_to_hit = 5, reroll_count = 0, reroll_to_hit = 0},
-                   Combat = {roll_count = 1, roll_to_hit = 5, reroll_count = 0, reroll_to_hit = 5},
-                   Hunt = {roll_count = 1, roll_to_hit = 6, reroll_count = 0, reroll_to_hit = 6}}
+BUTTON_COUNTS = {
+    General = { RollCount = { 1, 5 }, RollToHit = { 2, 9 } },
+    Combat = { RollCount = { 0, 5 }, RollToHit = { 2, 6 }, RerollCount = { 0, 5 }, RerollToHit = { 2, 6 }, MissesToHits = { 0, 2 } },
+    Hunt = { RollCount = { 1, 5 }, RollToHit = { 2, 6 }, RerollCount = { 0, 3 } }
+}
+BUTTON_DEFAULTS = {
+    General = { roll_count = 1, roll_to_hit = 5, reroll_count = 0, reroll_to_hit = 0 },
+    Combat = { roll_count = 1, roll_to_hit = 5, reroll_count = 0, reroll_to_hit = 5 },
+    Hunt = { roll_count = 1, roll_to_hit = 6, reroll_count = 0, reroll_to_hit = 6 }
+}
 
 function setupUI(panel_to_activate)
     -- Delay and condition here to try and catch cases where the xml never scales to the object properly
-    Wait.time(function()
-        Wait.condition(function()
+    Wait.time(function ()
+        Wait.condition(function ()
             local bounds = self.getBoundsNormalized()
             local scale = self.getScale()
             self.UI.setAttribute('pnlMain', 'scale', 1 / scale.x .. ' ' .. 1 / scale.z)
@@ -77,11 +94,17 @@ function setupUI(panel_to_activate)
                 self.UI.setAttribute('hzCombatMissesToHits', 'active', true)
             end
             activatePanel(panel_to_activate)
-        end, function() return not self.loading_custom end)
+        end, function () return not self.loading_custom end)
     end, 0.5)
 end
 
-function onSave() return JSON.encode({CURRENT_PANEL = CURRENT_PANEL, CURRENT_ROLL_ID = CURRENT_ROLL_ID, HISTORY = HISTORY}) end
+function onSave()
+    return JSON.encode({
+        CURRENT_PANEL = CURRENT_PANEL,
+        CURRENT_ROLL_ID = CURRENT_ROLL_ID,
+        HISTORY = HISTORY
+    })
+end
 
 function onLoad(save_state)
     if (string.find(self.getDescription(), 'Shadow;') ~= nil) then
@@ -171,7 +194,6 @@ function reloadRollPanel(panel_name)
                 self.UI.setAttribute('btn' .. panel_name .. 'Roll', 'interactable', false)
                 self.UI.setAttribute('btn' .. panel_name .. 'Adjust', 'interactable', false)
                 self.UI.setAttribute('btn' .. panel_name .. 'Clear', 'interactable', false)
-
             end
 
             return
@@ -202,9 +224,13 @@ function activatePanel(panel_name)
 end
 
 function uiSelectGeneral() activatePanel('General') end
+
 function uiSelectCombat() activatePanel('Combat') end
+
 function uiSelectHunt() activatePanel('Hunt') end
+
 function uiSelectStats() activatePanel('Stats') end
+
 function uiSelectSettings() activatePanel('Settings') end
 
 function setRollCount(roll_count)
@@ -215,9 +241,13 @@ function setRollCount(roll_count)
 end
 
 function uiSetRollCount1() setRollCount(1) end
+
 function uiSetRollCount2() setRollCount(2) end
+
 function uiSetRollCount3() setRollCount(3) end
+
 function uiSetRollCount4() setRollCount(4) end
+
 function uiSetRollCount5() setRollCount(5) end
 
 function setRollToHit(roll_to_hit)
@@ -235,12 +265,19 @@ function setRollToHit(roll_to_hit)
 end
 
 function uiSetRollToHit2() setRollToHit(2) end
+
 function uiSetRollToHit3() setRollToHit(3) end
+
 function uiSetRollToHit4() setRollToHit(4) end
+
 function uiSetRollToHit5() setRollToHit(5) end
+
 function uiSetRollToHit6() setRollToHit(6) end
+
 function uiSetRollToHit7() setRollToHit(7) end -- Face value of die
+
 function uiSetRollToHit8() setRollToHit(8) end -- 1 or 2 hits self, 5 or 6 hits enemy
+
 function uiSetRollToHit9() setRollToHit(9) end -- 1 hits self, 6 hits enemy
 
 function setRerollCount(reroll_count)
@@ -251,10 +288,15 @@ function setRerollCount(reroll_count)
 end
 
 function uiSetRerollCount0() setRerollCount(0) end
+
 function uiSetRerollCount1() setRerollCount(1) end
+
 function uiSetRerollCount2() setRerollCount(2) end
+
 function uiSetRerollCount3() setRerollCount(3) end
+
 function uiSetRerollCount4() setRerollCount(4) end
+
 function uiSetRerollCount5() setRerollCount(5) end
 
 function setRerollToHit(reroll_to_hit)
@@ -265,9 +307,13 @@ function setRerollToHit(reroll_to_hit)
 end
 
 function uiSetRerollToHit2() setRerollToHit(2) end
+
 function uiSetRerollToHit3() setRerollToHit(3) end
+
 function uiSetRerollToHit4() setRerollToHit(4) end
+
 function uiSetRerollToHit5() setRerollToHit(5) end
+
 function uiSetRerollToHit6() setRerollToHit(6) end
 
 function setMissesToHits(misses_to_hits)
@@ -280,7 +326,9 @@ function setMissesToHits(misses_to_hits)
 end
 
 function uiSetMissesToHits0() setMissesToHits(0) end
+
 function uiSetMissesToHits1() setMissesToHits(1) end
+
 function uiSetMissesToHits2() setMissesToHits(2) end
 
 function set1HitsSelf(enabled)
@@ -318,11 +366,30 @@ end
 function uiToggle6HitsTwice() set6HitsTwice(not SIX_HITS_TWICE) end
 
 function createRollInfo()
-    return {type = CURRENT_PANEL, roll_count = ROLL_COUNT, roll_to_hit = ROLL_TO_HIT, reroll_count = REROLL_COUNT,
-            reroll_to_hit = REROLL_TO_HIT, six_hits_twice = SIX_HITS_TWICE, one_hits_self = ONE_HITS_SELF, misses_to_hits = MISSES_TO_HITS,
-            completed = false, on_roll_step = true, failed = false, cleared = false, adjust_requested = false, roll_dice = {},
-            reroll_dice = {}, roll_results = {}, reroll_results = {}, reroll_qty = 0, roll_die_hits = 0, reroll_die_hits = 0,
-            friendly_hits = 0, total_hits = 0}
+    return {
+        type = CURRENT_PANEL,
+        roll_count = ROLL_COUNT,
+        roll_to_hit = ROLL_TO_HIT,
+        reroll_count = REROLL_COUNT,
+        reroll_to_hit = REROLL_TO_HIT,
+        six_hits_twice = SIX_HITS_TWICE,
+        one_hits_self = ONE_HITS_SELF,
+        misses_to_hits = MISSES_TO_HITS,
+        completed = false,
+        on_roll_step = true,
+        failed = false,
+        cleared = false,
+        adjust_requested = false,
+        roll_dice = {},
+        reroll_dice = {},
+        roll_results = {},
+        reroll_results = {},
+        reroll_qty = 0,
+        roll_die_hits = 0,
+        reroll_die_hits = 0,
+        friendly_hits = 0,
+        total_hits = 0
+    }
 end
 
 function sendStats(roll_info)
@@ -330,11 +397,11 @@ function sendStats(roll_info)
     local side = 'FreePeoples'
     if (SIDE_SA) then side = 'Shadow' end
     for _, result in pairs(roll_info.roll_results) do
-        Global.call('UpdateDiceStats', {Result = result, Type = 'Combat', Side = side})
+        Global.call('UpdateDiceStats', { Result = result, Type = 'Combat', Side = side })
     end
 
     for _, result in pairs(roll_info.reroll_results) do
-        Global.call('UpdateDiceStats', {Result = result, Type = 'Combat', Side = side})
+        Global.call('UpdateDiceStats', { Result = result, Type = 'Combat', Side = side })
     end
 end
 
@@ -342,7 +409,7 @@ function uiShowStats()
     uiClearRoll()
     local player_colour = 'Blue'
     if (SIDE_SA) then player_colour = 'Red' end
-    if Global.getVar("DisplayDiceStats") ~= nil then Global.call("DisplayDiceStats",{PlayerColor = player_colour}) end
+    if Global.getVar("DisplayDiceStats") ~= nil then Global.call("DisplayDiceStats", { PlayerColor = player_colour }) end
 end
 
 function clearDice(roll_info)
@@ -365,7 +432,8 @@ end
 function getStartDiePosition(is_roll)
     local pos = self.getPosition()
     local rot = self.getRotation()
-    local start_pos = vector(-(self.getBounds().size.x / 2) + self.getBounds().size.x * 0.1, 0.5, (self.getBounds().size.z / 2) + 1.2)
+    local start_pos = vector(-(self.getBounds().size.x / 2) + self.getBounds().size.x * 0.1, 0.5,
+        (self.getBounds().size.z / 2) + 1.2)
     if (not is_roll) then start_pos.z = start_pos.z + 1.2 end
     return pos + start_pos:rotateOver('y', rot.y)
 end
@@ -383,7 +451,7 @@ function createDice(on_roll_step, dice, qty, start_idx)
 
     for idx = start_idx, end_idx do
         local pos = start_pos + offset * (idx - 1)
-        local die = spawnObject({type = MODEL, position = pos, scale = {SCALE, SCALE, SCALE}, sound = false})
+        local die = spawnObject({ type = MODEL, position = pos, scale = { SCALE, SCALE, SCALE }, sound = false })
         die.setColorTint(NORMAL_COLOUR)
         table.insert(dice, die.getGUID())
         die.randomize()
@@ -406,28 +474,28 @@ function beginRoll()
     -- Work out appropriate length of time for battle sound, then play correct one
     -- BATTLE_NOISE_CUBE.AssetBundle.playTriggerEffect(1)
 
-    Wait.time(function() doRoll(roll_info, 1) end, DELAY)
+    Wait.time(function () doRoll(roll_info, 1) end, DELAY)
 end
 
 function calculateHitResult(result, to_hit, roll_info)
     if (to_hit <= 6) then
-        if (roll_info.one_hits_self and roll_info.on_roll_step and result == 1) then return {target = 'friendly', hits = 1} end
-        if (roll_info.six_hits_twice and result == 6) then return {target = 'enemy', hits = 2} end
-        if result >= to_hit then return {target = 'enemy', hits = 1} end
-        return {target = 'miss', hits = 0}
+        if (roll_info.one_hits_self and roll_info.on_roll_step and result == 1) then return { target = 'friendly', hits = 1 } end
+        if (roll_info.six_hits_twice and result == 6) then return { target = 'enemy', hits = 2 } end
+        if result >= to_hit then return { target = 'enemy', hits = 1 } end
+        return { target = 'miss', hits = 0 }
     elseif (to_hit == 7) then
         -- Hit value is the die result, so always a hit
-        return {target = 'enemy', hits = result}
+        return { target = 'enemy', hits = result }
     elseif (to_hit == 8) then
         -- 1 and 2 hits self, 5 and 6 hits enemy
-        if (result <= 2) then return {target = 'friendly', hits = 1} end
-        if (result >= 5) then return {target = 'enemy', hits = 1} end
-        return {target = 'miss', hits = 0}
+        if (result <= 2) then return { target = 'friendly', hits = 1 } end
+        if (result >= 5) then return { target = 'enemy', hits = 1 } end
+        return { target = 'miss', hits = 0 }
     elseif (to_hit == 9) then
         -- 1 hits self, 6 hits enemy
-        if (result == 1) then return {target = 'friendly', hits = 1} end
-        if (result == 6) then return {target = 'enemy', hits = 1} end
-        return {target = 'miss', hits = 0}
+        if (result == 1) then return { target = 'friendly', hits = 1 } end
+        if (result == 6) then return { target = 'enemy', hits = 1 } end
+        return { target = 'miss', hits = 0 }
     end
 end
 
@@ -450,13 +518,13 @@ function doRoll(roll_info, start_die_idx)
 
     local dice_settled_count = 0
     local dice_rolling_count = qty - start_die_idx + 1
-    local is_rolling = {false, false, false, false, false}
+    local is_rolling = { false, false, false, false, false }
 
     for die_idx = start_die_idx, qty do
         -- Stagger the rolls
-        Wait.time(function()
+        Wait.time(function ()
             for r = 1, RANDOMIZE_COUNT do
-                Wait.time(function()
+                Wait.time(function ()
                     local die = getObjectFromGUID(dice[die_idx])
                     if die == nil or die.isDestroyed() then
                         roll_info.roll_failed = true
@@ -469,7 +537,7 @@ function doRoll(roll_info, start_die_idx)
         end, die_idx * STAGGER_TIME)
 
         -- Store the result and increment the rolls settled when the die is resting
-        Wait.condition(function()
+        Wait.condition(function ()
             local die = getObjectFromGUID(dice[die_idx])
             if die == nil or die.isDestroyed() then
                 roll_info.roll_failed = true
@@ -480,15 +548,15 @@ function doRoll(roll_info, start_die_idx)
             hit_result = calculateHitResult(result, to_hit, roll_info)
             addHit(die_idx, die, hit_result, roll_info, roll_info.on_roll_step)
             dice_settled_count = dice_settled_count + 1
-        end, function()
+        end, function ()
             local die = getObjectFromGUID(dice[die_idx])
             if (die == nil or die.isDestroyed()) then roll_info.failed = true end
             return roll_info.failed or is_rolling[die_idx] and die.resting
         end)
     end
 
-    Wait.condition(function() onRollComplete(roll_info) end,
-        function() return dice_settled_count == dice_rolling_count or roll_info.failed end)
+    Wait.condition(function () onRollComplete(roll_info) end,
+        function () return dice_settled_count == dice_rolling_count or roll_info.failed end)
 end
 
 function onRollComplete(roll_info)
@@ -506,7 +574,7 @@ function onRollComplete(roll_info)
             local current_dice_qty = #roll_info.reroll_dice
             local missing_dice_qty = roll_info.reroll_qty - current_dice_qty
             createDice(false, roll_info.reroll_dice, missing_dice_qty, current_dice_qty + 1)
-            Wait.time(function() doRoll(roll_info, current_dice_qty + 1) end, DELAY)
+            Wait.time(function () doRoll(roll_info, current_dice_qty + 1) end, DELAY)
         else
             onComplete(roll_info)
         end
@@ -636,13 +704,13 @@ function adjustRoll(roll_info)
         roll_info.on_roll_step = true
         onBegin(roll_info)
         createDice(true, roll_info.roll_dice, roll_dice_diff, old_roll_count + 1)
-        Wait.time(function() doRoll(roll_info, old_roll_count + 1) end, DELAY)
+        Wait.time(function () doRoll(roll_info, old_roll_count + 1) end, DELAY)
     elseif (reroll_qty_diff > 0) then
         -- Create extra reroll dice and roll
         roll_info.on_roll_step = false
         onBegin(roll_info)
         createDice(false, roll_info.reroll_dice, reroll_qty_diff, old_reroll_qty + 1)
-        Wait.time(function() doRoll(roll_info, old_reroll_qty + 1) end, DELAY)
+        Wait.time(function () doRoll(roll_info, old_reroll_qty + 1) end, DELAY)
     else
         onComplete(roll_info)
     end
@@ -708,10 +776,11 @@ function uiReadyForCombat()
         ROLLER_FP_READY = not ROLLER_FP_READY
         if (ROLLER_FP_READY) then
             self.UI.setAttribute('btnCombatReady', 'color', COLOUR.btn_bottom_ready)
-            ROLLER_SA.call('sendFPCombatState', {ready = true, fp_roll_count = ROLL_COUNT, fp_reroll_count = REROLL_COUNT})
+            ROLLER_SA.call('sendFPCombatState',
+                { ready = true, fp_roll_count = ROLL_COUNT, fp_reroll_count = REROLL_COUNT })
         else
             self.UI.setAttribute('btnCombatReady', 'color', COLOUR.btn_bottom)
-            ROLLER_SA.call('sendFPCombatState', {ready = false})
+            ROLLER_SA.call('sendFPCombatState', { ready = false })
         end
     end
 end
