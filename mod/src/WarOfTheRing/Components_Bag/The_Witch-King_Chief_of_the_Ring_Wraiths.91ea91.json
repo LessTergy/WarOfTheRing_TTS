@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "91ea91",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 80.67626,
-      "posY": 3.16196179,
-      "posZ": -63.84777,
-      "rotX": -0.0000112514117,
-      "rotY": -0.000005629216,
-      "rotZ": -0.0000382063627,
-      "scaleX": 0.6,
-      "scaleY": 0.6,
-      "scaleZ": 0.6
+    "Object": {
+        "GUID": "91ea91",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 80.67626,
+            "posY": 3.16196179,
+            "posZ": -63.84777,
+            "rotX": -0.0000112514117,
+            "rotY": -0.000005629216,
+            "rotZ": -0.0000382063627,
+            "scaleX": 0.6,
+            "scaleY": 0.6,
+            "scaleZ": 0.6
+        },
+        "Nickname": "The Witch-King: Chief of the Ring Wraiths",
+        "Description": "Minion;2D;Shadow;LoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370086188/B7AA8D425A69FD3CE507A0BEC692DFC65519230B/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731815370086604/A1D804E672A848DC32FF0A12B9A90D9F0EAB4EC2/",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Witch-King: Chief of the Ring Wraiths",
-    "Description": "Minion;2D;Shadow;LoME;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0,
-      "g": 0,
-      "b": 0
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370086188/B7AA8D425A69FD3CE507A0BEC692DFC65519230B/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731815370086604/A1D804E672A848DC32FF0A12B9A90D9F0EAB4EC2/",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

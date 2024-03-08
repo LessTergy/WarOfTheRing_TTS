@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "23f5c6",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 83.60706,
-      "posY": 3.15441012,
-      "posZ": -64.78995,
-      "rotX": -0.00000409671838,
-      "rotY": 4.084813e-7,
-      "rotZ": -0.00000629657643,
-      "scaleX": 0.495,
-      "scaleY": 0.495,
-      "scaleZ": 0.495
+    "Object": {
+        "GUID": "23f5c6",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 83.60706,
+            "posY": 3.15441012,
+            "posZ": -64.78995,
+            "rotX": -0.00000409671838,
+            "rotY": 4.084813e-7,
+            "rotZ": -0.00000629657643,
+            "scaleX": 0.495,
+            "scaleY": 0.495,
+            "scaleZ": 0.495
+        },
+        "Nickname": "The Hillmen of Dunland",
+        "Description": "Faction;2D;Dunlendings;Shadow;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 0.196077764,
+            "b": 0.196077764
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370227757/2EF856BAB59519D7C2BBE0BBFCD6696C29F6893E/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Hillmen of Dunland",
-    "Description": "Faction;2D;Dunlendings;Shadow;WoME;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 0.196077764,
-      "b": 0.196077764
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370227757/2EF856BAB59519D7C2BBE0BBFCD6696C29F6893E/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

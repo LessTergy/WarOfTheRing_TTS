@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "69dd38",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 86.93113,
-      "posY": 3.15256023,
-      "posZ": -67.26822,
-      "rotX": -0.00000378631967,
-      "rotY": 0.0000014842974,
-      "rotZ": -8.53773656e-7,
-      "scaleX": 0.5,
-      "scaleY": 0.5,
-      "scaleZ": 0.5
+    "Object": {
+        "GUID": "69dd38",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 86.93113,
+            "posY": 3.15256023,
+            "posZ": -67.26822,
+            "rotX": -0.00000378631967,
+            "rotY": 0.0000014842974,
+            "rotZ": -8.53773656e-7,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "scaleZ": 0.5
+        },
+        "Nickname": "Gandalf the Grey",
+        "Description": "Character;2D;Companion;FreePeoples;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849452850/1410AEA3222A17FCC101210072C5C7DA79127BBC/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849452850/1410AEA3222A17FCC101210072C5C7DA79127BBC/",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Gandalf the Grey",
-    "Description": "Character;2D;Companion;FreePeoples;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849452850/1410AEA3222A17FCC101210072C5C7DA79127BBC/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849452850/1410AEA3222A17FCC101210072C5C7DA79127BBC/",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

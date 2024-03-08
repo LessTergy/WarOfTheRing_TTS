@@ -1,125 +1,125 @@
 {
-  "Object": {
-    "GUID": "d2697c",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 16.4683514,
-      "posY": 1.09852624,
-      "posZ": -27.3292446,
-      "rotX": -0.00000325803944,
-      "rotY": 224.999969,
-      "rotZ": 0.0000201362145,
-      "scaleX": 0.7919999,
-      "scaleY": 0.792,
-      "scaleZ": 0.7919999
-    },
-    "Nickname": "Saruman: Corrupted Wizard",
-    "Description": "Minion;3D;Shadow;",
-    "GMNotes": "Region:;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2277197144477534417/FFF05297AA67ADD5D056B9C5C49149E1A013289E/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176148341/8A82B735F786DAA219D71C4C0EBB99E64346FF1B/",
-      "NormalURL": "",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/2277197144477622881/AEF09204E91B2B34F9B1E0FE77C7EEE86131BEDC/",
-      "Convex": true,
-      "MaterialIndex": 3,
-      "TypeIndex": 1,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
-        },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
-    },
-    "LuaScript": "#include ./Saruman_Corrupted_Wizard.d2697c.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "ChildObjects": [
-      {
-        "GUID": "61bc09",
+    "Object": {
+        "GUID": "d2697c",
         "Name": "Custom_Model",
         "Transform": {
-          "posX": 0.0200090781,
-          "posY": -0.109283321,
-          "posZ": -0.0346574932,
-          "rotX": -0.000011744477,
-          "rotY": 315.0018,
-          "rotZ": -0.00001758178,
-          "scaleX": 0.75757587,
-          "scaleY": 1.26262629,
-          "scaleZ": 0.75757587
+            "posX": 16.4683514,
+            "posY": 1.09852624,
+            "posZ": -27.3292446,
+            "rotX": -0.00000325803944,
+            "rotY": 224.999969,
+            "rotZ": 0.0000201362145,
+            "scaleX": 0.7919999,
+            "scaleY": 0.792,
+            "scaleZ": 0.7919999
         },
-        "Nickname": "Character Base",
-        "Description": "",
+        "Nickname": "Saruman: Corrupted Wizard",
+        "Description": "Minion;3D;Shadow;",
         "GMNotes": "",
         "AltLookAngle": {
-          "x": 0,
-          "y": 0,
-          "z": 0
+            "x": 0,
+            "y": 0,
+            "z": 0
         },
         "ColorDiffuse": {
-          "r": 0,
-          "g": 0,
-          "b": 0
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
-        "Locked": true,
+        "Locked": false,
         "Grid": true,
         "Snap": false,
         "IgnoreFoW": false,
         "MeasureMovement": false,
         "DragSelectable": true,
         "Autoraise": true,
-        "Sticky": false,
+        "Sticky": true,
         "Tooltip": true,
         "GridProjection": false,
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "DiffuseURL": "",
-          "NormalURL": "",
-          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "Convex": true,
-          "MaterialIndex": 1,
-          "TypeIndex": 1,
-          "CastShadows": true
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2277197144477534417/FFF05297AA67ADD5D056B9C5C49149E1A013289E/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176148341/8A82B735F786DAA219D71C4C0EBB99E64346FF1B/",
+            "NormalURL": "",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/2277197144477622881/AEF09204E91B2B34F9B1E0FE77C7EEE86131BEDC/",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 1,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
         },
-        "LuaScript": "",
+        "LuaScript": "#include ./Saruman_Corrupted_Wizard.d2697c.lua",
         "LuaScriptState": "",
-        "XmlUI": ""
-      }
-    ]
-  },
-  "StatesPaths": {}
+        "XmlUI": "",
+        "ChildObjects": [
+            {
+                "GUID": "61bc09",
+                "Name": "Custom_Model",
+                "Transform": {
+                    "posX": 0.0200090781,
+                    "posY": -0.109283321,
+                    "posZ": -0.0346574932,
+                    "rotX": -0.000011744477,
+                    "rotY": 315.0018,
+                    "rotZ": -0.00001758178,
+                    "scaleX": 0.75757587,
+                    "scaleY": 1.26262629,
+                    "scaleZ": 0.75757587
+                },
+                "Nickname": "Character Base",
+                "Description": "",
+                "GMNotes": "",
+                "AltLookAngle": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "ColorDiffuse": {
+                    "r": 0,
+                    "g": 0,
+                    "b": 0
+                },
+                "LayoutGroupSortIndex": 0,
+                "Value": 0,
+                "Locked": true,
+                "Grid": true,
+                "Snap": false,
+                "IgnoreFoW": false,
+                "MeasureMovement": false,
+                "DragSelectable": true,
+                "Autoraise": true,
+                "Sticky": false,
+                "Tooltip": true,
+                "GridProjection": false,
+                "HideWhenFaceDown": false,
+                "Hands": false,
+                "CustomMesh": {
+                    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "DiffuseURL": "",
+                    "NormalURL": "",
+                    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "Convex": true,
+                    "MaterialIndex": 1,
+                    "TypeIndex": 1,
+                    "CastShadows": true
+                },
+                "LuaScript": "",
+                "LuaScriptState": "",
+                "XmlUI": ""
+            }
+        ]
+    },
+    "StatesPaths": {}
 }

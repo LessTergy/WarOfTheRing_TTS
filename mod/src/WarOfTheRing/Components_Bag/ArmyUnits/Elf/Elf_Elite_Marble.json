@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "6a6ea6",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 92.56349,
-      "posY": 3.16249323,
-      "posZ": -70.44404,
-      "rotX": 0.000007385763,
-      "rotY": 180,
-      "rotZ": 0.00000151382142,
-      "scaleX": 0.4,
-      "scaleY": 0.400000036,
-      "scaleZ": 0.396000028
-    },
-    "Nickname": "Elf Elite",
-    "Description": "Elite;Marble;Elves;FreePeoples;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 0.9960827
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401393744/16FA8395CB055DAFE1496F7E6E4D48F4E5DF3937/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401381675/C74BB58B32E35069FC0967F80848EA57817F0C6E/",
-      "NormalURL": "",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401393744/16FA8395CB055DAFE1496F7E6E4D48F4E5DF3937/",
-      "Convex": true,
-      "MaterialIndex": 1,
-      "TypeIndex": 1,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "6a6ea6",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": 92.56349,
+            "posY": 3.16249323,
+            "posZ": -70.44404,
+            "rotX": 0.000007385763,
+            "rotY": 180,
+            "rotZ": 0.00000151382142,
+            "scaleX": 0.4,
+            "scaleY": 0.400000036,
+            "scaleZ": 0.396000028
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
+        "Nickname": "Elf Elite",
+        "Description": "Elite;Marble;Elves;FreePeoples;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 0.9960827
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401393744/16FA8395CB055DAFE1496F7E6E4D48F4E5DF3937/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401381675/C74BB58B32E35069FC0967F80848EA57817F0C6E/",
+            "NormalURL": "",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401393744/16FA8395CB055DAFE1496F7E6E4D48F4E5DF3937/",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 1,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

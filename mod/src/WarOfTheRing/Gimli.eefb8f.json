@@ -1,95 +1,30 @@
 {
-  "Object": {
-    "GUID": "eefb8f",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 28.7841,
-      "posY": 1.344387,
-      "posZ": 17.3875484,
-      "rotX": 0.0000221928076,
-      "rotY": 179.962738,
-      "rotZ": -0.0000163222958,
-      "scaleX": 0.400000125,
-      "scaleY": 0.4,
-      "scaleZ": 0.400000125
-    },
-    "Nickname": "Gimli",
-    "Description": "Character;3D;Companion;FreePeoples;",
-    "GMNotes": "Region:Fellowship Box;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.9999998,
-      "g": 0.9921654,
-      "b": 0.9999998
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176375017/A1A8A4515C0ED81564921BD007D81D62686F8B9A/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176375482/A83FA00494236B5EE682DDDBAD75D255EC39D582/",
-      "NormalURL": "",
-      "ColliderURL": "",
-      "Convex": true,
-      "MaterialIndex": 3,
-      "TypeIndex": 1,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
-        },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
-    },
-    "LuaScript": "#include ./Gimli.eefb8f.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "ChildObjects": [
-      {
-        "GUID": "f454fb",
+    "Object": {
+        "GUID": "eefb8f",
         "Name": "Custom_Model",
         "Transform": {
-          "posX": 0.0307663959,
-          "posY": -0.8340753,
-          "posZ": -0.08623088,
-          "rotX": 0.0000241049311,
-          "rotY": 179.999908,
-          "rotZ": -0.0000243546383,
-          "scaleX": 1.24999952,
-          "scaleY": 2.5,
-          "scaleZ": 1.24999952
+            "posX": 28.7841,
+            "posY": 1.344387,
+            "posZ": 17.3875484,
+            "rotX": 0.0000221928076,
+            "rotY": 179.962738,
+            "rotZ": -0.0000163222958,
+            "scaleX": 0.400000125,
+            "scaleY": 0.4,
+            "scaleZ": 0.400000125
         },
-        "Nickname": "Character Base",
-        "Description": "",
+        "Nickname": "Gimli",
+        "Description": "Character;3D;Companion;FreePeoples;",
         "GMNotes": "",
         "AltLookAngle": {
-          "x": 0,
-          "y": 0,
-          "z": 0
+            "x": 0,
+            "y": 0,
+            "z": 0
         },
         "ColorDiffuse": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+            "r": 0.9999998,
+            "g": 0.9921654,
+            "b": 0.9999998
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -100,26 +35,91 @@
         "MeasureMovement": false,
         "DragSelectable": true,
         "Autoraise": true,
-        "Sticky": false,
+        "Sticky": true,
         "Tooltip": true,
         "GridProjection": false,
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "DiffuseURL": "",
-          "NormalURL": "",
-          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "Convex": true,
-          "MaterialIndex": 4,
-          "TypeIndex": 1,
-          "CastShadows": true
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176375017/A1A8A4515C0ED81564921BD007D81D62686F8B9A/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176375482/A83FA00494236B5EE682DDDBAD75D255EC39D582/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 1,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
         },
-        "LuaScript": "",
+        "LuaScript": "#include ./Gimli.eefb8f.lua",
         "LuaScriptState": "",
-        "XmlUI": ""
-      }
-    ]
-  },
-  "StatesPaths": {}
+        "XmlUI": "",
+        "ChildObjects": [
+            {
+                "GUID": "f454fb",
+                "Name": "Custom_Model",
+                "Transform": {
+                    "posX": 0.0307663959,
+                    "posY": -0.8340753,
+                    "posZ": -0.08623088,
+                    "rotX": 0.0000241049311,
+                    "rotY": 179.999908,
+                    "rotZ": -0.0000243546383,
+                    "scaleX": 1.24999952,
+                    "scaleY": 2.5,
+                    "scaleZ": 1.24999952
+                },
+                "Nickname": "Character Base",
+                "Description": "",
+                "GMNotes": "",
+                "AltLookAngle": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "ColorDiffuse": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "LayoutGroupSortIndex": 0,
+                "Value": 0,
+                "Locked": false,
+                "Grid": true,
+                "Snap": false,
+                "IgnoreFoW": false,
+                "MeasureMovement": false,
+                "DragSelectable": true,
+                "Autoraise": true,
+                "Sticky": false,
+                "Tooltip": true,
+                "GridProjection": false,
+                "HideWhenFaceDown": false,
+                "Hands": false,
+                "CustomMesh": {
+                    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "DiffuseURL": "",
+                    "NormalURL": "",
+                    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "Convex": true,
+                    "MaterialIndex": 4,
+                    "TypeIndex": 1,
+                    "CastShadows": true
+                },
+                "LuaScript": "",
+                "LuaScriptState": "",
+                "XmlUI": ""
+            }
+        ]
+    },
+    "StatesPaths": {}
 }

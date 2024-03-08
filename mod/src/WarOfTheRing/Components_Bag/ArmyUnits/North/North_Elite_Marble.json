@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "5bf71c",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 90.21453,
-      "posY": 3.16249418,
-      "posZ": -70.30096,
-      "rotX": 0.0000029182188,
-      "rotY": 180,
-      "rotZ": 4.464925e-7,
-      "scaleX": 0.4,
-      "scaleY": 0.400000036,
-      "scaleZ": 0.396000028
-    },
-    "Nickname": "North Elite",
-    "Description": "Elite;Marble;North;FreePeoples;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 0.9960827
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401393744/16FA8395CB055DAFE1496F7E6E4D48F4E5DF3937/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405941326/7B9DD7F170CAEF5A82336BE8C8733518A14309B4/",
-      "NormalURL": "",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401393744/16FA8395CB055DAFE1496F7E6E4D48F4E5DF3937/",
-      "Convex": true,
-      "MaterialIndex": 1,
-      "TypeIndex": 1,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "5bf71c",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": 90.21453,
+            "posY": 3.16249418,
+            "posZ": -70.30096,
+            "rotX": 0.0000029182188,
+            "rotY": 180,
+            "rotZ": 4.464925e-7,
+            "scaleX": 0.4,
+            "scaleY": 0.400000036,
+            "scaleZ": 0.396000028
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
+        "Nickname": "North Elite",
+        "Description": "Elite;Marble;North;FreePeoples;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 0.9960827
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401393744/16FA8395CB055DAFE1496F7E6E4D48F4E5DF3937/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405941326/7B9DD7F170CAEF5A82336BE8C8733518A14309B4/",
+            "NormalURL": "",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1759188782401393744/16FA8395CB055DAFE1496F7E6E4D48F4E5DF3937/",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 1,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

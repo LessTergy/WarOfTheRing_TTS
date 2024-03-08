@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "255578",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 104.368362,
-      "posY": 3.83449268,
-      "posZ": -71.47491,
-      "rotX": -5.33628565e-7,
-      "rotY": -0.000011098321,
-      "rotZ": 0.000003409959,
-      "scaleX": 0.99,
-      "scaleY": 0.99,
-      "scaleZ": 0.99
-    },
-    "Nickname": "The Black Serpent: Chieftain of the Haradrim",
-    "Description": "Character;Marble;Ruler;DarkChieftain;Shadow;KoME;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405758892/6C909C6E7632E5DDBAC5E3742E75E71C8D17C4FB/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2079031781118255212/6C822F1E71B05B073072053C8EDF3E5CF52ACB78/",
-      "NormalURL": "",
-      "ColliderURL": "",
-      "Convex": true,
-      "MaterialIndex": 1,
-      "TypeIndex": 1,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 0.8745098,
-          "g": 0.8117647,
-          "b": 0.745098054
+    "Object": {
+        "GUID": "255578",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": 104.368362,
+            "posY": 3.83449268,
+            "posZ": -71.47491,
+            "rotX": -5.33628565e-7,
+            "rotY": -0.000011098321,
+            "rotZ": 0.000003409959,
+            "scaleX": 0.99,
+            "scaleY": 0.99,
+            "scaleZ": 0.99
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 1
-      },
-      "CastShadows": true
+        "Nickname": "The Black Serpent: Chieftain of the Haradrim",
+        "Description": "Character;Marble;Ruler;DarkChieftain;Shadow;KoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405758892/6C909C6E7632E5DDBAC5E3742E75E71C8D17C4FB/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2079031781118255212/6C822F1E71B05B073072053C8EDF3E5CF52ACB78/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 1,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 0.8745098,
+                    "g": 0.8117647,
+                    "b": 0.745098054
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 1
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

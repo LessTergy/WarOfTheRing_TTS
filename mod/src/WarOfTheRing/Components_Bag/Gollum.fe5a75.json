@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "fe5a75",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 78.05973,
-      "posY": 3.16926575,
-      "posZ": -67.18208,
-      "rotX": -0.00000139173017,
-      "rotY": 5.07255663e-7,
-      "rotZ": -0.0000101385622,
-      "scaleX": 0.6,
-      "scaleY": 0.6,
-      "scaleZ": 0.6
+    "Object": {
+        "GUID": "fe5a75",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 78.05973,
+            "posY": 3.16926575,
+            "posZ": -67.18208,
+            "rotX": -0.00000139173017,
+            "rotY": 5.07255663e-7,
+            "rotZ": -0.0000101385622,
+            "scaleX": 0.6,
+            "scaleY": 0.6,
+            "scaleZ": 0.6
+        },
+        "Nickname": "Gollum",
+        "Description": "Character;2D;Companion;FreePeoples;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849463126/22A6265E645451CEA12D3ACEC142CE132C6772AF/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849463126/22A6265E645451CEA12D3ACEC142CE132C6772AF/",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Gollum",
-    "Description": "Character;2D;Companion;FreePeoples;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849463126/22A6265E645451CEA12D3ACEC142CE132C6772AF/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849463126/22A6265E645451CEA12D3ACEC142CE132C6772AF/",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

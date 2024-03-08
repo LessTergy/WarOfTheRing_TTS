@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "3f1199",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 85.41396,
-      "posY": 3.15440965,
-      "posZ": -64.3860245,
-      "rotX": -0.000008182597,
-      "rotY": 0.0002688638,
-      "rotZ": -0.0000101385795,
-      "scaleX": 0.495,
-      "scaleY": 0.495,
-      "scaleZ": 0.495
+    "Object": {
+        "GUID": "3f1199",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 85.41396,
+            "posY": 3.15440965,
+            "posZ": -64.3860245,
+            "rotX": -0.000008182597,
+            "rotY": 0.0002688638,
+            "rotZ": -0.0000101385795,
+            "scaleX": 0.495,
+            "scaleY": 0.495,
+            "scaleZ": 0.495
+        },
+        "Nickname": "The Corsairs of Umbar",
+        "Description": "Faction;2D;Corsairs;Shadow;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 0.196077555,
+            "b": 0.196077555
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370224361/CEB759A826A9F05B226BFFAE3B7EF40D8C65FECA/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Corsairs of Umbar",
-    "Description": "Faction;2D;Corsairs;Shadow;WoME;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 0.196077555,
-      "b": 0.196077555
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370224361/CEB759A826A9F05B226BFFAE3B7EF40D8C65FECA/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

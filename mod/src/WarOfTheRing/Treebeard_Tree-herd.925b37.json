@@ -1,89 +1,34 @@
 {
-  "Object": {
-    "GUID": "925b37",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": -13.7148752,
-      "posY": 1.08641207,
-      "posZ": 27.5586147,
-      "rotX": 0.0000189354687,
-      "rotY": 0.00012031704,
-      "rotZ": 0.0000230627447,
-      "scaleX": 0.3,
-      "scaleY": 0.4,
-      "scaleZ": 0.3
-    },
-    "Nickname": "Treebeard: Tree-herd",
-    "Description": "Character;3D;FreePeoples;",
-    "GMNotes": "Region:;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053951875/CEF9B8D356C71CC001AC3B18D87BDDC5BA1CB271/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053952470/31D1052E9E7C313E7F10B39D2CA95384DE3394ED/",
-      "NormalURL": "",
-      "ColliderURL": "",
-      "Convex": true,
-      "MaterialIndex": 1,
-      "TypeIndex": 1,
-      "CastShadows": true
-    },
-    "LuaScript": "#include ./Treebeard_Tree-herd.925b37.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "ChildObjects": [
-      {
-        "GUID": "c81de1",
+    "Object": {
+        "GUID": "925b37",
         "Name": "Custom_Model",
         "Transform": {
-          "posX": -0.117874429,
-          "posY": -0.186095074,
-          "posZ": -0.0566604435,
-          "rotX": -0.0000149509478,
-          "rotY": 0.000221701761,
-          "rotZ": -0.0000227601013,
-          "scaleX": 1.66666651,
-          "scaleY": 2.5,
-          "scaleZ": 1.66666651
+            "posX": -13.7148752,
+            "posY": 1.08641207,
+            "posZ": 27.5586147,
+            "rotX": 0.0000189354687,
+            "rotY": 0.00012031704,
+            "rotZ": 0.0000230627447,
+            "scaleX": 0.3,
+            "scaleY": 0.4,
+            "scaleZ": 0.3
         },
-        "Nickname": "Character Base",
-        "Description": "",
+        "Nickname": "Treebeard: Tree-herd",
+        "Description": "Character;3D;FreePeoples;",
         "GMNotes": "",
         "AltLookAngle": {
-          "x": 0,
-          "y": 0,
-          "z": 0
+            "x": 0,
+            "y": 0,
+            "z": 0
         },
         "ColorDiffuse": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
-        "Locked": true,
+        "Locked": false,
         "Grid": true,
         "Snap": false,
         "IgnoreFoW": false,
@@ -96,20 +41,75 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "DiffuseURL": "",
-          "NormalURL": "",
-          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "Convex": true,
-          "MaterialIndex": 4,
-          "TypeIndex": 1,
-          "CastShadows": true
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053951875/CEF9B8D356C71CC001AC3B18D87BDDC5BA1CB271/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1693900704053952470/31D1052E9E7C313E7F10B39D2CA95384DE3394ED/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 1,
+            "CastShadows": true
         },
-        "LuaScript": "",
+        "LuaScript": "#include ./Treebeard_Tree-herd.925b37.lua",
         "LuaScriptState": "",
-        "XmlUI": ""
-      }
-    ]
-  },
-  "StatesPaths": {}
+        "XmlUI": "",
+        "ChildObjects": [
+            {
+                "GUID": "c81de1",
+                "Name": "Custom_Model",
+                "Transform": {
+                    "posX": -0.117874429,
+                    "posY": -0.186095074,
+                    "posZ": -0.0566604435,
+                    "rotX": -0.0000149509478,
+                    "rotY": 0.000221701761,
+                    "rotZ": -0.0000227601013,
+                    "scaleX": 1.66666651,
+                    "scaleY": 2.5,
+                    "scaleZ": 1.66666651
+                },
+                "Nickname": "Character Base",
+                "Description": "",
+                "GMNotes": "",
+                "AltLookAngle": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "ColorDiffuse": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "LayoutGroupSortIndex": 0,
+                "Value": 0,
+                "Locked": true,
+                "Grid": true,
+                "Snap": false,
+                "IgnoreFoW": false,
+                "MeasureMovement": false,
+                "DragSelectable": true,
+                "Autoraise": true,
+                "Sticky": false,
+                "Tooltip": true,
+                "GridProjection": false,
+                "HideWhenFaceDown": false,
+                "Hands": false,
+                "CustomMesh": {
+                    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "DiffuseURL": "",
+                    "NormalURL": "",
+                    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "Convex": true,
+                    "MaterialIndex": 4,
+                    "TypeIndex": 1,
+                    "CastShadows": true
+                },
+                "LuaScript": "",
+                "LuaScriptState": "",
+                "XmlUI": ""
+            }
+        ]
+    },
+    "StatesPaths": {}
 }

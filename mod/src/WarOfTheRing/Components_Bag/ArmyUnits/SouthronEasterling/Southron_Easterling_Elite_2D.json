@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "13bbaf",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 75.07748,
-      "posY": 3.16926527,
-      "posZ": -76.61305,
-      "rotX": -0.00000700740566,
-      "rotY": 4.610191e-7,
-      "rotZ": -0.0000103520051,
-      "scaleX": 0.6,
-      "scaleY": 0.6,
-      "scaleZ": 0.6
+    "Object": {
+        "GUID": "13bbaf",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 75.07748,
+            "posY": 3.16926527,
+            "posZ": -76.61305,
+            "rotX": -0.00000700740566,
+            "rotY": 4.610191e-7,
+            "rotZ": -0.0000103520051,
+            "scaleX": 0.6,
+            "scaleY": 0.6,
+            "scaleZ": 0.6
+        },
+        "Nickname": "Southron/Easterling Elite",
+        "Description": "Elite;2D;Haradrim;Shadow;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 0.6691448,
+            "b": 0
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574847850919/73048340D1FE55D66B6FD1A61E4EE560E873CB5C/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574847850919/73048340D1FE55D66B6FD1A61E4EE560E873CB5C/",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Southron/Easterling Elite",
-    "Description": "Elite;2D;Haradrim;Shadow;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 0.6691448,
-      "b": 0
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574847850919/73048340D1FE55D66B6FD1A61E4EE560E873CB5C/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574847850919/73048340D1FE55D66B6FD1A61E4EE560E873CB5C/",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

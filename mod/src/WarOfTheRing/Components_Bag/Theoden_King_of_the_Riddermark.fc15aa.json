@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "fc15aa",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 108.894615,
-      "posY": 3.83449364,
-      "posZ": -61.2777252,
-      "rotX": 0.00014779823,
-      "rotY": 0.000479030452,
-      "rotZ": 0.000023821498,
-      "scaleX": 0.99,
-      "scaleY": 0.99,
-      "scaleZ": 0.99
-    },
-    "Nickname": "Theoden: King of the Riddermark",
-    "Description": "Character;Marble;Ruler;Sovereign;FreePeoples;KoME;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.7529412,
-      "g": 0.7529412,
-      "b": 0.7529412
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405758892/6C909C6E7632E5DDBAC5E3742E75E71C8D17C4FB/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2079031781119240314/8E7B3CE69AB1500A0B6DE24ED64686379E7A2F51/",
-      "NormalURL": "",
-      "ColliderURL": "",
-      "Convex": true,
-      "MaterialIndex": 1,
-      "TypeIndex": 1,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 0.8745098,
-          "g": 0.8117647,
-          "b": 0.745098054
+    "Object": {
+        "GUID": "fc15aa",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": 108.894615,
+            "posY": 3.83449364,
+            "posZ": -61.2777252,
+            "rotX": 0.00014779823,
+            "rotY": 0.000479030452,
+            "rotZ": 0.000023821498,
+            "scaleX": 0.99,
+            "scaleY": 0.99,
+            "scaleZ": 0.99
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 1
-      },
-      "CastShadows": true
+        "Nickname": "Theoden: King of the Riddermark",
+        "Description": "Character;Marble;Ruler;Sovereign;FreePeoples;KoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.7529412,
+            "g": 0.7529412,
+            "b": 0.7529412
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1759188782405758892/6C909C6E7632E5DDBAC5E3742E75E71C8D17C4FB/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2079031781119240314/8E7B3CE69AB1500A0B6DE24ED64686379E7A2F51/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 1,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 0.8745098,
+                    "g": 0.8117647,
+                    "b": 0.745098054
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 1
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

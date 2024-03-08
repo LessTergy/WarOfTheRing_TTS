@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "93a672",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 75.40562,
-      "posY": 3.16926575,
-      "posZ": -67.26891,
-      "rotX": -0.00000726423968,
-      "rotY": -5.39739233e-7,
-      "rotZ": -0.0000181426767,
-      "scaleX": 0.6,
-      "scaleY": 0.6,
-      "scaleZ": 0.6
+    "Object": {
+        "GUID": "93a672",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 75.40562,
+            "posY": 3.16926575,
+            "posZ": -67.26891,
+            "rotX": -0.00000726423968,
+            "rotY": -5.39739233e-7,
+            "rotZ": -0.0000181426767,
+            "scaleX": 0.6,
+            "scaleY": 0.6,
+            "scaleZ": 0.6
+        },
+        "Nickname": "Lord Elrond: Keeper of Vilya",
+        "Description": "Character;2D;FreePeoples;LoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815369980407/1AF4CFC91B072C705B5B0DB168B21E244E90BDB6/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Lord Elrond: Keeper of Vilya",
-    "Description": "Character;2D;FreePeoples;LoME;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815369980407/1AF4CFC91B072C705B5B0DB168B21E244E90BDB6/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "a220b2",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 82.62251,
-      "posY": 3.16196132,
-      "posZ": -63.9885941,
-      "rotX": -0.00000192034622,
-      "rotY": 1.38821747e-7,
-      "rotZ": -0.000008431015,
-      "scaleX": 0.6,
-      "scaleY": 0.6,
-      "scaleZ": 0.6
+    "Object": {
+        "GUID": "a220b2",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 82.62251,
+            "posY": 3.16196132,
+            "posZ": -63.9885941,
+            "rotX": -0.00000192034622,
+            "rotY": 1.38821747e-7,
+            "rotZ": -0.000008431015,
+            "scaleX": 0.6,
+            "scaleY": 0.6,
+            "scaleZ": 0.6
+        },
+        "Nickname": "The Mouth of Sauron: Black Númenórean",
+        "Description": "Minion;2D;Shadow;LoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370089201/E3EA78958F05996CB6CFFBEEBFFF2B6241672262/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Mouth of Sauron: Black Númenórean",
-    "Description": "Minion;2D;Shadow;LoME;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0,
-      "g": 0,
-      "b": 0
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370089201/E3EA78958F05996CB6CFFBEEBFFF2B6241672262/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

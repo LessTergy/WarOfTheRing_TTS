@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "fdcf7e",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 80.13999,
-      "posY": 3.18597,
-      "posZ": -74.4139252,
-      "rotX": 0.00000204819662,
-      "rotY": 7.220585e-7,
-      "rotZ": -0.00000448231231,
-      "scaleX": 0.7,
-      "scaleY": 0.7,
-      "scaleZ": 0.7
+    "Object": {
+        "GUID": "fdcf7e",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 80.13999,
+            "posY": 3.18597,
+            "posZ": -74.4139252,
+            "rotX": 0.00000204819662,
+            "rotY": 7.220585e-7,
+            "rotZ": -0.00000448231231,
+            "scaleX": 0.7,
+            "scaleY": 0.7,
+            "scaleZ": 0.7
+        },
+        "Nickname": "Dwarf Leader",
+        "Description": "Leader;2D;Dwarves;FreePeoples;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.27176702,
+            "g": 0.2565964,
+            "b": 0.03172307
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849435990/D737A261AC55B909B1675C69D48093016005805E/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849435990/D737A261AC55B909B1675C69D48093016005805E/",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Dwarf Leader",
-    "Description": "Leader;2D;Dwarves;FreePeoples;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.27176702,
-      "g": 0.2565964,
-      "b": 0.03172307
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849435990/D737A261AC55B909B1675C69D48093016005805E/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849435990/D737A261AC55B909B1675C69D48093016005805E/",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

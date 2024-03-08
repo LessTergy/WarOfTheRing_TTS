@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "d67c12",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 86.95809,
-      "posY": 3.102257,
-      "posZ": -65.2102661,
-      "rotX": 358.849274,
-      "rotY": 179.625687,
-      "rotZ": 359.533875,
-      "scaleX": 0.6,
-      "scaleY": 0.6,
-      "scaleZ": 0.6
+    "Object": {
+        "GUID": "d67c12",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 86.95809,
+            "posY": 3.102257,
+            "posZ": -65.2102661,
+            "rotX": 358.849274,
+            "rotY": 179.625687,
+            "rotZ": 359.533875,
+            "scaleX": 0.6,
+            "scaleY": 0.6,
+            "scaleZ": 0.6
+        },
+        "Nickname": "The Ring-bearers",
+        "Description": "Character;2D;FreePeoples;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849445771/1958C53B7277A2FDABF15E55744B1DF0719F7C27/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849445771/1958C53B7277A2FDABF15E55744B1DF0719F7C27/",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Ring-bearers",
-    "Description": "Character;2D;FreePeoples;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574849445771/1958C53B7277A2FDABF15E55744B1DF0719F7C27/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574849445771/1958C53B7277A2FDABF15E55744B1DF0719F7C27/",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

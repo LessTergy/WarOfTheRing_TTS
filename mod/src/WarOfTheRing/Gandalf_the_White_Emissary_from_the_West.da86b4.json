@@ -1,95 +1,30 @@
 {
-  "Object": {
-    "GUID": "da86b4",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": -3.58601284,
-      "posY": 1.05502594,
-      "posZ": 27.5101128,
-      "rotX": 0.0590664968,
-      "rotY": 0.00008017373,
-      "rotZ": 359.834961,
-      "scaleX": 0.8,
-      "scaleY": 0.8,
-      "scaleZ": 0.8
-    },
-    "Nickname": "Gandalf the White: Emissary from the West",
-    "Description": "Character;3D;FreePeoples;",
-    "GMNotes": "Region:;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176282754/07A7972C91A077EA730F9742F1FF2802FBEED5A3/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176282191/AD290B9BEEBBC71FFF0BA54D1F9178325001BE96/",
-      "NormalURL": "",
-      "ColliderURL": "",
-      "Convex": true,
-      "MaterialIndex": 3,
-      "TypeIndex": 1,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
-        },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
-    },
-    "LuaScript": "#include ./Gandalf_the_White_Emissary_from_the_West.da86b4.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "ChildObjects": [
-      {
-        "GUID": "0166c2",
+    "Object": {
+        "GUID": "da86b4",
         "Name": "Custom_Model",
         "Transform": {
-          "posX": 0.03369104,
-          "posY": -0.0537473746,
-          "posZ": -0.0284781847,
-          "rotX": 359.940948,
-          "rotY": -0.00344549888,
-          "rotZ": 0.165035084,
-          "scaleX": 0.625,
-          "scaleY": 1.24999988,
-          "scaleZ": 0.62499994
+            "posX": -3.58601284,
+            "posY": 1.05502594,
+            "posZ": 27.5101128,
+            "rotX": 0.0590664968,
+            "rotY": 0.00008017373,
+            "rotZ": 359.834961,
+            "scaleX": 0.8,
+            "scaleY": 0.8,
+            "scaleZ": 0.8
         },
-        "Nickname": "Character Base",
-        "Description": "",
+        "Nickname": "Gandalf the White: Emissary from the West",
+        "Description": "Character;3D;FreePeoples;",
         "GMNotes": "",
         "AltLookAngle": {
-          "x": 0,
-          "y": 0,
-          "z": 0
+            "x": 0,
+            "y": 0,
+            "z": 0
         },
         "ColorDiffuse": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -100,26 +35,91 @@
         "MeasureMovement": false,
         "DragSelectable": true,
         "Autoraise": true,
-        "Sticky": false,
+        "Sticky": true,
         "Tooltip": true,
         "GridProjection": false,
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "DiffuseURL": "",
-          "NormalURL": "",
-          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "Convex": true,
-          "MaterialIndex": 4,
-          "TypeIndex": 1,
-          "CastShadows": true
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176282754/07A7972C91A077EA730F9742F1FF2802FBEED5A3/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176282191/AD290B9BEEBBC71FFF0BA54D1F9178325001BE96/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 1,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
         },
-        "LuaScript": "",
+        "LuaScript": "#include ./Gandalf_the_White_Emissary_from_the_West.da86b4.lua",
         "LuaScriptState": "",
-        "XmlUI": ""
-      }
-    ]
-  },
-  "StatesPaths": {}
+        "XmlUI": "",
+        "ChildObjects": [
+            {
+                "GUID": "0166c2",
+                "Name": "Custom_Model",
+                "Transform": {
+                    "posX": 0.03369104,
+                    "posY": -0.0537473746,
+                    "posZ": -0.0284781847,
+                    "rotX": 359.940948,
+                    "rotY": -0.00344549888,
+                    "rotZ": 0.165035084,
+                    "scaleX": 0.625,
+                    "scaleY": 1.24999988,
+                    "scaleZ": 0.62499994
+                },
+                "Nickname": "Character Base",
+                "Description": "",
+                "GMNotes": "",
+                "AltLookAngle": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "ColorDiffuse": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "LayoutGroupSortIndex": 0,
+                "Value": 0,
+                "Locked": false,
+                "Grid": true,
+                "Snap": false,
+                "IgnoreFoW": false,
+                "MeasureMovement": false,
+                "DragSelectable": true,
+                "Autoraise": true,
+                "Sticky": false,
+                "Tooltip": true,
+                "GridProjection": false,
+                "HideWhenFaceDown": false,
+                "Hands": false,
+                "CustomMesh": {
+                    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "DiffuseURL": "",
+                    "NormalURL": "",
+                    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "Convex": true,
+                    "MaterialIndex": 4,
+                    "TypeIndex": 1,
+                    "CastShadows": true
+                },
+                "LuaScript": "",
+                "LuaScriptState": "",
+                "XmlUI": ""
+            }
+        ]
+    },
+    "StatesPaths": {}
 }

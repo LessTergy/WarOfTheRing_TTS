@@ -1,99 +1,34 @@
 {
-  "Object": {
-    "GUID": "9f41c3",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 31.9439869,
-      "posY": 1.017835,
-      "posZ": -27.288084,
-      "rotX": 0.00001189947,
-      "rotY": 89.9966,
-      "rotZ": -0.0033337574,
-      "scaleX": 0.299999982,
-      "scaleY": 0.3,
-      "scaleZ": 0.299999982
-    },
-    "Nickname": "The Witch-King: Chief of the Ring Wraiths",
-    "Description": "Minion;3D;Shadow;LoME;",
-    "GMNotes": "Region:;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.355400115,
-      "g": 0.355400115,
-      "b": 0.355400115
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1752443255057126933/D97D9E9A1828BA493D7DBF3E7DAC25B360805A76/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1752443255057127784/224E133B12F34CE5543C4FC3167D91C99BA4DD3F/",
-      "NormalURL": "",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/2277197144476160497/B0BEB48A6B525F3A6468024AE1A19100745E0720/",
-      "Convex": true,
-      "MaterialIndex": 3,
-      "TypeIndex": 1,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
-        },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
-    },
-    "LuaScript": "#include ./The_Witch-King_Chief_of_the_Ring_Wraiths.9f41c3.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "ChildObjects": [
-      {
-        "GUID": "2f50a2",
+    "Object": {
+        "GUID": "9f41c3",
         "Name": "Custom_Model",
         "Transform": {
-          "posX": 0.9007021,
-          "posY": 2.86285925,
-          "posZ": 0.0482213534,
-          "rotX": 6.015752e-9,
-          "rotY": 5.771901,
-          "rotZ": -0.00000743264036,
-          "scaleX": 1.00000012,
-          "scaleY": 0.99999994,
-          "scaleZ": 1.00000012
+            "posX": 31.9439869,
+            "posY": 1.017835,
+            "posZ": -27.288084,
+            "rotX": 0.00001189947,
+            "rotY": 89.9966,
+            "rotZ": -0.0033337574,
+            "scaleX": 0.299999982,
+            "scaleY": 0.3,
+            "scaleZ": 0.299999982
         },
-        "Nickname": "Ring Wraith",
-        "Description": "",
+        "Nickname": "The Witch-King: Chief of the Ring Wraiths",
+        "Description": "Minion;3D;Shadow;LoME;",
         "GMNotes": "",
         "AltLookAngle": {
-          "x": 0,
-          "y": 0,
-          "z": 0
+            "x": 0,
+            "y": 0,
+            "z": 0
         },
         "ColorDiffuse": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+            "r": 0.355400115,
+            "g": 0.355400115,
+            "b": 0.355400115
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
-        "Locked": true,
+        "Locked": false,
         "Grid": true,
         "Snap": true,
         "IgnoreFoW": false,
@@ -106,85 +41,150 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1752443255057120418/212369730C0FBF753B0E8B0B4A5543A984B68B9C/",
-          "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1752443255057123180/3B69E5993F66DFBEAF5A49AA3B3ADAAF4FFF2511/",
-          "NormalURL": "",
-          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1752443255057124238/F06640D4CCDBAE95D4C7C851628515321DD16096/",
-          "Convex": true,
-          "MaterialIndex": 3,
-          "TypeIndex": 1,
-          "CustomShader": {
-            "SpecularColor": {
-              "r": 1,
-              "g": 1,
-              "b": 1
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1752443255057126933/D97D9E9A1828BA493D7DBF3E7DAC25B360805A76/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1752443255057127784/224E133B12F34CE5543C4FC3167D91C99BA4DD3F/",
+            "NormalURL": "",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/2277197144476160497/B0BEB48A6B525F3A6468024AE1A19100745E0720/",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 1,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
             },
-            "SpecularIntensity": 0,
-            "SpecularSharpness": 2,
-            "FresnelStrength": 0
-          },
-          "CastShadows": true
+            "CastShadows": true
         },
-        "LuaScript": "",
+        "LuaScript": "#include ./The_Witch-King_Chief_of_the_Ring_Wraiths.9f41c3.lua",
         "LuaScriptState": "",
-        "XmlUI": ""
-      },
-      {
-        "GUID": "665eef",
-        "Name": "Custom_Model",
-        "Transform": {
-          "posX": 0.290320963,
-          "posY": -0.0195203014,
-          "posZ": 0.04433083,
-          "rotX": 0.003334911,
-          "rotY": 270.00296,
-          "rotZ": 0.0000121607509,
-          "scaleX": 2.00000024,
-          "scaleY": 3.333333,
-          "scaleZ": 2.00000024
-        },
-        "Nickname": "Character Base",
-        "Description": "",
-        "GMNotes": "",
-        "AltLookAngle": {
-          "x": 0,
-          "y": 0,
-          "z": 0
-        },
-        "ColorDiffuse": {
-          "r": 0,
-          "g": 0,
-          "b": 0
-        },
-        "LayoutGroupSortIndex": 0,
-        "Value": 0,
-        "Locked": true,
-        "Grid": true,
-        "Snap": false,
-        "IgnoreFoW": false,
-        "MeasureMovement": false,
-        "DragSelectable": true,
-        "Autoraise": true,
-        "Sticky": false,
-        "Tooltip": true,
-        "GridProjection": false,
-        "HideWhenFaceDown": false,
-        "Hands": false,
-        "CustomMesh": {
-          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "DiffuseURL": "",
-          "NormalURL": "",
-          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "Convex": true,
-          "MaterialIndex": 1,
-          "TypeIndex": 1,
-          "CastShadows": true
-        },
-        "LuaScript": "",
-        "LuaScriptState": "",
-        "XmlUI": ""
-      }
-    ]
-  },
-  "StatesPaths": {}
+        "XmlUI": "",
+        "ChildObjects": [
+            {
+                "GUID": "2f50a2",
+                "Name": "Custom_Model",
+                "Transform": {
+                    "posX": 0.9007021,
+                    "posY": 2.86285925,
+                    "posZ": 0.0482213534,
+                    "rotX": 6.015752e-9,
+                    "rotY": 5.771901,
+                    "rotZ": -0.00000743264036,
+                    "scaleX": 1.00000012,
+                    "scaleY": 0.99999994,
+                    "scaleZ": 1.00000012
+                },
+                "Nickname": "Ring Wraith",
+                "Description": "",
+                "GMNotes": "",
+                "AltLookAngle": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "ColorDiffuse": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "LayoutGroupSortIndex": 0,
+                "Value": 0,
+                "Locked": true,
+                "Grid": true,
+                "Snap": true,
+                "IgnoreFoW": false,
+                "MeasureMovement": false,
+                "DragSelectable": true,
+                "Autoraise": true,
+                "Sticky": true,
+                "Tooltip": true,
+                "GridProjection": false,
+                "HideWhenFaceDown": false,
+                "Hands": false,
+                "CustomMesh": {
+                    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1752443255057120418/212369730C0FBF753B0E8B0B4A5543A984B68B9C/",
+                    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1752443255057123180/3B69E5993F66DFBEAF5A49AA3B3ADAAF4FFF2511/",
+                    "NormalURL": "",
+                    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1752443255057124238/F06640D4CCDBAE95D4C7C851628515321DD16096/",
+                    "Convex": true,
+                    "MaterialIndex": 3,
+                    "TypeIndex": 1,
+                    "CustomShader": {
+                        "SpecularColor": {
+                            "r": 1,
+                            "g": 1,
+                            "b": 1
+                        },
+                        "SpecularIntensity": 0,
+                        "SpecularSharpness": 2,
+                        "FresnelStrength": 0
+                    },
+                    "CastShadows": true
+                },
+                "LuaScript": "",
+                "LuaScriptState": "",
+                "XmlUI": ""
+            },
+            {
+                "GUID": "665eef",
+                "Name": "Custom_Model",
+                "Transform": {
+                    "posX": 0.290320963,
+                    "posY": -0.0195203014,
+                    "posZ": 0.04433083,
+                    "rotX": 0.003334911,
+                    "rotY": 270.00296,
+                    "rotZ": 0.0000121607509,
+                    "scaleX": 2.00000024,
+                    "scaleY": 3.333333,
+                    "scaleZ": 2.00000024
+                },
+                "Nickname": "Character Base",
+                "Description": "",
+                "GMNotes": "",
+                "AltLookAngle": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "ColorDiffuse": {
+                    "r": 0,
+                    "g": 0,
+                    "b": 0
+                },
+                "LayoutGroupSortIndex": 0,
+                "Value": 0,
+                "Locked": true,
+                "Grid": true,
+                "Snap": false,
+                "IgnoreFoW": false,
+                "MeasureMovement": false,
+                "DragSelectable": true,
+                "Autoraise": true,
+                "Sticky": false,
+                "Tooltip": true,
+                "GridProjection": false,
+                "HideWhenFaceDown": false,
+                "Hands": false,
+                "CustomMesh": {
+                    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "DiffuseURL": "",
+                    "NormalURL": "",
+                    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "Convex": true,
+                    "MaterialIndex": 1,
+                    "TypeIndex": 1,
+                    "CastShadows": true
+                },
+                "LuaScript": "",
+                "LuaScriptState": "",
+                "XmlUI": ""
+            }
+        ]
+    },
+    "StatesPaths": {}
 }

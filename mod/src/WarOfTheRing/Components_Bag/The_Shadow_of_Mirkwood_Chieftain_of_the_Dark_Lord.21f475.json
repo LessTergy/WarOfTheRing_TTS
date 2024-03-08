@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "21f475",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 85.81262,
-      "posY": 3.15944719,
-      "posZ": -65.94289,
-      "rotX": -0.00000250312451,
-      "rotY": -0.000425669074,
-      "rotZ": 0.00000522937171,
-      "scaleX": 0.7000003,
-      "scaleY": 0.7000003,
-      "scaleZ": 0.7000003
+    "Object": {
+        "GUID": "21f475",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 85.81262,
+            "posY": 3.15944719,
+            "posZ": -65.94289,
+            "rotX": -0.00000250312451,
+            "rotY": -0.000425669074,
+            "rotZ": 0.00000522937171,
+            "scaleX": 0.7000003,
+            "scaleY": 0.7000003,
+            "scaleZ": 0.7000003
+        },
+        "Nickname": "The Shadow of Mirkwood: Chieftain of the Dark Lord",
+        "Description": "Character;2D;Ruler;Sovereign;FreePeoples;KoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.7058823,
+            "g": 0,
+            "b": 0
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353079807/920C87F70BFAE4A15722A5CBEB1598B75D2843C4/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353079807/920C87F70BFAE4A15722A5CBEB1598B75D2843C4/",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Shadow of Mirkwood: Chieftain of the Dark Lord",
-    "Description": "Character;2D;Ruler;Sovereign;FreePeoples;KoME;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.7058823,
-      "g": 0,
-      "b": 0
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353079807/920C87F70BFAE4A15722A5CBEB1598B75D2843C4/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353079807/920C87F70BFAE4A15722A5CBEB1598B75D2843C4/",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

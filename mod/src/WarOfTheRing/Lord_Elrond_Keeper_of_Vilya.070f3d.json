@@ -1,125 +1,125 @@
 {
-  "Object": {
-    "GUID": "070f3d",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 11.5399933,
-      "posY": 1.45206058,
-      "posZ": 27.499897,
-      "rotX": -6.40335259e-7,
-      "rotY": 180.000549,
-      "rotZ": 0.00000105387369,
-      "scaleX": 0.395999968,
-      "scaleY": 0.396,
-      "scaleZ": 0.395999968
-    },
-    "Nickname": "Lord Elrond: Keeper of Vilya",
-    "Description": "Character;3D;FreePeoples;LoME;",
-    "GMNotes": "Region:;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.9999998,
-      "g": 0.9921643,
-      "b": 0.9999998
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176236738/5F6506E11B9C3DFCF817F54CB239E6179AD25467/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176237055/CA3541328BC73BE393EA3AFEAC2052927D1C2904/",
-      "NormalURL": "",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176237963/E429BE6C92B5138E2A134573832B3BE56C133B2F/",
-      "Convex": true,
-      "MaterialIndex": 3,
-      "TypeIndex": 1,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
-        },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
-    },
-    "LuaScript": "#include ./Lord_Elrond_Keeper_of_Vilya.070f3d.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "ChildObjects": [
-      {
-        "GUID": "cd1a0a",
+    "Object": {
+        "GUID": "070f3d",
         "Name": "Custom_Model",
         "Transform": {
-          "posX": -0.00342903612,
-          "posY": -1.1113292,
-          "posZ": -0.0889315158,
-          "rotX": -0.00000147919422,
-          "rotY": 210.000015,
-          "rotZ": 0.00000185162332,
-          "scaleX": 1.26262629,
-          "scaleY": 2.52525258,
-          "scaleZ": 1.26262629
+            "posX": 11.5399933,
+            "posY": 1.45206058,
+            "posZ": 27.499897,
+            "rotX": -6.40335259e-7,
+            "rotY": 180.000549,
+            "rotZ": 0.00000105387369,
+            "scaleX": 0.395999968,
+            "scaleY": 0.396,
+            "scaleZ": 0.395999968
         },
-        "Nickname": "Character Base",
-        "Description": "",
+        "Nickname": "Lord Elrond: Keeper of Vilya",
+        "Description": "Character;3D;FreePeoples;LoME;",
         "GMNotes": "",
         "AltLookAngle": {
-          "x": 0,
-          "y": 0,
-          "z": 0
+            "x": 0,
+            "y": 0,
+            "z": 0
         },
         "ColorDiffuse": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+            "r": 0.9999998,
+            "g": 0.9921643,
+            "b": 0.9999998
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
-        "Locked": true,
+        "Locked": false,
         "Grid": true,
         "Snap": false,
         "IgnoreFoW": false,
         "MeasureMovement": false,
         "DragSelectable": true,
         "Autoraise": true,
-        "Sticky": false,
+        "Sticky": true,
         "Tooltip": true,
         "GridProjection": false,
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "DiffuseURL": "",
-          "NormalURL": "",
-          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "Convex": true,
-          "MaterialIndex": 4,
-          "TypeIndex": 1,
-          "CastShadows": true
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176236738/5F6506E11B9C3DFCF817F54CB239E6179AD25467/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176237055/CA3541328BC73BE393EA3AFEAC2052927D1C2904/",
+            "NormalURL": "",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176237963/E429BE6C92B5138E2A134573832B3BE56C133B2F/",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 1,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
         },
-        "LuaScript": "",
+        "LuaScript": "#include ./Lord_Elrond_Keeper_of_Vilya.070f3d.lua",
         "LuaScriptState": "",
-        "XmlUI": ""
-      }
-    ]
-  },
-  "StatesPaths": {}
+        "XmlUI": "",
+        "ChildObjects": [
+            {
+                "GUID": "cd1a0a",
+                "Name": "Custom_Model",
+                "Transform": {
+                    "posX": -0.00342903612,
+                    "posY": -1.1113292,
+                    "posZ": -0.0889315158,
+                    "rotX": -0.00000147919422,
+                    "rotY": 210.000015,
+                    "rotZ": 0.00000185162332,
+                    "scaleX": 1.26262629,
+                    "scaleY": 2.52525258,
+                    "scaleZ": 1.26262629
+                },
+                "Nickname": "Character Base",
+                "Description": "",
+                "GMNotes": "",
+                "AltLookAngle": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "ColorDiffuse": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "LayoutGroupSortIndex": 0,
+                "Value": 0,
+                "Locked": true,
+                "Grid": true,
+                "Snap": false,
+                "IgnoreFoW": false,
+                "MeasureMovement": false,
+                "DragSelectable": true,
+                "Autoraise": true,
+                "Sticky": false,
+                "Tooltip": true,
+                "GridProjection": false,
+                "HideWhenFaceDown": false,
+                "Hands": false,
+                "CustomMesh": {
+                    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "DiffuseURL": "",
+                    "NormalURL": "",
+                    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "Convex": true,
+                    "MaterialIndex": 4,
+                    "TypeIndex": 1,
+                    "CastShadows": true
+                },
+                "LuaScript": "",
+                "LuaScriptState": "",
+                "XmlUI": ""
+            }
+        ]
+    },
+    "StatesPaths": {}
 }

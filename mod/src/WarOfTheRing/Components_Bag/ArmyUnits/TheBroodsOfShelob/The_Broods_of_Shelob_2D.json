@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "665e84",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 87.12915,
-      "posY": 3.15441,
-      "posZ": -64.69789,
-      "rotX": -0.00000113982651,
-      "rotY": 0.000117174823,
-      "rotZ": -0.00000469575571,
-      "scaleX": 0.495,
-      "scaleY": 0.495,
-      "scaleZ": 0.495
+    "Object": {
+        "GUID": "665e84",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 87.12915,
+            "posY": 3.15441,
+            "posZ": -64.69789,
+            "rotX": -0.00000113982651,
+            "rotY": 0.000117174823,
+            "rotZ": -0.00000469575571,
+            "scaleX": 0.495,
+            "scaleY": 0.495,
+            "scaleZ": 0.495
+        },
+        "Nickname": "The Broods of Shelob",
+        "Description": "Faction;2D;Spiders;Shadow;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 0.196077555,
+            "b": 0.196077555
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370214045/9FEAE02F33306184426BC60A594A78AA77D44564/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Broods of Shelob",
-    "Description": "Faction;2D;Spiders;Shadow;WoME;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 0.196077555,
-      "b": 0.196077555
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815370214045/9FEAE02F33306184426BC60A594A78AA77D44564/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

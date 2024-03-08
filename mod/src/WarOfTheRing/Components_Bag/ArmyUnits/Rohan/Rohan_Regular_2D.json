@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "e477f2",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 82.4145355,
-      "posY": 3.135188,
-      "posZ": -86.61466,
-      "rotX": -0.00000565846767,
-      "rotY": 0.00000348161279,
-      "rotZ": -0.0000346845336,
-      "scaleX": 0.396,
-      "scaleY": 0.396,
-      "scaleZ": 0.396
+    "Object": {
+        "GUID": "e477f2",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 82.4145355,
+            "posY": 3.135188,
+            "posZ": -86.61466,
+            "rotX": -0.00000565846767,
+            "rotY": 0.00000348161279,
+            "rotZ": -0.0000346845336,
+            "scaleX": 0.396,
+            "scaleY": 0.396,
+            "scaleZ": 0.396
+        },
+        "Nickname": "Rohan Regular",
+        "Description": "Regular;2D;Rohan;FreePeoples;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.192147464,
+            "g": 0.5882353,
+            "b": 0
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574850210610/21AF8F063968224D9F7FEA4E1A22BED30344BF4F/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574850210610/21AF8F063968224D9F7FEA4E1A22BED30344BF4F/",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Rohan Regular",
-    "Description": "Regular;2D;Rohan;FreePeoples;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.192147464,
-      "g": 0.5882353,
-      "b": 0
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574850210610/21AF8F063968224D9F7FEA4E1A22BED30344BF4F/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731574850210610/21AF8F063968224D9F7FEA4E1A22BED30344BF4F/",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

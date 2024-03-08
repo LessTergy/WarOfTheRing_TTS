@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "e6840f",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 76.0753,
-      "posY": 3.15944767,
-      "posZ": -65.87028,
-      "rotX": 0.0000256577714,
-      "rotY": 179.969131,
-      "rotZ": -0.0000372527647,
-      "scaleX": 0.7000003,
-      "scaleY": 0.7000003,
-      "scaleZ": 0.7000003
+    "Object": {
+        "GUID": "e6840f",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 76.0753,
+            "posY": 3.15944767,
+            "posZ": -65.87028,
+            "rotX": 0.0000256577714,
+            "rotY": 179.969131,
+            "rotZ": -0.0000372527647,
+            "scaleX": 0.7000003,
+            "scaleY": 0.7000003,
+            "scaleZ": 0.7000003
+        },
+        "Nickname": "Denethor: Lord Steward of Gondor",
+        "Description": "Character;2D;Ruler;Sovereign;FreePeoples;KoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.5,
+            "g": 0.5,
+            "b": 0.5
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353116114/CCB4F45D6D7E789254CB5062642BEFF182C7964C/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353116114/CCB4F45D6D7E789254CB5062642BEFF182C7964C/",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Denethor: Lord Steward of Gondor",
-    "Description": "Character;2D;Ruler;Sovereign;FreePeoples;KoME;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.5,
-      "g": 0.5,
-      "b": 0.5
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353116114/CCB4F45D6D7E789254CB5062642BEFF182C7964C/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353116114/CCB4F45D6D7E789254CB5062642BEFF182C7964C/",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

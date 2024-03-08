@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "e51819",
-    "Name": "Figurine_Custom",
-    "Transform": {
-      "posX": 71.51589,
-      "posY": 3.170277,
-      "posZ": -67.5886841,
-      "rotX": -0.000002716291,
-      "rotY": 2.25868675e-7,
-      "rotZ": 0.00000437559038,
-      "scaleX": 0.606060565,
-      "scaleY": 0.606060565,
-      "scaleZ": 0.606060565
+    "Object": {
+        "GUID": "e51819",
+        "Name": "Figurine_Custom",
+        "Transform": {
+            "posX": 71.51589,
+            "posY": 3.170277,
+            "posZ": -67.5886841,
+            "rotX": -0.000002716291,
+            "rotY": 2.25868675e-7,
+            "rotZ": 0.00000437559038,
+            "scaleX": 0.606060565,
+            "scaleY": 0.606060565,
+            "scaleZ": 0.606060565
+        },
+        "Nickname": "Treebeard: Tree-herd",
+        "Description": "Character;2D;FreePeoples;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815369910734/D885E63F8781E39DDE1FBC610F51F2A66AE9A57D/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Treebeard: Tree-herd",
-    "Description": "Character;2D;FreePeoples;",
-    "GMNotes": "Region:out of play;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815369910734/D885E63F8781E39DDE1FBC610F51F2A66AE9A57D/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

@@ -1,85 +1,30 @@
 {
-  "Object": {
-    "GUID": "0df4d4",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 1.45262051,
-      "posY": 1.06137419,
-      "posZ": 27.4903526,
-      "rotX": 0.0000386566353,
-      "rotY": 0.00107883429,
-      "rotZ": 0.0000487282559,
-      "scaleX": 0.198,
-      "scaleY": 0.198,
-      "scaleZ": 0.198
-    },
-    "Nickname": "Gollum",
-    "Description": "Character;3D;Companion;FreePeoples;",
-    "GMNotes": "Region:;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176223704/29DB3899F226EA4353F832FF6CF15E345784F721/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176181651/24F4FFFBA63AC2A193E6506DDF9AA870EBAE54BD/",
-      "NormalURL": "",
-      "ColliderURL": "",
-      "Convex": true,
-      "MaterialIndex": 1,
-      "TypeIndex": 1,
-      "CastShadows": true
-    },
-    "LuaScript": "#include ./Gollum.0df4d4.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "ChildObjects": [
-      {
-        "GUID": "f2f05c",
+    "Object": {
+        "GUID": "0df4d4",
         "Name": "Custom_Model",
         "Transform": {
-          "posX": -0.0290156752,
-          "posY": -0.249495357,
-          "posZ": -0.009518196,
-          "rotX": 0.00004849126,
-          "rotY": 89.98438,
-          "rotZ": -0.0000397999356,
-          "scaleX": 2.52525163,
-          "scaleY": 5.050505,
-          "scaleZ": 2.52525163
+            "posX": 1.45262051,
+            "posY": 1.06137419,
+            "posZ": 27.4903526,
+            "rotX": 0.0000386566353,
+            "rotY": 0.00107883429,
+            "rotZ": 0.0000487282559,
+            "scaleX": 0.198,
+            "scaleY": 0.198,
+            "scaleZ": 0.198
         },
-        "Nickname": "Character Base",
-        "Description": "",
+        "Nickname": "Gollum",
+        "Description": "Character;3D;Companion;FreePeoples;",
         "GMNotes": "",
         "AltLookAngle": {
-          "x": 0,
-          "y": 0,
-          "z": 0
+            "x": 0,
+            "y": 0,
+            "z": 0
         },
         "ColorDiffuse": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -90,26 +35,81 @@
         "MeasureMovement": false,
         "DragSelectable": true,
         "Autoraise": true,
-        "Sticky": false,
+        "Sticky": true,
         "Tooltip": true,
         "GridProjection": false,
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-          "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "DiffuseURL": "",
-          "NormalURL": "",
-          "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
-          "Convex": true,
-          "MaterialIndex": 1,
-          "TypeIndex": 1,
-          "CastShadows": true
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176223704/29DB3899F226EA4353F832FF6CF15E345784F721/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1593666374176181651/24F4FFFBA63AC2A193E6506DDF9AA870EBAE54BD/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 1,
+            "CastShadows": true
         },
-        "LuaScript": "",
+        "LuaScript": "#include ./Gollum.0df4d4.lua",
         "LuaScriptState": "",
-        "XmlUI": ""
-      }
-    ]
-  },
-  "StatesPaths": {}
+        "XmlUI": "",
+        "ChildObjects": [
+            {
+                "GUID": "f2f05c",
+                "Name": "Custom_Model",
+                "Transform": {
+                    "posX": -0.0290156752,
+                    "posY": -0.249495357,
+                    "posZ": -0.009518196,
+                    "rotX": 0.00004849126,
+                    "rotY": 89.98438,
+                    "rotZ": -0.0000397999356,
+                    "scaleX": 2.52525163,
+                    "scaleY": 5.050505,
+                    "scaleZ": 2.52525163
+                },
+                "Nickname": "Character Base",
+                "Description": "",
+                "GMNotes": "",
+                "AltLookAngle": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "ColorDiffuse": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "LayoutGroupSortIndex": 0,
+                "Value": 0,
+                "Locked": false,
+                "Grid": true,
+                "Snap": false,
+                "IgnoreFoW": false,
+                "MeasureMovement": false,
+                "DragSelectable": true,
+                "Autoraise": true,
+                "Sticky": false,
+                "Tooltip": true,
+                "GridProjection": false,
+                "HideWhenFaceDown": false,
+                "Hands": false,
+                "CustomMesh": {
+                    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "DiffuseURL": "",
+                    "NormalURL": "",
+                    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "Convex": true,
+                    "MaterialIndex": 1,
+                    "TypeIndex": 1,
+                    "CastShadows": true
+                },
+                "LuaScript": "",
+                "LuaScriptState": "",
+                "XmlUI": ""
+            }
+        ]
+    },
+    "StatesPaths": {}
 }
