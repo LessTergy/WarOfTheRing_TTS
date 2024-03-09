@@ -11,27 +11,27 @@ Settings = {
 
 local ArmiesSearchConfig = {
     IncludingName = nil,
-    ExcludingName = "Nazgûl",
+    ExcludingName = "Nazgul",
     Patterns = { "Regular;", "Elite;", "Leader;" },
     PositionOffset = 0
 }
 
 local CharactersSearchConfig = {
     IncludingName = nil,
-    ExcludingName = "Nazgûl",
+    ExcludingName = "Nazgul",
     Patterns = { "Character;", "Minion;" },
     PositionOffset = 1
 }
 
 local FactionsSearchConfig = {
     IncludingName = nil,
-    ExcludingName = "Nazgûl",
+    ExcludingName = "Nazgul",
     Patterns = { "Faction;" },
     PositionOffset = 2
 }
 
 local NazgulSearchConfig = {
-    IncludingName = "Nazgûl",
+    IncludingName = "Nazgul",
     ExcludingName = nil,
     Patterns = { "Leader;" },
     PositionOffset = 3
@@ -1130,6 +1130,7 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
         --go through all objects and look for those to replace...
         for _, Obj in pairs(AllObjects) do
             local NewObj = nil
+            local position = Obj.getPosition()
 
             if not ObjectIsFigurine(Obj) then
                 goto continue
@@ -1143,9 +1144,9 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
                 goto continue
             end
 
-            NewObj = Template.clone({ position = Obj.getPosition() })
+            NewObj = Template.clone({ position })
             NewObj.setLock(false)
-            NewObj.setPosition({ Obj.getPosition().x, Obj.getPosition().y + 1, Obj.getPosition().z })
+            NewObj.setPosition({ position.x, position.y + 1, position.z })
             Obj.destruct()
 
             ::continue::
@@ -1157,10 +1158,16 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
 end
 
 function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
+    log("Start GetObjectFromComponentBag")
+
     local SearchList = {}
     local settingPattern = SettingType .. ";"
 
     for _, Item in pairs(ComponentBag.getObjects()) do
+        if Item.name == nil or Item.description == nil then
+            goto continue
+        end
+
         if SearchConfig.ExcludingName ~= nil and Item.name == SearchConfig.ExcludingName then
             goto continue
         end
@@ -1176,6 +1183,7 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
 
         for _, Pattern in pairs(SearchConfig.Patterns) do
             if string.find(Item.description, Pattern) ~= nil then
+                log("Found Object - " .. Item.description)
                 table.insert(SearchList, Item.guid)
                 goto continue
             end
@@ -1224,31 +1232,21 @@ function UpdateNazgul(ComponentBag, AllObjects)
 end
 
 function UpdateSettlements(AllObjects)
-    local Group = 10
-
     for _, Obj in pairs(AllObjects) do
-        TryUpdateSettlementObject(Obj)
-        coroutine.yield(0)
+        local result = TryUpdateSettlementObject(Obj)
 
-        Group = Group - 1
-        if Group < 0 then
+        if result then
             coroutine.yield(0)
-            Group = 10
         end
     end
 end
 
 function UpdateDices(AllObjects)
-    local Group = 10
-
     for _, Obj in pairs(AllObjects) do
-        TryUpdateDiceObject(Obj)
-        coroutine.yield(0)
+        local result = TryUpdateDiceObject(Obj)
 
-        Group = Group - 1
-        if Group < 0 then
+        if result then
             coroutine.yield(0)
-            Group = 10
         end
     end
 end
@@ -1361,11 +1359,13 @@ function TryUpdateDiceObject(OldDiceObj)
             coroutine.yield(0)
 
             UpdateDiceId(description, newDiceObj, IDs)
-
             GamePanel.setTable("IDs", IDs)
-            break
+
+            return true
         end
     end
+
+    return false
 end
 
 function UpdateDiceId(description, newDiceObj, IDs)

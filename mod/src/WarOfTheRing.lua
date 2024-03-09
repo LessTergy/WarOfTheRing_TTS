@@ -13384,7 +13384,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
         -- move 1 Nazgul from Barad~Dur to Eastemnet.
         PositionUnit(
             {
-                Name = "Nazgûl",
+                Name = "Nazgul",
                 FromLocation = "Barad~Dur",
                 ToLocation = "Eastemnet",
                 Smooth = true,
@@ -13501,7 +13501,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
         -- move 1 Nazgul from Reserves to North Ithilian. da05fb {16.61, 0.98, -5.17}
         PositionUnit(
             {
-                Name = "Nazgûl",
+                Name = "Nazgul",
                 FromLocation = "Nazgul Reinforcements",
                 ToLocation = "North Ithilien",
                 Smooth = true,
@@ -13534,7 +13534,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
         -- move 1 Nazgul from Reserves to Dagorlad. cb19dc {20.87, 0.98, -0.48}
         PositionUnit(
             {
-                Name = "Nazgûl",
+                Name = "Nazgul",
                 FromLocation = "Nazgul Reinforcements",
                 ToLocation = "Dagorlad",
                 Smooth = true,
@@ -13545,7 +13545,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
         -- move 1 Nazgul from Reserves to North Rhun. 9fe34b {26.01, 0.98, 13.38}
         PositionUnit(
             {
-                Name = "Nazgûl",
+                Name = "Nazgul",
                 FromLocation = "Nazgul Reinforcements",
                 ToLocation = "North Rhun",
                 Smooth = true,
@@ -14212,7 +14212,7 @@ function UnitEvent(Params)
                         Params.UnitObj.getPosition().z > -BoardZ
                     then
                         -- sound effect?
-                        if Params.UnitObj.getName() == "Nazgûl" then
+                        if Params.UnitObj.getName() == "Nazgul" then
                             local Scream = getObjectFromGUID("c35be9").getVar("Scream")
                             if Scream == "Never" then
                                 -- do not scream please.
@@ -14337,7 +14337,7 @@ function UnitEvent(Params)
                                         broadcastToAll("Warning: Saruman can never leave Orthanc.", { 1, 1, 0 })
                                     end
                                 elseif
-                                    Params.UnitObj.getName() == "Nazgûl" or
+                                    Params.UnitObj.getName() == "Nazgul" or
                                     string.find(Params.UnitObj.getName(), "The Witch-King") ~= nil
                                 then
                                     -- Nazgul cannot enter region with a stronghold controlled by FP unless it is besieged...
@@ -14347,7 +14347,7 @@ function UnitEvent(Params)
                                         AllyArmyCount < 1
                                     then
                                         printToAll(
-                                            "Reminder: Nazgûl cannot enter a Region with a Stronghold controlled by the Free Peoples unless it is besieged.",
+                                            "Reminder: Nazgul cannot enter a Region with a Stronghold controlled by the Free Peoples unless it is besieged.",
                                             { 1, 1, 0 }
                                         )
                                     end
@@ -16819,8 +16819,8 @@ local CHARACTER_DB = {
     },
     ["Gandalf the White: Emissary from the West"] = {
         leadership = 1,
-        note = "Gandalf the White: Emissary from the West -  May forfeit 1 Leadership to cancel Nazgûl Leadership",
-        short_note = "Gandalf the White -  Forfeit 1 Leadership to cancel Nazgûl Leadership"
+        note = "Gandalf the White: Emissary from the West -  May forfeit 1 Leadership to cancel Nazgul Leadership",
+        short_note = "Gandalf the White -  Forfeit 1 Leadership to cancel Nazgul Leadership"
     },
     ["Gandalf the Grey"] = {
         lookup_index = 2
@@ -16897,7 +16897,7 @@ local CHARACTER_DB = {
     },
     ["The Mouth of Sauron: Lieutenant of Barad~Dur"] = {
         leadership = 2,
-        note = "The Mouth of Sauron: Lieutenant of Barad-Dûr",
+        note = "The Mouth of Sauron: Lieutenant of Barad-Dur",
         short_note = "The Mouth of Sauron"
     },
     ["Peregrin"] = {
@@ -17162,7 +17162,7 @@ function printArmyInfo(side_to_count, info)
         colour
     )
     if (side_to_count == "sa") then
-        printToAll("Minions: " .. info.characters .. "        Nazgûl: " .. info.nazgul, colour)
+        printToAll("Minions: " .. info.characters .. "        Nazgul: " .. info.nazgul, colour)
     else
         printToAll("Companions: " .. info.characters, colour)
     end
