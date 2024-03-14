@@ -85,7 +85,6 @@ function InitPreferences()
 end
 
 function UpdateSettingsCache()
-    print("UpdateSettingsCache")
     SettingsCache = DeepCopyTable(Settings)
 end
 
@@ -1146,17 +1145,21 @@ end
 function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
     coroutine.yield(0)
 
-    local TemplateList = GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
+    local TemplateGuidList = GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
     coroutine.yield(0)
 
-    for I = 1, #TemplateList do
-        local Template = getObjectFromGUID(TemplateList[I])
+    for _, guid in pairs(TemplateGuidList) do
+        local Template = getObjectFromGUID(guid)
         printToAll("Updating " .. Template.getName() .. "...")
 
         --go through all objects and look for those to replace...
         for _, Obj in pairs(AllObjects) do
             local NewObj = nil
-            local position = Obj.getPosition()
+            local position = nil
+
+            if Obj == nil then
+                goto continue
+            end
 
             if not ObjectIsFigurine(Obj) then
                 goto continue
@@ -1170,6 +1173,7 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
                 goto continue
             end
 
+            position = Obj.getPosition()
             NewObj = Template.clone({ position })
             NewObj.setLock(false)
             NewObj.setPosition({ position.x, position.y + 1, position.z })
@@ -1184,10 +1188,9 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
 end
 
 function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
-    log("Start GetObjectFromComponentBag")
-
     local SearchList = {}
     local settingPattern = SettingType .. ";"
+    local hasPatterns = false
 
     for _, Item in pairs(ComponentBag.getObjects()) do
         if Item.name == nil or Item.description == nil then
@@ -1198,22 +1201,22 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
             goto continue
         end
 
-        if (SearchConfig.IncludingName ~= nil and SearchConfig.IncludingName) then
+        if SearchConfig.IncludingName ~= nil and Item.name ~= SearchConfig.IncludingName then
             goto continue
         end
 
-        -- same type as setting
+        -- should be same type as setting
         if string.find(Item.description, settingPattern) == nil then
             goto continue
         end
 
-        for _, Pattern in pairs(SearchConfig.Patterns) do
-            if string.find(Item.description, Pattern) ~= nil then
-                log("Found Object - " .. Item.description)
-                table.insert(SearchList, Item.guid)
-                goto continue
-            end
+        hasPatterns = HasPatternsInDescription(Item.description, SearchConfig.Patterns)
+        if not hasPatterns then
+            goto continue
         end
+
+        print("Found Object - " .. Item.name)
+        table.insert(SearchList, Item)
 
         ::continue::
     end
@@ -1223,7 +1226,7 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
 
     for _, Item in pairs(SearchList) do
         OffsetX = OffsetX - 1
-        local TempObj = ComponentBag.takeObject({
+        local templateObj = ComponentBag.takeObject({
             guid = Item.guid,
             smooth = false,
             position = { OffsetX, -2, -60 },
@@ -1231,14 +1234,24 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
         })
 
         coroutine.yield(0)
-        TempObj.setLock(true)
+        templateObj.setLock(true)
         local zPosition = -60 - SearchConfig.PositionOffset;
-        TempObj.setPosition({ OffsetX, -2, zPosition })
-        TempObj.setRotation({ 0, 180, 0 })
-        table.insert(TemplateList, TempObj.getGUID())
+        templateObj.setPosition({ OffsetX, -2, zPosition })
+        templateObj.setRotation({ 0, 180, 0 })
+        table.insert(TemplateList, templateObj.getGUID())
     end
 
     return TemplateList
+end
+
+function HasPatternsInDescription(Description, Patterns)
+    for _, Pattern in pairs(Patterns) do
+        if string.find(Description, Pattern) ~= nil then
+            return true
+        end
+    end
+
+    return false
 end
 
 function UpdateArmies(ComponentBag, AllObjects)
@@ -1246,6 +1259,7 @@ function UpdateArmies(ComponentBag, AllObjects)
         return
     end
 
+    printToAll("Updating Armies")
     ReplaceObjects(ComponentBag, AllObjects, ArmiesSearchConfig, Settings.ArmiesType)
 end
 
@@ -1254,6 +1268,7 @@ function UpdateCharacters(ComponentBag, AllObjects)
         return
     end
 
+    printToAll("Updating Characters")
     ReplaceObjects(ComponentBag, AllObjects, CharactersSearchConfig, Settings.CharactersType)
 end
 
@@ -1262,6 +1277,7 @@ function UpdateFactions(ComponentBag, AllObjects)
         return
     end
 
+    printToAll("Updating Factions")
     ReplaceObjects(ComponentBag, AllObjects, FactionsSearchConfig, Settings.FactionsType)
 end
 
@@ -1270,6 +1286,7 @@ function UpdateNazgul(ComponentBag, AllObjects)
         return
     end
 
+    printToAll("Updating Nazgul")
     ReplaceObjects(ComponentBag, AllObjects, NazgulSearchConfig, Settings.NazgulType)
 end
 
@@ -1277,6 +1294,8 @@ function UpdateSettlements(AllObjects)
     if Settings.SettlementsType == SettingsCache.SettlementsType then
         return
     end
+
+    printToAll("Updating Settlements")
 
     for _, Obj in pairs(AllObjects) do
         local result = TryUpdateSettlementObject(Obj)
@@ -1291,6 +1310,8 @@ function UpdateDices(AllObjects)
     if Settings.DiceType == SettingsCache.DiceType then
         return
     end
+
+    printToAll("Updating Dices")
 
     for _, Obj in pairs(AllObjects) do
         local result = TryUpdateDiceObject(Obj)
