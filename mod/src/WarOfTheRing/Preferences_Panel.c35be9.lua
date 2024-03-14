@@ -9,6 +9,8 @@ Settings = {
     DiceType = "Original"
 }
 
+local SettingsCache = {}
+
 local ArmiesSearchConfig = {
     IncludingName = nil,
     ExcludingName = "Nazgul",
@@ -57,6 +59,8 @@ function InitPreferences()
     Settings.SettlementsType = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "Settlements", Default = "3D" })
     Settings.DiceType = Global.call("ReadTag", { Text = self.getGMNotes(), Var = "Dice", Default = "Original" })
 
+    UpdateSettingsCache()
+
     --Original,Anniversary
     if getObjectFromGUID("4b6f4c") == nil then
         DicePanels = "Strips"
@@ -78,6 +82,26 @@ function InitPreferences()
     Global.setVar("RulesWarnings", WarningsSettingType == "On")
     ApplySettingsFlag = false
     UpdatePanel()
+end
+
+function UpdateSettingsCache()
+    print("UpdateSettingsCache")
+    SettingsCache = DeepCopyTable(Settings)
+end
+
+function DeepCopyTable(orig)
+    local orig_type = type(orig)
+    local copy
+    if orig_type == 'table' then
+        copy = {}
+        for orig_key, orig_value in next, orig, nil do
+            copy[DeepCopyTable(orig_key)] = DeepCopyTable(orig_value)
+        end
+        setmetatable(copy, DeepCopyTable(getmetatable(orig)))
+    else -- number, string, boolean, etc
+        copy = orig
+    end
+    return copy
 end
 
 function UpdatePanel()
@@ -1110,6 +1134,8 @@ function ApplyButton()
 
         ApplySettingsFlag = false
         printToAll("Changes to Preferences Completed.")
+
+        UpdateSettingsCache()
         UpdatePanel()
         return 1
     end
@@ -1216,22 +1242,42 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
 end
 
 function UpdateArmies(ComponentBag, AllObjects)
+    if Settings.ArmiesType == SettingsCache.ArmiesType then
+        return
+    end
+
     ReplaceObjects(ComponentBag, AllObjects, ArmiesSearchConfig, Settings.ArmiesType)
 end
 
 function UpdateCharacters(ComponentBag, AllObjects)
+    if Settings.CharactersType == SettingsCache.CharactersType then
+        return
+    end
+
     ReplaceObjects(ComponentBag, AllObjects, CharactersSearchConfig, Settings.CharactersType)
 end
 
 function UpdateFactions(ComponentBag, AllObjects)
+    if Settings.FactionsType == SettingsCache.FactionsType then
+        return
+    end
+
     ReplaceObjects(ComponentBag, AllObjects, FactionsSearchConfig, Settings.FactionsType)
 end
 
 function UpdateNazgul(ComponentBag, AllObjects)
+    if Settings.NazgulType == SettingsCache.NazgulType then
+        return
+    end
+
     ReplaceObjects(ComponentBag, AllObjects, NazgulSearchConfig, Settings.NazgulType)
 end
 
 function UpdateSettlements(AllObjects)
+    if Settings.SettlementsType == SettingsCache.SettlementsType then
+        return
+    end
+
     for _, Obj in pairs(AllObjects) do
         local result = TryUpdateSettlementObject(Obj)
 
@@ -1242,10 +1288,14 @@ function UpdateSettlements(AllObjects)
 end
 
 function UpdateDices(AllObjects)
+    if Settings.DiceType == SettingsCache.DiceType then
+        return
+    end
+
     for _, Obj in pairs(AllObjects) do
         local result = TryUpdateDiceObject(Obj)
 
-        if result then
+        if result ~= nil then
             coroutine.yield(0)
         end
     end
@@ -1316,58 +1366,58 @@ function TryUpdateDiceObject(OldDiceObj)
 
     local description = OldDiceObj.getDescription()
 
-    if string.find(description, "Combat;") ~= nil then
-        return false
-    end
-
     local newDiceObj = nil
     local isAnniversaryDiceObject = string.find(description, "Anniversary;") ~= nil
     local isAnniversarySetting = Settings.DiceType == "Anniversary"
     local needSwap = isAnniversaryDiceObject ~= isAnniversarySetting
 
     if not needSwap then
-        return false
+        return nil
     end
 
     --look in dice bag for replacement...
     local ComponentBag = getObjectFromGUID("0e5fd1")
-    local GamePanelID = "6158a0"
-    local GamePanel = getObjectFromGUID(GamePanelID)
-    local IDs = GamePanel.getTable("IDs")
+
+    local isSameDescription = false
+    local isAnniversaryDice = false
 
     for _, Item in pairs(ComponentBag.getObjects()) do
         --match? same description (except anniversary tag) and either anniversary or not anniversary...
-        local isSameDiceIndex =
+        isSameDescription =
             string.gsub(description, "Anniversary;", "") == string.gsub(Item.description, "Anniversary;", "")
-        local isAnniversaryDice = string.find(Item.description, "Anniversary;") ~= nil
-        local isAnotherDiceType = isAnniversarySetting ~= isAnniversaryDice
 
-        if isSameDiceIndex and isAnotherDiceType then
-            newDiceObj = ComponentBag.takeObject(
-                {
-                    guid = Item.guid,
-                    position = OldDiceObj.getPosition(),
-                    rotation = OldDiceObj.getRotation(),
-                    smooth = true
-                }
-            )
-
-            coroutine.yield(0)
-            Global.call("SetDiceFace", { Dice = newDiceObj, Value = OldDiceObj.getRotationValue() })
-
-            ComponentBag.putObject(OldDiceObj)
-            coroutine.yield(0)
-
-            UpdateDiceId(description, newDiceObj, IDs)
-            GamePanel.setTable("IDs", IDs)
-
-            return true
+        if not isSameDescription then
+            goto continue
         end
+
+        isAnniversaryDice = string.find(Item.description, "Anniversary;") ~= nil
+
+        if isAnniversarySetting ~= isAnniversaryDice then
+            goto continue
+        end
+
+        newDiceObj = ComponentBag.takeObject(
+            {
+                guid = Item.guid,
+                position = OldDiceObj.getPosition(),
+                rotation = OldDiceObj.getRotation(),
+                smooth = true
+            }
+        )
+
+        coroutine.yield(0)
+        Global.call("SetDiceFace", { Dice = newDiceObj, Value = OldDiceObj.getRotationValue() })
+
+        ComponentBag.putObject(OldDiceObj)
+        coroutine.yield(0)
+
+        ::continue::
     end
 
-    return false
+    return newDiceObj
 end
 
+-- useless action because we manually update IDs after every settings change
 function UpdateDiceId(description, newDiceObj, IDs)
     local isShadowDice = string.find(description, "Shadow;") ~= nil
     local isFreePeopleDice = string.find(description, "FreePeoples;") ~= nil
@@ -1390,6 +1440,10 @@ function GetDiceIndex(description)
 end
 
 function UpdateMountDoom()
+    if Settings.MountDoomType == SettingsCache.MountDoomType then
+        return
+    end
+
     if Settings.MountDoomType == "Flat" then
         if getObjectFromGUID("76fca0") ~= nil then
             getObjectFromGUID("416864").putObject(getObjectFromGUID("76fca0"))
