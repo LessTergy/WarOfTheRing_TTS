@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "2916b7",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": -33.4,
-      "posY": 0.95,
-      "posZ": 31.9332,
-      "rotX": -1.39009089e-7,
-      "rotY": 359.994171,
-      "rotZ": -2.22784617e-8,
-      "scaleX": 1,
-      "scaleY": 1,
-      "scaleZ": 1
+    "Object": {
+        "GUID": "2916b7",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": -33.4,
+            "posY": 0.95,
+            "posZ": 31.9332,
+            "rotX": -1.39009089e-7,
+            "rotY": 359.994171,
+            "rotZ": -2.22784617e-8,
+            "scaleX": 1,
+            "scaleY": 1,
+            "scaleZ": 1
+        },
+        "Nickname": "Dice Not Chosen",
+        "Description": "Place Special Dice in this area when they are not Chosen after the Action Dice Roll.",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1687149492113040617/8A8B5CF3318CEDD3F8C0916AFBB7F48659AF5C34/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.1,
+                "MergeDistancePixels": 25,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Dice Not Chosen",
-    "Description": "Place Special Dice in this area when they are not Chosen after the Action Dice Roll.",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1687149492113040617/8A8B5CF3318CEDD3F8C0916AFBB7F48659AF5C34/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.1,
-        "MergeDistancePixels": 25,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

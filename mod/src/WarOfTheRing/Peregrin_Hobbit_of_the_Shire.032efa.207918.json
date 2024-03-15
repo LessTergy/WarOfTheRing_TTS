@@ -1,61 +1,61 @@
 {
-  "Object": {
-    "GUID": "032efa",
-    "Name": "Card",
-    "Transform": {
-      "posX": 46.5,
-      "posY": 0.9611965,
-      "posZ": 45,
-      "rotX": -7.147398e-7,
-      "rotY": -0.00158342137,
-      "rotZ": -2.258138e-7,
-      "scaleX": 2.800268,
-      "scaleY": 1,
-      "scaleZ": 2.800268
+    "Object": {
+        "GUID": "032efa",
+        "Name": "Card",
+        "Transform": {
+            "posX": 46.5,
+            "posY": 0.9611965,
+            "posZ": 45,
+            "rotX": -7.147398e-7,
+            "rotY": -0.00158342137,
+            "rotZ": -2.258138e-7,
+            "scaleX": 2.800268,
+            "scaleY": 1,
+            "scaleZ": 2.800268
+        },
+        "Nickname": "Peregrin: Hobbit of the Shire",
+        "Description": "Card;Companion;Character;Level:1;#9;FreePeoples;LoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": true,
+        "CardID": 207918,
+        "SidewaysCard": false,
+        "CustomDeck": {
+            "2079": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259143026705/2CCC853155AB68E3043470C601867805CFB8438D/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259143027614/9112E31D3808DB8BF1ED8EFC9512FBB96C4E9CB1/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": true,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Peregrin: Hobbit of the Shire",
-    "Description": "Card;Companion;Character;Level:1;#9;FreePeoples;LoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": true,
-    "CardID": 207918,
-    "SidewaysCard": false,
-    "CustomDeck": {
-      "2079": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259143026705/2CCC853155AB68E3043470C601867805CFB8438D/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259143027614/9112E31D3808DB8BF1ED8EFC9512FBB96C4E9CB1/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": true,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "f88479",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": -30.75,
-      "posY": 1.01250029,
-      "posZ": 13,
-      "rotX": -3.04482377e-8,
-      "rotY": 270,
-      "rotZ": 180,
-      "scaleX": 0.53,
-      "scaleY": 0.525000036,
-      "scaleZ": 0.525000036
-    },
-    "Nickname": "Free Peoples Army I",
-    "Description": "",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 0.9960827
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381367574/393E0EB9377C41C990A8672C90904250E8CE1A82/",
-      "NormalURL": "",
-      "ColliderURL": "",
-      "Convex": true,
-      "MaterialIndex": 3,
-      "TypeIndex": 4,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "f88479",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": -30.75,
+            "posY": 1.01250029,
+            "posZ": 13,
+            "rotX": -3.04482377e-8,
+            "rotY": 270,
+            "rotZ": 180,
+            "scaleX": 0.53,
+            "scaleY": 0.525000036,
+            "scaleZ": 0.525000036
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
+        "Nickname": "Free Peoples Army I",
+        "Description": "",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 0.9960827
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381367574/393E0EB9377C41C990A8672C90904250E8CE1A82/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 4,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "#include ./Free_Peoples_Army_I.f88479.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "#include ./Free_Peoples_Army_I.f88479.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

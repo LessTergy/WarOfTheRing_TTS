@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "6158a0",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": 54,
-      "posY": 13,
-      "posZ": 0,
-      "rotX": 90,
-      "rotY": 270,
-      "rotZ": 0,
-      "scaleX": 7,
-      "scaleY": 1,
-      "scaleZ": 7
+    "Object": {
+        "GUID": "6158a0",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": 54,
+            "posY": 13,
+            "posZ": 0,
+            "rotX": 90,
+            "rotY": 270,
+            "rotZ": 0,
+            "scaleX": 7,
+            "scaleY": 1,
+            "scaleZ": 7
+        },
+        "Nickname": "Game Panel",
+        "Description": "Panel;Round:0;Phase:0;Turn:0;Step:BeginMenu;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": false,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574851327690/161E43BA5EAF5CF6B2BBCE6E0C5841582A252CC8/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.2,
+                "MergeDistancePixels": 25,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "#include ./Game_Panel.6158a0.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Game Panel",
-    "Description": "Panel;Round:0;Phase:0;Turn:0;Step:BeginMenu;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": false,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731574851327690/161E43BA5EAF5CF6B2BBCE6E0C5841582A252CC8/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.2,
-        "MergeDistancePixels": 25,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "#include ./Game_Panel.6158a0.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

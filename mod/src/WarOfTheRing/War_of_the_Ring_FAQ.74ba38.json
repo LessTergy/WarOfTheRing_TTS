@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "74ba38",
-    "Name": "Custom_PDF",
-    "Transform": {
-      "posX": 79,
-      "posY": 0.9476078,
-      "posZ": -31.0000019,
-      "rotX": 0.00000235075254,
-      "rotY": 270.0052,
-      "rotZ": 0.000005266747,
-      "scaleX": 4,
-      "scaleY": 1,
-      "scaleZ": 4
+    "Object": {
+        "GUID": "74ba38",
+        "Name": "Custom_PDF",
+        "Transform": {
+            "posX": 79,
+            "posY": 0.9476078,
+            "posZ": -31.0000019,
+            "rotX": 0.00000235075254,
+            "rotY": 270.0052,
+            "rotZ": 0.000005266747,
+            "scaleX": 4,
+            "scaleY": 1,
+            "scaleZ": 4
+        },
+        "Nickname": "War of the Ring FAQ",
+        "Description": "",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomPDF": {
+            "PDFUrl": "http://cloud-3.steamusercontent.com/ugc/1470941285216969950/A7FB3B68E6D6536B6305901E0AF9F0293AC91F69/",
+            "PDFPassword": "",
+            "PDFPage": 0,
+            "PDFPageOffset": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "War of the Ring FAQ",
-    "Description": "",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomPDF": {
-      "PDFUrl": "http://cloud-3.steamusercontent.com/ugc/1470941285216969950/A7FB3B68E6D6536B6305901E0AF9F0293AC91F69/",
-      "PDFPassword": "",
-      "PDFPage": 0,
-      "PDFPageOffset": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

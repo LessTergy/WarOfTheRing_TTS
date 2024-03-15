@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "c877f9",
-    "Name": "Custom_Tile",
-    "Transform": {
-      "posX": 25.5,
-      "posY": 0.9475865,
-      "posZ": -44.998085,
-      "rotX": 0.000003710895,
-      "rotY": 180.001114,
-      "rotZ": 8.228715e-8,
-      "scaleX": 4.5,
-      "scaleY": 1,
-      "scaleZ": 4.5
+    "Object": {
+        "GUID": "c877f9",
+        "Name": "Custom_Tile",
+        "Transform": {
+            "posX": 25.5,
+            "posY": 0.9475865,
+            "posZ": -44.998085,
+            "rotX": 0.000003710895,
+            "rotY": 180.001114,
+            "rotZ": 8.228715e-8,
+            "scaleX": 4.5,
+            "scaleY": 1,
+            "scaleZ": 4.5
+        },
+        "Nickname": "The Corsairs of Umbar",
+        "Description": "FactionCard;Corsairs;Shadow;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142826998/EEB8B375DF4BC343FB1A2EDFB8B6FA03106D0F81/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142827505/1DCBB4C47D86154877487A0A25CAD766563E27C2/",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomTile": {
+                "Type": 3,
+                "Thickness": 0.1,
+                "Stackable": false,
+                "Stretch": true
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Corsairs of Umbar",
-    "Description": "FactionCard;Corsairs;Shadow;WoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142826998/EEB8B375DF4BC343FB1A2EDFB8B6FA03106D0F81/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142827505/1DCBB4C47D86154877487A0A25CAD766563E27C2/",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomTile": {
-        "Type": 3,
-        "Thickness": 0.1,
-        "Stackable": false,
-        "Stretch": true
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

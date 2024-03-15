@@ -1,72 +1,72 @@
 {
-  "Object": {
-    "GUID": "002387",
-    "Name": "Bag",
-    "Transform": {
-      "posX": -40.4,
-      "posY": 0.679818869,
-      "posZ": -17,
-      "rotX": -0.000005122642,
-      "rotY": 180,
-      "rotZ": -5.569541e-7,
-      "scaleX": 1.5,
-      "scaleY": 1.5,
-      "scaleZ": 1.5
+    "Object": {
+        "GUID": "002387",
+        "Name": "Bag",
+        "Transform": {
+            "posX": -40.4,
+            "posY": 0.679818869,
+            "posZ": -17,
+            "rotX": -0.000005122642,
+            "rotY": 180,
+            "rotZ": -5.569541e-7,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "scaleZ": 1.5
+        },
+        "Nickname": "Hunt Pool",
+        "Description": "Bag;Hunt;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "MaterialIndex": -1,
+        "MeshIndex": -1,
+        "Bag": {
+            "Order": 2
+        },
+        "LuaScript": "#include ./Hunt_Pool.002387.lua",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "ContainedObjects": []
     },
-    "Nickname": "Hunt Pool",
-    "Description": "Bag;Hunt;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0,
-      "g": 0,
-      "b": 0
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "MaterialIndex": -1,
-    "MeshIndex": -1,
-    "Bag": {
-      "Order": 2
-    },
-    "LuaScript": "#include ./Hunt_Pool.002387.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "ContainedObjects": []
-  },
-  "StatesPaths": {},
-  "ContainedObjectPaths": [
-    "Hunt_Tile.6a229d.json",
-    "Hunt_Tile.c911e4.json",
-    "Hunt_Tile.8aaa0a.json",
-    "Hunt_Tile.5d8190.json",
-    "Hunt_Tile.5ca03d.json",
-    "Hunt_Tile.637cbb.json",
-    "Hunt_Tile.b58a49.json",
-    "Hunt_Tile.656b46.json",
-    "Hunt_Tile.71d5c7.json",
-    "Hunt_Tile.194446.json",
-    "Hunt_Tile.9ec4f1.json",
-    "Hunt_Tile.71f5b1.json",
-    "Hunt_Tile.0a7e56.json",
-    "Hunt_Tile.7c2f34.json",
-    "Hunt_Tile.a63100.json",
-    "Hunt_Tile.0ccef3.json"
-  ]
+    "StatesPaths": {},
+    "ContainedObjectPaths": [
+        "Hunt_Tile.6a229d.json",
+        "Hunt_Tile.c911e4.json",
+        "Hunt_Tile.8aaa0a.json",
+        "Hunt_Tile.5d8190.json",
+        "Hunt_Tile.5ca03d.json",
+        "Hunt_Tile.637cbb.json",
+        "Hunt_Tile.b58a49.json",
+        "Hunt_Tile.656b46.json",
+        "Hunt_Tile.71d5c7.json",
+        "Hunt_Tile.194446.json",
+        "Hunt_Tile.9ec4f1.json",
+        "Hunt_Tile.71f5b1.json",
+        "Hunt_Tile.0a7e56.json",
+        "Hunt_Tile.7c2f34.json",
+        "Hunt_Tile.a63100.json",
+        "Hunt_Tile.0ccef3.json"
+    ]
 }

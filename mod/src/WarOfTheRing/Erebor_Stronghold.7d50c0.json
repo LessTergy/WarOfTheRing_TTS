@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "7d50c0",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": 64.72254,
-      "posY": 0.9975916,
-      "posZ": 45.28546,
-      "rotX": 0.00000376925232,
-      "rotY": 179.983231,
-      "rotZ": 3.75996962e-7,
-      "scaleX": 0.9,
-      "scaleY": 1,
-      "scaleZ": 0.9
+    "Object": {
+        "GUID": "7d50c0",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": 64.72254,
+            "posY": 0.9975916,
+            "posZ": 45.28546,
+            "rotX": 0.00000376925232,
+            "rotY": 179.983231,
+            "rotZ": 3.75996962e-7,
+            "scaleX": 0.9,
+            "scaleY": 1,
+            "scaleZ": 0.9
+        },
+        "Nickname": "Erebor Stronghold",
+        "Description": "Overlay;StrongholdBox;Shadow;TFoE;",
+        "GMNotes": "011a2a",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": false,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": false,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1754691331184962940/BBC9709FA52EB29EDE152C95640AEC1D47256DBE/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.1,
+                "MergeDistancePixels": 25,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Erebor Stronghold",
-    "Description": "Overlay;StrongholdBox;Shadow;TFoE;",
-    "GMNotes": "011a2a",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": false,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": false,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1754691331184962940/BBC9709FA52EB29EDE152C95640AEC1D47256DBE/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.1,
-        "MergeDistancePixels": 25,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "db77a1",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": 17.5430241,
-      "posY": 0.7699984,
-      "posZ": 20.83291,
-      "rotX": -0.00008767196,
-      "rotY": 179.983826,
-      "rotZ": 0.0003160346,
-      "scaleX": 0.55,
-      "scaleY": 1,
-      "scaleZ": 0.55
+    "Object": {
+        "GUID": "db77a1",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": 17.5430241,
+            "posY": 0.7699984,
+            "posZ": 20.83291,
+            "rotX": -0.00008767196,
+            "rotY": 179.983826,
+            "rotZ": 0.0003160346,
+            "scaleX": 0.55,
+            "scaleY": 1,
+            "scaleZ": 0.55
+        },
+        "Nickname": "Erebor",
+        "Description": "Stronghold;",
+        "GMNotes": "fb9626",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974485199/D8A25E88A77F95FCE734FDDA854EA304D807C1CA/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.399999857,
+                "MergeDistancePixels": 5,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "#include ./Erebor.db77a1.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Erebor",
-    "Description": "Stronghold;",
-    "GMNotes": "fb9626",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974485199/D8A25E88A77F95FCE734FDDA854EA304D807C1CA/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.399999857,
-        "MergeDistancePixels": 5,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "#include ./Erebor.db77a1.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

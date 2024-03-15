@@ -1,69 +1,66 @@
 {
-  "Object": {
-    "GUID": "b83789",
-    "Name": "Deck",
-    "Transform": {
-      "posX": -79.5,
-      "posY": 0.978149,
-      "posZ": 23,
-      "rotX": 0.00000273995465,
-      "rotY": 179.999283,
-      "rotZ": 180,
-      "scaleX": 2.800268,
-      "scaleY": 1,
-      "scaleZ": 2.800268
+    "Object": {
+        "GUID": "b83789",
+        "Name": "Deck",
+        "Transform": {
+            "posX": -79.5,
+            "posY": 0.978149,
+            "posZ": 23,
+            "rotX": 0.00000273995465,
+            "rotY": 179.999283,
+            "rotZ": 180,
+            "scaleX": 2.800268,
+            "scaleY": 1,
+            "scaleZ": 2.800268
+        },
+        "Nickname": "Shadow Strategy Event Cards (LoME)",
+        "Description": "Cards;Event;Strategy;Shadow;LoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": true,
+        "Hands": false,
+        "SidewaysCard": false,
+        "DeckIDs": [209700, 209720],
+        "CustomDeck": {
+            "2097": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142858618/A1B1C77527E097849C8CBA10714BD8D9E0C705D8/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142859091/1DCECBCDB9881D8879DB0F494396013DCE398F5B/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "ContainedObjects": []
     },
-    "Nickname": "Shadow Strategy Event Cards (LoME)",
-    "Description": "Cards;Event;Strategy;Shadow;LoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": true,
-    "Hands": false,
-    "SidewaysCard": false,
-    "DeckIDs": [
-      209700,
-      209720
-    ],
-    "CustomDeck": {
-      "2097": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142858618/A1B1C77527E097849C8CBA10714BD8D9E0C705D8/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142859091/1DCECBCDB9881D8879DB0F494396013DCE398F5B/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": false,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "ContainedObjects": []
-  },
-  "StatesPaths": {},
-  "ContainedObjectPaths": [
-    "Madness_and_Horror.bc2bf1.209700.json",
-    "Shadow_of_Dol_Guldur.3280dd.209720.json"
-  ]
+    "StatesPaths": {},
+    "ContainedObjectPaths": [
+        "Madness_and_Horror.bc2bf1.209700.json",
+        "Shadow_of_Dol_Guldur.3280dd.209720.json"
+    ]
 }

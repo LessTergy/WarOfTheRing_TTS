@@ -1,61 +1,61 @@
 {
-  "Object": {
-    "GUID": "78f279",
-    "Name": "Card",
-    "Transform": {
-      "posX": 36.5,
-      "posY": 0.974822,
-      "posZ": 33,
-      "rotX": -4.02688052e-8,
-      "rotY": -2.75547718e-9,
-      "rotZ": 2.27989787e-8,
-      "scaleX": 2.800268,
-      "scaleY": 1,
-      "scaleZ": 2.800268
+    "Object": {
+        "GUID": "78f279",
+        "Name": "Card",
+        "Transform": {
+            "posX": 36.5,
+            "posY": 0.974822,
+            "posZ": 33,
+            "rotX": -4.02688052e-8,
+            "rotY": -2.75547718e-9,
+            "rotZ": 2.27989787e-8,
+            "scaleX": 2.800268,
+            "scaleY": 1,
+            "scaleZ": 2.800268
+        },
+        "Nickname": "Gimli: Son of Gloin",
+        "Description": "Card;Companion;Character;Level:2;#1;FreePeoples;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": true,
+        "CardID": 208507,
+        "SidewaysCard": false,
+        "CustomDeck": {
+            "2085": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259143026705/2CCC853155AB68E3043470C601867805CFB8438D/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259143027614/9112E31D3808DB8BF1ED8EFC9512FBB96C4E9CB1/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": true,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Gimli: Son of Gloin",
-    "Description": "Card;Companion;Character;Level:2;#1;FreePeoples;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": true,
-    "CardID": 208507,
-    "SidewaysCard": false,
-    "CustomDeck": {
-      "2085": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259143026705/2CCC853155AB68E3043470C601867805CFB8438D/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259143027614/9112E31D3808DB8BF1ED8EFC9512FBB96C4E9CB1/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": true,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

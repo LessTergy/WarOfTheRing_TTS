@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "07e059",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 34.95,
-      "posY": 1.00500011,
-      "posZ": 4.982908,
-      "rotX": 6.29239651e-7,
-      "rotY": 225.014633,
-      "rotZ": -5.5416433e-7,
-      "scaleX": 0.450000048,
-      "scaleY": 0.450000048,
-      "scaleZ": 0.450000048
-    },
-    "Nickname": "The North Political Counter",
-    "Description": "Politicaltoken;Northmen;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 0.9960827
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381449586/43EC5144AEF7274D6786B6F6ACC04CC91B9703AE/",
-      "NormalURL": "",
-      "ColliderURL": "",
-      "Convex": true,
-      "MaterialIndex": 3,
-      "TypeIndex": 0,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "07e059",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": 34.95,
+            "posY": 1.00500011,
+            "posZ": 4.982908,
+            "rotX": 6.29239651e-7,
+            "rotY": 225.014633,
+            "rotZ": -5.5416433e-7,
+            "scaleX": 0.450000048,
+            "scaleY": 0.450000048,
+            "scaleZ": 0.450000048
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
+        "Nickname": "The North Political Counter",
+        "Description": "Politicaltoken;Northmen;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 0.9960827
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381449586/43EC5144AEF7274D6786B6F6ACC04CC91B9703AE/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 0,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "#include ./The_North_Political_Counter.07e059.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "#include ./The_North_Political_Counter.07e059.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

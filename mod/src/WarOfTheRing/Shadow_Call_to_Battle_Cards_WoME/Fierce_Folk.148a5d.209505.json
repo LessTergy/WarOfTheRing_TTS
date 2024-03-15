@@ -1,61 +1,61 @@
 {
-  "Object": {
-    "GUID": "148a5d",
-    "Name": "Card",
-    "Transform": {
-      "posX": 2.50000572,
-      "posY": 1.12851918,
-      "posZ": -45,
-      "rotX": 0.0000186737525,
-      "rotY": 180,
-      "rotZ": 179.804535,
-      "scaleX": 2.800268,
-      "scaleY": 1,
-      "scaleZ": 2.800268
+    "Object": {
+        "GUID": "148a5d",
+        "Name": "Card",
+        "Transform": {
+            "posX": 2.50000572,
+            "posY": 1.12851918,
+            "posZ": -45,
+            "rotX": 0.0000186737525,
+            "rotY": 180,
+            "rotZ": 179.804535,
+            "scaleX": 2.800268,
+            "scaleY": 1,
+            "scaleZ": 2.800268
+        },
+        "Nickname": "Fierce Folk",
+        "Description": "Card;CallToBattle;#3;Init:6;Shadow;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": true,
+        "Hands": true,
+        "CardID": 209505,
+        "SidewaysCard": false,
+        "CustomDeck": {
+            "2095": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142858618/A1B1C77527E097849C8CBA10714BD8D9E0C705D8/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142859091/1DCECBCDB9881D8879DB0F494396013DCE398F5B/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Fierce Folk",
-    "Description": "Card;CallToBattle;#3;Init:6;Shadow;WoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": true,
-    "Hands": true,
-    "CardID": 209505,
-    "SidewaysCard": false,
-    "CustomDeck": {
-      "2095": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142858618/A1B1C77527E097849C8CBA10714BD8D9E0C705D8/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142859091/1DCECBCDB9881D8879DB0F494396013DCE398F5B/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": false,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

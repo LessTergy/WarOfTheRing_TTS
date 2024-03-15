@@ -1,107 +1,107 @@
 {
-  "Object": {
-    "GUID": "648869",
-    "Name": "Custom_Dice",
-    "Transform": {
-      "posX": -58.07433,
-      "posY": 1.53091431,
-      "posZ": 36.4971275,
-      "rotX": 90,
-      "rotY": 137.986771,
-      "rotZ": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "scaleZ": 1
+    "Object": {
+        "GUID": "648869",
+        "Name": "Custom_Dice",
+        "Transform": {
+            "posX": -58.07433,
+            "posY": 1.53091431,
+            "posZ": 36.4971275,
+            "rotX": 90,
+            "rotY": 137.986771,
+            "rotZ": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "scaleZ": 1
+        },
+        "Nickname": "(Free Peoples Combat Die)",
+        "Description": "Dice;Combat;FreePeoples;Panel:f50dab;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633481837/5801D4C2A5ED1703E8F59015C166971817E3FFBA/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomDice": {
+                "Type": 1
+            }
+        },
+        "LuaScript": "#include ./Free_Peoples_Combat_Die.648869.lua",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "RotationValues": [
+            {
+                "Value": "1",
+                "Rotation": {
+                    "x": -90,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "2",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "3",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": -90
+                }
+            },
+            {
+                "Value": "4",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 90
+                }
+            },
+            {
+                "Value": "5",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": -180
+                }
+            },
+            {
+                "Value": "6",
+                "Rotation": {
+                    "x": 90,
+                    "y": 0,
+                    "z": 0
+                }
+            }
+        ]
     },
-    "Nickname": "(Free Peoples Combat Die)",
-    "Description": "Dice;Combat;FreePeoples;Panel:f50dab;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633481837/5801D4C2A5ED1703E8F59015C166971817E3FFBA/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomDice": {
-        "Type": 1
-      }
-    },
-    "LuaScript": "#include ./Free_Peoples_Combat_Die.648869.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "RotationValues": [
-      {
-        "Value": "1",
-        "Rotation": {
-          "x": -90,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "2",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "3",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": -90
-        }
-      },
-      {
-        "Value": "4",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": 90
-        }
-      },
-      {
-        "Value": "5",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": -180
-        }
-      },
-      {
-        "Value": "6",
-        "Rotation": {
-          "x": 90,
-          "y": 0,
-          "z": 0
-        }
-      }
-    ]
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

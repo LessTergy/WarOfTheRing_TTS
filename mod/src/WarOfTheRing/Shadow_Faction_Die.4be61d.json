@@ -1,118 +1,118 @@
 {
-  "Object": {
-    "GUID": "4be61d",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 8,
-      "posY": 1.54758656,
-      "posZ": -41.4327354,
-      "rotX": 90,
-      "rotY": -0.00178263255,
-      "rotZ": 0,
-      "scaleX": 0.6,
-      "scaleY": 0.6,
-      "scaleZ": 0.6
-    },
-    "Nickname": "(Shadow Faction Die)",
-    "Description": "Dice;Faction;Shadow;WoME;Anniversary;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.9999998,
-      "g": 0.9921723,
-      "b": 0.9999998
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633472960/977C6CB61EEA19F78B5D571DAD009EE87E562BB0/",
-      "NormalURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633474125/EDF6FFF3750B22613EBC5429D6B4D0F2E0DE886C/",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
-      "Convex": true,
-      "MaterialIndex": 0,
-      "TypeIndex": 2,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "4be61d",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": 8,
+            "posY": 1.54758656,
+            "posZ": -41.4327354,
+            "rotX": 90,
+            "rotY": -0.00178263255,
+            "rotZ": 0,
+            "scaleX": 0.6,
+            "scaleY": 0.6,
+            "scaleZ": 0.6
         },
-        "SpecularIntensity": 0.2,
-        "SpecularSharpness": 5.366667,
-        "FresnelStrength": 0.516666651
-      },
-      "CastShadows": true
+        "Nickname": "(Shadow Faction Die)",
+        "Description": "Dice;Faction;Shadow;WoME;Anniversary;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.9999998,
+            "g": 0.9921723,
+            "b": 0.9999998
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633472960/977C6CB61EEA19F78B5D571DAD009EE87E562BB0/",
+            "NormalURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633474125/EDF6FFF3750B22613EBC5429D6B4D0F2E0DE886C/",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
+            "Convex": true,
+            "MaterialIndex": 0,
+            "TypeIndex": 2,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0.2,
+                "SpecularSharpness": 5.366667,
+                "FresnelStrength": 0.516666651
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "#include ./Shadow_Faction_Die.4be61d.lua",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "RotationValues": [
+            {
+                "Value": "Eye",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Play/Draw Faction Event",
+                "Rotation": {
+                    "x": 90,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Recruit Faction",
+                "Rotation": {
+                    "x": 180,
+                    "y": 180,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Recruit/Draw Faction Event",
+                "Rotation": {
+                    "x": 270,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Wild Die",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 270
+                }
+            },
+            {
+                "Value": "Recruit/Play Faction Event",
+                "Rotation": {
+                    "x": 180,
+                    "y": 180,
+                    "z": 270
+                }
+            }
+        ]
     },
-    "LuaScript": "#include ./Shadow_Faction_Die.4be61d.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "RotationValues": [
-      {
-        "Value": "Eye",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Play/Draw Faction Event",
-        "Rotation": {
-          "x": 90,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Recruit Faction",
-        "Rotation": {
-          "x": 180,
-          "y": 180,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Recruit/Draw Faction Event",
-        "Rotation": {
-          "x": 270,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Wild Die",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": 270
-        }
-      },
-      {
-        "Value": "Recruit/Play Faction Event",
-        "Rotation": {
-          "x": 180,
-          "y": 180,
-          "z": 270
-        }
-      }
-    ]
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

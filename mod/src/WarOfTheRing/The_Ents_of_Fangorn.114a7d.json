@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "114a7d",
-    "Name": "Custom_Tile",
-    "Transform": {
-      "posX": -20.5000057,
-      "posY": 0.947591662,
-      "posZ": 44.86026,
-      "rotX": -6.705979e-7,
-      "rotY": 0.6010216,
-      "rotZ": 1.74566765e-7,
-      "scaleX": 4.5,
-      "scaleY": 1,
-      "scaleZ": 4.5
+    "Object": {
+        "GUID": "114a7d",
+        "Name": "Custom_Tile",
+        "Transform": {
+            "posX": -20.5000057,
+            "posY": 0.947591662,
+            "posZ": 44.86026,
+            "rotX": -6.705979e-7,
+            "rotY": 0.6010216,
+            "rotZ": 1.74566765e-7,
+            "scaleX": 4.5,
+            "scaleY": 1,
+            "scaleZ": 4.5
+        },
+        "Nickname": "The Ents of Fangorn",
+        "Description": "FactionCard;Ents;FreePeoples;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142887141/37C07E9D061F1E8DCBFE309294FFC8F078B259AD/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142887366/890C60812B4B7ED47C33CF68CB96D874F60F251D/",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomTile": {
+                "Type": 3,
+                "Thickness": 0.1,
+                "Stackable": false,
+                "Stretch": true
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Ents of Fangorn",
-    "Description": "FactionCard;Ents;FreePeoples;WoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142887141/37C07E9D061F1E8DCBFE309294FFC8F078B259AD/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142887366/890C60812B4B7ED47C33CF68CB96D874F60F251D/",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomTile": {
-        "Type": 3,
-        "Thickness": 0.1,
-        "Stackable": false,
-        "Stretch": true
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

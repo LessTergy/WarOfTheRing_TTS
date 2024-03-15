@@ -1,61 +1,61 @@
 {
-  "Object": {
-    "GUID": "8d09a8",
-    "Name": "Card",
-    "Transform": {
-      "posX": 98.0417252,
-      "posY": 1.3172394,
-      "posZ": -43.14718,
-      "rotX": 0.0000207898229,
-      "rotY": 180,
-      "rotZ": -7.274668e-8,
-      "scaleX": 2.800268,
-      "scaleY": 1,
-      "scaleZ": 2.800268
+    "Object": {
+        "GUID": "8d09a8",
+        "Name": "Card",
+        "Transform": {
+            "posX": 98.0417252,
+            "posY": 1.3172394,
+            "posZ": -43.14718,
+            "rotX": 0.0000207898229,
+            "rotY": 180,
+            "rotZ": -7.274668e-8,
+            "scaleX": 2.800268,
+            "scaleY": 1,
+            "scaleZ": 2.800268
+        },
+        "Nickname": "The Palantir of Orthanc",
+        "Description": "Card;Event;Character;Shadow;Init:3;#21;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": true,
+        "Hands": true,
+        "CardID": 205612,
+        "SidewaysCard": false,
+        "CustomDeck": {
+            "1942": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142846741/90EB36AA0C103B730BAD1690D185D53340597047/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142847150/21E3E5E8934E62D09F055469A5F95FAD0CAF13C5/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Palantir of Orthanc",
-    "Description": "Card;Event;Character;Shadow;Init:3;#21;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": true,
-    "Hands": true,
-    "CardID": 205612,
-    "SidewaysCard": false,
-    "CustomDeck": {
-      "1942": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142846741/90EB36AA0C103B730BAD1690D185D53340597047/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142847150/21E3E5E8934E62D09F055469A5F95FAD0CAF13C5/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": false,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

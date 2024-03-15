@@ -1,61 +1,61 @@
 {
-  "Object": {
-    "GUID": "43a6a7",
-    "Name": "Card",
-    "Transform": {
-      "posX": -42,
-      "posY": 0.961196542,
-      "posZ": 45,
-      "rotX": -0.000001848753,
-      "rotY": 2.7437224e-7,
-      "rotZ": 180,
-      "scaleX": 2.8,
-      "scaleY": 1,
-      "scaleZ": 2.8
+    "Object": {
+        "GUID": "43a6a7",
+        "Name": "Card",
+        "Transform": {
+            "posX": -42,
+            "posY": 0.961196542,
+            "posZ": 45,
+            "rotX": -0.000001848753,
+            "rotY": 2.7437224e-7,
+            "rotZ": 180,
+            "scaleX": 2.8,
+            "scaleY": 1,
+            "scaleZ": 2.8
+        },
+        "Nickname": "Brand: King of Dale",
+        "Description": "Card;Character;Ruler;Sovereign:#1;FreePeoples;KoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": true,
+        "CardID": 212800,
+        "SidewaysCard": false,
+        "CustomDeck": {
+            "2128": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/2079031781127736148/5BD818E3A141EA0F1CBC4D0141BC03A3D15A99CD/",
+                "NumWidth": 10,
+                "NumHeight": 4,
+                "BackIsHidden": true,
+                "UniqueBack": true,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Brand: King of Dale",
-    "Description": "Card;Character;Ruler;Sovereign:#1;FreePeoples;KoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": true,
-    "CardID": 212800,
-    "SidewaysCard": false,
-    "CustomDeck": {
-      "2128": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/2079031781127736148/5BD818E3A141EA0F1CBC4D0141BC03A3D15A99CD/",
-        "NumWidth": 10,
-        "NumHeight": 4,
-        "BackIsHidden": true,
-        "UniqueBack": true,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

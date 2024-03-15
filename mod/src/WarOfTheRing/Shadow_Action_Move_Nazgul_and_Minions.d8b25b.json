@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "d8b25b",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": -84.37956,
-      "posY": 1.00359058,
-      "posZ": 28.824934,
-      "rotX": 0.00000267128826,
-      "rotY": 180.0022,
-      "rotZ": 0.0000018336691,
-      "scaleX": 0.7999998,
-      "scaleY": 0.7999998,
-      "scaleZ": 0.7999998
-    },
-    "Nickname": "Shadow Action (Move Nazgul and Minions)",
-    "Description": "LoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 0.9960827
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381480644/EA6CA3767CE4285C602FE9AE404E94D88F325534/",
-      "NormalURL": "",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
-      "Convex": true,
-      "MaterialIndex": 3,
-      "TypeIndex": 0,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "d8b25b",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": -84.37956,
+            "posY": 1.00359058,
+            "posZ": 28.824934,
+            "rotX": 0.00000267128826,
+            "rotY": 180.0022,
+            "rotZ": 0.0000018336691,
+            "scaleX": 0.7999998,
+            "scaleY": 0.7999998,
+            "scaleZ": 0.7999998
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
+        "Nickname": "Shadow Action (Move Nazgul and Minions)",
+        "Description": "LoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 0.9960827
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381480644/EA6CA3767CE4285C602FE9AE404E94D88F325534/",
+            "NormalURL": "",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 0,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

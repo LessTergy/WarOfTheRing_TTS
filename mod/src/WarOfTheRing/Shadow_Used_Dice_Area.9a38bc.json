@@ -1,86 +1,86 @@
 {
-  "Object": {
-    "GUID": "9a38bc",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": -39,
-      "posY": 0.95,
-      "posZ": -31,
-      "rotX": 0,
-      "rotY": 179.996216,
-      "rotZ": 6.963853e-8,
-      "scaleX": 2.5,
-      "scaleY": 1,
-      "scaleZ": 2.5
-    },
-    "Nickname": "Shadow Used Dice Area",
-    "Description": "Area;UsedDiceArea;Shadow;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1759189599827312737/C20254E8A71B74A1A21A553E048B4D6FF2527181/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.1,
-        "MergeDistancePixels": 25,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "#include ./Shadow_Used_Dice_Area.9a38bc.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "AttachedSnapPoints": [
-      {
-        "Position": {
-          "x": 1.00005281,
-          "y": 0.05000001,
-          "z": 0.7999325
+    "Object": {
+        "GUID": "9a38bc",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": -39,
+            "posY": 0.95,
+            "posZ": -31,
+            "rotX": 0,
+            "rotY": 179.996216,
+            "rotZ": 6.963853e-8,
+            "scaleX": 2.5,
+            "scaleY": 1,
+            "scaleZ": 2.5
         },
-        "Rotation": {
-          "x": 2.3933163e-8,
-          "y": 0.00504067959,
-          "z": 180
-        }
-      },
-      {
-        "Position": {
-          "x": -0.99994725,
-          "y": 0.0500000156,
-          "z": 0.800066
+        "Nickname": "Shadow Used Dice Area",
+        "Description": "Area;UsedDiceArea;Shadow;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
         },
-        "Rotation": {
-          "x": 4.83935336e-9,
-          "y": 0.00378392474,
-          "z": 180
-        }
-      }
-    ]
-  },
-  "StatesPaths": {}
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1759189599827312737/C20254E8A71B74A1A21A553E048B4D6FF2527181/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.1,
+                "MergeDistancePixels": 25,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "#include ./Shadow_Used_Dice_Area.9a38bc.lua",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "AttachedSnapPoints": [
+            {
+                "Position": {
+                    "x": 1.00005281,
+                    "y": 0.05000001,
+                    "z": 0.7999325
+                },
+                "Rotation": {
+                    "x": 2.3933163e-8,
+                    "y": 0.00504067959,
+                    "z": 180
+                }
+            },
+            {
+                "Position": {
+                    "x": -0.99994725,
+                    "y": 0.0500000156,
+                    "z": 0.800066
+                },
+                "Rotation": {
+                    "x": 4.83935336e-9,
+                    "y": 0.00378392474,
+                    "z": 180
+                }
+            }
+        ]
+    },
+    "StatesPaths": {}
 }

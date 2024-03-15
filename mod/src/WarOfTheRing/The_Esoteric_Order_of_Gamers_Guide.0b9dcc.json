@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "0b9dcc",
-    "Name": "Custom_PDF",
-    "Transform": {
-      "posX": 79,
-      "posY": 0.947589755,
-      "posZ": 0,
-      "rotX": -0.00000281028065,
-      "rotY": 269.9828,
-      "rotZ": 0.000005104993,
-      "scaleX": 4,
-      "scaleY": 1,
-      "scaleZ": 4
+    "Object": {
+        "GUID": "0b9dcc",
+        "Name": "Custom_PDF",
+        "Transform": {
+            "posX": 79,
+            "posY": 0.947589755,
+            "posZ": 0,
+            "rotX": -0.00000281028065,
+            "rotY": 269.9828,
+            "rotZ": 0.000005104993,
+            "scaleX": 4,
+            "scaleY": 1,
+            "scaleZ": 4
+        },
+        "Nickname": "The Esoteric Order of Gamers Guide",
+        "Description": "",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomPDF": {
+            "PDFUrl": "http://cloud-3.steamusercontent.com/ugc/1744555712193004749/9B78DCF4ADC18AB157BEE976D27DD559F36B95F5/",
+            "PDFPassword": "",
+            "PDFPage": 0,
+            "PDFPageOffset": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Esoteric Order of Gamers Guide",
-    "Description": "",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomPDF": {
-      "PDFUrl": "http://cloud-3.steamusercontent.com/ugc/1744555712193004749/9B78DCF4ADC18AB157BEE976D27DD559F36B95F5/",
-      "PDFPassword": "",
-      "PDFPage": 0,
-      "PDFPageOffset": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

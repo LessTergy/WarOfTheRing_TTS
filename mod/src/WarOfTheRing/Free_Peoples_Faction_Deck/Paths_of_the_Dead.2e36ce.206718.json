@@ -1,61 +1,61 @@
 {
-  "Object": {
-    "GUID": "2e36ce",
-    "Name": "Card",
-    "Transform": {
-      "posX": -102.274849,
-      "posY": 12.3190279,
-      "posZ": 68.653656,
-      "rotX": 0.0000206473087,
-      "rotY": 180,
-      "rotZ": 2.60378755e-7,
-      "scaleX": 2.80049133,
-      "scaleY": 1,
-      "scaleZ": 2.80049133
+    "Object": {
+        "GUID": "2e36ce",
+        "Name": "Card",
+        "Transform": {
+            "posX": -102.274849,
+            "posY": 12.3190279,
+            "posZ": 68.653656,
+            "rotX": 0.0000206473087,
+            "rotY": 180,
+            "rotZ": 2.60378755e-7,
+            "scaleX": 2.80049133,
+            "scaleY": 1,
+            "scaleZ": 2.80049133
+        },
+        "Nickname": "Paths of the Dead",
+        "Description": "Card;Faction;DeadMen;FreePeoples;#2;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": true,
+        "Hands": true,
+        "CardID": 206718,
+        "SidewaysCard": false,
+        "CustomDeck": {
+            "8": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142898416/B0ACA261893BFB83D4D363D34113FCBFF67BAA13/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142899143/7BBDDCBDC8A1ACDD8069CD94BDFBE3BD8B90756F/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Paths of the Dead",
-    "Description": "Card;Faction;DeadMen;FreePeoples;#2;WoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": true,
-    "Hands": true,
-    "CardID": 206718,
-    "SidewaysCard": false,
-    "CustomDeck": {
-      "8": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142898416/B0ACA261893BFB83D4D363D34113FCBFF67BAA13/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142899143/7BBDDCBDC8A1ACDD8069CD94BDFBE3BD8B90756F/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": false,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

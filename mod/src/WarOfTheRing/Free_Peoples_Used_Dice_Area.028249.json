@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "028249",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": -39.0000153,
-      "posY": 0.95,
-      "posZ": 31,
-      "rotX": -0.0000154827285,
-      "rotY": 0.00006012069,
-      "rotZ": 0.00003583366,
-      "scaleX": 2.5,
-      "scaleY": 1,
-      "scaleZ": 2.5
+    "Object": {
+        "GUID": "028249",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": -39.0000153,
+            "posY": 0.95,
+            "posZ": 31,
+            "rotX": -0.0000154827285,
+            "rotY": 0.00006012069,
+            "rotZ": 0.00003583366,
+            "scaleX": 2.5,
+            "scaleY": 1,
+            "scaleZ": 2.5
+        },
+        "Nickname": "Free Peoples Used Dice Area",
+        "Description": "Area;UsedDiceArea;FreePeoples;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1759189599827342977/3AD0D8AA42AD62E1088E76354E3586663CA17D16/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.1,
+                "MergeDistancePixels": 25,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "#include ./Free_Peoples_Used_Dice_Area.028249.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Free Peoples Used Dice Area",
-    "Description": "Area;UsedDiceArea;FreePeoples;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1759189599827342977/3AD0D8AA42AD62E1088E76354E3586663CA17D16/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.1,
-        "MergeDistancePixels": 25,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "#include ./Free_Peoples_Used_Dice_Area.028249.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

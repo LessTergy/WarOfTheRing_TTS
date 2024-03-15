@@ -1,74 +1,74 @@
 {
-  "Object": {
-    "GUID": "e9e0b5",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": -9.566649,
-      "posY": 0.839999139,
-      "posZ": 24.3443527,
-      "rotX": 0.00223883078,
-      "rotY": 179.977951,
-      "rotZ": -0.00004961508,
-      "scaleX": 0.48,
-      "scaleY": 1,
-      "scaleZ": 0.48
-    },
-    "Nickname": "Angmar",
-    "Description": "City;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": false,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974403636/902CE96A59BA2EDD438093CC21070486929EE7AE/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.249999866,
-        "MergeDistancePixels": 5,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "AttachedSnapPoints": [
-      {
-        "Position": {
-          "x": -0.9481255,
-          "y": 0.124999,
-          "z": -0.340540141
+    "Object": {
+        "GUID": "e9e0b5",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": -9.566649,
+            "posY": 0.839999139,
+            "posZ": 24.3443527,
+            "rotX": 0.00223883078,
+            "rotY": 179.977951,
+            "rotZ": -0.00004961508,
+            "scaleX": 0.48,
+            "scaleY": 1,
+            "scaleZ": 0.48
         },
-        "Rotation": {
-          "x": 0.00000186030638,
-          "y": 45.0216179,
-          "z": 0.00000259049239
-        }
-      }
-    ]
-  },
-  "StatesPaths": {}
+        "Nickname": "Angmar",
+        "Description": "City;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": false,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974403636/902CE96A59BA2EDD438093CC21070486929EE7AE/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.249999866,
+                "MergeDistancePixels": 5,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "AttachedSnapPoints": [
+            {
+                "Position": {
+                    "x": -0.9481255,
+                    "y": 0.124999,
+                    "z": -0.340540141
+                },
+                "Rotation": {
+                    "x": 0.00000186030638,
+                    "y": 45.0216179,
+                    "z": 0.00000259049239
+                }
+            }
+        ]
+    },
+    "StatesPaths": {}
 }

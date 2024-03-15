@@ -1,118 +1,118 @@
 {
-  "Object": {
-    "GUID": "76c749",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 20.0000153,
-      "posY": 1.54759157,
-      "posZ": 39.5006027,
-      "rotX": 270,
-      "rotY": 179.999588,
-      "rotZ": 0,
-      "scaleX": 0.6,
-      "scaleY": 0.6,
-      "scaleZ": 0.6
-    },
-    "Nickname": "(Narya Action Die)",
-    "Description": "Dice;Action;Narya;FreePeoples;LoME;Anniversary;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.9999998,
-      "g": 0.9921723,
-      "b": 0.9999998
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633502626/38B6D0EA424C1A0A6E50E902099587F2D889375E/",
-      "NormalURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633503978/94BE3FDD0BE1F179222A0DAF5AC38B25974442EA/",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
-      "Convex": true,
-      "MaterialIndex": 0,
-      "TypeIndex": 2,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "76c749",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": 20.0000153,
+            "posY": 1.54759157,
+            "posZ": 39.5006027,
+            "rotX": 270,
+            "rotY": 179.999588,
+            "rotZ": 0,
+            "scaleX": 0.6,
+            "scaleY": 0.6,
+            "scaleZ": 0.6
         },
-        "SpecularIntensity": 0.2,
-        "SpecularSharpness": 5.366667,
-        "FresnelStrength": 0.516666651
-      },
-      "CastShadows": true
+        "Nickname": "(Narya Action Die)",
+        "Description": "Dice;Action;Narya;FreePeoples;LoME;Anniversary;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.9999998,
+            "g": 0.9921723,
+            "b": 0.9999998
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633502626/38B6D0EA424C1A0A6E50E902099587F2D889375E/",
+            "NormalURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633503978/94BE3FDD0BE1F179222A0DAF5AC38B25974442EA/",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
+            "Convex": true,
+            "MaterialIndex": 0,
+            "TypeIndex": 2,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0.2,
+                "SpecularSharpness": 5.366667,
+                "FresnelStrength": 0.516666651
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "#include ./Narya_Action_Die.76c749.lua",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "RotationValues": [
+            {
+                "Value": "Eye",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Event",
+                "Rotation": {
+                    "x": 90,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Card Draw",
+                "Rotation": {
+                    "x": 180,
+                    "y": 180,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Character",
+                "Rotation": {
+                    "x": 270,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Muster",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 90
+                }
+            },
+            {
+                "Value": "Army",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 270
+                }
+            }
+        ]
     },
-    "LuaScript": "#include ./Narya_Action_Die.76c749.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "RotationValues": [
-      {
-        "Value": "Eye",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Event",
-        "Rotation": {
-          "x": 90,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Card Draw",
-        "Rotation": {
-          "x": 180,
-          "y": 180,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Character",
-        "Rotation": {
-          "x": 270,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Muster",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": 90
-        }
-      },
-      {
-        "Value": "Army",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": 270
-        }
-      }
-    ]
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

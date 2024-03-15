@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "1d784f",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 27.7555218,
-      "posY": 1.00500011,
-      "posZ": 0.953948736,
-      "rotX": -6.232484e-7,
-      "rotY": 225.020767,
-      "rotZ": 7.290952e-7,
-      "scaleX": 0.450000048,
-      "scaleY": 0.450000048,
-      "scaleZ": 0.450000048
-    },
-    "Nickname": "South Rhun",
-    "Description": "SettlementControlMarker;Town;Shadow;",
-    "GMNotes": "Region:South Rhun;Control:Shadow;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 0.9960827
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": false,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381453793/49B505011726E41E2C480437ACF7464933CF2008/",
-      "NormalURL": "",
-      "ColliderURL": "",
-      "Convex": true,
-      "MaterialIndex": 3,
-      "TypeIndex": 0,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "1d784f",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": 27.7555218,
+            "posY": 1.00500011,
+            "posZ": 0.953948736,
+            "rotX": -6.232484e-7,
+            "rotY": 225.020767,
+            "rotZ": 7.290952e-7,
+            "scaleX": 0.450000048,
+            "scaleY": 0.450000048,
+            "scaleZ": 0.450000048
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
+        "Nickname": "South Rhun",
+        "Description": "SettlementControlMarker;Town;Shadow;",
+        "GMNotes": "Region:South Rhun;Control:Shadow;",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 0.9960827
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": false,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381453793/49B505011726E41E2C480437ACF7464933CF2008/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 0,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "#include ./South_Rhun.1d784f.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "#include ./South_Rhun.1d784f.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

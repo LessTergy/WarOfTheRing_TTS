@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "0b11f6",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 11.2169218,
-      "posY": 1.01500213,
-      "posZ": -9.035663,
-      "rotX": 0.000082563,
-      "rotY": 225.000061,
-      "rotZ": 180.0003,
-      "scaleX": 0.450000048,
-      "scaleY": 0.450000048,
-      "scaleZ": 0.450000048
-    },
-    "Nickname": "Minas Tirith",
-    "Description": "SettlementControlMarker;Stronghold;FreePeoples;",
-    "GMNotes": "Region:Minas Tirith;Control:FreePeoples;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 0.9960827
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": false,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381453793/49B505011726E41E2C480437ACF7464933CF2008/",
-      "NormalURL": "",
-      "ColliderURL": "",
-      "Convex": true,
-      "MaterialIndex": 3,
-      "TypeIndex": 0,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "0b11f6",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": 11.2169218,
+            "posY": 1.01500213,
+            "posZ": -9.035663,
+            "rotX": 0.000082563,
+            "rotY": 225.000061,
+            "rotZ": 180.0003,
+            "scaleX": 0.450000048,
+            "scaleY": 0.450000048,
+            "scaleZ": 0.450000048
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
+        "Nickname": "Minas Tirith",
+        "Description": "SettlementControlMarker;Stronghold;FreePeoples;",
+        "GMNotes": "Region:Minas Tirith;Control:FreePeoples;",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 0.9960827
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": false,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381453793/49B505011726E41E2C480437ACF7464933CF2008/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 0,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "#include ./Minas_Tirith.0b11f6.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "#include ./Minas_Tirith.0b11f6.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

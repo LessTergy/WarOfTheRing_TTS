@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "c35be9",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": 75.93065,
-      "posY": 0.997585535,
-      "posZ": -57.766655,
-      "rotX": 0.00000607189941,
-      "rotY": 180.0084,
-      "rotZ": -7.00191052e-8,
-      "scaleX": 5,
-      "scaleY": 1,
-      "scaleZ": 5
+    "Object": {
+        "GUID": "c35be9",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": 75.93065,
+            "posY": 0.997585535,
+            "posZ": -57.766655,
+            "rotX": 0.00000607189941,
+            "rotY": 180.0084,
+            "rotZ": -7.00191052e-8,
+            "scaleX": 5,
+            "scaleY": 1,
+            "scaleZ": 5
+        },
+        "Nickname": "Preferences Panel",
+        "Description": "Panel;Preferences;",
+        "GMNotes": "Scale:100;Characters:3D;Nazgul:3D;Armies:3D;Factions:3D;Mountains:3D;MtDoom:3D;Settlements:Flat;Sound:On;Scream:Once;Warnings:On;Dice:Original;",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1686023445066857867/4C601AD45F8BEBDD8B9DD1162AE812F5EEC294EF/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.1,
+                "MergeDistancePixels": 25,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "#include ./Preferences_Panel.c35be9.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Preferences Panel",
-    "Description": "Panel;Preferences;",
-    "GMNotes": "Scale:100;Characters:3D;Nazgul:3D;Armies:3D;Factions:3D;Mountains:3D;MtDoom:3D;Settlements:Flat;Sound:On;Scream:Once;Warnings:On;Dice:Original;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1686023445066857867/4C601AD45F8BEBDD8B9DD1162AE812F5EEC294EF/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.1,
-        "MergeDistancePixels": 25,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "#include ./Preferences_Panel.c35be9.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

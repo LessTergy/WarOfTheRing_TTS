@@ -1,55 +1,55 @@
 {
-  "Object": {
-    "GUID": "507f2b",
-    "Name": "Custom_Assetbundle",
-    "Transform": {
-      "posX": 87.59485,
-      "posY": 1.447586,
-      "posZ": -50.3430138,
-      "rotX": -0.00000394960352,
-      "rotY": 269.9985,
-      "rotZ": 0.00000694346045,
-      "scaleX": 1,
-      "scaleY": 1,
-      "scaleZ": 1
+    "Object": {
+        "GUID": "507f2b",
+        "Name": "Custom_Assetbundle",
+        "Transform": {
+            "posX": 87.59485,
+            "posY": 1.447586,
+            "posZ": -50.3430138,
+            "rotX": -0.00000394960352,
+            "rotY": 269.9985,
+            "rotZ": 0.00000694346045,
+            "scaleX": 1,
+            "scaleY": 1,
+            "scaleZ": 1
+        },
+        "Nickname": "",
+        "Description": "SoundCubeBattle;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomAssetbundle": {
+            "AssetbundleURL": "http://cloud-3.steamusercontent.com/ugc/1836921935021218540/B2D7D3A543BC69C2C9AD3490838006B9389A699A/",
+            "AssetbundleSecondaryURL": "",
+            "MaterialIndex": 0,
+            "TypeIndex": 0,
+            "LoopingEffectIndex": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "",
-    "Description": "SoundCubeBattle;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomAssetbundle": {
-      "AssetbundleURL": "http://cloud-3.steamusercontent.com/ugc/1836921935021218540/B2D7D3A543BC69C2C9AD3490838006B9389A699A/",
-      "AssetbundleSecondaryURL": "",
-      "MaterialIndex": 0,
-      "TypeIndex": 0,
-      "LoopingEffectIndex": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

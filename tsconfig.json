@@ -1,21 +1,21 @@
 {
-  "compilerOptions": {
-    // Emits d.ts definition files along with compiled JS.
-    "declaration": true,
+    "compilerOptions": {
+        // Emits d.ts definition files along with compiled JS.
+        "declaration": true,
 
-    // Enables interopability between CommonJS and ES Modules.
-    //
-    // This does not effect the code that is emitted, but rather allows
-    // typechecking of packages that use an older module format.
-    "esModuleInterop": true,
+        // Enables interopability between CommonJS and ES Modules.
+        //
+        // This does not effect the code that is emitted, but rather allows
+        // typechecking of packages that use an older module format.
+        "esModuleInterop": true,
 
-    // Require checked-in TypeScript code to pass a higher bar/be consistent.
-    "strict": true,
+        // Require checked-in TypeScript code to pass a higher bar/be consistent.
+        "strict": true,
 
-    "module": "CommonJS",
-    "lib": ["ES2020"]
-  },
+        "module": "CommonJS",
+        "lib": ["ES2020"]
+    },
 
-  "include": ["contrib", "mod", "src", "tool"],
-  "exclude": ["node_modules"]
+    "include": ["contrib", "mod", "src", "tool"],
+    "exclude": ["node_modules"]
 }

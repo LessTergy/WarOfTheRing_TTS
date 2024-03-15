@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "493e63",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 6.02817965,
-      "posY": 1.00500011,
-      "posZ": -10.563282,
-      "rotX": -5.787929e-7,
-      "rotY": 225.000015,
-      "rotZ": 180,
-      "scaleX": 0.450000048,
-      "scaleY": 0.450000048,
-      "scaleZ": 0.450000048
-    },
-    "Nickname": "Lamedon",
-    "Description": "SettlementControlMarker;Town;FreePeoples;",
-    "GMNotes": "Region:Lamedon;Control:FreePeoples;",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 0.9960827
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": false,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381453793/49B505011726E41E2C480437ACF7464933CF2008/",
-      "NormalURL": "",
-      "ColliderURL": "",
-      "Convex": true,
-      "MaterialIndex": 3,
-      "TypeIndex": 0,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "493e63",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": 6.02817965,
+            "posY": 1.00500011,
+            "posZ": -10.563282,
+            "rotX": -5.787929e-7,
+            "rotY": 225.000015,
+            "rotZ": 180,
+            "scaleX": 0.450000048,
+            "scaleY": 0.450000048,
+            "scaleZ": 0.450000048
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
+        "Nickname": "Lamedon",
+        "Description": "SettlementControlMarker;Town;FreePeoples;",
+        "GMNotes": "Region:Lamedon;Control:FreePeoples;",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 0.9960827
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": false,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381453793/49B505011726E41E2C480437ACF7464933CF2008/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 0,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "#include ./Lamedon.493e63.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "#include ./Lamedon.493e63.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

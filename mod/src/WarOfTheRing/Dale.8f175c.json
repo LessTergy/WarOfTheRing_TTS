@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "8f175c",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": 17.49647,
-      "posY": 0.8399999,
-      "posZ": 15.669529,
-      "rotX": 0.000159318952,
-      "rotY": 179.983673,
-      "rotZ": -0.000144816921,
-      "scaleX": 0.48,
-      "scaleY": 1,
-      "scaleZ": 0.48
+    "Object": {
+        "GUID": "8f175c",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": 17.49647,
+            "posY": 0.8399999,
+            "posZ": 15.669529,
+            "rotX": 0.000159318952,
+            "rotY": 179.983673,
+            "rotZ": -0.000144816921,
+            "scaleX": 0.48,
+            "scaleY": 1,
+            "scaleZ": 0.48
+        },
+        "Nickname": "Dale",
+        "Description": "City;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974486148/431705FB98654C52210F88EA99BF875A794BD2C9/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.254999876,
+                "MergeDistancePixels": 5,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Dale",
-    "Description": "City;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974486148/431705FB98654C52210F88EA99BF875A794BD2C9/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.254999876,
-        "MergeDistancePixels": 5,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

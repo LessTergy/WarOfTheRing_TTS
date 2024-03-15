@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "8f9669",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": -0.999077559,
-      "posY": 0.7700037,
-      "posZ": 23.0732422,
-      "rotX": -0.000171815933,
-      "rotY": 180,
-      "rotZ": -0.0007640582,
-      "scaleX": 0.55,
-      "scaleY": 1,
-      "scaleZ": 0.55
+    "Object": {
+        "GUID": "8f9669",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": -0.999077559,
+            "posY": 0.7700037,
+            "posZ": 23.0732422,
+            "rotX": -0.000171815933,
+            "rotY": 180,
+            "rotZ": -0.0007640582,
+            "scaleX": 0.55,
+            "scaleY": 1,
+            "scaleZ": 0.55
+        },
+        "Nickname": "Mount Gundabad",
+        "Description": "Stronghold;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": false,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974411237/0C02FBB2DAA7A25D7236421246E7194E45F41BF2/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.399999857,
+                "MergeDistancePixels": 5,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "#include ./Mount_Gundabad.8f9669.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Mount Gundabad",
-    "Description": "Stronghold;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": false,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974411237/0C02FBB2DAA7A25D7236421246E7194E45F41BF2/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.399999857,
-        "MergeDistancePixels": 5,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "#include ./Mount_Gundabad.8f9669.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

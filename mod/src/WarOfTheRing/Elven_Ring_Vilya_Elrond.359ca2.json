@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "359ca2",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 12.9105577,
-      "posY": 0.988503635,
-      "posZ": 27.39026,
-      "rotX": -1.03938724e-7,
-      "rotY": 270.0036,
-      "rotZ": -7.93850248e-8,
-      "scaleX": 0.5000001,
-      "scaleY": 0.5000001,
-      "scaleZ": 0.5000001
-    },
-    "Nickname": "Elven Ring (Vilya/Elrond)",
-    "Description": "Ring;Elven;Vilya;Elrond;LoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 0.9960827
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380894460/D9F8BF75353B2DEC6F44C2EF81F0287DCC7E3C5D/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381088258/BE753A73077D23492F4A5EFCEA1F70A158515EBF/",
-      "NormalURL": "",
-      "ColliderURL": "",
-      "Convex": true,
-      "MaterialIndex": 1,
-      "TypeIndex": 0,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "359ca2",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": 12.9105577,
+            "posY": 0.988503635,
+            "posZ": 27.39026,
+            "rotX": -1.03938724e-7,
+            "rotY": 270.0036,
+            "rotZ": -7.93850248e-8,
+            "scaleX": 0.5000001,
+            "scaleY": 0.5000001,
+            "scaleZ": 0.5000001
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
+        "Nickname": "Elven Ring (Vilya/Elrond)",
+        "Description": "Ring;Elven;Vilya;Elrond;LoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 0.9960827
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380894460/D9F8BF75353B2DEC6F44C2EF81F0287DCC7E3C5D/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381088258/BE753A73077D23492F4A5EFCEA1F70A158515EBF/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 1,
+            "TypeIndex": 0,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

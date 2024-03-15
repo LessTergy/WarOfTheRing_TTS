@@ -1,118 +1,118 @@
 {
-  "Object": {
-    "GUID": "4f5c6e",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": -3.25713968,
-      "posY": 1.54759157,
-      "posZ": 41.0783272,
-      "rotX": -0.000009291512,
-      "rotY": -0.000153219473,
-      "rotZ": 9.33822e-7,
-      "scaleX": 0.6,
-      "scaleY": 0.6,
-      "scaleZ": 0.6
-    },
-    "Nickname": "(Free Peoples Faction Die)",
-    "Description": "Dice;Faction;FreePeoples;WoME;Anniversary;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.9999998,
-      "g": 0.9921723,
-      "b": 0.9999998
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633468656/B472372CEC257F9D22C45BE183AC1B7181742079/",
-      "NormalURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633469734/1E1576FF379F5D9B49FAC6EB6D399439DB64CEED/",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
-      "Convex": true,
-      "MaterialIndex": 0,
-      "TypeIndex": 2,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "4f5c6e",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": -3.25713968,
+            "posY": 1.54759157,
+            "posZ": 41.0783272,
+            "rotX": -0.000009291512,
+            "rotY": -0.000153219473,
+            "rotZ": 9.33822e-7,
+            "scaleX": 0.6,
+            "scaleY": 0.6,
+            "scaleZ": 0.6
         },
-        "SpecularIntensity": 0.2,
-        "SpecularSharpness": 5.366667,
-        "FresnelStrength": 0.516666651
-      },
-      "CastShadows": true
+        "Nickname": "(Free Peoples Faction Die)",
+        "Description": "Dice;Faction;FreePeoples;WoME;Anniversary;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.9999998,
+            "g": 0.9921723,
+            "b": 0.9999998
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633468656/B472372CEC257F9D22C45BE183AC1B7181742079/",
+            "NormalURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633469734/1E1576FF379F5D9B49FAC6EB6D399439DB64CEED/",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
+            "Convex": true,
+            "MaterialIndex": 0,
+            "TypeIndex": 2,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0.2,
+                "SpecularSharpness": 5.366667,
+                "FresnelStrength": 0.516666651
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "#include ./Free_Peoples_Faction_Die.4f5c6e.lua",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "RotationValues": [
+            {
+                "Value": "Recruit Faction",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Recruit/Draw Faction Event",
+                "Rotation": {
+                    "x": 90,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Play/Draw Faction Event",
+                "Rotation": {
+                    "x": 180,
+                    "y": 180,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Recruit Faction",
+                "Rotation": {
+                    "x": 270,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Plat/Draw Faction Event",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 90
+                }
+            },
+            {
+                "Value": "Recruit/Play Faction Event",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 270
+                }
+            }
+        ]
     },
-    "LuaScript": "#include ./Free_Peoples_Faction_Die.4f5c6e.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "RotationValues": [
-      {
-        "Value": "Recruit Faction",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Recruit/Draw Faction Event",
-        "Rotation": {
-          "x": 90,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Play/Draw Faction Event",
-        "Rotation": {
-          "x": 180,
-          "y": 180,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Recruit Faction",
-        "Rotation": {
-          "x": 270,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Plat/Draw Faction Event",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": 90
-        }
-      },
-      {
-        "Value": "Recruit/Play Faction Event",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": 270
-        }
-      }
-    ]
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

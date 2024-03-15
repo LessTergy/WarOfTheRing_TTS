@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "471b96",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": -60,
-      "posY": 1.48,
-      "posZ": -32,
-      "rotX": 0,
-      "rotY": 180,
-      "rotZ": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "scaleZ": 0.85
-    },
-    "Nickname": "Shadow Combat/Hunt Roll Box",
-    "Description": "DiceBox;Shadow;Combat;Hunt;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.856,
-      "g": 0.09991986,
-      "b": 0.093919374
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": false,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/823506544582574983/FCCB25796F15658004C0911C72B5717878CC2B0B/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/761598535695170313/1600905C125F61DA8042054F2FE25A07401B8A6D/",
-      "NormalURL": "",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/823506544582574983/FCCB25796F15658004C0911C72B5717878CC2B0B/",
-      "Convex": false,
-      "MaterialIndex": 3,
-      "TypeIndex": 0,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "471b96",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": -60,
+            "posY": 1.48,
+            "posZ": -32,
+            "rotX": 0,
+            "rotY": 180,
+            "rotZ": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "scaleZ": 0.85
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
+        "Nickname": "Shadow Combat/Hunt Roll Box",
+        "Description": "DiceBox;Shadow;Combat;Hunt;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.856,
+            "g": 0.09991986,
+            "b": 0.093919374
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": false,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/823506544582574983/FCCB25796F15658004C0911C72B5717878CC2B0B/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/761598535695170313/1600905C125F61DA8042054F2FE25A07401B8A6D/",
+            "NormalURL": "",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/823506544582574983/FCCB25796F15658004C0911C72B5717878CC2B0B/",
+            "Convex": false,
+            "MaterialIndex": 3,
+            "TypeIndex": 0,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

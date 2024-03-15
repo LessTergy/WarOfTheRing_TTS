@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "46d2fc",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": -49.500145,
-      "posY": 1.58331,
-      "posZ": 32,
-      "rotX": 0,
-      "rotY": 0,
-      "rotZ": 0.00300340378,
-      "scaleX": 1,
-      "scaleY": 1,
-      "scaleZ": 0.85
-    },
-    "Nickname": "Free Peoples Action Dice Box",
-    "Description": "DiceBox;Action;FreePeoples;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.117915846,
-      "g": 0.53,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": false,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/823506544582574983/FCCB25796F15658004C0911C72B5717878CC2B0B/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/761598535695170313/1600905C125F61DA8042054F2FE25A07401B8A6D/",
-      "NormalURL": "",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/823506544582574983/FCCB25796F15658004C0911C72B5717878CC2B0B/",
-      "Convex": false,
-      "MaterialIndex": 3,
-      "TypeIndex": 0,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "46d2fc",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": -49.500145,
+            "posY": 1.58331,
+            "posZ": 32,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0.00300340378,
+            "scaleX": 1,
+            "scaleY": 1,
+            "scaleZ": 0.85
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
+        "Nickname": "Free Peoples Action Dice Box",
+        "Description": "DiceBox;Action;FreePeoples;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.117915846,
+            "g": 0.53,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": false,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/823506544582574983/FCCB25796F15658004C0911C72B5717878CC2B0B/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/761598535695170313/1600905C125F61DA8042054F2FE25A07401B8A6D/",
+            "NormalURL": "",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/823506544582574983/FCCB25796F15658004C0911C72B5717878CC2B0B/",
+            "Convex": false,
+            "MaterialIndex": 3,
+            "TypeIndex": 0,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "#include ./Free_Peoples_Action_Dice_Box.46d2fc.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "#include ./Free_Peoples_Action_Dice_Box.46d2fc.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

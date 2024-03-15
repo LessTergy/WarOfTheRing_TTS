@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "a2b0b2",
-    "Name": "Custom_Tile",
-    "Transform": {
-      "posX": 15,
-      "posY": 0.9475866,
-      "posZ": -44.9989433,
-      "rotX": 0.00000269527322,
-      "rotY": 180.01506,
-      "rotZ": -5.383688e-8,
-      "scaleX": 4.5,
-      "scaleY": 1,
-      "scaleZ": 4.5
+    "Object": {
+        "GUID": "a2b0b2",
+        "Name": "Custom_Tile",
+        "Transform": {
+            "posX": 15,
+            "posY": 0.9475866,
+            "posZ": -44.9989433,
+            "rotX": 0.00000269527322,
+            "rotY": 180.01506,
+            "rotZ": -5.383688e-8,
+            "scaleX": 4.5,
+            "scaleY": 1,
+            "scaleZ": 4.5
+        },
+        "Nickname": "The Broods of Shelob",
+        "Description": "FactionCard;Spiders;Shadow;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142826209/9D945992C6CE2FB51AACD61FB0356BE2649FBF62/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142826443/2CCB88A17959F56D719540A750FEF4692E97C789/",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomTile": {
+                "Type": 3,
+                "Thickness": 0.1,
+                "Stackable": false,
+                "Stretch": true
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Broods of Shelob",
-    "Description": "FactionCard;Spiders;Shadow;WoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142826209/9D945992C6CE2FB51AACD61FB0356BE2649FBF62/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142826443/2CCB88A17959F56D719540A750FEF4692E97C789/",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomTile": {
-        "Type": 3,
-        "Thickness": 0.1,
-        "Stackable": false,
-        "Stretch": true
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

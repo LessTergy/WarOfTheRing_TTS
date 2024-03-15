@@ -1,61 +1,61 @@
 {
-  "Object": {
-    "GUID": "12fc0a",
-    "Name": "Card",
-    "Transform": {
-      "posX": -40.7999878,
-      "posY": 1.11359859,
-      "posZ": 31.699976,
-      "rotX": 0.1329866,
-      "rotY": 359.975861,
-      "rotZ": 180.054245,
-      "scaleX": 2.80049133,
-      "scaleY": 1,
-      "scaleZ": 2.80049133
+    "Object": {
+        "GUID": "12fc0a",
+        "Name": "Card",
+        "Transform": {
+            "posX": -40.7999878,
+            "posY": 1.11359859,
+            "posZ": 31.699976,
+            "rotX": 0.1329866,
+            "rotY": 359.975861,
+            "rotZ": 180.054245,
+            "scaleX": 2.80049133,
+            "scaleY": 1,
+            "scaleZ": 2.80049133
+        },
+        "Nickname": "The King of the Dead",
+        "Description": "Card;CallToBattle;Init:2;#1;FreePeoples;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": true,
+        "Hands": true,
+        "CardID": 210013,
+        "SidewaysCard": false,
+        "CustomDeck": {
+            "1999": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142895222/DD0ED64BD5B2E65B7AA5112A47F5272A1B5AFC4D/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142895593/6845E31C539ADF69EDBCD39ED02D0B60EA98970B/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The King of the Dead",
-    "Description": "Card;CallToBattle;Init:2;#1;FreePeoples;WoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": true,
-    "Hands": true,
-    "CardID": 210013,
-    "SidewaysCard": false,
-    "CustomDeck": {
-      "1999": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142895222/DD0ED64BD5B2E65B7AA5112A47F5272A1B5AFC4D/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142895593/6845E31C539ADF69EDBCD39ED02D0B60EA98970B/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": false,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

@@ -1,61 +1,61 @@
 {
-  "Object": {
-    "GUID": "d7264c",
-    "Name": "Card",
-    "Transform": {
-      "posX": -28.5,
-      "posY": 0.974822,
-      "posZ": 32.99994,
-      "rotX": -4.78499445e-8,
-      "rotY": 359.9936,
-      "rotZ": -1.1632175e-7,
-      "scaleX": 2.8,
-      "scaleY": 1,
-      "scaleZ": 2.8
+    "Object": {
+        "GUID": "d7264c",
+        "Name": "Card",
+        "Transform": {
+            "posX": -28.5,
+            "posY": 0.974822,
+            "posZ": 32.99994,
+            "rotX": -4.78499445e-8,
+            "rotY": 359.9936,
+            "rotZ": -1.1632175e-7,
+            "scaleX": 2.8,
+            "scaleY": 1,
+            "scaleZ": 2.8
+        },
+        "Nickname": "Treebeard: Tree-herd",
+        "Description": "Card;Character;#1;Revised;FreePeoples;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": true,
+        "Hands": true,
+        "CardID": 210303,
+        "SidewaysCard": false,
+        "CustomDeck": {
+            "2103": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1861692432783930501/470F48F3BFE720857CEA55664C007BB758BBB3C6/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142873511/57EC2C45F188C401EEB0326C76588E2510A65400/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Treebeard: Tree-herd",
-    "Description": "Card;Character;#1;Revised;FreePeoples;WoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": true,
-    "Hands": true,
-    "CardID": 210303,
-    "SidewaysCard": false,
-    "CustomDeck": {
-      "2103": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1861692432783930501/470F48F3BFE720857CEA55664C007BB758BBB3C6/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142873511/57EC2C45F188C401EEB0326C76588E2510A65400/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": false,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

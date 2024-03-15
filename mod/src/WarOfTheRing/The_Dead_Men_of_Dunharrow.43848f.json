@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "43848f",
-    "Name": "Custom_Tile",
-    "Transform": {
-      "posX": -10,
-      "posY": 0.947591662,
-      "posZ": 44.9428444,
-      "rotX": -5.27637837e-7,
-      "rotY": 359.8669,
-      "rotZ": -5.23548458e-8,
-      "scaleX": 4.5,
-      "scaleY": 1,
-      "scaleZ": 4.5
+    "Object": {
+        "GUID": "43848f",
+        "Name": "Custom_Tile",
+        "Transform": {
+            "posX": -10,
+            "posY": 0.947591662,
+            "posZ": 44.9428444,
+            "rotX": -5.27637837e-7,
+            "rotY": 359.8669,
+            "rotZ": -5.23548458e-8,
+            "scaleX": 4.5,
+            "scaleY": 1,
+            "scaleZ": 4.5
+        },
+        "Nickname": "The Dead Men of Dunharrow",
+        "Description": "FactionCard;DeadMen;FreePeoples;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142884797/D70CB9FD51D1C871FE41549C4F697C6ED88166C7/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142884608/7CF37CAD6A858172BE8BB2FA2B93E03163EA68A1/",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomTile": {
+                "Type": 3,
+                "Thickness": 0.1,
+                "Stackable": false,
+                "Stretch": true
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Dead Men of Dunharrow",
-    "Description": "FactionCard;DeadMen;FreePeoples;WoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142884797/D70CB9FD51D1C871FE41549C4F697C6ED88166C7/",
-      "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142884608/7CF37CAD6A858172BE8BB2FA2B93E03163EA68A1/",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomTile": {
-        "Type": 3,
-        "Thickness": 0.1,
-        "Stackable": false,
-        "Stretch": true
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

@@ -1,86 +1,79 @@
 {
-  "Object": {
-    "GUID": "501b50",
-    "Name": "Deck",
-    "Transform": {
-      "posX": 2.49954319,
-      "posY": 1.04981482,
-      "posZ": -44.999752,
-      "rotX": -4.356137e-9,
-      "rotY": 180.001419,
-      "rotZ": 180,
-      "scaleX": 2.800268,
-      "scaleY": 1,
-      "scaleZ": 2.800268
+    "Object": {
+        "GUID": "501b50",
+        "Name": "Deck",
+        "Transform": {
+            "posX": 2.49954319,
+            "posY": 1.04981482,
+            "posZ": -44.999752,
+            "rotX": -4.356137e-9,
+            "rotY": 180.001419,
+            "rotZ": 180,
+            "scaleX": 2.800268,
+            "scaleY": 1,
+            "scaleZ": 2.800268
+        },
+        "Nickname": "Shadow Call to Battle Cards (WoME)",
+        "Description": "Deck;CallToBattle;Shadow;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": true,
+        "Hands": false,
+        "SidewaysCard": false,
+        "DeckIDs": [209505, 209401, 209409, 209530, 209403, 209502],
+        "CustomDeck": {
+            "2094": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142846741/90EB36AA0C103B730BAD1690D185D53340597047/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142847150/21E3E5E8934E62D09F055469A5F95FAD0CAF13C5/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
+            },
+            "2095": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142858618/A1B1C77527E097849C8CBA10714BD8D9E0C705D8/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142859091/1DCECBCDB9881D8879DB0F494396013DCE398F5B/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "ContainedObjects": []
     },
-    "Nickname": "Shadow Call to Battle Cards (WoME)",
-    "Description": "Deck;CallToBattle;Shadow;WoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": true,
-    "Hands": false,
-    "SidewaysCard": false,
-    "DeckIDs": [
-      209505,
-      209401,
-      209409,
-      209530,
-      209403,
-      209502
-    ],
-    "CustomDeck": {
-      "2094": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142846741/90EB36AA0C103B730BAD1690D185D53340597047/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142847150/21E3E5E8934E62D09F055469A5F95FAD0CAF13C5/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": false,
-        "Type": 0
-      },
-      "2095": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142858618/A1B1C77527E097849C8CBA10714BD8D9E0C705D8/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142859091/1DCECBCDB9881D8879DB0F494396013DCE398F5B/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": false,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "ContainedObjects": []
-  },
-  "StatesPaths": {},
-  "ContainedObjectPaths": [
-    "Fierce_Folk.148a5d.209505.json",
-    "Hideous_Speed.38a006.209401.json",
-    "Old_Hatred.de93cd.209409.json",
-    "Webs_of_Shadow.73da40.209530.json",
-    "The_Last_Stroke_of_Doom.c6b2ab.209403.json",
-    "Borne_up_on_the_Wind.658fb0.209502.json"
-  ]
+    "StatesPaths": {},
+    "ContainedObjectPaths": [
+        "Fierce_Folk.148a5d.209505.json",
+        "Hideous_Speed.38a006.209401.json",
+        "Old_Hatred.de93cd.209409.json",
+        "Webs_of_Shadow.73da40.209530.json",
+        "The_Last_Stroke_of_Doom.c6b2ab.209403.json",
+        "Borne_up_on_the_Wind.658fb0.209502.json"
+    ]
 }

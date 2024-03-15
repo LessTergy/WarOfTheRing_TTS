@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "c9bcd7",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": -56.79193,
-      "posY": 0.9975879,
-      "posZ": -16.7853088,
-      "rotX": 0.00000854429,
-      "rotY": 179.96994,
-      "rotZ": -0.00000124082271,
-      "scaleX": 0.9,
-      "scaleY": 1,
-      "scaleZ": 0.9
+    "Object": {
+        "GUID": "c9bcd7",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": -56.79193,
+            "posY": 0.9975879,
+            "posZ": -16.7853088,
+            "rotX": 0.00000854429,
+            "rotY": 179.96994,
+            "rotZ": -0.00000124082271,
+            "scaleX": 0.9,
+            "scaleY": 1,
+            "scaleZ": 0.9
+        },
+        "Nickname": "Helm's Deep Stronghold",
+        "Description": "Overlay;StrongholdBox;Shadow;KoME;",
+        "GMNotes": "ef398b",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": false,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": false,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353405079/B4254A53A965A0451D0C1537EDB83481EC0B6EA7/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.1,
+                "MergeDistancePixels": 25,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Helm's Deep Stronghold",
-    "Description": "Overlay;StrongholdBox;Shadow;KoME;",
-    "GMNotes": "ef398b",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": false,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": false,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353405079/B4254A53A965A0451D0C1537EDB83481EC0B6EA7/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.1,
-        "MergeDistancePixels": 25,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

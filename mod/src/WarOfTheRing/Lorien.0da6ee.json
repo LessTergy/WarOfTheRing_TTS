@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "0da6ee",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": 3.86914372,
-      "posY": 0.7699996,
-      "posZ": 7.58196259,
-      "rotX": 5.81043e-7,
-      "rotY": 180.013,
-      "rotZ": 0.000225502779,
-      "scaleX": 0.55,
-      "scaleY": 1,
-      "scaleZ": 0.55
+    "Object": {
+        "GUID": "0da6ee",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": 3.86914372,
+            "posY": 0.7699996,
+            "posZ": 7.58196259,
+            "rotX": 5.81043e-7,
+            "rotY": 180.013,
+            "rotZ": 0.000225502779,
+            "scaleX": 0.55,
+            "scaleY": 1,
+            "scaleZ": 0.55
+        },
+        "Nickname": "Lorien",
+        "Description": "Stronghold;",
+        "GMNotes": "290739",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": false,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974454279/073B6CEB2374A9DDCA31E69B40D5F3CCAD6FCFE8/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.399999857,
+                "MergeDistancePixels": 5,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "#include ./Lorien.0da6ee.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Lorien",
-    "Description": "Stronghold;",
-    "GMNotes": "290739",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": false,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974454279/073B6CEB2374A9DDCA31E69B40D5F3CCAD6FCFE8/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.399999857,
-        "MergeDistancePixels": 5,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "#include ./Lorien.0da6ee.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

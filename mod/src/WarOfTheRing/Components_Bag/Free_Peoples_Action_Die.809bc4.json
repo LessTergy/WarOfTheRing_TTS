@@ -1,118 +1,118 @@
 {
-  "Object": {
-    "GUID": "809bc4",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": -10.0000277,
-      "posY": 1.56121707,
-      "posZ": 27.5009251,
-      "rotX": -9.47844569e-7,
-      "rotY": 180.008026,
-      "rotZ": -2.29584955e-7,
-      "scaleX": 0.6,
-      "scaleY": 0.6,
-      "scaleZ": 0.6
-    },
-    "Nickname": "(Free Peoples Action Die)",
-    "Description": "Dice;Action;FreePeoples;6of6;Anniversary;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.9999998,
-      "g": 0.9921723,
-      "b": 0.9999998
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633458241/709A72B769A20037A51FE4DFA12CD33AE65B584E/",
-      "NormalURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633458514/C9DFE6DA886125750D3C07B445B861251C8BD497/",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
-      "Convex": true,
-      "MaterialIndex": 0,
-      "TypeIndex": 2,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "809bc4",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": -10.0000277,
+            "posY": 1.56121707,
+            "posZ": 27.5009251,
+            "rotX": -9.47844569e-7,
+            "rotY": 180.008026,
+            "rotZ": -2.29584955e-7,
+            "scaleX": 0.6,
+            "scaleY": 0.6,
+            "scaleZ": 0.6
         },
-        "SpecularIntensity": 0.2,
-        "SpecularSharpness": 5.366667,
-        "FresnelStrength": 0.516666651
-      },
-      "CastShadows": true
+        "Nickname": "(Free Peoples Action Die)",
+        "Description": "Dice;Action;FreePeoples;6of6;Anniversary;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.9999998,
+            "g": 0.9921723,
+            "b": 0.9999998
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420961095/ACC0672F53A511B8C5675B6855196F8D36B86774/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633458241/709A72B769A20037A51FE4DFA12CD33AE65B584E/",
+            "NormalURL": "http://cloud-3.steamusercontent.com/ugc/1759189325633458514/C9DFE6DA886125750D3C07B445B861251C8BD497/",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1902235071420965707/A52546863D666B2817C5D69AF8DC543E64F34319/",
+            "Convex": true,
+            "MaterialIndex": 0,
+            "TypeIndex": 2,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0.2,
+                "SpecularSharpness": 5.366667,
+                "FresnelStrength": 0.516666651
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "#include ./Free_Peoples_Action_Die.809bc4.lua",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "RotationValues": [
+            {
+                "Value": "Character Action",
+                "Rotation": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Will of the West",
+                "Rotation": {
+                    "x": 90,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Army/Muster Action",
+                "Rotation": {
+                    "x": 180,
+                    "y": 180,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Character Action",
+                "Rotation": {
+                    "x": 270,
+                    "y": 0,
+                    "z": 0
+                }
+            },
+            {
+                "Value": "Muster Action",
+                "Rotation": {
+                    "x": 360,
+                    "y": 0,
+                    "z": 90
+                }
+            },
+            {
+                "Value": "Event Action",
+                "Rotation": {
+                    "x": 180,
+                    "y": 180,
+                    "z": 90
+                }
+            }
+        ]
     },
-    "LuaScript": "#include ./Free_Peoples_Action_Die.809bc4.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "RotationValues": [
-      {
-        "Value": "Character Action",
-        "Rotation": {
-          "x": 0,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Will of the West",
-        "Rotation": {
-          "x": 90,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Army/Muster Action",
-        "Rotation": {
-          "x": 180,
-          "y": 180,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Character Action",
-        "Rotation": {
-          "x": 270,
-          "y": 0,
-          "z": 0
-        }
-      },
-      {
-        "Value": "Muster Action",
-        "Rotation": {
-          "x": 360,
-          "y": 0,
-          "z": 90
-        }
-      },
-      {
-        "Value": "Event Action",
-        "Rotation": {
-          "x": 180,
-          "y": 180,
-          "z": 90
-        }
-      }
-    ]
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

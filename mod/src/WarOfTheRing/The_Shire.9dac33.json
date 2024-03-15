@@ -1,74 +1,74 @@
 {
-  "Object": {
-    "GUID": "9dac33",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": -14.3194628,
-      "posY": 0.840000033,
-      "posZ": 14.3833246,
-      "rotX": 0.000163296529,
-      "rotY": 179.9837,
-      "rotZ": 0.00004327846,
-      "scaleX": 0.48,
-      "scaleY": 1,
-      "scaleZ": 0.48
-    },
-    "Nickname": "The Shire",
-    "Description": "City;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": false,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974396259/36305FE91D05C67452375D86499BDC9E7673C8E3/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.254999876,
-        "MergeDistancePixels": 5,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "AttachedSnapPoints": [
-      {
-        "Position": {
-          "x": 1.00886762,
-          "y": 0.127500311,
-          "z": -0.331614017
+    "Object": {
+        "GUID": "9dac33",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": -14.3194628,
+            "posY": 0.840000033,
+            "posZ": 14.3833246,
+            "rotX": 0.000163296529,
+            "rotY": 179.9837,
+            "rotZ": 0.00004327846,
+            "scaleX": 0.48,
+            "scaleY": 1,
+            "scaleZ": 0.48
         },
-        "Rotation": {
-          "x": -2.8634426e-7,
-          "y": 45.0192528,
-          "z": 180
-        }
-      }
-    ]
-  },
-  "StatesPaths": {}
+        "Nickname": "The Shire",
+        "Description": "City;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": false,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974396259/36305FE91D05C67452375D86499BDC9E7673C8E3/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.254999876,
+                "MergeDistancePixels": 5,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "AttachedSnapPoints": [
+            {
+                "Position": {
+                    "x": 1.00886762,
+                    "y": 0.127500311,
+                    "z": -0.331614017
+                },
+                "Rotation": {
+                    "x": -2.8634426e-7,
+                    "y": 45.0192528,
+                    "z": 180
+                }
+            }
+        ]
+    },
+    "StatesPaths": {}
 }

@@ -1,73 +1,68 @@
 {
-  "Object": {
-    "GUID": "0534ed",
-    "Name": "Deck",
-    "Transform": {
-      "posX": -74.4,
-      "posY": 0.987772167,
-      "posZ": -61,
-      "rotX": 0.000004044239,
-      "rotY": 180,
-      "rotZ": 180,
-      "scaleX": 2.80049133,
-      "scaleY": 1,
-      "scaleZ": 2.80049133
+    "Object": {
+        "GUID": "0534ed",
+        "Name": "Deck",
+        "Transform": {
+            "posX": -74.4,
+            "posY": 0.987772167,
+            "posZ": -61,
+            "rotX": 0.000004044239,
+            "rotY": 180,
+            "rotZ": 180,
+            "scaleX": 2.80049133,
+            "scaleY": 1,
+            "scaleZ": 2.80049133
+        },
+        "Nickname": "Free Peoples Character Cards (KoME)",
+        "Description": "Cards;Event;FreePeoples;KoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "SidewaysCard": false,
+        "DeckIDs": [214314, 214315, 214316, 214313],
+        "CustomDeck": {
+            "2143": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/2079031781127736148/5BD818E3A141EA0F1CBC4D0141BC03A3D15A99CD/",
+                "NumWidth": 10,
+                "NumHeight": 4,
+                "BackIsHidden": true,
+                "UniqueBack": true,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "ContainedObjects": []
     },
-    "Nickname": "Free Peoples Character Cards (KoME)",
-    "Description": "Cards;Event;FreePeoples;KoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "SidewaysCard": false,
-    "DeckIDs": [
-      214314,
-      214315,
-      214316,
-      214313
-    ],
-    "CustomDeck": {
-      "2143": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/2079031781127736148/5BD818E3A141EA0F1CBC4D0141BC03A3D15A99CD/",
-        "NumWidth": 10,
-        "NumHeight": 4,
-        "BackIsHidden": true,
-        "UniqueBack": true,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "ContainedObjects": []
-  },
-  "StatesPaths": {},
-  "ContainedObjectPaths": [
-    "House_of_the_Stewards.da18e8.214314.json",
-    "It_Is_Not_So_Dark_Here.5cad15.214315.json",
-    "Knowledge_of_the_Seeing_Stones.5800d4.214316.json",
-    "Aid_in_Time_of_Need.83e1eb.214313.json"
-  ]
+    "StatesPaths": {},
+    "ContainedObjectPaths": [
+        "House_of_the_Stewards.da18e8.214314.json",
+        "It_Is_Not_So_Dark_Here.5cad15.214315.json",
+        "Knowledge_of_the_Seeing_Stones.5800d4.214316.json",
+        "Aid_in_Time_of_Need.83e1eb.214313.json"
+    ]
 }

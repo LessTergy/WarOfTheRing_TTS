@@ -1,68 +1,68 @@
 {
-  "Object": {
-    "GUID": "400d3c",
-    "Name": "Custom_Model",
-    "Transform": {
-      "posX": 28.871769,
-      "posY": 2.07743216,
-      "posZ": 20.1224918,
-      "rotX": -7.57228236e-8,
-      "rotY": -0.00002732076,
-      "rotZ": 180,
-      "scaleX": 0.5000001,
-      "scaleY": 0.5000001,
-      "scaleZ": 0.5000001
-    },
-    "Nickname": "Legolas",
-    "Description": "Counter;Companion;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 0.9960827
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomMesh": {
-      "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
-      "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381417558/B48FF121BFB4FF2D22B8D4E78B0F7572D5A4E93C/",
-      "NormalURL": "",
-      "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
-      "Convex": true,
-      "MaterialIndex": 3,
-      "TypeIndex": 0,
-      "CustomShader": {
-        "SpecularColor": {
-          "r": 1,
-          "g": 1,
-          "b": 1
+    "Object": {
+        "GUID": "400d3c",
+        "Name": "Custom_Model",
+        "Transform": {
+            "posX": 28.871769,
+            "posY": 2.07743216,
+            "posZ": 20.1224918,
+            "rotX": -7.57228236e-8,
+            "rotY": -0.00002732076,
+            "rotZ": 180,
+            "scaleX": 0.5000001,
+            "scaleY": 0.5000001,
+            "scaleZ": 0.5000001
         },
-        "SpecularIntensity": 0,
-        "SpecularSharpness": 2,
-        "FresnelStrength": 0
-      },
-      "CastShadows": true
+        "Nickname": "Legolas",
+        "Description": "Counter;Companion;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 0.9960827
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomMesh": {
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381417558/B48FF121BFB4FF2D22B8D4E78B0F7572D5A4E93C/",
+            "NormalURL": "",
+            "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 0,
+            "CustomShader": {
+                "SpecularColor": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                },
+                "SpecularIntensity": 0,
+                "SpecularSharpness": 2,
+                "FresnelStrength": 0
+            },
+            "CastShadows": true
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

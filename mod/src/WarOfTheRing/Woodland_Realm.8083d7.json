@@ -1,60 +1,60 @@
 {
-  "Object": {
-    "GUID": "8083d7",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": 13.2694111,
-      "posY": 0.769999743,
-      "posZ": 16.5475521,
-      "rotX": 0.000268736854,
-      "rotY": 179.977951,
-      "rotZ": 0.0000538110035,
-      "scaleX": 0.55,
-      "scaleY": 1,
-      "scaleZ": 0.55
+    "Object": {
+        "GUID": "8083d7",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": 13.2694111,
+            "posY": 0.769999743,
+            "posZ": 16.5475521,
+            "rotX": 0.000268736854,
+            "rotY": 179.977951,
+            "rotZ": 0.0000538110035,
+            "scaleX": 0.55,
+            "scaleY": 1,
+            "scaleZ": 0.55
+        },
+        "Nickname": "Woodland Realm",
+        "Description": "Stronghold;",
+        "GMNotes": "e496eb",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974484632/E27A9D7470E87114BC0BEEB4D79C865AC34D827C/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.399999857,
+                "MergeDistancePixels": 5,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "#include ./Woodland_Realm.8083d7.lua",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Woodland Realm",
-    "Description": "Stronghold;",
-    "GMNotes": "e496eb",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1861690611974484632/E27A9D7470E87114BC0BEEB4D79C865AC34D827C/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.399999857,
-        "MergeDistancePixels": 5,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "#include ./Woodland_Realm.8083d7.lua",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

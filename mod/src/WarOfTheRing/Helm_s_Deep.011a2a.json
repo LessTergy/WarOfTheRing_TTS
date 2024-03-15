@@ -1,74 +1,74 @@
 {
-  "Object": {
-    "GUID": "011a2a",
-    "Name": "Custom_Token",
-    "Transform": {
-      "posX": -61.6466522,
-      "posY": 1.24758756,
-      "posZ": -17.0800877,
-      "rotX": 0.000003930102,
-      "rotY": 179.979919,
-      "rotZ": 0.00000318718662,
-      "scaleX": 0.55,
-      "scaleY": 1,
-      "scaleZ": 0.55
-    },
-    "Nickname": "Helm's Deep",
-    "Description": "Stronghold;KoME;",
-    "GMNotes": "c9bcd7",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": false,
-    "Snap": false,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": false,
-    "Autoraise": true,
-    "Sticky": false,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomImage": {
-      "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031781102822065/BCE703235D08E594BCBAAE394356C7698ACE1346/",
-      "ImageSecondaryURL": "",
-      "ImageScalar": 1,
-      "WidthScale": 0,
-      "CustomToken": {
-        "Thickness": 0.399999857,
-        "MergeDistancePixels": 5,
-        "StandUp": false,
-        "Stackable": false
-      }
-    },
-    "LuaScript": "#include ./Helm_s_Deep.011a2a.lua",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "AttachedSnapPoints": [
-      {
-        "Position": {
-          "x": -0.8330586,
-          "y": 0.19999516,
-          "z": -0.8058523
+    "Object": {
+        "GUID": "011a2a",
+        "Name": "Custom_Token",
+        "Transform": {
+            "posX": -61.6466522,
+            "posY": 1.24758756,
+            "posZ": -17.0800877,
+            "rotX": 0.000003930102,
+            "rotY": 179.979919,
+            "rotZ": 0.00000318718662,
+            "scaleX": 0.55,
+            "scaleY": 1,
+            "scaleZ": 0.55
         },
-        "Rotation": {
-          "x": 0.0000205643,
-          "y": 45.0433273,
-          "z": 0.0000275479742
-        }
-      }
-    ]
-  },
-  "StatesPaths": {}
+        "Nickname": "Helm's Deep",
+        "Description": "Stronghold;KoME;",
+        "GMNotes": "c9bcd7",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": false,
+        "Snap": false,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": false,
+        "Autoraise": true,
+        "Sticky": false,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2079031781102822065/BCE703235D08E594BCBAAE394356C7698ACE1346/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1,
+            "WidthScale": 0,
+            "CustomToken": {
+                "Thickness": 0.399999857,
+                "MergeDistancePixels": 5,
+                "StandUp": false,
+                "Stackable": false
+            }
+        },
+        "LuaScript": "#include ./Helm_s_Deep.011a2a.lua",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "AttachedSnapPoints": [
+            {
+                "Position": {
+                    "x": -0.8330586,
+                    "y": 0.19999516,
+                    "z": -0.8058523
+                },
+                "Rotation": {
+                    "x": 0.0000205643,
+                    "y": 45.0433273,
+                    "z": 0.0000275479742
+                }
+            }
+        ]
+    },
+    "StatesPaths": {}
 }

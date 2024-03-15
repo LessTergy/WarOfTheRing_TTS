@@ -1,86 +1,79 @@
 {
-  "Object": {
-    "GUID": "d9956f",
-    "Name": "Deck",
-    "Transform": {
-      "posX": 0.9998409,
-      "posY": 1.04981482,
-      "posZ": 44.9994164,
-      "rotX": -1.08279146e-8,
-      "rotY": 359.973969,
-      "rotZ": 180,
-      "scaleX": 2.80049133,
-      "scaleY": 1,
-      "scaleZ": 2.80049133
+    "Object": {
+        "GUID": "d9956f",
+        "Name": "Deck",
+        "Transform": {
+            "posX": 0.9998409,
+            "posY": 1.04981482,
+            "posZ": 44.9994164,
+            "rotX": -1.08279146e-8,
+            "rotY": 359.973969,
+            "rotZ": 180,
+            "scaleX": 2.80049133,
+            "scaleY": 1,
+            "scaleZ": 2.80049133
+        },
+        "Nickname": "FreePeoples Call to Battle Cards (WoME)",
+        "Description": "Deck;CallToBattle;FreePeoples;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": true,
+        "Hands": false,
+        "SidewaysCard": false,
+        "DeckIDs": [209914, 210013, 209907, 210011, 209934, 210020],
+        "CustomDeck": {
+            "2099": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142892350/88A32BDC33FAA7E2548BD9486900884D8A7D252A/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142892740/9CD6666E207EB4F1AF8F3D3B7D197EEA98DA0059/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
+            },
+            "2100": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142895222/DD0ED64BD5B2E65B7AA5112A47F5272A1B5AFC4D/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142895593/6845E31C539ADF69EDBCD39ED02D0B60EA98970B/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": "",
+        "ContainedObjects": []
     },
-    "Nickname": "FreePeoples Call to Battle Cards (WoME)",
-    "Description": "Deck;CallToBattle;FreePeoples;WoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": true,
-    "Hands": false,
-    "SidewaysCard": false,
-    "DeckIDs": [
-      209914,
-      210013,
-      209907,
-      210011,
-      209934,
-      210020
-    ],
-    "CustomDeck": {
-      "2099": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142892350/88A32BDC33FAA7E2548BD9486900884D8A7D252A/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142892740/9CD6666E207EB4F1AF8F3D3B7D197EEA98DA0059/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": false,
-        "Type": 0
-      },
-      "2100": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142895222/DD0ED64BD5B2E65B7AA5112A47F5272A1B5AFC4D/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142895593/6845E31C539ADF69EDBCD39ED02D0B60EA98970B/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": false,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": "",
-    "ContainedObjects": []
-  },
-  "StatesPaths": {},
-  "ContainedObjectPaths": [
-    "The_Terror_of_the_Dead.6c03ca.209914.json",
-    "The_King_of_the_Dead.12fc0a.210013.json",
-    "Out_of_the_High_Airs.a99883.209907.json",
-    "Speeding_on_a_Gathering_Wind.9f82eb.210011.json",
-    "The_Forest_is_Rising.35ee75.209934.json",
-    "With_Doom_We_Come.5e8c99.210020.json"
-  ]
+    "StatesPaths": {},
+    "ContainedObjectPaths": [
+        "The_Terror_of_the_Dead.6c03ca.209914.json",
+        "The_King_of_the_Dead.12fc0a.210013.json",
+        "Out_of_the_High_Airs.a99883.209907.json",
+        "Speeding_on_a_Gathering_Wind.9f82eb.210011.json",
+        "The_Forest_is_Rising.35ee75.209934.json",
+        "With_Doom_We_Come.5e8c99.210020.json"
+    ]
 }

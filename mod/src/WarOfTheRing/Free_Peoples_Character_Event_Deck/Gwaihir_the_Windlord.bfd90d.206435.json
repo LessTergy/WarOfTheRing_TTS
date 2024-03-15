@@ -1,61 +1,61 @@
 {
-  "Object": {
-    "GUID": "bfd90d",
-    "Name": "Card",
-    "Transform": {
-      "posX": -33.9999542,
-      "posY": 1.24219441,
-      "posZ": 20.5000134,
-      "rotX": -0.00241638254,
-      "rotY": 179.999954,
-      "rotZ": 179.978638,
-      "scaleX": 2.80049133,
-      "scaleY": 1,
-      "scaleZ": 2.80049133
+    "Object": {
+        "GUID": "bfd90d",
+        "Name": "Card",
+        "Transform": {
+            "posX": -33.9999542,
+            "posY": 1.24219441,
+            "posZ": 20.5000134,
+            "rotX": -0.00241638254,
+            "rotY": 179.999954,
+            "rotZ": 179.978638,
+            "scaleX": 2.80049133,
+            "scaleY": 1,
+            "scaleZ": 2.80049133
+        },
+        "Nickname": "Gwaihir the Windlord",
+        "Description": "Card;Event;Character;FreePeoples;Init:0;#15;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": true,
+        "Hands": true,
+        "CardID": 206435,
+        "SidewaysCard": false,
+        "CustomDeck": {
+            "2064": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142892350/88A32BDC33FAA7E2548BD9486900884D8A7D252A/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142892740/9CD6666E207EB4F1AF8F3D3B7D197EEA98DA0059/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Gwaihir the Windlord",
-    "Description": "Card;Event;Character;FreePeoples;Init:0;#15;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": true,
-    "Hands": true,
-    "CardID": 206435,
-    "SidewaysCard": false,
-    "CustomDeck": {
-      "2064": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142892350/88A32BDC33FAA7E2548BD9486900884D8A7D252A/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142892740/9CD6666E207EB4F1AF8F3D3B7D197EEA98DA0059/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": false,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

@@ -1,61 +1,61 @@
 {
-  "Object": {
-    "GUID": "1ae5d2",
-    "Name": "Card",
-    "Transform": {
-      "posX": 80.36634,
-      "posY": 1.415254,
-      "posZ": -44.4736633,
-      "rotX": -4.6096984e-9,
-      "rotY": 180,
-      "rotZ": 1.900787e-7,
-      "scaleX": 2.800268,
-      "scaleY": 1,
-      "scaleZ": 2.800268
+    "Object": {
+        "GUID": "1ae5d2",
+        "Name": "Card",
+        "Transform": {
+            "posX": 80.36634,
+            "posY": 1.415254,
+            "posZ": -44.4736633,
+            "rotX": -4.6096984e-9,
+            "rotY": 180,
+            "rotZ": 1.900787e-7,
+            "scaleX": 2.800268,
+            "scaleY": 1,
+            "scaleZ": 2.800268
+        },
+        "Nickname": "Ships of Great Draught",
+        "Description": "Card;Faction;Corsairs;Shadow;#4;WoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": true,
+        "Hands": true,
+        "CardID": 206609,
+        "SidewaysCard": false,
+        "CustomDeck": {
+            "47": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142876332/DE209638AEE1E748AAEFEBF6BAD0BEB4384642DC/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142876603/B622936F589217C05D873824DEA6AAD9C0AF803B/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "Ships of Great Draught",
-    "Description": "Card;Faction;Corsairs;Shadow;#4;WoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": true,
-    "Hands": true,
-    "CardID": 206609,
-    "SidewaysCard": false,
-    "CustomDeck": {
-      "47": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142876332/DE209638AEE1E748AAEFEBF6BAD0BEB4384642DC/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142876603/B622936F589217C05D873824DEA6AAD9C0AF803B/",
-        "NumWidth": 9,
-        "NumHeight": 5,
-        "BackIsHidden": true,
-        "UniqueBack": false,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

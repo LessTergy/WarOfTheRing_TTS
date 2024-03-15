@@ -1,54 +1,54 @@
 {
-  "Object": {
-    "GUID": "f7aed2",
-    "Name": "Custom_PDF",
-    "Transform": {
-      "posX": 79,
-      "posY": 0.9475923,
-      "posZ": 44,
-      "rotX": 4.653279e-10,
-      "rotY": 270.013672,
-      "rotZ": 0.00000426992347,
-      "scaleX": 4,
-      "scaleY": 1,
-      "scaleZ": 4
+    "Object": {
+        "GUID": "f7aed2",
+        "Name": "Custom_PDF",
+        "Transform": {
+            "posX": 79,
+            "posY": 0.9475923,
+            "posZ": 44,
+            "rotX": 4.653279e-10,
+            "rotY": 270.013672,
+            "rotZ": 0.00000426992347,
+            "scaleX": 4,
+            "scaleY": 1,
+            "scaleZ": 4
+        },
+        "Nickname": "The Fate of Erebor",
+        "Description": "",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": true,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": false,
+        "CustomPDF": {
+            "PDFUrl": "http://cloud-3.steamusercontent.com/ugc/1754691331184561407/33ED1AE5BEFF8CD3AB7D9239826F4846E32E805C/",
+            "PDFPassword": "",
+            "PDFPage": 0,
+            "PDFPageOffset": 0
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "The Fate of Erebor",
-    "Description": "",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 1,
-      "g": 1,
-      "b": 1
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": true,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": false,
-    "CustomPDF": {
-      "PDFUrl": "http://cloud-3.steamusercontent.com/ugc/1754691331184561407/33ED1AE5BEFF8CD3AB7D9239826F4846E32E805C/",
-      "PDFPassword": "",
-      "PDFPage": 0,
-      "PDFPageOffset": 0
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }

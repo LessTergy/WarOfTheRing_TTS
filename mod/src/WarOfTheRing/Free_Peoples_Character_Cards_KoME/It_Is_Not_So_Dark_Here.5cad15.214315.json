@@ -1,61 +1,61 @@
 {
-  "Object": {
-    "GUID": "5cad15",
-    "Name": "Card",
-    "Transform": {
-      "posX": -67.6324,
-      "posY": 1.023843,
-      "posZ": -62.2252922,
-      "rotX": 359.964172,
-      "rotY": 176.449478,
-      "rotZ": 179.991211,
-      "scaleX": 2.80049133,
-      "scaleY": 1,
-      "scaleZ": 2.80049133
+    "Object": {
+        "GUID": "5cad15",
+        "Name": "Card",
+        "Transform": {
+            "posX": -67.6324,
+            "posY": 1.023843,
+            "posZ": -62.2252922,
+            "rotX": 359.964172,
+            "rotY": 176.449478,
+            "rotZ": 179.991211,
+            "scaleX": 2.80049133,
+            "scaleY": 1,
+            "scaleZ": 2.80049133
+        },
+        "Nickname": "It Is Not So Dark Here",
+        "Description": "Card;Event;Character;FreePeoples;Init:2;#26;KoME;",
+        "GMNotes": "",
+        "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+        },
+        "LayoutGroupSortIndex": 0,
+        "Value": 0,
+        "Locked": false,
+        "Grid": true,
+        "Snap": true,
+        "IgnoreFoW": false,
+        "MeasureMovement": false,
+        "DragSelectable": true,
+        "Autoraise": true,
+        "Sticky": true,
+        "Tooltip": true,
+        "GridProjection": false,
+        "HideWhenFaceDown": false,
+        "Hands": true,
+        "CardID": 214315,
+        "SidewaysCard": false,
+        "CustomDeck": {
+            "2110": {
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/2079031781127736148/5BD818E3A141EA0F1CBC4D0141BC03A3D15A99CD/",
+                "NumWidth": 10,
+                "NumHeight": 4,
+                "BackIsHidden": true,
+                "UniqueBack": true,
+                "Type": 0
+            }
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": ""
     },
-    "Nickname": "It Is Not So Dark Here",
-    "Description": "Card;Event;Character;FreePeoples;Init:2;#26;KoME;",
-    "GMNotes": "",
-    "AltLookAngle": {
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "ColorDiffuse": {
-      "r": 0.713235259,
-      "g": 0.713235259,
-      "b": 0.713235259
-    },
-    "LayoutGroupSortIndex": 0,
-    "Value": 0,
-    "Locked": false,
-    "Grid": true,
-    "Snap": true,
-    "IgnoreFoW": false,
-    "MeasureMovement": false,
-    "DragSelectable": true,
-    "Autoraise": true,
-    "Sticky": true,
-    "Tooltip": true,
-    "GridProjection": false,
-    "HideWhenFaceDown": false,
-    "Hands": true,
-    "CardID": 214315,
-    "SidewaysCard": false,
-    "CustomDeck": {
-      "2110": {
-        "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/",
-        "BackURL": "http://cloud-3.steamusercontent.com/ugc/2079031781127736148/5BD818E3A141EA0F1CBC4D0141BC03A3D15A99CD/",
-        "NumWidth": 10,
-        "NumHeight": 4,
-        "BackIsHidden": true,
-        "UniqueBack": true,
-        "Type": 0
-      }
-    },
-    "LuaScript": "",
-    "LuaScriptState": "",
-    "XmlUI": ""
-  },
-  "StatesPaths": {}
+    "StatesPaths": {}
 }
