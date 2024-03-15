@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Saruman_Corrupted_Wizard.d2697c.lua",
+        "LuaScript": "",
         "LuaScriptState": "",
         "XmlUI": "",
         "ChildObjects": [

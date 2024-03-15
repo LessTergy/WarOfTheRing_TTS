@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./The_Mouth_of_Sauron_Black_Numenorean.ba1a29.lua",
+        "LuaScript": "",
         "LuaScriptState": "",
         "XmlUI": "",
         "ChildObjects": [

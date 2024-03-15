@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Peregrin.d421d7.lua",
+        "LuaScript": "",
         "LuaScriptState": "",
         "XmlUI": "",
         "ChildObjects": [

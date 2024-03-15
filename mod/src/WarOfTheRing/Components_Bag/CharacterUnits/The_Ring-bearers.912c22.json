@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./The_Ring-bearers.912c22.lua",
+        "LuaScript": "",
         "LuaScriptState": "",
         "XmlUI": "",
         "ChildObjects": [

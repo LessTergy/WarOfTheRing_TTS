@@ -50,7 +50,7 @@
             "TypeIndex": 1,
             "CastShadows": true
         },
-        "LuaScript": "#include ./Smeagol.38461c.lua",
+        "LuaScript": "",
         "LuaScriptState": "",
         "XmlUI": "",
         "ChildObjects": [

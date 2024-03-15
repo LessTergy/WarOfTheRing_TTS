@@ -50,7 +50,7 @@
             "TypeIndex": 1,
             "CastShadows": true
         },
-        "LuaScript": "#include ./Gollum.0df4d4.lua",
+        "LuaScript": "",
         "LuaScriptState": "",
         "XmlUI": "",
         "ChildObjects": [

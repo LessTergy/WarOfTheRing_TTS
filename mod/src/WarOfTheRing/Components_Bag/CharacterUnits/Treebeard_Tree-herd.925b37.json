@@ -50,7 +50,7 @@
             "TypeIndex": 1,
             "CastShadows": true
         },
-        "LuaScript": "#include ./Treebeard_Tree-herd.925b37.lua",
+        "LuaScript": "",
         "LuaScriptState": "",
         "XmlUI": "",
         "ChildObjects": [
