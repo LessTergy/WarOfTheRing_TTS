@@ -1,20 +1,20 @@
 {
     "Object": {
-        "GUID": "8b8cf6",
+        "GUID": "94dee9",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 8,
+            "posX": -2.00000024,
             "posY": 0.996217132,
             "posZ": 27.5,
-            "rotX": 0.000002345117,
-            "rotY": 359.99,
-            "rotZ": 0.00000175336686,
+            "rotX": -0.000001759341,
+            "rotY": 0.000466160418,
+            "rotZ": -0.00000177396521,
             "scaleX": 0.5000001,
             "scaleY": 0.5000001,
             "scaleZ": 0.5000001
         },
-        "Nickname": "Smeagol",
-        "Description": "Counter;Companion;FreePeoples;LoME;",
+        "Nickname": "Gandalf the White: Emissary from the West",
+        "Description": "Character;Token;FreePeoples;",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -42,7 +42,7 @@
         "Hands": false,
         "CustomMesh": {
             "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
-            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381097884/3B0C52B6023362FF37C562E2D583B53319FAEE0E/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381102231/569376306D620B4F1E35698842FCC628167172AB/",
             "NormalURL": "",
             "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
             "Convex": true,
@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Smeagol.8b8cf6.lua",
+        "LuaScript": "#include ../includes/UnitScript.ttslua",
         "LuaScriptState": "",
         "XmlUI": ""
     },
