@@ -40,6 +40,10 @@
     "[lua]": {
         "editor.defaultFormatter": "CppCXY.emmylua-codestyle"
     },
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
     "editor.codeActionsOnSave": {
         "source.fixAll": "always",
         "source.fixAll.eslint": "always",
