@@ -25,7 +25,7 @@ def remove_lines_with_filenames(file_path, directory_path):
 
 
 # Пример использования
+json_file_path = "./mod/src/WarOfTheRing/Components_Bag.0e5fd1.json"
 directory_path = "./mod/src/WarOfTheRing/Components_Bag/CharacterUnits"
-json_file_path = "./mod/src/WarOfTheRing.json"
 
 remove_lines_with_filenames(json_file_path, directory_path)
