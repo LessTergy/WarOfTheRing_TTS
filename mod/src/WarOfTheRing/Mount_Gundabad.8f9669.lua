@@ -1,3 +1,3 @@
 function onLoad()
-    Global.call("StrongholdMenu",self)
-end--function 
+    Global.call("StrongholdMenu", self)
+end

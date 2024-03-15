@@ -7,17 +7,17 @@ function onLoad()
         Side = "Shadow"
     else
         Side = "FreePeoples"
-    end --if
+    end
     ThisDiceRolling = false
     PanelID = Global.call("ReadTag", { Text = self.getDescription(), Var = "Panel", Default = "" })
-end --function
+end
 
 function onDestroy()
     --remove this die if it was rolling...
     if ThisDiceRolling and getObjectFromGUID(PanelID) ~= nil then
         getObjectFromGUID(PanelID).call("DeleteRoll", { DiceID = self.getGUID() })
-    end --if
-end   --function
+    end
+end
 
 function Roll()
     self.roll()
@@ -25,24 +25,24 @@ function Roll()
         ThisDiceRolling = true
         getObjectFromGUID(PanelID).call("InsertRoll", { DiceID = self.getGUID() })
         Wait.condition(DoneRolling, RollWatcher)
-    end --if
-end   --function
+    end
+end
 
 function onRandomize(player_color)
     if not ThisDiceRolling and getObjectFromGUID(PanelID) ~= nil then
         ThisDiceRolling = true
         getObjectFromGUID(PanelID).call("InsertRoll", { DiceID = self.getGUID() })
         Wait.condition(DoneRolling, RollWatcher)
-    end --if
-end   --function
+    end
+end
 
 function RollWatcher()
     return self.resting
-end --function
+end
 
 function DoneRolling()
     if getObjectFromGUID(PanelID) ~= nil then
         getObjectFromGUID(PanelID).call("ReportRoll", { DiceID = self.getGUID() })
-    end --if
+    end
     ThisDiceRolling = false
-end   --function
+end

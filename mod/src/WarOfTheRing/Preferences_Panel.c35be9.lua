@@ -758,7 +758,7 @@ function NewCharacters3D()
                 end
             end
         end
-        --for I,Item
+
         coroutine.yield(0)
 
         UpdatePanel()

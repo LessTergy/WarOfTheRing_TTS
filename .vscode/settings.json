@@ -21,7 +21,8 @@
         "Player",
         "log",
         "onSave",
-        "JSON"
+        "JSON",
+        "onRandomize"
     ],
     "Lua.runtime.version": "Lua 5.2",
 
