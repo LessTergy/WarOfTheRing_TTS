@@ -13,7 +13,7 @@
             "scaleY": 0.5000001,
             "scaleZ": 0.5000001
         },
-        "Nickname": "Sméagol",
+        "Nickname": "Smeagol",
         "Description": "Counter;Companion;FreePeoples;LoME;",
         "GMNotes": "",
         "AltLookAngle": {
@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Sméagol.8b8cf6.lua",
+        "LuaScript": "#include ./Smeagol.8b8cf6.lua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

@@ -290,7 +290,7 @@ function DrawTileCorruption(Object, PlayerColor)
                 for X = 1, 3 do
                     local Free = true --spot is free?
                     for O, Obj in pairs(Physics.cast({ origin = { NextSpot[1] + (X - 1) * 2, NextSpot[2], NextSpot[3] }, direction = { 0, 1, 0 }, type = 3, size = { 1, 1, 1 }, orientation = { 0, 0, 0 }, max_distance = 0, debug = false })) do
-                        if Obj.hit_object.getName() == "Hunt Tile" or Obj.hit_object.getName() == "Sméagol Hunt Tile" then
+                        if Obj.hit_object.getName() == "Hunt Tile" or Obj.hit_object.getName() == "Smeagol Hunt Tile" then
                             Free = false
                             break
                         end

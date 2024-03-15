@@ -266,11 +266,11 @@ function UpdateIDs()
         elseif Obj.getName() == "Gollum" and string.find(Obj.getDescription(), "Character;") ~= nil then
             IDs.Companions.Gollum = Obj.getGUID()
         elseif
-            Obj.getName() == "Sméagol" and string.find(Obj.getDescription(), "Character;") ~= nil and
+            Obj.getName() == "Smeagol" and string.find(Obj.getDescription(), "Character;") ~= nil and
             string.find(Obj.getDescription(), "Counter;") == nil
         then
             IDs.Companions.Smeagol = Obj.getGUID()
-        elseif Obj.getName() == "Sméagol" and string.find(Obj.getDescription(), "Counter;Companion;") ~= nil then
+        elseif Obj.getName() == "Smeagol" and string.find(Obj.getDescription(), "Counter;Companion;") ~= nil then
             IDs.Companions.SmeagolToken = Obj.getGUID()
         elseif Obj.getName() == "Treebeard: Tree-herd" and string.find(Obj.getDescription(), "Character;") ~= nil then
             IDs.Companions.TreeBeard = Obj.getGUID()
@@ -304,7 +304,7 @@ function UpdateIDs()
         then
             IDs.Minions.TheWitchKingCotR = Obj.getGUID()
         elseif
-            Obj.getName() == "The Mouth of Sauron: Black Númenórean" and
+            Obj.getName() == "The Mouth of Sauron: Black Numenorean" and
             string.find(Obj.getDescription(), "Minion;") ~= nil
         then
             IDs.Minions.TheMouthOfSauronBN = Obj.getGUID()
@@ -14249,7 +14249,7 @@ function UnitEvent(Params)
                             elseif Params.UnitObj.getName() == "Gollum" then -- "Gollum: Slave of the Ring" then
                                 -- gollum
                                 PlaySound({ ID = 14 })
-                            elseif Params.UnitObj.getName() == "Sméagol" then -- "Sméagol: Tamed Wretch" then
+                            elseif Params.UnitObj.getName() == "Smeagol" then -- "Smeagol: Tamed Wretch" then
                                 -- smeagol
                                 PlaySound({ ID = 16 })
                             elseif Params.UnitObj.getName() == "Lady Galadriel: Keeper of Nenya" then
@@ -15254,7 +15254,7 @@ function DetectGuide()
             GuideLevel =
                 tonumber(ReadTag({ Text = getObjectFromGUID(HighestID).getDescription(), Var = "Level", Default = "0" }))
             -- printToAll("\n"..Guide.." (Level:"..GuideLevel..") is the Fellowship Guide.\n", {1,1,0})
-            if Round ~= 0 and Guide ~= "Sméagol: Tamed Wretch" and HighestLevel > GuideLevel and RulesWarnings then
+            if Round ~= 0 and Guide ~= "Smeagol: Tamed Wretch" and HighestLevel > GuideLevel and RulesWarnings then
                 broadcastToAll(
                     "Warning: There are Companions in the Fellowship with a higher level than the Guide.\n(The Guide should be Level: " ..
                     HighestLevel .. ").",
@@ -15403,7 +15403,7 @@ function SearchFellowship(ButtonObj, PlayerColor)
         getObjectFromGUID(IDs.Cards.RingBearers).clearButtons()
         local Index = 0
         local List = {}
-        local Order = { "Gandalf", "Strider", "Boromir", "Legolas", "Gimli", "Meriadoc", "Peregrin", "Sméagol", "Gollum" }
+        local Order = { "Gandalf", "Strider", "Boromir", "Legolas", "Gimli", "Meriadoc", "Peregrin", "Smeagol", "Gollum" }
         local Rotation = { 80, 0, 0 }
         if CompactMode then
             -- getObjectFromGUID(FellowshipRedZoneID).setPosition({-36.35,1.6,-25.5})
@@ -15932,9 +15932,9 @@ function ReturnCompanionToFellowship(CompanionObj)
         then
             CardObj = Obj
             break
-        elseif Obj.type == "Card" and CompanionObj.getName() == "Sméagol" and Obj.getName() == "Sméagol: Tamed Wretch" then
-            Guide = "Sméagol: Tamed Wretch"
-            printToAll("Sméagol is now the Fellowship guide.", { 1, 1, 0 })
+        elseif Obj.type == "Card" and CompanionObj.getName() == "Smeagol" and Obj.getName() == "Smeagol: Tamed Wretch" then
+            Guide = "Smeagol: Tamed Wretch"
+            printToAll("Smeagol is now the Fellowship guide.", { 1, 1, 0 })
             CardObj = Obj
             break
         elseif
@@ -15949,7 +15949,7 @@ function ReturnCompanionToFellowship(CompanionObj)
         -- remove separated; tag and add fellowship; tag to the card...
         CardObj.setDescription(string.gsub(CardObj.getDescription(), "Separated;", ""))
         CardObj.setDescription(string.gsub(CardObj.getDescription(), "Fellowship;", "") .. "Fellowship;")
-        if CardObj.getName() == "Sméagol: Tamed Wretch" then
+        if CardObj.getName() == "Smeagol: Tamed Wretch" then
             BuildFellowshipDeck()
         else
             -- lift up fellowship cards...
@@ -16876,9 +16876,9 @@ local CHARACTER_DB = {
         note = "Legolas: Elven Prince - +1? Combat Strength",
         short_note = "Legolas - +1? Strength"
     },
-    ["The Mouth of Sauron: Black Númenórean"] = {
+    ["The Mouth of Sauron: Black Numenorean"] = {
         leadership = 2,
-        note = "The Mouth of Sauron: Black Númenórean - Extend siege by one turn without reducing an Elite",
+        note = "The Mouth of Sauron: Black Numenorean - Extend siege by one turn without reducing an Elite",
         short_note = "The Mouth of Sauron - Extend siege by one turn without reducing an Elite"
     },
     ["Meriadoc"] = {

@@ -1980,7 +1980,7 @@ function ProcessNextStep()
             if
                 Obj.type == "Card" and string.find(Obj.getDescription(), "Companion;") ~= nil and
                 string.find(Obj.getName(), "Gollum") == nil and
-                string.find(Obj.getName(), "Sméagol") == nil
+                string.find(Obj.getName(), "Smeagol") == nil
             then
                 for C = 1, #CompanionNames do
                     if Obj.getName() == CompanionNames[C] then
@@ -2177,12 +2177,12 @@ function ProcessNextStep()
                         string.find(Obj.getDescription(), "Dice;Action;FreePeoples;6of6;") ~= nil or
                         Obj.getName() == "Lady Galadriel: Keeper of Nenya" or
                         Obj.getName() == "Lord Elrond: Keeper of Vilya" or
-                        Obj.getName() == "Sméagol: Tamed Wretch" or
-                        Obj.getName() == "Sméagol" or
+                        Obj.getName() == "Smeagol: Tamed Wretch" or
+                        Obj.getName() == "Smeagol" or
                         Obj.getName() == "(Vilya Action Die)" or
                         Obj.getName() == "(Nenya Action Die)" or
                         Obj.getName() == "Treebeard: Tree-herd" or
-                        Obj.getName() == "Sméagol Hunt Tile"
+                        Obj.getName() == "Smeagol Hunt Tile"
                     then
                         Global.call(
                             "MoveObject",
