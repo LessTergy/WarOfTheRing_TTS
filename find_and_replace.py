@@ -4,7 +4,7 @@ import shutil
 
 def analyze_json_files(source_dir, destination_dir):
     matched_files = []
-    pattern = '"Description": "Character;Token;'
+    pattern = '"Description": "Minion;'
 
     # Проверяем каждый файл и папку в указанной директории
     for root, _, files in os.walk(source_dir):
@@ -29,6 +29,6 @@ def analyze_json_files(source_dir, destination_dir):
 
 # Пример использования
 source_directory = "./mod"
-destination_directory = "./mod/src/WarOfTheRing"
+destination_directory = "./mod/src/WarOfTheRing/Components_Bag/CharacterUnits"
 
 analyze_json_files(source_directory, destination_directory)
