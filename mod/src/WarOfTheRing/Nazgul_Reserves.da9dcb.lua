@@ -11,11 +11,11 @@ function onLoad(save_state)
         height = 250,
         font_size = 250,
         font_color = { 1, 0.5, 0.25 },
-        tooltip =
-        "Scream."
+        tooltip = "Scream."
     })
 end
 
 function PlaySoundEffect()
-    Global.call("PlaySound", { ID = 8 }) --scream
+    -- scream
+    Global.call("PlaySound", { ID = 8 })
 end
