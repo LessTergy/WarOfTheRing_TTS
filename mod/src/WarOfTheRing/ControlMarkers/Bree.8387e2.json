@@ -14,7 +14,7 @@
             "scaleZ": 0.450000048
         },
         "Nickname": "Bree",
-        "Description": "ControlToken;Town;FreePeoples;",
+        "Description": "SettlementControlMarker;Town;FreePeoples;",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
