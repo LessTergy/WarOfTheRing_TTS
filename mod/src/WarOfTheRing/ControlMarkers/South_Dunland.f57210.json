@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./South_Dunland.f57210.lua",
+        "LuaScript": "#include ../../includes/SettlementsControlMarker.ttslua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

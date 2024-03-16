@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Near_Harad.6b6283.lua",
+        "LuaScript": "#include ../../includes/SettlementsControlMarker.ttslua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

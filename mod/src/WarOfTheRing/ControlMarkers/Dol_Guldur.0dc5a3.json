@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Dol_Guldur.0dc5a3.lua",
+        "LuaScript": "#include ../../includes/SettlementsControlMarker.ttslua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

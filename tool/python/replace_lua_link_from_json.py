@@ -14,12 +14,11 @@ def search_and_replace(directory_path, pattern, replacement):
             with open(file_path, "w") as file:
                 file.write(replaced_content)
 
-            print(f"Файл обработан: {file_path}")
+            print(f"File updated: {file_path}")
 
 
-# Пример использования
-directory_path = "./mod/src/WarOfTheRing/Components_Bag/CharacterUnits"
+directory_path = "./mod/src/WarOfTheRing/ControlMarkers"
 pattern = r'"LuaScript":\s+".*"'
-replacement = '"LuaScript": ""'
+replacement = '"LuaScript": "#include ../../includes/SettlementsControlMarker.ttslua"'
 
 search_and_replace(directory_path, pattern, replacement)

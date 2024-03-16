@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "",
+        "LuaScript": "#include ../../includes/SettlementsControlMarker.ttslua",
         "LuaScriptState": "",
         "XmlUI": ""
     },
