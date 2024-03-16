@@ -1,13 +1,14 @@
 import os
 
 
-def remove_lines_with_filenames(file_path, directory_path):
+def remove_file_names_from_json(file_path, directory_path):
     filenames = []
-    for root, _, files in os.walk(directory_path):
+    for _, _, files in os.walk(directory_path):
         for file_name in files:
             filenames.append(file_name)
 
     lines_to_remove = []
+
     with open(file_path, "r") as file:
         lines = file.readlines()
         for line in lines:
@@ -16,16 +17,16 @@ def remove_lines_with_filenames(file_path, directory_path):
                     print(line)
                     lines_to_remove.append(line)
 
+    # Keep only lines, which doesn't match with lines_to_remove
     updated_lines = [line for line in lines if line not in lines_to_remove]
 
     with open(file_path, "w") as file:
         file.writelines(updated_lines)
 
-    print(f"Файл обновлен: {file_path}")
+    print(f"File updated: {file_path}")
 
 
-# Пример использования
 json_file_path = "./mod/src/WarOfTheRing/Components_Bag.0e5fd1.json"
 directory_path = "./mod/src/WarOfTheRing/Components_Bag/CharacterUnits"
 
-remove_lines_with_filenames(json_file_path, directory_path)
+remove_file_names_from_json(json_file_path, directory_path)
