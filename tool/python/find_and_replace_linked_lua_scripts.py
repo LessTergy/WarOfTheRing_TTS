@@ -1,4 +1,5 @@
 import os
+import shutil
 
 from find_files_by_extension import find_files_by_extension
 
@@ -11,7 +12,11 @@ def process(json_files, lua_files):
         if lua_file_path == "":
             continue
 
-        os.remove(lua_file_path)
+        # os.remove(lua_file_path)
+        directory_path = os.path.dirname(json_file_path)
+        lua_file_name = os.path.basename(lua_file_path)
+        new_lua_file_path = os.path.join(directory_path, lua_file_name)
+        shutil.move(lua_file_path, new_lua_file_path)
 
 
 def find_filepath_with_same_basename(json_file: str, lua_files: list) -> str:
@@ -26,7 +31,7 @@ def find_filepath_with_same_basename(json_file: str, lua_files: list) -> str:
     return ""
 
 
-json_dir = "./mod/src/WarOfTheRing/ControlMarkers"
+json_dir = "./mod/src/WarOfTheRing/Settlements"
 lua_dir = "./mod/src/WarOfTheRing"
 json_extension = ".json"
 lua_extension = ".lua"

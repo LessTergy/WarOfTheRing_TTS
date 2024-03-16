@@ -28,10 +28,13 @@ def get_file_paths(directory_path, additional_path):
     return paths
 
 
-# Пример использования
-block_name = "ContainedObjectPaths"
-json_file_path = "./mod/src/WarOfTheRing/Components_Bag.0e5fd1.json"
-directory_path = "./mod/src/WarOfTheRing/Components_Bag/CharacterUnits"
-additional_path = "./CharacterUnits/"
+main_json_block_name = "ObjectPaths"
+main_json_path = "./mod/src/WarOfTheRing.json"
 
-write_to_json(block_name, json_file_path, directory_path, additional_path)
+secondary_json_block_name = "ContainedObjectPaths"
+json_file_path = "./mod/src/WarOfTheRing/Components_Bag.0e5fd1.json"
+
+directory_path = "./mod/src/WarOfTheRing/Settlements"
+additional_path = "./Settlements/"
+
+write_to_json(main_json_block_name, main_json_path, directory_path, additional_path)
