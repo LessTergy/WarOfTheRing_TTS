@@ -471,3939 +471,47 @@ function ProcessNextStep()
     elseif Step == "HuntForTheRingMenu" then
         CreateHuntForTheRingMenu()
     elseif Step == "TFoEMenu" then
-        self.clearButtons()
-        if TFoE then
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "The Fate of Erebor",
-                    position = { 0, 0.1, -1.3 },
-                    width = 0,
-                    height = 0,
-                    font_size = 150,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            if NewCities then
-                self.createButton(
-                    {
-                        click_function = "ToggleNewCities",
-                        function_owner = self,
-                        label = "Included: New Cities",
-                        position = { 0, 0.1, 0 },
-                        width = 1400,
-                        height = 100,
-                        color = { 1, 1, 0 },
-                        font_size = 100,
-                        tooltip =
-                        "Click to exclude.\nNew Cities is an optional setup in The Fate of Erebor, that changes the Towns of Ered Luin and South Rhun to Cities."
-                    }
-                )
-            else
-                self.createButton(
-                    {
-                        click_function = "ToggleNewCities",
-                        function_owner = self,
-                        label = "Excluded: New Cities",
-                        position = { 0, 0.1, 0 },
-                        width = 1400,
-                        height = 100,
-                        color = { 1, 1, 1 },
-                        font_size = 100,
-                        tooltip =
-                        "Click to include.\nNew Cities is an optional setup in The Fate of Erebor, that changes the Towns of Ered Luin and South Rhun to Cities."
-                    }
-                )
-            end
-
-            self.createButton(
-                {
-                    click_function = "Continue",
-                    function_owner = self,
-                    label = "Continue",
-                    position = { 0, 0.1, 1.3 },
-                    width = 1800,
-                    height = 200,
-                    color = { 1, 1, 1 },
-                    font_size = 100
-                }
-            )
-            function ToggleNewCities()
-                NewCities = not NewCities
-                NextStep = "TFoEMenu"
-                Step = ""
-            end
-
-            function Continue()
-                self.clearButtons()
-                if not TFoE then
-                    NewCities = false
-                end
-
-                NextStep = "TreebeardMenu"
-                Step = ""
-            end
-        else
-            NextStep = "TreebeardMenu"
-            Step = ""
-        end
+        CreateTFoEMenu()
     elseif Step == "TreebeardMenu" then
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Choose Treebeard Content:",
-                position = { 0, 0.1, -1.3 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        if WoME then
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "(Warriors of Middle-Earth Treebeard)",
-                    position = { 0, 0.1, -1 },
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            if Treebeard == 1 then --original WM...
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard1",
-                        function_owner = self,
-                        label = "Selected: Original Treebeard",
-                        position = { 0, 0.1, -0.6 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 0 },
-                        font_size = 80,
-                        tooltip = "Select the Original Treebeard Character Card from Warriors of Middle-Earth."
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard2",
-                        function_owner = self,
-                        label = "Revised Treebeard",
-                        position = { 0, 0.1, -0.3 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 80,
-                        tooltip =
-                        "Select the Revised Treebeard Character Card from Warriors of Middle-Earth.\n(adds Root and Branch! ability)."
-                    }
-                )
-            elseif Treebeard == 2 then --revised WM...
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard1",
-                        function_owner = self,
-                        label = "Original Treebeard",
-                        position = { 0, 0.1, -0.6 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 80,
-                        tooltip = "Select the Original Treebeard Character Card from Warriors of Middle-Earth."
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard2",
-                        function_owner = self,
-                        label = "Selected: Revised Treebeard",
-                        position = { 0, 0.1, -0.3 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 0 },
-                        font_size = 80,
-                        tooltip =
-                        "Select the Revised Treebeard Character Card from Warriors of Middle-Earth.\n(adds Root and Branch! ability)."
-                    }
-                )
-            end
-        else --not WoME...
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "(Promotional Treebeard Card)",
-                    position = { 0, 0.1, -1 },
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            if Treebeard == 0 then --no treebeard...
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard0",
-                        function_owner = self,
-                        label = "Selected: No Treebeard",
-                        position = { 0, 0.1, -0.6 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 0 },
-                        font_size = 80,
-                        tooltip = "Do not include Treebeard Promotional Character Card."
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard1",
-                        function_owner = self,
-                        label = "Original Treebeard",
-                        position = { 0, 0.1, -0.3 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 80,
-                        tooltip = "Select the Original Promotional Treebeard Character Card."
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard2",
-                        function_owner = self,
-                        label = "Revised Treebeard",
-                        position = { 0, 0.1, 0 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 80,
-                        tooltip =
-                        "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
-                    }
-                )
-            elseif Treebeard == 1 then --original Promo...
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard0",
-                        function_owner = self,
-                        label = "No Treebeard",
-                        position = { 0, 0.1, -0.6 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 80,
-                        tooltip = "Do not include Treebeard Promotional Character Card."
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard1",
-                        function_owner = self,
-                        label = "Selected: Original Treebeard",
-                        position = { 0, 0.1, -0.3 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 0 },
-                        font_size = 80,
-                        tooltip = "Select the Original Promotional Treebeard Character Card."
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard2",
-                        function_owner = self,
-                        label = "Revised Treebeard",
-                        position = { 0, 0.1, 0 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 80,
-                        tooltip =
-                        "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
-                    }
-                )
-            elseif Treebeard == 2 then --revised Promo...
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard0",
-                        function_owner = self,
-                        label = "No Treebeard",
-                        position = { 0, 0.1, -0.6 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 80,
-                        tooltip = "Do not include Treebeard Promotional Character Card."
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard1",
-                        function_owner = self,
-                        label = "Original Treebeard",
-                        position = { 0, 0.1, -0.3 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 80,
-                        tooltip = "Select the Original Promotional Treebeard Character Card."
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "SelectTreebeard2",
-                        function_owner = self,
-                        label = "Selected: Revised Treebeard",
-                        position = { 0, 0.1, 0 },
-                        width = 1800,
-                        height = 150,
-                        color = { 1, 1, 0 },
-                        font_size = 80,
-                        tooltip =
-                        "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
-                    }
-                )
-            end
-        end
-
-        self.createButton(
-            {
-                click_function = "Continue",
-                function_owner = self,
-                label = "Continue",
-                position = { 0, 0.1, 1.3 },
-                width = 1800,
-                height = 200,
-                color = { 1, 1, 1 },
-                font_size = 100,
-                tooltip = "Continue Setup with the currently selected Treebeard option."
-            }
-        )
-        function SelectTreebeard0()
-            Treebeard = 0
-            NextStep = "TreebeardMenu"
-            Step = ""
-        end
-
-        function SelectTreebeard1()
-            Treebeard = 1
-            NextStep = "TreebeardMenu"
-            Step = ""
-        end
-
-        function SelectTreebeard2()
-            Treebeard = 2
-            NextStep = "TreebeardMenu"
-            Step = ""
-        end
-
-        function Continue()
-            self.clearButtons()
-            if LoME then
-                NextStep = "StartingGuideMenu"
-            else
-                NextStep = "SetupExpansions"
-            end
-
-            Step = ""
-        end
+        CreateTreebeardMenu()
     elseif Step == "StartingGuideMenu" then
-        -- If breaking of the fellowship...
-        if BotF then
-            if LoME then
-                printToAll(
-                    "\nThe Breaking of the Fellowship skips the Council of Rivendell step from Lords of Middle-Earth.\n"
-                )
-            end
-
-            CompanionNames[1] = "Gandalf the Grey: The Grey Wanderer"
-            CompanionNames[2] = "Strider: Ranger of the North"
-            NextStep = "SetupExpansions"
-            Step = ""
-        else
-            MoveGamePanel("FreePeoples")
-            --choose Gandalf or Strider as the fellowship guide...
-            self.clearButtons()
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Free Peoples\nChoose Fellowship Guide:",
-                    position = { 0, 0.1, -1.2 },
-                    width = 0,
-                    height = 0,
-                    font_size = 150,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Free Peoples\nare choosing the\nFellowship Guide...",
-                    position = { 0, -0.1, -0 },
-                    rotation = { 180, 180, 0 },
-                    width = 0,
-                    height = 0,
-                    font_size = 150,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            if CompanionNames[1] == "Gandalf the Grey: The Grey Wanderer" then
-                self.createButton(
-                    {
-                        click_function = "ChooseTheGreyWanderer",
-                        function_owner = self,
-                        label = "Gandalf the Grey: The Grey Wanderer",
-                        position = { 0, 0.1, -0.6 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 0 },
-                        font_size = 75,
-                        tooltip = "(Original Character)"
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "ChooseKeeperOfNarya",
-                        function_owner = self,
-                        label = "Gandalf the Grey: Keeper of Narya*",
-                        position = { 0, 0.1, -0.3 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 75,
-                        tooltip = "(Lords of Middle-Earth Character)"
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "ChooseRangerOfTheNorth",
-                        function_owner = self,
-                        label = "Strider: Ranger of the North",
-                        position = { 0, 0.1, 0 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 75,
-                        tooltip = "(Original Character)"
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "ChooseDunadan",
-                        function_owner = self,
-                        label = "Strider: Dunadan*",
-                        position = { 0, 0.1, 0.3 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 75,
-                        tooltip = "(Lords of Middle-Earth Character)"
-                    }
-                )
-            elseif CompanionNames[1] == "Gandalf the Grey: Keeper of Narya*" then
-                self.createButton(
-                    {
-                        click_function = "ChooseTheGreyWanderer",
-                        function_owner = self,
-                        label = "Gandalf the Grey: The Grey Wanderer",
-                        position = { 0, 0.1, -0.6 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 75,
-                        tooltip = "(Original Character)"
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "ChooseKeeperOfNarya",
-                        function_owner = self,
-                        label = "Gandalf the Grey: Keeper of Narya*",
-                        position = { 0, 0.1, -0.3 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 0 },
-                        font_size = 75,
-                        tooltip = "(Lords of Middle-Earth Character)"
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "ChooseRangerOfTheNorth",
-                        function_owner = self,
-                        label = "Strider: Ranger of the North",
-                        position = { 0, 0.1, 0 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 75,
-                        tooltip = "(Original Character)"
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "ChooseDunadan",
-                        function_owner = self,
-                        label = "Strider: Dunadan*",
-                        position = { 0, 0.1, 0.3 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 75,
-                        tooltip = "(Lords of Middle-Earth Character)"
-                    }
-                )
-            elseif CompanionNames[1] == "Strider: Ranger of the North" then
-                self.createButton(
-                    {
-                        click_function = "ChooseTheGreyWanderer",
-                        function_owner = self,
-                        label = "Gandalf the Grey: The Grey Wanderer",
-                        position = { 0, 0.1, -0.6 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 75,
-                        tooltip = "(Original Character)"
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "ChooseKeeperOfNarya",
-                        function_owner = self,
-                        label = "Gandalf the Grey: Keeper of Narya*",
-                        position = { 0, 0.1, -0.3 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 75,
-                        tooltip = "(Lords of Middle-Earth Character)"
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "ChooseRangerOfTheNorth",
-                        function_owner = self,
-                        label = "Strider: Ranger of the North",
-                        position = { 0, 0.1, 0 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 0 },
-                        font_size = 75,
-                        tooltip = "(Original Character)"
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "ChooseDunadan",
-                        function_owner = self,
-                        label = "Strider: Dunadan*",
-                        position = { 0, 0.1, 0.3 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 75,
-                        tooltip = "(Lords of Middle-Earth Character)"
-                    }
-                )
-            elseif CompanionNames[1] == "Strider: Dunadan*" then
-                self.createButton(
-                    {
-                        click_function = "ChooseTheGreyWanderer",
-                        function_owner = self,
-                        label = "Gandalf the Grey: The Grey Wanderer",
-                        position = { 0, 0.1, -0.6 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 75,
-                        tooltip = "(Original Character)"
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "ChooseKeeperOfNarya",
-                        function_owner = self,
-                        label = "Gandalf the Grey: Keeper of Narya*",
-                        position = { 0, 0.1, -0.3 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 75,
-                        tooltip = "(Lords of Middle-Earth Character)"
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "ChooseRangerOfTheNorth",
-                        function_owner = self,
-                        label = "Strider: Ranger of the North",
-                        position = { 0, 0.1, 0 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 1 },
-                        font_size = 75,
-                        tooltip = "(Original Character)"
-                    }
-                )
-                self.createButton(
-                    {
-                        click_function = "ChooseDunadan",
-                        function_owner = self,
-                        label = "Strider: Dunadan*",
-                        position = { 0, 0.1, 0.3 },
-                        width = 1600,
-                        height = 150,
-                        color = { 1, 1, 0 },
-                        font_size = 75,
-                        tooltip = "(Lords of Middle-Earth Character)"
-                    }
-                )
-            end
-
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "* Lords of Middle Earth Expansion Character.",
-                    position = { 0, 0.1, 0.9 },
-                    width = 0,
-                    height = 0,
-                    font_size = 50,
-                    font_color = { 1, 1, 0 }
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Continue",
-                    function_owner = self,
-                    label = "Continue",
-                    position = { 0, 0.1, 1.2 },
-                    width = 1600,
-                    height = 200,
-                    color = { 1, 1, 1 },
-                    font_size = 100
-                }
-            )
-            function ChooseTheGreyWanderer()
-                CompanionNames[1] = "Gandalf the Grey: The Grey Wanderer"
-                CompanionNames[2] = "Strider: Ranger of the North"
-                NextStep = "StartingGuideMenu"
-                Step = ""
-            end
-
-            function ChooseKeeperOfNarya()
-                CompanionNames[1] = "Gandalf the Grey: Keeper of Narya*"
-                CompanionNames[2] = "Strider: Ranger of the North"
-                NextStep = "StartingGuideMenu"
-                Step = ""
-            end
-
-            function ChooseRangerOfTheNorth()
-                CompanionNames[1] = "Strider: Ranger of the North"
-                CompanionNames[2] = "Gandalf the Grey: The Grey Wanderer"
-                NextStep = "StartingGuideMenu"
-                Step = ""
-            end
-
-            function ChooseDunadan()
-                CompanionNames[1] = "Strider: Dunadan*"
-                CompanionNames[2] = "Gandalf the Grey: The Grey Wanderer"
-                NextStep = "StartingGuideMenu"
-                Step = ""
-            end
-
-            function Continue()
-                NextStep = "SetupExpansions"
-                Step = ""
-            end
-        end
+        CreateStartingGuideMenu()
     elseif Step == "SetupExpansions" then
-        self.clearButtons()
-        NextStep = "SetupCompanions"
-        local TempObj = nil
-        --Included: The Fate of Erebor...
-        if TFoE then
-            --setup the Fate of Erebor...
-            Global.call("SetupTFoE")
-            --setup optional new cities?
-            if NewCities then
-                Global.call("SetupTFoENewCities")
-            else
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("c537fa"))
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("2df5ce"))
-            end
-
-            --replace cards...
-            getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(
-                getObjectFromGUID(IDs.TFoE.ShadowStrategyEventCards)
-            )
-            coroutine.yield(0)
-            getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(
-                getObjectFromGUID(IDs.TFoE.FreePeoplesCharacterEventCards)
-            )
-            getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(
-                getObjectFromGUID(IDs.TFoE.FreePeoplesStrategyEventCards)
-            )
-            coroutine.yield(0)
-            --Remove Free Peoples Strategy Event Card #4, #19, and #22, then remove FP character card #17...
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "There and Back Again", Description = "#17;" }
-            )
-            coroutine.yield(0)
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Book of Mazarbul", Description = "#4;" }
-            )
-            coroutine.yield(0)
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
-            )
-            coroutine.yield(0)
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
-            )
-            coroutine.yield(0)
-            --Remove Shadow Event Card #20 and #22 (Orcs Multiplying Again & Monsters Roused)...
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.ShadowStrategyEventDeck, Name = "Orcs Multiplying Again", Description = "#20;" }
-            )
-            coroutine.yield(0)
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.ShadowStrategyEventDeck, Name = "Monsters Roused", Description = "#22;" }
-            )
-            coroutine.yield(0)
-            --Remove old Gimli Character Cards...
-            if getObjectFromGUID("78f279") ~= nil then
-                if getObjectFromGUID("f86853") ~= nil then
-                    getObjectFromGUID("f86853").setPositionSmooth(
-                        getObjectFromGUID("78f279").getPosition(),
-                        false,
-                        false
-                    )
-                end
-
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("78f279"))
-            end
-
-            if getObjectFromGUID("af7f13") ~= nil then
-                if getObjectFromGUID("de958e") ~= nil then
-                    getObjectFromGUID("de958e").setPositionSmooth(
-                        getObjectFromGUID("af7f13").getPosition(),
-                        false,
-                        false
-                    )
-                end
-
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("af7f13"))
-            end
-
-            -- If KoME+TFoE then remove Dain and Brand from the game...
-            if KoME then
-                printToAll("The Fate of Erebor removes King Brand and King Dain Ironfoot from the game.", { 1, 1, 0 })
-                if getObjectFromGUID(IDs.Companions.Brand) ~= nil then
-                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Brand))
-                end
-
-                if getObjectFromGUID(IDs.Companions.Dain) ~= nil then
-                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Dain))
-                end
-
-                if getObjectFromGUID("43a6a7") ~= nil then
-                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("43a6a7"))
-                end
-
-                if getObjectFromGUID("754777") ~= nil then
-                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("754777"))
-                end
-
-                if getObjectFromGUID("a90518") ~= nil then
-                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("a90518"))
-                end
-
-                if getObjectFromGUID("d1aa1a") ~= nil then
-                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d1aa1a"))
-                end
-
-                if getObjectFromGUID("55b8d8") ~= nil then
-                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("55b8d8"))
-                end
-
-                if getObjectFromGUID("9bdfb0") ~= nil then
-                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("9bdfb0"))
-                end
-            end
-        else --clean up TFoE components...
-            --Clean up TFoE Components...
-            self.clearButtons()
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Putting away\nThe Fate of Erebor\nMini-Expansion Content...",
-                    position = { 0, 0.1, 0 },
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            for _, Obj in pairs(getAllObjects()) do
-                if string.find(Obj.getDescription(), "TFoE;") ~= nil then
-                    getObjectFromGUID(GraveBagId).putObject(Obj)
-                end
-            end
-
-            --wait for cleanup to finish...
-            local Done = true
-            repeat
-                Done = true --assume true until proven false.
-                for _, Obj in pairs(getAllObjects()) do
-                    if string.find(Obj.getDescription(), "TFoE;") ~= nil then
-                        Done = false
-                    end
-                end
-
-                coroutine.yield(0)
-            until Done
-        end
-
-        --Included: Lords of Middle-Earth...
-        if LoME then
-            self.clearButtons()
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Setting up\nLords of Middle-Earth\nExpansion Content...",
-                    position = { 0, 0.1, 0 },
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            --change next step to Alternate Companions Menu...
-            NextStep = "AlternateCompanionsMenu"
-            --Replace Elven Rings...
-            for I = 1, 3 do
-                getObjectFromGUID(IDs.LoME.ElvenRings[I]).setPositionSmooth(
-                    getObjectFromGUID(IDs.ElvenRings[I]).getPosition(),
-                    false,
-                    false
-                )
-                getObjectFromGUID(IDs.LoME.ElvenRings[I]).setRotation({ 0, 90, 0 })
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.ElvenRings[I]))
-                coroutine.yield(0)
-            end
-
-            --Add New Event Cards...
-            getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(
-                getObjectFromGUID(IDs.LoME.ShadowCharacterEventCards)
-            )
-            getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(
-                getObjectFromGUID(IDs.LoME.ShadowStrategyEventCards)
-            )
-            coroutine.yield(0)
-            getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(
-                getObjectFromGUID(IDs.LoME.FreePeoplesCharacterEventCards)
-            )
-            getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(
-                getObjectFromGUID(IDs.LoME.FreePeoplesStrategyEventCards)
-            )
-            coroutine.yield(0)
-            --Remove Shadow Event Card #17 (Balrog of Moria)...
-            Global.call(
-                "RemoveObjectFromGame",
-                {
-                    BagID = IDs.ShadowCharacterEventDeck,
-                    Name = "Balrog of Moria",
-                    Description = "Card;Event;Character;Shadow;"
-                }
-            )
-            --Add 2 Smeagol Tiles (if not using BotF)...
-            if not BotF then
-                for T = 1, 2 do
-                    getObjectFromGUID(IDs.HuntTileBag).putObject(getObjectFromGUID(IDs.LoME.SmeagolTiles[T]))
-                    coroutine.yield(0)
-                end
-            end
-        else --Excluded: Lord of Middle-Earth...
-            --Clean up LoME Components...
-            self.clearButtons()
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Putting away\nLords of Middle-Earth\nExpansion Content...",
-                    position = { 0, 0.1, 0 },
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            for _, Obj in pairs(getAllObjects()) do
-                if string.find(Obj.getDescription(), "LoME;") ~= nil then
-                    getObjectFromGUID(GraveBagId).putObject(Obj)
-                end
-            end
-
-            --wait for cleanup to finish...
-            local Done = true
-            repeat
-                Done = true --assume true until proven false.
-                for _, Obj in pairs(getAllObjects()) do
-                    if string.find(Obj.getDescription(), "LoME;") ~= nil then
-                        Done = false
-                    end
-                end
-
-                coroutine.yield(0)
-            until Done
-        end
-
-        coroutine.yield(0)
-        --Included: Warriors of Middle-Earth...
-        if WoME then
-            log(" Setting up WoME...")
-            --debuggg
-            self.clearButtons()
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Setting up\nWarriors of Middle-Earth\nExpansion Content...",
-                    position = { 0, 0.1, 0 },
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            --Remove FP cards
-            log(" Removing FP Event Cards (WoME)...")
-            --debuggg
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Gwaihir the Windlord", Description = "#15;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Eagles are Coming!", Description = "#18;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Treebeard", Description = "#19;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Huorns", Description = "#20;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Entmoot", Description = "#21;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Dead Men of Dunharrow", Description = "#22;" }
-            )
-            coroutine.yield(0)
-            --Remove S cards
-            log(" Removing Shadow Event Cards (WoME)...")
-            --debuggg
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.ShadowCharacterEventDeck, Name = "Shelob's Lair", Description = "#1;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.ShadowStrategyEventDeck, Name = "Corsairs of Umbar", Description = "#10;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.ShadowStrategyEventDeck, Name = "Rage of the Dunlendings", Description = "#11;" }
-            )
-            coroutine.yield(0)
-            --Add New cards
-            log(" Adding FP Event Cards...")
-            --debuggg
-            TempObj = getObjectFromGUID(IDs.WoME.FreePeoplesEventCards)
-            coroutine.yield(0)
-            log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
-            getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(TempObj)
-            repeat
-                coroutine.yield(0)
-            until TempObj == nil
-            log(" Adding S Event Cards...")
-            --debuggg
-            TempObj = getObjectFromGUID(IDs.WoME.NotOnAnybodysSideCard)
-            coroutine.yield(0)
-            log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
-            getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(TempObj)
-            repeat
-                coroutine.yield(0)
-            until TempObj == nil
-            TempObj = getObjectFromGUID(IDs.WoME.ShadowEventCards)
-            coroutine.yield(0)
-            log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
-            getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(TempObj)
-            repeat
-                coroutine.yield(0)
-            until TempObj == nil
-        else --Excluded: Warriors of MIddle-Earth...
-            --Clean up WoME Components...
-            self.clearButtons()
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Putting away\nWarriors of Middle-Earth\nExpansion Content...",
-                    position = { 0, 0.1, 0 },
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            for _, Obj in pairs(getAllObjects()) do
-                if string.find(Obj.getDescription(), "WoME;") ~= nil then
-                    getObjectFromGUID(GraveBagId).putObject(Obj)
-                end
-            end
-
-            --Move Event Discard Spots..
-            getObjectFromGUID("61c02b").setPosition({ 40.25, 0.92, -20.00 })
-            getObjectFromGUID("b18c8a").setPosition({ -40.25, 0.92, 20.00 })
-            --wait for cleanup to finish...
-            local Done = true
-            repeat
-                Done = true --assume true until proven false.
-                for _, Obj in pairs(getAllObjects()) do
-                    if string.find(Obj.getDescription(), "WoME;") ~= nil then
-                        Done = false
-                    end
-                end
-
-                coroutine.yield(0)
-            until Done
-        end
-
-        coroutine.yield(0)
-        if KoME then
-            log(" Setting up KoME...")
-            --debuggg
-            self.clearButtons()
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Setting up\nKings of Middle-Earth\nExpansion Content...",
-                    position = { 0, 0.1, 0 },
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            --add KoME hunt tiles into hunt pool...
-            for O, Obj in pairs(getAllObjects()) do
-                if Obj.getName() == "Hunt Tile" and string.find(Obj.getDescription(), "KoME;") ~= nil then
-                    getObjectFromGUID(IDs.HuntTileBag).putObject(Obj)
-                end
-                -- If kome hunt tile
-                getObjectFromGUID(IDs.HuntTileBag).shuffle()
-            end
-            -- for O,Obj
-            --Remove Event Cards...
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "House of the Stewards", Description = "#23;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Wisdom of Elrond", Description = "#8;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Riders of Theoden", Description = "#16;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Thranduil's Archers", Description = "#24;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.ShadowStrategyEventDeck, Name = "Return to Valinor", Description = "#1;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.ShadowStrategyEventDeck, Name = "Denethor's Folly", Description = "#3;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.ShadowStrategyEventDeck, Name = "Threats and Promises", Description = "#5;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.ShadowStrategyEventDeck, Name = "Stormcrow", Description = "#6;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.ShadowStrategyEventDeck, Name = "The King is Revealed", Description = "#18;" }
-            )
-            -- If The Fate of Erebot is used then do not swap 2 of the cards (King Brands MEn and Dain Ironfoot's Guard)...
-            if TFoE then
-                --remove the new cards, we will keep old ones...
-                Global.call("RemoveObjectFromGame", { BagID = "890b46", Name = "King Brand's Men", Description = "#19;" })
-                Global.call(
-                    "RemoveObjectFromGame",
-                    { BagID = "890b46", Name = "Dain Ironfoot's Guard", Description = "#22;" }
-                )
-            else --remove the 2 base cards, they will be replaced with the KoME new cards...
-                Global.call(
-                    "RemoveObjectFromGame",
-                    { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
-                )
-                Global.call(
-                    "RemoveObjectFromGame",
-                    { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
-                )
-            end
-
-            --Add New Event Cards...
-            getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(getObjectFromGUID("70fc9b"))
-            coroutine.yield(0)
-            getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(getObjectFromGUID("cc76b8"))
-            coroutine.yield(0)
-            getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(getObjectFromGUID("0534ed"))
-            coroutine.yield(0)
-            getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(getObjectFromGUID("890b46"))
-            coroutine.yield(0)
-        else --Excluded: Kings of MIddle-Earth...
-            --Clean up WoME Components...
-            self.clearButtons()
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Putting away\nKings of Middle-Earth\nExpansion Content...",
-                    position = { 0, 0.1, 0 },
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            for _, Obj in pairs(getAllObjects()) do
-                if string.find(Obj.getDescription(), "KoME;") ~= nil then
-                    getObjectFromGUID(GraveBagId).putObject(Obj)
-                end
-            end
-
-            --wait for cleanup to finish...
-            local Done = true
-            repeat
-                Done = true --assume true until proven false.
-                for _, Obj in pairs(getAllObjects()) do
-                    if string.find(Obj.getDescription(), "KoME;") ~= nil then
-                        Done = false
-                    end
-                end
-
-                coroutine.yield(0)
-            until Done
-        end
-
-        coroutine.yield(0)
-        --setup treebeard content..
-        if WoME then
-            if Treebeard == 1 then
-                --WM1/1R
-                getObjectFromGUID("8f8093").setPosition({ -13.5, 0.97, 33 }, false, false)
-                getObjectFromGUID("8f8093").setRotation({ 0, 0, 180 }, false, false)
-                if getObjectFromGUID("185612") ~= nil then
-                    getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
-                end
-                --PROMO1
-                if getObjectFromGUID("3d93f2") ~= nil then
-                    getObjectFromGUID("416864").putObject(getObjectFromGUID("3d93f2"))
-                end
-                --PROMO1R
-                if getObjectFromGUID("d7264c") ~= nil then
-                    getObjectFromGUID("416864").putObject(getObjectFromGUID("d7264c"))
-                end
-            else
-                --PROMO1R
-                getObjectFromGUID("d7264c").setPosition({ -13.5, 0.97, 33 }, false, false)
-                getObjectFromGUID("d7264c").setRotation({ 0, 0, 180 }, false, false)
-                if getObjectFromGUID("8f8093") ~= nil then
-                    getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
-                end
-                --WM1/1
-                if getObjectFromGUID("185612") ~= nil then
-                    getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
-                end
-                --PROMO1
-                if getObjectFromGUID("3d93f2") ~= nil then
-                    getObjectFromGUID("416864").putObject(getObjectFromGUID("3d93f2"))
-                end
-            end
-        elseif Treebeard == 1 then
-            --WM1/1R
-            getObjectFromGUID("185612").setPosition({ -13.5, 0.97, 33 }, false, false)
-            getObjectFromGUID("185612").setRotation({ 0, 0, 180 }, false, false)
-            if getObjectFromGUID("8f8093") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
-            end
-            --WM1/1
-            if getObjectFromGUID("3d93f2") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("3d93f2"))
-            end
-            --PROMO1R
-            if getObjectFromGUID("d7264c") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("d7264c"))
-            end
-        elseif Treebeard == 2 then
-            --WM1/1R
-            getObjectFromGUID("3d93f2").setPosition({ -13.5, 0.97, 33 }, false, false)
-            getObjectFromGUID("3d93f2").setRotation({ 0, 0, 180 }, false, false)
-            if getObjectFromGUID("8f8093") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
-            end
-            --WM1/1
-            if getObjectFromGUID("185612") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
-            end
-            --PROMO1
-            if getObjectFromGUID("d7264c") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("d7264c"))
-            end
-        else --no treebeard...
-            --WM1/1R
-            if getObjectFromGUID("5e36c8") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("5e36c8"))
-            end
-            --treebeard miniature
-            if getObjectFromGUID("e51819") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("e51819"))
-            end
-            --treebeard miniature
-            if getObjectFromGUID("964d05") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("964d05"))
-            end
-            --treebeard miniature
-            if getObjectFromGUID("8f8093") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
-            end
-            --WM1/1
-            if getObjectFromGUID("185612") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
-            end
-            --PROMO1
-            if getObjectFromGUID("3d93f2") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("3d93f2"))
-            end
-            --PROMO1R
-            if getObjectFromGUID("d7264c") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("d7264c"))
-            end
-        end
-
-        for I = 1, 99 do
-            coroutine.yield(0)
-        end
-        -- for D
-        Step = ""
+        SetupExpansionsStep()
     elseif Step == "AlternateCompanionsMenu" then
-        self.clearButtons()
-        if BotF then
-            NextStep = "SetupCompanions"
-            Step = ""
-        else --hold Rivendell Council...
-            --secretly choose alternate companions...
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Choose Alternate Companions:",
-                    position = { 0, 0.1, -1.45 },
-                    width = 0,
-                    height = 0,
-                    font_size = 150,
-                    font_color = { 0.3, 0.3, 1 }
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Free Peoples Player\nis secretly choosing\nAlternate Companions...",
-                    position = { 0, -0.1, -0 },
-                    rotation = { 180, 180, 0 },
-                    width = 0,
-                    height = 0,
-                    font_size = 150,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Fellowship Guide: " .. CompanionNames[1],
-                    position = { 0, 0.1, -1.2 },
-                    width = 0,
-                    height = 0,
-                    font_size = 75,
-                    font_color = { 1, 1, 0 }
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "ToggleGandalfStrider",
-                    function_owner = self,
-                    label = CompanionNames[2],
-                    position = { 0, 0.1, -0.9 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 75,
-                    tooltip = "Click to change."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "ToggleLegolas",
-                    function_owner = self,
-                    label = CompanionNames[3],
-                    position = { 0, 0.1, -0.6 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 75,
-                    tooltip = "Click to change."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "ToggleGimli",
-                    function_owner = self,
-                    label = CompanionNames[4],
-                    position = { 0, 0.1, -0.3 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 75,
-                    tooltip = "Click to change."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "ToggleBoromir",
-                    function_owner = self,
-                    label = CompanionNames[5],
-                    position = { 0, 0.1, 0 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 75,
-                    tooltip = "Click to change."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "TogglePeregrin",
-                    function_owner = self,
-                    label = CompanionNames[6],
-                    position = { 0, 0.1, 0.3 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 75,
-                    tooltip = "Click to change."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "ToggleMeriadoc",
-                    function_owner = self,
-                    label = CompanionNames[7],
-                    position = { 0, 0.1, 0.6 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 75,
-                    tooltip = "Click to change."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Continue",
-                    function_owner = self,
-                    label = "Continue",
-                    position = { 0, 0.1, 1.2 },
-                    width = 1800,
-                    height = 200,
-                    color = { 1, 1, 1 },
-                    font_size = 100
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "* Lords of Middle Earth Expansion Character.",
-                    position = { 0, 0.1, 0.9 },
-                    width = 0,
-                    height = 0,
-                    font_size = 50,
-                    font_color = { 1, 1, 0 }
-                }
-            )
-        end
-
-        function ToggleGandalfStrider()
-            if CompanionNames[2] == "Gandalf the Grey: The Grey Wanderer" then
-                CompanionNames[2] = "Gandalf the Grey: Keeper of Narya*"
-            elseif CompanionNames[2] == "Gandalf the Grey: Keeper of Narya*" then
-                CompanionNames[2] = "Gandalf the Grey: The Grey Wanderer"
-            elseif CompanionNames[2] == "Strider: Ranger of the North" then
-                CompanionNames[2] = "Strider: Dunadan*"
-            else
-                CompanionNames[2] = "Strider: Ranger of the North"
-            end
-
-            NextStep = "AlternateCompanionsMenu"
-            Step = ""
-        end
-
-        function ToggleLegolas()
-            if CompanionNames[3] == "Legolas: Son of Thranduil" then
-                CompanionNames[3] = "Legolas: Elven Prince*"
-            else
-                CompanionNames[3] = "Legolas: Son of Thranduil"
-            end
-
-            NextStep = "AlternateCompanionsMenu"
-            Step = ""
-        end
-
-        function ToggleGimli()
-            if CompanionNames[4] == "Gimli: Son of Gloin" then
-                CompanionNames[4] = "Gimli: Dwarven Lord*"
-            else
-                CompanionNames[4] = "Gimli: Son of Gloin"
-            end
-
-            NextStep = "AlternateCompanionsMenu"
-            Step = ""
-        end
-
-        function ToggleBoromir()
-            if CompanionNames[5] == "Boromir: Son of Denethor" then
-                CompanionNames[5] = "Boromir: Captain General of Gondor*"
-            else
-                CompanionNames[5] = "Boromir: Son of Denethor"
-            end
-
-            NextStep = "AlternateCompanionsMenu"
-            Step = ""
-        end
-
-        function TogglePeregrin()
-            if CompanionNames[6] == "Peregrin Took: Hobbit Companion" then
-                CompanionNames[6] = "Peregrin: Hobbit of the Shire*"
-            else
-                CompanionNames[6] = "Peregrin Took: Hobbit Companion"
-            end
-
-            NextStep = "AlternateCompanionsMenu"
-            Step = ""
-        end
-
-        function ToggleMeriadoc()
-            if CompanionNames[7] == "Meriadoc Brandybuck: Hobbit Companion" then
-                CompanionNames[7] = "Meriadoc: Hobbit of the Shire*"
-            else
-                CompanionNames[7] = "Meriadoc Brandybuck: Hobbit Companion"
-            end
-
-            NextStep = "AlternateCompanionsMenu"
-            Step = ""
-        end
-
-        function Continue()
-            self.clearButtons()
-            --strip off asterisk from names if any...
-            for C = 1, #CompanionNames do
-                CompanionNames[C] = string.gsub(CompanionNames[C], "*", "")
-            end
-
-            MoveGamePanel("All")
-            NextStep = "SetupCompanions"
-            Step = ""
-        end
+        CreateAlternateCompanionMenu()
     elseif Step == "SetupCompanions" then
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Setting up the Fellowship...",
-                position = { 0, 0.1, 0 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        for I = 1, 99 do
-            coroutine.yield(0)
-        end
-        -- for D
-        --flip all companion cards face down...
-        for O, Obj in pairs(getAllObjects()) do
-            -- If companion card (but not Gollum)...
-            if
-                Obj.type == "Card" and string.find(Obj.getDescription(), "Companion;") ~= nil and
-                string.find(Obj.getName(), "Gollum") == nil and
-                string.find(Obj.getName(), "Smeagol") == nil
-            then
-                for C = 1, #CompanionNames do
-                    if Obj.getName() == CompanionNames[C] then
-                        IDs.CompanionCards[C] = Obj.getGUID()
-                        coroutine.yield(0)
-                        break
-                    end
-                end
-
-                Obj.setRotation({ 0, 0, 180 })
-                coroutine.yield(0)
-                getObjectFromGUID(GraveBagId).putObject(Obj)
-                repeat --waiting for the card to vanish, Entrox Licher
-                    coroutine.yield(0)
-                until Obj == nil
-            end
-        end
-
-        for I = 1, 30 do
-            coroutine.yield(0)
-        end
-
-        --pause 30 frames after all companions are in the grave. Entrox Licher
-        --pull back out companion cards face down and place them on the board...
-        for C = 2, #IDs.CompanionCards do
-            coroutine.yield(0)
-            local CardObj =
-                getObjectFromGUID(GraveBagId).takeObject(
-                    {
-                        smooth = true,
-                        guid = IDs.CompanionCards[C],
-                        rotation = { 0, 180, 180 },
-                        position = { 32.9, 3 - 0.2 * C, 20.15 }
-                    }
-                )
-            --ring-bearers?
-            if CardObj.getName() == "The Ring-bearers (Frodo & Samwise)" then
-                coroutine.yield(0)
-                CardObj.setRotation({ 0, 180, 0 })
-                CardObj.setPosition({ 32.9, 0.97, 20.15 })
-                CardObj.setLock(true)
-            else
-                CardObj.setDescription(CardObj.getDescription() .. "Fellowship;")
-            end
-        end
-
-        coroutine.yield(0)
-        --drop guide on top of the stack face up...
-        local CardObj =
-            getObjectFromGUID(GraveBagId).takeObject(
-                { smooth = true, guid = IDs.CompanionCards[1], rotation = { 0, 180, 0 }, position = { 32.9, 9, 20.15 } }
-            )
-        coroutine.yield(0)
-        CardObj.setDescription(CardObj.getDescription() .. "Fellowship;")
-        --wait for fellowship guide card to exist...
-        repeat
-            coroutine.yield(0)
-        until getObjectFromGUID(IDs.CompanionCards[1]) ~= nil
-        --wait for fellowship guide card to reach their destination before continuing...
-        local Done = false
-        Global.call("PlaySound", { ID = 1 })
-        --Music Title
-        repeat
-            coroutine.yield(0)
-            if getObjectFromGUID(IDs.CompanionCards[1]) ~= nil then
-                Done =
-                    getObjectFromGUID(IDs.CompanionCards[1]).getPosition().x >= 32.8 and
-                    getObjectFromGUID(IDs.CompanionCards[1]).getPosition().y <= 1.2 and
-                    getObjectFromGUID(IDs.CompanionCards[1]).getPosition().z >= 20.1
-            else --card must have merged into deck...
-                Done = true
-            end
-        until Done
-        Global.call("FellowshipMenu")
-        NextStep = "SetupUnits"
-        --compact mode?
-        if Versus == "1v1 Compact Mode" then
-            broadcastToAll("Compact Mode 1v1:\nPlacing Players next to each other...")
-            Versus = "1v1"
-            --update stored locations...
-            Spots.ShadowDiceBox = Spots.CompactShadowUsedDice
-            Spots.FreePeoplesDiceBox = Spots.CompactFreePeoplesUsedDice
-            --relocate Blue hand...
-            coroutine.yield(0)
-            Global.call("MoveObject",
-                { ID = "63b83a", Position = { -25, 3, -57 }, Rotation = { 0, 0, 0 }, Smooth = false })
-            --blue hand
-            --swap blue to green, then back to move player to the correct spot...
-            coroutine.yield(0)
-            Player["Blue"].changeColor("Green")
-            coroutine.yield(0)
-            Player["Green"].changeColor("Blue")
-            --clear and move combat dice...
-            for O, Obj in pairs(getAllObjects()) do
-                if Obj.getName() == "(Free Peoples Combat Die)" or Obj.getName() == "(Shadow Combat Die)" then
-                    Obj.destruct()
-                end
-            end
-            -- for O,Obj
-            Global.call(
-                "MoveObject",
-                { ID = "637507", Position = { -23.75, 1.01, -15.75 }, Rotation = { 0, 180, 0 }, Smooth = false }
-            )
-            Global.call(
-                "MoveObject",
-                { ID = "f50dab", Position = { -23.75, 1.01, -17.25 }, Rotation = { 0, 180, 0 }, Smooth = false }
-            )
-            Global.call(
-                "MoveObject",
-                { ID = "9847f7", Position = { -3, 1.01, -21.5 }, Rotation = { 0, 180, 0 }, Smooth = false }
-            )
-            Global.call(
-                "MoveObject",
-                { ID = "63319b", Position = { -3, 1.01, -23 }, Rotation = { 0, 180, 0 }, Smooth = false }
-            )
-            Global.call(
-                "MoveObject",
-                { ID = "92a611", Position = { -1.9, 1.01, -21.5 }, Rotation = { 0, 0, 0 }, Smooth = false }
-            )
-            Global.call(
-                "MoveObject",
-                { ID = "4b6f4c", Position = { -23.7, 1.01, -14.2 }, Rotation = { 0, 0, 0 }, Smooth = false }
-            )
-            local CombatDiceIndex = 0
-            --move shadow objects first...
-            for O, Obj in pairs(getAllObjects()) do
-                --what side is it on?
-                if string.find(Obj.getDescription(), "Shadow;") ~= nil then
-                    --which object type is it?
-                    if Obj.getName() == "(Shadow Combat Die)" then
-                        CombatDiceIndex = CombatDiceIndex + 1
-                        Obj.setPosition({ -6 + CombatDiceIndex, 1.5, -22 })
-                        coroutine.yield(0)
-                    elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;1of10;") ~= nil then
-                        Obj.setPosition(Spots.CompactShadowDiceLine[1])
-                    elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;2of10;") ~= nil then
-                        Obj.setPosition(Spots.CompactShadowDiceLine[2])
-                    elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;3of10;") ~= nil then
-                        Obj.setPosition(Spots.CompactShadowDiceLine[3])
-                    elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;4of10;") ~= nil then
-                        Obj.setPosition(Spots.CompactShadowDiceLine[4])
-                    elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;5of10;") ~= nil then
-                        Obj.setPosition(Spots.CompactShadowDiceLine[5])
-                    elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;6of10;") ~= nil then
-                        Obj.setPosition(Spots.CompactShadowDiceLine[6])
-                    elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;7of10;") ~= nil then
-                        Obj.setPosition(Spots.CompactShadowDiceLine[7])
-                    end
-                end
-            end
-
-            coroutine.yield(0)
-            --move FP objects second...
-            CombatDiceIndex = 0
-            for O, Obj in pairs(getAllObjects()) do
-                --what side is it on?
-                if string.find(Obj.getDescription(), "FreePeoples;") ~= nil then
-                    --which object type is it?
-                    if
-                        (Obj.type == "Tile" and string.find(Obj.getDescription(), "FactionCard;") ~= nil) or
-                        (Obj.type == "Figurine" and string.find(Obj.getDescription(), "Faction;") ~= nil) or
-                        string.find(Obj.getDescription(), "Faction;2D;") ~= nil or
-                        string.find(Obj.getDescription(), "Faction;3D;") ~= nil
-                    then
-                        Global.call(
-                            "MoveObject",
-                            {
-                                ID = Obj.getGUID(),
-                                Position = { Obj.getPosition().x - 5, Obj.getPosition().y, -Obj.getPosition().z },
-                                Rotation = { 0, 180, 0 },
-                                Smooth = false
-                            }
-                        )
-                        coroutine.yield(0)
-                    elseif Obj.getDescription() == "DeckSpot;CallToBattle;FreePeoples;WoME;" then
-                        Global.call(
-                            "MoveObject",
-                            { ID = Obj.getGUID(), Position = { -3, 0.95, -45 }, Rotation = { 0, 180, 0 }, Smooth = false }
-                        )
-                    elseif Obj.getDescription() == "Deck;CallToBattle;FreePeoples;WoME;" then
-                        Global.call(
-                            "MoveObject",
-                            { ID = Obj.getGUID(), Position = { -3, 3, -45 }, Rotation = { 0, 180, 180 }, Smooth = false }
-                        )
-                    elseif Obj.getName() == "(Free Peoples Faction Die)" then
-                        Global.call("MoveObject", { ID = Obj.getGUID(), Position = { -8, 1.6, -41.5 }, Smooth = false })
-                        coroutine.yield(0)
-                    elseif
-                        (Obj.getName() == "Gandalf the White: Emissary from the West" and
-                            (not BotF or Obj.type ~= "Figurine")) or
-                        Obj.getName() == "Aragorn: Heir to Isildur" or
-                        ((Obj.getName() == "Gollum: Slave of the Ring" or Obj.getName() == "Gollum") and not BotF) or
-                        string.find(Obj.getDescription(), "Dice;Action;FreePeoples;5of6;") ~= nil or
-                        string.find(Obj.getDescription(), "Dice;Action;FreePeoples;6of6;") ~= nil or
-                        Obj.getName() == "Lady Galadriel: Keeper of Nenya" or
-                        Obj.getName() == "Lord Elrond: Keeper of Vilya" or
-                        Obj.getName() == "Smeagol: Tamed Wretch" or
-                        Obj.getName() == "Smeagol" or
-                        Obj.getName() == "(Vilya Action Die)" or
-                        Obj.getName() == "(Nenya Action Die)" or
-                        Obj.getName() == "Treebeard: Tree-herd" or
-                        Obj.getName() == "Smeagol Hunt Tile"
-                    then
-                        Global.call(
-                            "MoveObject",
-                            {
-                                ID = Obj.getGUID(),
-                                Position = { Obj.getPosition().x - 33, Obj.getPosition().y, -Obj.getPosition().z },
-                                Rotation = { Obj.getRotation().x, 180, Obj.getRotation().z },
-                                Smooth = false
-                            }
-                        )
-                        coroutine.yield(0)
-                    elseif Obj.getName() == "(Narya Action Die)" then
-                        Global.call("MoveObject", { ID = Obj.getGUID(), Position = { -44.5, 1.6, -39 }, Smooth = false })
-                    elseif Obj.getName() == "(Free Peoples Combat Die)" then
-                        CombatDiceIndex = CombatDiceIndex + 1
-                        Global.call(
-                            "MoveObject",
-                            { ID = Obj.getGUID(), Position = { -27 + CombatDiceIndex, 1.5, -15 }, Smooth = false }
-                        )
-                        coroutine.yield(0)
-                    elseif string.find(Obj.getDescription(), "Dice;Action;FreePeoples;1of6;") ~= nil then
-                        Global.call(
-                            "MoveObject",
-                            { ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[1], Smooth = false }
-                        )
-                    elseif string.find(Obj.getDescription(), "Dice;Action;FreePeoples;2of6;") ~= nil then
-                        Global.call(
-                            "MoveObject",
-                            { ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[2], Smooth = false }
-                        )
-                    elseif string.find(Obj.getDescription(), "Dice;Action;FreePeoples;3of6;") ~= nil then
-                        Global.call(
-                            "MoveObject",
-                            { ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[3], Smooth = false }
-                        )
-                    elseif string.find(Obj.getDescription(), "Dice;Action;FreePeoples;4of6;") ~= nil then
-                        Global.call(
-                            "MoveObject",
-                            { ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[4], Smooth = false }
-                        )
-                    elseif Obj.getName() == "(Free Peoples Ruler Die)" then
-                        Global.call("MoveObject", { ID = Obj.getGUID(), Position = { -47.5, 1.6, -39 }, Smooth = false })
-                    elseif
-                        Obj.type == "Card" and
-                        (Obj.getName() == "Brand: King of Dale" or
-                            Obj.getName() == "Dain Ironfoot: King Under the Mountain" or
-                            Obj.getName() == "Denethor: Lord Steward of Gondor" or
-                            Obj.getName() == "Theoden: King of the Riddermark" or
-                            Obj.getName() == "Thranduil: King of the Woodland Realm")
-                    then
-                        Global.call(
-                            "MoveObject",
-                            {
-                                ID = Obj.getGUID(),
-                                Position = { Obj.getPosition().x - 9.5, Obj.getPosition().y, -Obj.getPosition().z + 12 },
-                                Rotation = { Obj.getRotation().x, 180, Obj.getRotation().z },
-                                Smooth = false
-                            }
-                        )
-                    end
-                elseif Obj.getDescription() == "Token;Ruler;KoME;" then
-                    Global.call(
-                        "MoveObject",
-                        {
-                            ID = Obj.getGUID(),
-                            Position = { Obj.getPosition().x - 9.5, Obj.getPosition().y, -Obj.getPosition().z + 0.4 },
-                            Rotation = { 0, 90, 0 },
-                            Smooth = false
-                        }
-                    )
-                elseif Obj.type == "Card" and string.find(Obj.getName(), "Corrupted Ruler") ~= nil then
-                    Global.call(
-                        "MoveObject",
-                        {
-                            ID = Obj.getGUID(),
-                            Position = { Obj.getPosition().x - 41.5, Obj.getPosition().y, Obj.getPosition().z },
-                            Rotation = Obj.getRotation(),
-                            Smooth = false
-                        }
-                    )
-                end
-            end
-
-            Global.call("MoveObject", { ID = "9a56a5", Position = { 58, 1.57, -60 }, Smooth = false })
-            --Red Action Dice Box.
-            Global.call("MoveObject", { ID = "46d2fc", Position = { -58, 1.57, -60 }, Smooth = false })
-            --Red Action Dice Box.
-            --relocate used dice areas...
-            Global.call(
-                "MoveObject",
-                { ID = "028249", Position = { -5.1, 0.95, -32.75 }, Rotation = { 0, 180, 0 }, Smooth = false }
-            )
-            --blue area
-            Global.call(
-                "MoveObject",
-                { ID = "75024a", Position = { 9.9, 0.95, -31.81 }, Rotation = { 0, 180, 0 }, Smooth = false }
-            )
-            --blue area
-            Global.call(
-                "MoveObject",
-                { ID = "9a38bc", Position = { 4.3, 0.95, -32.75 }, Rotation = { 0, 180, 0 }, Smooth = false }
-            )
-            --red area
-            Global.call(
-                "MoveObject",
-                { ID = "2916b7", Position = { -10.72, 0.95, -31.81 }, Rotation = { 0, 180, 0 }, Smooth = false }
-            )
-            --red area
-            Global.call(
-                "MoveObject",
-                { ID = "dcf102", Position = { -10.72, 0.95, -36.48 }, Rotation = { 0, 180, 0 }, Smooth = false }
-            )
-            --blue area
-            --remove certain components...
-            Global.call("RemoveObjectFromGame", { ID = "471b96" })
-            Global.call("RemoveObjectFromGame", { ID = "28f260" })
-            --re-move combat dice panels (they seem to get lag/stuck in certain games)...
-            for I = 1, 30 do
-                coroutine.yield(0)
-            end
-
-            if getObjectFromGUID("637507") ~= nil then
-                getObjectFromGUID("637507").setPosition({ -23.75, 1.01, -15.75 })
-            end
-
-            if getObjectFromGUID("637507") ~= nil then
-                getObjectFromGUID("637507").setRotation({ 0, 180, 0 })
-            end
-
-            if getObjectFromGUID("f50dab") ~= nil then
-                getObjectFromGUID("f50dab").setPosition({ -23.75, 1.01, -17.25 })
-            end
-
-            if getObjectFromGUID("f50dab") ~= nil then
-                getObjectFromGUID("f50dab").setRotation({ 0, 180, 0 })
-            end
-
-            if getObjectFromGUID("9847f7") ~= nil then
-                getObjectFromGUID("9847f7").setPosition({ -3, 1.01, -21.5 })
-            end
-
-            if getObjectFromGUID("9847f7") ~= nil then
-                getObjectFromGUID("9847f7").setRotation({ 0, 180, 0 })
-            end
-
-            if getObjectFromGUID("63319b") ~= nil then
-                getObjectFromGUID("63319b").setPosition({ -3, 1.01, -23 })
-            end
-
-            if getObjectFromGUID("63319b") ~= nil then
-                getObjectFromGUID("63319b").setRotation({ 0, 180, 0 })
-            end
-
-            if getObjectFromGUID("92a611") ~= nil then
-                getObjectFromGUID("92a611").setPosition({ -1.9, 1.01, -21.5 })
-            end
-
-            if getObjectFromGUID("92a611") ~= nil then
-                getObjectFromGUID("92a611").setRotation({ 0, 0, 0 })
-            end
-
-            if getObjectFromGUID("4b6f4c") ~= nil then
-                getObjectFromGUID("4b6f4c").setPosition({ -23.7, 1.01, -14.2 })
-            end
-
-            if getObjectFromGUID("4b6f4c") ~= nil then
-                getObjectFromGUID("4b6f4c").setRotation({ 0, 0, 0 })
-            end
-        end
-
-        --Included: The Breaking of the Fellowship...
-        if BotF then
-            Global.call("SetupBotF")
-        else
-            Step = ""
-        end
+        SetupCompanionsStep()
     elseif Step == "SetupUnits" then
         UnitsSetupStep()
     elseif Step == "SetupCompleteMenu" then
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Choose Scripting Level:",
-                position = { 0, 0.1, -1.3 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "FullScripts",
-                function_owner = self,
-                label = "Full Scripted Turns",
-                position = { 0, 0.1, -0.5 },
-                width = 1500,
-                height = 350,
-                color = { 1, 1, 1 },
-                font_size = 150,
-                tooltip = "Click to play game with full scripting assistance."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "BasicScripts",
-                function_owner = self,
-                label = "Basic Scripts Only",
-                position = { 0, 0.1, 0.5 },
-                width = 1500,
-                height = 350,
-                color = { 1, 1, 1 },
-                font_size = 150,
-                tooltip = "Click to play game with minimal scripting assistance."
-            }
-        )
-        function FullScripts()
-            self.clearButtons()
-            NextStep = "StartTurn"
-            Step = ""
-        end
-
-        function BasicScripts()
-            self.clearButtons()
-            NextStep = "BasicMenu"
-            Step = ""
-        end
-
-        --Shuffle decks and bags...
-        getObjectFromGUID(IDs.CompanionBag).shuffle()
-        getObjectFromGUID(IDs.HuntTileBag).shuffle()
-        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).shuffle()
-        getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).shuffle()
-        getObjectFromGUID(IDs.ShadowCharacterEventDeck).shuffle()
-        getObjectFromGUID(IDs.ShadowStrategyEventDeck).shuffle()
-        if WoME then
-            getObjectFromGUID(IDs.WoME.FreePeoplesFactionDeck).shuffle()
-            getObjectFromGUID(IDs.WoME.ShadowFactionDeck).shuffle()
-        end
-
-        coroutine.yield(0)
-        broadcastToAll("Setup Complete!")
-        Turn = 0
-        FlagString = ""
-        if LoME then
-            FlagString = FlagString .. "LoME;"
-        end
-
-        if WoME then
-            FlagString = FlagString .. "WoME;"
-        end
-
-        if KoME then
-            FlagString = FlagString .. "KoME;"
-        end
-
-        if TFoE then
-            FlagString = FlagString .. "TFoE;"
-        end
-
-        if BotF then
-            FlagString = FlagString .. "BotF;"
-        end
-
-        if CompactMode then
-            FlagString = FlagString .. "Compact;"
-        end
-
-        Global.setVar("LoME", LoME)
-        Global.setVar("WoME", WoME)
-        Global.setVar("TFoE", TFoE)
-        Global.setVar("KoME", KoME)
-        Global.setVar("BotF", BotF)
-        Global.setVar("CompactMode", CompactMode)
+        CreateSetupCompleteMenu()
     elseif Step == "StartTurn" then
-        Round = Round + 1
-        Turn = Turn + 1
-        Phase = 0
-        Global.setVar("Round", Round)
-        Global.setVar("Phase", Phase)
-        Global.setVar("Turn", Turn)
-        self.setDescription(
-            "Panel;Round:" .. Round .. ";Phase:" .. Phase .. ";Turn:" .. Turn .. ";Step:" .. Step .. ";" .. FlagString
-        )
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "StartTurn",
-                function_owner = self,
-                label = "Start Turn " .. Turn,
-                position = { 0, 0.1, 0 },
-                width = 1600,
-                height = 400,
-                color = { 1, 1, 1 },
-                font_size = 250,
-                tooltip = "Click to Start Turn " .. Turn
-            }
-        )
-        FellowshipTrack = math.floor((getObjectFromGUID("6b62ef").getPosition().x - 5.0) / 1.58)
-        CorruptionTrack = math.floor((getObjectFromGUID("abe1b3").getPosition().x - 5.0) / 1.58)
-        ShadowVP = math.floor((getObjectFromGUID("976dbc").getPosition().x + 23.65) / 1.64)
-        FreePeoplesVP = math.floor((getObjectFromGUID("d0b340").getPosition().x + 23.65) / 1.64)
-        if FellowshipTrack < 0 then
-            FellowshipTrack = 0
-        elseif FellowshipTrack > 12 then
-            FellowshipTrack = 12
-        end
-
-        if CorruptionTrack < 0 then
-            CorruptionTrack = 0
-        elseif CorruptionTrack > 12 then
-            CorruptionTrack = 12
-        end
-
-        if ShadowVP < 0 then
-            ShadowVP = 0
-        elseif ShadowVP > 10 then
-            ShadowVP = 10
-        end
-
-        if FreePeoplesVP < 0 then
-            FreePeoplesVP = 0
-        elseif FreePeoplesVP > 10 then
-            FreePeoplesVP = 10
-        end
-
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Fellowship Track: " ..
-                    FellowshipTrack ..
-                    "\nCorruption Track: " ..
-                    CorruptionTrack ..
-                    "\n\nShadow Victory Points: " ..
-                    ShadowVP .. " of 10\nFree Peoples Victory Points: " .. FreePeoplesVP .. " of 4",
-                position = { 0, 0.1, -0.9 },
-                width = 0,
-                height = 0,
-                font_color = { 0.9, 0.9, 0.9 },
-                font_size = 75
-            }
-        )
-        function StartTurn()
-            printToAll("Turn " .. Turn .. " has started.")
-            --pass leader tokens?...
-            if Turn == 1 or Versus == "1v1" then
-                PlayersLeader.FreePeoples = "Gondor"
-                PlayersLeader.Shadow = "The Witch-king"
-            elseif Versus == "1v2" then
-                PlayersLeader.FreePeoples = "Gondor"
-                if PlayersLeader.Shadow == "The Witch-king" then
-                    PlayersLeader.Shadow = "Saruman"
-                else
-                    PlayersLeader.Shadow = "The Witch-king"
-                end
-            else
-                if PlayersLeader.Shadow == "The Witch-king" then
-                    PlayersLeader.Shadow = "Saruman"
-                else
-                    PlayersLeader.Shadow = "The Witch-king"
-                end
-
-                if PlayersLeader.FreePeoples == "Gondor" then
-                    PlayersLeader.FreePeoples = "Rohan"
-                else
-                    PlayersLeader.FreePeoples = "Gondor"
-                end
-            end
-
-            if PlayersLeader.FreePeoples == "Gondor" and Versus == "2v2" then
-                getObjectFromGUID(IDs.FreePeoplesLeaderToken).setPositionSmooth(Spots.LeadingPlayerGondor, false, false)
-                printToAll("Gondor Player (Blue) has the Free Peoples Leading Player Token.", Player["Blue"].color)
-            elseif Versus == "2v2" then
-                getObjectFromGUID(IDs.FreePeoplesLeaderToken).setPositionSmooth(Spots.LeadingPlayerRohan, false, false)
-                printToAll("Rohan Player (Green) has the Free Peoples Leading Player Token.", Player["Green"].color)
-            end
-
-            if PlayersLeader.Shadow == "The Witch-king" and Versus ~= "1v1" then
-                getObjectFromGUID(IDs.ShadowLeaderToken).setPositionSmooth(Spots.LeadingPlayerWitchKing, false, false)
-                printToAll("The Witch-king Player (Red) has the Shadow Leading Player Token.", Player["Red"].color)
-            elseif Versus ~= "1v1" then
-                getObjectFromGUID(IDs.ShadowLeaderToken).setPositionSmooth(Spots.LeadingPlayerSaruman, false, false)
-                printToAll("Saruman Player (Yellow) has the Shadow Leading Player Token.", Player["Yellow"].color)
-            end
-            --look for missing decks...
-            IDs.FreePeoplesCharacterEventDeck =
-                CheckDeck(
-                    {
-                        id = IDs.FreePeoplesCharacterEventDeck,
-                        position = Spots.FreePeoplesCharacterEventDeck,
-                        name = "Free Peoples Character Event Deck",
-                        description = "Deck;Event;Character;FreePeoples;"
-                    }
-                )
-            IDs.ShadowCharacterEventDeck =
-                CheckDeck(
-                    {
-                        id = IDs.ShadowCharacterEventDeck,
-                        position = Spots.ShadowCharacterEventDeck,
-                        name = "Shadow Character Event Deck",
-                        description = "Deck;Event;Character;Shadow;"
-                    }
-                )
-            IDs.FreePeoplesStrategyEventDeck =
-                CheckDeck(
-                    {
-                        id = IDs.FreePeoplesStrategyEventDeck,
-                        position = Spots.FreePeoplesStrategyEventDeck,
-                        name = "Free Peoples Strategy Event Deck",
-                        description = "Deck;Event;Strategy;FreePeoples;"
-                    }
-                )
-            IDs.ShadowStrategyEventDeck =
-                CheckDeck(
-                    {
-                        id = IDs.ShadowStrategyEventDeck,
-                        position = Spots.ShadowStrategyEventDeck,
-                        name = "Shadow Strategy Event Deck",
-                        description = "Deck;Event;Strategy;Shadow;"
-                    }
-                )
-            if WoME then
-                IDs.WoME.FreePeoplesFactionDeck =
-                    CheckDeck(
-                        {
-                            id = IDs.WoME.FreePeoplesFactionDeck,
-                            position = Spots.FreePeoplesFactionDeck,
-                            name = "Free Peoples Faction Deck",
-                            description = "Deck;Faction;FreePeoples;WoME;"
-                        }
-                    )
-                IDs.WoME.ShadowFactionDeck =
-                    CheckDeck(
-                        {
-                            id = IDs.WoME.ShadowFactionDeck,
-                            position = Spots.ShadowFactionDeck,
-                            name = "Shadow Faction Deck",
-                            description = "Deck;Faction;Shadow;WoME;"
-                        }
-                    )
-            end
-
-            --look for missing dice...
-            --...
-            --detect fellowship guide...
-            GuideName = Global.call("DetectGuide")
-            NextStep = "Phase1"
-            Step = ""
-        end
-    elseif Step == "Phase1" then --Recover Action Dice and Draw Event Cards
-        Phase = 1
-        Global.setVar("Phase", Phase)
-        printToAll("Phase 1) Recover Action Dice and Draw Event Cards.")
-        --display info on panel...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Phase 1) Recover Action Dice\nand Draw Event Cards",
-                position = { 0, 0.1, -1.3 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "PerformPhase1",
-                function_owner = self,
-                label = "Perform Phase 1:\nRecover Action Dice and\nDraw Event Cards.",
-                position = { 0, 0.1, 0 },
-                width = 1600,
-                height = 400,
-                color = { 1, 1, 1 },
-                font_size = 100,
-                tooltip = "Have the script perform all Phase 1 steps for you."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Continue",
-                function_owner = self,
-                label = "Continue",
-                position = { 0, 0.1, 1 },
-                width = 1600,
-                height = 200,
-                color = { 1, 1, 1.2 },
-                font_size = 100,
-                tooltip = "Click Continue after all Phase 1 steps are completed."
-            }
-        )
-        function Continue()
-            NextStep = "Phase2"
-            Step = ""
-        end
-
-        function PerformPhase1()
-            self.clearButtons()
-            --gather action dice...
-            startLuaCoroutine(self, "GatherActionDiceCoroutine")
-            NextStep = "Phase2"
-            --NextStep = "BasicMenu"
-            --draw event cards (and faction cards if playing WoME)...
-            if Turn == 1 and BotF and Versus ~= "2v2" then
-                --players will be prompted what to draw, starting with FreePeoples...
-                NextStep = "Phase1_BotF_FreePeoplesDrawMenu"
-            elseif Turn == 1 and BotF and Versus == "2v2" then
-                --players will be prompted what to draw, starting with Gondor...
-                NextStep = "Phase1_BotF_GondorDrawMenu"
-            elseif Versus == "1v1" then
-                DrawFromDeck(
-                    {
-                        deckname = "Character Event",
-                        deckid = IDs.FreePeoplesCharacterEventDeck,
-                        deckspot = Spots.FreePeoplesCharacterEventDeck,
-                        count = 1,
-                        player = "Blue"
-                    }
-                )
-                DrawFromDeck(
-                    {
-                        deckname = "Strategy Event",
-                        deckid = IDs.FreePeoplesStrategyEventDeck,
-                        deckspot = Spots.FreePeoplesStrategyEventDeck,
-                        count = 1,
-                        player = "Blue"
-                    }
-                )
-                if WoME then
-                    DrawFromDeck(
-                        {
-                            deckname = "Faction",
-                            deckid = IDs.WoME.FreePeoplesFactionDeck,
-                            deckspot = Spots.FreePeoplesFactionDeck,
-                            count = 1,
-                            player = "Blue"
-                        }
-                    )
-                end
-
-                DrawFromDeck(
-                    {
-                        deckname = "Character Event",
-                        deckid = IDs.ShadowCharacterEventDeck,
-                        deckspot = Spots.ShadowCharacterEventDeck,
-                        count = 1,
-                        player = "Red"
-                    }
-                )
-                DrawFromDeck(
-                    {
-                        deckname = "Strategy Event",
-                        deckid = IDs.ShadowStrategyEventDeck,
-                        deckspot = Spots.ShadowStrategyEventDeck,
-                        count = 1,
-                        player = "Red"
-                    }
-                )
-                if WoME then
-                    DrawFromDeck(
-                        {
-                            deckname = "Faction",
-                            deckid = IDs.WoME.ShadowFactionDeck,
-                            deckspot = Spots.ShadowFactionDeck,
-                            count = 1,
-                            player = "Red"
-                        }
-                    )
-                end
-            elseif Versus == "1v2" then
-                DrawFromDeck(
-                    {
-                        deckname = "Character Event",
-                        deckid = IDs.FreePeoplesCharacterEventDeck,
-                        deckspot = Spots.FreePeoplesCharacterEventDeck,
-                        count = 1,
-                        player = "Blue"
-                    }
-                )
-                DrawFromDeck(
-                    {
-                        deckname = "Strategy Event",
-                        deckid = IDs.FreePeoplesStrategyEventDeck,
-                        deckspot = Spots.FreePeoplesStrategyEventDeck,
-                        count = 1,
-                        player = "Blue"
-                    }
-                )
-                if WoME then
-                    DrawFromDeck(
-                        {
-                            deckname = "Faction",
-                            deckid = IDs.WoME.FreePeoplesFactionDeck,
-                            deckspot = Spots.FreePeoplesFactionDeck,
-                            count = 1,
-                            player = "Blue"
-                        }
-                    )
-                end
-
-                if Turn == 1 then
-                    DrawFromDeck(
-                        {
-                            deckname = "Character Event",
-                            deckid = IDs.ShadowCharacterEventDeck,
-                            deckspot = Spots.ShadowCharacterEventDeck,
-                            count = 1,
-                            player = "Red"
-                        }
-                    )
-                    DrawFromDeck(
-                        {
-                            deckname = "Strategy Event",
-                            deckid = IDs.ShadowStrategyEventDeck,
-                            deckspot = Spots.ShadowStrategyEventDeck,
-                            count = 1,
-                            player = "Red"
-                        }
-                    )
-                    if WoME then
-                        DrawFromDeck(
-                            {
-                                deckname = "Faction",
-                                deckid = IDs.WoME.ShadowFactionDeck,
-                                deckspot = Spots.ShadowFactionDeck,
-                                count = 1,
-                                player = "Red"
-                            }
-                        )
-                    end
-
-                    DrawFromDeck(
-                        {
-                            deckname = "Character Event",
-                            deckid = IDs.ShadowCharacterEventDeck,
-                            deckspot = Spots.ShadowCharacterEventDeck,
-                            count = 1,
-                            player = "Yellow"
-                        }
-                    )
-                    DrawFromDeck(
-                        {
-                            deckname = "Strategy Event",
-                            deckid = IDs.ShadowStrategyEventDeck,
-                            deckspot = Spots.ShadowStrategyEventDeck,
-                            count = 1,
-                            player = "Yellow"
-                        }
-                    )
-                else
-                    --draw a shadow faction card for the leading shadow player...
-                    if WoME and PlayersLeader.Shadow == "The Witch-king" then
-                        DrawFromDeck(
-                            {
-                                deckname = "Faction",
-                                deckid = IDs.WoME.ShadowFactionDeck,
-                                deckspot = Spots.ShadowFactionDeck,
-                                count = 1,
-                                player = "Red"
-                            }
-                        )
-                    elseif WoME then
-                        DrawFromDeck(
-                            {
-                                deckname = "Faction",
-                                deckid = IDs.WoME.ShadowFactionDeck,
-                                deckspot = Spots.ShadowFactionDeck,
-                                count = 1,
-                                player = "Yellow"
-                            }
-                        )
-                    end
-
-                    --set next step to prompt shadow players which deck to draw from...
-                    NextStep = "Phase1_TheWitchKingDrawMenu"
-                end
-            else --2v2
-                if Turn == 1 then
-                    DrawFromDeck(
-                        {
-                            deckname = "Character Event",
-                            deckid = IDs.FreePeoplesCharacterEventDeck,
-                            deckspot = Spots.FreePeoplesCharacterEventDeck,
-                            count = 1,
-                            player = "Blue"
-                        }
-                    )
-                    DrawFromDeck(
-                        {
-                            deckname = "Strategy Event",
-                            deckid = IDs.FreePeoplesStrategyEventDeck,
-                            deckspot = Spots.FreePeoplesStrategyEventDeck,
-                            count = 1,
-                            player = "Blue"
-                        }
-                    )
-                    if WoME then
-                        DrawFromDeck(
-                            {
-                                deckname = "Faction",
-                                deckid = IDs.WoME.FreePeoplesFactionDeck,
-                                deckspot = Spots.FreePeoplesFactionDeck,
-                                count = 1,
-                                player = "Blue"
-                            }
-                        )
-                    end
-
-                    DrawFromDeck(
-                        {
-                            deckname = "Character Event",
-                            deckid = IDs.FreePeoplesCharacterEventDeck,
-                            deckspot = Spots.FreePeoplesCharacterEventDeck,
-                            count = 1,
-                            player = "Green"
-                        }
-                    )
-                    DrawFromDeck(
-                        {
-                            deckname = "Strategy Event",
-                            deckid = IDs.FreePeoplesStrategyEventDeck,
-                            deckspot = Spots.FreePeoplesStrategyEventDeck,
-                            count = 1,
-                            player = "Green"
-                        }
-                    )
-                    DrawFromDeck(
-                        {
-                            deckname = "Character Event",
-                            deckid = IDs.ShadowCharacterEventDeck,
-                            deckspot = Spots.ShadowCharacterEventDeck,
-                            count = 1,
-                            player = "Red"
-                        }
-                    )
-                    DrawFromDeck(
-                        {
-                            deckname = "Strategy Event",
-                            deckid = IDs.ShadowStrategyEventDeck,
-                            deckspot = Spots.ShadowStrategyEventDeck,
-                            count = 1,
-                            player = "Red"
-                        }
-                    )
-                    if WoME then
-                        DrawFromDeck(
-                            {
-                                deckname = "Faction",
-                                deckid = IDs.WoME.ShadowFactionDeck,
-                                deckspot = Spots.ShadowFactionDeck,
-                                count = 1,
-                                player = "Red"
-                            }
-                        )
-                    end
-
-                    DrawFromDeck(
-                        {
-                            deckname = "Character Event",
-                            deckid = IDs.ShadowCharacterEventDeck,
-                            deckspot = Spots.ShadowCharacterEventDeck,
-                            count = 1,
-                            player = "Yellow"
-                        }
-                    )
-                    DrawFromDeck(
-                        {
-                            deckname = "Strategy Event",
-                            deckid = IDs.ShadowStrategyEventDeck,
-                            deckspot = Spots.ShadowStrategyEventDeck,
-                            count = 1,
-                            player = "Yellow"
-                        }
-                    )
-                else
-                    --draw a faction card for each leading player...
-                    if PlayersLeader.FreePeoples == "Gondor" and WoME then
-                        DrawFromDeck(
-                            {
-                                deckname = "Faction",
-                                deckid = IDs.WoME.FreePeoplesFactionDeck,
-                                deckspot = Spots.FreePeoplesFactionDeck,
-                                count = 1,
-                                player = "Blue"
-                            }
-                        )
-                    elseif WoME then
-                        DrawFromDeck(
-                            {
-                                deckname = "Faction",
-                                deckid = IDs.WoME.FreePeoplesFactionDeck,
-                                deckspot = Spots.FreePeoplesFactionDeck,
-                                count = 1,
-                                player = "Green"
-                            }
-                        )
-                    end
-
-                    if PlayersLeader.Shadow == "The Witch-king" and WoME then
-                        DrawFromDeck(
-                            {
-                                deckname = "Faction",
-                                deckid = IDs.WoME.ShadowFactionDeck,
-                                deckspot = Spots.ShadowFactionDeck,
-                                count = 1,
-                                player = "Red"
-                            }
-                        )
-                    elseif WoME then
-                        DrawFromDeck(
-                            {
-                                deckname = "Faction",
-                                deckid = IDs.WoME.ShadowFactionDeck,
-                                deckspot = Spots.ShadowFactionDeck,
-                                count = 1,
-                                player = "Yellow"
-                            }
-                        )
-                    end
-
-                    --set next step to prompt each player which deck to draw from...
-                    NextStep = "Phase1_GondorDrawMenu"
-                end
-            end
-
-            Step = ""
-        end
+        StartTurnStep()
+    elseif Step == "Phase1" then
+        Phase1_Step()
     elseif Step == "Phase1_BotF_FreePeoplesDrawMenu" then
-        MoveGamePanel("FreePeoples")
-        --choose which card combination to draw...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Free Peoples Player\nDraw Starting Event Cards:",
-                position = { 0, 0.1, -1.2 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Free Peoples Player\nis choosing which\nEvent Cards to Draw...",
-                position = { 0, -0.1, -0 },
-                rotation = { 180, 180, 0 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 0.5, 0.5, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC1S3",
-                function_owner = self,
-                label = "Draw: 1 Character + 3 Strategy",
-                position = { 0, 0.1, -0.6 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 1 Character Event Card and 3 Strategy Event Cards."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC2S2",
-                function_owner = self,
-                label = "Draw: 2 Character + 2 Strategy",
-                position = { 0, 0.1, -0.3 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 2 Character Event Cards and 2 Strategy Event Cards."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC3S1",
-                function_owner = self,
-                label = "Draw: 3 Character + 1 Strategy",
-                position = { 0, 0.1, 0 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 3 Character Event Cards and 1 Strategy Event Card."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label =
-                "The Breaking of the Fellowship (Turn 1 Only)\nThe Free Peoples player draws four Event Cards.\nAll cards must be drawn before looking at them.\nAt least 1 card from each deck must be drawn.",
-                position = { 0, 0.1, 1 },
-                width = 0,
-                height = 0,
-                font_size = 50,
-                font_color = { 1, 1, 0 }
-            }
-        )
-        if Versus == "1v1" then
-            NextStep = "Phase1_BotF_ShadowDrawMenu"
-        else
-            NextStep = "Phase1_BotF_TheWitchKingDrawMenu"
-        end
-
-        function DrawC1S3()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Character Event",
-                    deckid = IDs.FreePeoplesCharacterEventDeck,
-                    deckspot = Spots.FreePeoplesCharacterEventDeck,
-                    count = 1,
-                    player = "Blue"
-                }
-            )
-            DrawFromDeck(
-                { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 3, player = "Blue" }
-            )
-            Step = ""
-        end
-
-        function DrawC2S2()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Blue" }
-            )
-            DrawFromDeck(
-                { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue" }
-            )
-            Step = ""
-        end
-
-        function DrawC3S1()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 3, player = "Blue" }
-            )
-            DrawFromDeck(
-                {
-                    deckname = "Strategy Event",
-                    deckid = IDs.FreePeoplesStrategyEventDeck,
-                    deckspot = Spots.FreePeoplesStrategyEventDeck,
-                    count = 1,
-                    player = "Blue"
-                }
-            )
-            Step = ""
-        end
+        Phase1_BotF_FP_DrawMenu()
     elseif Step == "Phase1_BotF_ShadowDrawMenu" then
-        MoveGamePanel("Shadow")
-        --choose which card combination to draw...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Shadow Player\nDraw Starting Event Cards:",
-                position = { 0, 0.1, -1.2 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 0, 0 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Shadow Player\nis choosing which\nEvent Cards to Draw...",
-                position = { 0, -0.1, 0 },
-                rotation = { 180, 180, 0 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 1, 0.5, 0.5 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC1S5",
-                function_owner = self,
-                label = "Draw: 1 Character + 5 Strategy",
-                position = { 0, 0.1, -0.6 },
-                width = 1600,
-                height = 150,
-                color = { 1, 0.5, 0.5 },
-                font_size = 75,
-                tooltip = "Draw 1 Character Event Card and 5 Strategy Event Cards."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC2S4",
-                function_owner = self,
-                label = "Draw: 2 Character + 4 Strategy",
-                position = { 0, 0.1, -0.3 },
-                width = 1600,
-                height = 150,
-                color = { 1, 0.5, 0.5 },
-                font_size = 75,
-                tooltip = "Draw 2 Character Event Cards and 4 Strategy Event Cards."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC3S3",
-                function_owner = self,
-                label = "Draw: 3 Character + 3 Strategy",
-                position = { 0, 0.1, 0 },
-                width = 1600,
-                height = 150,
-                color = { 1, 0.5, 0.5 },
-                font_size = 75,
-                tooltip = "Draw 3 Character Event Cards and 3 Strategy Event Cards."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC4S2",
-                function_owner = self,
-                label = "Draw: 4 Character + 2 Strategy",
-                position = { 0, 0.1, 0.3 },
-                width = 1600,
-                height = 150,
-                color = { 1, 0.5, 0.5 },
-                font_size = 75,
-                tooltip = "Draw 4 Character Event Cards and 2 Strategy Event Cards."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC5S1",
-                function_owner = self,
-                label = "Draw: 5 Character + 1 Strategy",
-                position = { 0, 0.1, 0.6 },
-                width = 1600,
-                height = 150,
-                color = { 1, 0.5, 0.5 },
-                font_size = 75,
-                tooltip = "Draw 5 Character Event Cards and 1 Strategy Event Card."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label =
-                "The Breaking of the Fellowship (Turn 1 Only)\nThe Shadow player draws six Event Cards.\nAll cards must be drawn before looking at them.\nAt least 1 card from each deck must be drawn.",
-                position = { 0, 0.1, 1 },
-                width = 0,
-                height = 0,
-                font_size = 50,
-                font_color = { 1, 1, 0 }
-            }
-        )
-        NextStep = "Phase2"
-        function DrawC1S5()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Character Event",
-                    deckid = IDs.ShadowCharacterEventDeck,
-                    deckspot = Spots.ShadowCharacterEventDeck,
-                    count = 1,
-                    player = "Red"
-                }
-            )
-            DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 5, player = "Red" })
-            Step = ""
-        end
-
-        function DrawC2S4()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Red" }
-            )
-            DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 4, player = "Red" })
-            Step = ""
-        end
-
-        function DrawC3S3()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Red" }
-            )
-            DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Red" })
-            Step = ""
-        end
-
-        function DrawC4S2()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 4, player = "Red" }
-            )
-            DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Red" })
-            Step = ""
-        end
-
-        function DrawC5S1()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 5, player = "Red" }
-            )
-            DrawFromDeck(
-                {
-                    deckname = "Strategy Event",
-                    deckid = IDs.ShadowStrategyEventDeck,
-                    deckspot = Spots.ShadowStrategyEventDeck,
-                    count = 1,
-                    player = "Red"
-                }
-            )
-            Step = ""
-        end
+        Phase1_BotF_SH_DrawMenu()
     elseif Step == "Phase1_BotF_GondorDrawMenu" then
-        CharacterCardCount = 0
-        StrategyCardCount = 0
-        --move game panel to player's spot...
-        MoveGamePanel("Gondor")
-        --choose which card combination to draw...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Free Peoples: Gondor (Blue) Player\nDraw Starting Event Cards:",
-                position = { 0, 0.1, -1.2 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Free Peoples\nGondor (Blue) Player\nis choosing which\nEvent Cards to Draw...",
-                position = { 0, -0.1, -0 },
-                rotation = { 180, 180, 0 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 0.5, 0.5, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC2S0",
-                function_owner = self,
-                label = "Draw: 2 Character",
-                position = { 0, 0.1, -0.6 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 2 Character Event Cards and 0 Strategy Event Cards."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC1S1",
-                function_owner = self,
-                label = "Draw: 1 Character + 1 Strategy",
-                position = { 0, 0.1, -0.3 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 1 Character Event Card and 1 Strategy Event Card."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC0S2",
-                function_owner = self,
-                label = "Draw: 2 Strategy",
-                position = { 0, 0.1, 0 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 2 Strategy Event Cards and 0 Character Event Cards."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label =
-                "The Breaking of the Fellowship (Turn 1 Only)\nThe Free Peoples players draw two Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 4 total from each deck.",
-                position = { 0, 0.1, 1 },
-                width = 0,
-                height = 0,
-                font_size = 50,
-                font_color = { 1, 1, 0 }
-            }
-        )
-        NextStep = "Phase1_BotF_RohanDrawMenu"
-        function DrawC2S0()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Blue" }
-            )
-            CharacterCardCount = 2
-            Step = ""
-        end
-
-        function DrawC1S1()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Character Event",
-                    deckid = IDs.FreePeoplesCharacterEventDeck,
-                    deckspot = Spots.FreePeoplesCharacterEventDeck,
-                    count = 1,
-                    player = "Blue"
-                }
-            )
-            DrawFromDeck(
-                {
-                    deckname = "Strategy Event",
-                    deckid = IDs.FreePeoplesStrategyEventDeck,
-                    deckspot = Spots.FreePeoplesStrategyEventDeck,
-                    count = 1,
-                    player = "Blue"
-                }
-            )
-            CharacterCardCount = 1
-            StrategyCardCount = 1
-            Step = ""
-        end
-
-        function DrawC0S2()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue" }
-            )
-            StrategyCardCount = 2
-            Step = ""
-        end
+        Phase1_BotF_GondorPlayer_DrawMenu()
     elseif Step == "Phase1_BotF_RohanDrawMenu" then
-        --move game panel to player's spot...
-        MoveGamePanel("Rohan")
-        --choose which card combination to draw...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Free Peoples: Rohan (Green) Player\nDraw Starting Event Cards:",
-                position = { 0, 0.1, -1.2 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Free Peoples\nGRohan (Green) Player\nis choosing which\nEvent Cards to Draw...",
-                position = { 0, -0.1, -0 },
-                rotation = { 180, 180, 0 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 0.5, 1, 0.5 }
-            }
-        )
-        if StrategyCardCount > 0 then
-            self.createButton(
-                {
-                    click_function = "DrawC2S0",
-                    function_owner = self,
-                    label = "Draw: 2 Character",
-                    position = { 0, 0.1, -0.6 },
-                    width = 1600,
-                    height = 150,
-                    color = { 0.7, 0.7, 1 },
-                    font_size = 75,
-                    tooltip = "Draw 2 Character Event Card and 0 Strategy Event Cards."
-                }
-            )
-        end
-
-        self.createButton(
-            {
-                click_function = "DrawC1S1",
-                function_owner = self,
-                label = "Draw: 1 Character + 1 Strategy",
-                position = { 0, 0.1, -0.3 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 1 Character Event Card and 1 Strategy Event Card."
-            }
-        )
-        if CharacterCardCount > 0 then
-            self.createButton(
-                {
-                    click_function = "DrawC0S2",
-                    function_owner = self,
-                    label = "Draw: 2 Strategy",
-                    position = { 0, 0.1, 0 },
-                    width = 1600,
-                    height = 150,
-                    color = { 0.7, 0.7, 1 },
-                    font_size = 75,
-                    tooltip = "Draw 2 Strategy Event Cards and 0 Character Event Cards."
-                }
-            )
-        end
-
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label =
-                "The Breaking of the Fellowship (Turn 1 Only)\nThe Free Peoples players draw two Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 4 total from each deck.",
-                position = { 0, 0.1, 1 },
-                width = 0,
-                height = 0,
-                font_size = 50,
-                font_color = { 1, 1, 0 }
-            }
-        )
-        NextStep = "Phase1_BotF_TheWitchKingDrawMenu"
-        function DrawC2S0()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Green" }
-            )
-            Step = ""
-        end
-
-        function DrawC1S1()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Character Event",
-                    deckid = IDs.FreePeoplesCharacterEventDeck,
-                    deckspot = Spots.FreePeoplesCharacterEventDeck,
-                    count = 1,
-                    player = "Green"
-                }
-            )
-            DrawFromDeck(
-                {
-                    deckname = "Strategy Event",
-                    deckid = IDs.FreePeoplesStrategyEventDeck,
-                    deckspot = Spots.FreePeoplesStrategyEventDeck,
-                    count = 1,
-                    player = "Green"
-                }
-            )
-            Step = ""
-        end
-
-        function DrawC0S2()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Green" }
-            )
-            Step = ""
-        end
+        Phase1_BotF_RohanPlayer_DrawMenu()
     elseif Step == "Phase1_BotF_TheWitchKingDrawMenu" then
-        CharacterCardCount = 0
-        StrategyCardCount = 0
-        --move game panel to player's spot...
-        MoveGamePanel("TheWitchKing")
-        --choose which card combination to draw...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Shadow: The Witch-King (Red) Player\nDraw Starting Event Cards:",
-                position = { 0, 0.1, -1.2 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Free Peoples\nThe Witch-King (Red) Player\nis choosing which\nEvent Cards to Draw...",
-                position = { 0, -0.1, -0 },
-                rotation = { 180, 180, 0 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 1, 0.5, 0.5 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC3S0",
-                function_owner = self,
-                label = "Draw: 3 Character",
-                position = { 0, 0.1, -0.6 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 3 Character Event Cards and 0 Strategy Event Cards."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC2S1",
-                function_owner = self,
-                label = "Draw: 2 Character + 1 Strategy",
-                position = { 0, 0.1, -0.3 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 2 Character Event Cards and 1 Strategy Event Card."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC1S2",
-                function_owner = self,
-                label = "Draw: 1 Character + 2 Strategy",
-                position = { 0, 0.1, 0 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 1 Character Event Card and 2 Strategy Event Cards."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC0S3",
-                function_owner = self,
-                label = "Draw: 3 Strategy",
-                position = { 0, 0.1, 0.3 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 3 Strategy Event Cards and 0 Character Event Cards."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label =
-                "The Breaking of the Fellowship (Turn 1 Only)\nThe Shadow players draw three Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 6 total from each deck.",
-                position = { 0, 0.1, 1 },
-                width = 0,
-                height = 0,
-                font_size = 50,
-                font_color = { 1, 1, 0 }
-            }
-        )
-        NextStep = "Phase1_BotF_SarumanDrawMenu"
-        function DrawC3S0()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Red" }
-            )
-            CharacterCardCount = 3
-            Step = ""
-        end
-
-        function DrawC2S1()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Red" }
-            )
-            DrawFromDeck(
-                {
-                    deckname = "Strategy Event",
-                    deckid = IDs.ShadowStrategyEventDeck,
-                    deckspot = Spots.ShadowStrategyEventDeck,
-                    count = 1,
-                    player = "Red"
-                }
-            )
-            CharacterCardCount = 2
-            StrategyCardCount = 1
-            Step = ""
-        end
-
-        function DrawC1S2()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Character Event",
-                    deckid = IDs.ShadowCharacterEventDeck,
-                    deckspot = Spots.ShadowCharacterEventDeck,
-                    count = 1,
-                    player = "Red"
-                }
-            )
-            DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Red" })
-            CharacterCardCount = 1
-            StrategyCardCount = 2
-            Step = ""
-        end
-
-        function DrawC0S3()
-            self.clearButtons()
-            DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Red" })
-            StrategyCardCount = 3
-            Step = ""
-        end
+        Phase1_BotF_TheWitchKingPlayer_DrawMenu()
     elseif Step == "Phase1_BotF_SarumanDrawMenu" then
-        --move game panel to player's spot...
-        MoveGamePanel("Saruman")
-        --choose which card combination to draw...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Shadow: Saruman (Yellow) Player\nDraw Starting Event Cards:",
-                position = { 0, 0.1, -1.2 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Free Peoples\nSaruman (Yellow) Player\nis choosing which\nEvent Cards to Draw...",
-                position = { 0, -0.1, -0 },
-                rotation = { 180, 180, 0 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 1, 1, 0 }
-            }
-        )
-        if StrategyCardCount > 0 then
-            self.createButton(
-                {
-                    click_function = "DrawC3S0",
-                    function_owner = self,
-                    label = "Draw: 3 Character",
-                    position = { 0, 0.1, -0.6 },
-                    width = 1600,
-                    height = 150,
-                    color = { 0.7, 0.7, 1 },
-                    font_size = 75,
-                    tooltip = "Draw 3 Character Event Cards and 0 Strategy Event Cards."
-                }
-            )
-        end
-
-        self.createButton(
-            {
-                click_function = "DrawC2S1",
-                function_owner = self,
-                label = "Draw: 2 Character + 1 Strategy",
-                position = { 0, 0.1, -0.3 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 2 Character Event Cards and 1 Strategy Event Card."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawC1S2",
-                function_owner = self,
-                label = "Draw: 1 Character + 2 Strategy",
-                position = { 0, 0.1, 0 },
-                width = 1600,
-                height = 150,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                tooltip = "Draw 1 Character Event Card and 2 Strategy Event Cards."
-            }
-        )
-        if CharacterCardCount > 0 then
-            self.createButton(
-                {
-                    click_function = "DrawC0S3",
-                    function_owner = self,
-                    label = "Draw: 3 Strategy",
-                    position = { 0, 0.1, 0.3 },
-                    width = 1600,
-                    height = 150,
-                    color = { 0.7, 0.7, 1 },
-                    font_size = 75,
-                    tooltip = "Draw 3 Strategy Event Cards and 0 Character Event Cards."
-                }
-            )
-        end
-
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label =
-                "The Breaking of the Fellowship (Turn 1 Only)\nThe Shadow players draw three Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 6 total from each deck.",
-                position = { 0, 0.1, 1 },
-                width = 0,
-                height = 0,
-                font_size = 50,
-                font_color = { 1, 1, 0 }
-            }
-        )
-        NextStep = "Phase2"
-        function DrawC3S0()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Yellow" }
-            )
-            CharacterCardCount = 3
-            Step = ""
-        end
-
-        function DrawC2S1()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Yellow" }
-            )
-            DrawFromDeck(
-                {
-                    deckname = "Strategy Event",
-                    deckid = IDs.ShadowStrategyEventDeck,
-                    deckspot = Spots.ShadowStrategyEventDeck,
-                    count = 1,
-                    player = "Yellow"
-                }
-            )
-            CharacterCardCount = 2
-            StrategyCardCount = 1
-            Step = ""
-        end
-
-        function DrawC1S2()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Character Event",
-                    deckid = IDs.ShadowCharacterEventDeck,
-                    deckspot = Spots.ShadowCharacterEventDeck,
-                    count = 1,
-                    player = "Yellow"
-                }
-            )
-            DrawFromDeck(
-                { deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Yellow" }
-            )
-            CharacterCardCount = 1
-            StrategyCardCount = 2
-            Step = ""
-        end
-
-        function DrawC0S3()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Yellow" }
-            )
-            StrategyCardCount = 3
-            Step = ""
-        end
+        Phase1_BotF_TheWitchKingPlayer_DrawMenu()
     elseif Step == "Phase1_GondorDrawMenu" then
-        --move game panel to player's spot...
-        MoveGamePanel("Gondor")
-        --prompt player which card to draw...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Free Peoples: Gondor (Blue) Player\nChoose which type of Event Card to draw:",
-                position = { 0, 0.1, -1.2 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 0.5, 0.5, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "The Free Peoples\nGondor (Blue) Player\nis deciding which type\nof event card to draw...",
-                position = { 0, -0.1, 0 },
-                rotation = { 180, 180, 0 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 0.5, 0.5, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawCharacter",
-                function_owner = self,
-                label = "Draw\nCharacter\nEvent\nCard",
-                position = { -0.75, 0.1, 0 },
-                rotation = { 0, 0, 0 },
-                width = 500,
-                height = 900,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawStrategy",
-                function_owner = self,
-                label = "Draw\nStrategy\nEvent\nCard",
-                position = { 0.75, 0.1, 0 },
-                rotation = { 0, 0, 0 },
-                width = 500,
-                height = 900,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        function DrawCharacter()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Character Event",
-                    deckid = IDs.FreePeoplesCharacterEventDeck,
-                    deckspot = Spots.FreePeoplesCharacterEventDeck,
-                    count = 1,
-                    player = "Blue"
-                }
-            )
-            NextStep = "Phase1_RohanDrawMenu"
-            Step = ""
-        end
-
-        function DrawStrategy()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Strategy Event",
-                    deckid = IDs.FreePeoplesStrategyEventDeck,
-                    deckspot = Spots.FreePeoplesStrategyEventDeck,
-                    count = 1,
-                    player = "Blue"
-                }
-            )
-            NextStep = "Phase1_RohanDrawMenu"
-            Step = ""
-        end
+        Phase1_GondorPlayer_DrawMenu()
     elseif Step == "Phase1_RohanDrawMenu" then
-        --move game panel to player's spot...
-        MoveGamePanel("Rohan")
-        --prompt player which card to draw...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Free Peoples: Rohan (Green) Player\nChoose which type of Event Card to draw:",
-                position = { 0, 0.1, -1.2 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 0, 1, 0 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "The Free Peoples\nRohan (Green) Player\nis deciding which type\nof event card to draw...",
-                position = { 0, -0.1, 0 },
-                rotation = { 180, 180, 0 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 0, 1, 0 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawCharacter",
-                function_owner = self,
-                label = "Draw\nCharacter\nEvent\nCard",
-                position = { -0.75, 0.1, 0 },
-                rotation = { 0, 0, 0 },
-                width = 500,
-                height = 900,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawStrategy",
-                function_owner = self,
-                label = "Draw\nStrategy\nEvent\nCard",
-                position = { 0.75, 0.1, 0 },
-                rotation = { 0, 0, 0 },
-                width = 500,
-                height = 900,
-                color = { 0.7, 0.7, 1 },
-                font_size = 75,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        function DrawCharacter()
-            self.clearButtons()
-            DrawFromDeck(
-                { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 1, player = "Green" }
-            )
-            NextStep = "Phase1_TheWitchKingDrawMenu"
-            Step = ""
-        end
-
-        function DrawStrategy()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Strategy Event",
-                    deckid = IDs.FreePeoplesStrategyEventDeck,
-                    deckspot = Spots.FreePeoplesStrategyEventDeck,
-                    count = 1,
-                    player = "Green"
-                }
-            )
-            NextStep = "Phase1_TheWitchKingDrawMenu"
-            Step = ""
-        end
+        Phase1_RohanPlayer_DrawMenu()
     elseif Step == "Phase1_TheWitchKingDrawMenu" then
-        --move game panel to player's spot...
-        MoveGamePanel("TheWitchKing")
-        --prompt player which card to draw...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Shadow: The Witch-king (Red) Player\nChoose which type of Event Card to draw:",
-                position = { 0, 0.1, -1.2 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 0, 0 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Shadow\nThe Witch-king (Red) Player\nis deciding which type\nof event card to draw...",
-                position = { 0, -0.1, 0 },
-                rotation = { 180, 180, 0 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 1, 0, 0 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawCharacter",
-                function_owner = self,
-                label = "Draw\nCharacter\nEvent\nCard",
-                position = { -0.75, 0.1, 0 },
-                rotation = { 0, 0, 0 },
-                width = 500,
-                height = 900,
-                color = { 1, 0.5, 0.5 },
-                font_size = 75,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawStrategy",
-                function_owner = self,
-                label = "Draw\nStrategy\nEvent\nCard",
-                position = { 0.75, 0.1, 0 },
-                rotation = { 0, 0, 0 },
-                width = 500,
-                height = 900,
-                color = { 1, 0.5, 0.5 },
-                font_size = 75,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        function DrawCharacter()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Character Event",
-                    deckid = IDs.ShadowCharacterEventDeck,
-                    deckspot = Spots.ShadowCharacterEventDeck,
-                    count = 1,
-                    player = "Red"
-                }
-            )
-            NextStep = "Phase1_SarumanDrawMenu"
-            Step = ""
-        end
-
-        function DrawStrategy()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Strategy Event",
-                    deckid = IDs.ShadowStrategyEventDeck,
-                    deckspot = Spots.ShadowStrategyEventDeck,
-                    count = 1,
-                    player = "Red"
-                }
-            )
-            NextStep = "Phase1_SarumanDrawMenu"
-            Step = ""
-        end
+        Phase1_TheWitchKingPlayer_DrawMenu()
     elseif Step == "Phase1_SarumanDrawMenu" then
-        --move game panel to player's spot...
-        MoveGamePanel("Saruman")
-        --prompt player which card to draw...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Shadow: Saruman (Yellow) Player\nChoose which type of Event Card to draw:",
-                position = { 0, 0.1, -1.2 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 0 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Shadow\nSaruman (Yellow) Player\nis deciding which type\nof event card to draw...",
-                position = { 0, -0.1, 0 },
-                rotation = { 180, 180, 0 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 1, 1, 0 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawCharacter",
-                function_owner = self,
-                label = "Draw\nCharacter\nEvent\nCard",
-                position = { -0.75, 0.1, 0 },
-                rotation = { 0, 0, 0 },
-                width = 500,
-                height = 900,
-                color = { 1, 0.5, 0.5 },
-                font_size = 75,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DrawStrategy",
-                function_owner = self,
-                label = "Draw\nStrategy\nEvent\nCard",
-                position = { 0.75, 0.1, 0 },
-                rotation = { 0, 0, 0 },
-                width = 500,
-                height = 900,
-                color = { 1, 0.5, 0.5 },
-                font_size = 75,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        function DrawCharacter()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Character Event",
-                    deckid = IDs.ShadowCharacterEventDeck,
-                    deckspot = Spots.ShadowCharacterEventDeck,
-                    count = 1,
-                    player = "Yellow"
-                }
-            )
-            NextStep = "Phase2"
-            Step = ""
-        end
-
-        function DrawStrategy()
-            self.clearButtons()
-            DrawFromDeck(
-                {
-                    deckname = "Strategy Event",
-                    deckid = IDs.ShadowStrategyEventDeck,
-                    deckspot = Spots.ShadowStrategyEventDeck,
-                    count = 1,
-                    player = "Yellow"
-                }
-            )
-            NextStep = "Phase2"
-            Step = ""
-        end
-    elseif Step == "Phase2" then --Fellowship Phase
-        Phase = 2
-        Global.setVar("Phase", Phase)
-        printToAll("Phase 2) Fellowship Phase.")
-        Global.call("FellowshipMenu")
-        MoveGamePanel("All")
-        --display info on panel...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Phase 2) Fellowship Phase",
-                position = { 0, 0.1, -1.4 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        local Phase2Text =
-        "Free Peoples may now:\n\nDeclare the position of the Fellowship.\nChange the Guide of the Fellowship."
-        if BotF then
-            Phase2Text =
-            "Free Peoples may now:\n\nDeclare the position of the Fellowship.\n\n(The Fellowship is Broken, Gollum is the Guide)."
-        elseif Turn == 1 and LoME and not BotF then
-            Phase2Text =
-                Phase2Text ..
-                "\n\nThis turn only (Turn 1), Free Peoples may (if eligible):\n\nDeclare Meriadoc outside the Fellowship (The Shire).\n  Declare Peregrin outside the Fellowship (The Shire).\n  Declare Boromir outside the Fellowship (Minas Tirith).\n  Declare Gimli outside the Fellowship (Erebor).\n  Declare Legolas outside the Fellowship (Woodland Realm)."
-        end
-
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = Phase2Text,
-                position = { 0, 0.1, -0.1 },
-                width = 0,
-                height = 0,
-                font_size = 75,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Continue",
-                function_owner = self,
-                label = "Continue",
-                position = { 0, 0.1, 1.2 },
-                width = 1600,
-                height = 200,
-                color = { 1, 1, 1.2 },
-                font_size = 100,
-                tooltip = "Click Continue when Phase 2 steps are complete."
-            }
-        )
-        function Continue()
-            NextStep = "Phase3"
-            --Turn 1 with LoME?
-            if Turn == 1 and LoME then
-                if getObjectFromGUID(IDs.LoME.ShadowToken1) == nil or getObjectFromGUID(IDs.LoME.ShadowToken2) == nil then
-                    printToAll("UHOH! Couldn't find the Shadow Tokens!\nNo Shadow Tokens could be assigned.")
-                    Step = ""
-                elseif BotF then
-                    printToAll(
-                        "Shadow Tokens from Lords of Middle-Earth are not used in the Breaking of the Fellowship scenario."
-                    )
-                    Step = ""
-                else                    --look for seperated companions...
-                    FellowshipCount = 8 --start with 8 in the fellowship.
-                    local TokenCount = 0
-                    if not InFellowship({ Name = "Meriadoc" }) then
-                        TokenCount = TokenCount + 1
-                        FellowshipCount = FellowshipCount - 1
-                    end
-
-                    if not InFellowship({ Name = "Peregrin" }) then
-                        TokenCount = TokenCount + 1
-                        FellowshipCount = FellowshipCount - 1
-                    end
-
-                    if not InFellowship({ Name = "Boromir" }) then
-                        TokenCount = TokenCount + 1
-                        FellowshipCount = FellowshipCount - 1
-                    end
-
-                    if not InFellowship({ Name = "Gimli" }) then
-                        TokenCount = TokenCount + 1
-                        FellowshipCount = FellowshipCount - 1
-                    end
-
-                    if not InFellowship({ Name = "Legolas" }) then
-                        TokenCount = TokenCount + 1
-                        FellowshipCount = FellowshipCount - 1
-                    end
-
-                    printToAll(TokenCount .. " Companions were found outside the Fellowship Box.")
-                    if TokenCount == 0 then
-                        printToAll(
-                            "The Shadow receive no Shadow Tokens. (There were no Companions declared outside the Fellowship)."
-                        )
-                        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
-                        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
-                        Step = ""
-                    elseif TokenCount == 1 then
-                        printToAll(
-                            "The Shadow chooses 1 Shadow Token. (There was 1 Companion declared outside the Fellowship)."
-                        )
-                        MoveGamePanel("Shadow")
-                        self.clearButtons()
-                        self.createButton(
-                            {
-                                click_function = "Nothing",
-                                function_owner = self,
-                                label = "Shadow Player: Choose 1 Shadow Token:",
-                                position = { 0, 0.1, -1.3 },
-                                width = 0,
-                                height = 0,
-                                font_size = 100,
-                                font_color = { 1, 1, 1 }
-                            }
-                        )
-                        self.createButton(
-                            {
-                                click_function = "Nothing",
-                                function_owner = self,
-                                label = "Shadow is choosing\na Shadow Token...",
-                                position = { 0, -0.1, 0 },
-                                rotation = { 180, 180, 0 },
-                                width = 0,
-                                height = 0,
-                                font_size = 150,
-                                font_color = { 1, 0.5, 0.5 }
-                            }
-                        )
-                        self.createButton(
-                            {
-                                click_function = "ChooseShadowToken1",
-                                function_owner = self,
-                                label = "Move Nazgul and Minions (Shadow Token)",
-                                position = { 0, 0.1, -0.3 },
-                                width = 1500,
-                                height = 250,
-                                font_size = 75,
-                                color = { 1, 0, 0 },
-                                font_color = { 1, 1, 0 },
-                                tooltip = "Choose the Shadow Token that can Move Nazgul and Minions."
-                            }
-                        )
-                        self.createButton(
-                            {
-                                click_function = "ChooseShadowToken2",
-                                function_owner = self,
-                                label = "Advance a Shadow Nation on the\nPolitical Track (Shadow Token)",
-                                position = { 0, 0.1, 0.3 },
-                                width = 1500,
-                                height = 250,
-                                font_size = 75,
-                                color = { 1, 0, 0 },
-                                font_color = { 1, 1, 0 },
-                                tooltip =
-                                "Choose the Shadow Token that can Advance a Shadow Nation on the\nPolitical Track."
-                            }
-                        )
-                        function ChooseShadowToken1()
-                            self.clearButtons()
-                            getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
-                            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
-                            Step = ""
-                        end
-
-                        function ChooseShadowToken2()
-                            self.clearButtons()
-                            getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
-                            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
-                            Step = ""
-                        end
-                    else --shadow gets both tokens...
-                        printToAll(
-                            "The Shadow receive both Shadow Tokens. (There were 2 or more Companions declared outside the Fellowship)."
-                        )
-                        getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
-                        getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -31 }, false, true)
-                        Step = ""
-                    end
-                end
-            else
-                Step = ""
-            end
-        end
+        Phase1_SarumanPlayer_DrawMenu()
+    elseif Step == "Phase2" then
+        Phase2_FellowshipStep()
     elseif Step == "Phase3" then --Hunt Allocation
         Phase = 3
         Global.setVar("Phase", Phase)
@@ -4890,6 +998,2083 @@ function UnitsSetupStep()
 
     NextStep = "SetupCompleteMenu"
     Step = ""
+end
+
+function CreateSetupCompleteMenu()
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Choose Scripting Level:",
+            position = { 0, 0.1, -1.3 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "FullScripts",
+            function_owner = self,
+            label = "Full Scripted Turns",
+            position = { 0, 0.1, -0.5 },
+            width = 1500,
+            height = 350,
+            color = { 1, 1, 1 },
+            font_size = 150,
+            tooltip = "Click to play game with full scripting assistance."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "BasicScripts",
+            function_owner = self,
+            label = "Basic Scripts Only",
+            position = { 0, 0.1, 0.5 },
+            width = 1500,
+            height = 350,
+            color = { 1, 1, 1 },
+            font_size = 150,
+            tooltip = "Click to play game with minimal scripting assistance."
+        }
+    )
+    function FullScripts()
+        self.clearButtons()
+        NextStep = "StartTurn"
+        Step = ""
+    end
+
+    function BasicScripts()
+        self.clearButtons()
+        NextStep = "BasicMenu"
+        Step = ""
+    end
+
+    --Shuffle decks and bags...
+    getObjectFromGUID(IDs.CompanionBag).shuffle()
+    getObjectFromGUID(IDs.HuntTileBag).shuffle()
+    getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).shuffle()
+    getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).shuffle()
+    getObjectFromGUID(IDs.ShadowCharacterEventDeck).shuffle()
+    getObjectFromGUID(IDs.ShadowStrategyEventDeck).shuffle()
+    if WoME then
+        getObjectFromGUID(IDs.WoME.FreePeoplesFactionDeck).shuffle()
+        getObjectFromGUID(IDs.WoME.ShadowFactionDeck).shuffle()
+    end
+
+    coroutine.yield(0)
+    broadcastToAll("Setup Complete!")
+    Turn = 0
+    FlagString = ""
+    if LoME then
+        FlagString = FlagString .. "LoME;"
+    end
+
+    if WoME then
+        FlagString = FlagString .. "WoME;"
+    end
+
+    if KoME then
+        FlagString = FlagString .. "KoME;"
+    end
+
+    if TFoE then
+        FlagString = FlagString .. "TFoE;"
+    end
+
+    if BotF then
+        FlagString = FlagString .. "BotF;"
+    end
+
+    if CompactMode then
+        FlagString = FlagString .. "Compact;"
+    end
+
+    Global.setVar("LoME", LoME)
+    Global.setVar("WoME", WoME)
+    Global.setVar("TFoE", TFoE)
+    Global.setVar("KoME", KoME)
+    Global.setVar("BotF", BotF)
+    Global.setVar("CompactMode", CompactMode)
+end
+
+function StartTurnStep()
+    Round = Round + 1
+    Turn = Turn + 1
+    Phase = 0
+    Global.setVar("Round", Round)
+    Global.setVar("Phase", Phase)
+    Global.setVar("Turn", Turn)
+    self.setDescription(
+        "Panel;Round:" .. Round .. ";Phase:" .. Phase .. ";Turn:" .. Turn .. ";Step:" .. Step .. ";" .. FlagString
+    )
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "StartTurn",
+            function_owner = self,
+            label = "Start Turn " .. Turn,
+            position = { 0, 0.1, 0 },
+            width = 1600,
+            height = 400,
+            color = { 1, 1, 1 },
+            font_size = 250,
+            tooltip = "Click to Start Turn " .. Turn
+        }
+    )
+    FellowshipTrack = math.floor((getObjectFromGUID("6b62ef").getPosition().x - 5.0) / 1.58)
+    CorruptionTrack = math.floor((getObjectFromGUID("abe1b3").getPosition().x - 5.0) / 1.58)
+    ShadowVP = math.floor((getObjectFromGUID("976dbc").getPosition().x + 23.65) / 1.64)
+    FreePeoplesVP = math.floor((getObjectFromGUID("d0b340").getPosition().x + 23.65) / 1.64)
+    if FellowshipTrack < 0 then
+        FellowshipTrack = 0
+    elseif FellowshipTrack > 12 then
+        FellowshipTrack = 12
+    end
+
+    if CorruptionTrack < 0 then
+        CorruptionTrack = 0
+    elseif CorruptionTrack > 12 then
+        CorruptionTrack = 12
+    end
+
+    if ShadowVP < 0 then
+        ShadowVP = 0
+    elseif ShadowVP > 10 then
+        ShadowVP = 10
+    end
+
+    if FreePeoplesVP < 0 then
+        FreePeoplesVP = 0
+    elseif FreePeoplesVP > 10 then
+        FreePeoplesVP = 10
+    end
+
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Fellowship Track: " ..
+                FellowshipTrack ..
+                "\nCorruption Track: " ..
+                CorruptionTrack ..
+                "\n\nShadow Victory Points: " ..
+                ShadowVP .. " of 10\nFree Peoples Victory Points: " .. FreePeoplesVP .. " of 4",
+            position = { 0, 0.1, -0.9 },
+            width = 0,
+            height = 0,
+            font_color = { 0.9, 0.9, 0.9 },
+            font_size = 75
+        }
+    )
+    function StartTurn()
+        printToAll("Turn " .. Turn .. " has started.")
+        --pass leader tokens?...
+        if Turn == 1 or Versus == "1v1" then
+            PlayersLeader.FreePeoples = "Gondor"
+            PlayersLeader.Shadow = "The Witch-king"
+        elseif Versus == "1v2" then
+            PlayersLeader.FreePeoples = "Gondor"
+            if PlayersLeader.Shadow == "The Witch-king" then
+                PlayersLeader.Shadow = "Saruman"
+            else
+                PlayersLeader.Shadow = "The Witch-king"
+            end
+        else
+            if PlayersLeader.Shadow == "The Witch-king" then
+                PlayersLeader.Shadow = "Saruman"
+            else
+                PlayersLeader.Shadow = "The Witch-king"
+            end
+
+            if PlayersLeader.FreePeoples == "Gondor" then
+                PlayersLeader.FreePeoples = "Rohan"
+            else
+                PlayersLeader.FreePeoples = "Gondor"
+            end
+        end
+
+        if PlayersLeader.FreePeoples == "Gondor" and Versus == "2v2" then
+            getObjectFromGUID(IDs.FreePeoplesLeaderToken).setPositionSmooth(Spots.LeadingPlayerGondor, false, false)
+            printToAll("Gondor Player (Blue) has the Free Peoples Leading Player Token.", Player["Blue"].color)
+        elseif Versus == "2v2" then
+            getObjectFromGUID(IDs.FreePeoplesLeaderToken).setPositionSmooth(Spots.LeadingPlayerRohan, false, false)
+            printToAll("Rohan Player (Green) has the Free Peoples Leading Player Token.", Player["Green"].color)
+        end
+
+        if PlayersLeader.Shadow == "The Witch-king" and Versus ~= "1v1" then
+            getObjectFromGUID(IDs.ShadowLeaderToken).setPositionSmooth(Spots.LeadingPlayerWitchKing, false, false)
+            printToAll("The Witch-king Player (Red) has the Shadow Leading Player Token.", Player["Red"].color)
+        elseif Versus ~= "1v1" then
+            getObjectFromGUID(IDs.ShadowLeaderToken).setPositionSmooth(Spots.LeadingPlayerSaruman, false, false)
+            printToAll("Saruman Player (Yellow) has the Shadow Leading Player Token.", Player["Yellow"].color)
+        end
+        --look for missing decks...
+        IDs.FreePeoplesCharacterEventDeck =
+            CheckDeck(
+                {
+                    id = IDs.FreePeoplesCharacterEventDeck,
+                    position = Spots.FreePeoplesCharacterEventDeck,
+                    name = "Free Peoples Character Event Deck",
+                    description = "Deck;Event;Character;FreePeoples;"
+                }
+            )
+        IDs.ShadowCharacterEventDeck =
+            CheckDeck(
+                {
+                    id = IDs.ShadowCharacterEventDeck,
+                    position = Spots.ShadowCharacterEventDeck,
+                    name = "Shadow Character Event Deck",
+                    description = "Deck;Event;Character;Shadow;"
+                }
+            )
+        IDs.FreePeoplesStrategyEventDeck =
+            CheckDeck(
+                {
+                    id = IDs.FreePeoplesStrategyEventDeck,
+                    position = Spots.FreePeoplesStrategyEventDeck,
+                    name = "Free Peoples Strategy Event Deck",
+                    description = "Deck;Event;Strategy;FreePeoples;"
+                }
+            )
+        IDs.ShadowStrategyEventDeck =
+            CheckDeck(
+                {
+                    id = IDs.ShadowStrategyEventDeck,
+                    position = Spots.ShadowStrategyEventDeck,
+                    name = "Shadow Strategy Event Deck",
+                    description = "Deck;Event;Strategy;Shadow;"
+                }
+            )
+        if WoME then
+            IDs.WoME.FreePeoplesFactionDeck =
+                CheckDeck(
+                    {
+                        id = IDs.WoME.FreePeoplesFactionDeck,
+                        position = Spots.FreePeoplesFactionDeck,
+                        name = "Free Peoples Faction Deck",
+                        description = "Deck;Faction;FreePeoples;WoME;"
+                    }
+                )
+            IDs.WoME.ShadowFactionDeck =
+                CheckDeck(
+                    {
+                        id = IDs.WoME.ShadowFactionDeck,
+                        position = Spots.ShadowFactionDeck,
+                        name = "Shadow Faction Deck",
+                        description = "Deck;Faction;Shadow;WoME;"
+                    }
+                )
+        end
+
+        --look for missing dice...
+        --...
+        --detect fellowship guide...
+        GuideName = Global.call("DetectGuide")
+        NextStep = "Phase1"
+        Step = ""
+    end
+end
+
+function Phase1_Step()
+    --Recover Action Dice and Draw Event Cards
+    Phase = 1
+    Global.setVar("Phase", Phase)
+    printToAll("Phase 1) Recover Action Dice and Draw Event Cards.")
+    --display info on panel...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Phase 1) Recover Action Dice\nand Draw Event Cards",
+            position = { 0, 0.1, -1.3 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "PerformPhase1",
+            function_owner = self,
+            label = "Perform Phase 1:\nRecover Action Dice and\nDraw Event Cards.",
+            position = { 0, 0.1, 0 },
+            width = 1600,
+            height = 400,
+            color = { 1, 1, 1 },
+            font_size = 100,
+            tooltip = "Have the script perform all Phase 1 steps for you."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Continue",
+            function_owner = self,
+            label = "Continue",
+            position = { 0, 0.1, 1 },
+            width = 1600,
+            height = 200,
+            color = { 1, 1, 1.2 },
+            font_size = 100,
+            tooltip = "Click Continue after all Phase 1 steps are completed."
+        }
+    )
+    function Continue()
+        NextStep = "Phase2"
+        Step = ""
+    end
+
+    function PerformPhase1()
+        self.clearButtons()
+        --gather action dice...
+        startLuaCoroutine(self, "GatherActionDiceCoroutine")
+        NextStep = "Phase2"
+        --NextStep = "BasicMenu"
+        --draw event cards (and faction cards if playing WoME)...
+        if Turn == 1 and BotF and Versus ~= "2v2" then
+            --players will be prompted what to draw, starting with FreePeoples...
+            NextStep = "Phase1_BotF_FreePeoplesDrawMenu"
+        elseif Turn == 1 and BotF and Versus == "2v2" then
+            --players will be prompted what to draw, starting with Gondor...
+            NextStep = "Phase1_BotF_GondorDrawMenu"
+        elseif Versus == "1v1" then
+            DrawFromDeck(
+                {
+                    deckname = "Character Event",
+                    deckid = IDs.FreePeoplesCharacterEventDeck,
+                    deckspot = Spots.FreePeoplesCharacterEventDeck,
+                    count = 1,
+                    player = "Blue"
+                }
+            )
+            DrawFromDeck(
+                {
+                    deckname = "Strategy Event",
+                    deckid = IDs.FreePeoplesStrategyEventDeck,
+                    deckspot = Spots.FreePeoplesStrategyEventDeck,
+                    count = 1,
+                    player = "Blue"
+                }
+            )
+            if WoME then
+                DrawFromDeck(
+                    {
+                        deckname = "Faction",
+                        deckid = IDs.WoME.FreePeoplesFactionDeck,
+                        deckspot = Spots.FreePeoplesFactionDeck,
+                        count = 1,
+                        player = "Blue"
+                    }
+                )
+            end
+
+            DrawFromDeck(
+                {
+                    deckname = "Character Event",
+                    deckid = IDs.ShadowCharacterEventDeck,
+                    deckspot = Spots.ShadowCharacterEventDeck,
+                    count = 1,
+                    player = "Red"
+                }
+            )
+            DrawFromDeck(
+                {
+                    deckname = "Strategy Event",
+                    deckid = IDs.ShadowStrategyEventDeck,
+                    deckspot = Spots.ShadowStrategyEventDeck,
+                    count = 1,
+                    player = "Red"
+                }
+            )
+            if WoME then
+                DrawFromDeck(
+                    {
+                        deckname = "Faction",
+                        deckid = IDs.WoME.ShadowFactionDeck,
+                        deckspot = Spots.ShadowFactionDeck,
+                        count = 1,
+                        player = "Red"
+                    }
+                )
+            end
+        elseif Versus == "1v2" then
+            DrawFromDeck(
+                {
+                    deckname = "Character Event",
+                    deckid = IDs.FreePeoplesCharacterEventDeck,
+                    deckspot = Spots.FreePeoplesCharacterEventDeck,
+                    count = 1,
+                    player = "Blue"
+                }
+            )
+            DrawFromDeck(
+                {
+                    deckname = "Strategy Event",
+                    deckid = IDs.FreePeoplesStrategyEventDeck,
+                    deckspot = Spots.FreePeoplesStrategyEventDeck,
+                    count = 1,
+                    player = "Blue"
+                }
+            )
+            if WoME then
+                DrawFromDeck(
+                    {
+                        deckname = "Faction",
+                        deckid = IDs.WoME.FreePeoplesFactionDeck,
+                        deckspot = Spots.FreePeoplesFactionDeck,
+                        count = 1,
+                        player = "Blue"
+                    }
+                )
+            end
+
+            if Turn == 1 then
+                DrawFromDeck(
+                    {
+                        deckname = "Character Event",
+                        deckid = IDs.ShadowCharacterEventDeck,
+                        deckspot = Spots.ShadowCharacterEventDeck,
+                        count = 1,
+                        player = "Red"
+                    }
+                )
+                DrawFromDeck(
+                    {
+                        deckname = "Strategy Event",
+                        deckid = IDs.ShadowStrategyEventDeck,
+                        deckspot = Spots.ShadowStrategyEventDeck,
+                        count = 1,
+                        player = "Red"
+                    }
+                )
+                if WoME then
+                    DrawFromDeck(
+                        {
+                            deckname = "Faction",
+                            deckid = IDs.WoME.ShadowFactionDeck,
+                            deckspot = Spots.ShadowFactionDeck,
+                            count = 1,
+                            player = "Red"
+                        }
+                    )
+                end
+
+                DrawFromDeck(
+                    {
+                        deckname = "Character Event",
+                        deckid = IDs.ShadowCharacterEventDeck,
+                        deckspot = Spots.ShadowCharacterEventDeck,
+                        count = 1,
+                        player = "Yellow"
+                    }
+                )
+                DrawFromDeck(
+                    {
+                        deckname = "Strategy Event",
+                        deckid = IDs.ShadowStrategyEventDeck,
+                        deckspot = Spots.ShadowStrategyEventDeck,
+                        count = 1,
+                        player = "Yellow"
+                    }
+                )
+            else
+                --draw a shadow faction card for the leading shadow player...
+                if WoME and PlayersLeader.Shadow == "The Witch-king" then
+                    DrawFromDeck(
+                        {
+                            deckname = "Faction",
+                            deckid = IDs.WoME.ShadowFactionDeck,
+                            deckspot = Spots.ShadowFactionDeck,
+                            count = 1,
+                            player = "Red"
+                        }
+                    )
+                elseif WoME then
+                    DrawFromDeck(
+                        {
+                            deckname = "Faction",
+                            deckid = IDs.WoME.ShadowFactionDeck,
+                            deckspot = Spots.ShadowFactionDeck,
+                            count = 1,
+                            player = "Yellow"
+                        }
+                    )
+                end
+
+                --set next step to prompt shadow players which deck to draw from...
+                NextStep = "Phase1_TheWitchKingDrawMenu"
+            end
+        else --2v2
+            if Turn == 1 then
+                DrawFromDeck(
+                    {
+                        deckname = "Character Event",
+                        deckid = IDs.FreePeoplesCharacterEventDeck,
+                        deckspot = Spots.FreePeoplesCharacterEventDeck,
+                        count = 1,
+                        player = "Blue"
+                    }
+                )
+                DrawFromDeck(
+                    {
+                        deckname = "Strategy Event",
+                        deckid = IDs.FreePeoplesStrategyEventDeck,
+                        deckspot = Spots.FreePeoplesStrategyEventDeck,
+                        count = 1,
+                        player = "Blue"
+                    }
+                )
+                if WoME then
+                    DrawFromDeck(
+                        {
+                            deckname = "Faction",
+                            deckid = IDs.WoME.FreePeoplesFactionDeck,
+                            deckspot = Spots.FreePeoplesFactionDeck,
+                            count = 1,
+                            player = "Blue"
+                        }
+                    )
+                end
+
+                DrawFromDeck(
+                    {
+                        deckname = "Character Event",
+                        deckid = IDs.FreePeoplesCharacterEventDeck,
+                        deckspot = Spots.FreePeoplesCharacterEventDeck,
+                        count = 1,
+                        player = "Green"
+                    }
+                )
+                DrawFromDeck(
+                    {
+                        deckname = "Strategy Event",
+                        deckid = IDs.FreePeoplesStrategyEventDeck,
+                        deckspot = Spots.FreePeoplesStrategyEventDeck,
+                        count = 1,
+                        player = "Green"
+                    }
+                )
+                DrawFromDeck(
+                    {
+                        deckname = "Character Event",
+                        deckid = IDs.ShadowCharacterEventDeck,
+                        deckspot = Spots.ShadowCharacterEventDeck,
+                        count = 1,
+                        player = "Red"
+                    }
+                )
+                DrawFromDeck(
+                    {
+                        deckname = "Strategy Event",
+                        deckid = IDs.ShadowStrategyEventDeck,
+                        deckspot = Spots.ShadowStrategyEventDeck,
+                        count = 1,
+                        player = "Red"
+                    }
+                )
+                if WoME then
+                    DrawFromDeck(
+                        {
+                            deckname = "Faction",
+                            deckid = IDs.WoME.ShadowFactionDeck,
+                            deckspot = Spots.ShadowFactionDeck,
+                            count = 1,
+                            player = "Red"
+                        }
+                    )
+                end
+
+                DrawFromDeck(
+                    {
+                        deckname = "Character Event",
+                        deckid = IDs.ShadowCharacterEventDeck,
+                        deckspot = Spots.ShadowCharacterEventDeck,
+                        count = 1,
+                        player = "Yellow"
+                    }
+                )
+                DrawFromDeck(
+                    {
+                        deckname = "Strategy Event",
+                        deckid = IDs.ShadowStrategyEventDeck,
+                        deckspot = Spots.ShadowStrategyEventDeck,
+                        count = 1,
+                        player = "Yellow"
+                    }
+                )
+            else
+                --draw a faction card for each leading player...
+                if PlayersLeader.FreePeoples == "Gondor" and WoME then
+                    DrawFromDeck(
+                        {
+                            deckname = "Faction",
+                            deckid = IDs.WoME.FreePeoplesFactionDeck,
+                            deckspot = Spots.FreePeoplesFactionDeck,
+                            count = 1,
+                            player = "Blue"
+                        }
+                    )
+                elseif WoME then
+                    DrawFromDeck(
+                        {
+                            deckname = "Faction",
+                            deckid = IDs.WoME.FreePeoplesFactionDeck,
+                            deckspot = Spots.FreePeoplesFactionDeck,
+                            count = 1,
+                            player = "Green"
+                        }
+                    )
+                end
+
+                if PlayersLeader.Shadow == "The Witch-king" and WoME then
+                    DrawFromDeck(
+                        {
+                            deckname = "Faction",
+                            deckid = IDs.WoME.ShadowFactionDeck,
+                            deckspot = Spots.ShadowFactionDeck,
+                            count = 1,
+                            player = "Red"
+                        }
+                    )
+                elseif WoME then
+                    DrawFromDeck(
+                        {
+                            deckname = "Faction",
+                            deckid = IDs.WoME.ShadowFactionDeck,
+                            deckspot = Spots.ShadowFactionDeck,
+                            count = 1,
+                            player = "Yellow"
+                        }
+                    )
+                end
+
+                --set next step to prompt each player which deck to draw from...
+                NextStep = "Phase1_GondorDrawMenu"
+            end
+        end
+
+        Step = ""
+    end
+end
+
+function Phase1_BotF_FP_DrawMenu()
+    -- The Breaking of the Fellowship
+    -- Free Peoples
+    MoveGamePanel("FreePeoples")
+    --choose which card combination to draw...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Free Peoples Player\nDraw Starting Event Cards:",
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Free Peoples Player\nis choosing which\nEvent Cards to Draw...",
+            position = { 0, -0.1, -0 },
+            rotation = { 180, 180, 0 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 0.5, 0.5, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC1S3",
+            function_owner = self,
+            label = "Draw: 1 Character + 3 Strategy",
+            position = { 0, 0.1, -0.6 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 1 Character Event Card and 3 Strategy Event Cards."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC2S2",
+            function_owner = self,
+            label = "Draw: 2 Character + 2 Strategy",
+            position = { 0, 0.1, -0.3 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 2 Character Event Cards and 2 Strategy Event Cards."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC3S1",
+            function_owner = self,
+            label = "Draw: 3 Character + 1 Strategy",
+            position = { 0, 0.1, 0 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 3 Character Event Cards and 1 Strategy Event Card."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label =
+            "The Breaking of the Fellowship (Turn 1 Only)\nThe Free Peoples player draws four Event Cards.\nAll cards must be drawn before looking at them.\nAt least 1 card from each deck must be drawn.",
+            position = { 0, 0.1, 1 },
+            width = 0,
+            height = 0,
+            font_size = 50,
+            font_color = { 1, 1, 0 }
+        }
+    )
+    if Versus == "1v1" then
+        NextStep = "Phase1_BotF_ShadowDrawMenu"
+    else
+        NextStep = "Phase1_BotF_TheWitchKingDrawMenu"
+    end
+
+    function DrawC1S3()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Character Event",
+                deckid = IDs.FreePeoplesCharacterEventDeck,
+                deckspot = Spots.FreePeoplesCharacterEventDeck,
+                count = 1,
+                player = "Blue"
+            }
+        )
+        DrawFromDeck(
+            { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 3, player = "Blue" }
+        )
+        Step = ""
+    end
+
+    function DrawC2S2()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Blue" }
+        )
+        DrawFromDeck(
+            { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue" }
+        )
+        Step = ""
+    end
+
+    function DrawC3S1()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 3, player = "Blue" }
+        )
+        DrawFromDeck(
+            {
+                deckname = "Strategy Event",
+                deckid = IDs.FreePeoplesStrategyEventDeck,
+                deckspot = Spots.FreePeoplesStrategyEventDeck,
+                count = 1,
+                player = "Blue"
+            }
+        )
+        Step = ""
+    end
+end
+
+function Phase1_BotF_SH_DrawMenu()
+    -- The Breaking of the Fellowship
+    -- Shadow
+
+    MoveGamePanel("Shadow")
+    --choose which card combination to draw...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Shadow Player\nDraw Starting Event Cards:",
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 0, 0 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Shadow Player\nis choosing which\nEvent Cards to Draw...",
+            position = { 0, -0.1, 0 },
+            rotation = { 180, 180, 0 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 0.5, 0.5 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC1S5",
+            function_owner = self,
+            label = "Draw: 1 Character + 5 Strategy",
+            position = { 0, 0.1, -0.6 },
+            width = 1600,
+            height = 150,
+            color = { 1, 0.5, 0.5 },
+            font_size = 75,
+            tooltip = "Draw 1 Character Event Card and 5 Strategy Event Cards."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC2S4",
+            function_owner = self,
+            label = "Draw: 2 Character + 4 Strategy",
+            position = { 0, 0.1, -0.3 },
+            width = 1600,
+            height = 150,
+            color = { 1, 0.5, 0.5 },
+            font_size = 75,
+            tooltip = "Draw 2 Character Event Cards and 4 Strategy Event Cards."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC3S3",
+            function_owner = self,
+            label = "Draw: 3 Character + 3 Strategy",
+            position = { 0, 0.1, 0 },
+            width = 1600,
+            height = 150,
+            color = { 1, 0.5, 0.5 },
+            font_size = 75,
+            tooltip = "Draw 3 Character Event Cards and 3 Strategy Event Cards."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC4S2",
+            function_owner = self,
+            label = "Draw: 4 Character + 2 Strategy",
+            position = { 0, 0.1, 0.3 },
+            width = 1600,
+            height = 150,
+            color = { 1, 0.5, 0.5 },
+            font_size = 75,
+            tooltip = "Draw 4 Character Event Cards and 2 Strategy Event Cards."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC5S1",
+            function_owner = self,
+            label = "Draw: 5 Character + 1 Strategy",
+            position = { 0, 0.1, 0.6 },
+            width = 1600,
+            height = 150,
+            color = { 1, 0.5, 0.5 },
+            font_size = 75,
+            tooltip = "Draw 5 Character Event Cards and 1 Strategy Event Card."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label =
+            "The Breaking of the Fellowship (Turn 1 Only)\nThe Shadow player draws six Event Cards.\nAll cards must be drawn before looking at them.\nAt least 1 card from each deck must be drawn.",
+            position = { 0, 0.1, 1 },
+            width = 0,
+            height = 0,
+            font_size = 50,
+            font_color = { 1, 1, 0 }
+        }
+    )
+    NextStep = "Phase2"
+    function DrawC1S5()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Character Event",
+                deckid = IDs.ShadowCharacterEventDeck,
+                deckspot = Spots.ShadowCharacterEventDeck,
+                count = 1,
+                player = "Red"
+            }
+        )
+        DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 5, player = "Red" })
+        Step = ""
+    end
+
+    function DrawC2S4()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Red" }
+        )
+        DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 4, player = "Red" })
+        Step = ""
+    end
+
+    function DrawC3S3()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Red" }
+        )
+        DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Red" })
+        Step = ""
+    end
+
+    function DrawC4S2()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 4, player = "Red" }
+        )
+        DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Red" })
+        Step = ""
+    end
+
+    function DrawC5S1()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 5, player = "Red" }
+        )
+        DrawFromDeck(
+            {
+                deckname = "Strategy Event",
+                deckid = IDs.ShadowStrategyEventDeck,
+                deckspot = Spots.ShadowStrategyEventDeck,
+                count = 1,
+                player = "Red"
+            }
+        )
+        Step = ""
+    end
+end
+
+function Phase1_BotF_GondorPlayer_DrawMenu()
+    CharacterCardCount = 0
+    StrategyCardCount = 0
+    --move game panel to player's spot...
+    MoveGamePanel("Gondor")
+    --choose which card combination to draw...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Free Peoples: Gondor (Blue) Player\nDraw Starting Event Cards:",
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Free Peoples\nGondor (Blue) Player\nis choosing which\nEvent Cards to Draw...",
+            position = { 0, -0.1, -0 },
+            rotation = { 180, 180, 0 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 0.5, 0.5, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC2S0",
+            function_owner = self,
+            label = "Draw: 2 Character",
+            position = { 0, 0.1, -0.6 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 2 Character Event Cards and 0 Strategy Event Cards."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC1S1",
+            function_owner = self,
+            label = "Draw: 1 Character + 1 Strategy",
+            position = { 0, 0.1, -0.3 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 1 Character Event Card and 1 Strategy Event Card."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC0S2",
+            function_owner = self,
+            label = "Draw: 2 Strategy",
+            position = { 0, 0.1, 0 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 2 Strategy Event Cards and 0 Character Event Cards."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label =
+            "The Breaking of the Fellowship (Turn 1 Only)\nThe Free Peoples players draw two Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 4 total from each deck.",
+            position = { 0, 0.1, 1 },
+            width = 0,
+            height = 0,
+            font_size = 50,
+            font_color = { 1, 1, 0 }
+        }
+    )
+    NextStep = "Phase1_BotF_RohanDrawMenu"
+    function DrawC2S0()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Blue" }
+        )
+        CharacterCardCount = 2
+        Step = ""
+    end
+
+    function DrawC1S1()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Character Event",
+                deckid = IDs.FreePeoplesCharacterEventDeck,
+                deckspot = Spots.FreePeoplesCharacterEventDeck,
+                count = 1,
+                player = "Blue"
+            }
+        )
+        DrawFromDeck(
+            {
+                deckname = "Strategy Event",
+                deckid = IDs.FreePeoplesStrategyEventDeck,
+                deckspot = Spots.FreePeoplesStrategyEventDeck,
+                count = 1,
+                player = "Blue"
+            }
+        )
+        CharacterCardCount = 1
+        StrategyCardCount = 1
+        Step = ""
+    end
+
+    function DrawC0S2()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue" }
+        )
+        StrategyCardCount = 2
+        Step = ""
+    end
+end
+
+function Phase1_BotF_RohanPlayer_DrawMenu()
+    --move game panel to player's spot...
+    MoveGamePanel("Rohan")
+    --choose which card combination to draw...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Free Peoples: Rohan (Green) Player\nDraw Starting Event Cards:",
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Free Peoples\nGRohan (Green) Player\nis choosing which\nEvent Cards to Draw...",
+            position = { 0, -0.1, -0 },
+            rotation = { 180, 180, 0 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 0.5, 1, 0.5 }
+        }
+    )
+    if StrategyCardCount > 0 then
+        self.createButton(
+            {
+                click_function = "DrawC2S0",
+                function_owner = self,
+                label = "Draw: 2 Character",
+                position = { 0, 0.1, -0.6 },
+                width = 1600,
+                height = 150,
+                color = { 0.7, 0.7, 1 },
+                font_size = 75,
+                tooltip = "Draw 2 Character Event Card and 0 Strategy Event Cards."
+            }
+        )
+    end
+
+    self.createButton(
+        {
+            click_function = "DrawC1S1",
+            function_owner = self,
+            label = "Draw: 1 Character + 1 Strategy",
+            position = { 0, 0.1, -0.3 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 1 Character Event Card and 1 Strategy Event Card."
+        }
+    )
+    if CharacterCardCount > 0 then
+        self.createButton(
+            {
+                click_function = "DrawC0S2",
+                function_owner = self,
+                label = "Draw: 2 Strategy",
+                position = { 0, 0.1, 0 },
+                width = 1600,
+                height = 150,
+                color = { 0.7, 0.7, 1 },
+                font_size = 75,
+                tooltip = "Draw 2 Strategy Event Cards and 0 Character Event Cards."
+            }
+        )
+    end
+
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label =
+            "The Breaking of the Fellowship (Turn 1 Only)\nThe Free Peoples players draw two Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 4 total from each deck.",
+            position = { 0, 0.1, 1 },
+            width = 0,
+            height = 0,
+            font_size = 50,
+            font_color = { 1, 1, 0 }
+        }
+    )
+    NextStep = "Phase1_BotF_TheWitchKingDrawMenu"
+    function DrawC2S0()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Green" }
+        )
+        Step = ""
+    end
+
+    function DrawC1S1()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Character Event",
+                deckid = IDs.FreePeoplesCharacterEventDeck,
+                deckspot = Spots.FreePeoplesCharacterEventDeck,
+                count = 1,
+                player = "Green"
+            }
+        )
+        DrawFromDeck(
+            {
+                deckname = "Strategy Event",
+                deckid = IDs.FreePeoplesStrategyEventDeck,
+                deckspot = Spots.FreePeoplesStrategyEventDeck,
+                count = 1,
+                player = "Green"
+            }
+        )
+        Step = ""
+    end
+
+    function DrawC0S2()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Green" }
+        )
+        Step = ""
+    end
+end
+
+function Phase1_BotF_TheWitchKingPlayer_DrawMenu()
+    CharacterCardCount = 0
+    StrategyCardCount = 0
+    --move game panel to player's spot...
+    MoveGamePanel("TheWitchKing")
+    --choose which card combination to draw...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Shadow: The Witch-King (Red) Player\nDraw Starting Event Cards:",
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Free Peoples\nThe Witch-King (Red) Player\nis choosing which\nEvent Cards to Draw...",
+            position = { 0, -0.1, -0 },
+            rotation = { 180, 180, 0 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 0.5, 0.5 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC3S0",
+            function_owner = self,
+            label = "Draw: 3 Character",
+            position = { 0, 0.1, -0.6 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 3 Character Event Cards and 0 Strategy Event Cards."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC2S1",
+            function_owner = self,
+            label = "Draw: 2 Character + 1 Strategy",
+            position = { 0, 0.1, -0.3 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 2 Character Event Cards and 1 Strategy Event Card."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC1S2",
+            function_owner = self,
+            label = "Draw: 1 Character + 2 Strategy",
+            position = { 0, 0.1, 0 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 1 Character Event Card and 2 Strategy Event Cards."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC0S3",
+            function_owner = self,
+            label = "Draw: 3 Strategy",
+            position = { 0, 0.1, 0.3 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 3 Strategy Event Cards and 0 Character Event Cards."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label =
+            "The Breaking of the Fellowship (Turn 1 Only)\nThe Shadow players draw three Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 6 total from each deck.",
+            position = { 0, 0.1, 1 },
+            width = 0,
+            height = 0,
+            font_size = 50,
+            font_color = { 1, 1, 0 }
+        }
+    )
+    NextStep = "Phase1_BotF_SarumanDrawMenu"
+    function DrawC3S0()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Red" }
+        )
+        CharacterCardCount = 3
+        Step = ""
+    end
+
+    function DrawC2S1()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Red" }
+        )
+        DrawFromDeck(
+            {
+                deckname = "Strategy Event",
+                deckid = IDs.ShadowStrategyEventDeck,
+                deckspot = Spots.ShadowStrategyEventDeck,
+                count = 1,
+                player = "Red"
+            }
+        )
+        CharacterCardCount = 2
+        StrategyCardCount = 1
+        Step = ""
+    end
+
+    function DrawC1S2()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Character Event",
+                deckid = IDs.ShadowCharacterEventDeck,
+                deckspot = Spots.ShadowCharacterEventDeck,
+                count = 1,
+                player = "Red"
+            }
+        )
+        DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Red" })
+        CharacterCardCount = 1
+        StrategyCardCount = 2
+        Step = ""
+    end
+
+    function DrawC0S3()
+        self.clearButtons()
+        DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Red" })
+        StrategyCardCount = 3
+        Step = ""
+    end
+end
+
+function Phase1_BotF_SarumanPlayer_DrawMenu()
+    --move game panel to player's spot...
+    MoveGamePanel("Saruman")
+    --choose which card combination to draw...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Shadow: Saruman (Yellow) Player\nDraw Starting Event Cards:",
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Free Peoples\nSaruman (Yellow) Player\nis choosing which\nEvent Cards to Draw...",
+            position = { 0, -0.1, -0 },
+            rotation = { 180, 180, 0 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 1, 0 }
+        }
+    )
+    if StrategyCardCount > 0 then
+        self.createButton(
+            {
+                click_function = "DrawC3S0",
+                function_owner = self,
+                label = "Draw: 3 Character",
+                position = { 0, 0.1, -0.6 },
+                width = 1600,
+                height = 150,
+                color = { 0.7, 0.7, 1 },
+                font_size = 75,
+                tooltip = "Draw 3 Character Event Cards and 0 Strategy Event Cards."
+            }
+        )
+    end
+
+    self.createButton(
+        {
+            click_function = "DrawC2S1",
+            function_owner = self,
+            label = "Draw: 2 Character + 1 Strategy",
+            position = { 0, 0.1, -0.3 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 2 Character Event Cards and 1 Strategy Event Card."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawC1S2",
+            function_owner = self,
+            label = "Draw: 1 Character + 2 Strategy",
+            position = { 0, 0.1, 0 },
+            width = 1600,
+            height = 150,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            tooltip = "Draw 1 Character Event Card and 2 Strategy Event Cards."
+        }
+    )
+    if CharacterCardCount > 0 then
+        self.createButton(
+            {
+                click_function = "DrawC0S3",
+                function_owner = self,
+                label = "Draw: 3 Strategy",
+                position = { 0, 0.1, 0.3 },
+                width = 1600,
+                height = 150,
+                color = { 0.7, 0.7, 1 },
+                font_size = 75,
+                tooltip = "Draw 3 Strategy Event Cards and 0 Character Event Cards."
+            }
+        )
+    end
+
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label =
+            "The Breaking of the Fellowship (Turn 1 Only)\nThe Shadow players draw three Event Cards each.\nAll cards must be drawn before looking at them.\nAt least 1 card out of the 6 total from each deck.",
+            position = { 0, 0.1, 1 },
+            width = 0,
+            height = 0,
+            font_size = 50,
+            font_color = { 1, 1, 0 }
+        }
+    )
+    NextStep = "Phase2"
+    function DrawC3S0()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Yellow" }
+        )
+        CharacterCardCount = 3
+        Step = ""
+    end
+
+    function DrawC2S1()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Yellow" }
+        )
+        DrawFromDeck(
+            {
+                deckname = "Strategy Event",
+                deckid = IDs.ShadowStrategyEventDeck,
+                deckspot = Spots.ShadowStrategyEventDeck,
+                count = 1,
+                player = "Yellow"
+            }
+        )
+        CharacterCardCount = 2
+        StrategyCardCount = 1
+        Step = ""
+    end
+
+    function DrawC1S2()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Character Event",
+                deckid = IDs.ShadowCharacterEventDeck,
+                deckspot = Spots.ShadowCharacterEventDeck,
+                count = 1,
+                player = "Yellow"
+            }
+        )
+        DrawFromDeck(
+            { deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Yellow" }
+        )
+        CharacterCardCount = 1
+        StrategyCardCount = 2
+        Step = ""
+    end
+
+    function DrawC0S3()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Yellow" }
+        )
+        StrategyCardCount = 3
+        Step = ""
+    end
+end
+
+function Phase1_GondorPlayer_DrawMenu()
+    --move game panel to player's spot...
+    MoveGamePanel("Gondor")
+    --prompt player which card to draw...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Free Peoples: Gondor (Blue) Player\nChoose which type of Event Card to draw:",
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 0.5, 0.5, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "The Free Peoples\nGondor (Blue) Player\nis deciding which type\nof event card to draw...",
+            position = { 0, -0.1, 0 },
+            rotation = { 180, 180, 0 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 0.5, 0.5, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawCharacter",
+            function_owner = self,
+            label = "Draw\nCharacter\nEvent\nCard",
+            position = { -0.75, 0.1, 0 },
+            rotation = { 0, 0, 0 },
+            width = 500,
+            height = 900,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawStrategy",
+            function_owner = self,
+            label = "Draw\nStrategy\nEvent\nCard",
+            position = { 0.75, 0.1, 0 },
+            rotation = { 0, 0, 0 },
+            width = 500,
+            height = 900,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    function DrawCharacter()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Character Event",
+                deckid = IDs.FreePeoplesCharacterEventDeck,
+                deckspot = Spots.FreePeoplesCharacterEventDeck,
+                count = 1,
+                player = "Blue"
+            }
+        )
+        NextStep = "Phase1_RohanDrawMenu"
+        Step = ""
+    end
+
+    function DrawStrategy()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Strategy Event",
+                deckid = IDs.FreePeoplesStrategyEventDeck,
+                deckspot = Spots.FreePeoplesStrategyEventDeck,
+                count = 1,
+                player = "Blue"
+            }
+        )
+        NextStep = "Phase1_RohanDrawMenu"
+        Step = ""
+    end
+end
+
+function Phase1_RohanPlayer_DrawMenu()
+    --move game panel to player's spot...
+    MoveGamePanel("Rohan")
+    --prompt player which card to draw...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Free Peoples: Rohan (Green) Player\nChoose which type of Event Card to draw:",
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 0, 1, 0 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "The Free Peoples\nRohan (Green) Player\nis deciding which type\nof event card to draw...",
+            position = { 0, -0.1, 0 },
+            rotation = { 180, 180, 0 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 0, 1, 0 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawCharacter",
+            function_owner = self,
+            label = "Draw\nCharacter\nEvent\nCard",
+            position = { -0.75, 0.1, 0 },
+            rotation = { 0, 0, 0 },
+            width = 500,
+            height = 900,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawStrategy",
+            function_owner = self,
+            label = "Draw\nStrategy\nEvent\nCard",
+            position = { 0.75, 0.1, 0 },
+            rotation = { 0, 0, 0 },
+            width = 500,
+            height = 900,
+            color = { 0.7, 0.7, 1 },
+            font_size = 75,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    function DrawCharacter()
+        self.clearButtons()
+        DrawFromDeck(
+            { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 1, player = "Green" }
+        )
+        NextStep = "Phase1_TheWitchKingDrawMenu"
+        Step = ""
+    end
+
+    function DrawStrategy()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Strategy Event",
+                deckid = IDs.FreePeoplesStrategyEventDeck,
+                deckspot = Spots.FreePeoplesStrategyEventDeck,
+                count = 1,
+                player = "Green"
+            }
+        )
+        NextStep = "Phase1_TheWitchKingDrawMenu"
+        Step = ""
+    end
+end
+
+function Phase1_TheWitchKingPlayer_DrawMenu()
+    --move game panel to player's spot...
+    MoveGamePanel("TheWitchKing")
+    --prompt player which card to draw...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Shadow: The Witch-king (Red) Player\nChoose which type of Event Card to draw:",
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 0, 0 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Shadow\nThe Witch-king (Red) Player\nis deciding which type\nof event card to draw...",
+            position = { 0, -0.1, 0 },
+            rotation = { 180, 180, 0 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 0, 0 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawCharacter",
+            function_owner = self,
+            label = "Draw\nCharacter\nEvent\nCard",
+            position = { -0.75, 0.1, 0 },
+            rotation = { 0, 0, 0 },
+            width = 500,
+            height = 900,
+            color = { 1, 0.5, 0.5 },
+            font_size = 75,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawStrategy",
+            function_owner = self,
+            label = "Draw\nStrategy\nEvent\nCard",
+            position = { 0.75, 0.1, 0 },
+            rotation = { 0, 0, 0 },
+            width = 500,
+            height = 900,
+            color = { 1, 0.5, 0.5 },
+            font_size = 75,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    function DrawCharacter()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Character Event",
+                deckid = IDs.ShadowCharacterEventDeck,
+                deckspot = Spots.ShadowCharacterEventDeck,
+                count = 1,
+                player = "Red"
+            }
+        )
+        NextStep = "Phase1_SarumanDrawMenu"
+        Step = ""
+    end
+
+    function DrawStrategy()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Strategy Event",
+                deckid = IDs.ShadowStrategyEventDeck,
+                deckspot = Spots.ShadowStrategyEventDeck,
+                count = 1,
+                player = "Red"
+            }
+        )
+        NextStep = "Phase1_SarumanDrawMenu"
+        Step = ""
+    end
+end
+
+function Phase1_SarumanPlayer_DrawMenu()
+    --move game panel to player's spot...
+    MoveGamePanel("Saruman")
+    --prompt player which card to draw...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Shadow: Saruman (Yellow) Player\nChoose which type of Event Card to draw:",
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 0 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Shadow\nSaruman (Yellow) Player\nis deciding which type\nof event card to draw...",
+            position = { 0, -0.1, 0 },
+            rotation = { 180, 180, 0 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 1, 0 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawCharacter",
+            function_owner = self,
+            label = "Draw\nCharacter\nEvent\nCard",
+            position = { -0.75, 0.1, 0 },
+            rotation = { 0, 0, 0 },
+            width = 500,
+            height = 900,
+            color = { 1, 0.5, 0.5 },
+            font_size = 75,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DrawStrategy",
+            function_owner = self,
+            label = "Draw\nStrategy\nEvent\nCard",
+            position = { 0.75, 0.1, 0 },
+            rotation = { 0, 0, 0 },
+            width = 500,
+            height = 900,
+            color = { 1, 0.5, 0.5 },
+            font_size = 75,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    function DrawCharacter()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Character Event",
+                deckid = IDs.ShadowCharacterEventDeck,
+                deckspot = Spots.ShadowCharacterEventDeck,
+                count = 1,
+                player = "Yellow"
+            }
+        )
+        NextStep = "Phase2"
+        Step = ""
+    end
+
+    function DrawStrategy()
+        self.clearButtons()
+        DrawFromDeck(
+            {
+                deckname = "Strategy Event",
+                deckid = IDs.ShadowStrategyEventDeck,
+                deckspot = Spots.ShadowStrategyEventDeck,
+                count = 1,
+                player = "Yellow"
+            }
+        )
+        NextStep = "Phase2"
+        Step = ""
+    end
+end
+
+function Phase2_FellowshipStep()
+    Phase = 2
+    Global.setVar("Phase", Phase)
+    printToAll("Phase 2) Fellowship Phase.")
+    Global.call("FellowshipMenu")
+    MoveGamePanel("All")
+    -- display info on panel...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Phase 2) Fellowship Phase",
+            position = { 0, 0.1, -1.4 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    local Phase2Text =
+    "Free Peoples may now:\n\nDeclare the position of the Fellowship.\nChange the Guide of the Fellowship."
+    if BotF then
+        Phase2Text =
+        "Free Peoples may now:\n\nDeclare the position of the Fellowship.\n\n(The Fellowship is Broken, Gollum is the Guide)."
+    elseif Turn == 1 and LoME and not BotF then
+        Phase2Text =
+            Phase2Text ..
+            "\n\nThis turn only (Turn 1), Free Peoples may (if eligible):\n\nDeclare Meriadoc outside the Fellowship (The Shire).\n  Declare Peregrin outside the Fellowship (The Shire).\n  Declare Boromir outside the Fellowship (Minas Tirith).\n  Declare Gimli outside the Fellowship (Erebor).\n  Declare Legolas outside the Fellowship (Woodland Realm)."
+    end
+
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = Phase2Text,
+            position = { 0, 0.1, -0.1 },
+            width = 0,
+            height = 0,
+            font_size = 75,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Continue",
+            function_owner = self,
+            label = "Continue",
+            position = { 0, 0.1, 1.2 },
+            width = 1600,
+            height = 200,
+            color = { 1, 1, 1.2 },
+            font_size = 100,
+            tooltip = "Click Continue when Phase 2 steps are complete."
+        }
+    )
+    function Continue()
+        NextStep = "Phase3"
+        --Turn 1 with LoME?
+        if Turn == 1 and LoME then
+            if getObjectFromGUID(IDs.LoME.ShadowToken1) == nil or getObjectFromGUID(IDs.LoME.ShadowToken2) == nil then
+                printToAll("UHOH! Couldn't find the Shadow Tokens!\nNo Shadow Tokens could be assigned.")
+                Step = ""
+            elseif BotF then
+                printToAll(
+                    "Shadow Tokens from Lords of Middle-Earth are not used in the Breaking of the Fellowship scenario."
+                )
+                Step = ""
+            else                    --look for seperated companions...
+                FellowshipCount = 8 --start with 8 in the fellowship.
+                local TokenCount = 0
+                if not InFellowship({ Name = "Meriadoc" }) then
+                    TokenCount = TokenCount + 1
+                    FellowshipCount = FellowshipCount - 1
+                end
+
+                if not InFellowship({ Name = "Peregrin" }) then
+                    TokenCount = TokenCount + 1
+                    FellowshipCount = FellowshipCount - 1
+                end
+
+                if not InFellowship({ Name = "Boromir" }) then
+                    TokenCount = TokenCount + 1
+                    FellowshipCount = FellowshipCount - 1
+                end
+
+                if not InFellowship({ Name = "Gimli" }) then
+                    TokenCount = TokenCount + 1
+                    FellowshipCount = FellowshipCount - 1
+                end
+
+                if not InFellowship({ Name = "Legolas" }) then
+                    TokenCount = TokenCount + 1
+                    FellowshipCount = FellowshipCount - 1
+                end
+
+                printToAll(TokenCount .. " Companions were found outside the Fellowship Box.")
+                if TokenCount == 0 then
+                    printToAll(
+                        "The Shadow receive no Shadow Tokens. (There were no Companions declared outside the Fellowship)."
+                    )
+                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
+                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
+                    Step = ""
+                elseif TokenCount == 1 then
+                    printToAll(
+                        "The Shadow chooses 1 Shadow Token. (There was 1 Companion declared outside the Fellowship)."
+                    )
+                    MoveGamePanel("Shadow")
+                    self.clearButtons()
+                    self.createButton(
+                        {
+                            click_function = "Nothing",
+                            function_owner = self,
+                            label = "Shadow Player: Choose 1 Shadow Token:",
+                            position = { 0, 0.1, -1.3 },
+                            width = 0,
+                            height = 0,
+                            font_size = 100,
+                            font_color = { 1, 1, 1 }
+                        }
+                    )
+                    self.createButton(
+                        {
+                            click_function = "Nothing",
+                            function_owner = self,
+                            label = "Shadow is choosing\na Shadow Token...",
+                            position = { 0, -0.1, 0 },
+                            rotation = { 180, 180, 0 },
+                            width = 0,
+                            height = 0,
+                            font_size = 150,
+                            font_color = { 1, 0.5, 0.5 }
+                        }
+                    )
+                    self.createButton(
+                        {
+                            click_function = "ChooseShadowToken1",
+                            function_owner = self,
+                            label = "Move Nazgul and Minions (Shadow Token)",
+                            position = { 0, 0.1, -0.3 },
+                            width = 1500,
+                            height = 250,
+                            font_size = 75,
+                            color = { 1, 0, 0 },
+                            font_color = { 1, 1, 0 },
+                            tooltip = "Choose the Shadow Token that can Move Nazgul and Minions."
+                        }
+                    )
+                    self.createButton(
+                        {
+                            click_function = "ChooseShadowToken2",
+                            function_owner = self,
+                            label = "Advance a Shadow Nation on the\nPolitical Track (Shadow Token)",
+                            position = { 0, 0.1, 0.3 },
+                            width = 1500,
+                            height = 250,
+                            font_size = 75,
+                            color = { 1, 0, 0 },
+                            font_color = { 1, 1, 0 },
+                            tooltip =
+                            "Choose the Shadow Token that can Advance a Shadow Nation on the\nPolitical Track."
+                        }
+                    )
+                    function ChooseShadowToken1()
+                        self.clearButtons()
+                        getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
+                        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
+                        Step = ""
+                    end
+
+                    function ChooseShadowToken2()
+                        self.clearButtons()
+                        getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
+                        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
+                        Step = ""
+                    end
+                else --shadow gets both tokens...
+                    printToAll(
+                        "The Shadow receive both Shadow Tokens. (There were 2 or more Companions declared outside the Fellowship)."
+                    )
+                    getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
+                    getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -31 }, false, true)
+                    Step = ""
+                end
+            end
+        else
+            Step = ""
+        end
+    end
 end
 
 function CreateBeginMenu()
@@ -5945,6 +4130,1907 @@ function CreateHuntForTheRingMenu()
     else
         Global.call("RemoveObjectFromGame", { Description = "HftR;" })
         NextStep = "TFoEMenu"
+        Step = ""
+    end
+end
+
+function CreateTFoEMenu()
+    self.clearButtons()
+    if TFoE then
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "The Fate of Erebor",
+                position = { 0, 0.1, -1.3 },
+                width = 0,
+                height = 0,
+                font_size = 150,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        if NewCities then
+            self.createButton(
+                {
+                    click_function = "ToggleNewCities",
+                    function_owner = self,
+                    label = "Included: New Cities",
+                    position = { 0, 0.1, 0 },
+                    width = 1400,
+                    height = 100,
+                    color = { 1, 1, 0 },
+                    font_size = 100,
+                    tooltip =
+                    "Click to exclude.\nNew Cities is an optional setup in The Fate of Erebor, that changes the Towns of Ered Luin and South Rhun to Cities."
+                }
+            )
+        else
+            self.createButton(
+                {
+                    click_function = "ToggleNewCities",
+                    function_owner = self,
+                    label = "Excluded: New Cities",
+                    position = { 0, 0.1, 0 },
+                    width = 1400,
+                    height = 100,
+                    color = { 1, 1, 1 },
+                    font_size = 100,
+                    tooltip =
+                    "Click to include.\nNew Cities is an optional setup in The Fate of Erebor, that changes the Towns of Ered Luin and South Rhun to Cities."
+                }
+            )
+        end
+
+        self.createButton(
+            {
+                click_function = "Continue",
+                function_owner = self,
+                label = "Continue",
+                position = { 0, 0.1, 1.3 },
+                width = 1800,
+                height = 200,
+                color = { 1, 1, 1 },
+                font_size = 100
+            }
+        )
+        function ToggleNewCities()
+            NewCities = not NewCities
+            NextStep = "TFoEMenu"
+            Step = ""
+        end
+
+        function Continue()
+            self.clearButtons()
+            if not TFoE then
+                NewCities = false
+            end
+
+            NextStep = "TreebeardMenu"
+            Step = ""
+        end
+    else
+        NextStep = "TreebeardMenu"
+        Step = ""
+    end
+end
+
+function CreateTreebeardMenu()
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Choose Treebeard Content:",
+            position = { 0, 0.1, -1.3 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    if WoME then
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "(Warriors of Middle-Earth Treebeard)",
+                position = { 0, 0.1, -1 },
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        if Treebeard == 1 then --original WM...
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard1",
+                    function_owner = self,
+                    label = "Selected: Original Treebeard",
+                    position = { 0, 0.1, -0.6 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 0 },
+                    font_size = 80,
+                    tooltip = "Select the Original Treebeard Character Card from Warriors of Middle-Earth."
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard2",
+                    function_owner = self,
+                    label = "Revised Treebeard",
+                    position = { 0, 0.1, -0.3 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 80,
+                    tooltip =
+                    "Select the Revised Treebeard Character Card from Warriors of Middle-Earth.\n(adds Root and Branch! ability)."
+                }
+            )
+        elseif Treebeard == 2 then --revised WM...
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard1",
+                    function_owner = self,
+                    label = "Original Treebeard",
+                    position = { 0, 0.1, -0.6 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 80,
+                    tooltip = "Select the Original Treebeard Character Card from Warriors of Middle-Earth."
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard2",
+                    function_owner = self,
+                    label = "Selected: Revised Treebeard",
+                    position = { 0, 0.1, -0.3 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 0 },
+                    font_size = 80,
+                    tooltip =
+                    "Select the Revised Treebeard Character Card from Warriors of Middle-Earth.\n(adds Root and Branch! ability)."
+                }
+            )
+        end
+    else --not WoME...
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "(Promotional Treebeard Card)",
+                position = { 0, 0.1, -1 },
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        if Treebeard == 0 then --no treebeard...
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard0",
+                    function_owner = self,
+                    label = "Selected: No Treebeard",
+                    position = { 0, 0.1, -0.6 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 0 },
+                    font_size = 80,
+                    tooltip = "Do not include Treebeard Promotional Character Card."
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard1",
+                    function_owner = self,
+                    label = "Original Treebeard",
+                    position = { 0, 0.1, -0.3 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 80,
+                    tooltip = "Select the Original Promotional Treebeard Character Card."
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard2",
+                    function_owner = self,
+                    label = "Revised Treebeard",
+                    position = { 0, 0.1, 0 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 80,
+                    tooltip =
+                    "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
+                }
+            )
+        elseif Treebeard == 1 then --original Promo...
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard0",
+                    function_owner = self,
+                    label = "No Treebeard",
+                    position = { 0, 0.1, -0.6 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 80,
+                    tooltip = "Do not include Treebeard Promotional Character Card."
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard1",
+                    function_owner = self,
+                    label = "Selected: Original Treebeard",
+                    position = { 0, 0.1, -0.3 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 0 },
+                    font_size = 80,
+                    tooltip = "Select the Original Promotional Treebeard Character Card."
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard2",
+                    function_owner = self,
+                    label = "Revised Treebeard",
+                    position = { 0, 0.1, 0 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 80,
+                    tooltip =
+                    "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
+                }
+            )
+        elseif Treebeard == 2 then --revised Promo...
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard0",
+                    function_owner = self,
+                    label = "No Treebeard",
+                    position = { 0, 0.1, -0.6 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 80,
+                    tooltip = "Do not include Treebeard Promotional Character Card."
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard1",
+                    function_owner = self,
+                    label = "Original Treebeard",
+                    position = { 0, 0.1, -0.3 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 80,
+                    tooltip = "Select the Original Promotional Treebeard Character Card."
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "SelectTreebeard2",
+                    function_owner = self,
+                    label = "Selected: Revised Treebeard",
+                    position = { 0, 0.1, 0 },
+                    width = 1800,
+                    height = 150,
+                    color = { 1, 1, 0 },
+                    font_size = 80,
+                    tooltip =
+                    "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
+                }
+            )
+        end
+    end
+
+    self.createButton(
+        {
+            click_function = "Continue",
+            function_owner = self,
+            label = "Continue",
+            position = { 0, 0.1, 1.3 },
+            width = 1800,
+            height = 200,
+            color = { 1, 1, 1 },
+            font_size = 100,
+            tooltip = "Continue Setup with the currently selected Treebeard option."
+        }
+    )
+    function SelectTreebeard0()
+        Treebeard = 0
+        NextStep = "TreebeardMenu"
+        Step = ""
+    end
+
+    function SelectTreebeard1()
+        Treebeard = 1
+        NextStep = "TreebeardMenu"
+        Step = ""
+    end
+
+    function SelectTreebeard2()
+        Treebeard = 2
+        NextStep = "TreebeardMenu"
+        Step = ""
+    end
+
+    function Continue()
+        self.clearButtons()
+        if LoME then
+            NextStep = "StartingGuideMenu"
+        else
+            NextStep = "SetupExpansions"
+        end
+
+        Step = ""
+    end
+end
+
+function CreateStartingGuideMenu()
+    -- If breaking of the fellowship...
+    if BotF then
+        if LoME then
+            printToAll(
+                "\nThe Breaking of the Fellowship skips the Council of Rivendell step from Lords of Middle-Earth.\n"
+            )
+        end
+
+        CompanionNames[1] = "Gandalf the Grey: The Grey Wanderer"
+        CompanionNames[2] = "Strider: Ranger of the North"
+        NextStep = "SetupExpansions"
+        Step = ""
+    else
+        MoveGamePanel("FreePeoples")
+        --choose Gandalf or Strider as the fellowship guide...
+        self.clearButtons()
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Free Peoples\nChoose Fellowship Guide:",
+                position = { 0, 0.1, -1.2 },
+                width = 0,
+                height = 0,
+                font_size = 150,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Free Peoples\nare choosing the\nFellowship Guide...",
+                position = { 0, -0.1, -0 },
+                rotation = { 180, 180, 0 },
+                width = 0,
+                height = 0,
+                font_size = 150,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        if CompanionNames[1] == "Gandalf the Grey: The Grey Wanderer" then
+            self.createButton(
+                {
+                    click_function = "ChooseTheGreyWanderer",
+                    function_owner = self,
+                    label = "Gandalf the Grey: The Grey Wanderer",
+                    position = { 0, 0.1, -0.6 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 0 },
+                    font_size = 75,
+                    tooltip = "(Original Character)"
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "ChooseKeeperOfNarya",
+                    function_owner = self,
+                    label = "Gandalf the Grey: Keeper of Narya*",
+                    position = { 0, 0.1, -0.3 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 75,
+                    tooltip = "(Lords of Middle-Earth Character)"
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "ChooseRangerOfTheNorth",
+                    function_owner = self,
+                    label = "Strider: Ranger of the North",
+                    position = { 0, 0.1, 0 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 75,
+                    tooltip = "(Original Character)"
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "ChooseDunadan",
+                    function_owner = self,
+                    label = "Strider: Dunadan*",
+                    position = { 0, 0.1, 0.3 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 75,
+                    tooltip = "(Lords of Middle-Earth Character)"
+                }
+            )
+        elseif CompanionNames[1] == "Gandalf the Grey: Keeper of Narya*" then
+            self.createButton(
+                {
+                    click_function = "ChooseTheGreyWanderer",
+                    function_owner = self,
+                    label = "Gandalf the Grey: The Grey Wanderer",
+                    position = { 0, 0.1, -0.6 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 75,
+                    tooltip = "(Original Character)"
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "ChooseKeeperOfNarya",
+                    function_owner = self,
+                    label = "Gandalf the Grey: Keeper of Narya*",
+                    position = { 0, 0.1, -0.3 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 0 },
+                    font_size = 75,
+                    tooltip = "(Lords of Middle-Earth Character)"
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "ChooseRangerOfTheNorth",
+                    function_owner = self,
+                    label = "Strider: Ranger of the North",
+                    position = { 0, 0.1, 0 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 75,
+                    tooltip = "(Original Character)"
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "ChooseDunadan",
+                    function_owner = self,
+                    label = "Strider: Dunadan*",
+                    position = { 0, 0.1, 0.3 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 75,
+                    tooltip = "(Lords of Middle-Earth Character)"
+                }
+            )
+        elseif CompanionNames[1] == "Strider: Ranger of the North" then
+            self.createButton(
+                {
+                    click_function = "ChooseTheGreyWanderer",
+                    function_owner = self,
+                    label = "Gandalf the Grey: The Grey Wanderer",
+                    position = { 0, 0.1, -0.6 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 75,
+                    tooltip = "(Original Character)"
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "ChooseKeeperOfNarya",
+                    function_owner = self,
+                    label = "Gandalf the Grey: Keeper of Narya*",
+                    position = { 0, 0.1, -0.3 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 75,
+                    tooltip = "(Lords of Middle-Earth Character)"
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "ChooseRangerOfTheNorth",
+                    function_owner = self,
+                    label = "Strider: Ranger of the North",
+                    position = { 0, 0.1, 0 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 0 },
+                    font_size = 75,
+                    tooltip = "(Original Character)"
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "ChooseDunadan",
+                    function_owner = self,
+                    label = "Strider: Dunadan*",
+                    position = { 0, 0.1, 0.3 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 75,
+                    tooltip = "(Lords of Middle-Earth Character)"
+                }
+            )
+        elseif CompanionNames[1] == "Strider: Dunadan*" then
+            self.createButton(
+                {
+                    click_function = "ChooseTheGreyWanderer",
+                    function_owner = self,
+                    label = "Gandalf the Grey: The Grey Wanderer",
+                    position = { 0, 0.1, -0.6 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 75,
+                    tooltip = "(Original Character)"
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "ChooseKeeperOfNarya",
+                    function_owner = self,
+                    label = "Gandalf the Grey: Keeper of Narya*",
+                    position = { 0, 0.1, -0.3 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 75,
+                    tooltip = "(Lords of Middle-Earth Character)"
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "ChooseRangerOfTheNorth",
+                    function_owner = self,
+                    label = "Strider: Ranger of the North",
+                    position = { 0, 0.1, 0 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 1 },
+                    font_size = 75,
+                    tooltip = "(Original Character)"
+                }
+            )
+            self.createButton(
+                {
+                    click_function = "ChooseDunadan",
+                    function_owner = self,
+                    label = "Strider: Dunadan*",
+                    position = { 0, 0.1, 0.3 },
+                    width = 1600,
+                    height = 150,
+                    color = { 1, 1, 0 },
+                    font_size = 75,
+                    tooltip = "(Lords of Middle-Earth Character)"
+                }
+            )
+        end
+
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "* Lords of Middle Earth Expansion Character.",
+                position = { 0, 0.1, 0.9 },
+                width = 0,
+                height = 0,
+                font_size = 50,
+                font_color = { 1, 1, 0 }
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Continue",
+                function_owner = self,
+                label = "Continue",
+                position = { 0, 0.1, 1.2 },
+                width = 1600,
+                height = 200,
+                color = { 1, 1, 1 },
+                font_size = 100
+            }
+        )
+        function ChooseTheGreyWanderer()
+            CompanionNames[1] = "Gandalf the Grey: The Grey Wanderer"
+            CompanionNames[2] = "Strider: Ranger of the North"
+            NextStep = "StartingGuideMenu"
+            Step = ""
+        end
+
+        function ChooseKeeperOfNarya()
+            CompanionNames[1] = "Gandalf the Grey: Keeper of Narya*"
+            CompanionNames[2] = "Strider: Ranger of the North"
+            NextStep = "StartingGuideMenu"
+            Step = ""
+        end
+
+        function ChooseRangerOfTheNorth()
+            CompanionNames[1] = "Strider: Ranger of the North"
+            CompanionNames[2] = "Gandalf the Grey: The Grey Wanderer"
+            NextStep = "StartingGuideMenu"
+            Step = ""
+        end
+
+        function ChooseDunadan()
+            CompanionNames[1] = "Strider: Dunadan*"
+            CompanionNames[2] = "Gandalf the Grey: The Grey Wanderer"
+            NextStep = "StartingGuideMenu"
+            Step = ""
+        end
+
+        function Continue()
+            NextStep = "SetupExpansions"
+            Step = ""
+        end
+    end
+end
+
+function SetupExpansionsStep()
+    self.clearButtons()
+    NextStep = "SetupCompanions"
+    local TempObj = nil
+    --Included: The Fate of Erebor...
+    if TFoE then
+        --setup the Fate of Erebor...
+        Global.call("SetupTFoE")
+        --setup optional new cities?
+        if NewCities then
+            Global.call("SetupTFoENewCities")
+        else
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("c537fa"))
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("2df5ce"))
+        end
+
+        --replace cards...
+        getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(
+            getObjectFromGUID(IDs.TFoE.ShadowStrategyEventCards)
+        )
+        coroutine.yield(0)
+        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(
+            getObjectFromGUID(IDs.TFoE.FreePeoplesCharacterEventCards)
+        )
+        getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(
+            getObjectFromGUID(IDs.TFoE.FreePeoplesStrategyEventCards)
+        )
+        coroutine.yield(0)
+        --Remove Free Peoples Strategy Event Card #4, #19, and #22, then remove FP character card #17...
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "There and Back Again", Description = "#17;" }
+        )
+        coroutine.yield(0)
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Book of Mazarbul", Description = "#4;" }
+        )
+        coroutine.yield(0)
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
+        )
+        coroutine.yield(0)
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
+        )
+        coroutine.yield(0)
+        --Remove Shadow Event Card #20 and #22 (Orcs Multiplying Again & Monsters Roused)...
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Orcs Multiplying Again", Description = "#20;" }
+        )
+        coroutine.yield(0)
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Monsters Roused", Description = "#22;" }
+        )
+        coroutine.yield(0)
+        --Remove old Gimli Character Cards...
+        if getObjectFromGUID("78f279") ~= nil then
+            if getObjectFromGUID("f86853") ~= nil then
+                getObjectFromGUID("f86853").setPositionSmooth(
+                    getObjectFromGUID("78f279").getPosition(),
+                    false,
+                    false
+                )
+            end
+
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("78f279"))
+        end
+
+        if getObjectFromGUID("af7f13") ~= nil then
+            if getObjectFromGUID("de958e") ~= nil then
+                getObjectFromGUID("de958e").setPositionSmooth(
+                    getObjectFromGUID("af7f13").getPosition(),
+                    false,
+                    false
+                )
+            end
+
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("af7f13"))
+        end
+
+        -- If KoME+TFoE then remove Dain and Brand from the game...
+        if KoME then
+            printToAll("The Fate of Erebor removes King Brand and King Dain Ironfoot from the game.", { 1, 1, 0 })
+            if getObjectFromGUID(IDs.Companions.Brand) ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Brand))
+            end
+
+            if getObjectFromGUID(IDs.Companions.Dain) ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Dain))
+            end
+
+            if getObjectFromGUID("43a6a7") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("43a6a7"))
+            end
+
+            if getObjectFromGUID("754777") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("754777"))
+            end
+
+            if getObjectFromGUID("a90518") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("a90518"))
+            end
+
+            if getObjectFromGUID("d1aa1a") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d1aa1a"))
+            end
+
+            if getObjectFromGUID("55b8d8") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("55b8d8"))
+            end
+
+            if getObjectFromGUID("9bdfb0") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("9bdfb0"))
+            end
+        end
+    else --clean up TFoE components...
+        --Clean up TFoE Components...
+        self.clearButtons()
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Putting away\nThe Fate of Erebor\nMini-Expansion Content...",
+                position = { 0, 0.1, 0 },
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        for _, Obj in pairs(getAllObjects()) do
+            if string.find(Obj.getDescription(), "TFoE;") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(Obj)
+            end
+        end
+
+        --wait for cleanup to finish...
+        local Done = true
+        repeat
+            Done = true --assume true until proven false.
+            for _, Obj in pairs(getAllObjects()) do
+                if string.find(Obj.getDescription(), "TFoE;") ~= nil then
+                    Done = false
+                end
+            end
+
+            coroutine.yield(0)
+        until Done
+    end
+
+    --Included: Lords of Middle-Earth...
+    if LoME then
+        self.clearButtons()
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Setting up\nLords of Middle-Earth\nExpansion Content...",
+                position = { 0, 0.1, 0 },
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        --change next step to Alternate Companions Menu...
+        NextStep = "AlternateCompanionsMenu"
+        --Replace Elven Rings...
+        for I = 1, 3 do
+            getObjectFromGUID(IDs.LoME.ElvenRings[I]).setPositionSmooth(
+                getObjectFromGUID(IDs.ElvenRings[I]).getPosition(),
+                false,
+                false
+            )
+            getObjectFromGUID(IDs.LoME.ElvenRings[I]).setRotation({ 0, 90, 0 })
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.ElvenRings[I]))
+            coroutine.yield(0)
+        end
+
+        --Add New Event Cards...
+        getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(
+            getObjectFromGUID(IDs.LoME.ShadowCharacterEventCards)
+        )
+        getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(
+            getObjectFromGUID(IDs.LoME.ShadowStrategyEventCards)
+        )
+        coroutine.yield(0)
+        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(
+            getObjectFromGUID(IDs.LoME.FreePeoplesCharacterEventCards)
+        )
+        getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(
+            getObjectFromGUID(IDs.LoME.FreePeoplesStrategyEventCards)
+        )
+        coroutine.yield(0)
+        --Remove Shadow Event Card #17 (Balrog of Moria)...
+        Global.call(
+            "RemoveObjectFromGame",
+            {
+                BagID = IDs.ShadowCharacterEventDeck,
+                Name = "Balrog of Moria",
+                Description = "Card;Event;Character;Shadow;"
+            }
+        )
+        --Add 2 Smeagol Tiles (if not using BotF)...
+        if not BotF then
+            for T = 1, 2 do
+                getObjectFromGUID(IDs.HuntTileBag).putObject(getObjectFromGUID(IDs.LoME.SmeagolTiles[T]))
+                coroutine.yield(0)
+            end
+        end
+    else --Excluded: Lord of Middle-Earth...
+        --Clean up LoME Components...
+        self.clearButtons()
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Putting away\nLords of Middle-Earth\nExpansion Content...",
+                position = { 0, 0.1, 0 },
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        for _, Obj in pairs(getAllObjects()) do
+            if string.find(Obj.getDescription(), "LoME;") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(Obj)
+            end
+        end
+
+        --wait for cleanup to finish...
+        local Done = true
+        repeat
+            Done = true --assume true until proven false.
+            for _, Obj in pairs(getAllObjects()) do
+                if string.find(Obj.getDescription(), "LoME;") ~= nil then
+                    Done = false
+                end
+            end
+
+            coroutine.yield(0)
+        until Done
+    end
+
+    coroutine.yield(0)
+    --Included: Warriors of Middle-Earth...
+    if WoME then
+        log(" Setting up WoME...")
+        --debuggg
+        self.clearButtons()
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Setting up\nWarriors of Middle-Earth\nExpansion Content...",
+                position = { 0, 0.1, 0 },
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        --Remove FP cards
+        log(" Removing FP Event Cards (WoME)...")
+        --debuggg
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Gwaihir the Windlord", Description = "#15;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Eagles are Coming!", Description = "#18;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Treebeard", Description = "#19;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Huorns", Description = "#20;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Entmoot", Description = "#21;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Dead Men of Dunharrow", Description = "#22;" }
+        )
+        coroutine.yield(0)
+        --Remove S cards
+        log(" Removing Shadow Event Cards (WoME)...")
+        --debuggg
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.ShadowCharacterEventDeck, Name = "Shelob's Lair", Description = "#1;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Corsairs of Umbar", Description = "#10;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Rage of the Dunlendings", Description = "#11;" }
+        )
+        coroutine.yield(0)
+        --Add New cards
+        log(" Adding FP Event Cards...")
+        --debuggg
+        TempObj = getObjectFromGUID(IDs.WoME.FreePeoplesEventCards)
+        coroutine.yield(0)
+        log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
+        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(TempObj)
+        repeat
+            coroutine.yield(0)
+        until TempObj == nil
+        log(" Adding S Event Cards...")
+        --debuggg
+        TempObj = getObjectFromGUID(IDs.WoME.NotOnAnybodysSideCard)
+        coroutine.yield(0)
+        log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
+        getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(TempObj)
+        repeat
+            coroutine.yield(0)
+        until TempObj == nil
+        TempObj = getObjectFromGUID(IDs.WoME.ShadowEventCards)
+        coroutine.yield(0)
+        log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
+        getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(TempObj)
+        repeat
+            coroutine.yield(0)
+        until TempObj == nil
+    else --Excluded: Warriors of MIddle-Earth...
+        --Clean up WoME Components...
+        self.clearButtons()
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Putting away\nWarriors of Middle-Earth\nExpansion Content...",
+                position = { 0, 0.1, 0 },
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        for _, Obj in pairs(getAllObjects()) do
+            if string.find(Obj.getDescription(), "WoME;") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(Obj)
+            end
+        end
+
+        --Move Event Discard Spots..
+        getObjectFromGUID("61c02b").setPosition({ 40.25, 0.92, -20.00 })
+        getObjectFromGUID("b18c8a").setPosition({ -40.25, 0.92, 20.00 })
+        --wait for cleanup to finish...
+        local Done = true
+        repeat
+            Done = true --assume true until proven false.
+            for _, Obj in pairs(getAllObjects()) do
+                if string.find(Obj.getDescription(), "WoME;") ~= nil then
+                    Done = false
+                end
+            end
+
+            coroutine.yield(0)
+        until Done
+    end
+
+    coroutine.yield(0)
+    if KoME then
+        log(" Setting up KoME...")
+        --debuggg
+        self.clearButtons()
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Setting up\nKings of Middle-Earth\nExpansion Content...",
+                position = { 0, 0.1, 0 },
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        --add KoME hunt tiles into hunt pool...
+        for O, Obj in pairs(getAllObjects()) do
+            if Obj.getName() == "Hunt Tile" and string.find(Obj.getDescription(), "KoME;") ~= nil then
+                getObjectFromGUID(IDs.HuntTileBag).putObject(Obj)
+            end
+            -- If kome hunt tile
+            getObjectFromGUID(IDs.HuntTileBag).shuffle()
+        end
+        -- for O,Obj
+        --Remove Event Cards...
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "House of the Stewards", Description = "#23;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Wisdom of Elrond", Description = "#8;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Riders of Theoden", Description = "#16;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Thranduil's Archers", Description = "#24;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Return to Valinor", Description = "#1;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Denethor's Folly", Description = "#3;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Threats and Promises", Description = "#5;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Stormcrow", Description = "#6;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "The King is Revealed", Description = "#18;" }
+        )
+        -- If The Fate of Erebot is used then do not swap 2 of the cards (King Brands MEn and Dain Ironfoot's Guard)...
+        if TFoE then
+            --remove the new cards, we will keep old ones...
+            Global.call("RemoveObjectFromGame", { BagID = "890b46", Name = "King Brand's Men", Description = "#19;" })
+            Global.call(
+                "RemoveObjectFromGame",
+                { BagID = "890b46", Name = "Dain Ironfoot's Guard", Description = "#22;" }
+            )
+        else --remove the 2 base cards, they will be replaced with the KoME new cards...
+            Global.call(
+                "RemoveObjectFromGame",
+                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
+            )
+            Global.call(
+                "RemoveObjectFromGame",
+                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
+            )
+        end
+
+        --Add New Event Cards...
+        getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(getObjectFromGUID("70fc9b"))
+        coroutine.yield(0)
+        getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(getObjectFromGUID("cc76b8"))
+        coroutine.yield(0)
+        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(getObjectFromGUID("0534ed"))
+        coroutine.yield(0)
+        getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(getObjectFromGUID("890b46"))
+        coroutine.yield(0)
+    else --Excluded: Kings of MIddle-Earth...
+        --Clean up WoME Components...
+        self.clearButtons()
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Putting away\nKings of Middle-Earth\nExpansion Content...",
+                position = { 0, 0.1, 0 },
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        for _, Obj in pairs(getAllObjects()) do
+            if string.find(Obj.getDescription(), "KoME;") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(Obj)
+            end
+        end
+
+        --wait for cleanup to finish...
+        local Done = true
+        repeat
+            Done = true --assume true until proven false.
+            for _, Obj in pairs(getAllObjects()) do
+                if string.find(Obj.getDescription(), "KoME;") ~= nil then
+                    Done = false
+                end
+            end
+
+            coroutine.yield(0)
+        until Done
+    end
+
+    coroutine.yield(0)
+    --setup treebeard content..
+    if WoME then
+        if Treebeard == 1 then
+            --WM1/1R
+            getObjectFromGUID("8f8093").setPosition({ -13.5, 0.97, 33 }, false, false)
+            getObjectFromGUID("8f8093").setRotation({ 0, 0, 180 }, false, false)
+            if getObjectFromGUID("185612") ~= nil then
+                getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
+            end
+            --PROMO1
+            if getObjectFromGUID("3d93f2") ~= nil then
+                getObjectFromGUID("416864").putObject(getObjectFromGUID("3d93f2"))
+            end
+            --PROMO1R
+            if getObjectFromGUID("d7264c") ~= nil then
+                getObjectFromGUID("416864").putObject(getObjectFromGUID("d7264c"))
+            end
+        else
+            --PROMO1R
+            getObjectFromGUID("d7264c").setPosition({ -13.5, 0.97, 33 }, false, false)
+            getObjectFromGUID("d7264c").setRotation({ 0, 0, 180 }, false, false)
+            if getObjectFromGUID("8f8093") ~= nil then
+                getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
+            end
+            --WM1/1
+            if getObjectFromGUID("185612") ~= nil then
+                getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
+            end
+            --PROMO1
+            if getObjectFromGUID("3d93f2") ~= nil then
+                getObjectFromGUID("416864").putObject(getObjectFromGUID("3d93f2"))
+            end
+        end
+    elseif Treebeard == 1 then
+        --WM1/1R
+        getObjectFromGUID("185612").setPosition({ -13.5, 0.97, 33 }, false, false)
+        getObjectFromGUID("185612").setRotation({ 0, 0, 180 }, false, false)
+        if getObjectFromGUID("8f8093") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
+        end
+        --WM1/1
+        if getObjectFromGUID("3d93f2") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("3d93f2"))
+        end
+        --PROMO1R
+        if getObjectFromGUID("d7264c") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("d7264c"))
+        end
+    elseif Treebeard == 2 then
+        --WM1/1R
+        getObjectFromGUID("3d93f2").setPosition({ -13.5, 0.97, 33 }, false, false)
+        getObjectFromGUID("3d93f2").setRotation({ 0, 0, 180 }, false, false)
+        if getObjectFromGUID("8f8093") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
+        end
+        --WM1/1
+        if getObjectFromGUID("185612") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
+        end
+        --PROMO1
+        if getObjectFromGUID("d7264c") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("d7264c"))
+        end
+    else --no treebeard...
+        --WM1/1R
+        if getObjectFromGUID("5e36c8") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("5e36c8"))
+        end
+        --treebeard miniature
+        if getObjectFromGUID("e51819") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("e51819"))
+        end
+        --treebeard miniature
+        if getObjectFromGUID("964d05") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("964d05"))
+        end
+        --treebeard miniature
+        if getObjectFromGUID("8f8093") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
+        end
+        --WM1/1
+        if getObjectFromGUID("185612") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
+        end
+        --PROMO1
+        if getObjectFromGUID("3d93f2") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("3d93f2"))
+        end
+        --PROMO1R
+        if getObjectFromGUID("d7264c") ~= nil then
+            getObjectFromGUID("416864").putObject(getObjectFromGUID("d7264c"))
+        end
+    end
+
+    for I = 1, 99 do
+        coroutine.yield(0)
+    end
+
+    Step = ""
+end
+
+function CreateAlternateCompanionMenu()
+    self.clearButtons()
+    if BotF then
+        NextStep = "SetupCompanions"
+        Step = ""
+    else --hold Rivendell Council...
+        --secretly choose alternate companions...
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Choose Alternate Companions:",
+                position = { 0, 0.1, -1.45 },
+                width = 0,
+                height = 0,
+                font_size = 150,
+                font_color = { 0.3, 0.3, 1 }
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Free Peoples Player\nis secretly choosing\nAlternate Companions...",
+                position = { 0, -0.1, -0 },
+                rotation = { 180, 180, 0 },
+                width = 0,
+                height = 0,
+                font_size = 150,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Fellowship Guide: " .. CompanionNames[1],
+                position = { 0, 0.1, -1.2 },
+                width = 0,
+                height = 0,
+                font_size = 75,
+                font_color = { 1, 1, 0 }
+            }
+        )
+        self.createButton(
+            {
+                click_function = "ToggleGandalfStrider",
+                function_owner = self,
+                label = CompanionNames[2],
+                position = { 0, 0.1, -0.9 },
+                width = 1800,
+                height = 150,
+                color = { 1, 1, 1 },
+                font_size = 75,
+                tooltip = "Click to change."
+            }
+        )
+        self.createButton(
+            {
+                click_function = "ToggleLegolas",
+                function_owner = self,
+                label = CompanionNames[3],
+                position = { 0, 0.1, -0.6 },
+                width = 1800,
+                height = 150,
+                color = { 1, 1, 1 },
+                font_size = 75,
+                tooltip = "Click to change."
+            }
+        )
+        self.createButton(
+            {
+                click_function = "ToggleGimli",
+                function_owner = self,
+                label = CompanionNames[4],
+                position = { 0, 0.1, -0.3 },
+                width = 1800,
+                height = 150,
+                color = { 1, 1, 1 },
+                font_size = 75,
+                tooltip = "Click to change."
+            }
+        )
+        self.createButton(
+            {
+                click_function = "ToggleBoromir",
+                function_owner = self,
+                label = CompanionNames[5],
+                position = { 0, 0.1, 0 },
+                width = 1800,
+                height = 150,
+                color = { 1, 1, 1 },
+                font_size = 75,
+                tooltip = "Click to change."
+            }
+        )
+        self.createButton(
+            {
+                click_function = "TogglePeregrin",
+                function_owner = self,
+                label = CompanionNames[6],
+                position = { 0, 0.1, 0.3 },
+                width = 1800,
+                height = 150,
+                color = { 1, 1, 1 },
+                font_size = 75,
+                tooltip = "Click to change."
+            }
+        )
+        self.createButton(
+            {
+                click_function = "ToggleMeriadoc",
+                function_owner = self,
+                label = CompanionNames[7],
+                position = { 0, 0.1, 0.6 },
+                width = 1800,
+                height = 150,
+                color = { 1, 1, 1 },
+                font_size = 75,
+                tooltip = "Click to change."
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Continue",
+                function_owner = self,
+                label = "Continue",
+                position = { 0, 0.1, 1.2 },
+                width = 1800,
+                height = 200,
+                color = { 1, 1, 1 },
+                font_size = 100
+            }
+        )
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "* Lords of Middle Earth Expansion Character.",
+                position = { 0, 0.1, 0.9 },
+                width = 0,
+                height = 0,
+                font_size = 50,
+                font_color = { 1, 1, 0 }
+            }
+        )
+    end
+
+    function ToggleGandalfStrider()
+        if CompanionNames[2] == "Gandalf the Grey: The Grey Wanderer" then
+            CompanionNames[2] = "Gandalf the Grey: Keeper of Narya*"
+        elseif CompanionNames[2] == "Gandalf the Grey: Keeper of Narya*" then
+            CompanionNames[2] = "Gandalf the Grey: The Grey Wanderer"
+        elseif CompanionNames[2] == "Strider: Ranger of the North" then
+            CompanionNames[2] = "Strider: Dunadan*"
+        else
+            CompanionNames[2] = "Strider: Ranger of the North"
+        end
+
+        NextStep = "AlternateCompanionsMenu"
+        Step = ""
+    end
+
+    function ToggleLegolas()
+        if CompanionNames[3] == "Legolas: Son of Thranduil" then
+            CompanionNames[3] = "Legolas: Elven Prince*"
+        else
+            CompanionNames[3] = "Legolas: Son of Thranduil"
+        end
+
+        NextStep = "AlternateCompanionsMenu"
+        Step = ""
+    end
+
+    function ToggleGimli()
+        if CompanionNames[4] == "Gimli: Son of Gloin" then
+            CompanionNames[4] = "Gimli: Dwarven Lord*"
+        else
+            CompanionNames[4] = "Gimli: Son of Gloin"
+        end
+
+        NextStep = "AlternateCompanionsMenu"
+        Step = ""
+    end
+
+    function ToggleBoromir()
+        if CompanionNames[5] == "Boromir: Son of Denethor" then
+            CompanionNames[5] = "Boromir: Captain General of Gondor*"
+        else
+            CompanionNames[5] = "Boromir: Son of Denethor"
+        end
+
+        NextStep = "AlternateCompanionsMenu"
+        Step = ""
+    end
+
+    function TogglePeregrin()
+        if CompanionNames[6] == "Peregrin Took: Hobbit Companion" then
+            CompanionNames[6] = "Peregrin: Hobbit of the Shire*"
+        else
+            CompanionNames[6] = "Peregrin Took: Hobbit Companion"
+        end
+
+        NextStep = "AlternateCompanionsMenu"
+        Step = ""
+    end
+
+    function ToggleMeriadoc()
+        if CompanionNames[7] == "Meriadoc Brandybuck: Hobbit Companion" then
+            CompanionNames[7] = "Meriadoc: Hobbit of the Shire*"
+        else
+            CompanionNames[7] = "Meriadoc Brandybuck: Hobbit Companion"
+        end
+
+        NextStep = "AlternateCompanionsMenu"
+        Step = ""
+    end
+
+    function Continue()
+        self.clearButtons()
+        --strip off asterisk from names if any...
+        for C = 1, #CompanionNames do
+            CompanionNames[C] = string.gsub(CompanionNames[C], "*", "")
+        end
+
+        MoveGamePanel("All")
+        NextStep = "SetupCompanions"
+        Step = ""
+    end
+end
+
+function SetupCompanionsStep()
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Setting up the Fellowship...",
+            position = { 0, 0.1, 0 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    for I = 1, 99 do
+        coroutine.yield(0)
+    end
+    -- for D
+    --flip all companion cards face down...
+    for O, Obj in pairs(getAllObjects()) do
+        -- If companion card (but not Gollum)...
+        if
+            Obj.type == "Card" and string.find(Obj.getDescription(), "Companion;") ~= nil and
+            string.find(Obj.getName(), "Gollum") == nil and
+            string.find(Obj.getName(), "Smeagol") == nil
+        then
+            for C = 1, #CompanionNames do
+                if Obj.getName() == CompanionNames[C] then
+                    IDs.CompanionCards[C] = Obj.getGUID()
+                    coroutine.yield(0)
+                    break
+                end
+            end
+
+            Obj.setRotation({ 0, 0, 180 })
+            coroutine.yield(0)
+            getObjectFromGUID(GraveBagId).putObject(Obj)
+            repeat --waiting for the card to vanish, Entrox Licher
+                coroutine.yield(0)
+            until Obj == nil
+        end
+    end
+
+    for I = 1, 30 do
+        coroutine.yield(0)
+    end
+
+    --pause 30 frames after all companions are in the grave. Entrox Licher
+    --pull back out companion cards face down and place them on the board...
+    for C = 2, #IDs.CompanionCards do
+        coroutine.yield(0)
+        local CardObj =
+            getObjectFromGUID(GraveBagId).takeObject(
+                {
+                    smooth = true,
+                    guid = IDs.CompanionCards[C],
+                    rotation = { 0, 180, 180 },
+                    position = { 32.9, 3 - 0.2 * C, 20.15 }
+                }
+            )
+        --ring-bearers?
+        if CardObj.getName() == "The Ring-bearers (Frodo & Samwise)" then
+            coroutine.yield(0)
+            CardObj.setRotation({ 0, 180, 0 })
+            CardObj.setPosition({ 32.9, 0.97, 20.15 })
+            CardObj.setLock(true)
+        else
+            CardObj.setDescription(CardObj.getDescription() .. "Fellowship;")
+        end
+    end
+
+    coroutine.yield(0)
+    --drop guide on top of the stack face up...
+    local CardObj =
+        getObjectFromGUID(GraveBagId).takeObject(
+            { smooth = true, guid = IDs.CompanionCards[1], rotation = { 0, 180, 0 }, position = { 32.9, 9, 20.15 } }
+        )
+    coroutine.yield(0)
+    CardObj.setDescription(CardObj.getDescription() .. "Fellowship;")
+    --wait for fellowship guide card to exist...
+    repeat
+        coroutine.yield(0)
+    until getObjectFromGUID(IDs.CompanionCards[1]) ~= nil
+    --wait for fellowship guide card to reach their destination before continuing...
+    local Done = false
+    Global.call("PlaySound", { ID = 1 })
+    --Music Title
+    repeat
+        coroutine.yield(0)
+        if getObjectFromGUID(IDs.CompanionCards[1]) ~= nil then
+            Done =
+                getObjectFromGUID(IDs.CompanionCards[1]).getPosition().x >= 32.8 and
+                getObjectFromGUID(IDs.CompanionCards[1]).getPosition().y <= 1.2 and
+                getObjectFromGUID(IDs.CompanionCards[1]).getPosition().z >= 20.1
+        else --card must have merged into deck...
+            Done = true
+        end
+    until Done
+    Global.call("FellowshipMenu")
+    NextStep = "SetupUnits"
+    --compact mode?
+    if Versus == "1v1 Compact Mode" then
+        broadcastToAll("Compact Mode 1v1:\nPlacing Players next to each other...")
+        Versus = "1v1"
+        --update stored locations...
+        Spots.ShadowDiceBox = Spots.CompactShadowUsedDice
+        Spots.FreePeoplesDiceBox = Spots.CompactFreePeoplesUsedDice
+        --relocate Blue hand...
+        coroutine.yield(0)
+        Global.call("MoveObject",
+            { ID = "63b83a", Position = { -25, 3, -57 }, Rotation = { 0, 0, 0 }, Smooth = false })
+        --blue hand
+        --swap blue to green, then back to move player to the correct spot...
+        coroutine.yield(0)
+        Player["Blue"].changeColor("Green")
+        coroutine.yield(0)
+        Player["Green"].changeColor("Blue")
+        --clear and move combat dice...
+        for O, Obj in pairs(getAllObjects()) do
+            if Obj.getName() == "(Free Peoples Combat Die)" or Obj.getName() == "(Shadow Combat Die)" then
+                Obj.destruct()
+            end
+        end
+        -- for O,Obj
+        Global.call(
+            "MoveObject",
+            { ID = "637507", Position = { -23.75, 1.01, -15.75 }, Rotation = { 0, 180, 0 }, Smooth = false }
+        )
+        Global.call(
+            "MoveObject",
+            { ID = "f50dab", Position = { -23.75, 1.01, -17.25 }, Rotation = { 0, 180, 0 }, Smooth = false }
+        )
+        Global.call(
+            "MoveObject",
+            { ID = "9847f7", Position = { -3, 1.01, -21.5 }, Rotation = { 0, 180, 0 }, Smooth = false }
+        )
+        Global.call(
+            "MoveObject",
+            { ID = "63319b", Position = { -3, 1.01, -23 }, Rotation = { 0, 180, 0 }, Smooth = false }
+        )
+        Global.call(
+            "MoveObject",
+            { ID = "92a611", Position = { -1.9, 1.01, -21.5 }, Rotation = { 0, 0, 0 }, Smooth = false }
+        )
+        Global.call(
+            "MoveObject",
+            { ID = "4b6f4c", Position = { -23.7, 1.01, -14.2 }, Rotation = { 0, 0, 0 }, Smooth = false }
+        )
+        local CombatDiceIndex = 0
+        --move shadow objects first...
+        for O, Obj in pairs(getAllObjects()) do
+            --what side is it on?
+            if string.find(Obj.getDescription(), "Shadow;") ~= nil then
+                --which object type is it?
+                if Obj.getName() == "(Shadow Combat Die)" then
+                    CombatDiceIndex = CombatDiceIndex + 1
+                    Obj.setPosition({ -6 + CombatDiceIndex, 1.5, -22 })
+                    coroutine.yield(0)
+                elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;1of10;") ~= nil then
+                    Obj.setPosition(Spots.CompactShadowDiceLine[1])
+                elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;2of10;") ~= nil then
+                    Obj.setPosition(Spots.CompactShadowDiceLine[2])
+                elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;3of10;") ~= nil then
+                    Obj.setPosition(Spots.CompactShadowDiceLine[3])
+                elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;4of10;") ~= nil then
+                    Obj.setPosition(Spots.CompactShadowDiceLine[4])
+                elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;5of10;") ~= nil then
+                    Obj.setPosition(Spots.CompactShadowDiceLine[5])
+                elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;6of10;") ~= nil then
+                    Obj.setPosition(Spots.CompactShadowDiceLine[6])
+                elseif string.find(Obj.getDescription(), "Dice;Action;Shadow;7of10;") ~= nil then
+                    Obj.setPosition(Spots.CompactShadowDiceLine[7])
+                end
+            end
+        end
+
+        coroutine.yield(0)
+        --move FP objects second...
+        CombatDiceIndex = 0
+        for O, Obj in pairs(getAllObjects()) do
+            --what side is it on?
+            if string.find(Obj.getDescription(), "FreePeoples;") ~= nil then
+                --which object type is it?
+                if
+                    (Obj.type == "Tile" and string.find(Obj.getDescription(), "FactionCard;") ~= nil) or
+                    (Obj.type == "Figurine" and string.find(Obj.getDescription(), "Faction;") ~= nil) or
+                    string.find(Obj.getDescription(), "Faction;2D;") ~= nil or
+                    string.find(Obj.getDescription(), "Faction;3D;") ~= nil
+                then
+                    Global.call(
+                        "MoveObject",
+                        {
+                            ID = Obj.getGUID(),
+                            Position = { Obj.getPosition().x - 5, Obj.getPosition().y, -Obj.getPosition().z },
+                            Rotation = { 0, 180, 0 },
+                            Smooth = false
+                        }
+                    )
+                    coroutine.yield(0)
+                elseif Obj.getDescription() == "DeckSpot;CallToBattle;FreePeoples;WoME;" then
+                    Global.call(
+                        "MoveObject",
+                        { ID = Obj.getGUID(), Position = { -3, 0.95, -45 }, Rotation = { 0, 180, 0 }, Smooth = false }
+                    )
+                elseif Obj.getDescription() == "Deck;CallToBattle;FreePeoples;WoME;" then
+                    Global.call(
+                        "MoveObject",
+                        { ID = Obj.getGUID(), Position = { -3, 3, -45 }, Rotation = { 0, 180, 180 }, Smooth = false }
+                    )
+                elseif Obj.getName() == "(Free Peoples Faction Die)" then
+                    Global.call("MoveObject", { ID = Obj.getGUID(), Position = { -8, 1.6, -41.5 }, Smooth = false })
+                    coroutine.yield(0)
+                elseif
+                    (Obj.getName() == "Gandalf the White: Emissary from the West" and
+                        (not BotF or Obj.type ~= "Figurine")) or
+                    Obj.getName() == "Aragorn: Heir to Isildur" or
+                    ((Obj.getName() == "Gollum: Slave of the Ring" or Obj.getName() == "Gollum") and not BotF) or
+                    string.find(Obj.getDescription(), "Dice;Action;FreePeoples;5of6;") ~= nil or
+                    string.find(Obj.getDescription(), "Dice;Action;FreePeoples;6of6;") ~= nil or
+                    Obj.getName() == "Lady Galadriel: Keeper of Nenya" or
+                    Obj.getName() == "Lord Elrond: Keeper of Vilya" or
+                    Obj.getName() == "Smeagol: Tamed Wretch" or
+                    Obj.getName() == "Smeagol" or
+                    Obj.getName() == "(Vilya Action Die)" or
+                    Obj.getName() == "(Nenya Action Die)" or
+                    Obj.getName() == "Treebeard: Tree-herd" or
+                    Obj.getName() == "Smeagol Hunt Tile"
+                then
+                    Global.call(
+                        "MoveObject",
+                        {
+                            ID = Obj.getGUID(),
+                            Position = { Obj.getPosition().x - 33, Obj.getPosition().y, -Obj.getPosition().z },
+                            Rotation = { Obj.getRotation().x, 180, Obj.getRotation().z },
+                            Smooth = false
+                        }
+                    )
+                    coroutine.yield(0)
+                elseif Obj.getName() == "(Narya Action Die)" then
+                    Global.call("MoveObject", { ID = Obj.getGUID(), Position = { -44.5, 1.6, -39 }, Smooth = false })
+                elseif Obj.getName() == "(Free Peoples Combat Die)" then
+                    CombatDiceIndex = CombatDiceIndex + 1
+                    Global.call(
+                        "MoveObject",
+                        { ID = Obj.getGUID(), Position = { -27 + CombatDiceIndex, 1.5, -15 }, Smooth = false }
+                    )
+                    coroutine.yield(0)
+                elseif string.find(Obj.getDescription(), "Dice;Action;FreePeoples;1of6;") ~= nil then
+                    Global.call(
+                        "MoveObject",
+                        { ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[1], Smooth = false }
+                    )
+                elseif string.find(Obj.getDescription(), "Dice;Action;FreePeoples;2of6;") ~= nil then
+                    Global.call(
+                        "MoveObject",
+                        { ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[2], Smooth = false }
+                    )
+                elseif string.find(Obj.getDescription(), "Dice;Action;FreePeoples;3of6;") ~= nil then
+                    Global.call(
+                        "MoveObject",
+                        { ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[3], Smooth = false }
+                    )
+                elseif string.find(Obj.getDescription(), "Dice;Action;FreePeoples;4of6;") ~= nil then
+                    Global.call(
+                        "MoveObject",
+                        { ID = Obj.getGUID(), Position = Spots.CompactFreePeoplesDiceLine[4], Smooth = false }
+                    )
+                elseif Obj.getName() == "(Free Peoples Ruler Die)" then
+                    Global.call("MoveObject", { ID = Obj.getGUID(), Position = { -47.5, 1.6, -39 }, Smooth = false })
+                elseif
+                    Obj.type == "Card" and
+                    (Obj.getName() == "Brand: King of Dale" or
+                        Obj.getName() == "Dain Ironfoot: King Under the Mountain" or
+                        Obj.getName() == "Denethor: Lord Steward of Gondor" or
+                        Obj.getName() == "Theoden: King of the Riddermark" or
+                        Obj.getName() == "Thranduil: King of the Woodland Realm")
+                then
+                    Global.call(
+                        "MoveObject",
+                        {
+                            ID = Obj.getGUID(),
+                            Position = { Obj.getPosition().x - 9.5, Obj.getPosition().y, -Obj.getPosition().z + 12 },
+                            Rotation = { Obj.getRotation().x, 180, Obj.getRotation().z },
+                            Smooth = false
+                        }
+                    )
+                end
+            elseif Obj.getDescription() == "Token;Ruler;KoME;" then
+                Global.call(
+                    "MoveObject",
+                    {
+                        ID = Obj.getGUID(),
+                        Position = { Obj.getPosition().x - 9.5, Obj.getPosition().y, -Obj.getPosition().z + 0.4 },
+                        Rotation = { 0, 90, 0 },
+                        Smooth = false
+                    }
+                )
+            elseif Obj.type == "Card" and string.find(Obj.getName(), "Corrupted Ruler") ~= nil then
+                Global.call(
+                    "MoveObject",
+                    {
+                        ID = Obj.getGUID(),
+                        Position = { Obj.getPosition().x - 41.5, Obj.getPosition().y, Obj.getPosition().z },
+                        Rotation = Obj.getRotation(),
+                        Smooth = false
+                    }
+                )
+            end
+        end
+
+        Global.call("MoveObject", { ID = "9a56a5", Position = { 58, 1.57, -60 }, Smooth = false })
+        --Red Action Dice Box.
+        Global.call("MoveObject", { ID = "46d2fc", Position = { -58, 1.57, -60 }, Smooth = false })
+        --Red Action Dice Box.
+        --relocate used dice areas...
+        Global.call(
+            "MoveObject",
+            { ID = "028249", Position = { -5.1, 0.95, -32.75 }, Rotation = { 0, 180, 0 }, Smooth = false }
+        )
+        --blue area
+        Global.call(
+            "MoveObject",
+            { ID = "75024a", Position = { 9.9, 0.95, -31.81 }, Rotation = { 0, 180, 0 }, Smooth = false }
+        )
+        --blue area
+        Global.call(
+            "MoveObject",
+            { ID = "9a38bc", Position = { 4.3, 0.95, -32.75 }, Rotation = { 0, 180, 0 }, Smooth = false }
+        )
+        --red area
+        Global.call(
+            "MoveObject",
+            { ID = "2916b7", Position = { -10.72, 0.95, -31.81 }, Rotation = { 0, 180, 0 }, Smooth = false }
+        )
+        --red area
+        Global.call(
+            "MoveObject",
+            { ID = "dcf102", Position = { -10.72, 0.95, -36.48 }, Rotation = { 0, 180, 0 }, Smooth = false }
+        )
+        --blue area
+        --remove certain components...
+        Global.call("RemoveObjectFromGame", { ID = "471b96" })
+        Global.call("RemoveObjectFromGame", { ID = "28f260" })
+        --re-move combat dice panels (they seem to get lag/stuck in certain games)...
+        for I = 1, 30 do
+            coroutine.yield(0)
+        end
+
+        if getObjectFromGUID("637507") ~= nil then
+            getObjectFromGUID("637507").setPosition({ -23.75, 1.01, -15.75 })
+        end
+
+        if getObjectFromGUID("637507") ~= nil then
+            getObjectFromGUID("637507").setRotation({ 0, 180, 0 })
+        end
+
+        if getObjectFromGUID("f50dab") ~= nil then
+            getObjectFromGUID("f50dab").setPosition({ -23.75, 1.01, -17.25 })
+        end
+
+        if getObjectFromGUID("f50dab") ~= nil then
+            getObjectFromGUID("f50dab").setRotation({ 0, 180, 0 })
+        end
+
+        if getObjectFromGUID("9847f7") ~= nil then
+            getObjectFromGUID("9847f7").setPosition({ -3, 1.01, -21.5 })
+        end
+
+        if getObjectFromGUID("9847f7") ~= nil then
+            getObjectFromGUID("9847f7").setRotation({ 0, 180, 0 })
+        end
+
+        if getObjectFromGUID("63319b") ~= nil then
+            getObjectFromGUID("63319b").setPosition({ -3, 1.01, -23 })
+        end
+
+        if getObjectFromGUID("63319b") ~= nil then
+            getObjectFromGUID("63319b").setRotation({ 0, 180, 0 })
+        end
+
+        if getObjectFromGUID("92a611") ~= nil then
+            getObjectFromGUID("92a611").setPosition({ -1.9, 1.01, -21.5 })
+        end
+
+        if getObjectFromGUID("92a611") ~= nil then
+            getObjectFromGUID("92a611").setRotation({ 0, 0, 0 })
+        end
+
+        if getObjectFromGUID("4b6f4c") ~= nil then
+            getObjectFromGUID("4b6f4c").setPosition({ -23.7, 1.01, -14.2 })
+        end
+
+        if getObjectFromGUID("4b6f4c") ~= nil then
+            getObjectFromGUID("4b6f4c").setRotation({ 0, 0, 0 })
+        end
+    end
+
+    --Included: The Breaking of the Fellowship...
+    if BotF then
+        Global.call("SetupBotF")
+    else
         Step = ""
     end
 end
