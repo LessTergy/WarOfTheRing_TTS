@@ -512,452 +512,21 @@ function ProcessNextStep()
         Phase1_SarumanPlayer_DrawMenu()
     elseif Step == "Phase2" then
         Phase2_FellowshipStep()
-    elseif Step == "Phase3" then --Hunt Allocation
-        Phase = 3
-        Global.setVar("Phase", Phase)
-        printToAll("Phase 3) Hunt Allocation.")
-        MoveGamePanel("All")
-        --display info on panel...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Phase 3) Hunt Allocation.",
-                position = { 0, 0.1, -1.4 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        FellowshipCount = #GetFellowshipCompanions()
-        local MinimumAllocation = 0
-        local MaximumAllocation = FellowshipCount
-        if FreePeoplesHuntDiceCount > 0 then
-            MinimumAllocation = 1
-        end
-
-        if MaximumAllocation < 1 then
-            MaximumAllocation = 1
-        end
-
-        local Phase3Text =
-            "The Shadow may allocate Action Dice to the Hunt Box.\n(Minimum: " ..
-            MinimumAllocation .. ", Maximum: " .. MaximumAllocation .. ")\n"
-        if FreePeoplesHuntDiceCount > 0 then
-            Phase3Text =
-                Phase3Text ..
-                "FreePeoples recovered " .. FreePeoplesHuntDiceCount .. " Action Dice from the previous turn.\n"
-            Phase3Text = Phase3Text .. "so the Shadow must allocate at least 1 in the Hunt Box.\n"
-        end
-
-        Phase3Text = Phase3Text .. "\nThere are " .. FellowshipCount .. " Companions in the Fellowship.\n"
-        if FellowshipCount < 1 then
-            Phase3Text = Phase3Text .. "The Shadow can always place at least 1 die in the Hunt Box."
-        else
-            Phase3Text =
-                Phase3Text .. "The the Shadow cannot allocate more than " .. FellowshipCount .. " in the Hunt Box."
-        end
-
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = Phase3Text,
-                position = { 0, 0.1, -0.1 },
-                width = 0,
-                height = 0,
-                font_size = 75,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Continue",
-                function_owner = self,
-                label = "Continue",
-                position = { 0, 0.1, 1.2 },
-                width = 1600,
-                height = 200,
-                color = { 1, 1, 1.2 },
-                font_size = 100,
-                tooltip = "Click Continue when Phase 3 steps are complete."
-            }
-        )
-        HuntBoxShadowDiceArray = {}
-        HuntBoxFreePeoplesDiceArray = {}
-
-        if FreePeoplesHuntDiceCount > 0 then
-            --allocate the first Shadow dice to the hunt box...
-            local shadowDiceId = IDs.ShadowActionDice[1]
-            HuntBoxShadowDiceArray = { shadowDiceId }
-
-            local shadowDice = getObjectFromGUID(shadowDiceId)
-            shadowDice.setPositionSmooth(Spots.ShadowHuntBoxDice[1], false, false)
-            shadowDice.setRotation({ 90, 0, 0 })
-        end
-
-        function Continue()
-            NextStep = "Phase4"
-            Step = ""
-        end
-    elseif Step == "Phase4" then --Action Roll
-        Phase = 4
-        Global.setVar("Phase", Phase)
-        printToAll("Phase 4) Action Roll.")
-        MoveGamePanel("All")
-        --display info on panel...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Phase 4) Action Roll.",
-                position = { 0, 0.1, -1.4 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "PerformPhase4",
-                function_owner = self,
-                label = "Perform Phase 4:\nRoll Action Dice.",
-                position = { 0, 0.1, 0 },
-                width = 1600,
-                height = 400,
-                color = { 1, 1, 1 },
-                font_size = 100,
-                tooltip = "Click to roll all Action Dice in the Dice Boxes."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Continue",
-                function_owner = self,
-                label = "Continue",
-                position = { 0, 0.1, 1.2 },
-                width = 1600,
-                height = 200,
-                color = { 1, 1, 1 },
-                font_size = 100
-            }
-        )
-        function PerformPhase4()
-            self.clearButtons()
-            startLuaCoroutine(self, "RollActionDiceCoroutine")
-            --auto advance to next step after 2 seconds...
-            NextStep = "Phase5"
-            Wait.time(
-                function ()
-                    Step = ""
-                end,
-                2
-            )
-        end
-
-        function Continue()
-            NextStep = "Phase5"
-            Step = ""
-        end
-    elseif Step == "Phase5" then --Action Resolution
-        Phase = 5
-        Global.setVar("Phase", Phase)
-        printToAll("Phase 5) Action Resolution.")
-        MoveGamePanel("All")
-        --display info on panel...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Phase 5) Action Resolution.",
-                position = { 0, 0.1, 0 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Continue",
-                function_owner = self,
-                label = "Continue",
-                position = { 0, 0.1, 1.2 },
-                width = 1600,
-                height = 200,
-                color = { 1, 1, 1 },
-                font_size = 100
-            }
-        )
-        function Continue()
-            NextStep = "Phase6"
-            Step = ""
-        end
+    elseif Step == "Phase3" then
+        Phase3_HuntAllocationStep()
+    elseif Step == "Phase4" then
+        Phase4_ActionRollStep()
+    elseif Step == "Phase5" then
+        Phase5_ActionResolutionStep()
     elseif Step == "Phase6" then --Victory Check
-        Phase = 6
-        Global.setVar("Phase", Phase)
-        printToAll("Phase 6) Victory Check.")
-        MoveGamePanel("All")
-        --display info on panel...
-        self.clearButtons()
-        FellowshipTrack = math.floor((getObjectFromGUID("6b62ef").getPosition().x - 5.0) / 1.58)
-        CorruptionTrack = math.floor((getObjectFromGUID("abe1b3").getPosition().x - 5.0) / 1.58)
-        ShadowVP = math.floor((getObjectFromGUID("976dbc").getPosition().x + 23.65) / 1.64)
-        FreePeoplesVP = math.floor((getObjectFromGUID("d0b340").getPosition().x + 23.65) / 1.64)
-        if FellowshipTrack < 0 then
-            FellowshipTrack = 0
-        elseif FellowshipTrack > 12 then
-            FellowshipTrack = 12
-        end
-
-        if CorruptionTrack < 0 then
-            CorruptionTrack = 0
-        elseif CorruptionTrack > 12 then
-            CorruptionTrack = 12
-        end
-
-        if ShadowVP < 0 then
-            ShadowVP = 0
-        elseif ShadowVP > 10 then
-            ShadowVP = 10
-        end
-
-        if FreePeoplesVP < 0 then
-            FreePeoplesVP = 0
-        elseif FreePeoplesVP > 10 then
-            FreePeoplesVP = 10
-        end
-
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Phase 6) Victory Check.\n\nFellowship Track: " ..
-                    FellowshipTrack ..
-                    " of 12\nCorruption Track: " ..
-                    CorruptionTrack ..
-                    " of 12\n\nShadow Victory Points: " ..
-                    ShadowVP .. " of 10\nFree Peoples Victory Points: " .. FreePeoplesVP .. " of 4",
-                position = { 0, 0.1, 0 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Continue",
-                function_owner = self,
-                label = "Continue",
-                position = { 0, 0.1, 1.2 },
-                width = 1600,
-                height = 200,
-                color = { 1, 1, 1 },
-                font_size = 100
-            }
-        )
-        --check military victory...
-        if ShadowVP >= 10 then
-            --isengard...
-            broadcastToAll("Shadow Military Victory Detected!", { 1, 1, 0 })
-            Global.call("PlaySound", { ID = 5 })
-        elseif FreePeoplesVP >= 4 then
-            broadcastToAll("Free Peoples Military Victory Detected!", { 1, 1, 0 })
-            Global.call("PlaySound", { ID = 3 })
-            --riders of rohan...
-        end
-
-        function Continue()
-            NextStep = "EndTurn"
-            Step = ""
-        end
+        Phase6_VictoryCheckStep()
     elseif Step == "EndTurn" then
         --end of turn stuff here...
         --advance to next step...
         NextStep = "StartTurn"
         Step = ""
     elseif Step == "BasicMenu" then
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Basic Scripts:",
-                position = { 0, 0.1, -1.2 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "BasicGatherActionDice",
-                function_owner = self,
-                label = "Gather Action Dice",
-                position = { 0, 0.1, -0.9 },
-                width = 1600,
-                height = 150,
-                color = { 1, 1, 1 },
-                font_size = 75,
-                tooltip = "Gather Action Dice for all players and increment the round count by 1."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "BasicRollActionDice",
-                function_owner = self,
-                label = "Roll Action Dice",
-                position = { 0, 0.1, -0.6 },
-                width = 1600,
-                height = 150,
-                color = { 1, 1, 1 },
-                font_size = 75,
-                tooltip = "Roll Action Dice."
-            }
-        )
-        if CompactMode then
-            self.createButton(
-                {
-                    click_function = "BasicGatherActionDice",
-                    function_owner = self,
-                    label = "Gather Action Dice",
-                    position = { 5.45, 54.5, 1.72 },
-                    rotation = { 90, 270, 0 },
-                    scale = { 2, 0.5, 0.5 },
-                    width = 1000,
-                    height = 100,
-                    color = { 1, 1, 1 },
-                    font_size = 100,
-                    tooltip = "Gather Action Dice for all players and increment the round count by 1."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "BasicRollActionDice",
-                    function_owner = self,
-                    label = "Roll Action Dice",
-                    position = { 5.65, 54.5, 1.72 },
-                    rotation = { 90, 270, 0 },
-                    scale = { 2, 0.5, 0.5 },
-                    width = 1000,
-                    height = 100,
-                    color = { 1, 1, 1 },
-                    font_size = 100,
-                    tooltip = "Roll Action Dice for all players."
-                }
-            )
-        end
-
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Round: " .. Round,
-                position = { 0, 0.1, 1 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "IncRound",
-                function_owner = self,
-                label = "+",
-                position = { 0.75, 0.1, 1 },
-                color = { 1, 1, 1 },
-                width = 100,
-                height = 100,
-                font_size = 100,
-                font_color = { 0, 0, 0 },
-                tooltip =
-                "Increment round count by 1.\n(Clicking Gather Action Dice automatically increments the round count)."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "DecRound",
-                function_owner = self,
-                label = "-",
-                position = { -0.75, 0.1, 1 },
-                color = { 1, 1, 1 },
-                width = 100,
-                height = 100,
-                font_size = 100,
-                font_color = { 0, 0, 0 },
-                tooltip = "Decrement round count by 1."
-            }
-        )
-        function BasicGatherActionDice()
-            self.clearButtons()
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Gathering Action Dice...",
-                    position = { 0, 0.1, -0.5 },
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            Round = Round + 1
-            NextStep = "BasicMenu"
-            startLuaCoroutine(self, "GatherActionDiceCoroutine")
-            Wait.time(
-                function ()
-                    Step = ""
-                end,
-                2
-            )
-        end
-
-        function BasicRollActionDice()
-            self.clearButtons()
-            self.createButton(
-                {
-                    click_function = "Nothing",
-                    function_owner = self,
-                    label = "Rolling Action Dice...",
-                    position = { 0, 0.1, -0.5 },
-                    width = 0,
-                    height = 0,
-                    font_size = 100,
-                    font_color = { 1, 1, 1 }
-                }
-            )
-            NextStep = "BasicMenu"
-            startLuaCoroutine(self, "RollActionDiceCoroutine")
-            Wait.time(
-                function ()
-                    Step = ""
-                end,
-                2
-            )
-        end
-
-        function IncRound()
-            Round = Round + 1
-            Step = ""
-        end
-
-        function DecRound()
-            Round = Round - 1
-            if Round < 1 then
-                Round = 1
-            end
-
-            Step = ""
-        end
+        CreateBasicMenu()
     elseif Step == "KillGamePanel" then
         Global.setVar("Scripting", false)
         printToAll("The Game Panel is deleted.  Scripting is disabled.")
@@ -3074,6 +2643,457 @@ function Phase2_FellowshipStep()
         else
             Step = ""
         end
+    end
+end
+
+function Phase3_HuntAllocationStep()
+    Phase = 3
+    Global.setVar("Phase", Phase)
+    printToAll("Phase 3) Hunt Allocation.")
+    MoveGamePanel("All")
+    --display info on panel...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Phase 3) Hunt Allocation.",
+            position = { 0, 0.1, -1.4 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    FellowshipCount = #GetFellowshipCompanions()
+    local MinimumAllocation = 0
+    local MaximumAllocation = FellowshipCount
+    if FreePeoplesHuntDiceCount > 0 then
+        MinimumAllocation = 1
+    end
+
+    if MaximumAllocation < 1 then
+        MaximumAllocation = 1
+    end
+
+    local Phase3Text =
+        "The Shadow may allocate Action Dice to the Hunt Box.\n(Minimum: " ..
+        MinimumAllocation .. ", Maximum: " .. MaximumAllocation .. ")\n"
+    if FreePeoplesHuntDiceCount > 0 then
+        Phase3Text =
+            Phase3Text ..
+            "FreePeoples recovered " .. FreePeoplesHuntDiceCount .. " Action Dice from the previous turn.\n"
+        Phase3Text = Phase3Text .. "so the Shadow must allocate at least 1 in the Hunt Box.\n"
+    end
+
+    Phase3Text = Phase3Text .. "\nThere are " .. FellowshipCount .. " Companions in the Fellowship.\n"
+    if FellowshipCount < 1 then
+        Phase3Text = Phase3Text .. "The Shadow can always place at least 1 die in the Hunt Box."
+    else
+        Phase3Text =
+            Phase3Text .. "The the Shadow cannot allocate more than " .. FellowshipCount .. " in the Hunt Box."
+    end
+
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = Phase3Text,
+            position = { 0, 0.1, -0.1 },
+            width = 0,
+            height = 0,
+            font_size = 75,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Continue",
+            function_owner = self,
+            label = "Continue",
+            position = { 0, 0.1, 1.2 },
+            width = 1600,
+            height = 200,
+            color = { 1, 1, 1.2 },
+            font_size = 100,
+            tooltip = "Click Continue when Phase 3 steps are complete."
+        }
+    )
+    HuntBoxShadowDiceArray = {}
+    HuntBoxFreePeoplesDiceArray = {}
+
+    if FreePeoplesHuntDiceCount > 0 then
+        --allocate the first Shadow dice to the hunt box...
+        local shadowDiceId = IDs.ShadowActionDice[1]
+        HuntBoxShadowDiceArray = { shadowDiceId }
+
+        local shadowDice = getObjectFromGUID(shadowDiceId)
+        shadowDice.setPositionSmooth(Spots.ShadowHuntBoxDice[1], false, false)
+        shadowDice.setRotation({ 90, 0, 0 })
+    end
+
+    function Continue()
+        NextStep = "Phase4"
+        Step = ""
+    end
+end
+
+function Phase4_ActionRollStep()
+    Phase = 4
+    Global.setVar("Phase", Phase)
+    printToAll("Phase 4) Action Roll.")
+    MoveGamePanel("All")
+    --display info on panel...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Phase 4) Action Roll.",
+            position = { 0, 0.1, -1.4 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "PerformPhase4",
+            function_owner = self,
+            label = "Perform Phase 4:\nRoll Action Dice.",
+            position = { 0, 0.1, 0 },
+            width = 1600,
+            height = 400,
+            color = { 1, 1, 1 },
+            font_size = 100,
+            tooltip = "Click to roll all Action Dice in the Dice Boxes."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Continue",
+            function_owner = self,
+            label = "Continue",
+            position = { 0, 0.1, 1.2 },
+            width = 1600,
+            height = 200,
+            color = { 1, 1, 1 },
+            font_size = 100
+        }
+    )
+    function PerformPhase4()
+        self.clearButtons()
+        startLuaCoroutine(self, "RollActionDiceCoroutine")
+        --auto advance to next step after 2 seconds...
+        NextStep = "Phase5"
+        Wait.time(
+            function ()
+                Step = ""
+            end,
+            2
+        )
+    end
+
+    function Continue()
+        NextStep = "Phase5"
+        Step = ""
+    end
+end
+
+function Phase5_ActionResolutionStep()
+    Phase = 5
+    Global.setVar("Phase", Phase)
+    printToAll("Phase 5) Action Resolution.")
+    MoveGamePanel("All")
+    --display info on panel...
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Phase 5) Action Resolution.",
+            position = { 0, 0.1, 0 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Continue",
+            function_owner = self,
+            label = "Continue",
+            position = { 0, 0.1, 1.2 },
+            width = 1600,
+            height = 200,
+            color = { 1, 1, 1 },
+            font_size = 100
+        }
+    )
+    function Continue()
+        NextStep = "Phase6"
+        Step = ""
+    end
+end
+
+function Phase6_VictoryCheckStep()
+    Phase = 6
+    Global.setVar("Phase", Phase)
+    printToAll("Phase 6) Victory Check.")
+    MoveGamePanel("All")
+    --display info on panel...
+    self.clearButtons()
+    FellowshipTrack = math.floor((getObjectFromGUID("6b62ef").getPosition().x - 5.0) / 1.58)
+    CorruptionTrack = math.floor((getObjectFromGUID("abe1b3").getPosition().x - 5.0) / 1.58)
+    ShadowVP = math.floor((getObjectFromGUID("976dbc").getPosition().x + 23.65) / 1.64)
+    FreePeoplesVP = math.floor((getObjectFromGUID("d0b340").getPosition().x + 23.65) / 1.64)
+    if FellowshipTrack < 0 then
+        FellowshipTrack = 0
+    elseif FellowshipTrack > 12 then
+        FellowshipTrack = 12
+    end
+
+    if CorruptionTrack < 0 then
+        CorruptionTrack = 0
+    elseif CorruptionTrack > 12 then
+        CorruptionTrack = 12
+    end
+
+    if ShadowVP < 0 then
+        ShadowVP = 0
+    elseif ShadowVP > 10 then
+        ShadowVP = 10
+    end
+
+    if FreePeoplesVP < 0 then
+        FreePeoplesVP = 0
+    elseif FreePeoplesVP > 10 then
+        FreePeoplesVP = 10
+    end
+
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Phase 6) Victory Check.\n\nFellowship Track: " ..
+                FellowshipTrack ..
+                " of 12\nCorruption Track: " ..
+                CorruptionTrack ..
+                " of 12\n\nShadow Victory Points: " ..
+                ShadowVP .. " of 10\nFree Peoples Victory Points: " .. FreePeoplesVP .. " of 4",
+            position = { 0, 0.1, 0 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Continue",
+            function_owner = self,
+            label = "Continue",
+            position = { 0, 0.1, 1.2 },
+            width = 1600,
+            height = 200,
+            color = { 1, 1, 1 },
+            font_size = 100
+        }
+    )
+    --check military victory...
+    if ShadowVP >= 10 then
+        --isengard...
+        broadcastToAll("Shadow Military Victory Detected!", { 1, 1, 0 })
+        Global.call("PlaySound", { ID = 5 })
+    elseif FreePeoplesVP >= 4 then
+        broadcastToAll("Free Peoples Military Victory Detected!", { 1, 1, 0 })
+        Global.call("PlaySound", { ID = 3 })
+        --riders of rohan...
+    end
+
+    function Continue()
+        NextStep = "EndTurn"
+        Step = ""
+    end
+end
+
+function CreateBasicMenu()
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Basic Scripts:",
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "BasicGatherActionDice",
+            function_owner = self,
+            label = "Gather Action Dice",
+            position = { 0, 0.1, -0.9 },
+            width = 1600,
+            height = 150,
+            color = { 1, 1, 1 },
+            font_size = 75,
+            tooltip = "Gather Action Dice for all players and increment the round count by 1."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "BasicRollActionDice",
+            function_owner = self,
+            label = "Roll Action Dice",
+            position = { 0, 0.1, -0.6 },
+            width = 1600,
+            height = 150,
+            color = { 1, 1, 1 },
+            font_size = 75,
+            tooltip = "Roll Action Dice."
+        }
+    )
+    if CompactMode then
+        self.createButton(
+            {
+                click_function = "BasicGatherActionDice",
+                function_owner = self,
+                label = "Gather Action Dice",
+                position = { 5.45, 54.5, 1.72 },
+                rotation = { 90, 270, 0 },
+                scale = { 2, 0.5, 0.5 },
+                width = 1000,
+                height = 100,
+                color = { 1, 1, 1 },
+                font_size = 100,
+                tooltip = "Gather Action Dice for all players and increment the round count by 1."
+            }
+        )
+        self.createButton(
+            {
+                click_function = "BasicRollActionDice",
+                function_owner = self,
+                label = "Roll Action Dice",
+                position = { 5.65, 54.5, 1.72 },
+                rotation = { 90, 270, 0 },
+                scale = { 2, 0.5, 0.5 },
+                width = 1000,
+                height = 100,
+                color = { 1, 1, 1 },
+                font_size = 100,
+                tooltip = "Roll Action Dice for all players."
+            }
+        )
+    end
+
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Round: " .. Round,
+            position = { 0, 0.1, 1 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "IncRound",
+            function_owner = self,
+            label = "+",
+            position = { 0.75, 0.1, 1 },
+            color = { 1, 1, 1 },
+            width = 100,
+            height = 100,
+            font_size = 100,
+            font_color = { 0, 0, 0 },
+            tooltip =
+            "Increment round count by 1.\n(Clicking Gather Action Dice automatically increments the round count)."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "DecRound",
+            function_owner = self,
+            label = "-",
+            position = { -0.75, 0.1, 1 },
+            color = { 1, 1, 1 },
+            width = 100,
+            height = 100,
+            font_size = 100,
+            font_color = { 0, 0, 0 },
+            tooltip = "Decrement round count by 1."
+        }
+    )
+    function BasicGatherActionDice()
+        self.clearButtons()
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Gathering Action Dice...",
+                position = { 0, 0.1, -0.5 },
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        Round = Round + 1
+        NextStep = "BasicMenu"
+        startLuaCoroutine(self, "GatherActionDiceCoroutine")
+        Wait.time(
+            function ()
+                Step = ""
+            end,
+            2
+        )
+    end
+
+    function BasicRollActionDice()
+        self.clearButtons()
+        self.createButton(
+            {
+                click_function = "Nothing",
+                function_owner = self,
+                label = "Rolling Action Dice...",
+                position = { 0, 0.1, -0.5 },
+                width = 0,
+                height = 0,
+                font_size = 100,
+                font_color = { 1, 1, 1 }
+            }
+        )
+        NextStep = "BasicMenu"
+        startLuaCoroutine(self, "RollActionDiceCoroutine")
+        Wait.time(
+            function ()
+                Step = ""
+            end,
+            2
+        )
+    end
+
+    function IncRound()
+        Round = Round + 1
+        Step = ""
+    end
+
+    function DecRound()
+        Round = Round - 1
+        if Round < 1 then
+            Round = 1
+        end
+
+        Step = ""
     end
 end
 
