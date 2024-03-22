@@ -22,7 +22,10 @@
         "log",
         "onSave",
         "JSON",
-        "onRandomize"
+        "onRandomize",
+        "onPlayerChangeColor",
+        "onObjectLeaveZone",
+        "onObjectLeaveContainer"
     ],
     "Lua.runtime.version": "Lua 5.2",
 

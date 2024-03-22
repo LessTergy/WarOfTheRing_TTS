@@ -14,15 +14,15 @@ local ShadowHuntDiceCount = 0
 local Round = 0
 
 --expansions
-local LoME = false     --Lords of Middle-earth
-local WoME = false     --warriors of middle-earth
-local KoME = false     --kings of middle-earth
-local TFoE = false     --the fate of erebor
-local HftR = false     --hunt for the ring
-local NewCities = true --the New Cities optional setup from The Fate of Erebor.
-local BotF = false     -- the breaking of the fellowship.
-local Treebeard = 2    --0:None,1:Original,2:Revised;
-local FlagString = ""  --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
+local LordsOfMiddleEarth = false
+local WarriorsOfMiddleEarth = false
+local KingsOfMiddleEarth = false
+local TheFateOfErebor = false
+local HuntForTheRing = false
+local TheFateOfErebor_NewCities = true
+local TheBreakingOfTheFellowship = false
+local Treebeard = 2   --0:None,1:Original,2:Revised;
+local FlagString = "" --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
 
 --Bags...
 local GraveBagId = "416864"
@@ -44,18 +44,6 @@ local CompanionNames = {
 }
 
 local FellowshipCount = 8
-
-local Companions = {
-    Gandalf = { Title = "The Grey Wanderer", Fellowship = true },
-    Strider = { Title = "Ranger of the North", Fellowship = true },
-    Legolas = { Title = "Son of Thranduil", Fellowship = true },
-    Gimli = { Title = "Son of Gloin", Fellowship = true },
-    Boromir = { Title = "Son of Denethor", Fellowship = true },
-    Peregrin = { Title = "Hobbit Companion", Fellowship = true },
-    Meriadoc = { Title = "Hobbit Companion", Fellowship = true },
-    Gollum = { Title = "", Fellowship = false },
-    TheRingBearers = { Title = "Frodo & Samwise", Fellowship = true }
-}
 
 local ShadowDicePool = {}              --pool of dice rolled
 local FreePeoplesDicePool = {}         --pool of dice rolled
@@ -372,37 +360,37 @@ function onLoad()
     Mute = string.find(getObjectFromGUID(Global.getVar("SoundCubeID")).getDescription(), "Muted;") ~= nil
 
     --detect expansions...
-    LoME = string.find(self.getDescription(), "LoME;") ~= nil
-    WoME = string.find(self.getDescription(), "WoME;") ~= nil
-    KoME = string.find(self.getDescription(), "KoME;") ~= nil
-    TFoE = string.find(self.getDescription(), "TFoE;") ~= nil
-    BotF = string.find(self.getDescription(), "BotF;") ~= nil
-    HftR = string.find(self.getDescription(), "HftR;") ~= nil
+    LordsOfMiddleEarth = string.find(self.getDescription(), "LoME;") ~= nil
+    WarriorsOfMiddleEarth = string.find(self.getDescription(), "WoME;") ~= nil
+    KingsOfMiddleEarth = string.find(self.getDescription(), "KoME;") ~= nil
+    TheFateOfErebor = string.find(self.getDescription(), "TFoE;") ~= nil
+    TheBreakingOfTheFellowship = string.find(self.getDescription(), "BotF;") ~= nil
+    HuntForTheRing = string.find(self.getDescription(), "HftR;") ~= nil
 
     CompactMode = string.find(self.getDescription(), "Compact;") ~= nil
     FlagString = ""
 
-    if LoME then
+    if LordsOfMiddleEarth then
         FlagString = FlagString .. "LoME;"
     end
 
-    if WoME then
+    if WarriorsOfMiddleEarth then
         FlagString = FlagString .. "WoME;"
     end
 
-    if KoME then
+    if KingsOfMiddleEarth then
         FlagString = FlagString .. "KoME;"
     end
 
-    if TFoE then
+    if TheFateOfErebor then
         FlagString = FlagString .. "TFoE;"
     end
 
-    if BotF then
+    if TheBreakingOfTheFellowship then
         FlagString = FlagString .. "BotF;"
     end
 
-    if HftR then
+    if HuntForTheRing then
         FlagString = FlagString .. "HftR;"
     end
 
@@ -418,12 +406,11 @@ function onLoad()
         FlagString = FlagString .. "Compact;"
     end
 
-    Global.setVar("LoME", LoME)
-    Global.setVar("WoME", WoME)
-    Global.setVar("TFoE", TFoE)
-    Global.setVar("KoME", KoME)
-    Global.setVar("BotF", BotF)
-    Global.setVar("HftR", HftR)
+    Global.setVar("LordsOfMiddleEarth", LordsOfMiddleEarth)
+    Global.setVar("WarriorsOfMiddleEarth", WarriorsOfMiddleEarth)
+    Global.setVar("KingsOfMiddleEarth", KingsOfMiddleEarth)
+    Global.setVar("TheFateOfErebor", TheFateOfErebor)
+    Global.setVar("TheBreakingOfTheFellowship", TheBreakingOfTheFellowship)
     Global.setVar("CompactMode", CompactMode)
 
     --initialize components...
@@ -440,7 +427,7 @@ end
 function MainCoroutine()
     repeat
         coroutine.yield(0)
-        --is it time to process the next step?...
+
         if Step == "" then
             startLuaCoroutine(self, "ProcessNextStep")
         end
@@ -628,7 +615,7 @@ function CreateSetupCompleteMenu()
     getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).shuffle()
     getObjectFromGUID(IDs.ShadowCharacterEventDeck).shuffle()
     getObjectFromGUID(IDs.ShadowStrategyEventDeck).shuffle()
-    if WoME then
+    if WarriorsOfMiddleEarth then
         getObjectFromGUID(IDs.WoME.FreePeoplesFactionDeck).shuffle()
         getObjectFromGUID(IDs.WoME.ShadowFactionDeck).shuffle()
     end
@@ -637,23 +624,23 @@ function CreateSetupCompleteMenu()
     broadcastToAll("Setup Complete!")
     Turn = 0
     FlagString = ""
-    if LoME then
+    if LordsOfMiddleEarth then
         FlagString = FlagString .. "LoME;"
     end
 
-    if WoME then
+    if WarriorsOfMiddleEarth then
         FlagString = FlagString .. "WoME;"
     end
 
-    if KoME then
+    if KingsOfMiddleEarth then
         FlagString = FlagString .. "KoME;"
     end
 
-    if TFoE then
+    if TheFateOfErebor then
         FlagString = FlagString .. "TFoE;"
     end
 
-    if BotF then
+    if TheBreakingOfTheFellowship then
         FlagString = FlagString .. "BotF;"
     end
 
@@ -661,11 +648,11 @@ function CreateSetupCompleteMenu()
         FlagString = FlagString .. "Compact;"
     end
 
-    Global.setVar("LoME", LoME)
-    Global.setVar("WoME", WoME)
-    Global.setVar("TFoE", TFoE)
-    Global.setVar("KoME", KoME)
-    Global.setVar("BotF", BotF)
+    Global.setVar("LoME", LordsOfMiddleEarth)
+    Global.setVar("WoME", WarriorsOfMiddleEarth)
+    Global.setVar("TFoE", TheFateOfErebor)
+    Global.setVar("KoME", KingsOfMiddleEarth)
+    Global.setVar("BotF", TheBreakingOfTheFellowship)
     Global.setVar("CompactMode", CompactMode)
 end
 
@@ -817,7 +804,7 @@ function StartTurnStep()
                     description = "Deck;Event;Strategy;Shadow;"
                 }
             )
-        if WoME then
+        if WarriorsOfMiddleEarth then
             IDs.WoME.FreePeoplesFactionDeck =
                 CheckDeck(
                     {
@@ -852,6 +839,7 @@ function Phase1_Step()
     Phase = 1
     Global.setVar("Phase", Phase)
     printToAll("Phase 1) Recover Action Dice and Draw Event Cards.")
+
     --display info on panel...
     self.clearButtons()
     self.createButton(
@@ -904,10 +892,10 @@ function Phase1_Step()
         NextStep = "Phase2"
         --NextStep = "BasicMenu"
         --draw event cards (and faction cards if playing WoME)...
-        if Turn == 1 and BotF and Versus ~= "2v2" then
+        if Turn == 1 and TheBreakingOfTheFellowship and Versus ~= "2v2" then
             --players will be prompted what to draw, starting with FreePeoples...
             NextStep = "Phase1_BotF_FreePeoplesDrawMenu"
-        elseif Turn == 1 and BotF and Versus == "2v2" then
+        elseif Turn == 1 and TheBreakingOfTheFellowship and Versus == "2v2" then
             --players will be prompted what to draw, starting with Gondor...
             NextStep = "Phase1_BotF_GondorDrawMenu"
         elseif Versus == "1v1" then
@@ -929,7 +917,7 @@ function Phase1_Step()
                     player = "Blue"
                 }
             )
-            if WoME then
+            if WarriorsOfMiddleEarth then
                 DrawFromDeck(
                     {
                         deckname = "Faction",
@@ -959,7 +947,7 @@ function Phase1_Step()
                     player = "Red"
                 }
             )
-            if WoME then
+            if WarriorsOfMiddleEarth then
                 DrawFromDeck(
                     {
                         deckname = "Faction",
@@ -989,7 +977,7 @@ function Phase1_Step()
                     player = "Blue"
                 }
             )
-            if WoME then
+            if WarriorsOfMiddleEarth then
                 DrawFromDeck(
                     {
                         deckname = "Faction",
@@ -1020,7 +1008,7 @@ function Phase1_Step()
                         player = "Red"
                     }
                 )
-                if WoME then
+                if WarriorsOfMiddleEarth then
                     DrawFromDeck(
                         {
                             deckname = "Faction",
@@ -1052,7 +1040,7 @@ function Phase1_Step()
                 )
             else
                 --draw a shadow faction card for the leading shadow player...
-                if WoME and PlayersLeader.Shadow == "The Witch-king" then
+                if WarriorsOfMiddleEarth and PlayersLeader.Shadow == "The Witch-king" then
                     DrawFromDeck(
                         {
                             deckname = "Faction",
@@ -1062,7 +1050,7 @@ function Phase1_Step()
                             player = "Red"
                         }
                     )
-                elseif WoME then
+                elseif WarriorsOfMiddleEarth then
                     DrawFromDeck(
                         {
                             deckname = "Faction",
@@ -1097,7 +1085,7 @@ function Phase1_Step()
                         player = "Blue"
                     }
                 )
-                if WoME then
+                if WarriorsOfMiddleEarth then
                     DrawFromDeck(
                         {
                             deckname = "Faction",
@@ -1145,7 +1133,7 @@ function Phase1_Step()
                         player = "Red"
                     }
                 )
-                if WoME then
+                if WarriorsOfMiddleEarth then
                     DrawFromDeck(
                         {
                             deckname = "Faction",
@@ -1177,7 +1165,7 @@ function Phase1_Step()
                 )
             else
                 --draw a faction card for each leading player...
-                if PlayersLeader.FreePeoples == "Gondor" and WoME then
+                if PlayersLeader.FreePeoples == "Gondor" and WarriorsOfMiddleEarth then
                     DrawFromDeck(
                         {
                             deckname = "Faction",
@@ -1187,7 +1175,7 @@ function Phase1_Step()
                             player = "Blue"
                         }
                     )
-                elseif WoME then
+                elseif WarriorsOfMiddleEarth then
                     DrawFromDeck(
                         {
                             deckname = "Faction",
@@ -1199,7 +1187,7 @@ function Phase1_Step()
                     )
                 end
 
-                if PlayersLeader.Shadow == "The Witch-king" and WoME then
+                if PlayersLeader.Shadow == "The Witch-king" and WarriorsOfMiddleEarth then
                     DrawFromDeck(
                         {
                             deckname = "Faction",
@@ -1209,7 +1197,7 @@ function Phase1_Step()
                             player = "Red"
                         }
                     )
-                elseif WoME then
+                elseif WarriorsOfMiddleEarth then
                     DrawFromDeck(
                         {
                             deckname = "Faction",
@@ -2476,10 +2464,10 @@ function Phase2_FellowshipStep()
     )
     local Phase2Text =
     "Free Peoples may now:\n\nDeclare the position of the Fellowship.\nChange the Guide of the Fellowship."
-    if BotF then
+    if TheBreakingOfTheFellowship then
         Phase2Text =
         "Free Peoples may now:\n\nDeclare the position of the Fellowship.\n\n(The Fellowship is Broken, Gollum is the Guide)."
-    elseif Turn == 1 and LoME and not BotF then
+    elseif Turn == 1 and LordsOfMiddleEarth and not TheBreakingOfTheFellowship then
         Phase2Text =
             Phase2Text ..
             "\n\nThis turn only (Turn 1), Free Peoples may (if eligible):\n\nDeclare Meriadoc outside the Fellowship (The Shire).\n  Declare Peregrin outside the Fellowship (The Shire).\n  Declare Boromir outside the Fellowship (Minas Tirith).\n  Declare Gimli outside the Fellowship (Erebor).\n  Declare Legolas outside the Fellowship (Woodland Realm)."
@@ -2513,11 +2501,11 @@ function Phase2_FellowshipStep()
     function Continue()
         NextStep = "Phase3"
         --Turn 1 with LoME?
-        if Turn == 1 and LoME then
+        if Turn == 1 and LordsOfMiddleEarth then
             if getObjectFromGUID(IDs.LoME.ShadowToken1) == nil or getObjectFromGUID(IDs.LoME.ShadowToken2) == nil then
                 printToAll("UHOH! Couldn't find the Shadow Tokens!\nNo Shadow Tokens could be assigned.")
                 Step = ""
-            elseif BotF then
+            elseif TheBreakingOfTheFellowship then
                 printToAll(
                     "Shadow Tokens from Lords of Middle-Earth are not used in the Breaking of the Fellowship scenario."
                 )
@@ -3098,8 +3086,8 @@ function CreateBasicMenu()
 end
 
 function CreateBeginMenu()
-    LoME = false
-    WoME = false
+    LordsOfMiddleEarth = false
+    WarriorsOfMiddleEarth = false
     self.clearButtons()
     MoveGamePanel("All")
     self.createButton(
@@ -3684,7 +3672,7 @@ function CreateExpansionMenu()
         }
     )
 
-    if LoME then
+    if LordsOfMiddleEarth then
         self.createButton(
             {
                 click_function = "ToggleLoME",
@@ -3714,7 +3702,7 @@ function CreateExpansionMenu()
         )
     end
 
-    if WoME then
+    if WarriorsOfMiddleEarth then
         self.createButton(
             {
                 click_function = "ToggleWoME",
@@ -3744,7 +3732,7 @@ function CreateExpansionMenu()
         )
     end
 
-    if KoME then
+    if KingsOfMiddleEarth then
         self.createButton(
             {
                 click_function = "ToggleKoME",
@@ -3774,7 +3762,7 @@ function CreateExpansionMenu()
         )
     end
 
-    if BotF then
+    if TheBreakingOfTheFellowship then
         self.createButton(
             {
                 click_function = "ToggleBotF",
@@ -3804,7 +3792,7 @@ function CreateExpansionMenu()
         )
     end
 
-    if HftR then
+    if HuntForTheRing then
         self.createButton(
             {
                 click_function = "ToggleHftR",
@@ -3834,7 +3822,7 @@ function CreateExpansionMenu()
         )
     end
 
-    if TFoE then
+    if TheFateOfErebor then
         self.createButton(
             {
                 click_function = "ToggleTFoE",
@@ -3878,37 +3866,37 @@ function CreateExpansionMenu()
     )
 
     function ToggleLoME()
-        LoME = not LoME
+        LordsOfMiddleEarth = not LordsOfMiddleEarth
         NextStep = "ExpansionMenu"
         Step = ""
     end
 
     function ToggleWoME()
-        WoME = not WoME
+        WarriorsOfMiddleEarth = not WarriorsOfMiddleEarth
         NextStep = "ExpansionMenu"
         Step = ""
     end
 
     function ToggleKoME()
-        KoME = not KoME
+        KingsOfMiddleEarth = not KingsOfMiddleEarth
         NextStep = "ExpansionMenu"
         Step = ""
     end
 
     function ToggleBotF()
-        BotF = not BotF
+        TheBreakingOfTheFellowship = not TheBreakingOfTheFellowship
         NextStep = "ExpansionMenu"
         Step = ""
     end
 
     function ToggleTFoE()
-        TFoE = not TFoE
+        TheFateOfErebor = not TheFateOfErebor
         NextStep = "ExpansionMenu"
         Step = ""
     end
 
     function ToggleHftR()
-        HftR = not HftR
+        HuntForTheRing = not HuntForTheRing
         NextStep = "ExpansionMenu"
         Step = ""
     end
@@ -3925,7 +3913,7 @@ function CreateHuntForTheRingMenu()
     SPTCount = 0
     FPTCount = 0
 
-    if HftR then
+    if HuntForTheRing then
         self.createButton(
             {
                 click_function = "Nothing",
@@ -4156,7 +4144,7 @@ end
 
 function CreateTFoEMenu()
     self.clearButtons()
-    if TFoE then
+    if TheFateOfErebor then
         self.createButton(
             {
                 click_function = "Nothing",
@@ -4169,7 +4157,7 @@ function CreateTFoEMenu()
                 font_color = { 1, 1, 1 }
             }
         )
-        if NewCities then
+        if TheFateOfErebor_NewCities then
             self.createButton(
                 {
                     click_function = "ToggleNewCities",
@@ -4214,15 +4202,15 @@ function CreateTFoEMenu()
             }
         )
         function ToggleNewCities()
-            NewCities = not NewCities
+            TheFateOfErebor_NewCities = not TheFateOfErebor_NewCities
             NextStep = "TFoEMenu"
             Step = ""
         end
 
         function Continue()
             self.clearButtons()
-            if not TFoE then
-                NewCities = false
+            if not TheFateOfErebor then
+                TheFateOfErebor_NewCities = false
             end
 
             NextStep = "TreebeardMenu"
@@ -4248,7 +4236,7 @@ function CreateTreebeardMenu()
             font_color = { 1, 1, 1 }
         }
     )
-    if WoME then
+    if WarriorsOfMiddleEarth then
         self.createButton(
             {
                 click_function = "Nothing",
@@ -4490,7 +4478,7 @@ function CreateTreebeardMenu()
 
     function Continue()
         self.clearButtons()
-        if LoME then
+        if LordsOfMiddleEarth then
             NextStep = "StartingGuideMenu"
         else
             NextStep = "SetupExpansions"
@@ -4502,8 +4490,8 @@ end
 
 function CreateStartingGuideMenu()
     -- If breaking of the fellowship...
-    if BotF then
-        if LoME then
+    if TheBreakingOfTheFellowship then
+        if LordsOfMiddleEarth then
             printToAll(
                 "\nThe Breaking of the Fellowship skips the Council of Rivendell step from Lords of Middle-Earth.\n"
             )
@@ -4820,12 +4808,12 @@ function SetupExpansionsStep()
     NextStep = "SetupCompanions"
     local TempObj = nil
     --Included: The Fate of Erebor...
-    if TFoE then
+    if TheFateOfErebor then
         --setup the Fate of Erebor...
-        Global.call("SetupTFoE")
+        Global.call("SetupTheFateOfErebor")
         --setup optional new cities?
-        if NewCities then
-            Global.call("SetupTFoENewCities")
+        if TheFateOfErebor_NewCities then
+            Global.call("SetupTheFateOfErebor_NewCities")
         else
             getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("c537fa"))
             getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("2df5ce"))
@@ -4901,7 +4889,7 @@ function SetupExpansionsStep()
         end
 
         -- If KoME+TFoE then remove Dain and Brand from the game...
-        if KoME then
+        if KingsOfMiddleEarth then
             printToAll("The Fate of Erebor removes King Brand and King Dain Ironfoot from the game.", { 1, 1, 0 })
             if getObjectFromGUID(IDs.Companions.Brand) ~= nil then
                 getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Brand))
@@ -4971,7 +4959,7 @@ function SetupExpansionsStep()
     end
 
     --Included: Lords of Middle-Earth...
-    if LoME then
+    if LordsOfMiddleEarth then
         self.clearButtons()
         self.createButton(
             {
@@ -5024,7 +5012,7 @@ function SetupExpansionsStep()
             }
         )
         --Add 2 Smeagol Tiles (if not using BotF)...
-        if not BotF then
+        if not TheBreakingOfTheFellowship then
             for T = 1, 2 do
                 getObjectFromGUID(IDs.HuntTileBag).putObject(getObjectFromGUID(IDs.LoME.SmeagolTiles[T]))
                 coroutine.yield(0)
@@ -5067,7 +5055,7 @@ function SetupExpansionsStep()
 
     coroutine.yield(0)
     --Included: Warriors of Middle-Earth...
-    if WoME then
+    if WarriorsOfMiddleEarth then
         log(" Setting up WoME...")
         --debuggg
         self.clearButtons()
@@ -5192,7 +5180,7 @@ function SetupExpansionsStep()
     end
 
     coroutine.yield(0)
-    if KoME then
+    if KingsOfMiddleEarth then
         log(" Setting up KoME...")
         --debuggg
         self.clearButtons()
@@ -5255,7 +5243,7 @@ function SetupExpansionsStep()
             { BagID = IDs.ShadowStrategyEventDeck, Name = "The King is Revealed", Description = "#18;" }
         )
         -- If The Fate of Erebot is used then do not swap 2 of the cards (King Brands MEn and Dain Ironfoot's Guard)...
-        if TFoE then
+        if TheFateOfErebor then
             --remove the new cards, we will keep old ones...
             Global.call("RemoveObjectFromGame", { BagID = "890b46", Name = "King Brand's Men", Description = "#19;" })
             Global.call(
@@ -5319,7 +5307,7 @@ function SetupExpansionsStep()
 
     coroutine.yield(0)
     --setup treebeard content..
-    if WoME then
+    if WarriorsOfMiddleEarth then
         if Treebeard == 1 then
             --WM1/1R
             getObjectFromGUID("8f8093").setPosition({ -13.5, 0.97, 33 }, false, false)
@@ -5421,7 +5409,7 @@ end
 
 function CreateAlternateCompanionMenu()
     self.clearButtons()
-    if BotF then
+    if TheBreakingOfTheFellowship then
         NextStep = "SetupCompanions"
         Step = ""
     else --hold Rivendell Council...
@@ -5864,9 +5852,9 @@ function SetupCompanionsStep()
                     coroutine.yield(0)
                 elseif
                     (Obj.getName() == "Gandalf the White: Emissary from the West" and
-                        (not BotF or Obj.type ~= "Figurine")) or
+                        (not TheBreakingOfTheFellowship or Obj.type ~= "Figurine")) or
                     Obj.getName() == "Aragorn: Heir to Isildur" or
-                    ((Obj.getName() == "Gollum: Slave of the Ring" or Obj.getName() == "Gollum") and not BotF) or
+                    ((Obj.getName() == "Gollum: Slave of the Ring" or Obj.getName() == "Gollum") and not TheBreakingOfTheFellowship) or
                     string.find(Obj.getDescription(), "Dice;Action;FreePeoples;5of6;") ~= nil or
                     string.find(Obj.getDescription(), "Dice;Action;FreePeoples;6of6;") ~= nil or
                     Obj.getName() == "Lady Galadriel: Keeper of Nenya" or
@@ -6048,7 +6036,7 @@ function SetupCompanionsStep()
     end
 
     --Included: The Breaking of the Fellowship...
-    if BotF then
+    if TheBreakingOfTheFellowship then
         Global.call("SetupBotF")
     else
         Step = ""
@@ -6930,7 +6918,7 @@ end
 -- Params: Faction=""  ex: DeadMen, Ents, Eagles, Spiders, Dunlendings, Corsairs
 function FactionActive(Params)
     --make sure WoME expansion is in play...
-    if WoME == false then
+    if WarriorsOfMiddleEarth == false then
         return false
     end
 
