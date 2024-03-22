@@ -18,11 +18,11 @@ local LordsOfMiddleEarth = false
 local WarriorsOfMiddleEarth = false
 local KingsOfMiddleEarth = false
 local TheFateOfErebor = false
-local HuntForTheRing = false
 local TheFateOfErebor_NewCities = true
+local HuntForTheRing = false
 local TheBreakingOfTheFellowship = false
-local Treebeard = 2   --0:None,1:Original,2:Revised;
-local FlagString = "" --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
+local Treebeard = 2    --0:None,1:Original,2:Revised;
+local FlagsString = "" --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
 
 --Bags...
 local GraveBagId = "416864"
@@ -368,33 +368,8 @@ function onLoad()
     HuntForTheRing = string.find(self.getDescription(), "HftR;") ~= nil
 
     CompactMode = string.find(self.getDescription(), "Compact;") ~= nil
-    FlagString = ""
 
-    if LordsOfMiddleEarth then
-        FlagString = FlagString .. "LoME;"
-    end
-
-    if WarriorsOfMiddleEarth then
-        FlagString = FlagString .. "WoME;"
-    end
-
-    if KingsOfMiddleEarth then
-        FlagString = FlagString .. "KoME;"
-    end
-
-    if TheFateOfErebor then
-        FlagString = FlagString .. "TFoE;"
-    end
-
-    if TheBreakingOfTheFellowship then
-        FlagString = FlagString .. "BotF;"
-    end
-
-    if HuntForTheRing then
-        FlagString = FlagString .. "HftR;"
-    end
-
-    --udpate compactmode data...
+    -- update compactmode data
     if CompactMode then
         print("Compact Mode: ON")
         local GlobalSpots = Global.getTable("Spots")
@@ -403,15 +378,9 @@ function onLoad()
         Global.setTable("Spots", GlobalSpots)
         Spots.ShadowDiceBox = Spots.CompactShadowUsedDice
         Spots.FreePeoplesDiceBox = Spots.CompactFreePeoplesUsedDice
-        FlagString = FlagString .. "Compact;"
     end
 
-    Global.setVar("LordsOfMiddleEarth", LordsOfMiddleEarth)
-    Global.setVar("WarriorsOfMiddleEarth", WarriorsOfMiddleEarth)
-    Global.setVar("KingsOfMiddleEarth", KingsOfMiddleEarth)
-    Global.setVar("TheFateOfErebor", TheFateOfErebor)
-    Global.setVar("TheBreakingOfTheFellowship", TheBreakingOfTheFellowship)
-    Global.setVar("CompactMode", CompactMode)
+    UpdateFlags()
 
     --initialize components...
     Global.call("UpdateIDs")
@@ -442,7 +411,7 @@ function ProcessNextStep()
     --debug
     Step = NextStep
     self.setDescription(
-        "Panel;Round:" .. Round .. ";Phase:" .. Phase .. ";Turn:" .. Turn .. ";Step:" .. Step .. ";" .. FlagString
+        "Panel;Round:" .. Round .. ";Phase:" .. Phase .. ";Turn:" .. Turn .. ";Step:" .. Step .. ";" .. FlagsString
     )
 
     --assume new game setup...
@@ -622,37 +591,44 @@ function CreateSetupCompleteMenu()
 
     coroutine.yield(0)
     broadcastToAll("Setup Complete!")
+
     Turn = 0
-    FlagString = ""
+
+    UpdateFlags()
+end
+
+function UpdateFlags()
+    FlagsString = ""
+
+    -- expansions
     if LordsOfMiddleEarth then
-        FlagString = FlagString .. "LoME;"
+        FlagsString = FlagsString .. "LoME;"
     end
-
     if WarriorsOfMiddleEarth then
-        FlagString = FlagString .. "WoME;"
+        FlagsString = FlagsString .. "WoME;"
     end
-
     if KingsOfMiddleEarth then
-        FlagString = FlagString .. "KoME;"
+        FlagsString = FlagsString .. "KoME;"
     end
-
     if TheFateOfErebor then
-        FlagString = FlagString .. "TFoE;"
+        FlagsString = FlagsString .. "TFoE;"
     end
-
     if TheBreakingOfTheFellowship then
-        FlagString = FlagString .. "BotF;"
+        FlagsString = FlagsString .. "BotF;"
+    end
+    if HuntForTheRing then
+        FlagsString = FlagsString .. "HftR;"
     end
 
     if CompactMode then
-        FlagString = FlagString .. "Compact;"
+        FlagsString = FlagsString .. "Compact;"
     end
 
-    Global.setVar("LoME", LordsOfMiddleEarth)
-    Global.setVar("WoME", WarriorsOfMiddleEarth)
-    Global.setVar("TFoE", TheFateOfErebor)
-    Global.setVar("KoME", KingsOfMiddleEarth)
-    Global.setVar("BotF", TheBreakingOfTheFellowship)
+    Global.setVar("LordsOfMiddleEarth", LordsOfMiddleEarth)
+    Global.setVar("WarriorsOfMiddleEarth", WarriorsOfMiddleEarth)
+    Global.setVar("KingsOfMiddleEarth", KingsOfMiddleEarth)
+    Global.setVar("TheFateOfErebor", TheFateOfErebor)
+    Global.setVar("TheBreakingOfTheFellowship", TheBreakingOfTheFellowship)
     Global.setVar("CompactMode", CompactMode)
 end
 
@@ -660,11 +636,13 @@ function StartTurnStep()
     Round = Round + 1
     Turn = Turn + 1
     Phase = 0
+
     Global.setVar("Round", Round)
     Global.setVar("Phase", Phase)
     Global.setVar("Turn", Turn)
+
     self.setDescription(
-        "Panel;Round:" .. Round .. ";Phase:" .. Phase .. ";Turn:" .. Turn .. ";Step:" .. Step .. ";" .. FlagString
+        "Panel;Round:" .. Round .. ";Phase:" .. Phase .. ";Turn:" .. Turn .. ";Step:" .. Step .. ";" .. FlagsString
     )
     self.clearButtons()
     self.createButton(
@@ -3626,7 +3604,7 @@ function CreatePlayersMenu()
             Global.setTable("Spots", GlobalSpots)
             Spots.ShadowDiceBox = Spots.CompactShadowUsedDice
             Spots.FreePeoplesDiceBox = Spots.CompactFreePeoplesUsedDice
-            FlagString = FlagString .. "Compact;"
+            FlagsString = FlagsString .. "Compact;"
         end
 
         if Versus == "1v1" or Versus == "1v1 Compact Mode" then
@@ -4144,6 +4122,7 @@ end
 
 function CreateTFoEMenu()
     self.clearButtons()
+
     if TheFateOfErebor then
         self.createButton(
             {
@@ -6037,7 +6016,7 @@ function SetupCompanionsStep()
 
     --Included: The Breaking of the Fellowship...
     if TheBreakingOfTheFellowship then
-        Global.call("SetupBotF")
+        Global.call("SetupBreakingOfTheFellowship")
     else
         Step = ""
     end

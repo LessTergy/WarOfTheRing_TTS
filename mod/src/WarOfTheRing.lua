@@ -1284,9 +1284,10 @@ function MoveUnit(UnitName, ID1, ID2, ID3, ID4, FromLocation, ToLocation, ToPosi
     end
 end
 
-function SetupBotF() -- setup the breaking of the fellowship.
+function SetupBreakingOfTheFellowship()
     function SetupBotFCoroutine()
         printToAll("\nSetting up The Breaking of the Fellowship...\n", { 0, 1, 0 })
+
         -- update region info...
         Regions["Rivendell"] = {
             Nation = "Elves",
@@ -1578,7 +1579,7 @@ function SetupBotF() -- setup the breaking of the fellowship.
             Detected = { X = 0, R = 0, E = 0, L = 0 },
             Starting = { R = 4, E = 1, L = 0 }
         }
-        if getObjectFromGUID(GamePanelID).getVar("TFoE") then
+        if TheFateOfErebor then
             Regions["Sauron Reinforcements"] = {
                 Nation = "Sauron",
                 Points = 0,
