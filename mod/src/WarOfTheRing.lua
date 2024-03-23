@@ -11,8 +11,8 @@ FellowshipYellowZoneID = "652513"
 
 -- Turn info
 Round = 0
-Turn = 0     -- count of turns
-Phase = 0    -- tracks phase of the turn (1-6)
+Turn = 0 -- count of turns
+Phase = 0 -- tracks phase of the turn (1-6)
 Mute = false -- mute sound?
 Guide = ""
 GuideLevel = 0
@@ -45,8 +45,8 @@ Dice = {
             -- Side
             Rolling = false,
             RollingTable = {}, -- list of combat dice actively rolling.
-            RolledTable = {},  -- list of combat dice finished rolling.
-            ResultTable = {},  -- table of roll results.
+            RolledTable = {}, -- list of combat dice finished rolling.
+            ResultTable = {}, -- table of roll results.
             ResultText = ""
         },
         -- Shadow
@@ -54,8 +54,8 @@ Dice = {
             -- Player
             Rolling = false,
             RollingTable = {}, -- list of combat dice actively rolling.
-            RolledTable = {},  -- list of combat dice finished rolling.
-            ResultTable = {},  -- table of roll results.
+            RolledTable = {}, -- list of combat dice finished rolling.
+            ResultTable = {}, -- table of roll results.
             ResultText = ""
         }
         -- FreePeoples
@@ -3366,7 +3366,7 @@ function StartSiege(StrongholdObj)
                 end
             else -- could not determine which side controls the stronghold...
                 print("Uhoh! Cannot find the Settlement Control Marker for: " .. SrcObj.getName() .. "!")
-            end  -- if side?
+            end -- if side?
             StrongholdMenu(SrcObj)
         end
 
