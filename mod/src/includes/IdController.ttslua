@@ -258,3 +258,10 @@ function GetDiceIndex(description)
     local number = string.match(description, pattern)
     return tonumber(number)
 end
+
+function GetIDs()
+    if _G.IDs == nil then
+        UpdateIDs()
+    end
+    return _G.IDs
+end

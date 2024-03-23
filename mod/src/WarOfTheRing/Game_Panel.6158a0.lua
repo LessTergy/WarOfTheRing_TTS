@@ -429,12 +429,15 @@ function UnitsSetupStep()
     )
 
     SpawnArmies()
+    Global.call("UpdateIDs")
 
     NextStep = StepType.PlayersMenu
     Step = StepType.Empty
 end
 
 function CreateSetupCompleteMenu()
+    local IDs = Global.call("GetIDs")
+
     self.clearButtons()
     self.createButton(
         {
@@ -487,15 +490,15 @@ function CreateSetupCompleteMenu()
     end
 
     --Shuffle decks and bags...
-    getObjectFromGUID(_G.IDs.CompanionBag).shuffle()
-    getObjectFromGUID(_G.IDs.HuntTileBag).shuffle()
-    getObjectFromGUID(_G.IDs.FreePeoplesCharacterEventDeck).shuffle()
-    getObjectFromGUID(_G.IDs.FreePeoplesStrategyEventDeck).shuffle()
-    getObjectFromGUID(_G.IDs.ShadowCharacterEventDeck).shuffle()
-    getObjectFromGUID(_G.IDs.ShadowStrategyEventDeck).shuffle()
+    getObjectFromGUID(IDs.CompanionBag).shuffle()
+    getObjectFromGUID(IDs.HuntTileBag).shuffle()
+    getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).shuffle()
+    getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).shuffle()
+    getObjectFromGUID(IDs.ShadowCharacterEventDeck).shuffle()
+    getObjectFromGUID(IDs.ShadowStrategyEventDeck).shuffle()
     if WarriorsOfMiddleEarth then
-        getObjectFromGUID(_G.IDs.WoME.FreePeoplesFactionDeck).shuffle()
-        getObjectFromGUID(_G.IDs.WoME.ShadowFactionDeck).shuffle()
+        getObjectFromGUID(IDs.WoME.FreePeoplesFactionDeck).shuffle()
+        getObjectFromGUID(IDs.WoME.ShadowFactionDeck).shuffle()
     end
 
     coroutine.yield(0)
@@ -542,6 +545,8 @@ function UpdateFlags()
 end
 
 function StartTurnStep()
+    local IDs = Global.call("GetIDs")
+
     Round = Round + 1
     Turn = Turn + 1
     Phase = 0
@@ -640,71 +645,74 @@ function StartTurnStep()
         end
 
         if PlayersLeader.FreePeoples == "Gondor" and VersusMode == VersusType.TwoVersusTwo then
-            getObjectFromGUID(_G.IDs.FreePeoplesLeaderToken).setPositionSmooth(Spots.LeadingPlayerGondor, false, false)
+            getObjectFromGUID(IDs.FreePeoplesLeaderToken).setPositionSmooth(Spots.LeadingPlayerGondor, false,
+                false)
             printToAll("Gondor Player (Blue) has the Free Peoples Leading Player Token.", Player["Blue"].color)
         elseif VersusMode == VersusType.TwoVersusTwo then
-            getObjectFromGUID(_G.IDs.FreePeoplesLeaderToken).setPositionSmooth(Spots.LeadingPlayerRohan, false, false)
+            getObjectFromGUID(IDs.FreePeoplesLeaderToken).setPositionSmooth(Spots.LeadingPlayerRohan, false,
+                false)
             printToAll("Rohan Player (Green) has the Free Peoples Leading Player Token.", Player["Green"].color)
         end
 
         if PlayersLeader.Shadow == "The Witch-king" and VersusMode ~= VersusType.OneVersusOne then
-            getObjectFromGUID(_G.IDs.ShadowLeaderToken).setPositionSmooth(Spots.LeadingPlayerWitchKing, false, false)
+            getObjectFromGUID(IDs.ShadowLeaderToken).setPositionSmooth(Spots.LeadingPlayerWitchKing, false, false)
             printToAll("The Witch-king Player (Red) has the Shadow Leading Player Token.", Player["Red"].color)
         elseif VersusMode ~= VersusType.OneVersusOne then
-            getObjectFromGUID(_G.IDs.ShadowLeaderToken).setPositionSmooth(Spots.LeadingPlayerSaruman, false, false)
+            getObjectFromGUID(IDs.ShadowLeaderToken).setPositionSmooth(Spots.LeadingPlayerSaruman, false, false)
             printToAll("Saruman Player (Yellow) has the Shadow Leading Player Token.", Player["Yellow"].color)
         end
+
         --look for missing decks...
-        _G.IDs.FreePeoplesCharacterEventDeck =
+        IDs.FreePeoplesCharacterEventDeck =
             CheckDeck(
                 {
-                    id = _G.IDs.FreePeoplesCharacterEventDeck,
+                    id = IDs.FreePeoplesCharacterEventDeck,
                     position = Spots.FreePeoplesCharacterEventDeck,
                     name = "Free Peoples Character Event Deck",
                     description = "Deck;Event;Character;FreePeoples;"
                 }
             )
-        _G.IDs.ShadowCharacterEventDeck =
+        IDs.ShadowCharacterEventDeck =
             CheckDeck(
                 {
-                    id = _G.IDs.ShadowCharacterEventDeck,
+                    id = IDs.ShadowCharacterEventDeck,
                     position = Spots.ShadowCharacterEventDeck,
                     name = "Shadow Character Event Deck",
                     description = "Deck;Event;Character;Shadow;"
                 }
             )
-        _G.IDs.FreePeoplesStrategyEventDeck =
+        IDs.FreePeoplesStrategyEventDeck =
             CheckDeck(
                 {
-                    id = _G.IDs.FreePeoplesStrategyEventDeck,
+                    id = IDs.FreePeoplesStrategyEventDeck,
                     position = Spots.FreePeoplesStrategyEventDeck,
                     name = "Free Peoples Strategy Event Deck",
                     description = "Deck;Event;Strategy;FreePeoples;"
                 }
             )
-        _G.IDs.ShadowStrategyEventDeck =
+        IDs.ShadowStrategyEventDeck =
             CheckDeck(
                 {
-                    id = _G.IDs.ShadowStrategyEventDeck,
+                    id = IDs.ShadowStrategyEventDeck,
                     position = Spots.ShadowStrategyEventDeck,
                     name = "Shadow Strategy Event Deck",
                     description = "Deck;Event;Strategy;Shadow;"
                 }
             )
         if WarriorsOfMiddleEarth then
-            _G.IDs.WoME.FreePeoplesFactionDeck =
+            IDs.WoME.FreePeoplesFactionDeck =
                 CheckDeck(
                     {
-                        id = _G.IDs.WoME.FreePeoplesFactionDeck,
+                        id = IDs.WoME.FreePeoplesFactionDeck,
                         position = Spots.FreePeoplesFactionDeck,
                         name = "Free Peoples Faction Deck",
                         description = "Deck;Faction;FreePeoples;WoME;"
                     }
                 )
-            _G.IDs.WoME.ShadowFactionDeck =
+            IDs.WoME.ShadowFactionDeck =
                 CheckDeck(
                     {
-                        id = _G.IDs.WoME.ShadowFactionDeck,
+                        id = IDs.WoME.ShadowFactionDeck,
                         position = Spots.ShadowFactionDeck,
                         name = "Shadow Faction Deck",
                         description = "Deck;Faction;Shadow;WoME;"
@@ -721,8 +729,10 @@ function StartTurnStep()
     end
 end
 
+-- Recover Action Dice and Draw Event Cards
 function Phase1_Step()
-    --Recover Action Dice and Draw Event Cards
+    local IDs = Global.call("GetIDs")
+
     Phase = 1
     Global.setVar("Phase", Phase)
     printToAll("Phase 1) Recover Action Dice and Draw Event Cards.")
@@ -789,7 +799,7 @@ function Phase1_Step()
             DrawFromDeck(
                 {
                     deckname = "Character Event",
-                    deckid = _G.IDs.FreePeoplesCharacterEventDeck,
+                    deckid = IDs.FreePeoplesCharacterEventDeck,
                     deckspot = Spots.FreePeoplesCharacterEventDeck,
                     count = 1,
                     player = "Blue"
@@ -798,7 +808,7 @@ function Phase1_Step()
             DrawFromDeck(
                 {
                     deckname = "Strategy Event",
-                    deckid = _G.IDs.FreePeoplesStrategyEventDeck,
+                    deckid = IDs.FreePeoplesStrategyEventDeck,
                     deckspot = Spots.FreePeoplesStrategyEventDeck,
                     count = 1,
                     player = "Blue"
@@ -808,7 +818,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Faction",
-                        deckid = _G.IDs.WoME.FreePeoplesFactionDeck,
+                        deckid = IDs.WoME.FreePeoplesFactionDeck,
                         deckspot = Spots.FreePeoplesFactionDeck,
                         count = 1,
                         player = "Blue"
@@ -819,7 +829,7 @@ function Phase1_Step()
             DrawFromDeck(
                 {
                     deckname = "Character Event",
-                    deckid = _G.IDs.ShadowCharacterEventDeck,
+                    deckid = IDs.ShadowCharacterEventDeck,
                     deckspot = Spots.ShadowCharacterEventDeck,
                     count = 1,
                     player = "Red"
@@ -828,7 +838,7 @@ function Phase1_Step()
             DrawFromDeck(
                 {
                     deckname = "Strategy Event",
-                    deckid = _G.IDs.ShadowStrategyEventDeck,
+                    deckid = IDs.ShadowStrategyEventDeck,
                     deckspot = Spots.ShadowStrategyEventDeck,
                     count = 1,
                     player = "Red"
@@ -838,7 +848,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Faction",
-                        deckid = _G.IDs.WoME.ShadowFactionDeck,
+                        deckid = IDs.WoME.ShadowFactionDeck,
                         deckspot = Spots.ShadowFactionDeck,
                         count = 1,
                         player = "Red"
@@ -849,7 +859,7 @@ function Phase1_Step()
             DrawFromDeck(
                 {
                     deckname = "Character Event",
-                    deckid = _G.IDs.FreePeoplesCharacterEventDeck,
+                    deckid = IDs.FreePeoplesCharacterEventDeck,
                     deckspot = Spots.FreePeoplesCharacterEventDeck,
                     count = 1,
                     player = "Blue"
@@ -858,7 +868,7 @@ function Phase1_Step()
             DrawFromDeck(
                 {
                     deckname = "Strategy Event",
-                    deckid = _G.IDs.FreePeoplesStrategyEventDeck,
+                    deckid = IDs.FreePeoplesStrategyEventDeck,
                     deckspot = Spots.FreePeoplesStrategyEventDeck,
                     count = 1,
                     player = "Blue"
@@ -868,7 +878,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Faction",
-                        deckid = _G.IDs.WoME.FreePeoplesFactionDeck,
+                        deckid = IDs.WoME.FreePeoplesFactionDeck,
                         deckspot = Spots.FreePeoplesFactionDeck,
                         count = 1,
                         player = "Blue"
@@ -880,7 +890,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Character Event",
-                        deckid = _G.IDs.ShadowCharacterEventDeck,
+                        deckid = IDs.ShadowCharacterEventDeck,
                         deckspot = Spots.ShadowCharacterEventDeck,
                         count = 1,
                         player = "Red"
@@ -889,7 +899,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Strategy Event",
-                        deckid = _G.IDs.ShadowStrategyEventDeck,
+                        deckid = IDs.ShadowStrategyEventDeck,
                         deckspot = Spots.ShadowStrategyEventDeck,
                         count = 1,
                         player = "Red"
@@ -899,7 +909,7 @@ function Phase1_Step()
                     DrawFromDeck(
                         {
                             deckname = "Faction",
-                            deckid = _G.IDs.WoME.ShadowFactionDeck,
+                            deckid = IDs.WoME.ShadowFactionDeck,
                             deckspot = Spots.ShadowFactionDeck,
                             count = 1,
                             player = "Red"
@@ -910,7 +920,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Character Event",
-                        deckid = _G.IDs.ShadowCharacterEventDeck,
+                        deckid = IDs.ShadowCharacterEventDeck,
                         deckspot = Spots.ShadowCharacterEventDeck,
                         count = 1,
                         player = "Yellow"
@@ -919,7 +929,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Strategy Event",
-                        deckid = _G.IDs.ShadowStrategyEventDeck,
+                        deckid = IDs.ShadowStrategyEventDeck,
                         deckspot = Spots.ShadowStrategyEventDeck,
                         count = 1,
                         player = "Yellow"
@@ -931,7 +941,7 @@ function Phase1_Step()
                     DrawFromDeck(
                         {
                             deckname = "Faction",
-                            deckid = _G.IDs.WoME.ShadowFactionDeck,
+                            deckid = IDs.WoME.ShadowFactionDeck,
                             deckspot = Spots.ShadowFactionDeck,
                             count = 1,
                             player = "Red"
@@ -941,7 +951,7 @@ function Phase1_Step()
                     DrawFromDeck(
                         {
                             deckname = "Faction",
-                            deckid = _G.IDs.WoME.ShadowFactionDeck,
+                            deckid = IDs.WoME.ShadowFactionDeck,
                             deckspot = Spots.ShadowFactionDeck,
                             count = 1,
                             player = "Yellow"
@@ -957,7 +967,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Character Event",
-                        deckid = _G.IDs.FreePeoplesCharacterEventDeck,
+                        deckid = IDs.FreePeoplesCharacterEventDeck,
                         deckspot = Spots.FreePeoplesCharacterEventDeck,
                         count = 1,
                         player = "Blue"
@@ -966,7 +976,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Strategy Event",
-                        deckid = _G.IDs.FreePeoplesStrategyEventDeck,
+                        deckid = IDs.FreePeoplesStrategyEventDeck,
                         deckspot = Spots.FreePeoplesStrategyEventDeck,
                         count = 1,
                         player = "Blue"
@@ -976,7 +986,7 @@ function Phase1_Step()
                     DrawFromDeck(
                         {
                             deckname = "Faction",
-                            deckid = _G.IDs.WoME.FreePeoplesFactionDeck,
+                            deckid = IDs.WoME.FreePeoplesFactionDeck,
                             deckspot = Spots.FreePeoplesFactionDeck,
                             count = 1,
                             player = "Blue"
@@ -987,7 +997,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Character Event",
-                        deckid = _G.IDs.FreePeoplesCharacterEventDeck,
+                        deckid = IDs.FreePeoplesCharacterEventDeck,
                         deckspot = Spots.FreePeoplesCharacterEventDeck,
                         count = 1,
                         player = "Green"
@@ -996,7 +1006,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Strategy Event",
-                        deckid = _G.IDs.FreePeoplesStrategyEventDeck,
+                        deckid = IDs.FreePeoplesStrategyEventDeck,
                         deckspot = Spots.FreePeoplesStrategyEventDeck,
                         count = 1,
                         player = "Green"
@@ -1005,7 +1015,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Character Event",
-                        deckid = _G.IDs.ShadowCharacterEventDeck,
+                        deckid = IDs.ShadowCharacterEventDeck,
                         deckspot = Spots.ShadowCharacterEventDeck,
                         count = 1,
                         player = "Red"
@@ -1014,7 +1024,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Strategy Event",
-                        deckid = _G.IDs.ShadowStrategyEventDeck,
+                        deckid = IDs.ShadowStrategyEventDeck,
                         deckspot = Spots.ShadowStrategyEventDeck,
                         count = 1,
                         player = "Red"
@@ -1024,7 +1034,7 @@ function Phase1_Step()
                     DrawFromDeck(
                         {
                             deckname = "Faction",
-                            deckid = _G.IDs.WoME.ShadowFactionDeck,
+                            deckid = IDs.WoME.ShadowFactionDeck,
                             deckspot = Spots.ShadowFactionDeck,
                             count = 1,
                             player = "Red"
@@ -1035,7 +1045,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Character Event",
-                        deckid = _G.IDs.ShadowCharacterEventDeck,
+                        deckid = IDs.ShadowCharacterEventDeck,
                         deckspot = Spots.ShadowCharacterEventDeck,
                         count = 1,
                         player = "Yellow"
@@ -1044,7 +1054,7 @@ function Phase1_Step()
                 DrawFromDeck(
                     {
                         deckname = "Strategy Event",
-                        deckid = _G.IDs.ShadowStrategyEventDeck,
+                        deckid = IDs.ShadowStrategyEventDeck,
                         deckspot = Spots.ShadowStrategyEventDeck,
                         count = 1,
                         player = "Yellow"
@@ -1056,7 +1066,7 @@ function Phase1_Step()
                     DrawFromDeck(
                         {
                             deckname = "Faction",
-                            deckid = _G.IDs.WoME.FreePeoplesFactionDeck,
+                            deckid = IDs.WoME.FreePeoplesFactionDeck,
                             deckspot = Spots.FreePeoplesFactionDeck,
                             count = 1,
                             player = "Blue"
@@ -1066,7 +1076,7 @@ function Phase1_Step()
                     DrawFromDeck(
                         {
                             deckname = "Faction",
-                            deckid = _G.IDs.WoME.FreePeoplesFactionDeck,
+                            deckid = IDs.WoME.FreePeoplesFactionDeck,
                             deckspot = Spots.FreePeoplesFactionDeck,
                             count = 1,
                             player = "Green"
@@ -1078,7 +1088,7 @@ function Phase1_Step()
                     DrawFromDeck(
                         {
                             deckname = "Faction",
-                            deckid = _G.IDs.WoME.ShadowFactionDeck,
+                            deckid = IDs.WoME.ShadowFactionDeck,
                             deckspot = Spots.ShadowFactionDeck,
                             count = 1,
                             player = "Red"
@@ -1088,7 +1098,7 @@ function Phase1_Step()
                     DrawFromDeck(
                         {
                             deckname = "Faction",
-                            deckid = _G.IDs.WoME.ShadowFactionDeck,
+                            deckid = IDs.WoME.ShadowFactionDeck,
                             deckspot = Spots.ShadowFactionDeck,
                             count = 1,
                             player = "Yellow"
@@ -1105,8 +1115,10 @@ function Phase1_Step()
     end
 end
 
+-- The Breaking of the Fellowship
 function Phase1_BotF_FP_DrawMenu()
-    -- The Breaking of the Fellowship
+    local IDs = Global.call("GetIDs")
+
     -- Free Peoples
     MoveGamePanel("FreePeoples")
     --choose which card combination to draw...
@@ -1199,14 +1211,14 @@ function Phase1_BotF_FP_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Character Event",
-                deckid = _G.IDs.FreePeoplesCharacterEventDeck,
+                deckid = IDs.FreePeoplesCharacterEventDeck,
                 deckspot = Spots.FreePeoplesCharacterEventDeck,
                 count = 1,
                 player = "Blue"
             }
         )
         DrawFromDeck(
-            { deckname = "Strategy Event", deckid = _G.IDs.FreePeoplesStrategyEventDeck, count = 3, player = "Blue" }
+            { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 3, player = "Blue" }
         )
         Step = StepType.Empty
     end
@@ -1214,10 +1226,16 @@ function Phase1_BotF_FP_DrawMenu()
     function DrawC2S2()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Blue" }
+            {
+                deckname = "Character Event",
+                deckid = IDs.FreePeoplesCharacterEventDeck,
+                count = 2,
+                player =
+                "Blue"
+            }
         )
         DrawFromDeck(
-            { deckname = "Strategy Event", deckid = _G.IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue" }
+            { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue" }
         )
         Step = StepType.Empty
     end
@@ -1225,12 +1243,18 @@ function Phase1_BotF_FP_DrawMenu()
     function DrawC3S1()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.FreePeoplesCharacterEventDeck, count = 3, player = "Blue" }
+            {
+                deckname = "Character Event",
+                deckid = IDs.FreePeoplesCharacterEventDeck,
+                count = 3,
+                player =
+                "Blue"
+            }
         )
         DrawFromDeck(
             {
                 deckname = "Strategy Event",
-                deckid = _G.IDs.FreePeoplesStrategyEventDeck,
+                deckid = IDs.FreePeoplesStrategyEventDeck,
                 deckspot = Spots.FreePeoplesStrategyEventDeck,
                 count = 1,
                 player = "Blue"
@@ -1240,9 +1264,9 @@ function Phase1_BotF_FP_DrawMenu()
     end
 end
 
+-- The Breaking of the Fellowship
 function Phase1_BotF_SH_DrawMenu()
-    -- The Breaking of the Fellowship
-    -- Shadow
+    local IDs = Global.call("GetIDs")
 
     MoveGamePanel("Shadow")
     --choose which card combination to draw...
@@ -1350,58 +1374,83 @@ function Phase1_BotF_SH_DrawMenu()
             font_color = { 1, 1, 0 }
         }
     )
+
     NextStep = StepType.Phase2
     function DrawC1S5()
         self.clearButtons()
         DrawFromDeck(
             {
                 deckname = "Character Event",
-                deckid = _G.IDs.ShadowCharacterEventDeck,
+                deckid = IDs.ShadowCharacterEventDeck,
                 deckspot = Spots.ShadowCharacterEventDeck,
                 count = 1,
                 player = "Red"
             }
         )
-        DrawFromDeck({ deckname = "Strategy Event", deckid = _G.IDs.ShadowStrategyEventDeck, count = 5, player = "Red" })
+        DrawFromDeck({
+            deckname = "Strategy Event",
+            deckid = IDs.ShadowStrategyEventDeck,
+            count = 5,
+            player =
+            "Red"
+        })
         Step = StepType.Empty
     end
 
     function DrawC2S4()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.ShadowCharacterEventDeck, count = 2, player = "Red" }
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Red" }
         )
-        DrawFromDeck({ deckname = "Strategy Event", deckid = _G.IDs.ShadowStrategyEventDeck, count = 4, player = "Red" })
+        DrawFromDeck({
+            deckname = "Strategy Event",
+            deckid = IDs.ShadowStrategyEventDeck,
+            count = 4,
+            player =
+            "Red"
+        })
         Step = StepType.Empty
     end
 
     function DrawC3S3()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.ShadowCharacterEventDeck, count = 3, player = "Red" }
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Red" }
         )
-        DrawFromDeck({ deckname = "Strategy Event", deckid = _G.IDs.ShadowStrategyEventDeck, count = 3, player = "Red" })
+        DrawFromDeck({
+            deckname = "Strategy Event",
+            deckid = IDs.ShadowStrategyEventDeck,
+            count = 3,
+            player =
+            "Red"
+        })
         Step = StepType.Empty
     end
 
     function DrawC4S2()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.ShadowCharacterEventDeck, count = 4, player = "Red" }
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 4, player = "Red" }
         )
-        DrawFromDeck({ deckname = "Strategy Event", deckid = _G.IDs.ShadowStrategyEventDeck, count = 2, player = "Red" })
+        DrawFromDeck({
+            deckname = "Strategy Event",
+            deckid = IDs.ShadowStrategyEventDeck,
+            count = 2,
+            player =
+            "Red"
+        })
         Step = StepType.Empty
     end
 
     function DrawC5S1()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.ShadowCharacterEventDeck, count = 5, player = "Red" }
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 5, player = "Red" }
         )
         DrawFromDeck(
             {
                 deckname = "Strategy Event",
-                deckid = _G.IDs.ShadowStrategyEventDeck,
+                deckid = IDs.ShadowStrategyEventDeck,
                 deckspot = Spots.ShadowStrategyEventDeck,
                 count = 1,
                 player = "Red"
@@ -1412,6 +1461,7 @@ function Phase1_BotF_SH_DrawMenu()
 end
 
 function Phase1_BotF_GondorPlayer_DrawMenu()
+    local IDs = Global.call("GetIDs")
     CharacterCardCount = 0
     StrategyCardCount = 0
     --move game panel to player's spot...
@@ -1499,7 +1549,13 @@ function Phase1_BotF_GondorPlayer_DrawMenu()
     function DrawC2S0()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Blue" }
+            {
+                deckname = "Character Event",
+                deckid = IDs.FreePeoplesCharacterEventDeck,
+                count = 2,
+                player =
+                "Blue"
+            }
         )
         CharacterCardCount = 2
         Step = StepType.Empty
@@ -1510,7 +1566,7 @@ function Phase1_BotF_GondorPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Character Event",
-                deckid = _G.IDs.FreePeoplesCharacterEventDeck,
+                deckid = IDs.FreePeoplesCharacterEventDeck,
                 deckspot = Spots.FreePeoplesCharacterEventDeck,
                 count = 1,
                 player = "Blue"
@@ -1519,7 +1575,7 @@ function Phase1_BotF_GondorPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Strategy Event",
-                deckid = _G.IDs.FreePeoplesStrategyEventDeck,
+                deckid = IDs.FreePeoplesStrategyEventDeck,
                 deckspot = Spots.FreePeoplesStrategyEventDeck,
                 count = 1,
                 player = "Blue"
@@ -1533,7 +1589,7 @@ function Phase1_BotF_GondorPlayer_DrawMenu()
     function DrawC0S2()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Strategy Event", deckid = _G.IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue" }
+            { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue" }
         )
         StrategyCardCount = 2
         Step = StepType.Empty
@@ -1541,8 +1597,9 @@ function Phase1_BotF_GondorPlayer_DrawMenu()
 end
 
 function Phase1_BotF_RohanPlayer_DrawMenu()
-    --move game panel to player's spot...
+    local IDs = Global.call("GetIDs")
     MoveGamePanel("Rohan")
+
     --choose which card combination to draw...
     self.clearButtons()
     self.createButton(
@@ -1632,7 +1689,13 @@ function Phase1_BotF_RohanPlayer_DrawMenu()
     function DrawC2S0()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Green" }
+            {
+                deckname = "Character Event",
+                deckid = IDs.FreePeoplesCharacterEventDeck,
+                count = 2,
+                player =
+                "Green"
+            }
         )
         Step = StepType.Empty
     end
@@ -1642,7 +1705,7 @@ function Phase1_BotF_RohanPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Character Event",
-                deckid = _G.IDs.FreePeoplesCharacterEventDeck,
+                deckid = IDs.FreePeoplesCharacterEventDeck,
                 deckspot = Spots.FreePeoplesCharacterEventDeck,
                 count = 1,
                 player = "Green"
@@ -1651,7 +1714,7 @@ function Phase1_BotF_RohanPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Strategy Event",
-                deckid = _G.IDs.FreePeoplesStrategyEventDeck,
+                deckid = IDs.FreePeoplesStrategyEventDeck,
                 deckspot = Spots.FreePeoplesStrategyEventDeck,
                 count = 1,
                 player = "Green"
@@ -1663,13 +1726,14 @@ function Phase1_BotF_RohanPlayer_DrawMenu()
     function DrawC0S2()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Strategy Event", deckid = _G.IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Green" }
+            { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Green" }
         )
         Step = StepType.Empty
     end
 end
 
 function Phase1_BotF_TheWitchKingPlayer_DrawMenu()
+    local IDs = Global.call("GetIDs")
     CharacterCardCount = 0
     StrategyCardCount = 0
     --move game panel to player's spot...
@@ -1770,7 +1834,7 @@ function Phase1_BotF_TheWitchKingPlayer_DrawMenu()
     function DrawC3S0()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.ShadowCharacterEventDeck, count = 3, player = "Red" }
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Red" }
         )
         CharacterCardCount = 3
         Step = StepType.Empty
@@ -1779,12 +1843,12 @@ function Phase1_BotF_TheWitchKingPlayer_DrawMenu()
     function DrawC2S1()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.ShadowCharacterEventDeck, count = 2, player = "Red" }
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Red" }
         )
         DrawFromDeck(
             {
                 deckname = "Strategy Event",
-                deckid = _G.IDs.ShadowStrategyEventDeck,
+                deckid = IDs.ShadowStrategyEventDeck,
                 deckspot = Spots.ShadowStrategyEventDeck,
                 count = 1,
                 player = "Red"
@@ -1800,13 +1864,19 @@ function Phase1_BotF_TheWitchKingPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Character Event",
-                deckid = _G.IDs.ShadowCharacterEventDeck,
+                deckid = IDs.ShadowCharacterEventDeck,
                 deckspot = Spots.ShadowCharacterEventDeck,
                 count = 1,
                 player = "Red"
             }
         )
-        DrawFromDeck({ deckname = "Strategy Event", deckid = _G.IDs.ShadowStrategyEventDeck, count = 2, player = "Red" })
+        DrawFromDeck({
+            deckname = "Strategy Event",
+            deckid = IDs.ShadowStrategyEventDeck,
+            count = 2,
+            player =
+            "Red"
+        })
         CharacterCardCount = 1
         StrategyCardCount = 2
         Step = StepType.Empty
@@ -1814,16 +1884,22 @@ function Phase1_BotF_TheWitchKingPlayer_DrawMenu()
 
     function DrawC0S3()
         self.clearButtons()
-        DrawFromDeck({ deckname = "Strategy Event", deckid = _G.IDs.ShadowStrategyEventDeck, count = 3, player = "Red" })
+        DrawFromDeck({
+            deckname = "Strategy Event",
+            deckid = IDs.ShadowStrategyEventDeck,
+            count = 3,
+            player =
+            "Red"
+        })
         StrategyCardCount = 3
         Step = StepType.Empty
     end
 end
 
 function Phase1_BotF_SarumanPlayer_DrawMenu()
-    --move game panel to player's spot...
+    local IDs = Global.call("GetIDs")
     MoveGamePanel("Saruman")
-    --choose which card combination to draw...
+
     self.clearButtons()
     self.createButton(
         {
@@ -1925,7 +2001,7 @@ function Phase1_BotF_SarumanPlayer_DrawMenu()
     function DrawC3S0()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.ShadowCharacterEventDeck, count = 3, player = "Yellow" }
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Yellow" }
         )
         CharacterCardCount = 3
         Step = StepType.Empty
@@ -1934,12 +2010,12 @@ function Phase1_BotF_SarumanPlayer_DrawMenu()
     function DrawC2S1()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.ShadowCharacterEventDeck, count = 2, player = "Yellow" }
+            { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Yellow" }
         )
         DrawFromDeck(
             {
                 deckname = "Strategy Event",
-                deckid = _G.IDs.ShadowStrategyEventDeck,
+                deckid = IDs.ShadowStrategyEventDeck,
                 deckspot = Spots.ShadowStrategyEventDeck,
                 count = 1,
                 player = "Yellow"
@@ -1955,14 +2031,14 @@ function Phase1_BotF_SarumanPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Character Event",
-                deckid = _G.IDs.ShadowCharacterEventDeck,
+                deckid = IDs.ShadowCharacterEventDeck,
                 deckspot = Spots.ShadowCharacterEventDeck,
                 count = 1,
                 player = "Yellow"
             }
         )
         DrawFromDeck(
-            { deckname = "Strategy Event", deckid = _G.IDs.ShadowStrategyEventDeck, count = 2, player = "Yellow" }
+            { deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Yellow" }
         )
         CharacterCardCount = 1
         StrategyCardCount = 2
@@ -1972,7 +2048,7 @@ function Phase1_BotF_SarumanPlayer_DrawMenu()
     function DrawC0S3()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Strategy Event", deckid = _G.IDs.ShadowStrategyEventDeck, count = 3, player = "Yellow" }
+            { deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Yellow" }
         )
         StrategyCardCount = 3
         Step = StepType.Empty
@@ -1980,9 +2056,9 @@ function Phase1_BotF_SarumanPlayer_DrawMenu()
 end
 
 function Phase1_GondorPlayer_DrawMenu()
-    --move game panel to player's spot...
+    local IDs = Global.call("GetIDs")
     MoveGamePanel("Gondor")
-    --prompt player which card to draw...
+
     self.clearButtons()
     self.createButton(
         {
@@ -2042,7 +2118,7 @@ function Phase1_GondorPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Character Event",
-                deckid = _G.IDs.FreePeoplesCharacterEventDeck,
+                deckid = IDs.FreePeoplesCharacterEventDeck,
                 deckspot = Spots.FreePeoplesCharacterEventDeck,
                 count = 1,
                 player = "Blue"
@@ -2057,7 +2133,7 @@ function Phase1_GondorPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Strategy Event",
-                deckid = _G.IDs.FreePeoplesStrategyEventDeck,
+                deckid = IDs.FreePeoplesStrategyEventDeck,
                 deckspot = Spots.FreePeoplesStrategyEventDeck,
                 count = 1,
                 player = "Blue"
@@ -2069,9 +2145,9 @@ function Phase1_GondorPlayer_DrawMenu()
 end
 
 function Phase1_RohanPlayer_DrawMenu()
-    --move game panel to player's spot...
+    local IDs = Global.call("GetIDs")
     MoveGamePanel("Rohan")
-    --prompt player which card to draw...
+
     self.clearButtons()
     self.createButton(
         {
@@ -2129,7 +2205,13 @@ function Phase1_RohanPlayer_DrawMenu()
     function DrawCharacter()
         self.clearButtons()
         DrawFromDeck(
-            { deckname = "Character Event", deckid = _G.IDs.FreePeoplesCharacterEventDeck, count = 1, player = "Green" }
+            {
+                deckname = "Character Event",
+                deckid = IDs.FreePeoplesCharacterEventDeck,
+                count = 1,
+                player =
+                "Green"
+            }
         )
         NextStep = StepType.Phase1_TheWitchKingDrawMenu
         Step = StepType.Empty
@@ -2140,7 +2222,7 @@ function Phase1_RohanPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Strategy Event",
-                deckid = _G.IDs.FreePeoplesStrategyEventDeck,
+                deckid = IDs.FreePeoplesStrategyEventDeck,
                 deckspot = Spots.FreePeoplesStrategyEventDeck,
                 count = 1,
                 player = "Green"
@@ -2152,9 +2234,9 @@ function Phase1_RohanPlayer_DrawMenu()
 end
 
 function Phase1_TheWitchKingPlayer_DrawMenu()
-    --move game panel to player's spot...
+    local IDs = Global.call("GetIDs")
     MoveGamePanel("TheWitchKing")
-    --prompt player which card to draw...
+
     self.clearButtons()
     self.createButton(
         {
@@ -2214,7 +2296,7 @@ function Phase1_TheWitchKingPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Character Event",
-                deckid = _G.IDs.ShadowCharacterEventDeck,
+                deckid = IDs.ShadowCharacterEventDeck,
                 deckspot = Spots.ShadowCharacterEventDeck,
                 count = 1,
                 player = "Red"
@@ -2229,7 +2311,7 @@ function Phase1_TheWitchKingPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Strategy Event",
-                deckid = _G.IDs.ShadowStrategyEventDeck,
+                deckid = IDs.ShadowStrategyEventDeck,
                 deckspot = Spots.ShadowStrategyEventDeck,
                 count = 1,
                 player = "Red"
@@ -2241,9 +2323,9 @@ function Phase1_TheWitchKingPlayer_DrawMenu()
 end
 
 function Phase1_SarumanPlayer_DrawMenu()
-    --move game panel to player's spot...
+    local IDs = Global.call("GetIDs")
     MoveGamePanel("Saruman")
-    --prompt player which card to draw...
+
     self.clearButtons()
     self.createButton(
         {
@@ -2303,7 +2385,7 @@ function Phase1_SarumanPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Character Event",
-                deckid = _G.IDs.ShadowCharacterEventDeck,
+                deckid = IDs.ShadowCharacterEventDeck,
                 deckspot = Spots.ShadowCharacterEventDeck,
                 count = 1,
                 player = "Yellow"
@@ -2318,7 +2400,7 @@ function Phase1_SarumanPlayer_DrawMenu()
         DrawFromDeck(
             {
                 deckname = "Strategy Event",
-                deckid = _G.IDs.ShadowStrategyEventDeck,
+                deckid = IDs.ShadowStrategyEventDeck,
                 deckspot = Spots.ShadowStrategyEventDeck,
                 count = 1,
                 player = "Yellow"
@@ -2330,11 +2412,15 @@ function Phase1_SarumanPlayer_DrawMenu()
 end
 
 function Phase2_FellowshipStep()
+    local IDs = Global.call("GetIDs")
     Phase = 2
+
     Global.setVar("Phase", Phase)
     printToAll("Phase 2) Fellowship Phase.")
     Global.call("FellowshipMenu")
+
     MoveGamePanel("All")
+
     -- display info on panel...
     self.clearButtons()
     self.createButton(
@@ -2389,7 +2475,7 @@ function Phase2_FellowshipStep()
         NextStep = StepType.Phase3
         --Turn 1 with LoME?
         if Turn == 1 and LordsOfMiddleEarth then
-            if getObjectFromGUID(_G.IDs.LoME.ShadowToken1) == nil or getObjectFromGUID(_G.IDs.LoME.ShadowToken2) == nil then
+            if getObjectFromGUID(IDs.LoME.ShadowToken1) == nil or getObjectFromGUID(IDs.LoME.ShadowToken2) == nil then
                 printToAll("UHOH! Couldn't find the Shadow Tokens!\nNo Shadow Tokens could be assigned.")
                 Step = StepType.Empty
             elseif TheBreakingOfTheFellowship then
@@ -2430,8 +2516,8 @@ function Phase2_FellowshipStep()
                     printToAll(
                         "The Shadow receive no Shadow Tokens. (There were no Companions declared outside the Fellowship)."
                     )
-                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(_G.IDs.LoME.ShadowToken1))
-                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(_G.IDs.LoME.ShadowToken2))
+                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
+                    getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
                     Step = StepType.Empty
                 elseif TokenCount == 1 then
                     printToAll(
@@ -2495,23 +2581,25 @@ function Phase2_FellowshipStep()
                     )
                     function ChooseShadowToken1()
                         self.clearButtons()
-                        getObjectFromGUID(_G.IDs.LoME.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
-                        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(_G.IDs.LoME.ShadowToken2))
+                        getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -29 }, false,
+                            true)
+                        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
                         Step = StepType.Empty
                     end
 
                     function ChooseShadowToken2()
                         self.clearButtons()
-                        getObjectFromGUID(_G.IDs.LoME.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
-                        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(_G.IDs.LoME.ShadowToken1))
+                        getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -29 }, false,
+                            true)
+                        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
                         Step = StepType.Empty
                     end
                 else --shadow gets both tokens...
                     printToAll(
                         "The Shadow receive both Shadow Tokens. (There were 2 or more Companions declared outside the Fellowship)."
                     )
-                    getObjectFromGUID(_G.IDs.LoME.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
-                    getObjectFromGUID(_G.IDs.LoME.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -31 }, false, true)
+                    getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
+                    getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -31 }, false, true)
                     Step = StepType.Empty
                 end
             end
@@ -2522,10 +2610,14 @@ function Phase2_FellowshipStep()
 end
 
 function Phase3_HuntAllocationStep()
+    local IDs = Global.call("GetIDs")
     Phase = 3
+
     Global.setVar("Phase", Phase)
     printToAll("Phase 3) Hunt Allocation.")
+
     MoveGamePanel("All")
+
     --display info on panel...
     self.clearButtons()
     self.createButton(
@@ -2599,7 +2691,7 @@ function Phase3_HuntAllocationStep()
 
     if FreePeoplesHuntDiceCount > 0 then
         --allocate the first Shadow dice to the hunt box...
-        local shadowDiceId = _G.IDs.ShadowActionDice[1]
+        local shadowDiceId = IDs.ShadowActionDice[1]
         HuntBoxShadowDiceArray = { shadowDiceId }
 
         local shadowDice = getObjectFromGUID(shadowDiceId)
@@ -3795,6 +3887,8 @@ function CreateExpansionMenu()
 end
 
 function CreateHuntForTheRingMenu()
+    local IDs = Global.call("GetIDs")
+
     self.clearButtons()
     SPTCount = 0
     FPTCount = 0
@@ -3992,29 +4086,33 @@ function CreateHuntForTheRingMenu()
             self.clearButtons()
             printToAll("The Shadow received " .. SPTCount .. " Action Tokens from The Hunt for the Ring.")
             if HftRSPT1 then
-                getObjectFromGUID(_G.IDs.HftR.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -33 }, false, true)
+                getObjectFromGUID(IDs.HftR.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -33 }, false, true)
             end
 
             if HftRSPT2 then
-                getObjectFromGUID(_G.IDs.HftR.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -35 }, false, true)
+                getObjectFromGUID(IDs.HftR.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -35 }, false, true)
             end
 
             printToAll("The Free Peoples received " .. FPTCount .. " Action Tokens from The Hunt for the Ring.")
             if CompactMode then
                 if HftRFPT1 then
-                    getObjectFromGUID(_G.IDs.HftR.FreePeoplesToken1).setPositionSmooth({ -13, 1.02, -33 }, false, true)
+                    getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({ -13, 1.02, -33 }, false,
+                        true)
                 end
 
                 if HftRFPT2 then
-                    getObjectFromGUID(_G.IDs.HftR.FreePeoplesToken2).setPositionSmooth({ -13, 1.02, -35 }, false, true)
+                    getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({ -13, 1.02, -35 }, false,
+                        true)
                 end
             else
                 if HftRFPT1 then
-                    getObjectFromGUID(_G.IDs.HftR.FreePeoplesToken1).setPositionSmooth({ -17, 1.02, 27.5 }, false, true)
+                    getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({ -17, 1.02, 27.5 }, false,
+                        true)
                 end
 
                 if HftRFPT2 then
-                    getObjectFromGUID(_G.IDs.HftR.FreePeoplesToken2).setPositionSmooth({ -19, 1.02, 27.5 }, false, true)
+                    getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({ -19, 1.02, 27.5 }, false,
+                        true)
                 end
             end
 
@@ -4691,6 +4789,8 @@ function CreateStartingGuideMenu()
 end
 
 function SetupExpansionsStep()
+    local IDs = Global.call("GetIDs")
+
     self.clearButtons()
     NextStep = StepType.SetupCompanions
     local TempObj = nil
@@ -4707,47 +4807,47 @@ function SetupExpansionsStep()
         end
 
         --replace cards...
-        getObjectFromGUID(_G.IDs.ShadowStrategyEventDeck).putObject(
-            getObjectFromGUID(_G.IDs.TFoE.ShadowStrategyEventCards)
+        getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(
+            getObjectFromGUID(IDs.TFoE.ShadowStrategyEventCards)
         )
         coroutine.yield(0)
-        getObjectFromGUID(_G.IDs.FreePeoplesCharacterEventDeck).putObject(
-            getObjectFromGUID(_G.IDs.TFoE.FreePeoplesCharacterEventCards)
+        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(
+            getObjectFromGUID(IDs.TFoE.FreePeoplesCharacterEventCards)
         )
-        getObjectFromGUID(_G.IDs.FreePeoplesStrategyEventDeck).putObject(
-            getObjectFromGUID(_G.IDs.TFoE.FreePeoplesStrategyEventCards)
+        getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(
+            getObjectFromGUID(IDs.TFoE.FreePeoplesStrategyEventCards)
         )
         coroutine.yield(0)
         --Remove Free Peoples Strategy Event Card #4, #19, and #22, then remove FP character card #17...
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesCharacterEventDeck, Name = "There and Back Again", Description = "#17;" }
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "There and Back Again", Description = "#17;" }
         )
         coroutine.yield(0)
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesStrategyEventDeck, Name = "Book of Mazarbul", Description = "#4;" }
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Book of Mazarbul", Description = "#4;" }
         )
         coroutine.yield(0)
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
         )
         coroutine.yield(0)
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
         )
         coroutine.yield(0)
         --Remove Shadow Event Card #20 and #22 (Orcs Multiplying Again & Monsters Roused)...
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.ShadowStrategyEventDeck, Name = "Orcs Multiplying Again", Description = "#20;" }
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Orcs Multiplying Again", Description = "#20;" }
         )
         coroutine.yield(0)
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.ShadowStrategyEventDeck, Name = "Monsters Roused", Description = "#22;" }
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Monsters Roused", Description = "#22;" }
         )
         coroutine.yield(0)
         --Remove old Gimli Character Cards...
@@ -4778,12 +4878,12 @@ function SetupExpansionsStep()
         -- If KoME+TFoE then remove Dain and Brand from the game...
         if KingsOfMiddleEarth then
             printToAll("The Fate of Erebor removes King Brand and King Dain Ironfoot from the game.", { 1, 1, 0 })
-            if getObjectFromGUID(_G.IDs.Companions.Brand) ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(_G.IDs.Companions.Brand))
+            if getObjectFromGUID(IDs.Companions.Brand) ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Brand))
             end
 
-            if getObjectFromGUID(_G.IDs.Companions.Dain) ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(_G.IDs.Companions.Dain))
+            if getObjectFromGUID(IDs.Companions.Dain) ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Dain))
             end
 
             if getObjectFromGUID("43a6a7") ~= nil then
@@ -4864,36 +4964,36 @@ function SetupExpansionsStep()
         NextStep = StepType.AlternateCompanionsMenu
         --Replace Elven Rings...
         for I = 1, 3 do
-            getObjectFromGUID(_G.IDs.LoME.ElvenRings[I]).setPositionSmooth(
-                getObjectFromGUID(_G.IDs.ElvenRings[I]).getPosition(),
+            getObjectFromGUID(IDs.LoME.ElvenRings[I]).setPositionSmooth(
+                getObjectFromGUID(IDs.ElvenRings[I]).getPosition(),
                 false,
                 false
             )
-            getObjectFromGUID(_G.IDs.LoME.ElvenRings[I]).setRotation({ 0, 90, 0 })
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(_G.IDs.ElvenRings[I]))
+            getObjectFromGUID(IDs.LoME.ElvenRings[I]).setRotation({ 0, 90, 0 })
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.ElvenRings[I]))
             coroutine.yield(0)
         end
 
         --Add New Event Cards...
-        getObjectFromGUID(_G.IDs.ShadowCharacterEventDeck).putObject(
-            getObjectFromGUID(_G.IDs.LoME.ShadowCharacterEventCards)
+        getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(
+            getObjectFromGUID(IDs.LoME.ShadowCharacterEventCards)
         )
-        getObjectFromGUID(_G.IDs.ShadowStrategyEventDeck).putObject(
-            getObjectFromGUID(_G.IDs.LoME.ShadowStrategyEventCards)
+        getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(
+            getObjectFromGUID(IDs.LoME.ShadowStrategyEventCards)
         )
         coroutine.yield(0)
-        getObjectFromGUID(_G.IDs.FreePeoplesCharacterEventDeck).putObject(
-            getObjectFromGUID(_G.IDs.LoME.FreePeoplesCharacterEventCards)
+        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(
+            getObjectFromGUID(IDs.LoME.FreePeoplesCharacterEventCards)
         )
-        getObjectFromGUID(_G.IDs.FreePeoplesStrategyEventDeck).putObject(
-            getObjectFromGUID(_G.IDs.LoME.FreePeoplesStrategyEventCards)
+        getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(
+            getObjectFromGUID(IDs.LoME.FreePeoplesStrategyEventCards)
         )
         coroutine.yield(0)
         --Remove Shadow Event Card #17 (Balrog of Moria)...
         Global.call(
             "RemoveObjectFromGame",
             {
-                BagID = _G.IDs.ShadowCharacterEventDeck,
+                BagID = IDs.ShadowCharacterEventDeck,
                 Name = "Balrog of Moria",
                 Description = "Card;Event;Character;Shadow;"
             }
@@ -4901,7 +5001,7 @@ function SetupExpansionsStep()
         --Add 2 Smeagol Tiles (if not using BotF)...
         if not TheBreakingOfTheFellowship then
             for T = 1, 2 do
-                getObjectFromGUID(_G.IDs.HuntTileBag).putObject(getObjectFromGUID(_G.IDs.LoME.SmeagolTiles[T]))
+                getObjectFromGUID(IDs.HuntTileBag).putObject(getObjectFromGUID(IDs.LoME.SmeagolTiles[T]))
                 coroutine.yield(0)
             end
         end
@@ -4963,27 +5063,27 @@ function SetupExpansionsStep()
         --debuggg
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesCharacterEventDeck, Name = "Gwaihir the Windlord", Description = "#15;" }
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Gwaihir the Windlord", Description = "#15;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesCharacterEventDeck, Name = "The Eagles are Coming!", Description = "#18;" }
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Eagles are Coming!", Description = "#18;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Treebeard", Description = "#19;" }
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Treebeard", Description = "#19;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Huorns", Description = "#20;" }
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Huorns", Description = "#20;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Entmoot", Description = "#21;" }
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Entmoot", Description = "#21;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesCharacterEventDeck, Name = "Dead Men of Dunharrow", Description = "#22;" }
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Dead Men of Dunharrow", Description = "#22;" }
         )
         coroutine.yield(0)
         --Remove S cards
@@ -4991,40 +5091,40 @@ function SetupExpansionsStep()
         --debuggg
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.ShadowCharacterEventDeck, Name = "Shelob's Lair", Description = "#1;" }
+            { BagID = IDs.ShadowCharacterEventDeck, Name = "Shelob's Lair", Description = "#1;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.ShadowStrategyEventDeck, Name = "Corsairs of Umbar", Description = "#10;" }
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Corsairs of Umbar", Description = "#10;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.ShadowStrategyEventDeck, Name = "Rage of the Dunlendings", Description = "#11;" }
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Rage of the Dunlendings", Description = "#11;" }
         )
         coroutine.yield(0)
         --Add New cards
         log(" Adding FP Event Cards...")
         --debuggg
-        TempObj = getObjectFromGUID(_G.IDs.WoME.FreePeoplesEventCards)
+        TempObj = getObjectFromGUID(IDs.WoME.FreePeoplesEventCards)
         coroutine.yield(0)
         log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
-        getObjectFromGUID(_G.IDs.FreePeoplesCharacterEventDeck).putObject(TempObj)
+        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(TempObj)
         repeat
             coroutine.yield(0)
         until TempObj == nil
         log(" Adding S Event Cards...")
         --debuggg
-        TempObj = getObjectFromGUID(_G.IDs.WoME.NotOnAnybodysSideCard)
+        TempObj = getObjectFromGUID(IDs.WoME.NotOnAnybodysSideCard)
         coroutine.yield(0)
         log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
-        getObjectFromGUID(_G.IDs.ShadowCharacterEventDeck).putObject(TempObj)
+        getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(TempObj)
         repeat
             coroutine.yield(0)
         until TempObj == nil
-        TempObj = getObjectFromGUID(_G.IDs.WoME.ShadowEventCards)
+        TempObj = getObjectFromGUID(IDs.WoME.ShadowEventCards)
         coroutine.yield(0)
         log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
-        getObjectFromGUID(_G.IDs.ShadowStrategyEventDeck).putObject(TempObj)
+        getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(TempObj)
         repeat
             coroutine.yield(0)
         until TempObj == nil
@@ -5086,48 +5186,48 @@ function SetupExpansionsStep()
         --add KoME hunt tiles into hunt pool...
         for O, Obj in pairs(getAllObjects()) do
             if Obj.getName() == "Hunt Tile" and string.find(Obj.getDescription(), "KoME;") ~= nil then
-                getObjectFromGUID(_G.IDs.HuntTileBag).putObject(Obj)
+                getObjectFromGUID(IDs.HuntTileBag).putObject(Obj)
             end
             -- If kome hunt tile
-            getObjectFromGUID(_G.IDs.HuntTileBag).shuffle()
+            getObjectFromGUID(IDs.HuntTileBag).shuffle()
         end
         -- for O,Obj
         --Remove Event Cards...
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesCharacterEventDeck, Name = "House of the Stewards", Description = "#23;" }
+            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "House of the Stewards", Description = "#23;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesStrategyEventDeck, Name = "Wisdom of Elrond", Description = "#8;" }
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Wisdom of Elrond", Description = "#8;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesStrategyEventDeck, Name = "Riders of Theoden", Description = "#16;" }
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Riders of Theoden", Description = "#16;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.FreePeoplesStrategyEventDeck, Name = "Thranduil's Archers", Description = "#24;" }
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Thranduil's Archers", Description = "#24;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.ShadowStrategyEventDeck, Name = "Return to Valinor", Description = "#1;" }
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Return to Valinor", Description = "#1;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.ShadowStrategyEventDeck, Name = "Denethor's Folly", Description = "#3;" }
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Denethor's Folly", Description = "#3;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.ShadowStrategyEventDeck, Name = "Threats and Promises", Description = "#5;" }
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Threats and Promises", Description = "#5;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.ShadowStrategyEventDeck, Name = "Stormcrow", Description = "#6;" }
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "Stormcrow", Description = "#6;" }
         )
         Global.call(
             "RemoveObjectFromGame",
-            { BagID = _G.IDs.ShadowStrategyEventDeck, Name = "The King is Revealed", Description = "#18;" }
+            { BagID = IDs.ShadowStrategyEventDeck, Name = "The King is Revealed", Description = "#18;" }
         )
         -- If The Fate of Erebot is used then do not swap 2 of the cards (King Brands MEn and Dain Ironfoot's Guard)...
         if TheFateOfErebor then
@@ -5140,22 +5240,22 @@ function SetupExpansionsStep()
         else --remove the 2 base cards, they will be replaced with the KoME new cards...
             Global.call(
                 "RemoveObjectFromGame",
-                { BagID = _G.IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
+                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
             )
             Global.call(
                 "RemoveObjectFromGame",
-                { BagID = _G.IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
+                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
             )
         end
 
         --Add New Event Cards...
-        getObjectFromGUID(_G.IDs.ShadowCharacterEventDeck).putObject(getObjectFromGUID("70fc9b"))
+        getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(getObjectFromGUID("70fc9b"))
         coroutine.yield(0)
-        getObjectFromGUID(_G.IDs.ShadowStrategyEventDeck).putObject(getObjectFromGUID("cc76b8"))
+        getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(getObjectFromGUID("cc76b8"))
         coroutine.yield(0)
-        getObjectFromGUID(_G.IDs.FreePeoplesCharacterEventDeck).putObject(getObjectFromGUID("0534ed"))
+        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(getObjectFromGUID("0534ed"))
         coroutine.yield(0)
-        getObjectFromGUID(_G.IDs.FreePeoplesStrategyEventDeck).putObject(getObjectFromGUID("890b46"))
+        getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(getObjectFromGUID("890b46"))
         coroutine.yield(0)
     else --Excluded: Kings of MIddle-Earth...
         --Clean up WoME Components...
@@ -5526,6 +5626,8 @@ function CreateAlternateCompanionMenu()
 end
 
 function SetupCompanionsStep()
+    local IDs = Global.call("GetIDs")
+
     self.clearButtons()
     self.createButton(
         {
@@ -5553,7 +5655,7 @@ function SetupCompanionsStep()
         then
             for C = 1, #CompanionNames do
                 if Obj.getName() == CompanionNames[C] then
-                    _G.IDs.CompanionCards[C] = Obj.getGUID()
+                    IDs.CompanionCards[C] = Obj.getGUID()
                     coroutine.yield(0)
                     break
                 end
@@ -5574,13 +5676,13 @@ function SetupCompanionsStep()
 
     --pause 30 frames after all companions are in the grave. Entrox Licher
     --pull back out companion cards face down and place them on the board...
-    for C = 2, #_G.IDs.CompanionCards do
+    for C = 2, #IDs.CompanionCards do
         coroutine.yield(0)
         local CardObj =
             getObjectFromGUID(GraveBagId).takeObject(
                 {
                     smooth = true,
-                    guid = _G.IDs.CompanionCards[C],
+                    guid = IDs.CompanionCards[C],
                     rotation = { 0, 180, 180 },
                     position = { 32.9, 3 - 0.2 * C, 20.15 }
                 }
@@ -5600,7 +5702,7 @@ function SetupCompanionsStep()
     --drop guide on top of the stack face up...
     local CardObj =
         getObjectFromGUID(GraveBagId).takeObject(
-            { smooth = true, guid = _G.IDs.CompanionCards[1], rotation = { 0, 180, 0 }, position = { 32.9, 9, 20.15 } }
+            { smooth = true, guid = IDs.CompanionCards[1], rotation = { 0, 180, 0 }, position = { 32.9, 9, 20.15 } }
         )
     coroutine.yield(0)
     CardObj.setDescription(CardObj.getDescription() .. "Fellowship;")
@@ -5608,7 +5710,7 @@ function SetupCompanionsStep()
     --wait for fellowship guide card to exist...
     repeat
         coroutine.yield(0)
-    until getObjectFromGUID(_G.IDs.CompanionCards[1]) ~= nil
+    until getObjectFromGUID(IDs.CompanionCards[1]) ~= nil
 
     Global.call("PlaySound", { ID = 1 })
 
@@ -5616,11 +5718,11 @@ function SetupCompanionsStep()
     local Done = false
     repeat
         coroutine.yield(0)
-        if getObjectFromGUID(_G.IDs.CompanionCards[1]) ~= nil then
+        if getObjectFromGUID(IDs.CompanionCards[1]) ~= nil then
             Done =
-                getObjectFromGUID(_G.IDs.CompanionCards[1]).getPosition().x >= 32.8 and
-                getObjectFromGUID(_G.IDs.CompanionCards[1]).getPosition().y <= 1.2 and
-                getObjectFromGUID(_G.IDs.CompanionCards[1]).getPosition().z >= 20.1
+                getObjectFromGUID(IDs.CompanionCards[1]).getPosition().x >= 32.8 and
+                getObjectFromGUID(IDs.CompanionCards[1]).getPosition().y <= 1.2 and
+                getObjectFromGUID(IDs.CompanionCards[1]).getPosition().z >= 20.1
         else --card must have merged into deck...
             Done = true
         end
@@ -5934,6 +6036,7 @@ function SetupCompanionsStep()
 end
 
 function GatherActionDiceCoroutine()
+    local IDs = Global.call("GetIDs")
     local FR = 180 --FPP Dice Y orientation.
     local SR = 0 --SP Dice Y orientation
 
@@ -5950,7 +6053,7 @@ function GatherActionDiceCoroutine()
     for O, Obj in pairs(
         Physics.cast(
             {
-                origin = getObjectFromGUID(_G.IDs.ShadowUsedDiceArea).getPosition(),
+                origin = getObjectFromGUID(IDs.ShadowUsedDiceArea).getPosition(),
                 direction = { 0, 1, 0 },
                 type = 3,
                 size = { 9, 5, 9 },
@@ -5975,9 +6078,9 @@ function GatherActionDiceCoroutine()
                 getObjectFromGUID(GraveBagId).putObject(Obj.hit_object)
             elseif
                 InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
-                Obj.hit_object.getGUID() == _G.IDs.GothmogDice
+                Obj.hit_object.getGUID() == IDs.GothmogDice
             then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(_G.IDs.GothmogDice))
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.GothmogDice))
                 broadcastToAll(
                     "The Witch-King: The Black Captain has entered play.  Gothmog's die has been eliminated."
                 )
@@ -6023,9 +6126,9 @@ function GatherActionDiceCoroutine()
                 getObjectFromGUID(GraveBagId).putObject(Obj.hit_object)
             elseif
                 InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
-                Obj.hit_object.getGUID() == _G.IDs.GothmogDice
+                Obj.hit_object.getGUID() == IDs.GothmogDice
             then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(_G.IDs.GothmogDice))
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.GothmogDice))
                 broadcastToAll(
                     "The Witch-King: The Black Captain has entered play.  Gothmog's die has been eliminated."
                 )
@@ -6053,7 +6156,7 @@ function GatherActionDiceCoroutine()
                     then
                         if
                             InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
-                            Obj.getGUID() == _G.IDs.GothmogDice
+                            Obj.getGUID() == IDs.GothmogDice
                         then
                             --do not gather gothmog when the black captain is in play...
                         else
@@ -6092,7 +6195,7 @@ function GatherActionDiceCoroutine()
                 then
                     if
                         InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
-                        Obj.hit_object.getGUID() == _G.IDs.GothmogDice
+                        Obj.hit_object.getGUID() == IDs.GothmogDice
                     then
                         --do not gather gothmog when the black captain is in play...
                     else
@@ -6111,7 +6214,7 @@ function GatherActionDiceCoroutine()
     for O, Obj in pairs(
         Physics.cast(
             {
-                origin = getObjectFromGUID(_G.IDs.ShadowDiceBox).getPosition(),
+                origin = getObjectFromGUID(IDs.ShadowDiceBox).getPosition(),
                 direction = { 0, 1, 0 },
                 type = 3,
                 size = { 10, 5, 13 },
@@ -6124,7 +6227,7 @@ function GatherActionDiceCoroutine()
         if DiceIndex < #Spots.ShadowDiceOut and string.find(Obj.hit_object.getDescription(), "Dice;") ~= nil then
             if
                 InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
-                Obj.hit_object.getGUID() == _G.IDs.GothmogDice
+                Obj.hit_object.getGUID() == IDs.GothmogDice
             then
                 --do not gather gothmog when the black captain is in play...
             else
@@ -6142,7 +6245,7 @@ function GatherActionDiceCoroutine()
     for O, Obj in pairs(
         Physics.cast(
             {
-                origin = getObjectFromGUID(_G.IDs.FreePeoplesUsedDiceArea).getPosition(),
+                origin = getObjectFromGUID(IDs.FreePeoplesUsedDiceArea).getPosition(),
                 direction = { 0, 1, 0 },
                 type = 3,
                 size = { 9, 5, 9 },
@@ -6179,7 +6282,7 @@ function GatherActionDiceCoroutine()
     for _, Obj in pairs(
         Physics.cast(
             {
-                origin = getObjectFromGUID(_G.IDs.FreePeoplesDiceBox).getPosition(),
+                origin = getObjectFromGUID(IDs.FreePeoplesDiceBox).getPosition(),
                 direction = { 0, 1, 0 },
                 type = 3,
                 size = { 10, 5, 13 },
@@ -6296,9 +6399,9 @@ function GatherActionDiceCoroutine()
 
     --FP gathers 4 base dice...
     for I = 1, 4 do
-        if getObjectFromGUID(_G.IDs.FreePeoplesActionDice[I]) ~= nil then
+        if getObjectFromGUID(IDs.FreePeoplesActionDice[I]) ~= nil then
             DiceIndex = DiceIndex + 1
-            getObjectFromGUID(_G.IDs.FreePeoplesActionDice[I]).setPositionSmooth(
+            getObjectFromGUID(IDs.FreePeoplesActionDice[I]).setPositionSmooth(
                 Spots.FreePeoplesDiceBox[DiceIndex],
                 false,
                 true
@@ -6311,9 +6414,9 @@ function GatherActionDiceCoroutine()
     coroutine.yield(0)
     --FP gathers +1 extra dice if Gandalf the White is in play...
     if InPlay({ Name = "Gandalf the White: Emissary from the West", Description = "Character;" }) then
-        if getObjectFromGUID(_G.IDs.FreePeoplesActionDice[5]) ~= nil then
+        if getObjectFromGUID(IDs.FreePeoplesActionDice[5]) ~= nil then
             DiceIndex = DiceIndex + 1
-            getObjectFromGUID(_G.IDs.FreePeoplesActionDice[5]).setPositionSmooth(
+            getObjectFromGUID(IDs.FreePeoplesActionDice[5]).setPositionSmooth(
                 Spots.FreePeoplesDiceBox[DiceIndex],
                 false,
                 true
@@ -6325,9 +6428,9 @@ function GatherActionDiceCoroutine()
     coroutine.yield(0)
     --FP gathers +1 extra dice if Aragorn is in play...
     if InPlay({ Name = "Aragorn: Heir to Isildur", Description = "Character;" }) then
-        if getObjectFromGUID(_G.IDs.FreePeoplesActionDice[6]) ~= nil then
+        if getObjectFromGUID(IDs.FreePeoplesActionDice[6]) ~= nil then
             DiceIndex = DiceIndex + 1
-            getObjectFromGUID(_G.IDs.FreePeoplesActionDice[6]).setPositionSmooth(
+            getObjectFromGUID(IDs.FreePeoplesActionDice[6]).setPositionSmooth(
                 Spots.FreePeoplesDiceBox[DiceIndex],
                 false,
                 true
@@ -6340,38 +6443,38 @@ function GatherActionDiceCoroutine()
     --FP gathers Narya action dice if gandalf the gray (keeper of narya) is the guide during the recover action, and there was at least 1 FP dice in the hunt box, and dice is not removed from game (Narya is in the pool if it is round 1 and Gandalf keeper is the guide)...
     if
         GuideName == "Gandalf the Grey: Keeper of Narya" and
-        (FreePeoplesHuntDiceCount > 0 and getObjectFromGUID(_G.IDs.NaryaDice) ~= nil or Round == 1)
+        (FreePeoplesHuntDiceCount > 0 and getObjectFromGUID(IDs.NaryaDice) ~= nil or Round == 1)
     then
         DiceIndex = DiceIndex + 1
-        getObjectFromGUID(_G.IDs.NaryaDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false, true)
+        getObjectFromGUID(IDs.NaryaDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false, true)
     end
 
     coroutine.yield(0)
     --FP add the Nenya dice if lady Galadriel is in play, and dice is not removed from game...
     if
         InPlay({ Name = "Lady Galadriel: Keeper of Nenya", Description = "Character;" }) and
-        getObjectFromGUID(_G.IDs.NenyaDice) ~= nil
+        getObjectFromGUID(IDs.NenyaDice) ~= nil
     then
         DiceIndex = DiceIndex + 1
-        getObjectFromGUID(_G.IDs.NenyaDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false, true)
+        getObjectFromGUID(IDs.NenyaDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false, true)
     end
 
     coroutine.yield(0)
     --FP add the Vilya dice if Lord Elrond is in play, and dice is not removed from game...
     if
         InPlay({ Name = "Lord Elrond: Keeper of Vilya", Description = "Character;" }) and
-        getObjectFromGUID(_G.IDs.VilyaDice) ~= nil
+        getObjectFromGUID(IDs.VilyaDice) ~= nil
     then
         DiceIndex = DiceIndex + 1
-        getObjectFromGUID(_G.IDs.VilyaDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false, true)
+        getObjectFromGUID(IDs.VilyaDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false, true)
     end
 
     coroutine.yield(0)
     --FP gathers faction dice if a faction is any FP faction card is flipped over (active)...
     if FactionActive({ Faction = "DeadMen" }) or FactionActive({ Faction = "Ents" }) or FactionActive({ Faction = "Eagles" }) then
-        if getObjectFromGUID(_G.IDs.FreePeoplesFactionDice) ~= nil then
+        if getObjectFromGUID(IDs.FreePeoplesFactionDice) ~= nil then
             DiceIndex = DiceIndex + 1
-            getObjectFromGUID(_G.IDs.FreePeoplesFactionDice).setPositionSmooth(
+            getObjectFromGUID(IDs.FreePeoplesFactionDice).setPositionSmooth(
                 Spots.FreePeoplesDiceBox[DiceIndex],
                 false,
                 true
@@ -6383,19 +6486,20 @@ function GatherActionDiceCoroutine()
 
     coroutine.yield(0)
     --FP add the ruler dice if a Awakened Ruler is in play...
-    if getObjectFromGUID(_G.IDs.FreePeoplesRulerDice) ~= nil and InPlay({ Name = "(Awakened)", Description = "Ruler;" }) then
+    if getObjectFromGUID(IDs.FreePeoplesRulerDice) ~= nil and InPlay({ Name = "(Awakened)", Description = "Ruler;" }) then
         DiceIndex = DiceIndex + 1
-        getObjectFromGUID(_G.IDs.FreePeoplesRulerDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false, true)
+        getObjectFromGUID(IDs.FreePeoplesRulerDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false,
+            true)
     end
 
     coroutine.yield(0)
     --Shadow Peoples gathers 7 base dice...
     DiceIndex = 0
     for I = 1, 7 do
-        if getObjectFromGUID(_G.IDs.ShadowActionDice[I]) ~= nil then
+        if getObjectFromGUID(IDs.ShadowActionDice[I]) ~= nil then
             DiceIndex = DiceIndex + 1
-            getObjectFromGUID(_G.IDs.ShadowActionDice[I]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex])
-            getObjectFromGUID(_G.IDs.ShadowActionDice[I]).setRotation({ 0, SR, 0 })
+            getObjectFromGUID(IDs.ShadowActionDice[I]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex])
+            getObjectFromGUID(IDs.ShadowActionDice[I]).setRotation({ 0, SR, 0 })
         else
             print("Uhoh! Can't find Shadow Action Dice #" .. D .. "!")
         end
@@ -6404,9 +6508,10 @@ function GatherActionDiceCoroutine()
     coroutine.yield(0)
     --Shadow add +1 extra dice if Saruman is in play...
     if InPlay({ Name = "Saruman: Corrupted Wizard", Description = "Minion;" }) then
-        if getObjectFromGUID(_G.IDs.ShadowActionDice[8]) ~= nil then
+        if getObjectFromGUID(IDs.ShadowActionDice[8]) ~= nil then
             DiceIndex = DiceIndex + 1
-            getObjectFromGUID(_G.IDs.ShadowActionDice[8]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
+            getObjectFromGUID(IDs.ShadowActionDice[8]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false,
+                true)
         else
             print("Uhoh! Can't find Shadow Action Dice #8 (Saruman)!")
         end
@@ -6414,9 +6519,10 @@ function GatherActionDiceCoroutine()
     coroutine.yield(0)
     --Shadow add +1 extra dice if a Witch-king minion is in play...
     if InPlay({ Name = "The Witch", Description = "Minion;" }) then
-        if getObjectFromGUID(_G.IDs.ShadowActionDice[9]) ~= nil then
+        if getObjectFromGUID(IDs.ShadowActionDice[9]) ~= nil then
             DiceIndex = DiceIndex + 1
-            getObjectFromGUID(_G.IDs.ShadowActionDice[9]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
+            getObjectFromGUID(IDs.ShadowActionDice[9]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false,
+                true)
         else
             print("Uhoh! Can't find Shadow Action Dice #9 (The Witch-King)!")
         end
@@ -6424,9 +6530,10 @@ function GatherActionDiceCoroutine()
     coroutine.yield(0)
     --Shadow add +1 extra dice if a Mouth of Sauron minion is in play...
     if InPlay({ Name = "The Mouth of Sauron", Description = "Minion;" }) then
-        if getObjectFromGUID(_G.IDs.ShadowActionDice[10]) ~= nil then
+        if getObjectFromGUID(IDs.ShadowActionDice[10]) ~= nil then
             DiceIndex = DiceIndex + 1
-            getObjectFromGUID(_G.IDs.ShadowActionDice[10]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
+            getObjectFromGUID(IDs.ShadowActionDice[10]).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false,
+                true)
         else
             print("Uhoh! Can't find Shadow Action Dice #10 (The Mouth of Sauron)!")
         end
@@ -6435,27 +6542,27 @@ function GatherActionDiceCoroutine()
     --Shadow add Balrog dice if Balrog is in play, and dice is not removed from game...
     if
         InPlay({ Name = "Balrog: Evil of the Ancient World", Description = "Minion;" }) and
-        getObjectFromGUID(_G.IDs.BalrogDice) ~= nil
+        getObjectFromGUID(IDs.BalrogDice) ~= nil
     then
         DiceIndex = DiceIndex + 1
-        getObjectFromGUID(_G.IDs.BalrogDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
+        getObjectFromGUID(IDs.BalrogDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
     end
 
     coroutine.yield(0)
     --Shadow add Gothmog dice if Gothmog is in play, and dice is not removed from game...
     if
         InPlay({ Name = "Gothmog: Lieutenant of Morgul", Description = "Minion;" }) and
-        getObjectFromGUID(_G.IDs.GothmogDice) ~= nil
+        getObjectFromGUID(IDs.GothmogDice) ~= nil
     then
         DiceIndex = DiceIndex + 1
-        getObjectFromGUID(_G.IDs.GothmogDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
+        getObjectFromGUID(IDs.GothmogDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
     end
 
     coroutine.yield(0)
     --Shadow add the ruler dice if an Dark Chieftain Ruler is in play...
-    if getObjectFromGUID(_G.IDs.ShadowRulerDice) ~= nil and InPlay({ Description = "DarkChieftain;" }) then
+    if getObjectFromGUID(IDs.ShadowRulerDice) ~= nil and InPlay({ Description = "DarkChieftain;" }) then
         DiceIndex = DiceIndex + 1
-        getObjectFromGUID(_G.IDs.ShadowRulerDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
+        getObjectFromGUID(IDs.ShadowRulerDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
     end
 
     coroutine.yield(0)
@@ -6464,9 +6571,10 @@ function GatherActionDiceCoroutine()
         FactionActive({ Faction = "Spiders" }) or FactionActive({ Faction = "Corsairs" }) or
         FactionActive({ Faction = "Dunlendings" })
     then
-        if getObjectFromGUID(_G.IDs.ShadowFactionDice) ~= nil then
+        if getObjectFromGUID(IDs.ShadowFactionDice) ~= nil then
             DiceIndex = DiceIndex + 1
-            getObjectFromGUID(_G.IDs.ShadowFactionDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
+            getObjectFromGUID(IDs.ShadowFactionDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false,
+                true)
         else
             print("Uhoh! Can't find Shadow Faction Dice!")
         end
@@ -6477,6 +6585,7 @@ function GatherActionDiceCoroutine()
 end
 
 function RollActionDiceCoroutine()
+    local IDs = Global.call("GetIDs")
     local FR = 180 --FPP Dice Y orientation.
     local SR = 0 --SP Dice Y orientation
     if CompactMode then
@@ -6484,12 +6593,12 @@ function RollActionDiceCoroutine()
     end
 
     --roll, then organize all dice in the Diceboxes...
-    local ShadowRollAreaPosition = getObjectFromGUID(_G.IDs.ShadowDiceBox).getPosition()
-    local FreePeoplesRollAreaPosition = getObjectFromGUID(_G.IDs.FreePeoplesDiceBox).getPosition()
+    local ShadowRollAreaPosition = getObjectFromGUID(IDs.ShadowDiceBox).getPosition()
+    local FreePeoplesRollAreaPosition = getObjectFromGUID(IDs.FreePeoplesDiceBox).getPosition()
     local RollAreaSize = { 10, 5, 13 }
     if CompactMode then
-        ShadowRollAreaPosition = getObjectFromGUID(_G.IDs.ShadowUsedDiceArea).getPosition()
-        FreePeoplesRollAreaPosition = getObjectFromGUID(_G.IDs.FreePeoplesUsedDiceArea).getPosition()
+        ShadowRollAreaPosition = getObjectFromGUID(IDs.ShadowUsedDiceArea).getPosition()
+        FreePeoplesRollAreaPosition = getObjectFromGUID(IDs.FreePeoplesUsedDiceArea).getPosition()
         RollAreaSize = { 9, 5, 9 }
     end
 
@@ -6808,20 +6917,22 @@ end
 
 -- Params: Faction=""  ex: DeadMen, Ents, Eagles, Spiders, Dunlendings, Corsairs
 function FactionActive(Params)
+    local IDs = Global.call("GetIDs")
+
     --make sure WoME expansion is in play...
     if WarriorsOfMiddleEarth == false then
         return false
     end
 
     --make sure faction card exists...
-    if getObjectFromGUID(_G.IDs.WoME[Params.Faction .. "FactionCard"]) == nil then
+    if getObjectFromGUID(IDs.WoME[Params.Faction .. "FactionCard"]) == nil then
         return false
     end
 
     --make sure faction card is flipped over...
     if
-        getObjectFromGUID(_G.IDs.WoME[Params.Faction .. "FactionCard"]).getRotation().z >= 90 and
-        getObjectFromGUID(_G.IDs.WoME[Params.Faction .. "FactionCard"]).getRotation().z <= 270
+        getObjectFromGUID(IDs.WoME[Params.Faction .. "FactionCard"]).getRotation().z >= 90 and
+        getObjectFromGUID(IDs.WoME[Params.Faction .. "FactionCard"]).getRotation().z <= 270
     then
         return true
     else
@@ -6839,7 +6950,7 @@ function CheckDeck(Params)
             for _, Obj in pairs(
                 Physics.cast(
                     {
-                        origin = position,
+                        origin = Params.position,
                         direction = { 0, 1, 0 },
                         type = 2,
                         size = { 1, 1, 1 },

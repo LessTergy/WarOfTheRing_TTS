@@ -68,16 +68,14 @@ function ReturnCards(Obj, Color)
 end
 
 function GetDeckID()
+    local IDs = Global.call("GetIDs")
+
     --detect the deck id
     for _, Obj in pairs(Physics.cast({ origin = self.getPosition(), direction = { 0, 1, 0 }, type = 2, size = { 1, 1, 1 }, orientation = { 0, 0, 0 }, max_distance = 0, debug = false })) do
         if Obj.hit_object.tag == "Deck" then
             Obj.hit_object.setName(Side .. " Call to Battle Cards (WoME)")
             Obj.hit_object.setDescription("Deck;CallToBattle;" .. Side .. ";WoME;")
-            local GamePanelID = Global.getVar("GamePanelID")
-            if getObjectFromGUID(GamePanelID) ~= nil then
-                local IDs = _G.IDs
-                IDs.WoME[Side .. "CallToBattleDeck"] = Obj.hit_object.getGUID()
-            end
+            IDs.WoME[Side .. "CallToBattleDeck"] = Obj.hit_object.getGUID()
             return Obj.hit_object.getGUID()
         end
     end

@@ -3445,7 +3445,7 @@ end
 
 function FellowshipMenu()
     SearchingFellowship = false
-    local IDs = _G.IDs
+    local IDs = GetIDs()
     getObjectFromGUID(IDs.Cards.RingBearers).clearButtons()
     if CompactMode then
         getObjectFromGUID(IDs.Cards.RingBearers).createButton(
@@ -3571,7 +3571,7 @@ end
 function SearchFellowship(ButtonObj, PlayerColor)
     function SearchFellowshipCoroutine()
         SearchingFellowship = true
-        local IDs = _G.IDs
+        local IDs = GetIDs()
         getObjectFromGUID(IDs.Cards.RingBearers).clearButtons()
         local Index = 0
         local List = {}
@@ -4164,7 +4164,7 @@ function ReturnCompanionToFellowship(CompanionObj)
 end
 
 function SeparateCardFromFellowship(CardObj)
-    local IDs = _G.IDs
+    local IDs = GetIDs()
     local RBObj = getObjectFromGUID(IDs.Companions.TheRingBearers)
     local SeparateRegion = ReadTag({ Text = RBObj.getGMNotes(), Var = "Region", Default = "(Unknown Region)" })
     local FellowshipTrack = math.floor((getObjectFromGUID("6b62ef").getPosition().x - 5.0) / 1.58)
@@ -4271,7 +4271,7 @@ function SeparateCardFromFellowship(CardObj)
 end
 
 function BuildFellowshipDeck()
-    local IDs = _G.IDs
+    local IDs = GetIDs()
     getObjectFromGUID(IDs.Cards.RingBearers).clearButtons()
     local Index = 0
     for O, Obj in pairs(getAllObjects()) do

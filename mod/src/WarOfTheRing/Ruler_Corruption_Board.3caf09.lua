@@ -1,4 +1,3 @@
-GamePanelID = "6158a0"
 BrandID = "3d983d"
 DainID = "554922"
 DenethorID = "79b781"
@@ -13,13 +12,12 @@ TheodenStatus = ""
 ThranduilStatus = ""
 
 function onLoad(save_state)
-    GamePanelID = Global.getVar("GamePanelID")
     RefreshPanel()
 end
 
 function RefreshPanel()
     self.clearButtons()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
 
     BrandID = IDs.Companions.Brand
     DainID = IDs.Companions.Dain
@@ -317,7 +315,7 @@ function DrawTileCorruption(Object, PlayerColor)
 end
 
 function GrayBrand()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     BrandID = IDs.Companions.Brand
     if getObjectFromGUID(BrandID) ~= nil then
         getObjectFromGUID(BrandID).setName("Brand: King of Dale")
@@ -331,7 +329,7 @@ function GrayBrand()
 end
 
 function GrayDain()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     DainID = IDs.Companions.Dain
     if getObjectFromGUID(DainID) ~= nil then
         getObjectFromGUID(DainID).setName("Dain: King Under the Mountain")
@@ -345,7 +343,7 @@ function GrayDain()
 end
 
 function GrayDenethor()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     DenethorID = IDs.Companions.Denethor
     if getObjectFromGUID(DenethorID) ~= nil then
         getObjectFromGUID(DenethorID).setName("Denethor: Lord Steward of Gondor")
@@ -359,7 +357,7 @@ function GrayDenethor()
 end
 
 function GrayTheoden()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     TheodenID = IDs.Companions.Theoden
     if getObjectFromGUID(TheodenID) ~= nil then
         getObjectFromGUID(TheodenID).setName("Theoden: King of the Riddermark")
@@ -373,7 +371,7 @@ function GrayTheoden()
 end
 
 function GrayThranduil()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     ThranduilID = IDs.Companions.Thranduil
     if getObjectFromGUID(ThranduilID) ~= nil then
         getObjectFromGUID(ThranduilID).setName("Thranduil: King of the Woodland Realm")
@@ -387,7 +385,7 @@ function GrayThranduil()
 end
 
 function WhiteBrand()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     BrandID = IDs.Companions.Brand
     if getObjectFromGUID(BrandID) ~= nil then
         getObjectFromGUID(BrandID).setName("Brand: King of Dale (Awakened)")
@@ -398,7 +396,7 @@ function WhiteBrand()
 end
 
 function WhiteDain()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     DainID = IDs.Companions.Dain
     if getObjectFromGUID(DainID) ~= nil then
         getObjectFromGUID(DainID).setName("Dain: King Under the Mountain (Awakened)")
@@ -409,7 +407,7 @@ function WhiteDain()
 end
 
 function WhiteDenethor()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     DenethorID = IDs.Companions.Denethor
     if getObjectFromGUID(DenethorID) ~= nil then
         getObjectFromGUID(DenethorID).setName("Denethor: Lord Steward of Gondor (Awakened)")
@@ -420,7 +418,7 @@ function WhiteDenethor()
 end
 
 function WhiteTheoden()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     TheodenID = IDs.Companions.Theoden
     if getObjectFromGUID(TheodenID) ~= nil then
         getObjectFromGUID(TheodenID).setName("Theoden: King of the Riddermark (Awakened)")
@@ -431,7 +429,7 @@ function WhiteTheoden()
 end
 
 function WhiteThranduil()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     ThranduilID = IDs.Companions.Thranduil
     if getObjectFromGUID(ThranduilID) ~= nil then
         getObjectFromGUID(ThranduilID).setName("Thranduil: King of the Woodland Realm (Awakened)")
@@ -442,7 +440,7 @@ function WhiteThranduil()
 end
 
 function BlackBrand()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     BrandID = IDs.Companions.Brand
     if getObjectFromGUID(BrandID) ~= nil then
         getObjectFromGUID(BrandID).setName("Brand: Corrupted Ruler")
@@ -457,7 +455,7 @@ function BlackBrand()
 end
 
 function BlackDain()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     DainID = IDs.Companions.Dain
     if getObjectFromGUID(DainID) ~= nil then
         getObjectFromGUID(DainID).setName("Dain: Corrupted Ruler")
@@ -472,7 +470,7 @@ function BlackDain()
 end
 
 function BlackDenethor()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     DenethorID = IDs.Companions.Denethor
     if getObjectFromGUID(DenethorID) ~= nil then
         getObjectFromGUID(DenethorID).setName("Denethor: Corrupted Ruler")
@@ -487,7 +485,7 @@ function BlackDenethor()
 end
 
 function BlackTheoden()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     TheodenID = IDs.Companions.Theoden
     if getObjectFromGUID(TheodenID) ~= nil then
         getObjectFromGUID(TheodenID).setName("Theoden: Corrupted Ruler")
@@ -502,7 +500,7 @@ function BlackTheoden()
 end
 
 function BlackThranduil()
-    local IDs = _G.IDs
+    local IDs = Global.call("GetIDs")
     ThranduilID = IDs.Companions.Thranduil
     if getObjectFromGUID(ThranduilID) ~= nil then
         getObjectFromGUID(ThranduilID).setName("Thranduil: Corrupted Ruler")
