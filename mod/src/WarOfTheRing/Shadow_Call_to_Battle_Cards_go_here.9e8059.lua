@@ -75,9 +75,8 @@ function GetDeckID()
             Obj.hit_object.setDescription("Deck;CallToBattle;" .. Side .. ";WoME;")
             local GamePanelID = Global.getVar("GamePanelID")
             if getObjectFromGUID(GamePanelID) ~= nil then
-                local IDs = getObjectFromGUID(GamePanelID).getTable("IDs")
+                local IDs = _G.IDs
                 IDs.WoME[Side .. "CallToBattleDeck"] = Obj.hit_object.getGUID()
-                getObjectFromGUID(GamePanelID).setTable("IDs", IDs)
             end
             return Obj.hit_object.getGUID()
         end

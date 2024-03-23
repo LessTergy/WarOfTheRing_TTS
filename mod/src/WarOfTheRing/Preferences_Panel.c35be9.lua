@@ -925,8 +925,8 @@ end
 
 function ToggleDicePanels()
     local DPO = nil --dice panel object
-    local DPS = {}  --dice panel spots
-    local DPY = 0   --dice panel fpp y rotation
+    local DPS = {} --dice panel spots
+    local DPY = 0 --dice panel fpp y rotation
 
     for _, Obj in pairs(getAllObjects()) do
         if Obj.getName() == "(Free Peoples Combat Die)" or Obj.getName() == "(Shadow Combat Die)" then
@@ -1436,28 +1436,6 @@ function TryUpdateDiceObject(OldDiceObj)
     end
 
     return newDiceObj
-end
-
--- useless action because we manually update IDs after every settings change
-function UpdateDiceId(description, newDiceObj, IDs)
-    local isShadowDice = string.find(description, "Shadow;") ~= nil
-    local isFreePeopleDice = string.find(description, "FreePeoples;") ~= nil
-    local diceArray = {}
-    local diceIndex = GetDiceIndex(description)
-
-    if isShadowDice then
-        diceArray = IDs.ShadowActionDice
-    elseif isFreePeopleDice then
-        diceArray = IDs.FreePeoplesActionDice
-    end
-
-    diceArray[diceIndex] = newDiceObj.getGUID()
-end
-
-function GetDiceIndex(description)
-    local pattern = "(%d+)of%d+;"
-    local number = string.match(description, pattern)
-    return tonumber(number)
 end
 
 function UpdateMountDoom()

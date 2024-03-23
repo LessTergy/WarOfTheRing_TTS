@@ -1,0 +1,260 @@
+local ShadowActionDice = "Shadow Action Dice"
+local FreePeoplesActionDie = "(Free Peoples Action Die)"
+
+local GothmogDieName = "(Gothmog Die)"
+local BalrogDie = "(Balrog Die)"
+local NaryaActionDie = "(Narya Action Die)"
+local VilyaActionDie = "(Vilya Action Die)"
+local NenyaActionDie = "(Nenya Action Die)"
+
+local ShadowFactionDie = "(Shadow Faction Die)"
+local FreePeoplesFactionDie = "(Free Peoples Faction Die)"
+
+local ShadowRulerDie = "(Shadow Ruler Die)"
+local FreePeoplesRulerDie = "(Free Peoples Ruler Die)"
+
+local IDsBase = {
+    ShadowDiceBox = "9a56a5",
+    FreePeoplesDiceBox = "46d2fc",
+    ShadowUsedDiceArea = "9a38bc",
+    FreePeoplesUsedDiceArea = "028249",
+    FreePeoplesEventDiscardSpot = "b18c8a",
+    ShadowEventDiscardSpot = "61c02b",
+
+    --cards
+    Cards = {
+        RingBearers = "a456d0"
+    },
+    CompanionCards = { "d760ee", "6098c7", "a0deb9", "78f279", "02f2cc", "fcbc2d", "dd1dde", "a456d0" },
+    ElvenRings = { "a37c58", "d67bac", "1cc52c" },
+    FreePeoplesCharacterEventDeck = "ba06c3",
+    FreePeoplesStrategyEventDeck = "240819",
+    ShadowCharacterEventDeck = "8c377e",
+    ShadowStrategyEventDeck = "6508fd",
+    BalrogOfMoriaCard = "c6b2ab",
+    ThereAndBackAgain = "5451db",
+    BookOfMazarbul = "fe4ed6",
+    DainIronfootsGuard = "7b2a9c",
+    KingBrandsMen = "8ce893",
+    OrcsMultiplyingAgain = "c55c62",
+    MonstersRoused = "e3deb5",
+    HuntTileBag = "002387",
+    CompanionBag = "043c9c",
+    FreePeoplesLeaderToken = "74461e",
+    ShadowLeaderToken = "a25766",
+
+    -- expansions
+    LoME = {
+        ElvenRings = { "5e79a3", "08d651", "359ca2" },
+        FreePeoplesStrategyEventCards = "f8df2d",
+        FreePeoplesCharacterEventCards = "846b48",
+        ShadowStrategyEventCards = "b83789",
+        ShadowCharacterEventCards = "35ef06",
+        SmeagolTiles = { "2d25c5", "07eee5", "7bb73b", "2fff89" },
+        ShadowToken1 = "d8b25b", --Move Nazgul and Minions
+        ShadowToken2 = "55ee6d", --Advance a Shadow Nation on the Political Track
+    },
+    WoME = {
+        FreePeoplesFactionDeck = "6897dc",
+        ShadowFactionDeck = "f8a472",
+        FreePeoplesCallToBattleDeck = "d9956f",
+        ShadowCallToBattleDeck = "501b50",
+        FreePeoplesEventCards = "cd7757",
+        ShadowEventCards = "8abdc7",
+        NotOnAnybodysSideCard = "a9fc55",
+        DeadMenFactionCard = "43848f",
+        EntsFactionCard = "114a7d",
+        EaglesFactionCard = "a02da5",
+        SpidersFactionCard = "a2b0b2",
+        CorsairsFactionCard = "c877f9",
+        DunlendingsFactionCard = "de70d2",
+        FreePeoplesFactionDiscardSpot = "2d4c4f",
+        ShadowEventFactionSpot = "bbab30",
+        FreePeoplesCallToBattleSpot = "9fca62",
+        ShadowCallToBattleSpot = "9e8059",
+    },
+    KoME = {
+        RulerTokens = { Brand = "754777", Dain = "554922", Denethor = "f6198a", Theoden = "19e479", Thranduil = "518ae6" },
+    },
+    TFoE = {
+        FreePeoplesStrategyEventCards = "4cd7e7",
+        FreePeoplesCharacterEventCards = "54d1ce",
+        ShadowStrategyEventCards = "a3e82e",
+    },
+    HftR = {
+        ShadowToken1 = "e121d4", -- Political Track
+        ShadowToken2 = "124e70", -- Move Nazgul and Minions
+        FreePeoplesToken1 = "7b62e4", -- Political Track
+        FreePeoplesToken2 = "e233d5", -- draw event card
+    },
+}
+
+function UpdateIDs()
+    log("Updating Components IDs...")
+
+    local IDs = IDsBase
+    local allObjects = getAllObjects()
+
+    for _, Obj in pairs(allObjects) do
+        local name = Obj.getName()
+        local description = Obj.getDescription()
+
+        if Obj.type == "Card" then
+            -- ignore cards.
+        elseif name == ShadowActionDice then
+            UpdateDiceId(description, Obj, IDs)
+        elseif name == FreePeoplesActionDie then
+            UpdateDiceId(description, Obj, IDs)
+        elseif name == GothmogDieName then
+            IDs.GothmogDice = Obj.getGUID()
+        elseif name == BalrogDie then
+            IDs.BalrogDice = Obj.getGUID()
+        elseif name == NaryaActionDie then
+            IDs.NaryaDice = Obj.getGUID()
+        elseif name == VilyaActionDie then
+            IDs.VilyaDice = Obj.getGUID()
+        elseif name == NenyaActionDie then
+            IDs.NenyaDice = Obj.getGUID()
+        elseif name == ShadowFactionDie then
+            IDs.ShadowFactionDice = Obj.getGUID()
+        elseif name == FreePeoplesFactionDie then
+            IDs.FreePeoplesFactionDice = Obj.getGUID()
+        elseif name == ShadowRulerDie then
+            IDs.ShadowRulerDice = Obj.getGUID()
+        elseif name == FreePeoplesRulerDie then
+            IDs.FreePeoplesRulerDice = Obj.getGUID()
+        elseif name == "The Ring-bearers" and string.find(description, "Character;") ~= nil then
+            IDs.Companions.TheRingBearers = Obj.getGUID()
+        elseif name == "Gandalf the White: Emissary from the West" and
+            string.find(description, "Character;") ~= nil and
+            string.find(description, "Token;") == nil
+        then
+            IDs.Companions.GandalfTheWhite = Obj.getGUID()
+        elseif
+            name == "Gandalf the White: Emissary from the West" and
+            string.find(description, "Character;Token;") ~= nil
+        then
+            IDs.Companions.GandalfTheWhiteToken = Obj.getGUID()
+        elseif
+            name == "Aragorn: Heir to Isildur" and string.find(description, "Character;") ~= nil and
+            string.find(description, "Token;") == nil
+        then
+            IDs.Companions.Aragorn = Obj.getGUID()
+        elseif
+            name == "Aragorn: Heir to Isildur" and string.find(description, "Character;Token;") ~= nil
+        then
+            IDs.Companions.AragornToken = Obj.getGUID()
+        elseif
+            name == "Lady Galadriel: Keeper of Nenya" and
+            string.find(description, "Character;") ~= nil
+        then
+            IDs.Companions.LadyGaladriel = Obj.getGUID()
+        elseif
+            name == "Lord Elrond: Keeper of Vilya" and string.find(description, "Character;") ~= nil
+        then
+            IDs.Companions.LordElrond = Obj.getGUID()
+        elseif name == "Gandalf the Grey" and string.find(description, "Character;") ~= nil then
+            IDs.Companions.GandalfTheGrey = Obj.getGUID()
+        elseif name == "Strider" and string.find(description, "Character;") ~= nil then
+            IDs.Companions.Strider = Obj.getGUID()
+        elseif name == "Boromir" and string.find(description, "Character;") ~= nil then
+            IDs.Companions.Boromir = Obj.getGUID()
+        elseif name == "Legolas" and string.find(description, "Character;") ~= nil then
+            IDs.Companions.Legolas = Obj.getGUID()
+        elseif name == "Gimli" and string.find(description, "Character;") ~= nil then
+            IDs.Companions.Gimli = Obj.getGUID()
+        elseif name == "Meriadoc" and string.find(description, "Character;") ~= nil then
+            IDs.Companions.Meriadoc = Obj.getGUID()
+        elseif name == "Peregrin" and string.find(description, "Character;") ~= nil then
+            IDs.Companions.Peregrin = Obj.getGUID()
+        elseif name == "Gollum" and string.find(description, "Character;") ~= nil then
+            IDs.Companions.Gollum = Obj.getGUID()
+        elseif
+            name == "Smeagol" and string.find(description, "Character;") ~= nil and
+            string.find(description, "Counter;") == nil
+        then
+            IDs.Companions.Smeagol = Obj.getGUID()
+        elseif name == "Smeagol" and string.find(description, "Counter;Companion;") ~= nil then
+            IDs.Companions.SmeagolToken = Obj.getGUID()
+        elseif name == "Treebeard: Tree-herd" and string.find(description, "Character;") ~= nil then
+            IDs.Companions.TreeBeard = Obj.getGUID()
+        elseif string.find(name, "Brand:") ~= nil and string.find(description, "Character;") ~= nil then
+            IDs.Companions.Brand = Obj.getGUID()
+        elseif string.find(name, "Dain:") ~= nil and string.find(description, "Character;") ~= nil then
+            IDs.Companions.Dain = Obj.getGUID()
+        elseif string.find(name, "Denethor:") ~= nil and string.find(description, "Character;") ~= nil then
+            IDs.Companions.Denethor = Obj.getGUID()
+        elseif string.find(name, "Theoden:") ~= nil and string.find(description, "Character;") ~= nil then
+            IDs.Companions.Theoden = Obj.getGUID()
+        elseif
+            string.find(name, "Thranduil:") ~= nil and string.find(description, "Character;") ~= nil
+        then
+            -- MINIONS
+            IDs.Companions.Thranduil = Obj.getGUID()
+        elseif name == "Saruman: Corrupted Wizard" and string.find(description, "Minion;") ~= nil then
+            IDs.Companions.Saruman = Obj.getGUID()
+        elseif
+            name == "The Witch-King: The Black Captain" and string.find(description, "Minion;") ~= nil
+        then
+            IDs.Minions.TheWitchKing = Obj.getGUID()
+        elseif
+            name == "The Mouth of Sauron: Lieutenant of Barad~Dur" and
+            string.find(description, "Minion;") ~= nil
+        then
+            IDs.Minions.TheMouthOfSauron = Obj.getGUID()
+        elseif
+            name == "The Witch-King: Chief of the Ring Wraiths" and
+            string.find(description, "Minion;") ~= nil
+        then
+            IDs.Minions.TheWitchKingCotR = Obj.getGUID()
+        elseif
+            name == "The Mouth of Sauron: Black Numenorean" and
+            string.find(description, "Minion;") ~= nil
+        then
+            IDs.Minions.TheMouthOfSauronBN = Obj.getGUID()
+        elseif name == "Gothmog: Lieutenant of Morgul" and string.find(description, "Minion;") ~= nil then
+            IDs.Minions.Gothmog = Obj.getGUID()
+        elseif
+            name == "Balrog: Evil of the Ancient World" and string.find(description, "Minion;") ~= nil
+        then
+            IDs.Minions.TheBalrog = Obj.getGUID()
+        elseif
+            name == "The Black Serpent: Chieftain of the Haradrim" and
+            string.find(description, "Minion;") ~= nil
+        then
+            IDs.Minions.TheBlackSerpent = Obj.getGUID()
+        elseif
+            name == "The Shadow of Mirkwood: Chieftain of the Dark Lord" and
+            string.find(description, "Minion;") ~= nil
+        then
+            IDs.Minions.TheShadowOfMirkwood = Obj.getGUID()
+        elseif
+            name == "Ugluk: Chieftain of the Uruk-Hai" and string.find(description, "Minion;") ~= nil
+        then
+            IDs.Minions.Ugluk = Obj.getGUID()
+        end
+    end
+
+    _G.IDs = IDs
+end
+
+function UpdateDiceId(description, newDiceObj, IDs)
+    local isShadowDice = string.find(description, "Shadow;") ~= nil
+    local isFreePeopleDice = string.find(description, "FreePeoples;") ~= nil
+    local diceArray = {}
+    local diceIndex = GetDiceIndex(description)
+
+    if isShadowDice then
+        diceArray = IDs.ShadowActionDice
+    elseif isFreePeopleDice then
+        diceArray = IDs.FreePeoplesActionDice
+    end
+
+    diceArray[diceIndex] = newDiceObj.getGUID()
+end
+
+function GetDiceIndex(description)
+    local pattern = "(%d+)of%d+;"
+    local number = string.match(description, pattern)
+    return tonumber(number)
+end
