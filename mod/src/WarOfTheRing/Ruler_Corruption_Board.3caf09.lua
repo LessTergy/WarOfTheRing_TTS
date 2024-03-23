@@ -17,7 +17,11 @@ end
 
 function RefreshPanel()
     self.clearButtons()
+
     local IDs = Global.call("GetIDs")
+    if IDs == nil then
+        return
+    end
 
     BrandID = IDs.Companions.Brand
     DainID = IDs.Companions.Dain

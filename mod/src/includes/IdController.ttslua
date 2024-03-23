@@ -14,6 +14,11 @@ local ShadowRulerDie = "(Shadow Ruler Die)"
 local FreePeoplesRulerDie = "(Free Peoples Ruler Die)"
 
 local IDsBase = {
+    Companions = {},
+    Minions = {},
+    ShadowActionDice = {},
+    FreePeoplesActionDice = {},
+
     ShadowDiceBox = "9a56a5",
     FreePeoplesDiceBox = "46d2fc",
     ShadowUsedDiceArea = "9a38bc",
