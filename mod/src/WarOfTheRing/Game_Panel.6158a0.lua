@@ -1,8 +1,5 @@
 require('!/UnitsController')
 
-local Step = ""
-local NextStep = ""
-local Versus = "1v1" --1v1, 1v2, 2v2, FvP
 local CompactMode = false
 local GuideName = "Gandalf the Grey: The Grey Wanderer"
 local FreePeoplesVP = 0
@@ -24,9 +21,10 @@ local TheBreakingOfTheFellowship = false
 local Treebeard = 2 --0:None,1:Original,2:Revised;
 local FlagsString = "" --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
 
-local Steps = {
+local StepType = {
     Empty = "",
     BeginMenu = "BeginMenu",
+    SetupUnits = "SetupUnits",
     PlayersMenu = "PlayersMenu",
     ExpansionMenu = "ExpansionMenu",
     HuntForTheRingMenu = "HuntForTheRingMenu",
@@ -36,7 +34,6 @@ local Steps = {
     SetupExpansions = "SetupExpansions",
     AlternateCompanionsMenu = "AlternateCompanionsMenu",
     SetupCompanions = "SetupCompanions",
-    SetupUnits = "SetupUnits",
     SetupCompleteMenu = "SetupCompleteMenu",
     StartTurn = "StartTurn",
     Phase1 = "Phase1",
@@ -59,6 +56,15 @@ local Steps = {
     BasicMenu = "BasicMenu",
     KillGamePanel = "KillGamePanel"
 }
+local Step = StepType.Empty
+local NextStep = StepType.Empty
+
+local VersusType = {
+    OneVersusOne = "1v1",
+    OneVersusTwo = "1v2",
+    TwoVersusTwo = "2v2"
+}
+local VersusMode = VersusType.OneVersusOne
 
 --Bags...
 local GraveBagId = "416864"
@@ -424,8 +430,8 @@ function onLoad()
 end
 
 function onPlayerChangeColor(PlayerColor)
-    if Step == Steps.BeginMenu then
-        Step = Steps.Empty
+    if Step == StepType.BeginMenu then
+        Step = StepType.Empty
     end
 end
 
@@ -433,7 +439,7 @@ function MainCoroutine()
     repeat
         coroutine.yield(0)
 
-        if Step == Steps.Empty then
+        if Step == StepType.Empty then
             startLuaCoroutine(self, "ProcessNextStep")
         end
     until false
@@ -451,75 +457,75 @@ function ProcessNextStep()
     )
 
     --assume new game setup...
-    if Step == Steps.Empty then
-        NextStep = Steps.BeginMenu
-        Step = Steps.Empty
-    elseif Step == Steps.BeginMenu then
+    if Step == StepType.Empty then
+        NextStep = StepType.BeginMenu
+        Step = StepType.Empty
+    elseif Step == StepType.BeginMenu then
         CreateBeginMenu()
-    elseif Step == Steps.PlayersMenu then
-        CreatePlayersMenu()
-    elseif Step == Steps.ExpansionMenu then
-        CreateExpansionMenu()
-    elseif Step == Steps.HuntForTheRingMenu then
-        CreateHuntForTheRingMenu()
-    elseif Step == Steps.TFoEMenu then
-        CreateTFoEMenu()
-    elseif Step == Steps.TreebeardMenu then
-        CreateTreebeardMenu()
-    elseif Step == Steps.StartingGuideMenu then
-        CreateStartingGuideMenu()
-    elseif Step == Steps.SetupExpansions then
-        SetupExpansionsStep()
-    elseif Step == Steps.AlternateCompanionsMenu then
-        CreateAlternateCompanionMenu()
-    elseif Step == Steps.SetupCompanions then
-        SetupCompanionsStep()
-    elseif Step == Steps.SetupUnits then
+    elseif Step == StepType.SetupUnits then
         UnitsSetupStep()
-    elseif Step == Steps.SetupCompleteMenu then
+    elseif Step == StepType.PlayersMenu then
+        CreatePlayersMenu()
+    elseif Step == StepType.ExpansionMenu then
+        CreateExpansionMenu()
+    elseif Step == StepType.HuntForTheRingMenu then
+        CreateHuntForTheRingMenu()
+    elseif Step == StepType.TFoEMenu then
+        CreateTFoEMenu()
+    elseif Step == StepType.TreebeardMenu then
+        CreateTreebeardMenu()
+    elseif Step == StepType.StartingGuideMenu then
+        CreateStartingGuideMenu()
+    elseif Step == StepType.SetupExpansions then
+        SetupExpansionsStep()
+    elseif Step == StepType.AlternateCompanionsMenu then
+        CreateAlternateCompanionMenu()
+    elseif Step == StepType.SetupCompanions then
+        SetupCompanionsStep()
+    elseif Step == StepType.SetupCompleteMenu then
         CreateSetupCompleteMenu()
-    elseif Step == Steps.StartTurn then
+    elseif Step == StepType.StartTurn then
         StartTurnStep()
-    elseif Step == Steps.Phase1 then
+    elseif Step == StepType.Phase1 then
         Phase1_Step()
-    elseif Step == Steps.Phase1_BotF_FreePeoplesDrawMenu then
+    elseif Step == StepType.Phase1_BotF_FreePeoplesDrawMenu then
         Phase1_BotF_FP_DrawMenu()
-    elseif Step == Steps.Phase1_BotF_ShadowDrawMenu then
+    elseif Step == StepType.Phase1_BotF_ShadowDrawMenu then
         Phase1_BotF_SH_DrawMenu()
-    elseif Step == Steps.Phase1_BotF_GondorDrawMenu then
+    elseif Step == StepType.Phase1_BotF_GondorDrawMenu then
         Phase1_BotF_GondorPlayer_DrawMenu()
-    elseif Step == Steps.Phase1_BotF_RohanDrawMenu then
+    elseif Step == StepType.Phase1_BotF_RohanDrawMenu then
         Phase1_BotF_RohanPlayer_DrawMenu()
-    elseif Step == Steps.Phase1_BotF_TheWitchKingDrawMenu then
+    elseif Step == StepType.Phase1_BotF_TheWitchKingDrawMenu then
         Phase1_BotF_TheWitchKingPlayer_DrawMenu()
-    elseif Step == Steps.Phase1_BotF_SarumanDrawMenu then
+    elseif Step == StepType.Phase1_BotF_SarumanDrawMenu then
         Phase1_BotF_TheWitchKingPlayer_DrawMenu()
-    elseif Step == Steps.Phase1_GondorDrawMenu then
+    elseif Step == StepType.Phase1_GondorDrawMenu then
         Phase1_GondorPlayer_DrawMenu()
-    elseif Step == Steps.Phase1_RohanDrawMenu then
+    elseif Step == StepType.Phase1_RohanDrawMenu then
         Phase1_RohanPlayer_DrawMenu()
-    elseif Step == Steps.Phase1_TheWitchKingDrawMenu then
+    elseif Step == StepType.Phase1_TheWitchKingDrawMenu then
         Phase1_TheWitchKingPlayer_DrawMenu()
-    elseif Step == Steps.Phase1_SarumanDrawMenu then
+    elseif Step == StepType.Phase1_SarumanDrawMenu then
         Phase1_SarumanPlayer_DrawMenu()
-    elseif Step == Steps.Phase2 then
+    elseif Step == StepType.Phase2 then
         Phase2_FellowshipStep()
-    elseif Step == Steps.Phase3 then
+    elseif Step == StepType.Phase3 then
         Phase3_HuntAllocationStep()
-    elseif Step == Steps.Phase4 then
+    elseif Step == StepType.Phase4 then
         Phase4_ActionRollStep()
-    elseif Step == Steps.Phase5 then
+    elseif Step == StepType.Phase5 then
         Phase5_ActionResolutionStep()
-    elseif Step == Steps.Phase6 then --Victory Check
+    elseif Step == StepType.Phase6 then --Victory Check
         Phase6_VictoryCheckStep()
-    elseif Step == Steps.EndTurn then
+    elseif Step == StepType.EndTurn then
         --end of turn stuff here...
         --advance to next step...
-        NextStep = Steps.StartTurn
-        Step = Steps.Empty
-    elseif Step == Steps.EndTurn then
+        NextStep = StepType.StartTurn
+        Step = StepType.Empty
+    elseif Step == StepType.EndTurn then
         CreateBasicMenu()
-    elseif Step == Steps.KillGamePanel then
+    elseif Step == StepType.KillGamePanel then
         Global.setVar("Scripting", false)
         printToAll("The Game Panel is deleted.  Scripting is disabled.")
         self.destruct()
@@ -557,8 +563,8 @@ function UnitsSetupStep()
 
     SpawnArmies()
 
-    NextStep = Steps.SetupCompleteMenu
-    Step = Steps.Empty
+    NextStep = StepType.PlayersMenu
+    Step = StepType.Empty
 end
 
 function CreateSetupCompleteMenu()
@@ -603,14 +609,14 @@ function CreateSetupCompleteMenu()
     )
     function FullScripts()
         self.clearButtons()
-        NextStep = Steps.StartTurn
-        Step = Steps.Empty
+        NextStep = StepType.StartTurn
+        Step = StepType.Empty
     end
 
     function BasicScripts()
         self.clearButtons()
-        NextStep = Steps.EndTurn
-        Step = Steps.Empty
+        NextStep = StepType.EndTurn
+        Step = StepType.Empty
     end
 
     --Shuffle decks and bags...
@@ -742,10 +748,10 @@ function StartTurnStep()
     function StartTurn()
         printToAll("Turn " .. Turn .. " has started.")
         --pass leader tokens?...
-        if Turn == 1 or Versus == "1v1" then
+        if Turn == 1 or VersusMode == VersusType.OneVersusOne then
             PlayersLeader.FreePeoples = "Gondor"
             PlayersLeader.Shadow = "The Witch-king"
-        elseif Versus == "1v2" then
+        elseif VersusMode == VersusType.TwoVersusTwo then
             PlayersLeader.FreePeoples = "Gondor"
             if PlayersLeader.Shadow == "The Witch-king" then
                 PlayersLeader.Shadow = "Saruman"
@@ -766,18 +772,18 @@ function StartTurnStep()
             end
         end
 
-        if PlayersLeader.FreePeoples == "Gondor" and Versus == "2v2" then
+        if PlayersLeader.FreePeoples == "Gondor" and VersusMode == VersusType.TwoVersusTwo then
             getObjectFromGUID(IDs.FreePeoplesLeaderToken).setPositionSmooth(Spots.LeadingPlayerGondor, false, false)
             printToAll("Gondor Player (Blue) has the Free Peoples Leading Player Token.", Player["Blue"].color)
-        elseif Versus == "2v2" then
+        elseif VersusMode == VersusType.TwoVersusTwo then
             getObjectFromGUID(IDs.FreePeoplesLeaderToken).setPositionSmooth(Spots.LeadingPlayerRohan, false, false)
             printToAll("Rohan Player (Green) has the Free Peoples Leading Player Token.", Player["Green"].color)
         end
 
-        if PlayersLeader.Shadow == "The Witch-king" and Versus ~= "1v1" then
+        if PlayersLeader.Shadow == "The Witch-king" and VersusMode ~= VersusType.OneVersusOne then
             getObjectFromGUID(IDs.ShadowLeaderToken).setPositionSmooth(Spots.LeadingPlayerWitchKing, false, false)
             printToAll("The Witch-king Player (Red) has the Shadow Leading Player Token.", Player["Red"].color)
-        elseif Versus ~= "1v1" then
+        elseif VersusMode ~= VersusType.OneVersusOne then
             getObjectFromGUID(IDs.ShadowLeaderToken).setPositionSmooth(Spots.LeadingPlayerSaruman, false, false)
             printToAll("Saruman Player (Yellow) has the Shadow Leading Player Token.", Player["Yellow"].color)
         end
@@ -843,8 +849,8 @@ function StartTurnStep()
         --...
         --detect fellowship guide...
         GuideName = Global.call("DetectGuide")
-        NextStep = Steps.Phase1
-        Step = Steps.Empty
+        NextStep = StepType.Phase1
+        Step = StepType.Empty
     end
 end
 
@@ -895,24 +901,24 @@ function Phase1_Step()
         }
     )
     function Continue()
-        NextStep = Steps.Phase2
-        Step = Steps.Empty
+        NextStep = StepType.Phase2
+        Step = StepType.Empty
     end
 
     function PerformPhase1()
         self.clearButtons()
         --gather action dice...
         startLuaCoroutine(self, "GatherActionDiceCoroutine")
-        NextStep = Steps.Phase2
+        NextStep = StepType.Phase2
         --NextStep = Steps.EndTurn
         --draw event cards (and faction cards if playing WoME)...
-        if Turn == 1 and TheBreakingOfTheFellowship and Versus ~= "2v2" then
+        if Turn == 1 and TheBreakingOfTheFellowship and VersusMode ~= VersusType.TwoVersusTwo then
             --players will be prompted what to draw, starting with FreePeoples...
-            NextStep = Steps.Phase1_BotF_FreePeoplesDrawMenu
-        elseif Turn == 1 and TheBreakingOfTheFellowship and Versus == "2v2" then
+            NextStep = StepType.Phase1_BotF_FreePeoplesDrawMenu
+        elseif Turn == 1 and TheBreakingOfTheFellowship and VersusMode == VersusType.TwoVersusTwo then
             --players will be prompted what to draw, starting with Gondor...
-            NextStep = Steps.Phase1_BotF_GondorDrawMenu
-        elseif Versus == "1v1" then
+            NextStep = StepType.Phase1_BotF_GondorDrawMenu
+        elseif VersusMode == VersusType.OneVersusOne then
             DrawFromDeck(
                 {
                     deckname = "Character Event",
@@ -972,7 +978,7 @@ function Phase1_Step()
                     }
                 )
             end
-        elseif Versus == "1v2" then
+        elseif VersusMode == VersusType.OneVersusTwo then
             DrawFromDeck(
                 {
                     deckname = "Character Event",
@@ -1077,7 +1083,7 @@ function Phase1_Step()
                 end
 
                 --set next step to prompt shadow players which deck to draw from...
-                NextStep = Steps.Phase1_TheWitchKingDrawMenu
+                NextStep = StepType.Phase1_TheWitchKingDrawMenu
             end
         else --2v2
             if Turn == 1 then
@@ -1224,11 +1230,11 @@ function Phase1_Step()
                 end
 
                 --set next step to prompt each player which deck to draw from...
-                NextStep = Steps.Phase1_GondorDrawMenu
+                NextStep = StepType.Phase1_GondorDrawMenu
             end
         end
 
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 end
 
@@ -1315,10 +1321,10 @@ function Phase1_BotF_FP_DrawMenu()
             font_color = { 1, 1, 0 }
         }
     )
-    if Versus == "1v1" then
-        NextStep = Steps.Phase1_BotF_ShadowDrawMenu
+    if VersusMode == VersusType.OneVersusOne then
+        NextStep = StepType.Phase1_BotF_ShadowDrawMenu
     else
-        NextStep = Steps.Phase1_BotF_TheWitchKingDrawMenu
+        NextStep = StepType.Phase1_BotF_TheWitchKingDrawMenu
     end
 
     function DrawC1S3()
@@ -1335,7 +1341,7 @@ function Phase1_BotF_FP_DrawMenu()
         DrawFromDeck(
             { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 3, player = "Blue" }
         )
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC2S2()
@@ -1346,7 +1352,7 @@ function Phase1_BotF_FP_DrawMenu()
         DrawFromDeck(
             { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue" }
         )
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC3S1()
@@ -1363,7 +1369,7 @@ function Phase1_BotF_FP_DrawMenu()
                 player = "Blue"
             }
         )
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 end
 
@@ -1477,7 +1483,7 @@ function Phase1_BotF_SH_DrawMenu()
             font_color = { 1, 1, 0 }
         }
     )
-    NextStep = Steps.Phase2
+    NextStep = StepType.Phase2
     function DrawC1S5()
         self.clearButtons()
         DrawFromDeck(
@@ -1490,7 +1496,7 @@ function Phase1_BotF_SH_DrawMenu()
             }
         )
         DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 5, player = "Red" })
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC2S4()
@@ -1499,7 +1505,7 @@ function Phase1_BotF_SH_DrawMenu()
             { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 2, player = "Red" }
         )
         DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 4, player = "Red" })
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC3S3()
@@ -1508,7 +1514,7 @@ function Phase1_BotF_SH_DrawMenu()
             { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Red" }
         )
         DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Red" })
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC4S2()
@@ -1517,7 +1523,7 @@ function Phase1_BotF_SH_DrawMenu()
             { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 4, player = "Red" }
         )
         DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Red" })
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC5S1()
@@ -1534,7 +1540,7 @@ function Phase1_BotF_SH_DrawMenu()
                 player = "Red"
             }
         )
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 end
 
@@ -1622,14 +1628,14 @@ function Phase1_BotF_GondorPlayer_DrawMenu()
             font_color = { 1, 1, 0 }
         }
     )
-    NextStep = Steps.Phase1_BotF_RohanDrawMenu
+    NextStep = StepType.Phase1_BotF_RohanDrawMenu
     function DrawC2S0()
         self.clearButtons()
         DrawFromDeck(
             { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Blue" }
         )
         CharacterCardCount = 2
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC1S1()
@@ -1654,7 +1660,7 @@ function Phase1_BotF_GondorPlayer_DrawMenu()
         )
         CharacterCardCount = 1
         StrategyCardCount = 1
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC0S2()
@@ -1663,7 +1669,7 @@ function Phase1_BotF_GondorPlayer_DrawMenu()
             { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Blue" }
         )
         StrategyCardCount = 2
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 end
 
@@ -1755,13 +1761,13 @@ function Phase1_BotF_RohanPlayer_DrawMenu()
             font_color = { 1, 1, 0 }
         }
     )
-    NextStep = Steps.Phase1_BotF_TheWitchKingDrawMenu
+    NextStep = StepType.Phase1_BotF_TheWitchKingDrawMenu
     function DrawC2S0()
         self.clearButtons()
         DrawFromDeck(
             { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 2, player = "Green" }
         )
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC1S1()
@@ -1784,7 +1790,7 @@ function Phase1_BotF_RohanPlayer_DrawMenu()
                 player = "Green"
             }
         )
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC0S2()
@@ -1792,7 +1798,7 @@ function Phase1_BotF_RohanPlayer_DrawMenu()
         DrawFromDeck(
             { deckname = "Strategy Event", deckid = IDs.FreePeoplesStrategyEventDeck, count = 2, player = "Green" }
         )
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 end
 
@@ -1893,14 +1899,14 @@ function Phase1_BotF_TheWitchKingPlayer_DrawMenu()
             font_color = { 1, 1, 0 }
         }
     )
-    NextStep = Steps.Phase1_BotF_SarumanDrawMenu
+    NextStep = StepType.Phase1_BotF_SarumanDrawMenu
     function DrawC3S0()
         self.clearButtons()
         DrawFromDeck(
             { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Red" }
         )
         CharacterCardCount = 3
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC2S1()
@@ -1919,7 +1925,7 @@ function Phase1_BotF_TheWitchKingPlayer_DrawMenu()
         )
         CharacterCardCount = 2
         StrategyCardCount = 1
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC1S2()
@@ -1936,14 +1942,14 @@ function Phase1_BotF_TheWitchKingPlayer_DrawMenu()
         DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 2, player = "Red" })
         CharacterCardCount = 1
         StrategyCardCount = 2
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC0S3()
         self.clearButtons()
         DrawFromDeck({ deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Red" })
         StrategyCardCount = 3
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 end
 
@@ -2048,14 +2054,14 @@ function Phase1_BotF_SarumanPlayer_DrawMenu()
             font_color = { 1, 1, 0 }
         }
     )
-    NextStep = Steps.Phase2
+    NextStep = StepType.Phase2
     function DrawC3S0()
         self.clearButtons()
         DrawFromDeck(
             { deckname = "Character Event", deckid = IDs.ShadowCharacterEventDeck, count = 3, player = "Yellow" }
         )
         CharacterCardCount = 3
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC2S1()
@@ -2074,7 +2080,7 @@ function Phase1_BotF_SarumanPlayer_DrawMenu()
         )
         CharacterCardCount = 2
         StrategyCardCount = 1
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC1S2()
@@ -2093,7 +2099,7 @@ function Phase1_BotF_SarumanPlayer_DrawMenu()
         )
         CharacterCardCount = 1
         StrategyCardCount = 2
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DrawC0S3()
@@ -2102,7 +2108,7 @@ function Phase1_BotF_SarumanPlayer_DrawMenu()
             { deckname = "Strategy Event", deckid = IDs.ShadowStrategyEventDeck, count = 3, player = "Yellow" }
         )
         StrategyCardCount = 3
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 end
 
@@ -2175,8 +2181,8 @@ function Phase1_GondorPlayer_DrawMenu()
                 player = "Blue"
             }
         )
-        NextStep = Steps.Phase1_RohanDrawMenu
-        Step = Steps.Empty
+        NextStep = StepType.Phase1_RohanDrawMenu
+        Step = StepType.Empty
     end
 
     function DrawStrategy()
@@ -2190,8 +2196,8 @@ function Phase1_GondorPlayer_DrawMenu()
                 player = "Blue"
             }
         )
-        NextStep = Steps.Phase1_RohanDrawMenu
-        Step = Steps.Empty
+        NextStep = StepType.Phase1_RohanDrawMenu
+        Step = StepType.Empty
     end
 end
 
@@ -2258,8 +2264,8 @@ function Phase1_RohanPlayer_DrawMenu()
         DrawFromDeck(
             { deckname = "Character Event", deckid = IDs.FreePeoplesCharacterEventDeck, count = 1, player = "Green" }
         )
-        NextStep = Steps.Phase1_TheWitchKingDrawMenu
-        Step = Steps.Empty
+        NextStep = StepType.Phase1_TheWitchKingDrawMenu
+        Step = StepType.Empty
     end
 
     function DrawStrategy()
@@ -2273,8 +2279,8 @@ function Phase1_RohanPlayer_DrawMenu()
                 player = "Green"
             }
         )
-        NextStep = Steps.Phase1_TheWitchKingDrawMenu
-        Step = Steps.Empty
+        NextStep = StepType.Phase1_TheWitchKingDrawMenu
+        Step = StepType.Empty
     end
 end
 
@@ -2347,8 +2353,8 @@ function Phase1_TheWitchKingPlayer_DrawMenu()
                 player = "Red"
             }
         )
-        NextStep = Steps.Phase1_SarumanDrawMenu
-        Step = Steps.Empty
+        NextStep = StepType.Phase1_SarumanDrawMenu
+        Step = StepType.Empty
     end
 
     function DrawStrategy()
@@ -2362,8 +2368,8 @@ function Phase1_TheWitchKingPlayer_DrawMenu()
                 player = "Red"
             }
         )
-        NextStep = Steps.Phase1_SarumanDrawMenu
-        Step = Steps.Empty
+        NextStep = StepType.Phase1_SarumanDrawMenu
+        Step = StepType.Empty
     end
 end
 
@@ -2436,8 +2442,8 @@ function Phase1_SarumanPlayer_DrawMenu()
                 player = "Yellow"
             }
         )
-        NextStep = Steps.Phase2
-        Step = Steps.Empty
+        NextStep = StepType.Phase2
+        Step = StepType.Empty
     end
 
     function DrawStrategy()
@@ -2451,8 +2457,8 @@ function Phase1_SarumanPlayer_DrawMenu()
                 player = "Yellow"
             }
         )
-        NextStep = Steps.Phase2
-        Step = Steps.Empty
+        NextStep = StepType.Phase2
+        Step = StepType.Empty
     end
 end
 
@@ -2513,17 +2519,17 @@ function Phase2_FellowshipStep()
         }
     )
     function Continue()
-        NextStep = Steps.Phase3
+        NextStep = StepType.Phase3
         --Turn 1 with LoME?
         if Turn == 1 and LordsOfMiddleEarth then
             if getObjectFromGUID(IDs.LoME.ShadowToken1) == nil or getObjectFromGUID(IDs.LoME.ShadowToken2) == nil then
                 printToAll("UHOH! Couldn't find the Shadow Tokens!\nNo Shadow Tokens could be assigned.")
-                Step = Steps.Empty
+                Step = StepType.Empty
             elseif TheBreakingOfTheFellowship then
                 printToAll(
                     "Shadow Tokens from Lords of Middle-Earth are not used in the Breaking of the Fellowship scenario."
                 )
-                Step = Steps.Empty
+                Step = StepType.Empty
             else --look for seperated companions...
                 FellowshipCount = 8 --start with 8 in the fellowship.
                 local TokenCount = 0
@@ -2559,7 +2565,7 @@ function Phase2_FellowshipStep()
                     )
                     getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
                     getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
-                    Step = Steps.Empty
+                    Step = StepType.Empty
                 elseif TokenCount == 1 then
                     printToAll(
                         "The Shadow chooses 1 Shadow Token. (There was 1 Companion declared outside the Fellowship)."
@@ -2624,14 +2630,14 @@ function Phase2_FellowshipStep()
                         self.clearButtons()
                         getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
                         getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken2))
-                        Step = Steps.Empty
+                        Step = StepType.Empty
                     end
 
                     function ChooseShadowToken2()
                         self.clearButtons()
                         getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
                         getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
-                        Step = Steps.Empty
+                        Step = StepType.Empty
                     end
                 else --shadow gets both tokens...
                     printToAll(
@@ -2639,11 +2645,11 @@ function Phase2_FellowshipStep()
                     )
                     getObjectFromGUID(IDs.LoME.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -29 }, false, true)
                     getObjectFromGUID(IDs.LoME.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -31 }, false, true)
-                    Step = Steps.Empty
+                    Step = StepType.Empty
                 end
             end
         else
-            Step = Steps.Empty
+            Step = StepType.Empty
         end
     end
 end
@@ -2735,8 +2741,8 @@ function Phase3_HuntAllocationStep()
     end
 
     function Continue()
-        NextStep = Steps.Phase4
-        Step = Steps.Empty
+        NextStep = StepType.Phase4
+        Step = StepType.Empty
     end
 end
 
@@ -2788,18 +2794,18 @@ function Phase4_ActionRollStep()
         self.clearButtons()
         startLuaCoroutine(self, "RollActionDiceCoroutine")
         --auto advance to next step after 2 seconds...
-        NextStep = Steps.Phase5
+        NextStep = StepType.Phase5
         Wait.time(
             function ()
-                Step = Steps.Empty
+                Step = StepType.Empty
             end,
             2
         )
     end
 
     function Continue()
-        NextStep = Steps.Phase5
-        Step = Steps.Empty
+        NextStep = StepType.Phase5
+        Step = StepType.Empty
     end
 end
 
@@ -2835,8 +2841,8 @@ function Phase5_ActionResolutionStep()
         }
     )
     function Continue()
-        NextStep = Steps.Phase6
-        Step = Steps.Empty
+        NextStep = StepType.Phase6
+        Step = StepType.Empty
     end
 end
 
@@ -2916,8 +2922,8 @@ function Phase6_VictoryCheckStep()
     end
 
     function Continue()
-        NextStep = Steps.EndTurn
-        Step = Steps.Empty
+        NextStep = StepType.EndTurn
+        Step = StepType.Empty
     end
 end
 
@@ -3050,11 +3056,11 @@ function CreateBasicMenu()
             }
         )
         Round = Round + 1
-        NextStep = Steps.EndTurn
+        NextStep = StepType.EndTurn
         startLuaCoroutine(self, "GatherActionDiceCoroutine")
         Wait.time(
             function ()
-                Step = Steps.Empty
+                Step = StepType.Empty
             end,
             2
         )
@@ -3074,11 +3080,11 @@ function CreateBasicMenu()
                 font_color = { 1, 1, 1 }
             }
         )
-        NextStep = Steps.EndTurn
+        NextStep = StepType.EndTurn
         startLuaCoroutine(self, "RollActionDiceCoroutine")
         Wait.time(
             function ()
-                Step = Steps.Empty
+                Step = StepType.Empty
             end,
             2
         )
@@ -3086,7 +3092,7 @@ function CreateBasicMenu()
 
     function IncRound()
         Round = Round + 1
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 
     function DecRound()
@@ -3095,7 +3101,7 @@ function CreateBasicMenu()
             Round = 1
         end
 
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 end
 
@@ -3309,14 +3315,14 @@ function CreateBeginMenu()
         self.clearButtons()
         --Music Violin
         Global.call("PlaySound", { ID = 0 })
-        NextStep = Steps.PlayersMenu
-        Step = Steps.Empty
+        NextStep = StepType.SetupUnits
+        Step = StepType.Empty
     end
 
     function ClickNoScripting()
         self.clearButtons()
-        NextStep = Steps.KillGamePanel
-        Step = Steps.Empty
+        NextStep = StepType.KillGamePanel
+        Step = StepType.Empty
     end
 
     function ToggleMute()
@@ -3335,8 +3341,8 @@ function CreateBeginMenu()
         end
 
         getObjectFromGUID(Global.getVar("SoundCubeID")).call("Menu")
-        NextStep = Steps.BeginMenu
-        Step = Steps.Empty
+        NextStep = StepType.BeginMenu
+        Step = StepType.Empty
     end
 end
 
@@ -3355,7 +3361,7 @@ function CreatePlayersMenu()
         }
     )
 
-    if Versus == "1v1" then
+    if VersusMode == VersusType.OneVersusOne then
         self.createButton(
             {
                 click_function = "Choose1v1",
@@ -3411,7 +3417,7 @@ function CreatePlayersMenu()
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
             }
         )
-    elseif Versus == "1v2" then
+    elseif VersusMode == VersusType.OneVersusTwo then
         self.createButton(
             {
                 click_function = "Choose1v1",
@@ -3467,7 +3473,7 @@ function CreatePlayersMenu()
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
             }
         )
-    elseif Versus == "2v2" then
+    elseif VersusMode == VersusType.TwoVersusTwo then
         self.createButton(
             {
                 click_function = "Choose1v1",
@@ -3523,7 +3529,7 @@ function CreatePlayersMenu()
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
             }
         )
-    elseif Versus == "1v1 Compact Mode" then
+    elseif CompactMode then
         self.createButton(
             {
                 click_function = "Choose1v1",
@@ -3585,7 +3591,7 @@ function CreatePlayersMenu()
         {
             click_function = "Continue",
             function_owner = self,
-            label = "Continue (" .. Versus .. ")",
+            label = "Continue (" .. VersusMode .. ")",
             position = { 0, 0.1, 1 },
             width = 1600,
             height = 200,
@@ -3596,40 +3602,39 @@ function CreatePlayersMenu()
 
     function Choose1v1()
         self.clearButtons()
-        Versus = "1v1"
+        VersusMode = VersusType.OneVersusOne
         CompactMode = false
-        NextStep = Steps.PlayersMenu
-        Step = Steps.Empty
+        NextStep = StepType.PlayersMenu
+        Step = StepType.Empty
     end
 
     function Choose1v2()
         self.clearButtons()
-        Versus = "1v2"
+        VersusMode = VersusType.OneVersusTwo
         CompactMode = false
-        NextStep = Steps.PlayersMenu
-        Step = Steps.Empty
+        NextStep = StepType.PlayersMenu
+        Step = StepType.Empty
     end
 
     function Choose2v2()
         self.clearButtons()
-        Versus = "2v2"
+        VersusMode = VersusType.TwoVersusTwo
         CompactMode = false
-        NextStep = Steps.PlayersMenu
-        Step = Steps.Empty
+        NextStep = StepType.PlayersMenu
+        Step = StepType.Empty
     end
 
     function Choose1v1Compact()
         self.clearButtons()
-        Versus = "1v1 Compact Mode"
+        VersusMode = VersusType.OneVersusOne
         CompactMode = true
-        NextStep = Steps.PlayersMenu
-        Step = Steps.Empty
+        NextStep = StepType.PlayersMenu
+        Step = StepType.Empty
     end
 
     function Continue()
         self.clearButtons()
-        NextStep = Steps.ExpansionMenu
-        CompactMode = Versus == "1v1 Compact Mode"
+        NextStep = StepType.ExpansionMenu
         Global.setVar("CompactMode", CompactMode)
 
         --update here so BotF can benefit if it is used...
@@ -3643,7 +3648,7 @@ function CreatePlayersMenu()
             FlagsString = FlagsString .. "Compact;"
         end
 
-        if Versus == "1v1" or Versus == "1v1 Compact Mode" then
+        if VersusMode == VersusType.OneVersusOne or CompactMode then
             --remove Yellow Label
             --remove Green and Yellow hand zones...
             getObjectFromGUID("588435").destruct()
@@ -3657,7 +3662,7 @@ function CreatePlayersMenu()
             getObjectFromGUID("c2de22").destruct()
             --remove Red Label
             getObjectFromGUID("039537").destruct()
-        elseif Versus == "1v2" then
+        elseif VersusMode == VersusType.OneVersusTwo then
             --remove Green hand zone...
             getObjectFromGUID("588435").destruct()
             --remove green hand
@@ -3667,7 +3672,7 @@ function CreatePlayersMenu()
             --remove Green Label
         end
 
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 end
 
@@ -3881,44 +3886,44 @@ function CreateExpansionMenu()
 
     function ToggleLoME()
         LordsOfMiddleEarth = not LordsOfMiddleEarth
-        NextStep = Steps.ExpansionMenu
-        Step = Steps.Empty
+        NextStep = StepType.ExpansionMenu
+        Step = StepType.Empty
     end
 
     function ToggleWoME()
         WarriorsOfMiddleEarth = not WarriorsOfMiddleEarth
-        NextStep = Steps.ExpansionMenu
-        Step = Steps.Empty
+        NextStep = StepType.ExpansionMenu
+        Step = StepType.Empty
     end
 
     function ToggleKoME()
         KingsOfMiddleEarth = not KingsOfMiddleEarth
-        NextStep = Steps.ExpansionMenu
-        Step = Steps.Empty
+        NextStep = StepType.ExpansionMenu
+        Step = StepType.Empty
     end
 
     function ToggleBotF()
         TheBreakingOfTheFellowship = not TheBreakingOfTheFellowship
-        NextStep = Steps.ExpansionMenu
-        Step = Steps.Empty
+        NextStep = StepType.ExpansionMenu
+        Step = StepType.Empty
     end
 
     function ToggleTFoE()
         TheFateOfErebor = not TheFateOfErebor
-        NextStep = Steps.ExpansionMenu
-        Step = Steps.Empty
+        NextStep = StepType.ExpansionMenu
+        Step = StepType.Empty
     end
 
     function ToggleHftR()
         HuntForTheRing = not HuntForTheRing
-        NextStep = Steps.ExpansionMenu
-        Step = Steps.Empty
+        NextStep = StepType.ExpansionMenu
+        Step = StepType.Empty
     end
 
     function Continue()
         self.clearButtons()
-        NextStep = Steps.HuntForTheRingMenu
-        Step = Steps.Empty
+        NextStep = StepType.HuntForTheRingMenu
+        Step = StepType.Empty
     end
 end
 
@@ -4094,26 +4099,26 @@ function CreateHuntForTheRingMenu()
         )
         function ToggleHftRSPT1()
             HftRSPT1 = not HftRSPT1
-            NextStep = Steps.HuntForTheRingMenu
-            Step = Steps.Empty
+            NextStep = StepType.HuntForTheRingMenu
+            Step = StepType.Empty
         end
 
         function ToggleHftRSPT2()
             HftRSPT2 = not HftRSPT2
-            NextStep = Steps.HuntForTheRingMenu
-            Step = Steps.Empty
+            NextStep = StepType.HuntForTheRingMenu
+            Step = StepType.Empty
         end
 
         function ToggleHftRFPT1()
             HftRFPT1 = not HftRFPT1
-            NextStep = Steps.HuntForTheRingMenu
-            Step = Steps.Empty
+            NextStep = StepType.HuntForTheRingMenu
+            Step = StepType.Empty
         end
 
         function ToggleHftRFPT2()
             HftRFPT2 = not HftRFPT2
-            NextStep = Steps.HuntForTheRingMenu
-            Step = Steps.Empty
+            NextStep = StepType.HuntForTheRingMenu
+            Step = StepType.Empty
         end
 
         function Continue()
@@ -4146,13 +4151,13 @@ function CreateHuntForTheRingMenu()
                 end
             end
 
-            NextStep = Steps.TFoEMenu
-            Step = Steps.Empty
+            NextStep = StepType.TFoEMenu
+            Step = StepType.Empty
         end
     else
         Global.call("RemoveObjectFromGame", { Description = "HftR;" })
-        NextStep = Steps.TFoEMenu
-        Step = Steps.Empty
+        NextStep = StepType.TFoEMenu
+        Step = StepType.Empty
     end
 end
 
@@ -4218,8 +4223,8 @@ function CreateTFoEMenu()
         )
         function ToggleNewCities()
             TheFateOfErebor_NewCities = not TheFateOfErebor_NewCities
-            NextStep = Steps.TFoEMenu
-            Step = Steps.Empty
+            NextStep = StepType.TFoEMenu
+            Step = StepType.Empty
         end
 
         function Continue()
@@ -4228,12 +4233,12 @@ function CreateTFoEMenu()
                 TheFateOfErebor_NewCities = false
             end
 
-            NextStep = Steps.TreebeardMenu
-            Step = Steps.Empty
+            NextStep = StepType.TreebeardMenu
+            Step = StepType.Empty
         end
     else
-        NextStep = Steps.TreebeardMenu
-        Step = Steps.Empty
+        NextStep = StepType.TreebeardMenu
+        Step = StepType.Empty
     end
 end
 
@@ -4475,31 +4480,31 @@ function CreateTreebeardMenu()
     )
     function SelectTreebeard0()
         Treebeard = 0
-        NextStep = Steps.TreebeardMenu
-        Step = Steps.Empty
+        NextStep = StepType.TreebeardMenu
+        Step = StepType.Empty
     end
 
     function SelectTreebeard1()
         Treebeard = 1
-        NextStep = Steps.TreebeardMenu
-        Step = Steps.Empty
+        NextStep = StepType.TreebeardMenu
+        Step = StepType.Empty
     end
 
     function SelectTreebeard2()
         Treebeard = 2
-        NextStep = Steps.TreebeardMenu
-        Step = Steps.Empty
+        NextStep = StepType.TreebeardMenu
+        Step = StepType.Empty
     end
 
     function Continue()
         self.clearButtons()
         if LordsOfMiddleEarth then
-            NextStep = Steps.StartingGuideMenu
+            NextStep = StepType.StartingGuideMenu
         else
-            NextStep = Steps.SetupExpansions
+            NextStep = StepType.SetupExpansions
         end
 
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 end
 
@@ -4514,8 +4519,8 @@ function CreateStartingGuideMenu()
 
         CompanionNames[1] = "Gandalf the Grey: The Grey Wanderer"
         CompanionNames[2] = "Strider: Ranger of the North"
-        NextStep = Steps.SetupExpansions
-        Step = Steps.Empty
+        NextStep = StepType.SetupExpansions
+        Step = StepType.Empty
     else
         MoveGamePanel("FreePeoples")
         --choose Gandalf or Strider as the fellowship guide...
@@ -4786,41 +4791,41 @@ function CreateStartingGuideMenu()
         function ChooseTheGreyWanderer()
             CompanionNames[1] = "Gandalf the Grey: The Grey Wanderer"
             CompanionNames[2] = "Strider: Ranger of the North"
-            NextStep = Steps.StartingGuideMenu
-            Step = Steps.Empty
+            NextStep = StepType.StartingGuideMenu
+            Step = StepType.Empty
         end
 
         function ChooseKeeperOfNarya()
             CompanionNames[1] = "Gandalf the Grey: Keeper of Narya*"
             CompanionNames[2] = "Strider: Ranger of the North"
-            NextStep = Steps.StartingGuideMenu
-            Step = Steps.Empty
+            NextStep = StepType.StartingGuideMenu
+            Step = StepType.Empty
         end
 
         function ChooseRangerOfTheNorth()
             CompanionNames[1] = "Strider: Ranger of the North"
             CompanionNames[2] = "Gandalf the Grey: The Grey Wanderer"
-            NextStep = Steps.StartingGuideMenu
-            Step = Steps.Empty
+            NextStep = StepType.StartingGuideMenu
+            Step = StepType.Empty
         end
 
         function ChooseDunadan()
             CompanionNames[1] = "Strider: Dunadan*"
             CompanionNames[2] = "Gandalf the Grey: The Grey Wanderer"
-            NextStep = Steps.StartingGuideMenu
-            Step = Steps.Empty
+            NextStep = StepType.StartingGuideMenu
+            Step = StepType.Empty
         end
 
         function Continue()
-            NextStep = Steps.SetupExpansions
-            Step = Steps.Empty
+            NextStep = StepType.SetupExpansions
+            Step = StepType.Empty
         end
     end
 end
 
 function SetupExpansionsStep()
     self.clearButtons()
-    NextStep = Steps.SetupCompanions
+    NextStep = StepType.SetupCompanions
     local TempObj = nil
     --Included: The Fate of Erebor...
     if TheFateOfErebor then
@@ -4989,7 +4994,7 @@ function SetupExpansionsStep()
             }
         )
         --change next step to Alternate Companions Menu...
-        NextStep = Steps.AlternateCompanionsMenu
+        NextStep = StepType.AlternateCompanionsMenu
         --Replace Elven Rings...
         for I = 1, 3 do
             getObjectFromGUID(IDs.LoME.ElvenRings[I]).setPositionSmooth(
@@ -5419,14 +5424,14 @@ function SetupExpansionsStep()
         coroutine.yield(0)
     end
 
-    Step = Steps.Empty
+    Step = StepType.Empty
 end
 
 function CreateAlternateCompanionMenu()
     self.clearButtons()
     if TheBreakingOfTheFellowship then
-        NextStep = Steps.SetupCompanions
-        Step = Steps.Empty
+        NextStep = StepType.SetupCompanions
+        Step = StepType.Empty
     else --hold Rivendell Council...
         --secretly choose alternate companions...
         self.createButton(
@@ -5581,8 +5586,8 @@ function CreateAlternateCompanionMenu()
             CompanionNames[2] = "Strider: Ranger of the North"
         end
 
-        NextStep = Steps.AlternateCompanionsMenu
-        Step = Steps.Empty
+        NextStep = StepType.AlternateCompanionsMenu
+        Step = StepType.Empty
     end
 
     function ToggleLegolas()
@@ -5592,8 +5597,8 @@ function CreateAlternateCompanionMenu()
             CompanionNames[3] = "Legolas: Son of Thranduil"
         end
 
-        NextStep = Steps.AlternateCompanionsMenu
-        Step = Steps.Empty
+        NextStep = StepType.AlternateCompanionsMenu
+        Step = StepType.Empty
     end
 
     function ToggleGimli()
@@ -5603,8 +5608,8 @@ function CreateAlternateCompanionMenu()
             CompanionNames[4] = "Gimli: Son of Gloin"
         end
 
-        NextStep = Steps.AlternateCompanionsMenu
-        Step = Steps.Empty
+        NextStep = StepType.AlternateCompanionsMenu
+        Step = StepType.Empty
     end
 
     function ToggleBoromir()
@@ -5614,8 +5619,8 @@ function CreateAlternateCompanionMenu()
             CompanionNames[5] = "Boromir: Son of Denethor"
         end
 
-        NextStep = Steps.AlternateCompanionsMenu
-        Step = Steps.Empty
+        NextStep = StepType.AlternateCompanionsMenu
+        Step = StepType.Empty
     end
 
     function TogglePeregrin()
@@ -5625,8 +5630,8 @@ function CreateAlternateCompanionMenu()
             CompanionNames[6] = "Peregrin Took: Hobbit Companion"
         end
 
-        NextStep = Steps.AlternateCompanionsMenu
-        Step = Steps.Empty
+        NextStep = StepType.AlternateCompanionsMenu
+        Step = StepType.Empty
     end
 
     function ToggleMeriadoc()
@@ -5636,8 +5641,8 @@ function CreateAlternateCompanionMenu()
             CompanionNames[7] = "Meriadoc Brandybuck: Hobbit Companion"
         end
 
-        NextStep = Steps.AlternateCompanionsMenu
-        Step = Steps.Empty
+        NextStep = StepType.AlternateCompanionsMenu
+        Step = StepType.Empty
     end
 
     function Continue()
@@ -5648,8 +5653,8 @@ function CreateAlternateCompanionMenu()
         end
 
         MoveGamePanel("All")
-        NextStep = Steps.SetupCompanions
-        Step = Steps.Empty
+        NextStep = StepType.SetupCompanions
+        Step = StepType.Empty
     end
 end
 
@@ -5732,14 +5737,16 @@ function SetupCompanionsStep()
         )
     coroutine.yield(0)
     CardObj.setDescription(CardObj.getDescription() .. "Fellowship;")
+
     --wait for fellowship guide card to exist...
     repeat
         coroutine.yield(0)
     until getObjectFromGUID(IDs.CompanionCards[1]) ~= nil
-    --wait for fellowship guide card to reach their destination before continuing...
-    local Done = false
+
     Global.call("PlaySound", { ID = 1 })
-    --Music Title
+
+    --wait for fellowship guide card to reach their destination before continuing
+    local Done = false
     repeat
         coroutine.yield(0)
         if getObjectFromGUID(IDs.CompanionCards[1]) ~= nil then
@@ -5751,12 +5758,13 @@ function SetupCompanionsStep()
             Done = true
         end
     until Done
+
     Global.call("FellowshipMenu")
-    NextStep = Steps.SetupUnits
-    --compact mode?
-    if Versus == "1v1 Compact Mode" then
+    NextStep = StepType.SetupCompleteMenu
+
+    if CompactMode then
         broadcastToAll("Compact Mode 1v1:\nPlacing Players next to each other...")
-        Versus = "1v1"
+        VersusMode = VersusType.OneVersusOne
         --update stored locations...
         Spots.ShadowDiceBox = Spots.CompactShadowUsedDice
         Spots.FreePeoplesDiceBox = Spots.CompactFreePeoplesUsedDice
@@ -6054,7 +6062,7 @@ function SetupCompanionsStep()
     if TheBreakingOfTheFellowship then
         Global.call("SetupBreakingOfTheFellowship")
     else
-        Step = Steps.Empty
+        Step = StepType.Empty
     end
 end
 
