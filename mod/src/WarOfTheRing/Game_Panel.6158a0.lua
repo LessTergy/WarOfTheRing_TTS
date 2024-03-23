@@ -24,9 +24,9 @@ local FlagsString = "" --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
 local StepType = {
     Empty = "",
     BeginMenu = "BeginMenu",
-    SetupUnits = "SetupUnits",
     PlayersMenu = "PlayersMenu",
     ExpansionMenu = "ExpansionMenu",
+    SetupUnits = "SetupUnits",
     HuntForTheRingMenu = "HuntForTheRingMenu",
     TFoEMenu = "TFoEMenu",
     TreebeardMenu = "TreebeardMenu",
@@ -329,12 +329,12 @@ function ProcessNextStep()
         Step = StepType.Empty
     elseif Step == StepType.BeginMenu then
         CreateBeginMenu()
-    elseif Step == StepType.SetupUnits then
-        UnitsSetupStep()
     elseif Step == StepType.PlayersMenu then
         CreatePlayersMenu()
     elseif Step == StepType.ExpansionMenu then
         CreateExpansionMenu()
+    elseif Step == StepType.SetupUnits then
+        UnitsSetupStep()
     elseif Step == StepType.HuntForTheRingMenu then
         CreateHuntForTheRingMenu()
     elseif Step == StepType.TFoEMenu then
@@ -431,7 +431,7 @@ function UnitsSetupStep()
     SpawnArmies()
     Global.call("UpdateIDs")
 
-    NextStep = StepType.PlayersMenu
+    NextStep = StepType.HuntForTheRingMenu
     Step = StepType.Empty
 end
 
@@ -3274,7 +3274,7 @@ function CreateBeginMenu()
         self.clearButtons()
         --Music Violin
         Global.call("PlaySound", { ID = 0 })
-        NextStep = StepType.SetupUnits
+        NextStep = StepType.PlayersMenu
         Step = StepType.Empty
     end
 
@@ -3881,246 +3881,247 @@ function CreateExpansionMenu()
 
     function Continue()
         self.clearButtons()
-        NextStep = StepType.HuntForTheRingMenu
+        NextStep = StepType.SetupUnits
         Step = StepType.Empty
     end
 end
 
 function CreateHuntForTheRingMenu()
-    local IDs = Global.call("GetIDs")
-
     self.clearButtons()
     SPTCount = 0
     FPTCount = 0
 
-    if HuntForTheRing then
+    if not HuntForTheRing then
+        Global.call("RemoveObjectFromGame", { Description = "HftR;" })
+        NextStep = StepType.TFoEMenu
+        Step = StepType.Empty
+        return
+    end
+
+    local IDs = Global.call("GetIDs")
+
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Hunt for the Ring",
+            position = { 0, 0.1, -1.3 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    if HftRSPT1 then
+        SPTCount = SPTCount + 1
         self.createButton(
             {
-                click_function = "Nothing",
+                click_function = "ToggleHftRSPT1",
                 function_owner = self,
-                label = "Hunt for the Ring",
-                position = { 0, 0.1, -1.3 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 1, 1, 1 }
+                label = "Included: Shadow Token (Advance political track)",
+                position = { 0, 0.1, -0.8 },
+                width = 1800,
+                height = 150,
+                color = { 1, 0.4, 0.4 },
+                font_color = { 1, 1, 0 },
+                font_size = 70,
+                tooltip = "Click to exclude this token."
             }
         )
+    else
+        self.createButton(
+            {
+                click_function = "ToggleHftRSPT1",
+                function_owner = self,
+                label = "Excluded: Shadow Token (Advance political track)",
+                position = { 0, 0.1, -0.8 },
+                width = 1800,
+                height = 150,
+                color = { 1, 1, 1 },
+                font_size = 70,
+                tooltip = "Click to include this token."
+            }
+        )
+    end
+
+    if HftRSPT2 then
+        SPTCount = SPTCount + 1
+        self.createButton(
+            {
+                click_function = "ToggleHftRSPT2",
+                function_owner = self,
+                label = "Included: Shadow Token (Move Nazgul and minions)",
+                position = { 0, 0.1, -0.5 },
+                width = 1800,
+                height = 150,
+                color = { 1, 0.4, 0.4 },
+                font_color = { 1, 1, 0 },
+                font_size = 70,
+                tooltip = "Click to exclude this token."
+            }
+        )
+    else
+        self.createButton(
+            {
+                click_function = "ToggleHftRSPT2",
+                function_owner = self,
+                label = "Excluded: Shadow Token (Move Nazgul and minions)",
+                position = { 0, 0.1, -0.5 },
+                width = 1800,
+                height = 150,
+                color = { 1, 1, 1 },
+                font_size = 70,
+                tooltip = "Click to include this token."
+            }
+        )
+    end
+
+    if HftRFPT1 then
+        FPTCount = FPTCount + 1
+        self.createButton(
+            {
+                click_function = "ToggleHftRFPT1",
+                function_owner = self,
+                label = "Included: Free Peoples Token (Advance political track)",
+                position = { 0, 0.1, 0 },
+                width = 1800,
+                height = 150,
+                color = { 0.4, 0.4, 1 },
+                font_color = { 1, 1, 0 },
+                font_size = 70,
+                tooltip = "Click to exclude this token."
+            }
+        )
+    else
+        self.createButton(
+            {
+                click_function = "ToggleHftRFPT1",
+                function_owner = self,
+                label = "Excluded: Free Peoples Token (Advance political track)",
+                position = { 0, 0.1, 0 },
+                width = 1800,
+                height = 150,
+                color = { 1, 1, 1 },
+                font_size = 70,
+                tooltip = "Click to include this token."
+            }
+        )
+    end
+
+    if HftRFPT2 then
+        FPTCount = FPTCount + 1
+        self.createButton(
+            {
+                click_function = "ToggleHftRFPT2",
+                function_owner = self,
+                label = "Included: Free Peoples Token (Draw event card)",
+                position = { 0, 0.1, 0.3 },
+                width = 1800,
+                height = 150,
+                color = { 0.4, 0.4, 1 },
+                font_color = { 1, 1, 0 },
+                font_size = 70,
+                tooltip = "Click to exclude this token."
+            }
+        )
+    else
+        self.createButton(
+            {
+                click_function = "ToggleHftRFPT2",
+                function_owner = self,
+                label = "Excluded: Free Peoples Token (Draw event card)",
+                position = { 0, 0.1, 0.3 },
+                width = 1800,
+                height = 150,
+                color = { 1, 1, 1 },
+                font_size = 70,
+                tooltip = "Click to include this token."
+            }
+        )
+    end
+
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Shadow has " .. SPTCount .. " tokens. Free Peoples has " .. FPTCount .. " tokens.",
+            position = { 0, 0.1, 1 },
+            width = 0,
+            height = 0,
+            font_size = 70,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Continue",
+            function_owner = self,
+            label = "Continue",
+            position = { 0, 0.1, 1.3 },
+            width = 1800,
+            height = 200,
+            color = { 1, 1, 1 },
+            font_size = 100
+        }
+    )
+    function ToggleHftRSPT1()
+        HftRSPT1 = not HftRSPT1
+        NextStep = StepType.HuntForTheRingMenu
+        Step = StepType.Empty
+    end
+
+    function ToggleHftRSPT2()
+        HftRSPT2 = not HftRSPT2
+        NextStep = StepType.HuntForTheRingMenu
+        Step = StepType.Empty
+    end
+
+    function ToggleHftRFPT1()
+        HftRFPT1 = not HftRFPT1
+        NextStep = StepType.HuntForTheRingMenu
+        Step = StepType.Empty
+    end
+
+    function ToggleHftRFPT2()
+        HftRFPT2 = not HftRFPT2
+        NextStep = StepType.HuntForTheRingMenu
+        Step = StepType.Empty
+    end
+
+    function Continue()
+        self.clearButtons()
+        printToAll("The Shadow received " .. SPTCount .. " Action Tokens from The Hunt for the Ring.")
         if HftRSPT1 then
-            SPTCount = SPTCount + 1
-            self.createButton(
-                {
-                    click_function = "ToggleHftRSPT1",
-                    function_owner = self,
-                    label = "Included: Shadow Token (Advance political track)",
-                    position = { 0, 0.1, -0.8 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 0.4, 0.4 },
-                    font_color = { 1, 1, 0 },
-                    font_size = 70,
-                    tooltip = "Click to exclude this token."
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "ToggleHftRSPT1",
-                    function_owner = self,
-                    label = "Excluded: Shadow Token (Advance political track)",
-                    position = { 0, 0.1, -0.8 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 70,
-                    tooltip = "Click to include this token."
-                }
-            )
+            getObjectFromGUID(IDs.HftR.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -33 }, false, true)
         end
 
         if HftRSPT2 then
-            SPTCount = SPTCount + 1
-            self.createButton(
-                {
-                    click_function = "ToggleHftRSPT2",
-                    function_owner = self,
-                    label = "Included: Shadow Token (Move Nazgul and minions)",
-                    position = { 0, 0.1, -0.5 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 0.4, 0.4 },
-                    font_color = { 1, 1, 0 },
-                    font_size = 70,
-                    tooltip = "Click to exclude this token."
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "ToggleHftRSPT2",
-                    function_owner = self,
-                    label = "Excluded: Shadow Token (Move Nazgul and minions)",
-                    position = { 0, 0.1, -0.5 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 70,
-                    tooltip = "Click to include this token."
-                }
-            )
+            getObjectFromGUID(IDs.HftR.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -35 }, false, true)
         end
 
-        if HftRFPT1 then
-            FPTCount = FPTCount + 1
-            self.createButton(
-                {
-                    click_function = "ToggleHftRFPT1",
-                    function_owner = self,
-                    label = "Included: Free Peoples Token (Advance political track)",
-                    position = { 0, 0.1, 0 },
-                    width = 1800,
-                    height = 150,
-                    color = { 0.4, 0.4, 1 },
-                    font_color = { 1, 1, 0 },
-                    font_size = 70,
-                    tooltip = "Click to exclude this token."
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "ToggleHftRFPT1",
-                    function_owner = self,
-                    label = "Excluded: Free Peoples Token (Advance political track)",
-                    position = { 0, 0.1, 0 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 70,
-                    tooltip = "Click to include this token."
-                }
-            )
-        end
-
-        if HftRFPT2 then
-            FPTCount = FPTCount + 1
-            self.createButton(
-                {
-                    click_function = "ToggleHftRFPT2",
-                    function_owner = self,
-                    label = "Included: Free Peoples Token (Draw event card)",
-                    position = { 0, 0.1, 0.3 },
-                    width = 1800,
-                    height = 150,
-                    color = { 0.4, 0.4, 1 },
-                    font_color = { 1, 1, 0 },
-                    font_size = 70,
-                    tooltip = "Click to exclude this token."
-                }
-            )
-        else
-            self.createButton(
-                {
-                    click_function = "ToggleHftRFPT2",
-                    function_owner = self,
-                    label = "Excluded: Free Peoples Token (Draw event card)",
-                    position = { 0, 0.1, 0.3 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 70,
-                    tooltip = "Click to include this token."
-                }
-            )
-        end
-
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Shadow has " .. SPTCount .. " tokens. Free Peoples has " .. FPTCount .. " tokens.",
-                position = { 0, 0.1, 1 },
-                width = 0,
-                height = 0,
-                font_size = 70,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Continue",
-                function_owner = self,
-                label = "Continue",
-                position = { 0, 0.1, 1.3 },
-                width = 1800,
-                height = 200,
-                color = { 1, 1, 1 },
-                font_size = 100
-            }
-        )
-        function ToggleHftRSPT1()
-            HftRSPT1 = not HftRSPT1
-            NextStep = StepType.HuntForTheRingMenu
-            Step = StepType.Empty
-        end
-
-        function ToggleHftRSPT2()
-            HftRSPT2 = not HftRSPT2
-            NextStep = StepType.HuntForTheRingMenu
-            Step = StepType.Empty
-        end
-
-        function ToggleHftRFPT1()
-            HftRFPT1 = not HftRFPT1
-            NextStep = StepType.HuntForTheRingMenu
-            Step = StepType.Empty
-        end
-
-        function ToggleHftRFPT2()
-            HftRFPT2 = not HftRFPT2
-            NextStep = StepType.HuntForTheRingMenu
-            Step = StepType.Empty
-        end
-
-        function Continue()
-            self.clearButtons()
-            printToAll("The Shadow received " .. SPTCount .. " Action Tokens from The Hunt for the Ring.")
-            if HftRSPT1 then
-                getObjectFromGUID(IDs.HftR.ShadowToken1).setPositionSmooth({ 12.5, 1.02, -33 }, false, true)
+        printToAll("The Free Peoples received " .. FPTCount .. " Action Tokens from The Hunt for the Ring.")
+        if CompactMode then
+            if HftRFPT1 then
+                getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({ -13, 1.02, -33 }, false,
+                    true)
             end
 
-            if HftRSPT2 then
-                getObjectFromGUID(IDs.HftR.ShadowToken2).setPositionSmooth({ 12.5, 1.02, -35 }, false, true)
+            if HftRFPT2 then
+                getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({ -13, 1.02, -35 }, false,
+                    true)
+            end
+        else
+            if HftRFPT1 then
+                getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({ -17, 1.02, 27.5 }, false,
+                    true)
             end
 
-            printToAll("The Free Peoples received " .. FPTCount .. " Action Tokens from The Hunt for the Ring.")
-            if CompactMode then
-                if HftRFPT1 then
-                    getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({ -13, 1.02, -33 }, false,
-                        true)
-                end
-
-                if HftRFPT2 then
-                    getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({ -13, 1.02, -35 }, false,
-                        true)
-                end
-            else
-                if HftRFPT1 then
-                    getObjectFromGUID(IDs.HftR.FreePeoplesToken1).setPositionSmooth({ -17, 1.02, 27.5 }, false,
-                        true)
-                end
-
-                if HftRFPT2 then
-                    getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({ -19, 1.02, 27.5 }, false,
-                        true)
-                end
+            if HftRFPT2 then
+                getObjectFromGUID(IDs.HftR.FreePeoplesToken2).setPositionSmooth({ -19, 1.02, 27.5 }, false,
+                    true)
             end
-
-            NextStep = StepType.TFoEMenu
-            Step = StepType.Empty
         end
-    else
-        Global.call("RemoveObjectFromGame", { Description = "HftR;" })
+
         NextStep = StepType.TFoEMenu
         Step = StepType.Empty
     end
