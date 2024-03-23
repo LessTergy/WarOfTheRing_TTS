@@ -1,0 +1,297 @@
+local UnitTypes = { "Regular", "Elite", "Leader" }
+
+local ElvesConfig = {
+    UnitName = "Elf",
+    NationName = "Elves",
+    ObjectName = "Elves"
+}
+
+local DwarvesConfig = {
+    UnitName = "Dwarf",
+    NationName = "Dwarves",
+    ObjectName = "Dwarves"
+}
+
+local NorthConfig = {
+    UnitName = "North",
+    NationName = "North",
+    ObjectName = "North"
+}
+
+local RohanConfig = {
+    UnitName = "Rohan",
+    NationName = "Rohan",
+    ObjectName = "Rohan"
+}
+
+local GondorConfig = {
+    UnitName = "Gondor",
+    NationName = "Gondor",
+    ObjectName = "Gondor"
+}
+
+local NazgulConfig = {
+    UnitName = "Nazgûl",
+    NationName = "Sauron",
+    ObjectName = "Nazgul"
+}
+
+local SauronConfig = {
+    UnitName = "Sauron",
+    NationName = "Sauron",
+    ObjectName = "Sauron"
+}
+
+local HaradrimConfig = {
+    UnitName = "Southron/Easterling",
+    NationName = "Haradrim",
+    ObjectName = "Haradrim"
+}
+
+local IsengardConfig = {
+    UnitName = "Isengard",
+    NationName = "Isengard",
+    ObjectName = "Isengard"
+}
+
+-- Characters
+local CompanionConfig = {
+    GroupName = "CompaniosBase",
+    Patterns = { "Character", "Companion", "FreePeoples" }
+}
+
+local MinionBaseConfig = {
+    GroupName = "MinionsBase",
+    Patterns = { "Minion", "Shadow" }
+}
+
+local LordsCharacterConfig = {
+    GroupName = "Characters_Lords",
+    Patterns = { "Character", "FreePeoples", "LoME" }
+}
+
+local LordsMinionConfig = {
+    GroupName = "Minions_Lords",
+    Patterns = { "Minion", "Shadow", "LoME" }
+}
+
+local FactionConfig = {
+    GroupName = "Factions",
+    Patterns = { "Faction", "WoME" }
+}
+
+local KingsCharacterConfig = {
+    GroupName = "Characters_Kings",
+    Patterns = { "Character", "FreePeoples", "KoME" }
+}
+
+local KingsMinionConfig = {
+    GroupName = "Minions_Kings",
+    Patterns = { "Minion", "Shadow", "KoME" }
+}
+
+local clipboardId = "cf0214"
+
+function onLoad()
+    addHotkey("Get Army Units Positions", GetArmyUnitsPositions, false)
+    addHotkey("Get Characters Units Positions", GetCharacterUnitsPositions, false)
+end
+
+function GetCharacterUnitsPositions(playerColor, object, pointerPosition, isKeyUp)
+    print("Get new objects positions")
+
+    local allObjects = getAllObjects()
+    local unitConfigList = {}
+
+    GetCharacterUnitsInfo(allObjects, unitConfigList, CompanionConfig)
+    GetCharacterUnitsInfo(allObjects, unitConfigList, MinionBaseConfig)
+
+    GetCharacterUnitsInfo(allObjects, unitConfigList, LordsCharacterConfig)
+    GetCharacterUnitsInfo(allObjects, unitConfigList, LordsMinionConfig)
+
+    GetCharacterUnitsInfo(allObjects, unitConfigList, FactionConfig)
+
+    GetCharacterUnitsInfo(allObjects, unitConfigList, KingsCharacterConfig)
+    GetCharacterUnitsInfo(allObjects, unitConfigList, KingsMinionConfig)
+
+    local str = ""
+    for _, config in pairs(unitConfigList) do
+        local configCopy = {}
+        configCopy.Patterns = config.Patterns
+        configCopy.Positions = config.Positions
+
+        local configName = "local " .. config.GroupName .. "Config = "
+        str = str .. configName .. PrintObject(configCopy) .. "\n\n"
+    end
+
+    CopyToClipboard(str)
+end
+
+function GetCharacterUnitsInfo(allObjects, unitList, characterConfig)
+    local localConfig = {}
+    localConfig.GroupName = characterConfig.GroupName
+    localConfig.Patterns = characterConfig.Patterns
+    localConfig.Positions = {}
+
+    table.insert(unitList, localConfig)
+
+    for _, Obj in pairs(allObjects) do
+        local description = ""
+
+        if not ObjectIsFigurine(Obj) then
+            goto continue
+        end
+
+        description = Obj.getDescription()
+
+        if IsRightDescription(description, characterConfig.Patterns) then
+            print(Obj.getName())
+            table.insert(localConfig.Positions, GetShortPosition(Obj))
+        end
+
+        ::continue::
+    end
+end
+
+function IsRightDescription(description, Patterns)
+    for _, pattern in pairs(Patterns) do
+        if string.find(description, pattern) == nil then
+            return false
+        end
+    end
+
+    return true
+end
+
+function GetArmyUnitsPositions(playerColor, object, pointerPosition, isKeyUp)
+    print("Get new objects positions")
+
+    local allObjects = getAllObjects()
+    local unitList = {}
+
+    GetArmyUnitsInfo(allObjects, unitList, ElvesConfig)
+    GetArmyUnitsInfo(allObjects, unitList, DwarvesConfig)
+    GetArmyUnitsInfo(allObjects, unitList, NorthConfig)
+    GetArmyUnitsInfo(allObjects, unitList, RohanConfig)
+    GetArmyUnitsInfo(allObjects, unitList, GondorConfig)
+
+    GetArmyUnitsInfo(allObjects, unitList, SauronConfig)
+    GetArmyUnitsInfo(allObjects, unitList, IsengardConfig)
+    GetArmyUnitsInfo(allObjects, unitList, HaradrimConfig)
+
+    GetArmyUnitsInfoInternal(allObjects, unitList, NazgulConfig, UnitTypes[3], false)
+
+    local str = ""
+    for _, Obj in pairs(unitList) do
+        local type = Obj.Patterns[1]
+        local nation = Obj.Patterns[2]
+        local objName = "local " .. nation .. type .. "Config = "
+        str = str .. objName .. PrintObject(Obj) .. "\n\n"
+    end
+
+    CopyToClipboard(str)
+end
+
+function GetArmyUnitsInfo(allObjects, unitList, unitConfig)
+    for _, UnitType in pairs(UnitTypes) do
+        GetArmyUnitsInfoInternal(allObjects, unitList, unitConfig, UnitType, true)
+    end
+end
+
+function GetArmyUnitsInfoInternal(allObjects, unitList, unitConfig, type, isTypeInName)
+    local name = unitConfig.UnitName
+
+    if isTypeInName then
+        name = name .. " " .. type
+    end
+
+    local config = {}
+    config.Name = name
+    config.Patterns = {}
+    config.Positions = {}
+
+    table.insert(config.Patterns, type)
+    table.insert(config.Patterns, unitConfig.NationName)
+
+    table.insert(unitList, config)
+
+    for _, Obj in pairs(allObjects) do
+        if not ObjectIsFigurine(Obj) then
+            goto continue
+        end
+
+        if Obj.getName() ~= name then
+            goto continue
+        end
+
+        print(Obj.getName())
+
+        if string.find(Obj.getDescription(), unitConfig.NationName) == nil then
+            goto continue
+        end
+
+        if string.find(Obj.getDescription(), type) == nil then
+            goto continue
+        end
+
+        table.insert(config.Positions, GetShortPosition(Obj))
+
+        ::continue::
+    end
+end
+
+function GetNationSide(value)
+    if value then
+        return "FreePeoples"
+    end
+end
+
+function PrintObject(obj, indent)
+    indent = indent or ""
+    local str = "{\n"
+
+    for k, v in pairs(obj) do
+        str = str .. indent .. "  "
+
+        if type(k) == "string" then
+            str = str .. k .. " = "
+        end
+
+        if type(v) == "table" then
+            str = str .. PrintObject(v, indent .. "  ")
+        elseif type(v) == "string" then
+            str = str .. string.format("%q", v)
+        else
+            str = str .. tostring(v)
+        end
+
+        str = str .. ",\n"
+    end
+
+    str = str .. indent .. "}"
+
+    return str
+end
+
+function GetShortPosition(Obj)
+    local position = Obj.getPosition()
+    position.x = ShortenFloat(position.x)
+    position.y = ShortenFloat(position.y)
+    position.z = ShortenFloat(position.z)
+
+    return position
+end
+
+function ShortenFloat(value)
+    local stringValue = string.format("%.2f", value)
+    return tonumber(stringValue)
+end
+
+function ObjectIsFigurine(Obj)
+    return Obj.type == "Figurine" or Obj.type == "rpgFigurine"
+end
+
+function CopyToClipboard(text)
+    local clipboard = getObjectFromGUID(clipboardId)
+    clipboard.setLuaScript(text)
+end

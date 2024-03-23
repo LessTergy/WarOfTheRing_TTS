@@ -25,7 +25,8 @@
         "onRandomize",
         "onPlayerChangeColor",
         "onObjectLeaveZone",
-        "onObjectLeaveContainer"
+        "onObjectLeaveContainer",
+        "addHotkey"
     ],
     "Lua.runtime.version": "Lua 5.2",
 
