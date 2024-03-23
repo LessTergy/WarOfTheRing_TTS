@@ -24,10 +24,3 @@ def remove_file_names_from_json(file_path, directory_path):
         file.writelines(updated_lines)
 
     print(f"File updated: {file_path}")
-
-
-main_json_path = "./mod/src/WarOfTheRing.json"
-component_bag_path = "./mod/src/WarOfTheRing/Components_Bag.0e5fd1.json"
-directory_path = "./mod/src/WarOfTheRing/ControlMarkers"
-
-remove_file_names_from_json(main_json_path, directory_path)
