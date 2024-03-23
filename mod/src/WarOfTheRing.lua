@@ -2143,7 +2143,7 @@ function SetupBreakingOfTheFellowship()
         RemoveObjectFromGame({ ID = "b9f8d6" })
         -- balrog card
         RemoveObjectFromGame({ Name = "A Balrog is Come!" })
-        -- balrog event card-- b9f8d6
+
         -- move ring-bearers to Eastemnet {6.76, 1.00, -2.33}...
         -- MoveUnit("Ring-bearers","e76bc8","d67c12","b98185","","Rivendell","Eastemnet",{6.76, 1.00, -2.33})
         PositionUnit(
@@ -2359,6 +2359,7 @@ function SetupBreakingOfTheFellowship()
             { smooth = true, guid = "71f5b1", position = { -43.2, 1, -22.5 }, rotation = { 0, 180, 0 } }
         )
         coroutine.yield(0)
+
         -- add tiles...
         printToAll(
             "Adding Special Tiles as played:\nZero Hunt tile (Elven Cloaks)\nZero Hunt tile (Elven Rope)\n-2 Hunt tile (Phial of Galadriel)\n"
@@ -2921,7 +2922,7 @@ function SettlementControlMarkerEvent(Params)
                     end
 
                     -- re-calc victory points...
-                    CalcVictoryPoints()
+                    CalculateVictoryPoints()
                 end
             elseif Params.Event == "Destroy" then
             end
@@ -2931,7 +2932,7 @@ function SettlementControlMarkerEvent(Params)
     end
 end
 
-function CalcVictoryPoints()
+function CalculateVictoryPoints()
     -- calculate victory points for both sides...
     VictoryPoints.FreePeoples = 0
     VictoryPoints.Shadow = 0
