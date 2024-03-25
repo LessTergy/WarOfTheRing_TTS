@@ -56,38 +56,38 @@ local IsengardConfig = {
 
 -- Characters
 local CompanionConfig = {
-    GroupName = "CompaniosBase",
+    GroupName = "CharactersBase",
     Patterns = { "Character", "Companion", "FreePeoples" }
 }
 
 local MinionBaseConfig = {
-    GroupName = "MinionsBase",
+    GroupName = "CharactersBase",
     Patterns = { "Minion", "Shadow" }
 }
 
 local LordsCharacterConfig = {
-    GroupName = "Characters_Lords",
+    GroupName = "CharactersLords",
     Patterns = { "Character", "FreePeoples", "LoME" }
 }
 
 local LordsMinionConfig = {
-    GroupName = "Minions_Lords",
+    GroupName = "CharactersLords",
     Patterns = { "Minion", "Shadow", "LoME" }
+}
+
+local KingsCharacterConfig = {
+    GroupName = "CharactersKings",
+    Patterns = { "Character", "FreePeoples", "KoME" }
+}
+
+local KingsMinionConfig = {
+    GroupName = "CharactersKings",
+    Patterns = { "Minion", "Shadow", "KoME" }
 }
 
 local FactionConfig = {
     GroupName = "Factions",
     Patterns = { "Faction", "WoME" }
-}
-
-local KingsCharacterConfig = {
-    GroupName = "Characters_Kings",
-    Patterns = { "Character", "FreePeoples", "KoME" }
-}
-
-local KingsMinionConfig = {
-    GroupName = "Minions_Kings",
-    Patterns = { "Minion", "Shadow", "KoME" }
 }
 
 local clipboardId = "cf0214"
@@ -103,22 +103,18 @@ function GetCharacterUnitsPositions(playerColor, object, pointerPosition, isKeyU
     local allObjects = getAllObjects()
     local unitConfigList = {}
 
-    GetCharacterUnitsInfo(allObjects, unitConfigList, CompanionConfig)
-    GetCharacterUnitsInfo(allObjects, unitConfigList, MinionBaseConfig)
+    CreateCharacterUnitsInfo(allObjects, unitConfigList, CompanionConfig, MinionBaseConfig)
+    CreateCharacterUnitsInfo(allObjects, unitConfigList, LordsCharacterConfig, LordsMinionConfig)
 
-    GetCharacterUnitsInfo(allObjects, unitConfigList, LordsCharacterConfig)
-    GetCharacterUnitsInfo(allObjects, unitConfigList, LordsMinionConfig)
+    -- GetCharacterUnitsInfo(allObjects, unitConfigList, FactionConfig)
 
-    GetCharacterUnitsInfo(allObjects, unitConfigList, FactionConfig)
-
-    GetCharacterUnitsInfo(allObjects, unitConfigList, KingsCharacterConfig)
-    GetCharacterUnitsInfo(allObjects, unitConfigList, KingsMinionConfig)
+    CreateCharacterUnitsInfo(allObjects, unitConfigList, KingsCharacterConfig, KingsMinionConfig)
 
     local str = ""
     for _, config in pairs(unitConfigList) do
         local configCopy = {}
-        configCopy.Patterns = config.Patterns
-        configCopy.Positions = config.Positions
+        configCopy.FreePeoples = config.FreePeoples
+        configCopy.Shadow = config.Shadow
 
         local configName = "local " .. config.GroupName .. "Config = "
         str = str .. configName .. PrintObject(configCopy) .. "\n\n"
@@ -127,13 +123,17 @@ function GetCharacterUnitsPositions(playerColor, object, pointerPosition, isKeyU
     CopyToClipboard(str)
 end
 
-function GetCharacterUnitsInfo(allObjects, unitList, characterConfig)
+function CreateCharacterUnitsInfo(allObjects, unitList, FP_CharacterConfig, SH_CharacterConfig)
     local localConfig = {}
-    localConfig.GroupName = characterConfig.GroupName
-    localConfig.Patterns = characterConfig.Patterns
-    localConfig.Positions = {}
+    localConfig.GroupName = FP_CharacterConfig.GroupName
+    localConfig.FreePeoples = GetCharacterUnitsInfo(allObjects, FP_CharacterConfig)
+    localConfig.Shadow = GetCharacterUnitsInfo(allObjects, SH_CharacterConfig)
 
     table.insert(unitList, localConfig)
+end
+
+function GetCharacterUnitsInfo(allObjects, characterConfig)
+    local localConfig = {}
 
     for _, Obj in pairs(allObjects) do
         local description = ""
@@ -144,13 +144,17 @@ function GetCharacterUnitsInfo(allObjects, unitList, characterConfig)
 
         description = Obj.getDescription()
 
-        if IsRightDescription(description, characterConfig.Patterns) then
-            print(Obj.getName())
-            table.insert(localConfig.Positions, GetShortPosition(Obj))
+        if not IsRightDescription(description, characterConfig.Patterns) then
+            goto continue
         end
+
+        print(Obj.getName())
+        table.insert(localConfig, CreateCharacterUnitConfig(Obj))
 
         ::continue::
     end
+
+    return localConfig
 end
 
 function IsRightDescription(description, Patterns)
@@ -161,6 +165,13 @@ function IsRightDescription(description, Patterns)
     end
 
     return true
+end
+
+function CreateCharacterUnitConfig(Obj)
+    local unitConfig = {}
+    unitConfig.Name = Obj.getName()
+    unitConfig.Position = GetShortPosition(Obj)
+    return unitConfig
 end
 
 function GetArmyUnitsPositions(playerColor, object, pointerPosition, isKeyUp)

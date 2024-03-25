@@ -1,0 +1,284 @@
+local CharactersBaseConfig = {
+    FreePeoples = {
+        {
+            Name = "Gollum",
+            Position = {
+                x = 1.5,
+                y = 1.06,
+                z = 27.5,
+            },
+        },
+        {
+            Name = "Peregrin",
+            Position = {
+                x = 27.3,
+                y = 1.01,
+                z = 18.45,
+            },
+        },
+        {
+            Name = "Legolas",
+            Position = {
+                x = 28.82,
+                y = 1.01,
+                z = 17.35,
+            },
+        },
+        {
+            Name = "Gandalf the Grey",
+            Position = {
+                x = 27.04,
+                y = 0.85,
+                z = 16.24,
+            },
+        },
+        {
+            Name = "Boromir",
+            Position = {
+                x = 26.66,
+                y = 1.01,
+                z = 17.35,
+            },
+        },
+        {
+            Name = "Meriadoc",
+            Position = {
+                x = 28.19,
+                y = 1.01,
+                z = 18.45,
+            },
+        },
+        {
+            Name = "Strider",
+            Position = {
+                x = 28.35,
+                y = 1.01,
+                z = 16.24,
+            },
+        },
+        {
+            Name = "Gimli",
+            Position = {
+                x = 27.74,
+                y = 1.01,
+                z = 17.35,
+            },
+        },
+    },
+    Shadow = {
+        {
+            Name = "Saruman: Corrupted Wizard",
+            Position = {
+                x = 15.8,
+                y = 1.01,
+                z = -27.46,
+            },
+        },
+        {
+            Name = "The Witch-King: The Black Captain",
+            Position = {
+                x = 20.7,
+                y = 1.01,
+                z = -27.45,
+            },
+        },
+        {
+            Name = "The Mouth of Sauron: Lieutenant of Barad~Dur",
+            Position = {
+                x = 25.64,
+                y = 1.01,
+                z = -27.48,
+            },
+        },
+        {
+            Name = "The Witch-King: Chief of the Ring Wraiths",
+            Position = {
+                x = 31.44,
+                y = 1.01,
+                z = -27.37,
+            },
+        },
+        {
+            Name = "The Mouth of Sauron: Black Numenorean",
+            Position = {
+                x = 36.53,
+                y = 1.01,
+                z = -27.3,
+            },
+        },
+        {
+            Name = "Gothmog: Lieutenant of Morgul",
+            Position = {
+                x = 40.66,
+                y = 1.01,
+                z = -27.52,
+            },
+        },
+        {
+            Name = "Balrog: Evil of the Ancient World",
+            Position = {
+                x = 44.93,
+                y = 1.01,
+                z = -27.66,
+            },
+        },
+        {
+            Name = "Ugluk: Chieftain of the Uruk-Hai",
+            Position = {
+                x = 56,
+                y = 0.95,
+                z = -39.5,
+            },
+        },
+        {
+            Name = "The Black Serpent: Chieftain of the Haradrim",
+            Position = {
+                x = 46,
+                y = 0.95,
+                z = -39.5,
+            },
+        },
+        {
+            Name = "The Shadow of Mirkwood: Chieftain of the Dark Lord",
+            Position = {
+                x = 51,
+                y = 0.95,
+                z = -39.5,
+            },
+        },
+    },
+}
+
+local CharactersLordsConfig = {
+    FreePeoples = {
+        {
+            Name = "Lord Elrond: Keeper of Vilya",
+            Position = {
+                x = 11.46,
+                y = 1.01,
+                z = 27.5,
+            },
+        },
+        {
+            Name = "Lady Galadriel: Keeper of Nenya",
+            Position = {
+                x = 16.46,
+                y = 1.01,
+                z = 27.5,
+            },
+        },
+        {
+            Name = "Smeagol",
+            Position = {
+                x = 6.5,
+                y = 1.06,
+                z = 27.5,
+            },
+        },
+    },
+    Shadow = {
+        {
+            Name = "The Witch-King: Chief of the Ring Wraiths",
+            Position = {
+                x = 31.44,
+                y = 1.01,
+                z = -27.37,
+            },
+        },
+        {
+            Name = "The Mouth of Sauron: Black Numenorean",
+            Position = {
+                x = 36.53,
+                y = 1.01,
+                z = -27.3,
+            },
+        },
+        {
+            Name = "Gothmog: Lieutenant of Morgul",
+            Position = {
+                x = 40.66,
+                y = 1.01,
+                z = -27.52,
+            },
+        },
+        {
+            Name = "Balrog: Evil of the Ancient World",
+            Position = {
+                x = 44.93,
+                y = 1.01,
+                z = -27.66,
+            },
+        },
+    },
+}
+
+local CharactersKingsConfig = {
+    FreePeoples = {
+        {
+            Name = "Brand: King of Dale",
+            Position = {
+                x = 15.93,
+                y = 0.96,
+                z = 16.22,
+            },
+        },
+        {
+            Name = "Dain: King Under the Mountain",
+            Position = {
+                x = 15.87,
+                y = 0.96,
+                z = 21.39,
+            },
+        },
+        {
+            Name = "Theoden: King of the Riddermark",
+            Position = {
+                x = 6.43,
+                y = 0.96,
+                z = -7.24,
+            },
+        },
+        {
+            Name = "Denethor: Lord Steward of Gondor",
+            Position = {
+                x = 10.44,
+                y = 0.96,
+                z = -10.43,
+            },
+        },
+        {
+            Name = "Thranduil: King of the Woodland Realm",
+            Position = {
+                x = 14.87,
+                y = 0.96,
+                z = 15.15,
+            },
+        },
+    },
+    Shadow = {
+        {
+            Name = "Ugluk: Chieftain of the Uruk-Hai",
+            Position = {
+                x = 56,
+                y = 0.95,
+                z = -39.5,
+            },
+        },
+        {
+            Name = "The Black Serpent: Chieftain of the Haradrim",
+            Position = {
+                x = 46,
+                y = 0.95,
+                z = -39.5,
+            },
+        },
+        {
+            Name = "The Shadow of Mirkwood: Chieftain of the Dark Lord",
+            Position = {
+                x = 51,
+                y = 0.95,
+                z = -39.5,
+            },
+        },
+    },
+}
