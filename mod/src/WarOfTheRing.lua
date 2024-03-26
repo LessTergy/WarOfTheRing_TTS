@@ -152,7 +152,6 @@ function onLoad()
 
     InitRegions()
     InitGrid()
-    FreezeObjects()
 
     getObjectFromGUID(FellowshipRedZoneID).setPosition({ 36.5, -2, 26.5 })
     getObjectFromGUID(FellowshipRedZoneID).setScale({ 35, 1, 1 })
@@ -204,18 +203,6 @@ function GetSideFromText(Text)
     end
 
     return ""
-end
-
-function FreezeObjects()
-    -- table...
-    getObjectFromGUID("a8d0fa").interactable = false
-    -- mount doom...
-    getObjectFromGUID("03e684").interactable = false
-    getObjectFromGUID("a8c069").interactable = false
-    getObjectFromGUID("ec1790").interactable = false
-    getObjectFromGUID("873d56").interactable = false
-    getObjectFromGUID("7b7ed8").interactable = false
-    getObjectFromGUID("76fca0").interactable = false
 end
 
 function onObjectEnterZone(zone, enter_object)

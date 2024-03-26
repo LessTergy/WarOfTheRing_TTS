@@ -45,6 +45,8 @@ local SettlementsConfigs = {
     Fortification = { PositionY_3D = 1.01, PositionY_Flat = 0.93, Size = { 1.8, 1, 1.1 } }
 }
 
+local GraveBagId = "416864"
+
 function onLoad(save_state)
     InitPreferences()
 end
@@ -1443,87 +1445,19 @@ function UpdateMountDoom()
         return
     end
 
+    local graveBag = getObjectFromGUID(GraveBagId)
+    local mountDoomId = "03e684"
+
     if Settings.MountDoomType == "Flat" then
-        if getObjectFromGUID("76fca0") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("76fca0"))
-        end
-
-        coroutine.yield(0)
-        if getObjectFromGUID("7b7ed8") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("7b7ed8"))
-        end
-
-        coroutine.yield(0)
-        if getObjectFromGUID("873d56") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("873d56"))
-        end
-
-        coroutine.yield(0)
-        if getObjectFromGUID("ec1790") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("ec1790"))
-        end
-
-        coroutine.yield(0)
-        if getObjectFromGUID("a8c069") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("a8c069"))
-        end
-
-        coroutine.yield(0)
-        if getObjectFromGUID("03e684") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("03e684"))
-        end
-
-        coroutine.yield(0)
+        local mountDoomObject = getObjectFromGUID(mountDoomId)
+        graveBag.putObject(mountDoomObject)
     else
-        if getObjectFromGUID("03e684") == nil then
-            getObjectFromGUID("416864").takeObject(
-                { smooth = false, guid = "03e684", position = { 24.8, 1.01, -9.85 }, rotation = { 0, 180, 0 } }
-            )
-            getObjectFromGUID("03e684").setLock(true)
-        end
-
-        coroutine.yield(0)
-        if getObjectFromGUID("a8c069") == nil then
-            getObjectFromGUID("416864").takeObject(
-                { smooth = false, guid = "a8c069", position = { 24.8, 1.11, -9.85 }, rotation = { 0, 180, 0 } }
-            )
-            getObjectFromGUID("a8c069").setLock(true)
-        end
-
-        coroutine.yield(0)
-        if getObjectFromGUID("ec1790") == nil then
-            getObjectFromGUID("416864").takeObject(
-                { smooth = false, guid = "ec1790", position = { 24.8, 1.21, -9.85 }, rotation = { 0, 180, 0 } }
-            )
-            getObjectFromGUID("ec1790").setLock(true)
-        end
-
-        coroutine.yield(0)
-        if getObjectFromGUID("873d56") == nil then
-            getObjectFromGUID("416864").takeObject(
-                { smooth = false, guid = "873d56", position = { 24.8, 1.31, -9.85 }, rotation = { 0, 180, 0 } }
-            )
-            getObjectFromGUID("873d56").setLock(true)
-        end
-
-        coroutine.yield(0)
-        if getObjectFromGUID("7b7ed8") == nil then
-            getObjectFromGUID("416864").takeObject(
-                { smooth = false, guid = "7b7ed8", position = { 24.8, 1.41, -9.85 }, rotation = { 0, 180, 0 } }
-            )
-            getObjectFromGUID("7b7ed8").setLock(true)
-        end
-
-        coroutine.yield(0)
-        if getObjectFromGUID("76fca0") == nil then
-            getObjectFromGUID("416864").takeObject(
-                { smooth = false, guid = "76fca0", position = { 24.8, 1.56, -9.85 }, rotation = { 0, 180, 0 } }
-            )
-            getObjectFromGUID("76fca0").setLock(true)
-        end
-
-        coroutine.yield(0)
+        graveBag.takeObject(
+            { smooth = false, guid = mountDoomId, position = { 24.8, 1, -9.85 }, rotation = { 0, 180, 0 } }
+        )
     end
+
+    coroutine.yield(0)
 end
 
 function RecordPreferences()
