@@ -1,4 +1,5 @@
-require('!/UnitsController')
+require('!/ArmySpawnController')
+require('!/CharacterSpawnController')
 
 local CompactMode = false
 local GuideName = "Gandalf the Grey: The Grey Wanderer"
