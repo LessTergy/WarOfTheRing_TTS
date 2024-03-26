@@ -282,3 +282,91 @@ local CharactersKingsConfig = {
         },
     },
 }
+
+function SpawnCharactersBase()
+    SpawnCharactersInternal(CharactersBaseConfig)
+end
+
+function SpawnCharactersLords()
+    SpawnCharactersInternal(CharactersLordsConfig)
+end
+
+function SpawnCharactersKings()
+    SpawnCharactersInternal(CharactersKingsConfig)
+end
+
+function SpawnCharactersInternal(CharactersConfig)
+    local componentBag = getObjectFromGUID("0e5fd1")
+
+    local preferencesPanel = getObjectFromGUID("c35be9")
+    local settings = preferencesPanel.getTable("Settings")
+    local settingType = settings.CharactersType
+
+    SpawnCharacterList(componentBag, CharactersConfig.FreePeoples, settingType)
+    SpawnCharacterList(componentBag, CharactersConfig.Shadow, settingType)
+end
+
+function SpawnCharacterList(ComponentBag, CharactersConfig, SettingType)
+    for _, CharacterConfig in pairs(CharactersConfig) do
+        SpawnCharacter(ComponentBag, CharacterConfig, SettingType)
+    end
+end
+
+function SpawnCharacter(ComponentBag, CharacterConfig, SettingType)
+    local Template = GetObjectFromComponentBag(ComponentBag, CharacterConfig, SettingType)
+    coroutine.yield(0)
+
+    if Template == nil then
+        return
+    end
+
+    for _, Position in pairs(CharacterConfig.Positions) do
+        local NewObj = Template.clone({ position = Position })
+        NewObj.setLock(false)
+        NewObj.setPosition({ Position.x, Position.y + 1, Position.z })
+    end
+
+    Template.setLock(false)
+    ComponentBag.putObject(Template)
+end
+
+function GetObjectFromComponentBag(ComponentBag, CharacterConfig, SettingType)
+    local settingPattern = SettingType .. ";"
+    local result = nil
+
+    for _, Item in pairs(ComponentBag.getObjects()) do
+        if result ~= nil then
+            log("Find character successful - " .. CharacterConfig.Name)
+            break
+        end
+
+        if (CharacterConfig.Name ~= Item.name) then
+            log(CharacterConfig.Name .. " ~= " .. Item.name)
+            goto continue
+        end
+
+        -- same type as setting
+        if string.find(Item.description, settingPattern) == nil then
+            goto continue
+        end
+
+        result = Item
+
+        ::continue::
+    end
+
+    if result == nil then
+        log("Can't find object in bag: SearchConfig.Name - " .. CharacterConfig.Name)
+        return nil
+    end
+
+    local Template = ComponentBag.takeObject({
+        guid = result.guid,
+        smooth = false,
+        position = { 80, -2, -60 },
+        rotation = { 0, 180, 0 }
+    })
+    Template.setLock(true)
+
+    return Template
+end
