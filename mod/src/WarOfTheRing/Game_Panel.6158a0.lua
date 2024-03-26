@@ -29,7 +29,7 @@ local StepType = {
     ExpansionMenu = "ExpansionMenu",
     SetupUnits = "SetupUnits",
     HuntForTheRingMenu = "HuntForTheRingMenu",
-    TFoEMenu = "TFoEMenu",
+    TheFateOfEreborMenu = "TheFateOfEreborMenu",
     TreebeardMenu = "TreebeardMenu",
     StartingGuideMenu = "StartingGuideMenu",
     SetupExpansions = "SetupExpansions",
@@ -318,7 +318,6 @@ function ProcessNextStep()
     coroutine.yield(0)
     log("ProcessNextStep:" .. NextStep)
 
-    --debug
     Step = NextStep
     self.setDescription(
         "Panel;Round:" .. Round .. ";Phase:" .. Phase .. ";Turn:" .. Turn .. ";Step:" .. Step .. ";" .. FlagsString
@@ -338,7 +337,7 @@ function ProcessNextStep()
         UnitsSetupStep()
     elseif Step == StepType.HuntForTheRingMenu then
         CreateHuntForTheRingMenu()
-    elseif Step == StepType.TFoEMenu then
+    elseif Step == StepType.TheFateOfEreborMenu then
         CreateTFoEMenu()
     elseif Step == StepType.TreebeardMenu then
         CreateTreebeardMenu()
@@ -3894,7 +3893,7 @@ function CreateHuntForTheRingMenu()
 
     if not HuntForTheRing then
         Global.call("RemoveObjectFromGame", { Description = "HftR;" })
-        NextStep = StepType.TFoEMenu
+        NextStep = StepType.TheFateOfEreborMenu
         Step = StepType.Empty
         return
     end
@@ -4123,7 +4122,7 @@ function CreateHuntForTheRingMenu()
             end
         end
 
-        NextStep = StepType.TFoEMenu
+        NextStep = StepType.TheFateOfEreborMenu
         Step = StepType.Empty
     end
 end
@@ -4190,7 +4189,7 @@ function CreateTFoEMenu()
         )
         function ToggleNewCities()
             TheFateOfErebor_NewCities = not TheFateOfErebor_NewCities
-            NextStep = StepType.TFoEMenu
+            NextStep = StepType.TheFateOfEreborMenu
             Step = StepType.Empty
         end
 
@@ -4796,7 +4795,7 @@ function SetupExpansionsStep()
     self.clearButtons()
     NextStep = StepType.SetupCompanions
     local TempObj = nil
-    --Included: The Fate of Erebor...
+
     if TheFateOfErebor then
         --setup the Fate of Erebor...
         Global.call("SetupTheFateOfErebor")
@@ -4912,7 +4911,7 @@ function SetupExpansionsStep()
                 getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("9bdfb0"))
             end
         end
-    else --clean up TFoE components...
+    else
         --Clean up TFoE Components...
         self.clearButtons()
         self.createButton(
@@ -4947,7 +4946,6 @@ function SetupExpansionsStep()
         until Done
     end
 
-    --Included: Lords of Middle-Earth...
     if LordsOfMiddleEarth then
         self.clearButtons()
         self.createButton(
@@ -5007,7 +5005,7 @@ function SetupExpansionsStep()
                 coroutine.yield(0)
             end
         end
-    else --Excluded: Lord of Middle-Earth...
+    else
         --Clean up LoME Components...
         self.clearButtons()
         self.createButton(
@@ -5043,10 +5041,10 @@ function SetupExpansionsStep()
     end
 
     coroutine.yield(0)
-    --Included: Warriors of Middle-Earth...
+
     if WarriorsOfMiddleEarth then
         log(" Setting up WoME...")
-        --debuggg
+
         self.clearButtons()
         self.createButton(
             {
@@ -5062,7 +5060,7 @@ function SetupExpansionsStep()
         )
         --Remove FP cards
         log(" Removing FP Event Cards (WoME)...")
-        --debuggg
+
         Global.call(
             "RemoveObjectFromGame",
             { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Gwaihir the Windlord", Description = "#15;" }
@@ -5090,7 +5088,7 @@ function SetupExpansionsStep()
         coroutine.yield(0)
         --Remove S cards
         log(" Removing Shadow Event Cards (WoME)...")
-        --debuggg
+
         Global.call(
             "RemoveObjectFromGame",
             { BagID = IDs.ShadowCharacterEventDeck, Name = "Shelob's Lair", Description = "#1;" }
@@ -5106,7 +5104,7 @@ function SetupExpansionsStep()
         coroutine.yield(0)
         --Add New cards
         log(" Adding FP Event Cards...")
-        --debuggg
+
         TempObj = getObjectFromGUID(IDs.WoME.FreePeoplesEventCards)
         coroutine.yield(0)
         log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
@@ -5115,7 +5113,7 @@ function SetupExpansionsStep()
             coroutine.yield(0)
         until TempObj == nil
         log(" Adding S Event Cards...")
-        --debuggg
+
         TempObj = getObjectFromGUID(IDs.WoME.NotOnAnybodysSideCard)
         coroutine.yield(0)
         log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
@@ -5130,7 +5128,7 @@ function SetupExpansionsStep()
         repeat
             coroutine.yield(0)
         until TempObj == nil
-    else --Excluded: Warriors of MIddle-Earth...
+    else
         --Clean up WoME Components...
         self.clearButtons()
         self.createButton(
@@ -5169,9 +5167,10 @@ function SetupExpansionsStep()
     end
 
     coroutine.yield(0)
+
     if KingsOfMiddleEarth then
         log(" Setting up KoME...")
-        --debuggg
+
         self.clearButtons()
         self.createButton(
             {
@@ -5259,7 +5258,7 @@ function SetupExpansionsStep()
         coroutine.yield(0)
         getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(getObjectFromGUID("890b46"))
         coroutine.yield(0)
-    else --Excluded: Kings of MIddle-Earth...
+    else
         --Clean up WoME Components...
         self.clearButtons()
         self.createButton(
@@ -5295,6 +5294,7 @@ function SetupExpansionsStep()
     end
 
     coroutine.yield(0)
+
     --setup treebeard content..
     if WarriorsOfMiddleEarth then
         if Treebeard == 1 then
@@ -5398,151 +5398,154 @@ end
 
 function CreateAlternateCompanionMenu()
     self.clearButtons()
+
     if TheBreakingOfTheFellowship then
         NextStep = StepType.SetupCompanions
         Step = StepType.Empty
-    else --hold Rivendell Council...
-        --secretly choose alternate companions...
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Choose Alternate Companions:",
-                position = { 0, 0.1, -1.45 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 0.3, 0.3, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Free Peoples Player\nis secretly choosing\nAlternate Companions...",
-                position = { 0, -0.1, -0 },
-                rotation = { 180, 180, 0 },
-                width = 0,
-                height = 0,
-                font_size = 150,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Fellowship Guide: " .. CompanionNames[1],
-                position = { 0, 0.1, -1.2 },
-                width = 0,
-                height = 0,
-                font_size = 75,
-                font_color = { 1, 1, 0 }
-            }
-        )
-        self.createButton(
-            {
-                click_function = "ToggleGandalfStrider",
-                function_owner = self,
-                label = CompanionNames[2],
-                position = { 0, 0.1, -0.9 },
-                width = 1800,
-                height = 150,
-                color = { 1, 1, 1 },
-                font_size = 75,
-                tooltip = "Click to change."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "ToggleLegolas",
-                function_owner = self,
-                label = CompanionNames[3],
-                position = { 0, 0.1, -0.6 },
-                width = 1800,
-                height = 150,
-                color = { 1, 1, 1 },
-                font_size = 75,
-                tooltip = "Click to change."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "ToggleGimli",
-                function_owner = self,
-                label = CompanionNames[4],
-                position = { 0, 0.1, -0.3 },
-                width = 1800,
-                height = 150,
-                color = { 1, 1, 1 },
-                font_size = 75,
-                tooltip = "Click to change."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "ToggleBoromir",
-                function_owner = self,
-                label = CompanionNames[5],
-                position = { 0, 0.1, 0 },
-                width = 1800,
-                height = 150,
-                color = { 1, 1, 1 },
-                font_size = 75,
-                tooltip = "Click to change."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "TogglePeregrin",
-                function_owner = self,
-                label = CompanionNames[6],
-                position = { 0, 0.1, 0.3 },
-                width = 1800,
-                height = 150,
-                color = { 1, 1, 1 },
-                font_size = 75,
-                tooltip = "Click to change."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "ToggleMeriadoc",
-                function_owner = self,
-                label = CompanionNames[7],
-                position = { 0, 0.1, 0.6 },
-                width = 1800,
-                height = 150,
-                color = { 1, 1, 1 },
-                font_size = 75,
-                tooltip = "Click to change."
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Continue",
-                function_owner = self,
-                label = "Continue",
-                position = { 0, 0.1, 1.2 },
-                width = 1800,
-                height = 200,
-                color = { 1, 1, 1 },
-                font_size = 100
-            }
-        )
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "* Lords of Middle Earth Expansion Character.",
-                position = { 0, 0.1, 0.9 },
-                width = 0,
-                height = 0,
-                font_size = 50,
-                font_color = { 1, 1, 0 }
-            }
-        )
+        return
     end
+
+    --secretly choose alternate companions...
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Choose Alternate Companions:",
+            position = { 0, 0.1, -1.45 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 0.3, 0.3, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Free Peoples Player\nis secretly choosing\nAlternate Companions...",
+            position = { 0, -0.1, -0 },
+            rotation = { 180, 180, 0 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 1, 1 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "Fellowship Guide: " .. CompanionNames[1],
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 75,
+            font_color = { 1, 1, 0 }
+        }
+    )
+    self.createButton(
+        {
+            click_function = "ToggleGandalfStrider",
+            function_owner = self,
+            label = CompanionNames[2],
+            position = { 0, 0.1, -0.9 },
+            width = 1800,
+            height = 150,
+            color = { 1, 1, 1 },
+            font_size = 75,
+            tooltip = "Click to change."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "ToggleLegolas",
+            function_owner = self,
+            label = CompanionNames[3],
+            position = { 0, 0.1, -0.6 },
+            width = 1800,
+            height = 150,
+            color = { 1, 1, 1 },
+            font_size = 75,
+            tooltip = "Click to change."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "ToggleGimli",
+            function_owner = self,
+            label = CompanionNames[4],
+            position = { 0, 0.1, -0.3 },
+            width = 1800,
+            height = 150,
+            color = { 1, 1, 1 },
+            font_size = 75,
+            tooltip = "Click to change."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "ToggleBoromir",
+            function_owner = self,
+            label = CompanionNames[5],
+            position = { 0, 0.1, 0 },
+            width = 1800,
+            height = 150,
+            color = { 1, 1, 1 },
+            font_size = 75,
+            tooltip = "Click to change."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "TogglePeregrin",
+            function_owner = self,
+            label = CompanionNames[6],
+            position = { 0, 0.1, 0.3 },
+            width = 1800,
+            height = 150,
+            color = { 1, 1, 1 },
+            font_size = 75,
+            tooltip = "Click to change."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "ToggleMeriadoc",
+            function_owner = self,
+            label = CompanionNames[7],
+            position = { 0, 0.1, 0.6 },
+            width = 1800,
+            height = 150,
+            color = { 1, 1, 1 },
+            font_size = 75,
+            tooltip = "Click to change."
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Continue",
+            function_owner = self,
+            label = "Continue",
+            position = { 0, 0.1, 1.2 },
+            width = 1800,
+            height = 200,
+            color = { 1, 1, 1 },
+            font_size = 100
+        }
+    )
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = "* Lords of Middle Earth Expansion Character.",
+            position = { 0, 0.1, 0.9 },
+            width = 0,
+            height = 0,
+            font_size = 50,
+            font_color = { 1, 1, 0 }
+        }
+    )
+
 
     function ToggleGandalfStrider()
         if CompanionNames[2] == "Gandalf the Grey: The Grey Wanderer" then
