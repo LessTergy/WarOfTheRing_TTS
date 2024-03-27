@@ -11,6 +11,10 @@ local FreePeoplesHuntDiceCount = 0 --how many free peoples dice were retrieved f
 local ShadowHuntDiceCount = 0
 local Round = 0
 
+-- colors
+local ButtonColorSelected = { 1, 1, 0 }
+local ButtonColorDefault = { 1, 1, 1 }
+
 --expansions
 local LordsOfMiddleEarth = false
 local WarriorsOfMiddleEarth = false
@@ -19,7 +23,7 @@ local TheFateOfErebor = false
 local TheFateOfErebor_NewCities = true
 local HuntForTheRing = false
 local TheBreakingOfTheFellowship = false
-local TreebeardVersion = 2 --0:None,1:Original,2:Revised;
+local AddTreebeardPromo = false
 local FlagsString = "" --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
 
 local StepType = {
@@ -30,7 +34,7 @@ local StepType = {
     SetupUnits = "SetupUnits",
     HuntForTheRingMenu = "HuntForTheRingMenu",
     TheFateOfEreborMenu = "TheFateOfEreborMenu",
-    TreebeardMenu = "TreebeardMenu",
+    TreebeardPromoMenu = "TreebeardPromoMenu",
     StartingGuideMenu = "StartingGuideMenu",
     SetupExpansions = "SetupExpansions",
     AlternateCompanionsMenu = "AlternateCompanionsMenu",
@@ -339,8 +343,8 @@ function ProcessNextStep()
         CreateHuntForTheRingMenu()
     elseif Step == StepType.TheFateOfEreborMenu then
         CreateTFoEMenu()
-    elseif Step == StepType.TreebeardMenu then
-        CreateTreebeardMenu()
+    elseif Step == StepType.TreebeardPromoMenu then
+        CreateTreebeardPromoMenu()
     elseif Step == StepType.StartingGuideMenu then
         CreateStartingGuideMenu()
     elseif Step == StepType.SetupExpansions then
@@ -436,7 +440,7 @@ function CreateSetupCompleteMenu()
             position = { 0, 0.1, -0.5 },
             width = 1500,
             height = 350,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 150,
             tooltip = "Click to play game with full scripting assistance."
         }
@@ -449,7 +453,7 @@ function CreateSetupCompleteMenu()
             position = { 0, 0.1, 0.5 },
             width = 1500,
             height = 350,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 150,
             tooltip = "Click to play game with minimal scripting assistance."
         }
@@ -544,7 +548,7 @@ function StartTurnStep()
             position = { 0, 0.1, 0 },
             width = 1600,
             height = 400,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 250,
             tooltip = "Click to Start Turn " .. Turn
         }
@@ -736,7 +740,7 @@ function Phase1_Step()
             position = { 0, 0.1, 0 },
             width = 1600,
             height = 400,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 100,
             tooltip = "Have the script perform all Phase 1 steps for you."
         }
@@ -2537,7 +2541,7 @@ function Phase2_FellowshipStep()
                             height = 250,
                             font_size = 75,
                             color = { 1, 0, 0 },
-                            font_color = { 1, 1, 0 },
+                            font_color = ButtonColorSelected,
                             tooltip = "Choose the Shadow Token that can Move Nazgul and Minions."
                         }
                     )
@@ -2551,7 +2555,7 @@ function Phase2_FellowshipStep()
                             height = 250,
                             font_size = 75,
                             color = { 1, 0, 0 },
-                            font_color = { 1, 1, 0 },
+                            font_color = ButtonColorSelected,
                             tooltip =
                             "Choose the Shadow Token that can Advance a Shadow Nation on the\nPolitical Track."
                         }
@@ -2709,7 +2713,7 @@ function Phase4_ActionRollStep()
             position = { 0, 0.1, 0 },
             width = 1600,
             height = 400,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 100,
             tooltip = "Click to roll all Action Dice in the Dice Boxes."
         }
@@ -2722,7 +2726,7 @@ function Phase4_ActionRollStep()
             position = { 0, 0.1, 1.2 },
             width = 1600,
             height = 200,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 100
         }
     )
@@ -2772,7 +2776,7 @@ function Phase5_ActionResolutionStep()
             position = { 0, 0.1, 1.2 },
             width = 1600,
             height = 200,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 100
         }
     )
@@ -2842,7 +2846,7 @@ function Phase6_VictoryCheckStep()
             position = { 0, 0.1, 1.2 },
             width = 1600,
             height = 200,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 100
         }
     )
@@ -2885,7 +2889,7 @@ function CreateBasicMenu()
             position = { 0, 0.1, -0.9 },
             width = 1600,
             height = 150,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 75,
             tooltip = "Gather Action Dice for all players and increment the round count by 1."
         }
@@ -2898,7 +2902,7 @@ function CreateBasicMenu()
             position = { 0, 0.1, -0.6 },
             width = 1600,
             height = 150,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 75,
             tooltip = "Roll Action Dice."
         }
@@ -2914,7 +2918,7 @@ function CreateBasicMenu()
                 scale = { 2, 0.5, 0.5 },
                 width = 1000,
                 height = 100,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 100,
                 tooltip = "Gather Action Dice for all players and increment the round count by 1."
             }
@@ -2929,7 +2933,7 @@ function CreateBasicMenu()
                 scale = { 2, 0.5, 0.5 },
                 width = 1000,
                 height = 100,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 100,
                 tooltip = "Roll Action Dice for all players."
             }
@@ -2954,7 +2958,7 @@ function CreateBasicMenu()
             function_owner = self,
             label = "+",
             position = { 0.75, 0.1, 1 },
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             width = 100,
             height = 100,
             font_size = 100,
@@ -2969,7 +2973,7 @@ function CreateBasicMenu()
             function_owner = self,
             label = "-",
             position = { -0.75, 0.1, 1 },
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             width = 100,
             height = 100,
             font_size = 100,
@@ -3198,7 +3202,7 @@ function CreateBeginMenu()
             width = 1500,
             height = 300,
             font_size = 175,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             tooltip = "Start setting up the game with Scripted assistance."
         }
     )
@@ -3212,7 +3216,7 @@ function CreateBeginMenu()
             width = 600,
             height = 100,
             font_size = 50,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             tooltip = "Turn off scripting."
         }
     )
@@ -3227,7 +3231,7 @@ function CreateBeginMenu()
                 width = 600,
                 height = 100,
                 font_size = 50,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 tooltip = "Click to toggle Sound Effects ON."
             }
         )
@@ -3241,7 +3245,7 @@ function CreateBeginMenu()
                 width = 600,
                 height = 100,
                 font_size = 50,
-                color = { 1, 1, 0 },
+                color = ButtonColorSelected,
                 tooltip = "Click to toggle Sound Effects OFF."
             }
         )
@@ -3306,7 +3310,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 0 },
+                color = ButtonColorSelected,
                 font_size = 75,
                 tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
             }
@@ -3319,7 +3323,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
@@ -3333,7 +3337,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
@@ -3347,7 +3351,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0.5 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
@@ -3362,7 +3366,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 75,
                 tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
             }
@@ -3375,7 +3379,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 0 },
+                color = ButtonColorSelected,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
@@ -3389,7 +3393,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
@@ -3403,7 +3407,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0.5 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
@@ -3418,7 +3422,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 75,
                 tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
             }
@@ -3431,7 +3435,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
@@ -3445,7 +3449,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 0 },
+                color = ButtonColorSelected,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
@@ -3459,7 +3463,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0.5 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
@@ -3474,7 +3478,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 75,
                 tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
             }
@@ -3487,7 +3491,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
@@ -3501,7 +3505,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
@@ -3515,7 +3519,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0.5 },
                 width = 1600,
                 height = 150,
-                color = { 1, 1, 0 },
+                color = ButtonColorSelected,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
@@ -3531,7 +3535,7 @@ function CreatePlayersMenu()
             position = { 0, 0.1, 1 },
             width = 1600,
             height = 200,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 100
         }
     )
@@ -3636,7 +3640,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, -0.9 },
                 width = 1800,
                 height = 150,
-                color = { 1, 1, 0 },
+                color = ButtonColorSelected,
                 font_size = 80,
                 tooltip = "Click to exclude."
             }
@@ -3650,7 +3654,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, -0.9 },
                 width = 1800,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 80,
                 tooltip = "Click to include."
             }
@@ -3666,7 +3670,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, -0.6 },
                 width = 1800,
                 height = 150,
-                color = { 1, 1, 0 },
+                color = ButtonColorSelected,
                 font_size = 80,
                 tooltip = "Click to exclude."
             }
@@ -3680,7 +3684,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, -0.6 },
                 width = 1800,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 80,
                 tooltip = "Click to include."
             }
@@ -3696,7 +3700,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, -0.3 },
                 width = 1800,
                 height = 150,
-                color = { 1, 1, 0 },
+                color = ButtonColorSelected,
                 font_size = 80,
                 tooltip = "Click to exclude."
             }
@@ -3710,7 +3714,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, -0.3 },
                 width = 1800,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 80,
                 tooltip = "Click to include."
             }
@@ -3726,7 +3730,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, 0.05 },
                 width = 1400,
                 height = 100,
-                color = { 1, 1, 0 },
+                color = ButtonColorSelected,
                 font_size = 70,
                 tooltip = "Click to exclude: The Breaking of the Fellowship (a mini-expansion)."
             }
@@ -3740,7 +3744,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, 0.05 },
                 width = 1400,
                 height = 100,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 70,
                 tooltip = "Click to include: The Breaking of the Fellowship (a mini-expansion)."
             }
@@ -3756,7 +3760,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, 0.35 },
                 width = 1400,
                 height = 100,
-                color = { 1, 1, 0 },
+                color = ButtonColorSelected,
                 font_size = 70,
                 tooltip = "Click to exclude.\nTThis is a mini-expansion from The Hunt for the Ring."
             }
@@ -3770,7 +3774,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, 0.35 },
                 width = 1400,
                 height = 100,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 70,
                 tooltip = "Click to include.\nThis is a mini-expansion from The Hunt for the Ring."
             }
@@ -3786,7 +3790,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, 0.65 },
                 width = 1400,
                 height = 100,
-                color = { 1, 1, 0 },
+                color = ButtonColorSelected,
                 font_size = 70,
                 tooltip = "Click to exclude.\nThe Fate of Erebor is a mini-expansion from the Battle of the Five Armies."
             }
@@ -3800,7 +3804,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, 0.65 },
                 width = 1400,
                 height = 100,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 70,
                 tooltip = "Click to include.\nThe Fate of Erebor is a mini-expansion from the Battle of the Five Armies."
             }
@@ -3815,7 +3819,7 @@ function CreateExpansionMenu()
             position = { 0, 0.1, 1.3 },
             width = 1800,
             height = 200,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 100
         }
     )
@@ -3900,7 +3904,7 @@ function CreateHuntForTheRingMenu()
                 width = 1800,
                 height = 150,
                 color = { 1, 0.4, 0.4 },
-                font_color = { 1, 1, 0 },
+                font_color = ButtonColorSelected,
                 font_size = 70,
                 tooltip = "Click to exclude this token."
             }
@@ -3914,7 +3918,7 @@ function CreateHuntForTheRingMenu()
                 position = { 0, 0.1, -0.8 },
                 width = 1800,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 70,
                 tooltip = "Click to include this token."
             }
@@ -3932,7 +3936,7 @@ function CreateHuntForTheRingMenu()
                 width = 1800,
                 height = 150,
                 color = { 1, 0.4, 0.4 },
-                font_color = { 1, 1, 0 },
+                font_color = ButtonColorSelected,
                 font_size = 70,
                 tooltip = "Click to exclude this token."
             }
@@ -3946,7 +3950,7 @@ function CreateHuntForTheRingMenu()
                 position = { 0, 0.1, -0.5 },
                 width = 1800,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 70,
                 tooltip = "Click to include this token."
             }
@@ -3964,7 +3968,7 @@ function CreateHuntForTheRingMenu()
                 width = 1800,
                 height = 150,
                 color = { 0.4, 0.4, 1 },
-                font_color = { 1, 1, 0 },
+                font_color = ButtonColorSelected,
                 font_size = 70,
                 tooltip = "Click to exclude this token."
             }
@@ -3978,7 +3982,7 @@ function CreateHuntForTheRingMenu()
                 position = { 0, 0.1, 0 },
                 width = 1800,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 70,
                 tooltip = "Click to include this token."
             }
@@ -3996,7 +4000,7 @@ function CreateHuntForTheRingMenu()
                 width = 1800,
                 height = 150,
                 color = { 0.4, 0.4, 1 },
-                font_color = { 1, 1, 0 },
+                font_color = ButtonColorSelected,
                 font_size = 70,
                 tooltip = "Click to exclude this token."
             }
@@ -4010,7 +4014,7 @@ function CreateHuntForTheRingMenu()
                 position = { 0, 0.1, 0.3 },
                 width = 1800,
                 height = 150,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 70,
                 tooltip = "Click to include this token."
             }
@@ -4037,7 +4041,7 @@ function CreateHuntForTheRingMenu()
             position = { 0, 0.1, 1.3 },
             width = 1800,
             height = 200,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 100
         }
     )
@@ -4129,7 +4133,7 @@ function CreateTFoEMenu()
                     position = { 0, 0.1, 0 },
                     width = 1400,
                     height = 100,
-                    color = { 1, 1, 0 },
+                    color = ButtonColorSelected,
                     font_size = 100,
                     tooltip =
                     "Click to exclude.\nNew Cities is an optional setup in The Fate of Erebor, that changes the Towns of Ered Luin and South Rhun to Cities."
@@ -4144,7 +4148,7 @@ function CreateTFoEMenu()
                     position = { 0, 0.1, 0 },
                     width = 1400,
                     height = 100,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 100,
                     tooltip =
                     "Click to include.\nNew Cities is an optional setup in The Fate of Erebor, that changes the Towns of Ered Luin and South Rhun to Cities."
@@ -4160,7 +4164,7 @@ function CreateTFoEMenu()
                 position = { 0, 0.1, 1.3 },
                 width = 1800,
                 height = 200,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 100
             }
         )
@@ -4176,237 +4180,59 @@ function CreateTFoEMenu()
                 TheFateOfErebor_NewCities = false
             end
 
-            NextStep = StepType.TreebeardMenu
+            NextStep = StepType.TreebeardPromoMenu
             Step = StepType.Empty
         end
     else
-        NextStep = StepType.TreebeardMenu
+        NextStep = StepType.TreebeardPromoMenu
         Step = StepType.Empty
     end
 end
 
-function CreateTreebeardMenu()
-    self.clearButtons()
-    self.createButton(
-        {
-            click_function = "Nothing",
-            function_owner = self,
-            label = "Choose Treebeard Content:",
-            position = { 0, 0.1, -1.3 },
-            width = 0,
-            height = 0,
-            font_size = 150,
-            font_color = { 1, 1, 1 }
-        }
-    )
+function CreateTreebeardPromoMenu()
     if WarriorsOfMiddleEarth then
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "(Warriors of Middle-Earth Treebeard)",
-                position = { 0, 0.1, -1 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        if TreebeardVersion == 1 then --original WM...
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard1",
-                    function_owner = self,
-                    label = "Selected: Original Treebeard",
-                    position = { 0, 0.1, -0.6 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 0 },
-                    font_size = 80,
-                    tooltip = "Select the Original Treebeard Character Card from Warriors of Middle-Earth."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard2",
-                    function_owner = self,
-                    label = "Revised Treebeard",
-                    position = { 0, 0.1, -0.3 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 80,
-                    tooltip =
-                    "Select the Revised Treebeard Character Card from Warriors of Middle-Earth.\n(adds Root and Branch! ability)."
-                }
-            )
-        elseif TreebeardVersion == 2 then --revised WM...
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard1",
-                    function_owner = self,
-                    label = "Original Treebeard",
-                    position = { 0, 0.1, -0.6 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 80,
-                    tooltip = "Select the Original Treebeard Character Card from Warriors of Middle-Earth."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard2",
-                    function_owner = self,
-                    label = "Selected: Revised Treebeard",
-                    position = { 0, 0.1, -0.3 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 0 },
-                    font_size = 80,
-                    tooltip =
-                    "Select the Revised Treebeard Character Card from Warriors of Middle-Earth.\n(adds Root and Branch! ability)."
-                }
-            )
-        end
-    else --not WoME...
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "(Promotional Treebeard Card)",
-                position = { 0, 0.1, -1 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        if TreebeardVersion == 0 then --no treebeard...
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard0",
-                    function_owner = self,
-                    label = "Selected: No Treebeard",
-                    position = { 0, 0.1, -0.6 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 0 },
-                    font_size = 80,
-                    tooltip = "Do not include Treebeard Promotional Character Card."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard1",
-                    function_owner = self,
-                    label = "Original Treebeard",
-                    position = { 0, 0.1, -0.3 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 80,
-                    tooltip = "Select the Original Promotional Treebeard Character Card."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard2",
-                    function_owner = self,
-                    label = "Revised Treebeard",
-                    position = { 0, 0.1, 0 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 80,
-                    tooltip =
-                    "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
-                }
-            )
-        elseif TreebeardVersion == 1 then --original Promo...
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard0",
-                    function_owner = self,
-                    label = "No Treebeard",
-                    position = { 0, 0.1, -0.6 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 80,
-                    tooltip = "Do not include Treebeard Promotional Character Card."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard1",
-                    function_owner = self,
-                    label = "Selected: Original Treebeard",
-                    position = { 0, 0.1, -0.3 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 0 },
-                    font_size = 80,
-                    tooltip = "Select the Original Promotional Treebeard Character Card."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard2",
-                    function_owner = self,
-                    label = "Revised Treebeard",
-                    position = { 0, 0.1, 0 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 80,
-                    tooltip =
-                    "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
-                }
-            )
-        elseif TreebeardVersion == 2 then --revised Promo...
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard0",
-                    function_owner = self,
-                    label = "No Treebeard",
-                    position = { 0, 0.1, -0.6 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 80,
-                    tooltip = "Do not include Treebeard Promotional Character Card."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard1",
-                    function_owner = self,
-                    label = "Original Treebeard",
-                    position = { 0, 0.1, -0.3 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 1 },
-                    font_size = 80,
-                    tooltip = "Select the Original Promotional Treebeard Character Card."
-                }
-            )
-            self.createButton(
-                {
-                    click_function = "SelectTreebeard2",
-                    function_owner = self,
-                    label = "Selected: Revised Treebeard",
-                    position = { 0, 0.1, 0 },
-                    width = 1800,
-                    height = 150,
-                    color = { 1, 1, 0 },
-                    font_size = 80,
-                    tooltip =
-                    "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
-                }
-            )
-        end
+        Continue()
+        return
     end
+
+    ShowTitleText("Select Treebeard Content\n(Promo card)")
+
+    local noTreebeardButtonData =
+    {
+        click_function = "SelectNoTreebeard",
+        function_owner = self,
+        label = "No Treebeard",
+        position = { 0, 0.1, -0.6 },
+        width = 1800,
+        height = 150,
+        color = ButtonColorDefault,
+        font_size = 80,
+        tooltip = "Do not include Treebeard Promotional Character Card."
+    }
+
+    local addTreebeardButtonData = {
+        click_function = "SelectAddTreebeard",
+        function_owner = self,
+        label = "Revised Treebeard",
+        position = { 0, 0.1, -0.3 },
+        width = 1800,
+        height = 150,
+        color = ButtonColorDefault,
+        font_size = 80,
+        tooltip =
+        "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
+    }
+
+    if AddTreebeardPromo then
+        addTreebeardButtonData.label = "Selected: " .. addTreebeardButtonData.label
+        addTreebeardButtonData.color = ButtonColorSelected
+    else
+        noTreebeardButtonData.label = "Selected: " .. noTreebeardButtonData.label
+        noTreebeardButtonData.color = ButtonColorSelected
+    end
+
+    self.createButton(noTreebeardButtonData)
+    self.createButton(addTreebeardButtonData)
 
     self.createButton(
         {
@@ -4416,26 +4242,21 @@ function CreateTreebeardMenu()
             position = { 0, 0.1, 1.3 },
             width = 1800,
             height = 200,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 100,
             tooltip = "Continue Setup with the currently selected Treebeard option."
         }
     )
-    function SelectTreebeard0()
-        TreebeardVersion = 0
-        NextStep = StepType.TreebeardMenu
+
+    function SelectNoTreebeard()
+        AddTreebeardPromo = false
+        NextStep = StepType.TreebeardPromoMenu
         Step = StepType.Empty
     end
 
-    function SelectTreebeard1()
-        TreebeardVersion = 1
-        NextStep = StepType.TreebeardMenu
-        Step = StepType.Empty
-    end
-
-    function SelectTreebeard2()
-        TreebeardVersion = 2
-        NextStep = StepType.TreebeardMenu
+    function SelectAddTreebeard()
+        AddTreebeardPromo = true
+        NextStep = StepType.TreebeardPromoMenu
         Step = StepType.Empty
     end
 
@@ -4502,7 +4323,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.6 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 0 },
+                    color = ButtonColorSelected,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4515,7 +4336,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.3 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4528,7 +4349,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4541,7 +4362,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0.3 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4555,7 +4376,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.6 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4568,7 +4389,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.3 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 0 },
+                    color = ButtonColorSelected,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4581,7 +4402,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4594,7 +4415,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0.3 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4608,7 +4429,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.6 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4621,7 +4442,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.3 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4634,7 +4455,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 0 },
+                    color = ButtonColorSelected,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4647,7 +4468,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0.3 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4661,7 +4482,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.6 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4674,7 +4495,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.3 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4687,7 +4508,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 1 },
+                    color = ButtonColorDefault,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4700,7 +4521,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0.3 },
                     width = 1600,
                     height = 150,
-                    color = { 1, 1, 0 },
+                    color = ButtonColorSelected,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4727,7 +4548,7 @@ function CreateStartingGuideMenu()
                 position = { 0, 0.1, 1.2 },
                 width = 1600,
                 height = 200,
-                color = { 1, 1, 1 },
+                color = ButtonColorDefault,
                 font_size = 100
             }
         )
@@ -4791,6 +4612,22 @@ function SetupExpansionsStep()
     Step = StepType.Empty
 end
 
+function ShowTitleText(text)
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = text,
+            position = { 0, 0.1, -1.2 },
+            width = 0,
+            height = 0,
+            font_size = 150,
+            font_color = { 1, 1, 1 }
+        }
+    )
+end
+
 function ShowInformationText(text)
     self.clearButtons()
     self.createButton(
@@ -4798,7 +4635,7 @@ function ShowInformationText(text)
             click_function = "Nothing",
             function_owner = self,
             label = text,
-            position = { 0, 0, 0 },
+            position = { 0, 0.1, 0 },
             width = 0,
             height = 0,
             font_size = 100,
@@ -5199,101 +5036,31 @@ function SetupKingsExpansion()
 end
 
 function SetupTreebeardVersion()
-    local id_promo = ""
-    local id_promo_revised = ""
-    local id_warriors = ""
-    local id_warriors_revised = ""
+    local id_promo_revised = "3d93f2"
+    local id_warriors_revised = "d7264c"
 
     if WarriorsOfMiddleEarth then
-        if TreebeardVersion == 1 then
-            --WM1/1R
-            getObjectFromGUID("8f8093").setPosition({ -13.5, 0.97, 33 }, false, false)
-            getObjectFromGUID("8f8093").setRotation({ 0, 0, 180 }, false, false)
-            if getObjectFromGUID("185612") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("185612"))
-            end
-            --PROMO1
-            if getObjectFromGUID("3d93f2") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("3d93f2"))
-            end
-            --PROMO1R
-            if getObjectFromGUID("d7264c") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d7264c"))
-            end
-        else
-            --PROMO1R
-            getObjectFromGUID("d7264c").setPosition({ -13.5, 0.97, 33 }, false, false)
-            getObjectFromGUID("d7264c").setRotation({ 0, 0, 180 }, false, false)
-            if getObjectFromGUID("8f8093") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("8f8093"))
-            end
-            --WM1/1
-            if getObjectFromGUID("185612") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("185612"))
-            end
-            --PROMO1
-            if getObjectFromGUID("3d93f2") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("3d93f2"))
-            end
+        local treebeardCard = getObjectFromGUID(id_warriors_revised)
+        treebeardCard.setPosition({ -13.5, 0.97, 33 }, false, false)
+        treebeardCard.setRotation({ 0, 0, 180 }, false, false)
+
+        if getObjectFromGUID(id_promo_revised) ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(id_promo_revised))
         end
-    elseif TreebeardVersion == 1 then
-        --WM1/1R
-        getObjectFromGUID("185612").setPosition({ -13.5, 0.97, 33 }, false, false)
-        getObjectFromGUID("185612").setRotation({ 0, 0, 180 }, false, false)
-        if getObjectFromGUID("8f8093") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("8f8093"))
+    elseif AddTreebeardPromo then
+        getObjectFromGUID(id_promo_revised).setPosition({ -13.5, 0.97, 33 }, false, false)
+        getObjectFromGUID(id_promo_revised).setRotation({ 0, 0, 180 }, false, false)
+
+        if getObjectFromGUID(id_warriors_revised) ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(id_warriors_revised))
         end
-        --WM1/1
-        if getObjectFromGUID("3d93f2") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("3d93f2"))
+    else
+        if getObjectFromGUID(id_promo_revised) ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(id_promo_revised))
         end
-        --PROMO1R
-        if getObjectFromGUID("d7264c") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d7264c"))
-        end
-    elseif TreebeardVersion == 2 then
-        --WM1/1R
-        getObjectFromGUID("3d93f2").setPosition({ -13.5, 0.97, 33 }, false, false)
-        getObjectFromGUID("3d93f2").setRotation({ 0, 0, 180 }, false, false)
-        if getObjectFromGUID("8f8093") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("8f8093"))
-        end
-        --WM1/1
-        if getObjectFromGUID("185612") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("185612"))
-        end
-        --PROMO1
-        if getObjectFromGUID("d7264c") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d7264c"))
-        end
-    else --no treebeard...
-        --WM1/1R
-        if getObjectFromGUID("5e36c8") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("5e36c8"))
-        end
-        --treebeard miniature
-        if getObjectFromGUID("e51819") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("e51819"))
-        end
-        --treebeard miniature
-        if getObjectFromGUID("964d05") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("964d05"))
-        end
-        --treebeard miniature
-        if getObjectFromGUID("8f8093") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("8f8093"))
-        end
-        --WM1/1
-        if getObjectFromGUID("185612") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("185612"))
-        end
-        --PROMO1
-        if getObjectFromGUID("3d93f2") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("3d93f2"))
-        end
-        --PROMO1R
-        if getObjectFromGUID("d7264c") ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d7264c"))
+
+        if getObjectFromGUID(id_warriors_revised) ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(id_warriors_revised))
         end
     end
 end
@@ -5353,7 +5120,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, -0.9 },
             width = 1800,
             height = 150,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 75,
             tooltip = "Click to change."
         }
@@ -5366,7 +5133,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, -0.6 },
             width = 1800,
             height = 150,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 75,
             tooltip = "Click to change."
         }
@@ -5379,7 +5146,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, -0.3 },
             width = 1800,
             height = 150,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 75,
             tooltip = "Click to change."
         }
@@ -5392,7 +5159,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, 0 },
             width = 1800,
             height = 150,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 75,
             tooltip = "Click to change."
         }
@@ -5405,7 +5172,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, 0.3 },
             width = 1800,
             height = 150,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 75,
             tooltip = "Click to change."
         }
@@ -5418,7 +5185,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, 0.6 },
             width = 1800,
             height = 150,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 75,
             tooltip = "Click to change."
         }
@@ -5431,7 +5198,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, 1.2 },
             width = 1800,
             height = 200,
-            color = { 1, 1, 1 },
+            color = ButtonColorDefault,
             font_size = 100
         }
     )
