@@ -4190,8 +4190,21 @@ function CreateTFoEMenu()
 end
 
 function CreateTreebeardPromoMenu()
+    function TreebeardMenuNext()
+        self.clearButtons()
+
+        if LordsOfMiddleEarth then
+            NextStep = StepType.StartingGuideMenu
+        else
+            NextStep = StepType.SetupExpansions
+        end
+
+        Step = StepType.Empty
+    end
+
+    -- use only one revised version
     if WarriorsOfMiddleEarth then
-        Continue()
+        TreebeardMenuNext()
         return
     end
 
@@ -4236,7 +4249,7 @@ function CreateTreebeardPromoMenu()
 
     self.createButton(
         {
-            click_function = "Continue",
+            click_function = "TreebeardMenuNext",
             function_owner = self,
             label = "Continue",
             position = { 0, 0.1, 1.3 },
@@ -4257,17 +4270,6 @@ function CreateTreebeardPromoMenu()
     function SelectAddTreebeard()
         AddTreebeardPromo = true
         NextStep = StepType.TreebeardPromoMenu
-        Step = StepType.Empty
-    end
-
-    function Continue()
-        self.clearButtons()
-        if LordsOfMiddleEarth then
-            NextStep = StepType.StartingGuideMenu
-        else
-            NextStep = StepType.SetupExpansions
-        end
-
         Step = StepType.Empty
     end
 end
