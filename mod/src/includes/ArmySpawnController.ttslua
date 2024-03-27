@@ -1187,42 +1187,42 @@ function SpawnArmies()
     local preferencesPanel = getObjectFromGUID("c35be9")
     local settings = preferencesPanel.getTable("Settings")
 
-    SpawnCharacter(ElvesRegularConfig, settings.ArmiesType)
-    SpawnCharacter(ElvesEliteConfig, settings.ArmiesType)
-    SpawnCharacter(ElvesLeaderConfig, settings.ArmiesType)
+    SpawnArmy(ElvesRegularConfig, settings.ArmiesType)
+    SpawnArmy(ElvesEliteConfig, settings.ArmiesType)
+    SpawnArmy(ElvesLeaderConfig, settings.ArmiesType)
 
-    SpawnCharacter(DwarvesRegularConfig, settings.ArmiesType)
-    SpawnCharacter(DwarvesEliteConfig, settings.ArmiesType)
-    SpawnCharacter(DwarvesLeaderConfig, settings.ArmiesType)
+    SpawnArmy(DwarvesRegularConfig, settings.ArmiesType)
+    SpawnArmy(DwarvesEliteConfig, settings.ArmiesType)
+    SpawnArmy(DwarvesLeaderConfig, settings.ArmiesType)
 
-    SpawnCharacter(NorthRegularConfig, settings.ArmiesType)
-    SpawnCharacter(NorthEliteConfig, settings.ArmiesType)
-    SpawnCharacter(NorthLeaderConfig, settings.ArmiesType)
+    SpawnArmy(NorthRegularConfig, settings.ArmiesType)
+    SpawnArmy(NorthEliteConfig, settings.ArmiesType)
+    SpawnArmy(NorthLeaderConfig, settings.ArmiesType)
 
-    SpawnCharacter(RohanRegularConfig, settings.ArmiesType)
-    SpawnCharacter(RohanEliteConfig, settings.ArmiesType)
-    SpawnCharacter(RohanLeaderConfig, settings.ArmiesType)
+    SpawnArmy(RohanRegularConfig, settings.ArmiesType)
+    SpawnArmy(RohanEliteConfig, settings.ArmiesType)
+    SpawnArmy(RohanLeaderConfig, settings.ArmiesType)
 
-    SpawnCharacter(GondorRegularConfig, settings.ArmiesType)
-    SpawnCharacter(GondorEliteConfig, settings.ArmiesType)
-    SpawnCharacter(GondorLeaderConfig, settings.ArmiesType)
+    SpawnArmy(GondorRegularConfig, settings.ArmiesType)
+    SpawnArmy(GondorEliteConfig, settings.ArmiesType)
+    SpawnArmy(GondorLeaderConfig, settings.ArmiesType)
 
-    SpawnCharacter(SauronRegularConfig, settings.ArmiesType)
-    SpawnCharacter(SauronEliteConfig, settings.ArmiesType)
+    SpawnArmy(SauronRegularConfig, settings.ArmiesType)
+    SpawnArmy(SauronEliteConfig, settings.ArmiesType)
 
-    SpawnCharacter(IsengardRegularConfig, settings.ArmiesType)
-    SpawnCharacter(IsengardEliteConfig, settings.ArmiesType)
+    SpawnArmy(IsengardRegularConfig, settings.ArmiesType)
+    SpawnArmy(IsengardEliteConfig, settings.ArmiesType)
 
-    SpawnCharacter(HaradrimRegularConfig, settings.ArmiesType)
-    SpawnCharacter(HaradrimEliteConfig, settings.ArmiesType)
+    SpawnArmy(HaradrimRegularConfig, settings.ArmiesType)
+    SpawnArmy(HaradrimEliteConfig, settings.ArmiesType)
 
-    SpawnCharacter(NazgulConfig, settings.NazgulType)
+    SpawnArmy(NazgulConfig, settings.NazgulType)
 end
 
-function SpawnCharacter(ArmyConfig, SettingType)
+function SpawnArmy(ArmyConfig, SettingType)
     local ComponentBag = getObjectFromGUID("0e5fd1")
 
-    local Template = GetObjectFromComponentBag(ComponentBag, ArmyConfig, SettingType)
+    local Template = GetUnitFromComponentBag(ComponentBag, ArmyConfig, SettingType)
     coroutine.yield(0)
 
     if Template == nil then
@@ -1239,7 +1239,7 @@ function SpawnCharacter(ArmyConfig, SettingType)
     ComponentBag.putObject(Template)
 end
 
-function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
+function GetUnitFromComponentBag(ComponentBag, SearchConfig, SettingType)
     local settingPattern = SettingType .. ";"
     local result = nil
 
@@ -1250,7 +1250,6 @@ function GetObjectFromComponentBag(ComponentBag, SearchConfig, SettingType)
         end
 
         if (SearchConfig.Name ~= Item.name) then
-            log(SearchConfig.Name .. " ~= " .. Item.name)
             goto continue
         end
 

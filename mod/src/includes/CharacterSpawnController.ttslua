@@ -313,24 +313,23 @@ function SpawnCharacterList(ComponentBag, CharactersConfig, SettingType)
 end
 
 function SpawnCharacter(ComponentBag, CharacterConfig, SettingType)
-    local Template = GetObjectFromComponentBag(ComponentBag, CharacterConfig, SettingType)
+    local Template = GetCharacterFromComponentBag(ComponentBag, CharacterConfig, SettingType)
     coroutine.yield(0)
 
     if Template == nil then
         return
     end
 
-    for _, Position in pairs(CharacterConfig.Positions) do
-        local NewObj = Template.clone({ position = Position })
-        NewObj.setLock(false)
-        NewObj.setPosition({ Position.x, Position.y + 1, Position.z })
-    end
+    local position = CharacterConfig.Position
+    local NewObj = Template.clone({ position = position })
+    NewObj.setLock(false)
+    NewObj.setPosition({ position.x, position.y + 1, position.z })
 
     Template.setLock(false)
     ComponentBag.putObject(Template)
 end
 
-function GetObjectFromComponentBag(ComponentBag, CharacterConfig, SettingType)
+function GetCharacterFromComponentBag(ComponentBag, CharacterConfig, SettingType)
     local settingPattern = SettingType .. ";"
     local result = nil
 
@@ -341,7 +340,6 @@ function GetObjectFromComponentBag(ComponentBag, CharacterConfig, SettingType)
         end
 
         if (CharacterConfig.Name ~= Item.name) then
-            log(CharacterConfig.Name .. " ~= " .. Item.name)
             goto continue
         end
 

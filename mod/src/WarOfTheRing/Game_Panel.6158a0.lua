@@ -402,32 +402,9 @@ function ProcessNextStep()
 end
 
 function UnitsSetupStep()
-    self.clearButtons()
-    self.createButton(
-        {
-            click_function = "Nothing",
-            function_owner = self,
-            label = "Units Setup:",
-            position = { 0, 0.1, -1.4 },
-            width = 0,
-            height = 0,
-            font_size = 150,
-            font_color = { 1, 1, 1 }
-        }
-    )
-    self.createButton(
-        {
-            click_function = "Nothing",
-            function_owner = self,
-            label = "Please Wait\nSpawn Units...",
-            position = { 0, 0.1, -0.5 },
-            width = 0,
-            height = 0,
-            font_size = 100,
-            font_color = { 1, 1, 1 }
-        }
-    )
+    ShowInformationText("Units Setup:\nPlease Wait\nSpawn Armies and Characters...")
 
+    SpawnCharactersBase()
     SpawnArmies()
     Global.call("UpdateIDs")
 
@@ -4993,6 +4970,9 @@ function SetupLordsExpansion()
 
     ShowInformationText("Setting up\nLords of Middle-Earth\nExpansion Content...")
 
+    SpawnCharactersLords()
+    Global.call("UpdateIDs")
+
     local IDs = Global.call("GetIDs")
 
     --change next step to Alternate Companions Menu...
@@ -5059,6 +5039,9 @@ function SetupWarriorsExpansion()
     end
 
     ShowInformationText("Setting up\nWarriors of Middle-Earth\nExpansion Content...")
+
+    -- SpawnFactions()
+    -- Global.call("UpdateIDs")
     local IDs = Global.call("GetIDs")
 
     Global.call(
@@ -5134,6 +5117,9 @@ function SetupKingsExpansion()
     end
 
     ShowInformationText("Setting up\nKings of Middle-Earth\nExpansion Content...")
+
+    SpawnCharactersKings()
+    Global.call("UpdateIDs")
     local IDs = Global.call("GetIDs")
 
     for _, Obj in pairs(getAllObjects()) do
