@@ -148,7 +148,7 @@ local CharactersLordsConfig = {
         {
             Name = "Balrog: Evil of the Ancient World",
             Position = {
-                x = 44.93,
+                x = 46.58,
                 y = 1.01,
                 z = -27.66,
             },
