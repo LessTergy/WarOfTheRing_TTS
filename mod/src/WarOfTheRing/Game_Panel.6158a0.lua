@@ -19,7 +19,7 @@ local TheFateOfErebor = false
 local TheFateOfErebor_NewCities = true
 local HuntForTheRing = false
 local TheBreakingOfTheFellowship = false
-local Treebeard = 2 --0:None,1:Original,2:Revised;
+local TreebeardVersion = 2 --0:None,1:Original,2:Revised;
 local FlagsString = "" --WoME;LoME;KoME;TFoE;BotF;HftR;Compact;
 
 local StepType = {
@@ -4235,7 +4235,7 @@ function CreateTreebeardMenu()
                 font_color = { 1, 1, 1 }
             }
         )
-        if Treebeard == 1 then --original WM...
+        if TreebeardVersion == 1 then --original WM...
             self.createButton(
                 {
                     click_function = "SelectTreebeard1",
@@ -4263,7 +4263,7 @@ function CreateTreebeardMenu()
                     "Select the Revised Treebeard Character Card from Warriors of Middle-Earth.\n(adds Root and Branch! ability)."
                 }
             )
-        elseif Treebeard == 2 then --revised WM...
+        elseif TreebeardVersion == 2 then --revised WM...
             self.createButton(
                 {
                     click_function = "SelectTreebeard1",
@@ -4305,7 +4305,7 @@ function CreateTreebeardMenu()
                 font_color = { 1, 1, 1 }
             }
         )
-        if Treebeard == 0 then --no treebeard...
+        if TreebeardVersion == 0 then --no treebeard...
             self.createButton(
                 {
                     click_function = "SelectTreebeard0",
@@ -4346,7 +4346,7 @@ function CreateTreebeardMenu()
                     "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
                 }
             )
-        elseif Treebeard == 1 then --original Promo...
+        elseif TreebeardVersion == 1 then --original Promo...
             self.createButton(
                 {
                     click_function = "SelectTreebeard0",
@@ -4387,7 +4387,7 @@ function CreateTreebeardMenu()
                     "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
                 }
             )
-        elseif Treebeard == 2 then --revised Promo...
+        elseif TreebeardVersion == 2 then --revised Promo...
             self.createButton(
                 {
                     click_function = "SelectTreebeard0",
@@ -4445,19 +4445,19 @@ function CreateTreebeardMenu()
         }
     )
     function SelectTreebeard0()
-        Treebeard = 0
+        TreebeardVersion = 0
         NextStep = StepType.TreebeardMenu
         Step = StepType.Empty
     end
 
     function SelectTreebeard1()
-        Treebeard = 1
+        TreebeardVersion = 1
         NextStep = StepType.TreebeardMenu
         Step = StepType.Empty
     end
 
     function SelectTreebeard2()
-        Treebeard = 2
+        TreebeardVersion = 2
         NextStep = StepType.TreebeardMenu
         Step = StepType.Empty
     end
@@ -4790,610 +4790,526 @@ function CreateStartingGuideMenu()
 end
 
 function SetupExpansionsStep()
-    local IDs = Global.call("GetIDs")
-
     self.clearButtons()
     NextStep = StepType.SetupCompanions
-    local TempObj = nil
 
-    if TheFateOfErebor then
-        --setup the Fate of Erebor...
-        Global.call("SetupTheFateOfErebor")
-        --setup optional new cities?
-        if TheFateOfErebor_NewCities then
-            Global.call("SetupTheFateOfErebor_NewCities")
-        else
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("c537fa"))
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("2df5ce"))
-        end
-
-        --replace cards...
-        getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(
-            getObjectFromGUID(IDs.TFoE.ShadowStrategyEventCards)
-        )
-        coroutine.yield(0)
-        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(
-            getObjectFromGUID(IDs.TFoE.FreePeoplesCharacterEventCards)
-        )
-        getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(
-            getObjectFromGUID(IDs.TFoE.FreePeoplesStrategyEventCards)
-        )
-        coroutine.yield(0)
-        --Remove Free Peoples Strategy Event Card #4, #19, and #22, then remove FP character card #17...
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "There and Back Again", Description = "#17;" }
-        )
-        coroutine.yield(0)
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Book of Mazarbul", Description = "#4;" }
-        )
-        coroutine.yield(0)
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
-        )
-        coroutine.yield(0)
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
-        )
-        coroutine.yield(0)
-        --Remove Shadow Event Card #20 and #22 (Orcs Multiplying Again & Monsters Roused)...
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.ShadowStrategyEventDeck, Name = "Orcs Multiplying Again", Description = "#20;" }
-        )
-        coroutine.yield(0)
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.ShadowStrategyEventDeck, Name = "Monsters Roused", Description = "#22;" }
-        )
-        coroutine.yield(0)
-        --Remove old Gimli Character Cards...
-        if getObjectFromGUID("78f279") ~= nil then
-            if getObjectFromGUID("f86853") ~= nil then
-                getObjectFromGUID("f86853").setPositionSmooth(
-                    getObjectFromGUID("78f279").getPosition(),
-                    false,
-                    false
-                )
-            end
-
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("78f279"))
-        end
-
-        if getObjectFromGUID("af7f13") ~= nil then
-            if getObjectFromGUID("de958e") ~= nil then
-                getObjectFromGUID("de958e").setPositionSmooth(
-                    getObjectFromGUID("af7f13").getPosition(),
-                    false,
-                    false
-                )
-            end
-
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("af7f13"))
-        end
-
-        -- If KoME+TFoE then remove Dain and Brand from the game...
-        if KingsOfMiddleEarth then
-            printToAll("The Fate of Erebor removes King Brand and King Dain Ironfoot from the game.", { 1, 1, 0 })
-            if getObjectFromGUID(IDs.Companions.Brand) ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Brand))
-            end
-
-            if getObjectFromGUID(IDs.Companions.Dain) ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Dain))
-            end
-
-            if getObjectFromGUID("43a6a7") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("43a6a7"))
-            end
-
-            if getObjectFromGUID("754777") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("754777"))
-            end
-
-            if getObjectFromGUID("a90518") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("a90518"))
-            end
-
-            if getObjectFromGUID("d1aa1a") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d1aa1a"))
-            end
-
-            if getObjectFromGUID("55b8d8") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("55b8d8"))
-            end
-
-            if getObjectFromGUID("9bdfb0") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("9bdfb0"))
-            end
-        end
-    else
-        --Clean up TFoE Components...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Putting away\nThe Fate of Erebor\nMini-Expansion Content...",
-                position = { 0, 0.1, 0 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        for _, Obj in pairs(getAllObjects()) do
-            if string.find(Obj.getDescription(), "TFoE;") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(Obj)
-            end
-        end
-
-        --wait for cleanup to finish...
-        local Done = true
-        repeat
-            Done = true --assume true until proven false.
-            for _, Obj in pairs(getAllObjects()) do
-                if string.find(Obj.getDescription(), "TFoE;") ~= nil then
-                    Done = false
-                end
-            end
-
-            coroutine.yield(0)
-        until Done
-    end
-
-    if LordsOfMiddleEarth then
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Setting up\nLords of Middle-Earth\nExpansion Content...",
-                position = { 0, 0.1, 0 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        --change next step to Alternate Companions Menu...
-        NextStep = StepType.AlternateCompanionsMenu
-        --Replace Elven Rings...
-        for I = 1, 3 do
-            getObjectFromGUID(IDs.LoME.ElvenRings[I]).setPositionSmooth(
-                getObjectFromGUID(IDs.ElvenRings[I]).getPosition(),
-                false,
-                false
-            )
-            getObjectFromGUID(IDs.LoME.ElvenRings[I]).setRotation({ 0, 90, 0 })
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.ElvenRings[I]))
-            coroutine.yield(0)
-        end
-
-        --Add New Event Cards...
-        getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(
-            getObjectFromGUID(IDs.LoME.ShadowCharacterEventCards)
-        )
-        getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(
-            getObjectFromGUID(IDs.LoME.ShadowStrategyEventCards)
-        )
-        coroutine.yield(0)
-        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(
-            getObjectFromGUID(IDs.LoME.FreePeoplesCharacterEventCards)
-        )
-        getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(
-            getObjectFromGUID(IDs.LoME.FreePeoplesStrategyEventCards)
-        )
-        coroutine.yield(0)
-        --Remove Shadow Event Card #17 (Balrog of Moria)...
-        Global.call(
-            "RemoveObjectFromGame",
-            {
-                BagID = IDs.ShadowCharacterEventDeck,
-                Name = "Balrog of Moria",
-                Description = "Card;Event;Character;Shadow;"
-            }
-        )
-        --Add 2 Smeagol Tiles (if not using BotF)...
-        if not TheBreakingOfTheFellowship then
-            for T = 1, 2 do
-                getObjectFromGUID(IDs.HuntTileBag).putObject(getObjectFromGUID(IDs.LoME.SmeagolTiles[T]))
-                coroutine.yield(0)
-            end
-        end
-    else
-        --Clean up LoME Components...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Putting away\nLords of Middle-Earth\nExpansion Content...",
-                position = { 0, 0.1, 0 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        for _, Obj in pairs(getAllObjects()) do
-            if string.find(Obj.getDescription(), "LoME;") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(Obj)
-            end
-        end
-
-        --wait for cleanup to finish...
-        local Done = true
-        repeat
-            Done = true --assume true until proven false.
-            for _, Obj in pairs(getAllObjects()) do
-                if string.find(Obj.getDescription(), "LoME;") ~= nil then
-                    Done = false
-                end
-            end
-
-            coroutine.yield(0)
-        until Done
-    end
-
+    SetupFateOfEreborExpansion()
     coroutine.yield(0)
 
-    if WarriorsOfMiddleEarth then
-        log(" Setting up WoME...")
-
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Setting up\nWarriors of Middle-Earth\nExpansion Content...",
-                position = { 0, 0.1, 0 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        --Remove FP cards
-        log(" Removing FP Event Cards (WoME)...")
-
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Gwaihir the Windlord", Description = "#15;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Eagles are Coming!", Description = "#18;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Treebeard", Description = "#19;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Huorns", Description = "#20;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Entmoot", Description = "#21;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Dead Men of Dunharrow", Description = "#22;" }
-        )
-        coroutine.yield(0)
-        --Remove S cards
-        log(" Removing Shadow Event Cards (WoME)...")
-
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.ShadowCharacterEventDeck, Name = "Shelob's Lair", Description = "#1;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.ShadowStrategyEventDeck, Name = "Corsairs of Umbar", Description = "#10;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.ShadowStrategyEventDeck, Name = "Rage of the Dunlendings", Description = "#11;" }
-        )
-        coroutine.yield(0)
-        --Add New cards
-        log(" Adding FP Event Cards...")
-
-        TempObj = getObjectFromGUID(IDs.WoME.FreePeoplesEventCards)
-        coroutine.yield(0)
-        log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
-        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(TempObj)
-        repeat
-            coroutine.yield(0)
-        until TempObj == nil
-        log(" Adding S Event Cards...")
-
-        TempObj = getObjectFromGUID(IDs.WoME.NotOnAnybodysSideCard)
-        coroutine.yield(0)
-        log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
-        getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(TempObj)
-        repeat
-            coroutine.yield(0)
-        until TempObj == nil
-        TempObj = getObjectFromGUID(IDs.WoME.ShadowEventCards)
-        coroutine.yield(0)
-        log("  Added:" .. TempObj.getName() .. "(" .. TempObj.getGUID() .. ")")
-        getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(TempObj)
-        repeat
-            coroutine.yield(0)
-        until TempObj == nil
-    else
-        --Clean up WoME Components...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Putting away\nWarriors of Middle-Earth\nExpansion Content...",
-                position = { 0, 0.1, 0 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        for _, Obj in pairs(getAllObjects()) do
-            if string.find(Obj.getDescription(), "WoME;") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(Obj)
-            end
-        end
-
-        --Move Event Discard Spots..
-        getObjectFromGUID("61c02b").setPosition({ 40.25, 0.92, -20.00 })
-        getObjectFromGUID("b18c8a").setPosition({ -40.25, 0.92, 20.00 })
-        --wait for cleanup to finish...
-        local Done = true
-        repeat
-            Done = true --assume true until proven false.
-            for _, Obj in pairs(getAllObjects()) do
-                if string.find(Obj.getDescription(), "WoME;") ~= nil then
-                    Done = false
-                end
-            end
-
-            coroutine.yield(0)
-        until Done
-    end
-
+    SetupLordsExpansion()
     coroutine.yield(0)
 
-    if KingsOfMiddleEarth then
-        log(" Setting up KoME...")
-
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Setting up\nKings of Middle-Earth\nExpansion Content...",
-                position = { 0, 0.1, 0 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        --add KoME hunt tiles into hunt pool...
-        for O, Obj in pairs(getAllObjects()) do
-            if Obj.getName() == "Hunt Tile" and string.find(Obj.getDescription(), "KoME;") ~= nil then
-                getObjectFromGUID(IDs.HuntTileBag).putObject(Obj)
-            end
-            -- If kome hunt tile
-            getObjectFromGUID(IDs.HuntTileBag).shuffle()
-        end
-        -- for O,Obj
-        --Remove Event Cards...
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "House of the Stewards", Description = "#23;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Wisdom of Elrond", Description = "#8;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Riders of Theoden", Description = "#16;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Thranduil's Archers", Description = "#24;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.ShadowStrategyEventDeck, Name = "Return to Valinor", Description = "#1;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.ShadowStrategyEventDeck, Name = "Denethor's Folly", Description = "#3;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.ShadowStrategyEventDeck, Name = "Threats and Promises", Description = "#5;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.ShadowStrategyEventDeck, Name = "Stormcrow", Description = "#6;" }
-        )
-        Global.call(
-            "RemoveObjectFromGame",
-            { BagID = IDs.ShadowStrategyEventDeck, Name = "The King is Revealed", Description = "#18;" }
-        )
-        -- If The Fate of Erebot is used then do not swap 2 of the cards (King Brands MEn and Dain Ironfoot's Guard)...
-        if TheFateOfErebor then
-            --remove the new cards, we will keep old ones...
-            Global.call("RemoveObjectFromGame", { BagID = "890b46", Name = "King Brand's Men", Description = "#19;" })
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = "890b46", Name = "Dain Ironfoot's Guard", Description = "#22;" }
-            )
-        else --remove the 2 base cards, they will be replaced with the KoME new cards...
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
-            )
-            Global.call(
-                "RemoveObjectFromGame",
-                { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
-            )
-        end
-
-        --Add New Event Cards...
-        getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(getObjectFromGUID("70fc9b"))
-        coroutine.yield(0)
-        getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(getObjectFromGUID("cc76b8"))
-        coroutine.yield(0)
-        getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(getObjectFromGUID("0534ed"))
-        coroutine.yield(0)
-        getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(getObjectFromGUID("890b46"))
-        coroutine.yield(0)
-    else
-        --Clean up WoME Components...
-        self.clearButtons()
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Putting away\nKings of Middle-Earth\nExpansion Content...",
-                position = { 0, 0.1, 0 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 1, 1 }
-            }
-        )
-        for _, Obj in pairs(getAllObjects()) do
-            if string.find(Obj.getDescription(), "KoME;") ~= nil then
-                getObjectFromGUID(GraveBagId).putObject(Obj)
-            end
-        end
-
-        --wait for cleanup to finish...
-        local Done = true
-        repeat
-            Done = true --assume true until proven false.
-            for _, Obj in pairs(getAllObjects()) do
-                if string.find(Obj.getDescription(), "KoME;") ~= nil then
-                    Done = false
-                end
-            end
-
-            coroutine.yield(0)
-        until Done
-    end
-
+    SetupWarriorsExpansion()
     coroutine.yield(0)
 
-    --setup treebeard content..
-    if WarriorsOfMiddleEarth then
-        if Treebeard == 1 then
-            --WM1/1R
-            getObjectFromGUID("8f8093").setPosition({ -13.5, 0.97, 33 }, false, false)
-            getObjectFromGUID("8f8093").setRotation({ 0, 0, 180 }, false, false)
-            if getObjectFromGUID("185612") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
-            end
-            --PROMO1
-            if getObjectFromGUID("3d93f2") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("3d93f2"))
-            end
-            --PROMO1R
-            if getObjectFromGUID("d7264c") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("d7264c"))
-            end
-        else
-            --PROMO1R
-            getObjectFromGUID("d7264c").setPosition({ -13.5, 0.97, 33 }, false, false)
-            getObjectFromGUID("d7264c").setRotation({ 0, 0, 180 }, false, false)
-            if getObjectFromGUID("8f8093") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
-            end
-            --WM1/1
-            if getObjectFromGUID("185612") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
-            end
-            --PROMO1
-            if getObjectFromGUID("3d93f2") ~= nil then
-                getObjectFromGUID("416864").putObject(getObjectFromGUID("3d93f2"))
-            end
-        end
-    elseif Treebeard == 1 then
-        --WM1/1R
-        getObjectFromGUID("185612").setPosition({ -13.5, 0.97, 33 }, false, false)
-        getObjectFromGUID("185612").setRotation({ 0, 0, 180 }, false, false)
-        if getObjectFromGUID("8f8093") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
-        end
-        --WM1/1
-        if getObjectFromGUID("3d93f2") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("3d93f2"))
-        end
-        --PROMO1R
-        if getObjectFromGUID("d7264c") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("d7264c"))
-        end
-    elseif Treebeard == 2 then
-        --WM1/1R
-        getObjectFromGUID("3d93f2").setPosition({ -13.5, 0.97, 33 }, false, false)
-        getObjectFromGUID("3d93f2").setRotation({ 0, 0, 180 }, false, false)
-        if getObjectFromGUID("8f8093") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
-        end
-        --WM1/1
-        if getObjectFromGUID("185612") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
-        end
-        --PROMO1
-        if getObjectFromGUID("d7264c") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("d7264c"))
-        end
-    else --no treebeard...
-        --WM1/1R
-        if getObjectFromGUID("5e36c8") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("5e36c8"))
-        end
-        --treebeard miniature
-        if getObjectFromGUID("e51819") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("e51819"))
-        end
-        --treebeard miniature
-        if getObjectFromGUID("964d05") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("964d05"))
-        end
-        --treebeard miniature
-        if getObjectFromGUID("8f8093") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("8f8093"))
-        end
-        --WM1/1
-        if getObjectFromGUID("185612") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("185612"))
-        end
-        --PROMO1
-        if getObjectFromGUID("3d93f2") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("3d93f2"))
-        end
-        --PROMO1R
-        if getObjectFromGUID("d7264c") ~= nil then
-            getObjectFromGUID("416864").putObject(getObjectFromGUID("d7264c"))
-        end
-    end
+    SetupKingsExpansion()
+    coroutine.yield(0)
+
+    SetupTreebeardVersion()
 
     for I = 1, 99 do
         coroutine.yield(0)
     end
 
     Step = StepType.Empty
+end
+
+function ShowInformationText(text)
+    self.clearButtons()
+    self.createButton(
+        {
+            click_function = "Nothing",
+            function_owner = self,
+            label = text,
+            position = { 0, 0, 0 },
+            width = 0,
+            height = 0,
+            font_size = 100,
+            font_color = { 1, 1, 1 }
+        }
+    )
+end
+
+function ClearExpansionContent(expansionTag)
+    for _, Obj in pairs(getAllObjects()) do
+        if string.find(Obj.getDescription(), expansionTag) ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(Obj)
+        end
+    end
+
+    --wait for cleanup to finish
+    local Done = true
+    repeat
+        Done = true
+        for _, Obj in pairs(getAllObjects()) do
+            if string.find(Obj.getDescription(), expansionTag) ~= nil then
+                Done = false
+            end
+        end
+
+        coroutine.yield(0)
+    until Done
+end
+
+function SetupFateOfEreborExpansion()
+    if not TheFateOfErebor then
+        ShowInformationText("Putting away\nThe Fate of Erebor\nMini-Expansion Content...")
+        ClearExpansionContent("TFoE;")
+        return
+    end
+
+    ShowInformationText("Setting up\nThe Fate of Erebor\nMini-Expansion Content...")
+    local IDs = Global.call("GetIDs")
+    Global.call("SetupTheFateOfErebor")
+
+    --setup optional new cities?
+    if TheFateOfErebor_NewCities then
+        Global.call("SetupTheFateOfErebor_NewCities")
+    else
+        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("c537fa"))
+        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("2df5ce"))
+    end
+
+    --replace cards...
+    getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(
+        getObjectFromGUID(IDs.TFoE.ShadowStrategyEventCards)
+    )
+    coroutine.yield(0)
+    getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(
+        getObjectFromGUID(IDs.TFoE.FreePeoplesCharacterEventCards)
+    )
+    getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(
+        getObjectFromGUID(IDs.TFoE.FreePeoplesStrategyEventCards)
+    )
+
+    coroutine.yield(0)
+    --Remove Free Peoples Strategy Event Card #4, #19, and #22, then remove FP character card #17...
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "There and Back Again", Description = "#17;" }
+    )
+    coroutine.yield(0)
+
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Book of Mazarbul", Description = "#4;" }
+    )
+    coroutine.yield(0)
+
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
+    )
+    coroutine.yield(0)
+
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
+    )
+    coroutine.yield(0)
+
+    --Remove Shadow Event Card #20 and #22 (Orcs Multiplying Again & Monsters Roused)...
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.ShadowStrategyEventDeck, Name = "Orcs Multiplying Again", Description = "#20;" }
+    )
+    coroutine.yield(0)
+
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.ShadowStrategyEventDeck, Name = "Monsters Roused", Description = "#22;" }
+    )
+    coroutine.yield(0)
+
+    --Remove old Gimli Character Cards...
+    if getObjectFromGUID("78f279") ~= nil then
+        if getObjectFromGUID("f86853") ~= nil then
+            getObjectFromGUID("f86853").setPositionSmooth(
+                getObjectFromGUID("78f279").getPosition(),
+                false,
+                false
+            )
+        end
+
+        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("78f279"))
+    end
+
+    if getObjectFromGUID("af7f13") ~= nil then
+        if getObjectFromGUID("de958e") ~= nil then
+            getObjectFromGUID("de958e").setPositionSmooth(
+                getObjectFromGUID("af7f13").getPosition(),
+                false,
+                false
+            )
+        end
+
+        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("af7f13"))
+    end
+
+    -- If KoME+TFoE then remove Dain and Brand from the game...
+    if KingsOfMiddleEarth then
+        printToAll("The Fate of Erebor removes King Brand and King Dain Ironfoot from the game.", { 1, 1, 0 })
+
+        if getObjectFromGUID(IDs.Companions.Brand) ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Brand))
+        end
+
+        if getObjectFromGUID(IDs.Companions.Dain) ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.Companions.Dain))
+        end
+
+        if getObjectFromGUID("43a6a7") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("43a6a7"))
+        end
+
+        if getObjectFromGUID("754777") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("754777"))
+        end
+
+        if getObjectFromGUID("a90518") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("a90518"))
+        end
+
+        if getObjectFromGUID("d1aa1a") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d1aa1a"))
+        end
+
+        if getObjectFromGUID("55b8d8") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("55b8d8"))
+        end
+
+        if getObjectFromGUID("9bdfb0") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("9bdfb0"))
+        end
+    end
+end
+
+function SetupLordsExpansion()
+    if not LordsOfMiddleEarth then
+        ShowInformationText("Putting away\nLords of Middle-Earth\nExpansion Content...")
+        ClearExpansionContent("LoME;")
+        return
+    end
+
+    ShowInformationText("Setting up\nLords of Middle-Earth\nExpansion Content...")
+
+    local IDs = Global.call("GetIDs")
+
+    --change next step to Alternate Companions Menu...
+    NextStep = StepType.AlternateCompanionsMenu
+
+    --Replace Elven Rings...
+    for I = 1, 3 do
+        getObjectFromGUID(IDs.LoME.ElvenRings[I]).setPositionSmooth(
+            getObjectFromGUID(IDs.ElvenRings[I]).getPosition(),
+            false,
+            false
+        )
+        getObjectFromGUID(IDs.LoME.ElvenRings[I]).setRotation({ 0, 90, 0 })
+        getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.ElvenRings[I]))
+        coroutine.yield(0)
+    end
+
+    --Add New Event Cards...
+    getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(
+        getObjectFromGUID(IDs.LoME.ShadowCharacterEventCards)
+    )
+    getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(
+        getObjectFromGUID(IDs.LoME.ShadowStrategyEventCards)
+    )
+    coroutine.yield(0)
+
+    getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(
+        getObjectFromGUID(IDs.LoME.FreePeoplesCharacterEventCards)
+    )
+    getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(
+        getObjectFromGUID(IDs.LoME.FreePeoplesStrategyEventCards)
+    )
+    coroutine.yield(0)
+
+    --Remove Shadow Event Card #17 (Balrog of Moria)...
+    Global.call(
+        "RemoveObjectFromGame",
+        {
+            BagID = IDs.ShadowCharacterEventDeck,
+            Name = "Balrog of Moria",
+            Description = "Card;Event;Character;Shadow;"
+        }
+    )
+
+    --Add 2 Smeagol Tiles (if not using BotF)...
+    if not TheBreakingOfTheFellowship then
+        for T = 1, 2 do
+            getObjectFromGUID(IDs.HuntTileBag).putObject(getObjectFromGUID(IDs.LoME.SmeagolTiles[T]))
+            coroutine.yield(0)
+        end
+    end
+end
+
+function SetupWarriorsExpansion()
+    if not WarriorsOfMiddleEarth then
+        ShowInformationText("Putting away\nWarriors of Middle-Earth\nExpansion Content...")
+
+        --Move Event Discard Spots..
+        getObjectFromGUID("61c02b").setPosition({ 40.25, 0.92, -20.00 })
+        getObjectFromGUID("b18c8a").setPosition({ -40.25, 0.92, 20.00 })
+
+        ClearExpansionContent("WoME;")
+        return
+    end
+
+    ShowInformationText("Setting up\nWarriors of Middle-Earth\nExpansion Content...")
+    local IDs = Global.call("GetIDs")
+
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Gwaihir the Windlord", Description = "#15;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Eagles are Coming!", Description = "#18;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Treebeard", Description = "#19;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Huorns", Description = "#20;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "The Ents Awake: Entmoot", Description = "#21;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "Dead Men of Dunharrow", Description = "#22;" }
+    )
+    coroutine.yield(0)
+
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.ShadowCharacterEventDeck, Name = "Shelob's Lair", Description = "#1;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.ShadowStrategyEventDeck, Name = "Corsairs of Umbar", Description = "#10;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.ShadowStrategyEventDeck, Name = "Rage of the Dunlendings", Description = "#11;" }
+    )
+    coroutine.yield(0)
+
+    local TempObj = getObjectFromGUID(IDs.WoME.FreePeoplesEventCards)
+    coroutine.yield(0)
+
+    getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(TempObj)
+    repeat
+        coroutine.yield(0)
+    until TempObj == nil
+
+    TempObj = getObjectFromGUID(IDs.WoME.NotOnAnybodysSideCard)
+    coroutine.yield(0)
+
+    getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(TempObj)
+    repeat
+        coroutine.yield(0)
+    until TempObj == nil
+
+    TempObj = getObjectFromGUID(IDs.WoME.ShadowEventCards)
+    coroutine.yield(0)
+
+    getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(TempObj)
+    repeat
+        coroutine.yield(0)
+    until TempObj == nil
+end
+
+function SetupKingsExpansion()
+    if not KingsOfMiddleEarth then
+        ShowInformationText("Putting away\nKings of Middle-Earth\nExpansion Content...")
+        ClearExpansionContent("KoME;")
+        return
+    end
+
+    ShowInformationText("Setting up\nKings of Middle-Earth\nExpansion Content...")
+    local IDs = Global.call("GetIDs")
+
+    for _, Obj in pairs(getAllObjects()) do
+        if Obj.getName() == "Hunt Tile" and string.find(Obj.getDescription(), "KoME;") ~= nil then
+            getObjectFromGUID(IDs.HuntTileBag).putObject(Obj)
+        end
+        getObjectFromGUID(IDs.HuntTileBag).shuffle()
+    end
+
+    --Remove Event Cards...
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "House of the Stewards", Description = "#23;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Wisdom of Elrond", Description = "#8;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Riders of Theoden", Description = "#16;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Thranduil's Archers", Description = "#24;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.ShadowStrategyEventDeck, Name = "Return to Valinor", Description = "#1;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.ShadowStrategyEventDeck, Name = "Denethor's Folly", Description = "#3;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.ShadowStrategyEventDeck, Name = "Threats and Promises", Description = "#5;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.ShadowStrategyEventDeck, Name = "Stormcrow", Description = "#6;" }
+    )
+    Global.call(
+        "RemoveObjectFromGame",
+        { BagID = IDs.ShadowStrategyEventDeck, Name = "The King is Revealed", Description = "#18;" }
+    )
+
+    -- If The Fate of Erebor is used then do not swap 2 of the cards (King Brands Men and Dain Ironfoot's Guard)...
+    if TheFateOfErebor then
+        --remove the new cards, we will keep old ones...
+        Global.call("RemoveObjectFromGame", { BagID = "890b46", Name = "King Brand's Men", Description = "#19;" })
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = "890b46", Name = "Dain Ironfoot's Guard", Description = "#22;" }
+        )
+    else
+        --remove the 2 base cards, they will be replaced with the KoME new cards...
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
+        )
+        Global.call(
+            "RemoveObjectFromGame",
+            { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "Dain Ironfoot's Guard", Description = "#22;" }
+        )
+    end
+
+    --Add New Event Cards...
+    getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(getObjectFromGUID("70fc9b"))
+    coroutine.yield(0)
+    getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(getObjectFromGUID("cc76b8"))
+    coroutine.yield(0)
+    getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).putObject(getObjectFromGUID("0534ed"))
+    coroutine.yield(0)
+    getObjectFromGUID(IDs.FreePeoplesStrategyEventDeck).putObject(getObjectFromGUID("890b46"))
+    coroutine.yield(0)
+end
+
+function SetupTreebeardVersion()
+    local id_promo = ""
+    local id_promo_revised = ""
+    local id_warriors = ""
+    local id_warriors_revised = ""
+
+    if WarriorsOfMiddleEarth then
+        if TreebeardVersion == 1 then
+            --WM1/1R
+            getObjectFromGUID("8f8093").setPosition({ -13.5, 0.97, 33 }, false, false)
+            getObjectFromGUID("8f8093").setRotation({ 0, 0, 180 }, false, false)
+            if getObjectFromGUID("185612") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("185612"))
+            end
+            --PROMO1
+            if getObjectFromGUID("3d93f2") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("3d93f2"))
+            end
+            --PROMO1R
+            if getObjectFromGUID("d7264c") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d7264c"))
+            end
+        else
+            --PROMO1R
+            getObjectFromGUID("d7264c").setPosition({ -13.5, 0.97, 33 }, false, false)
+            getObjectFromGUID("d7264c").setRotation({ 0, 0, 180 }, false, false)
+            if getObjectFromGUID("8f8093") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("8f8093"))
+            end
+            --WM1/1
+            if getObjectFromGUID("185612") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("185612"))
+            end
+            --PROMO1
+            if getObjectFromGUID("3d93f2") ~= nil then
+                getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("3d93f2"))
+            end
+        end
+    elseif TreebeardVersion == 1 then
+        --WM1/1R
+        getObjectFromGUID("185612").setPosition({ -13.5, 0.97, 33 }, false, false)
+        getObjectFromGUID("185612").setRotation({ 0, 0, 180 }, false, false)
+        if getObjectFromGUID("8f8093") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("8f8093"))
+        end
+        --WM1/1
+        if getObjectFromGUID("3d93f2") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("3d93f2"))
+        end
+        --PROMO1R
+        if getObjectFromGUID("d7264c") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d7264c"))
+        end
+    elseif TreebeardVersion == 2 then
+        --WM1/1R
+        getObjectFromGUID("3d93f2").setPosition({ -13.5, 0.97, 33 }, false, false)
+        getObjectFromGUID("3d93f2").setRotation({ 0, 0, 180 }, false, false)
+        if getObjectFromGUID("8f8093") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("8f8093"))
+        end
+        --WM1/1
+        if getObjectFromGUID("185612") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("185612"))
+        end
+        --PROMO1
+        if getObjectFromGUID("d7264c") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d7264c"))
+        end
+    else --no treebeard...
+        --WM1/1R
+        if getObjectFromGUID("5e36c8") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("5e36c8"))
+        end
+        --treebeard miniature
+        if getObjectFromGUID("e51819") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("e51819"))
+        end
+        --treebeard miniature
+        if getObjectFromGUID("964d05") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("964d05"))
+        end
+        --treebeard miniature
+        if getObjectFromGUID("8f8093") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("8f8093"))
+        end
+        --WM1/1
+        if getObjectFromGUID("185612") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("185612"))
+        end
+        --PROMO1
+        if getObjectFromGUID("3d93f2") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("3d93f2"))
+        end
+        --PROMO1R
+        if getObjectFromGUID("d7264c") ~= nil then
+            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("d7264c"))
+        end
+    end
 end
 
 function CreateAlternateCompanionMenu()
