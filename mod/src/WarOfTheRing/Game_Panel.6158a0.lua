@@ -12,8 +12,10 @@ local ShadowHuntDiceCount = 0
 local Round = 0
 
 -- colors
-local ButtonColorSelected = { 1, 1, 0 }
-local ButtonColorDefault = { 1, 1, 1 }
+local Colors = {
+    ButtonSelected = { 1, 1, 0 },
+    White = { 1, 1, 1 }
+}
 
 --expansions
 local LordsOfMiddleEarth = false
@@ -405,6 +407,33 @@ function ProcessNextStep()
     return 1
 end
 
+function CreateTextData(Text, Size, PositionZ)
+    return {
+        click_function = "Nothing",
+        function_owner = self,
+        label = Text,
+        position = { 0, 0.1, PositionZ },
+        width = 0,
+        height = 0,
+        font_size = Size,
+        font_color = Colors.White
+    }
+end
+
+function CreateButton(Text, TextSize, Width, Height, PositionZ)
+    return {
+        click_function = "Nothing",
+        function_owner = self,
+        label = Text,
+        position = { 0, 0.1, PositionZ },
+        width = Width,
+        height = Height,
+        color = Colors.White,
+        font_size = TextSize,
+        tooltip = ""
+    }
+end
+
 function UnitsSetupStep()
     ShowInformationText("Units Setup:\nPlease Wait\nSpawn Armies and Characters...")
 
@@ -417,47 +446,21 @@ function UnitsSetupStep()
 end
 
 function CreateSetupCompleteMenu()
-    local IDs = Global.call("GetIDs")
-
     self.clearButtons()
-    self.createButton(
-        {
-            click_function = "Nothing",
-            function_owner = self,
-            label = "Choose Scripting Level:",
-            position = { 0, 0.1, -1.3 },
-            width = 0,
-            height = 0,
-            font_size = 100,
-            font_color = { 1, 1, 1 }
-        }
-    )
-    self.createButton(
-        {
-            click_function = "FullScripts",
-            function_owner = self,
-            label = "Full Scripted Turns",
-            position = { 0, 0.1, -0.5 },
-            width = 1500,
-            height = 350,
-            color = ButtonColorDefault,
-            font_size = 150,
-            tooltip = "Click to play game with full scripting assistance."
-        }
-    )
-    self.createButton(
-        {
-            click_function = "BasicScripts",
-            function_owner = self,
-            label = "Basic Scripts Only",
-            position = { 0, 0.1, 0.5 },
-            width = 1500,
-            height = 350,
-            color = ButtonColorDefault,
-            font_size = 150,
-            tooltip = "Click to play game with minimal scripting assistance."
-        }
-    )
+
+    local scriptingLevelText = CreateTextData("Choose Scripting Level:", 100, -1.3)
+    self.createButton(scriptingLevelText)
+
+    local fullScriptsButtonData = CreateButton("Full Scripted Turns", 150, 1500, 350, -0.5)
+    fullScriptsButtonData.click_function = "FullScripts"
+    fullScriptsButtonData.tooltip = "Click to play game with full scripting assistance."
+    self.createButton(fullScriptsButtonData)
+
+    local basicScriptsButtonData = CreateButton("Basic Scripts Only", 150, 1500, 350, 0.5)
+    basicScriptsButtonData.click_function = "BasicScripts"
+    basicScriptsButtonData.tooltip = "Click to play game with minimal scripting assistance."
+    self.createButton(basicScriptsButtonData)
+
     function FullScripts()
         self.clearButtons()
         NextStep = StepType.StartTurn
@@ -471,6 +474,8 @@ function CreateSetupCompleteMenu()
     end
 
     --Shuffle decks and bags...
+    local IDs = Global.call("GetIDs")
+
     getObjectFromGUID(IDs.CompanionBag).shuffle()
     getObjectFromGUID(IDs.HuntTileBag).shuffle()
     getObjectFromGUID(IDs.FreePeoplesCharacterEventDeck).shuffle()
@@ -548,7 +553,7 @@ function StartTurnStep()
             position = { 0, 0.1, 0 },
             width = 1600,
             height = 400,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 250,
             tooltip = "Click to Start Turn " .. Turn
         }
@@ -740,7 +745,7 @@ function Phase1_Step()
             position = { 0, 0.1, 0 },
             width = 1600,
             height = 400,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 100,
             tooltip = "Have the script perform all Phase 1 steps for you."
         }
@@ -2541,7 +2546,7 @@ function Phase2_FellowshipStep()
                             height = 250,
                             font_size = 75,
                             color = { 1, 0, 0 },
-                            font_color = ButtonColorSelected,
+                            font_color = Colors.ButtonSelected,
                             tooltip = "Choose the Shadow Token that can Move Nazgul and Minions."
                         }
                     )
@@ -2555,7 +2560,7 @@ function Phase2_FellowshipStep()
                             height = 250,
                             font_size = 75,
                             color = { 1, 0, 0 },
-                            font_color = ButtonColorSelected,
+                            font_color = Colors.ButtonSelected,
                             tooltip =
                             "Choose the Shadow Token that can Advance a Shadow Nation on the\nPolitical Track."
                         }
@@ -2713,7 +2718,7 @@ function Phase4_ActionRollStep()
             position = { 0, 0.1, 0 },
             width = 1600,
             height = 400,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 100,
             tooltip = "Click to roll all Action Dice in the Dice Boxes."
         }
@@ -2726,7 +2731,7 @@ function Phase4_ActionRollStep()
             position = { 0, 0.1, 1.2 },
             width = 1600,
             height = 200,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 100
         }
     )
@@ -2776,7 +2781,7 @@ function Phase5_ActionResolutionStep()
             position = { 0, 0.1, 1.2 },
             width = 1600,
             height = 200,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 100
         }
     )
@@ -2846,7 +2851,7 @@ function Phase6_VictoryCheckStep()
             position = { 0, 0.1, 1.2 },
             width = 1600,
             height = 200,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 100
         }
     )
@@ -2889,7 +2894,7 @@ function CreateBasicMenu()
             position = { 0, 0.1, -0.9 },
             width = 1600,
             height = 150,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 75,
             tooltip = "Gather Action Dice for all players and increment the round count by 1."
         }
@@ -2902,7 +2907,7 @@ function CreateBasicMenu()
             position = { 0, 0.1, -0.6 },
             width = 1600,
             height = 150,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 75,
             tooltip = "Roll Action Dice."
         }
@@ -2918,7 +2923,7 @@ function CreateBasicMenu()
                 scale = { 2, 0.5, 0.5 },
                 width = 1000,
                 height = 100,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 100,
                 tooltip = "Gather Action Dice for all players and increment the round count by 1."
             }
@@ -2933,7 +2938,7 @@ function CreateBasicMenu()
                 scale = { 2, 0.5, 0.5 },
                 width = 1000,
                 height = 100,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 100,
                 tooltip = "Roll Action Dice for all players."
             }
@@ -2958,7 +2963,7 @@ function CreateBasicMenu()
             function_owner = self,
             label = "+",
             position = { 0.75, 0.1, 1 },
-            color = ButtonColorDefault,
+            color = Colors.White,
             width = 100,
             height = 100,
             font_size = 100,
@@ -2973,7 +2978,7 @@ function CreateBasicMenu()
             function_owner = self,
             label = "-",
             position = { -0.75, 0.1, 1 },
-            color = ButtonColorDefault,
+            color = Colors.White,
             width = 100,
             height = 100,
             font_size = 100,
@@ -3048,8 +3053,10 @@ end
 function CreateBeginMenu()
     LordsOfMiddleEarth = false
     WarriorsOfMiddleEarth = false
-    self.clearButtons()
+
     MoveGamePanel("All")
+
+    self.clearButtons()
     self.createButton(
         {
             click_function = "Nothing",
@@ -3107,32 +3114,21 @@ function CreateBeginMenu()
         }
     )
 
+    local playerRed_buttonData = {
+        click_function = "Nothing",
+        function_owner = self,
+        label = "Shadow (Player 1): ",
+        position = { 0, 0.1, -0.6 },
+        width = 0,
+        height = 0,
+        font_size = 100,
+        font_color = { 1, 0.4, 0.4 }
+    }
+
     if Player.Red.steam_name ~= nil then
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Shadow (Player 1): " .. Player.Red.steam_name,
-                position = { 0, 0.1, -0.6 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 0.4, 0.4 }
-            }
-        )
+        playerRed_buttonData.label = playerRed_buttonData .. Player.Red.steam_name
     else
-        self.createButton(
-            {
-                click_function = "Nothing",
-                function_owner = self,
-                label = "Shadow (Player 1): Choose red seat",
-                position = { 0, 0.1, -0.6 },
-                width = 0,
-                height = 0,
-                font_size = 100,
-                font_color = { 1, 0.4, 0.4 }
-            }
-        )
+        playerRed_buttonData.label = playerRed_buttonData .. "Choose red seat"
     end
 
     if Player.Blue.steam_name ~= nil then
@@ -3202,7 +3198,7 @@ function CreateBeginMenu()
             width = 1500,
             height = 300,
             font_size = 175,
-            color = ButtonColorDefault,
+            color = Colors.White,
             tooltip = "Start setting up the game with Scripted assistance."
         }
     )
@@ -3216,7 +3212,7 @@ function CreateBeginMenu()
             width = 600,
             height = 100,
             font_size = 50,
-            color = ButtonColorDefault,
+            color = Colors.White,
             tooltip = "Turn off scripting."
         }
     )
@@ -3231,7 +3227,7 @@ function CreateBeginMenu()
                 width = 600,
                 height = 100,
                 font_size = 50,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 tooltip = "Click to toggle Sound Effects ON."
             }
         )
@@ -3245,7 +3241,7 @@ function CreateBeginMenu()
                 width = 600,
                 height = 100,
                 font_size = 50,
-                color = ButtonColorSelected,
+                color = Colors.ButtonSelected,
                 tooltip = "Click to toggle Sound Effects OFF."
             }
         )
@@ -3310,7 +3306,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorSelected,
+                color = Colors.ButtonSelected,
                 font_size = 75,
                 tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
             }
@@ -3323,7 +3319,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
@@ -3337,7 +3333,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
@@ -3351,7 +3347,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0.5 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
@@ -3366,7 +3362,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 75,
                 tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
             }
@@ -3379,7 +3375,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorSelected,
+                color = Colors.ButtonSelected,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
@@ -3393,7 +3389,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
@@ -3407,7 +3403,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0.5 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
@@ -3422,7 +3418,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 75,
                 tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
             }
@@ -3435,7 +3431,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
@@ -3449,7 +3445,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorSelected,
+                color = Colors.ButtonSelected,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
@@ -3463,7 +3459,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0.5 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
@@ -3478,7 +3474,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.6 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 75,
                 tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
             }
@@ -3491,7 +3487,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, -0.3 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\nPlayer 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
@@ -3505,7 +3501,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): Gondor (Gondor,Elves)\nPlayer 2 (Green): Rohan (Rohan,North,Dwarves)\n    vs.\nPlayer 3 (Red): The Witch-king (Sauron)\nPlayer 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
@@ -3519,7 +3515,7 @@ function CreatePlayersMenu()
                 position = { 0, 0.1, 0.5 },
                 width = 1600,
                 height = 150,
-                color = ButtonColorSelected,
+                color = Colors.ButtonSelected,
                 font_size = 75,
                 tooltip =
                 "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow\n\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n(Players sit next to each other)."
@@ -3535,7 +3531,7 @@ function CreatePlayersMenu()
             position = { 0, 0.1, 1 },
             width = 1600,
             height = 200,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 100
         }
     )
@@ -3640,7 +3636,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, -0.9 },
                 width = 1800,
                 height = 150,
-                color = ButtonColorSelected,
+                color = Colors.ButtonSelected,
                 font_size = 80,
                 tooltip = "Click to exclude."
             }
@@ -3654,7 +3650,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, -0.9 },
                 width = 1800,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 80,
                 tooltip = "Click to include."
             }
@@ -3670,7 +3666,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, -0.6 },
                 width = 1800,
                 height = 150,
-                color = ButtonColorSelected,
+                color = Colors.ButtonSelected,
                 font_size = 80,
                 tooltip = "Click to exclude."
             }
@@ -3684,7 +3680,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, -0.6 },
                 width = 1800,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 80,
                 tooltip = "Click to include."
             }
@@ -3700,7 +3696,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, -0.3 },
                 width = 1800,
                 height = 150,
-                color = ButtonColorSelected,
+                color = Colors.ButtonSelected,
                 font_size = 80,
                 tooltip = "Click to exclude."
             }
@@ -3714,7 +3710,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, -0.3 },
                 width = 1800,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 80,
                 tooltip = "Click to include."
             }
@@ -3730,7 +3726,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, 0.05 },
                 width = 1400,
                 height = 100,
-                color = ButtonColorSelected,
+                color = Colors.ButtonSelected,
                 font_size = 70,
                 tooltip = "Click to exclude: The Breaking of the Fellowship (a mini-expansion)."
             }
@@ -3744,7 +3740,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, 0.05 },
                 width = 1400,
                 height = 100,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 70,
                 tooltip = "Click to include: The Breaking of the Fellowship (a mini-expansion)."
             }
@@ -3760,7 +3756,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, 0.35 },
                 width = 1400,
                 height = 100,
-                color = ButtonColorSelected,
+                color = Colors.ButtonSelected,
                 font_size = 70,
                 tooltip = "Click to exclude.\nTThis is a mini-expansion from The Hunt for the Ring."
             }
@@ -3774,7 +3770,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, 0.35 },
                 width = 1400,
                 height = 100,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 70,
                 tooltip = "Click to include.\nThis is a mini-expansion from The Hunt for the Ring."
             }
@@ -3790,7 +3786,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, 0.65 },
                 width = 1400,
                 height = 100,
-                color = ButtonColorSelected,
+                color = Colors.ButtonSelected,
                 font_size = 70,
                 tooltip = "Click to exclude.\nThe Fate of Erebor is a mini-expansion from the Battle of the Five Armies."
             }
@@ -3804,7 +3800,7 @@ function CreateExpansionMenu()
                 position = { 0, 0.1, 0.65 },
                 width = 1400,
                 height = 100,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 70,
                 tooltip = "Click to include.\nThe Fate of Erebor is a mini-expansion from the Battle of the Five Armies."
             }
@@ -3819,7 +3815,7 @@ function CreateExpansionMenu()
             position = { 0, 0.1, 1.3 },
             width = 1800,
             height = 200,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 100
         }
     )
@@ -3904,7 +3900,7 @@ function CreateHuntForTheRingMenu()
                 width = 1800,
                 height = 150,
                 color = { 1, 0.4, 0.4 },
-                font_color = ButtonColorSelected,
+                font_color = Colors.ButtonSelected,
                 font_size = 70,
                 tooltip = "Click to exclude this token."
             }
@@ -3918,7 +3914,7 @@ function CreateHuntForTheRingMenu()
                 position = { 0, 0.1, -0.8 },
                 width = 1800,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 70,
                 tooltip = "Click to include this token."
             }
@@ -3936,7 +3932,7 @@ function CreateHuntForTheRingMenu()
                 width = 1800,
                 height = 150,
                 color = { 1, 0.4, 0.4 },
-                font_color = ButtonColorSelected,
+                font_color = Colors.ButtonSelected,
                 font_size = 70,
                 tooltip = "Click to exclude this token."
             }
@@ -3950,7 +3946,7 @@ function CreateHuntForTheRingMenu()
                 position = { 0, 0.1, -0.5 },
                 width = 1800,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 70,
                 tooltip = "Click to include this token."
             }
@@ -3968,7 +3964,7 @@ function CreateHuntForTheRingMenu()
                 width = 1800,
                 height = 150,
                 color = { 0.4, 0.4, 1 },
-                font_color = ButtonColorSelected,
+                font_color = Colors.ButtonSelected,
                 font_size = 70,
                 tooltip = "Click to exclude this token."
             }
@@ -3982,7 +3978,7 @@ function CreateHuntForTheRingMenu()
                 position = { 0, 0.1, 0 },
                 width = 1800,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 70,
                 tooltip = "Click to include this token."
             }
@@ -4000,7 +3996,7 @@ function CreateHuntForTheRingMenu()
                 width = 1800,
                 height = 150,
                 color = { 0.4, 0.4, 1 },
-                font_color = ButtonColorSelected,
+                font_color = Colors.ButtonSelected,
                 font_size = 70,
                 tooltip = "Click to exclude this token."
             }
@@ -4014,7 +4010,7 @@ function CreateHuntForTheRingMenu()
                 position = { 0, 0.1, 0.3 },
                 width = 1800,
                 height = 150,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 70,
                 tooltip = "Click to include this token."
             }
@@ -4041,7 +4037,7 @@ function CreateHuntForTheRingMenu()
             position = { 0, 0.1, 1.3 },
             width = 1800,
             height = 200,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 100
         }
     )
@@ -4133,7 +4129,7 @@ function CreateTFoEMenu()
                     position = { 0, 0.1, 0 },
                     width = 1400,
                     height = 100,
-                    color = ButtonColorSelected,
+                    color = Colors.ButtonSelected,
                     font_size = 100,
                     tooltip =
                     "Click to exclude.\nNew Cities is an optional setup in The Fate of Erebor, that changes the Towns of Ered Luin and South Rhun to Cities."
@@ -4148,7 +4144,7 @@ function CreateTFoEMenu()
                     position = { 0, 0.1, 0 },
                     width = 1400,
                     height = 100,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 100,
                     tooltip =
                     "Click to include.\nNew Cities is an optional setup in The Fate of Erebor, that changes the Towns of Ered Luin and South Rhun to Cities."
@@ -4164,7 +4160,7 @@ function CreateTFoEMenu()
                 position = { 0, 0.1, 1.3 },
                 width = 1800,
                 height = 200,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 100
             }
         )
@@ -4208,7 +4204,7 @@ function CreateTreebeardPromoMenu()
         return
     end
 
-    ShowTitleText("Select Treebeard Content\n(Promo card)")
+    ShowTitleText("Select Treebeard Content")
 
     local noTreebeardButtonData =
     {
@@ -4218,7 +4214,7 @@ function CreateTreebeardPromoMenu()
         position = { 0, 0.1, -0.6 },
         width = 1800,
         height = 150,
-        color = ButtonColorDefault,
+        color = Colors.White,
         font_size = 80,
         tooltip = "Do not include Treebeard Promotional Character Card."
     }
@@ -4230,19 +4226,22 @@ function CreateTreebeardPromoMenu()
         position = { 0, 0.1, -0.3 },
         width = 1800,
         height = 150,
-        color = ButtonColorDefault,
+        color = Colors.White,
         font_size = 80,
         tooltip =
         "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
     }
 
+    local selectedButton = {}
+
     if AddTreebeardPromo then
-        addTreebeardButtonData.label = "Selected: " .. addTreebeardButtonData.label
-        addTreebeardButtonData.color = ButtonColorSelected
+        selectedButton = addTreebeardButtonData
     else
-        noTreebeardButtonData.label = "Selected: " .. noTreebeardButtonData.label
-        noTreebeardButtonData.color = ButtonColorSelected
+        selectedButton = noTreebeardButtonData
     end
+
+    selectedButton.label = "Selected: " .. selectedButton.label
+    selectedButton.color = ButtonColorSelected
 
     self.createButton(noTreebeardButtonData)
     self.createButton(addTreebeardButtonData)
@@ -4255,7 +4254,7 @@ function CreateTreebeardPromoMenu()
             position = { 0, 0.1, 1.3 },
             width = 1800,
             height = 200,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 100,
             tooltip = "Continue Setup with the currently selected Treebeard option."
         }
@@ -4325,7 +4324,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.6 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorSelected,
+                    color = Colors.ButtonSelected,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4338,7 +4337,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.3 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4351,7 +4350,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4364,7 +4363,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0.3 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4378,7 +4377,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.6 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4391,7 +4390,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.3 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorSelected,
+                    color = Colors.ButtonSelected,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4404,7 +4403,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4417,7 +4416,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0.3 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4431,7 +4430,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.6 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4444,7 +4443,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.3 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4457,7 +4456,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorSelected,
+                    color = Colors.ButtonSelected,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4470,7 +4469,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0.3 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4484,7 +4483,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.6 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4497,7 +4496,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, -0.3 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4510,7 +4509,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorDefault,
+                    color = Colors.White,
                     font_size = 75,
                     tooltip = "(Original Character)"
                 }
@@ -4523,7 +4522,7 @@ function CreateStartingGuideMenu()
                     position = { 0, 0.1, 0.3 },
                     width = 1600,
                     height = 150,
-                    color = ButtonColorSelected,
+                    color = Colors.ButtonSelected,
                     font_size = 75,
                     tooltip = "(Lords of Middle-Earth Character)"
                 }
@@ -4550,7 +4549,7 @@ function CreateStartingGuideMenu()
                 position = { 0, 0.1, 1.2 },
                 width = 1600,
                 height = 200,
-                color = ButtonColorDefault,
+                color = Colors.White,
                 font_size = 100
             }
         )
@@ -5122,7 +5121,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, -0.9 },
             width = 1800,
             height = 150,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 75,
             tooltip = "Click to change."
         }
@@ -5135,7 +5134,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, -0.6 },
             width = 1800,
             height = 150,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 75,
             tooltip = "Click to change."
         }
@@ -5148,7 +5147,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, -0.3 },
             width = 1800,
             height = 150,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 75,
             tooltip = "Click to change."
         }
@@ -5161,7 +5160,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, 0 },
             width = 1800,
             height = 150,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 75,
             tooltip = "Click to change."
         }
@@ -5174,7 +5173,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, 0.3 },
             width = 1800,
             height = 150,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 75,
             tooltip = "Click to change."
         }
@@ -5187,7 +5186,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, 0.6 },
             width = 1800,
             height = 150,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 75,
             tooltip = "Click to change."
         }
@@ -5200,7 +5199,7 @@ function CreateAlternateCompanionMenu()
             position = { 0, 0.1, 1.2 },
             width = 1800,
             height = 200,
-            color = ButtonColorDefault,
+            color = Colors.White,
             font_size = 100
         }
     )
