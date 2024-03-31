@@ -58,12 +58,12 @@
                 "GUID": "583f83",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": 6.862686e-8,
+                    "posX": 0,
                     "posY": 0.01,
-                    "posZ": 7.27769347e-8,
+                    "posZ": 0,
                     "rotX": 0.00000144483954,
-                    "rotY": -3.43571336e-14,
-                    "rotZ": -6.402632e-7,
+                    "rotY": -0,
+                    "rotZ": -0,
                     "scaleX": 2.20000124,
                     "scaleY": 2.2,
                     "scaleZ": 2.20000124
