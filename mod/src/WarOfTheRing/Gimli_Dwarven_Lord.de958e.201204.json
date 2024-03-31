@@ -3,11 +3,11 @@
         "GUID": "de958e",
         "Name": "Card",
         "Transform": {
-            "posX": 79.07518,
-            "posY": 0.961197555,
-            "posZ": 61.03195,
-            "rotX": -0.000004782673,
-            "rotY": -0,
+            "posX": 79.08,
+            "posY": 0.96,
+            "posZ": 61.03,
+            "rotX": 0,
+            "rotY": 0,
             "rotZ": 0,
             "scaleX": 2.8,
             "scaleY": 1,
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

@@ -3,12 +3,12 @@
         "GUID": "fc15aa",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 108.894615,
-            "posY": 3.83449364,
-            "posZ": -61.2777252,
-            "rotX": 0.00014779823,
-            "rotY": 0.000479030452,
-            "rotZ": 0.000023821498,
+            "posX": 108.89,
+            "posY": 3.83,
+            "posZ": -61.28,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
             "scaleX": 0.99,
             "scaleY": 0.99,
             "scaleZ": 0.99
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.7529412,
-            "g": 0.7529412,
-            "b": 0.7529412
+            "r": 0.75,
+            "g": 0.75,
+            "b": 0.75
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -50,9 +50,9 @@
             "TypeIndex": 1,
             "CustomShader": {
                 "SpecularColor": {
-                    "r": 0.8745098,
-                    "g": 0.8117647,
-                    "b": 0.745098054
+                    "r": 0.87,
+                    "g": 0.81,
+                    "b": 0.75
                 },
                 "SpecularIntensity": 0,
                 "SpecularSharpness": 2,

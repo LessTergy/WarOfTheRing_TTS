@@ -3,15 +3,15 @@
         "GUID": "8054b3",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 27.811924,
-            "posY": 2.07743216,
-            "posZ": 21.81655,
-            "rotX": -0.00000104362653,
-            "rotY": -0,
+            "posX": 27.81,
+            "posY": 2.08,
+            "posZ": 21.82,
+            "rotX": 0,
+            "rotY": 0,
             "rotZ": 180,
-            "scaleX": 0.5000001,
-            "scaleY": 0.5000001,
-            "scaleZ": 0.5000001
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "scaleZ": 0.5
         },
         "Nickname": "Strider",
         "Description": "Counter;Companion;",

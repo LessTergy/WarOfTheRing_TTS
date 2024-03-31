@@ -3,11 +3,11 @@
         "GUID": "4540f7",
         "Name": "Die_6_Rounded",
         "Transform": {
-            "posX": -60.4728851,
-            "posY": 1.55071425,
-            "posZ": -34.6911774,
+            "posX": -60.47,
+            "posY": 1.55,
+            "posZ": -34.69,
             "rotX": 90,
-            "rotY": 258.934662,
+            "rotY": 258.93,
             "rotZ": 0,
             "scaleX": 1,
             "scaleY": 1,
@@ -22,7 +22,7 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.996078432,
+            "r": 1.0,
             "g": 0,
             "b": 0
         },

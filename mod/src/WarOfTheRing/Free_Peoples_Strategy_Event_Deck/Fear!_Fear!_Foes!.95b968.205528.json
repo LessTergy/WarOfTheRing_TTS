@@ -4,14 +4,14 @@
         "Name": "Card",
         "Transform": {
             "posX": -28.5,
-            "posY": 1.21882927,
-            "posZ": 20.3020725,
-            "rotX": 0.00181043334,
+            "posY": 1.22,
+            "posZ": 20.3,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": 179.994278,
-            "scaleX": 2.80049133,
+            "rotZ": 179.99,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Fear! Fear! Foes!",
         "Description": "Card;Event;Strategy;FreePeoples;Init:6;#7;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

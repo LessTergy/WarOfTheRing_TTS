@@ -6,12 +6,12 @@
             "posX": -40.4,
             "posY": 0.92,
             "posZ": -3,
-            "rotX": 0.003090364,
-            "rotY": 359.99054,
+            "rotX": 0,
+            "rotY": 359.99,
             "rotZ": 0,
             "scaleX": 1.26,
             "scaleY": 1,
-            "scaleZ": 1.25768793
+            "scaleZ": 1.26
         },
         "Nickname": "Gondor Reserves",
         "Description": "",

@@ -3,15 +3,15 @@
         "GUID": "c6b2ab",
         "Name": "Card",
         "Transform": {
-            "posX": 2.49998069,
-            "posY": 1.14029419,
-            "posZ": -45.0000038,
-            "rotX": 0.00298188953,
-            "rotY": 180.000031,
-            "rotZ": 179.8694,
-            "scaleX": 2.800268,
+            "posX": 2.5,
+            "posY": 1.14,
+            "posZ": -45.0,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 179.87,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "The Last Stroke of Doom",
         "Description": "Card;CallToBattle;Init:8;#2;Shadow;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

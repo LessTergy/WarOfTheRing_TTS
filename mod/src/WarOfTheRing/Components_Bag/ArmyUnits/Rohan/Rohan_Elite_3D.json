@@ -9,7 +9,7 @@
             "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 0.8000001,
+            "scaleX": 0.8,
             "scaleY": 0.8,
             "scaleZ": 0.8
         },
@@ -58,15 +58,15 @@
                 "GUID": "8ee86d",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": 0.0217820965,
-                    "posY": -0.026302956,
-                    "posZ": -0.00137486262,
-                    "rotX": -0.00000337247639,
-                    "rotY": 269.991638,
-                    "rotZ": 0.0000018452663,
-                    "scaleX": 0.624999762,
-                    "scaleY": 0.625,
-                    "scaleZ": 0.6187498
+                    "posX": 0.02,
+                    "posY": -0.03,
+                    "posZ": 0,
+                    "rotX": 0,
+                    "rotY": 269.99,
+                    "rotZ": 0,
+                    "scaleX": 0.62,
+                    "scaleY": 0.62,
+                    "scaleZ": 0.62
                 },
                 "Nickname": "Army Base",
                 "Description": "",
@@ -77,9 +77,9 @@
                     "z": 0
                 },
                 "ColorDiffuse": {
-                    "r": 0.125478059,
-                    "g": 0.23135975,
-                    "b": 0.1568506
+                    "r": 0.13,
+                    "g": 0.23,
+                    "b": 0.16
                 },
                 "LayoutGroupSortIndex": 0,
                 "Value": 0,

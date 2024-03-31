@@ -3,12 +3,12 @@
         "GUID": "93a672",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 75.40562,
-            "posY": 3.16926575,
-            "posZ": -67.26891,
-            "rotX": -0.00000726423968,
-            "rotY": -0,
-            "rotZ": -0.0000181426767,
+            "posX": 75.41,
+            "posY": 3.17,
+            "posZ": -67.27,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
             "scaleX": 0.6,
             "scaleY": 0.6,
             "scaleZ": 0.6

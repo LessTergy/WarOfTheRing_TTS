@@ -3,15 +3,15 @@
         "GUID": "2ce825",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 25.1862545,
-            "posY": 0.9919436,
-            "posZ": 9.951781,
-            "rotX": 359.977631,
-            "rotY": 180.001511,
-            "rotZ": 0.02950484,
-            "scaleX": 0.69299984,
-            "scaleY": 0.692999959,
-            "scaleZ": 0.6929998
+            "posX": 25.19,
+            "posY": 0.99,
+            "posZ": 9.95,
+            "rotX": 359.98,
+            "rotY": 180.0,
+            "rotZ": 0.03,
+            "scaleX": 0.69,
+            "scaleY": 0.69,
+            "scaleZ": 0.69
         },
         "Nickname": "Southron/Easterling Regular",
         "Description": "Regular;3D;Haradrim;Shadow;",
@@ -68,15 +68,15 @@
                 "GUID": "827f03",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": 0.000572580262,
-                    "posY": -0.01999998,
-                    "posZ": 0.0117688635,
+                    "posX": 0,
+                    "posY": -0.02,
+                    "posZ": 0.01,
                     "rotX": 0,
                     "rotY": 0,
                     "rotZ": 0,
-                    "scaleX": 0.500000358,
+                    "scaleX": 0.5,
                     "scaleY": 0.5,
-                    "scaleZ": 0.500000358
+                    "scaleZ": 0.5
                 },
                 "Nickname": "Army Base",
                 "Description": "",
@@ -87,9 +87,9 @@
                     "z": 0
                 },
                 "ColorDiffuse": {
-                    "r": 0.9529411,
-                    "g": 0.388222754,
-                    "b": 0.109791376
+                    "r": 0.95,
+                    "g": 0.39,
+                    "b": 0.11
                 },
                 "LayoutGroupSortIndex": 0,
                 "Value": 0,

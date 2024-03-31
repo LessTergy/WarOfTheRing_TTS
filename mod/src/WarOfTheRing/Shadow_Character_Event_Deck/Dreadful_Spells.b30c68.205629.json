@@ -3,15 +3,15 @@
         "GUID": "b30c68",
         "Name": "Card",
         "Transform": {
-            "posX": 103.483253,
-            "posY": 1.31723917,
-            "posZ": -44.0319366,
-            "rotX": 0.0000207438079,
+            "posX": 103.48,
+            "posY": 1.32,
+            "posZ": -44.03,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.800268,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Dreadful Spells",
         "Description": "Card;Event;Character;Shadow;Init:3;#19;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

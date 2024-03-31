@@ -3,12 +3,12 @@
         "GUID": "11ab1e",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -37.6734543,
-            "posY": 1.00132322,
-            "posZ": 5.909237,
-            "rotX": 359.990936,
-            "rotY": 180.0002,
-            "rotZ": 359.992035,
+            "posX": -37.67,
+            "posY": 1.0,
+            "posZ": 5.91,
+            "rotX": 359.99,
+            "rotY": 180.0,
+            "rotZ": 359.99,
             "scaleX": 0.6,
             "scaleY": 0.6,
             "scaleZ": 0.6
@@ -22,8 +22,8 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.117590554,
-            "g": 0.5294118,
+            "r": 0.12,
+            "g": 0.53,
             "b": 1
         },
         "LayoutGroupSortIndex": 0,
@@ -58,15 +58,15 @@
                 "GUID": "fd2ab4",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": 0.01694086,
+                    "posX": 0.02,
                     "posY": -0.05,
-                    "posZ": -0.03330472,
-                    "rotX": -0.00072333857,
-                    "rotY": 0.03573214,
-                    "rotZ": -0.000378477125,
-                    "scaleX": 1.49999976,
-                    "scaleY": 1.49999976,
-                    "scaleZ": 1.49999952
+                    "posZ": -0.03,
+                    "rotX": 0,
+                    "rotY": 0.04,
+                    "rotZ": 0,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5,
+                    "scaleZ": 1.5
                 },
                 "Nickname": "North Leader model",
                 "Description": "",
@@ -77,9 +77,9 @@
                     "z": 0
                 },
                 "ColorDiffuse": {
-                    "r": 0.34494698,
-                    "g": 0.34494698,
-                    "b": 0.34494698
+                    "r": 0.34,
+                    "g": 0.34,
+                    "b": 0.34
                 },
                 "LayoutGroupSortIndex": 0,
                 "Value": 0,

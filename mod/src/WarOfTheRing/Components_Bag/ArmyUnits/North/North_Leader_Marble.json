@@ -3,12 +3,12 @@
         "GUID": "ef1705",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 117.18428,
-            "posY": 3.43249273,
-            "posZ": -68.92701,
-            "rotX": 0.00001672571,
-            "rotY": 179.999954,
-            "rotZ": -0.00000426856468,
+            "posX": 117.18,
+            "posY": 3.43,
+            "posZ": -68.93,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 0,
             "scaleX": 0.6,
             "scaleY": 0.6,
             "scaleZ": 0.6

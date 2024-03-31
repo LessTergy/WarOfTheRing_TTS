@@ -3,15 +3,15 @@
         "GUID": "64e0ce",
         "Name": "Card",
         "Transform": {
-            "posX": 86.92702,
-            "posY": 1.41525328,
-            "posZ": -34.3637,
+            "posX": 86.93,
+            "posY": 1.42,
+            "posZ": -34.36,
             "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "A New Power is Rising",
         "Description": "Card;Event;Strategy;Shadow;Init:7;#16;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

@@ -3,15 +3,15 @@
         "GUID": "73da40",
         "Name": "Card",
         "Transform": {
-            "posX": 2.500037,
-            "posY": 1.17410445,
-            "posZ": -44.9999962,
-            "rotX": 0.00409316225,
-            "rotY": 180.000122,
-            "rotZ": 180.162384,
-            "scaleX": 2.800268,
+            "posX": 2.5,
+            "posY": 1.17,
+            "posZ": -45.0,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 180.16,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Webs of Shadow",
         "Description": "Card;CallToBattle;Init:7;#5;Shadow;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

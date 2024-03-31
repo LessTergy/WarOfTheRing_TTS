@@ -3,15 +3,15 @@
         "GUID": "1c4127",
         "Name": "Card",
         "Transform": {
-            "posX": 1.50005186,
-            "posY": 0.974822,
+            "posX": 1.5,
+            "posY": 0.97,
             "posZ": 33,
             "rotX": 0,
-            "rotY": -0.00161408447,
+            "rotY": 0,
             "rotZ": 180,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Gollum: Slave of the Ring",
         "Description": "Card;Character;Companion;#10;FreePeoples;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

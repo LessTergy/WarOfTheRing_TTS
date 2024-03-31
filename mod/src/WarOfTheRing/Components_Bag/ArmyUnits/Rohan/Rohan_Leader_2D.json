@@ -3,12 +3,12 @@
         "GUID": "99ede8",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 81.67119,
-            "posY": 3.18597,
-            "posZ": -74.38745,
-            "rotX": -0.000010845828,
+            "posX": 81.67,
+            "posY": 3.19,
+            "posZ": -74.39,
+            "rotX": 0,
             "rotY": 0,
-            "rotZ": 0.000002881488,
+            "rotZ": 0,
             "scaleX": 0.7,
             "scaleY": 0.7,
             "scaleZ": 0.7
@@ -22,8 +22,8 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.1921475,
-            "g": 0.5882353,
+            "r": 0.19,
+            "g": 0.59,
             "b": 0
         },
         "LayoutGroupSortIndex": 0,

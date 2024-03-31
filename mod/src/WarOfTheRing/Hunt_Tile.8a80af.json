@@ -4,14 +4,14 @@
         "Name": "Custom_Model",
         "Transform": {
             "posX": -41.95,
-            "posY": 1.0225,
-            "posZ": -10.4987164,
+            "posY": 1.02,
+            "posZ": -10.5,
             "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 0.625,
-            "scaleY": 0.625,
-            "scaleZ": 0.625
+            "rotZ": 0,
+            "scaleX": 0.62,
+            "scaleY": 0.62,
+            "scaleZ": 0.62
         },
         "Nickname": "Hunt Tile",
         "Description": "",

@@ -3,15 +3,15 @@
         "GUID": "619545",
         "Name": "Card",
         "Transform": {
-            "posX": -49.9638023,
-            "posY": 1.57789862,
-            "posZ": 51.42708,
-            "rotX": 357.441254,
-            "rotY": 179.956711,
-            "rotZ": 0.000184747172,
-            "scaleX": 2.80049133,
+            "posX": -49.96,
+            "posY": 1.58,
+            "posZ": 51.43,
+            "rotX": 357.44,
+            "rotY": 179.96,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Kindred of Glorfindel",
         "Description": "Card;Event;Strategy;FreePeoples;Init:3;#21;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

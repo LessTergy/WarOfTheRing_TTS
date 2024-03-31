@@ -5,13 +5,13 @@
         "Transform": {
             "posX": 40.2,
             "posY": 0.92,
-            "posZ": -8.000007,
-            "rotX": 0.00139427069,
-            "rotY": 179.9942,
+            "posZ": -8.0,
+            "rotX": 0,
+            "rotY": 179.99,
             "rotZ": 0,
-            "scaleX": 1.70597732,
+            "scaleX": 1.71,
             "scaleY": 1,
-            "scaleZ": 1.70284688
+            "scaleZ": 1.7
         },
         "Nickname": "Sauron Reserves",
         "Description": "",

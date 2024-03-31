@@ -3,15 +3,15 @@
         "GUID": "e144eb",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 105.645676,
-            "posY": 3.16249323,
-            "posZ": -69.47103,
-            "rotX": 0.000009309559,
+            "posX": 105.65,
+            "posY": 3.16,
+            "posZ": -69.47,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0.00000138741552,
+            "rotZ": 0,
             "scaleX": 0.4,
             "scaleY": 0.4,
-            "scaleZ": 0.395999968
+            "scaleZ": 0.4
         },
         "Nickname": "Sauron Elite",
         "Description": "Elite;Marble;Sauron;Shadow;",

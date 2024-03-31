@@ -3,15 +3,15 @@
         "GUID": "b31dcd",
         "Name": "Card",
         "Transform": {
-            "posX": -23.993824,
-            "posY": 1.4093169,
-            "posZ": -68.12409,
-            "rotX": 0.333962679,
+            "posX": -23.99,
+            "posY": 1.41,
+            "posZ": -68.12,
+            "rotX": 0.33,
             "rotY": 180,
             "rotZ": 180,
-            "scaleX": 2.80049133,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Thranduil's Archers",
         "Description": "Card;Event;Strategy;FreePeoples;Init:3;#24;KoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

@@ -3,15 +3,15 @@
         "GUID": "f0a37c",
         "Name": "Card",
         "Transform": {
-            "posX": 104.580383,
-            "posY": 1.31723917,
-            "posZ": -43.4813538,
-            "rotX": 0.0000206601617,
+            "posX": 104.58,
+            "posY": 1.32,
+            "posZ": -43.48,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.800268,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Hordes From the East",
         "Description": "Card;Event;Strategy;Shadow;Init:3;#21;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

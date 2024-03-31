@@ -3,15 +3,15 @@
         "GUID": "4ab55a",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -32.11258,
-            "posY": 2.011619,
-            "posZ": 38.98497,
-            "rotX": -0.00532804755,
-            "rotY": 180.000076,
-            "rotZ": 0.0109631689,
-            "scaleX": 0.198,
-            "scaleY": 0.198,
-            "scaleZ": 0.198
+            "posX": -32.11,
+            "posY": 2.01,
+            "posZ": 38.98,
+            "rotX": -0.01,
+            "rotY": 180.0,
+            "rotZ": 0.01,
+            "scaleX": 0.2,
+            "scaleY": 0.2,
+            "scaleZ": 0.2
         },
         "Nickname": "The Eagles of the Misty Mountains",
         "Description": "Faction;3D;Eagles;FreePeoples;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.9999998,
-            "g": 0.9921883,
-            "b": 0.9999998
+            "r": 1.0,
+            "g": 0.99,
+            "b": 1.0
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -68,15 +68,15 @@
                 "GUID": "67ed24",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": -0.109241888,
-                    "posY": -5.302793,
-                    "posZ": -0.036134623,
-                    "rotX": -0.005317014,
-                    "rotY": 179.991531,
-                    "rotZ": 0.0109637873,
-                    "scaleX": 1.40000045,
-                    "scaleY": 1.39999807,
-                    "scaleZ": 1.40000033
+                    "posX": -0.11,
+                    "posY": -5.3,
+                    "posZ": -0.04,
+                    "rotX": -0.01,
+                    "rotY": 179.99,
+                    "rotZ": 0.01,
+                    "scaleX": 1.4,
+                    "scaleY": 1.4,
+                    "scaleZ": 1.4
                 },
                 "Nickname": "Character Base",
                 "Description": "",

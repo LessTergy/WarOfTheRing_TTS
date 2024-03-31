@@ -6,9 +6,9 @@
             "posX": -80,
             "posY": 3.5,
             "posZ": 80,
-            "rotX": 0.0,
-            "rotY": 0.0,
-            "rotZ": 0.0,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
             "scaleX": 1,
             "scaleY": 1,
             "scaleZ": 1
@@ -17,9 +17,9 @@
         "Description": "",
         "GMNotes": "",
         "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
+            "x": 0,
+            "y": 0,
+            "z": 0
         },
         "ColorDiffuse": {
             "r": 1.0,

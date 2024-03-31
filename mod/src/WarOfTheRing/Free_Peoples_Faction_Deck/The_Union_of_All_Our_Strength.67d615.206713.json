@@ -3,15 +3,15 @@
         "GUID": "67d615",
         "Name": "Card",
         "Transform": {
-            "posX": -42.0858727,
-            "posY": 2.038321,
-            "posZ": 42.6222534,
-            "rotX": 0.0000207953763,
-            "rotY": 179.999969,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "posX": -42.09,
+            "posY": 2.04,
+            "posZ": 42.62,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "The Union of All Our Strength",
         "Description": "Card;Faction;FreePeoples;#17;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

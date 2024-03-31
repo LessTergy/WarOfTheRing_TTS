@@ -3,15 +3,15 @@
         "GUID": "148a5d",
         "Name": "Card",
         "Transform": {
-            "posX": 2.50000572,
-            "posY": 1.12851918,
+            "posX": 2.5,
+            "posY": 1.13,
             "posZ": -45,
-            "rotX": 0.0000186737525,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": 179.804535,
-            "scaleX": 2.800268,
+            "rotZ": 179.8,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Fierce Folk",
         "Description": "Card;CallToBattle;#3;Init:6;Shadow;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

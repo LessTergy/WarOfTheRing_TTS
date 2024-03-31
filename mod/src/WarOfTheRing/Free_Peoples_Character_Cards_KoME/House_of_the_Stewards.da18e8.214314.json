@@ -3,15 +3,15 @@
         "GUID": "da18e8",
         "Name": "Card",
         "Transform": {
-            "posX": -68.20156,
-            "posY": 1.04934776,
-            "posZ": -62.7738762,
-            "rotX": 359.9771,
-            "rotY": 181.255539,
-            "rotZ": 179.972031,
-            "scaleX": 2.80049133,
+            "posX": -68.2,
+            "posY": 1.05,
+            "posZ": -62.77,
+            "rotX": 359.98,
+            "rotY": 181.26,
+            "rotZ": 179.97,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "House of the Stewards",
         "Description": "Card;Event;Character;FreePeoples;Init:3;#23;KoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

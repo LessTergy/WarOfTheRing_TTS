@@ -3,12 +3,12 @@
         "GUID": "df288e",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -2.93873215,
-            "posY": 1.00500011,
-            "posZ": 5.867607,
+            "posX": -2.94,
+            "posY": 1.01,
+            "posZ": 5.87,
             "rotX": 0,
-            "rotY": 225.000015,
-            "rotZ": -0,
+            "rotY": 225.0,
+            "rotZ": 0,
             "scaleX": 0.45,
             "scaleY": 0.45,
             "scaleZ": 0.45

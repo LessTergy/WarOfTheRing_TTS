@@ -4,14 +4,14 @@
         "Name": "Card",
         "Transform": {
             "posX": 46.5,
-            "posY": 0.974822342,
+            "posY": 0.97,
             "posZ": 33,
-            "rotX": -0,
-            "rotY": 0.00334027153,
-            "rotZ": -0,
-            "scaleX": 2.800268,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Peregrin Took: Hobbit Companion",
         "Description": "Card;Companion;Character;Level:1;#6;FreePeoples;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

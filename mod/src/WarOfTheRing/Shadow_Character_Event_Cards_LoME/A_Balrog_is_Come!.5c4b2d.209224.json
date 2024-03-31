@@ -3,15 +3,15 @@
         "GUID": "5c4b2d",
         "Name": "Card",
         "Transform": {
-            "posX": -84.8461,
-            "posY": 1.04808569,
-            "posZ": 22.5333,
-            "rotX": 0.00344543066,
-            "rotY": 179.995453,
-            "rotZ": 179.986435,
-            "scaleX": 2.800268,
+            "posX": -84.85,
+            "posY": 1.05,
+            "posZ": 22.53,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 179.99,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "A Balrog is Come!",
         "Description": "Card;Event;Character;Shadow;Init:2;#17;LoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

@@ -4,14 +4,14 @@
         "Name": "Deck",
         "Transform": {
             "posX": -79.5,
-            "posY": 0.978149,
+            "posY": 0.98,
             "posZ": 23,
-            "rotX": 0.00000273995465,
-            "rotY": 179.999283,
+            "rotX": 0,
+            "rotY": 180.0,
             "rotZ": 180,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Shadow Strategy Event Cards (LoME)",
         "Description": "Cards;Event;Strategy;Shadow;LoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

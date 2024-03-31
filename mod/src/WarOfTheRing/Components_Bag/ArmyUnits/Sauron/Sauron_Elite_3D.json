@@ -3,12 +3,12 @@
         "GUID": "0da351",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 24.7696075,
-            "posY": 0.9853792,
-            "posZ": -6.008785,
-            "rotX": -0.000254354585,
+            "posX": 24.77,
+            "posY": 0.99,
+            "posZ": -6.01,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": 0.000168679253,
+            "rotZ": 0,
             "scaleX": 0.5,
             "scaleY": 0.5,
             "scaleZ": 0.5
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.856,
-            "g": 0.09994649,
-            "b": 0.0939462557
+            "r": 0.86,
+            "g": 0.1,
+            "b": 0.09
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -60,13 +60,13 @@
                 "Transform": {
                     "posX": 0,
                     "posY": 0,
-                    "posZ": -0,
-                    "rotX": -0,
-                    "rotY": -0,
-                    "rotZ": -0.00000203317677,
-                    "scaleX": 0.9454544,
+                    "posZ": 0,
+                    "rotX": 0,
+                    "rotY": 0,
+                    "rotZ": 0,
+                    "scaleX": 0.95,
                     "scaleY": 0.95,
-                    "scaleZ": 0.9548071
+                    "scaleZ": 0.95
                 },
                 "Nickname": "Sauron Elite model",
                 "Description": "",
@@ -77,9 +77,9 @@
                     "z": 0
                 },
                 "ColorDiffuse": {
-                    "r": 0.9999998,
-                    "g": 0.9921673,
-                    "b": 0.9999998
+                    "r": 1.0,
+                    "g": 0.99,
+                    "b": 1.0
                 },
                 "LayoutGroupSortIndex": 0,
                 "Value": 0,

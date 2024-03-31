@@ -4,10 +4,10 @@
         "Name": "Custom_Model_Infinite_Bag",
         "Transform": {
             "posX": -60,
-            "posY": 1.136199,
+            "posY": 1.14,
             "posZ": -37,
             "rotX": 0,
-            "rotY": 179.994064,
+            "rotY": 179.99,
             "rotZ": 0,
             "scaleX": 5,
             "scaleY": 0.1,
@@ -58,5 +58,7 @@
         "ContainedObjects": []
     },
     "StatesPaths": {},
-    "ContainedObjectPaths": ["Shadow_Combat_Die.d53921.json"]
+    "ContainedObjectPaths": [
+        "Shadow_Combat_Die.d53921.json"
+    ]
 }

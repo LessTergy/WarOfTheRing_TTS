@@ -3,15 +3,15 @@
         "GUID": "94dee9",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -2.00000024,
-            "posY": 0.996217132,
+            "posX": -2.0,
+            "posY": 1.0,
             "posZ": 27.5,
-            "rotX": -0.000001759341,
-            "rotY": 0.000466160418,
-            "rotZ": -0.00000177396521,
-            "scaleX": 0.5000001,
-            "scaleY": 0.5000001,
-            "scaleZ": 0.5000001
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "scaleZ": 0.5
         },
         "Nickname": "Gandalf the White: Emissary from the West",
         "Description": "Character;Token;FreePeoples;",

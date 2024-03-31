@@ -3,12 +3,12 @@
         "GUID": "491fee",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 23.2772942,
-            "posY": 1.01250017,
-            "posZ": -20.2379379,
-            "rotX": -0.0000388368862,
-            "rotY": 225.000015,
-            "rotZ": -0.000150351931,
+            "posX": 23.28,
+            "posY": 1.01,
+            "posZ": -20.24,
+            "rotX": 0,
+            "rotY": 225.0,
+            "rotZ": 0,
             "scaleX": 0.45,
             "scaleY": 0.45,
             "scaleZ": 0.45

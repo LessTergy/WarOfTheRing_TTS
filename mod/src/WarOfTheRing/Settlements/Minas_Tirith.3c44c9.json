@@ -3,12 +3,12 @@
         "GUID": "3c44c9",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": 11.6616383,
-            "posY": 0.7699987,
-            "posZ": -9.491966,
-            "rotX": 0.000277677231,
-            "rotY": 179.977921,
-            "rotZ": 0.000171063555,
+            "posX": 11.66,
+            "posY": 0.77,
+            "posZ": -9.49,
+            "rotX": 0,
+            "rotY": 179.98,
+            "rotZ": 0,
             "scaleX": 0.55,
             "scaleY": 1,
             "scaleZ": 0.55
@@ -46,7 +46,7 @@
             "ImageScalar": 1,
             "WidthScale": 0,
             "CustomToken": {
-                "Thickness": 0.399999857,
+                "Thickness": 0.4,
                 "MergeDistancePixels": 5,
                 "StandUp": false,
                 "Stackable": false
@@ -58,13 +58,13 @@
         "AttachedSnapPoints": [
             {
                 "Position": {
-                    "x": 0.8082567,
-                    "y": 0.200001225,
-                    "z": -0.8299563
+                    "x": 0.81,
+                    "y": 0.2,
+                    "z": -0.83
                 },
                 "Rotation": {
-                    "x": 0.00000164240453,
-                    "y": 45.02215,
+                    "x": 0,
+                    "y": 45.02,
                     "z": 180
                 }
             }

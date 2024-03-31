@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.355400115,
-            "g": 0.355400115,
-            "b": 0.355400115
+            "r": 0.36,
+            "g": 0.36,
+            "b": 0.36
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -68,15 +68,15 @@
                 "GUID": "2f50a2",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": 0.9007021,
-                    "posY": 2.86285925,
-                    "posZ": 0.0482213534,
+                    "posX": 0.9,
+                    "posY": 2.86,
+                    "posZ": 0.05,
                     "rotX": 0,
-                    "rotY": 5.771901,
-                    "rotZ": -0.00000743264036,
-                    "scaleX": 1.00000012,
-                    "scaleY": 0.99999994,
-                    "scaleZ": 1.00000012
+                    "rotY": 5.77,
+                    "rotZ": 0,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
                 },
                 "Nickname": "Ring Wraith",
                 "Description": "",
@@ -133,15 +133,15 @@
                 "GUID": "665eef",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": 0.290320963,
-                    "posY": -0.0195203014,
-                    "posZ": 0.04433083,
-                    "rotX": 0.003334911,
-                    "rotY": 270.00296,
-                    "rotZ": 0.0000121607509,
-                    "scaleX": 2.00000024,
-                    "scaleY": 3.333333,
-                    "scaleZ": 2.00000024
+                    "posX": 0.29,
+                    "posY": -0.02,
+                    "posZ": 0.04,
+                    "rotX": 0,
+                    "rotY": 270.0,
+                    "rotZ": 0,
+                    "scaleX": 2.0,
+                    "scaleY": 3.33,
+                    "scaleZ": 2.0
                 },
                 "Nickname": "Character Base",
                 "Description": "",

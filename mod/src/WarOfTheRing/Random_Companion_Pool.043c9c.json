@@ -3,15 +3,15 @@
         "GUID": "043c9c",
         "Name": "Bag",
         "Transform": {
-            "posX": 27.8135624,
-            "posY": 0.862857342,
-            "posZ": 19.9231777,
-            "rotX": -0.0000017242171,
-            "rotY": -0.0006203065,
+            "posX": 27.81,
+            "posY": 0.86,
+            "posZ": 19.92,
+            "rotX": 0,
+            "rotY": 0,
             "rotZ": 0,
-            "scaleX": 0.525000453,
-            "scaleY": 0.525000453,
-            "scaleZ": 0.525000453
+            "scaleX": 0.53,
+            "scaleY": 0.53,
+            "scaleZ": 0.53
         },
         "Nickname": "Random Companion Pool",
         "Description": "",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.325187385,
-            "g": 0.4916712,
-            "b": 0.6202091
+            "r": 0.33,
+            "g": 0.49,
+            "b": 0.62
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

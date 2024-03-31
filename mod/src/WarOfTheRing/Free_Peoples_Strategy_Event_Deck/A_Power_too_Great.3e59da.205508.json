@@ -3,15 +3,15 @@
         "GUID": "3e59da",
         "Name": "Card",
         "Transform": {
-            "posX": -50.3512,
-            "posY": 1.51012635,
-            "posZ": 51.3689575,
-            "rotX": 358.822632,
-            "rotY": 179.945648,
-            "rotZ": 1.26396275,
-            "scaleX": 2.80049133,
+            "posX": -50.35,
+            "posY": 1.51,
+            "posZ": 51.37,
+            "rotX": 358.82,
+            "rotY": 179.95,
+            "rotZ": 1.26,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "A Power too Great",
         "Description": "Card;Event;Strategy;FreePeoples;Init:5;#2;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

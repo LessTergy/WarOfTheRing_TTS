@@ -3,12 +3,12 @@
         "GUID": "1ea068",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 20.09049,
-            "posY": 0.9767502,
-            "posZ": 18.9173927,
-            "rotX": -0.0000127765879,
+            "posX": 20.09,
+            "posY": 0.98,
+            "posZ": 18.92,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0.0000300690226,
+            "rotZ": 0,
             "scaleX": 0.33,
             "scaleY": 0.33,
             "scaleZ": 0.33
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.5411765,
-            "g": 0.294061542,
-            "b": 0.12935856
+            "r": 0.54,
+            "g": 0.29,
+            "b": 0.13
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -58,15 +58,15 @@
                 "GUID": "30cb9a",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": 0.00173003925,
-                    "posY": 0.8768324,
-                    "posZ": -0.0181451552,
-                    "rotX": 0.00218163431,
+                    "posX": 0,
+                    "posY": 0.88,
+                    "posZ": -0.02,
+                    "rotX": 0,
                     "rotY": 180,
-                    "rotZ": -0.00144039781,
-                    "scaleX": 1.20000029,
+                    "rotZ": 0,
+                    "scaleX": 1.2,
                     "scaleY": 1.2,
-                    "scaleZ": 1.20000029
+                    "scaleZ": 1.2
                 },
                 "Nickname": "Dwarf Regular model",
                 "Description": "",
@@ -77,9 +77,9 @@
                     "z": 0
                 },
                 "ColorDiffuse": {
-                    "r": 0.9999998,
-                    "g": 0.992165864,
-                    "b": 0.9999998
+                    "r": 1.0,
+                    "g": 0.99,
+                    "b": 1.0
                 },
                 "LayoutGroupSortIndex": 0,
                 "Value": 0,

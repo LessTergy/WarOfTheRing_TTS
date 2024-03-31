@@ -3,15 +3,15 @@
         "GUID": "e3deb5",
         "Name": "Card",
         "Transform": {
-            "posX": 35.0051231,
-            "posY": 1.22329831,
-            "posZ": -17.5161934,
-            "rotX": 359.961151,
+            "posX": 35.01,
+            "posY": 1.22,
+            "posZ": -17.52,
+            "rotX": 359.96,
             "rotY": 180,
-            "rotZ": 180.047409,
-            "scaleX": 2.800268,
+            "rotZ": 180.05,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Monsters Roused",
         "Description": "Card;Event;Strategy;Shadow;Init:3;#22;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

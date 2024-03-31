@@ -3,15 +3,15 @@
         "GUID": "6098c7",
         "Name": "Card",
         "Transform": {
-            "posX": 26.4998779,
-            "posY": 0.974822,
-            "posZ": 32.9999847,
-            "rotX": -0,
-            "rotY": 0.003425226,
-            "rotZ": -0,
-            "scaleX": 2.800268,
+            "posX": 26.5,
+            "posY": 0.97,
+            "posZ": 33.0,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Strider: Ranger of the North",
         "Description": "Card;Companion;Character;Level:3;#5;FreePeoples;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

@@ -15,12 +15,22 @@
             "reroll_dice": [],
             "reroll_die_hits": 0,
             "reroll_qty": 3,
-            "reroll_results": [4, 3, 2],
+            "reroll_results": [
+                4,
+                3,
+                2
+            ],
             "reroll_to_hit": 5,
             "roll_count": 5,
             "roll_dice": [],
             "roll_die_hits": 2,
-            "roll_results": [6, 6, 3, 3, 2],
+            "roll_results": [
+                6,
+                6,
+                3,
+                3,
+                2
+            ],
             "roll_to_hit": 5,
             "six_hits_twice": false,
             "total_hits": 2,
@@ -39,12 +49,21 @@
             "reroll_dice": [],
             "reroll_die_hits": 0,
             "reroll_qty": 2,
-            "reroll_results": [4, 2],
+            "reroll_results": [
+                4,
+                2
+            ],
             "reroll_to_hit": 5,
             "roll_count": 5,
             "roll_dice": [],
             "roll_die_hits": 3,
-            "roll_results": [6, 6, 4, 3, 5],
+            "roll_results": [
+                6,
+                6,
+                4,
+                3,
+                5
+            ],
             "roll_to_hit": 5,
             "six_hits_twice": false,
             "total_hits": 3,
@@ -68,7 +87,9 @@
             "roll_count": 1,
             "roll_dice": [],
             "roll_die_hits": 1,
-            "roll_results": [6],
+            "roll_results": [
+                6
+            ],
             "roll_to_hit": 5,
             "six_hits_twice": false,
             "total_hits": 1,

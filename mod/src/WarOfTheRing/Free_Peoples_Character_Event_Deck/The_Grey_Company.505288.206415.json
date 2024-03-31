@@ -3,15 +3,15 @@
         "GUID": "505288",
         "Name": "Card",
         "Transform": {
-            "posX": -36.672226,
-            "posY": 2.40803766,
-            "posZ": 46.0879173,
-            "rotX": 0.0000207744633,
+            "posX": -36.67,
+            "posY": 2.41,
+            "posZ": 46.09,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "The Grey Company",
         "Description": "Card;Event;Character;FreePeoples;Init:3;#24;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

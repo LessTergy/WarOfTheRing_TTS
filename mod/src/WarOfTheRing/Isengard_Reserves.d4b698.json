@@ -3,15 +3,15 @@
         "GUID": "d4b698",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": 40.1957474,
+            "posX": 40.2,
             "posY": 0.92,
             "posZ": 4,
-            "rotX": 0.00140564551,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 1.70597732,
+            "scaleX": 1.71,
             "scaleY": 1,
-            "scaleZ": 1.70284688
+            "scaleZ": 1.7
         },
         "Nickname": "Isengard Reserves",
         "Description": "",

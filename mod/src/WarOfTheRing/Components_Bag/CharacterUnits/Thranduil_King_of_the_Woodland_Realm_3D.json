@@ -3,15 +3,15 @@
         "GUID": "b6ec8b",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 14.8966312,
-            "posY": 1.07693172,
-            "posZ": 15.1589346,
+            "posX": 14.9,
+            "posY": 1.08,
+            "posZ": 15.16,
             "rotX": 0,
-            "rotY": 359.961029,
+            "rotY": 359.96,
             "rotZ": 0,
-            "scaleX": 0.7000003,
-            "scaleY": 0.7000003,
-            "scaleZ": 0.7000003
+            "scaleX": 0.7,
+            "scaleY": 0.7,
+            "scaleZ": 0.7
         },
         "Nickname": "Thranduil: King of the Woodland Realm",
         "Description": "Character;3D;Ruler;Sovereign;FreePeoples;KoME;",

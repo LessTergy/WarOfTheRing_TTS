@@ -4,14 +4,14 @@
         "Name": "Card",
         "Transform": {
             "posX": -21.5,
-            "posY": 0.974808,
+            "posY": 0.97,
             "posZ": -33,
-            "rotX": 0.0000540847032,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": 180.000427,
-            "scaleX": 2.800268,
+            "rotZ": 180.0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Your Welcome Is Doubtful",
         "Description": "Card;Event;Character;Shadow;Init:3;#25;KoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

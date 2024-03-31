@@ -3,15 +3,15 @@
         "GUID": "794f4b",
         "Name": "Card",
         "Transform": {
-            "posX": 11.5106773,
-            "posY": 0.974822,
-            "posZ": 33.0359764,
-            "rotX": -0,
-            "rotY": 0.0763028562,
+            "posX": 11.51,
+            "posY": 0.97,
+            "posZ": 33.04,
+            "rotX": 0,
+            "rotY": 0.08,
             "rotZ": 180,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Lord Elrond: Keeper of Vilya",
         "Description": "Card;Character;#1;FreePeoples;LoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

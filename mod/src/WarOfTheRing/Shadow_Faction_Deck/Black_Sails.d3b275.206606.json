@@ -3,15 +3,15 @@
         "GUID": "d3b275",
         "Name": "Card",
         "Transform": {
-            "posX": 97.78847,
-            "posY": 1.31724358,
-            "posZ": -34.5349579,
-            "rotX": 0.0000208733818,
+            "posX": 97.79,
+            "posY": 1.32,
+            "posZ": -34.53,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Black Sails",
         "Description": "Card;Faction;Corsairs;Shadow;#3;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

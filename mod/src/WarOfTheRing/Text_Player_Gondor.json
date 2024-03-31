@@ -3,9 +3,9 @@
         "GUID": "c6a821",
         "Name": "3DText",
         "Transform": {
-            "posX": -25.00586,
-            "posY": 0.962453,
-            "posZ": 65.00819,
+            "posX": -25.01,
+            "posY": 0.96,
+            "posZ": 65.01,
             "rotX": 90,
             "rotY": 180,
             "rotZ": 0,
@@ -43,7 +43,7 @@
         "Text": {
             "Text": "Free Peoples (Gondor)",
             "colorstate": {
-                "r": 0.118,
+                "r": 0.12,
                 "g": 0.53,
                 "b": 1
             },

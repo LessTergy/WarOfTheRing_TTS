@@ -3,12 +3,12 @@
         "GUID": "db77a1",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": 17.5430241,
-            "posY": 0.7699984,
-            "posZ": 20.83291,
-            "rotX": -0.00008767196,
-            "rotY": 179.983826,
-            "rotZ": 0.0003160346,
+            "posX": 17.54,
+            "posY": 0.77,
+            "posZ": 20.83,
+            "rotX": 0,
+            "rotY": 179.98,
+            "rotZ": 0,
             "scaleX": 0.55,
             "scaleY": 1,
             "scaleZ": 0.55
@@ -46,7 +46,7 @@
             "ImageScalar": 1,
             "WidthScale": 0,
             "CustomToken": {
-                "Thickness": 0.399999857,
+                "Thickness": 0.4,
                 "MergeDistancePixels": 5,
                 "StandUp": false,
                 "Stackable": false

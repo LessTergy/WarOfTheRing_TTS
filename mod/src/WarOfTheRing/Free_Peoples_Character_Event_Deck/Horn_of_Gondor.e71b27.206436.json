@@ -3,15 +3,15 @@
         "GUID": "e71b27",
         "Name": "Card",
         "Transform": {
-            "posX": -36.4891052,
-            "posY": 2.408038,
-            "posZ": 40.0818672,
-            "rotX": 0.0000207546218,
+            "posX": -36.49,
+            "posY": 2.41,
+            "posZ": 40.08,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Horn of Gondor",
         "Description": "Card;Event;Character;FreePeoples;Init:4;#7;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

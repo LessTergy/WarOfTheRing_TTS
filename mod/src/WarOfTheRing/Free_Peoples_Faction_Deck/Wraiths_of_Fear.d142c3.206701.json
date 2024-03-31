@@ -3,15 +3,15 @@
         "GUID": "d142c3",
         "Name": "Card",
         "Transform": {
-            "posX": -88.55313,
-            "posY": 12.3190308,
-            "posZ": 77.63909,
-            "rotX": 0.000020809528,
+            "posX": -88.55,
+            "posY": 12.32,
+            "posZ": 77.64,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.80049133,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Wraiths of Fear",
         "Description": "Card;Faction;DeadMen;FreePeoples;#5;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

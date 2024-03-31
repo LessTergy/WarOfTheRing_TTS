@@ -3,12 +3,12 @@
         "GUID": "ef398b",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": -0.1929789,
+            "posX": -0.19,
             "posY": 0.77,
-            "posZ": -5.5689,
-            "rotX": 0.000106498184,
-            "rotY": 179.977921,
-            "rotZ": -0.00000904048,
+            "posZ": -5.57,
+            "rotX": 0,
+            "rotY": 179.98,
+            "rotZ": 0,
             "scaleX": 0.55,
             "scaleY": 1,
             "scaleZ": 0.55
@@ -46,7 +46,7 @@
             "ImageScalar": 1,
             "WidthScale": 0,
             "CustomToken": {
-                "Thickness": 0.399999857,
+                "Thickness": 0.4,
                 "MergeDistancePixels": 5,
                 "StandUp": false,
                 "Stackable": false

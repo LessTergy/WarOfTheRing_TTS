@@ -3,15 +3,15 @@
         "GUID": "f06931",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 30.2756271,
-            "posY": 2.07743216,
-            "posZ": 21.3552341,
-            "rotX": -0.00000117749164,
-            "rotY": -0.000005122643,
+            "posX": 30.28,
+            "posY": 2.08,
+            "posZ": 21.36,
+            "rotX": 0,
+            "rotY": 0,
             "rotZ": 180,
-            "scaleX": 0.5000001,
-            "scaleY": 0.5000001,
-            "scaleZ": 0.5000001
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "scaleZ": 0.5
         },
         "Nickname": "Gimli",
         "Description": "Counter;Companion;",

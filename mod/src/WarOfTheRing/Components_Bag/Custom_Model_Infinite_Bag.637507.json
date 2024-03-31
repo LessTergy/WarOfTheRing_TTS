@@ -3,12 +3,12 @@
         "GUID": "637507",
         "Name": "Custom_Model_Infinite_Bag",
         "Transform": {
-            "posX": -59.999836,
-            "posY": 1.13619912,
+            "posX": -60.0,
+            "posY": 1.14,
             "posZ": 35.5,
-            "rotX": -0,
-            "rotY": 0.0358571336,
-            "rotZ": -0,
+            "rotX": 0,
+            "rotY": 0.04,
+            "rotZ": 0,
             "scaleX": 5,
             "scaleY": 0.1,
             "scaleZ": 1
@@ -22,7 +22,7 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.11797791,
+            "r": 0.12,
             "g": 0.53,
             "b": 1
         },
@@ -58,5 +58,7 @@
         "ContainedObjects": []
     },
     "StatesPaths": {},
-    "ContainedObjectPaths": ["Free_Peoples_Combat_Die.3a4442.json"]
+    "ContainedObjectPaths": [
+        "Free_Peoples_Combat_Die.3a4442.json"
+    ]
 }

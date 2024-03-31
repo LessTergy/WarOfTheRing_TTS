@@ -3,15 +3,15 @@
         "GUID": "b4aa4d",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -30.7499981,
-            "posY": 1.01250017,
-            "posZ": -2.59661222,
-            "rotX": -0.0000203387517,
-            "rotY": 269.998535,
+            "posX": -30.75,
+            "posY": 1.01,
+            "posZ": -2.6,
+            "rotX": 0,
+            "rotY": 270.0,
             "rotZ": 180,
-            "scaleX": 0.525000036,
-            "scaleY": 0.525000036,
-            "scaleZ": 0.525000036
+            "scaleX": 0.53,
+            "scaleY": 0.53,
+            "scaleZ": 0.53
         },
         "Nickname": "Free Peoples Army III",
         "Description": "",

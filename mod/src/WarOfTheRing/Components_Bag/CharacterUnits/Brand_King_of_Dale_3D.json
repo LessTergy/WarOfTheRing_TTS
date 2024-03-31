@@ -3,15 +3,15 @@
         "GUID": "3d983d",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 15.94148,
-            "posY": 1.07693183,
-            "posZ": 16.3116169,
+            "posX": 15.94,
+            "posY": 1.08,
+            "posZ": 16.31,
             "rotX": 0,
-            "rotY": 0.1659501,
-            "rotZ": 0.00000210902135,
-            "scaleX": 0.7000003,
-            "scaleY": 0.7000003,
-            "scaleZ": 0.7000003
+            "rotY": 0.17,
+            "rotZ": 0,
+            "scaleX": 0.7,
+            "scaleY": 0.7,
+            "scaleZ": 0.7
         },
         "Nickname": "Brand: King of Dale",
         "Description": "Character;3D;Ruler;Sovereign;FreePeoples;KoME;",

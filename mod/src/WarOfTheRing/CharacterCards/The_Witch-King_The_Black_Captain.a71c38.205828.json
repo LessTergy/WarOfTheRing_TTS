@@ -3,15 +3,15 @@
         "GUID": "a71c38",
         "Name": "Card",
         "Transform": {
-            "posX": 21.49972,
-            "posY": 0.9748218,
-            "posZ": -33.0000572,
-            "rotX": -0,
-            "rotY": 180.0099,
+            "posX": 21.5,
+            "posY": 0.97,
+            "posZ": -33.0,
+            "rotX": 0,
+            "rotY": 180.01,
             "rotZ": 180,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "The Witch-King: The Black Captain",
         "Description": "Card;Minion;#3;Shadow;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

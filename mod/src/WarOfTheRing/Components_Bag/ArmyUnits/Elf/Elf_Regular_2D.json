@@ -3,15 +3,15 @@
         "GUID": "e4a44f",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 87.05481,
-            "posY": 3.15018368,
-            "posZ": -66.14192,
-            "rotX": 355.829346,
-            "rotY": 0.0622457564,
-            "rotZ": 1.54223907,
-            "scaleX": 0.396,
-            "scaleY": 0.396,
-            "scaleZ": 0.396
+            "posX": 87.05,
+            "posY": 3.15,
+            "posZ": -66.14,
+            "rotX": 355.83,
+            "rotY": 0.06,
+            "rotZ": 1.54,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
+            "scaleZ": 0.4
         },
         "Nickname": "Elf Regular",
         "Description": "Regular;2D;Elves;FreePeoples;",
@@ -22,7 +22,7 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.33332333,
+            "r": 0.33,
             "g": 1,
             "b": 0
         },

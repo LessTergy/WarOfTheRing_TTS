@@ -3,15 +3,15 @@
         "GUID": "82fc99",
         "Name": "Card",
         "Transform": {
-            "posX": -97.60019,
-            "posY": 12.7530689,
-            "posZ": 82.80152,
-            "rotX": 0.0000210770122,
+            "posX": -97.6,
+            "posY": 12.75,
+            "posZ": 82.8,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "In Long Swift Lines",
         "Description": "Card;Faction;Eagles;FreePeoples;#7;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

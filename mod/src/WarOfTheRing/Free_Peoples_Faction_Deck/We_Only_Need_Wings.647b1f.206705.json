@@ -3,15 +3,15 @@
         "GUID": "647b1f",
         "Name": "Card",
         "Transform": {
-            "posX": -88.88505,
-            "posY": 12.7530651,
-            "posZ": 71.6964645,
-            "rotX": 0.0000206605437,
+            "posX": -88.89,
+            "posY": 12.75,
+            "posZ": 71.7,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "We Only Need Wings",
         "Description": "Card;Faction;Eagles;FreePeoples;#9;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

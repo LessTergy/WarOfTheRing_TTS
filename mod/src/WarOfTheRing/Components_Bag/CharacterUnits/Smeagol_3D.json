@@ -3,15 +3,15 @@
         "GUID": "38461c",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 6.498963,
-            "posY": 1.061374,
-            "posZ": 27.5010719,
-            "rotX": 0.00009292127,
-            "rotY": -0.0000302621957,
-            "rotZ": 0.0000942173,
-            "scaleX": 0.198,
-            "scaleY": 0.198,
-            "scaleZ": 0.198
+            "posX": 6.5,
+            "posY": 1.06,
+            "posZ": 27.5,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.2,
+            "scaleY": 0.2,
+            "scaleZ": 0.2
         },
         "Nickname": "Smeagol",
         "Description": "Character;3D;Companion;FreePeoples;LoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.6506038,
+            "r": 0.65,
             "g": 1,
-            "b": 0.60452956
+            "b": 0.6
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -58,15 +58,15 @@
                 "GUID": "205e54",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": -0.1892714,
-                    "posY": -0.249494255,
-                    "posZ": -0.0170694739,
-                    "rotX": 0.00009263924,
-                    "rotY": 89.98322,
-                    "rotZ": -0.0000657401542,
-                    "scaleX": 2.52525187,
-                    "scaleY": 5.050505,
-                    "scaleZ": 2.52525187
+                    "posX": -0.19,
+                    "posY": -0.25,
+                    "posZ": -0.02,
+                    "rotX": 0,
+                    "rotY": 89.98,
+                    "rotZ": 0,
+                    "scaleX": 2.53,
+                    "scaleY": 5.05,
+                    "scaleZ": 2.53
                 },
                 "Nickname": "Character Base",
                 "Description": "",

@@ -3,15 +3,15 @@
         "GUID": "5451db",
         "Name": "Card",
         "Transform": {
-            "posX": -38.97219,
-            "posY": 3.035905,
-            "posZ": 40.5210724,
+            "posX": -38.97,
+            "posY": 3.04,
+            "posZ": 40.52,
             "rotX": 0,
-            "rotY": 359.9863,
+            "rotY": 359.99,
             "rotZ": 0,
-            "scaleX": 2.80049133,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "There and Back Again",
         "Description": "Card;Event;Character;FreePeoples;Init:3;#17;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

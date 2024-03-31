@@ -4,14 +4,14 @@
         "Name": "Custom_Model",
         "Transform": {
             "posX": 45,
-            "posY": 1.02371764,
-            "posZ": -27.47344,
-            "rotX": -0,
-            "rotY": 180.000061,
+            "posY": 1.02,
+            "posZ": -27.47,
+            "rotX": 0,
+            "rotY": 180.0,
             "rotZ": 0,
             "scaleX": 0.62,
-            "scaleY": 0.62499994,
-            "scaleZ": 0.62499994
+            "scaleY": 0.62,
+            "scaleZ": 0.62
         },
         "Nickname": "Balrog Status Counter",
         "Description": "LoME;",

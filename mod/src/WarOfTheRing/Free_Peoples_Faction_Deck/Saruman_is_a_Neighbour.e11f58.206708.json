@@ -3,15 +3,15 @@
         "GUID": "e11f58",
         "Name": "Card",
         "Transform": {
-            "posX": -102.136566,
-            "posY": 16.3693638,
-            "posZ": 70.30199,
-            "rotX": 0.0000207369976,
+            "posX": -102.14,
+            "posY": 16.37,
+            "posZ": 70.3,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.80049133,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Saruman is a Neighbour",
         "Description": "Card;Faction;Ents;FreePeoples;#12;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

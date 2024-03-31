@@ -3,15 +3,15 @@
         "GUID": "136014",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 102.595833,
-            "posY": 3.16128874,
-            "posZ": -66.04104,
-            "rotX": 0.0000115496814,
+            "posX": 102.6,
+            "posY": 3.16,
+            "posZ": -66.04,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": 0.00000243235422,
-            "scaleX": 0.396,
-            "scaleY": 0.396,
-            "scaleZ": 0.396
+            "rotZ": 0,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
+            "scaleZ": 0.4
         },
         "Nickname": "Isengard Regular",
         "Description": "Regular;Marble;Isengard;Shadow;",

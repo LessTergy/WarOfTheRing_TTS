@@ -3,15 +3,15 @@
         "GUID": "8abdc7",
         "Name": "Deck",
         "Transform": {
-            "posX": -84.40515,
-            "posY": 0.9781456,
-            "posZ": -34.080677,
-            "rotX": 0.00000370462385,
+            "posX": -84.41,
+            "posY": 0.98,
+            "posZ": -34.08,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 180,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Shadow Event Cards (WoME)",
         "Description": "Cards;Event;Shadow;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

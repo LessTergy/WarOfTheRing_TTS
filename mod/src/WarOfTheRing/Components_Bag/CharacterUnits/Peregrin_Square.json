@@ -3,12 +3,12 @@
         "GUID": "bcb921",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 114.942284,
-            "posY": 3.83449268,
-            "posZ": -65.71634,
-            "rotX": 0.000008863056,
-            "rotY": 359.9736,
-            "rotZ": 0.00000232469347,
+            "posX": 114.94,
+            "posY": 3.83,
+            "posZ": -65.72,
+            "rotX": 0,
+            "rotY": 359.97,
+            "rotZ": 0,
             "scaleX": 0.99,
             "scaleY": 0.99,
             "scaleZ": 0.99
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.9999998,
-            "g": 0.992160261,
-            "b": 0.9999998
+            "r": 1.0,
+            "g": 0.99,
+            "b": 1.0
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -50,9 +50,9 @@
             "TypeIndex": 1,
             "CustomShader": {
                 "SpecularColor": {
-                    "r": 0.8745098,
-                    "g": 0.8117647,
-                    "b": 0.745098054
+                    "r": 0.87,
+                    "g": 0.81,
+                    "b": 0.75
                 },
                 "SpecularIntensity": 0,
                 "SpecularSharpness": 2,

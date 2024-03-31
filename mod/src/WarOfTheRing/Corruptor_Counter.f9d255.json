@@ -3,15 +3,15 @@
         "GUID": "f9d255",
         "Name": "Custom_Tile",
         "Transform": {
-            "posX": -55.7217865,
-            "posY": 1.04758763,
-            "posZ": -23.3161755,
-            "rotX": 0.000009390173,
-            "rotY": 179.991653,
+            "posX": -55.72,
+            "posY": 1.05,
+            "posZ": -23.32,
+            "rotX": 0,
+            "rotY": 179.99,
             "rotZ": 180,
-            "scaleX": 0.6274077,
+            "scaleX": 0.63,
             "scaleY": 1,
-            "scaleZ": 0.6274077
+            "scaleZ": 0.63
         },
         "Nickname": "Corruptor Counter",
         "Description": "Tile;Corruption;KoME;",

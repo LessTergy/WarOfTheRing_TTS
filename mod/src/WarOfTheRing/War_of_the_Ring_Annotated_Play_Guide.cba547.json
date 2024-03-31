@@ -3,12 +3,12 @@
         "GUID": "cba547",
         "Name": "Custom_PDF",
         "Transform": {
-            "posX": 78.9992447,
-            "posY": 0.947588563,
+            "posX": 79.0,
+            "posY": 0.95,
             "posZ": -18,
-            "rotX": 0.00000271280555,
-            "rotY": 270.015564,
-            "rotZ": 0.00000199041233,
+            "rotX": 0,
+            "rotY": 270.02,
+            "rotZ": 0,
             "scaleX": 4,
             "scaleY": 1,
             "scaleZ": 4

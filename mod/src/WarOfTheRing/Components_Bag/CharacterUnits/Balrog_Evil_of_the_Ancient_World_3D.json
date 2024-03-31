@@ -9,9 +9,9 @@
             "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 0.594000041,
-            "scaleY": 0.594000041,
-            "scaleZ": 0.594000041
+            "scaleX": 0.59,
+            "scaleY": 0.59,
+            "scaleZ": 0.59
         },
         "Nickname": "Balrog: Evil of the Ancient World",
         "Description": "Minion;3D;Shadow;LoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.9999998,
-            "g": 0.9921673,
-            "b": 0.9999998
+            "r": 1.0,
+            "g": 0.99,
+            "b": 1.0
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -59,14 +59,14 @@
                 "Name": "Custom_Model",
                 "Transform": {
                     "posX": 0,
-                    "posY": -0.0285714027,
+                    "posY": -0.03,
                     "posZ": 0,
                     "rotX": 0,
                     "rotY": 0,
                     "rotZ": 0,
-                    "scaleX": 1.14285731,
-                    "scaleY": 1.14285719,
-                    "scaleZ": 1.14285731
+                    "scaleX": 1.14,
+                    "scaleY": 1.14,
+                    "scaleZ": 1.14
                 },
                 "Nickname": "",
                 "Description": "",

@@ -3,15 +3,15 @@
         "GUID": "31ade1",
         "Name": "Card",
         "Transform": {
-            "posX": 100.0549,
-            "posY": 1.3172431,
-            "posZ": -43.44451,
-            "rotX": 0.0000292616114,
-            "rotY": 179.998108,
-            "rotZ": -0.00007912797,
-            "scaleX": 2.800268,
+            "posX": 100.05,
+            "posY": 1.32,
+            "posZ": -43.44,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "The Breaking of the Fellowship",
         "Description": "Card;Event;Character;Shadow;Init:3;#14;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

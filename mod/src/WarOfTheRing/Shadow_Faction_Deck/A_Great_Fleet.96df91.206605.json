@@ -3,15 +3,15 @@
         "GUID": "96df91",
         "Name": "Card",
         "Transform": {
-            "posX": 98.86452,
-            "posY": 1.31723893,
-            "posZ": -47.5044174,
-            "rotX": 0.00002090672,
+            "posX": 98.86,
+            "posY": 1.32,
+            "posZ": -47.5,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "A Great Fleet",
         "Description": "Card;Faction;Corsairs;Shadow;#1;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

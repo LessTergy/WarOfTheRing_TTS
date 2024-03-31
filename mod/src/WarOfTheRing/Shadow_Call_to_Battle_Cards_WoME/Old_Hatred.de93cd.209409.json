@@ -3,15 +3,15 @@
         "GUID": "de93cd",
         "Name": "Card",
         "Transform": {
-            "posX": 2.50004935,
-            "posY": 1.19202149,
+            "posX": 2.5,
+            "posY": 1.19,
             "posZ": -45,
-            "rotX": 0.0287177768,
-            "rotY": 180.000259,
-            "rotZ": 180.265625,
-            "scaleX": 2.800268,
+            "rotX": 0.03,
+            "rotY": 180.0,
+            "rotZ": 180.27,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Old Hatred",
         "Description": "Card;CallToBattle;Init:2;#4;Shadow;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

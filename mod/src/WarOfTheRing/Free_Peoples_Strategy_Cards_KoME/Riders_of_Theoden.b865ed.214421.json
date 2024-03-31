@@ -3,15 +3,15 @@
         "GUID": "b865ed",
         "Name": "Card",
         "Transform": {
-            "posX": -18.7299213,
-            "posY": 1.34624946,
-            "posZ": -68.6892853,
-            "rotX": 6.344889,
-            "rotY": 180.002731,
-            "rotZ": 180.0003,
-            "scaleX": 2.80049133,
+            "posX": -18.73,
+            "posY": 1.35,
+            "posZ": -68.69,
+            "rotX": 6.34,
+            "rotY": 180.0,
+            "rotZ": 180.0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Riders of Theoden",
         "Description": "Card;Event;Strategy;FreePeoples;Init:3;#16;KoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

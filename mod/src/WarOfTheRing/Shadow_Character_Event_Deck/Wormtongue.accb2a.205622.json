@@ -3,15 +3,15 @@
         "GUID": "accb2a",
         "Name": "Card",
         "Transform": {
-            "posX": 92.70082,
-            "posY": 1.37270057,
-            "posZ": -42.3631477,
-            "rotX": 0.00006444093,
-            "rotY": 179.999084,
-            "rotZ": 1.31709075,
-            "scaleX": 2.800268,
+            "posX": 92.7,
+            "posY": 1.37,
+            "posZ": -42.36,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 1.32,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Wormtongue",
         "Description": "Card;Event;Character;Shadow;Init:3;#22;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

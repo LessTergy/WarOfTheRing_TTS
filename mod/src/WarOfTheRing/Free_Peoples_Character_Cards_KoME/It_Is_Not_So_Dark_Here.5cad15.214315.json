@@ -3,15 +3,15 @@
         "GUID": "5cad15",
         "Name": "Card",
         "Transform": {
-            "posX": -67.6324,
-            "posY": 1.023843,
-            "posZ": -62.2252922,
-            "rotX": 359.964172,
-            "rotY": 176.449478,
-            "rotZ": 179.991211,
-            "scaleX": 2.80049133,
+            "posX": -67.63,
+            "posY": 1.02,
+            "posZ": -62.23,
+            "rotX": 359.96,
+            "rotY": 176.45,
+            "rotZ": 179.99,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "It Is Not So Dark Here",
         "Description": "Card;Event;Character;FreePeoples;Init:2;#26;KoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

@@ -3,12 +3,12 @@
         "GUID": "0171e3",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 5.873436,
-            "posY": 1.015005,
-            "posZ": -22.8499069,
-            "rotX": 0.000410868524,
-            "rotY": 225.000015,
-            "rotZ": 0.0007321731,
+            "posX": 5.87,
+            "posY": 1.02,
+            "posZ": -22.85,
+            "rotX": 0,
+            "rotY": 225.0,
+            "rotZ": 0,
             "scaleX": 0.45,
             "scaleY": 0.45,
             "scaleZ": 0.45

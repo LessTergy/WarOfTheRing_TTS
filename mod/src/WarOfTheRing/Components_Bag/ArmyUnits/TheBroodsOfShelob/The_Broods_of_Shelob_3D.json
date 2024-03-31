@@ -3,15 +3,15 @@
         "GUID": "483a80",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 17.0793476,
-            "posY": 0.947586656,
-            "posZ": -38.8735962,
-            "rotX": 0.0000106926091,
+            "posX": 17.08,
+            "posY": 0.95,
+            "posZ": -38.87,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": 0.00000230903379,
-            "scaleX": 0.346499979,
-            "scaleY": 0.346499979,
-            "scaleZ": 0.346499979
+            "rotZ": 0,
+            "scaleX": 0.35,
+            "scaleY": 0.35,
+            "scaleZ": 0.35
         },
         "Nickname": "The Broods of Shelob",
         "Description": "Faction;3D;Spiders;Shadow;WoME;",

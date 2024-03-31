@@ -3,15 +3,15 @@
         "GUID": "e477f2",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 82.4145355,
-            "posY": 3.135188,
-            "posZ": -86.61466,
-            "rotX": -0.00000565846767,
-            "rotY": 0.00000348161279,
-            "rotZ": -0.0000346845336,
-            "scaleX": 0.396,
-            "scaleY": 0.396,
-            "scaleZ": 0.396
+            "posX": 82.41,
+            "posY": 3.14,
+            "posZ": -86.61,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
+            "scaleZ": 0.4
         },
         "Nickname": "Rohan Regular",
         "Description": "Regular;2D;Rohan;FreePeoples;",
@@ -22,8 +22,8 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.192147464,
-            "g": 0.5882353,
+            "r": 0.19,
+            "g": 0.59,
             "b": 0
         },
         "LayoutGroupSortIndex": 0,

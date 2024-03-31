@@ -3,15 +3,15 @@
         "GUID": "9a8dc6",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 83.82271,
-            "posY": 3.13518858,
-            "posZ": -86.46966,
-            "rotX": -0.00000617718661,
-            "rotY": 0.00000173056253,
-            "rotZ": -0.000008964624,
-            "scaleX": 0.396,
-            "scaleY": 0.396,
-            "scaleZ": 0.396
+            "posX": 83.82,
+            "posY": 3.14,
+            "posZ": -86.47,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
+            "scaleZ": 0.4
         },
         "Nickname": "North Regular",
         "Description": "Regular;2D;North;FreePeoples;",
@@ -22,8 +22,8 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.117637314,
-            "g": 0.5294118,
+            "r": 0.12,
+            "g": 0.53,
             "b": 1
         },
         "LayoutGroupSortIndex": 0,

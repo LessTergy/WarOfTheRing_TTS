@@ -3,15 +3,15 @@
         "GUID": "02b80c",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -37.7826271,
-            "posY": 1.02054751,
-            "posZ": -0.0328188241,
-            "rotX": -0.005183046,
-            "rotY": 179.99971,
+            "posX": -37.78,
+            "posY": 1.02,
+            "posZ": -0.03,
+            "rotX": -0.01,
+            "rotY": 180.0,
             "rotZ": 0,
-            "scaleX": 0.9899999,
+            "scaleX": 0.99,
             "scaleY": 0.99,
-            "scaleZ": 0.9899999
+            "scaleZ": 0.99
         },
         "Nickname": "Rohan Leader",
         "Description": "Leader;3D;Rohan;FreePeoples;",
@@ -58,15 +58,15 @@
                 "GUID": "88d130",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": 0.02275718,
-                    "posY": -0.020202,
-                    "posZ": -0.00181866239,
+                    "posX": 0.02,
+                    "posY": -0.02,
+                    "posZ": 0,
                     "rotX": 0,
-                    "rotY": -0.000194660388,
+                    "rotY": 0,
                     "rotZ": 0,
-                    "scaleX": 0.6060607,
-                    "scaleY": 0.6060606,
-                    "scaleZ": 0.6060607
+                    "scaleX": 0.61,
+                    "scaleY": 0.61,
+                    "scaleZ": 0.61
                 },
                 "Nickname": "Army Base",
                 "Description": "",
@@ -77,9 +77,9 @@
                     "z": 0
                 },
                 "ColorDiffuse": {
-                    "r": 0.125478059,
-                    "g": 0.23135975,
-                    "b": 0.1568506
+                    "r": 0.13,
+                    "g": 0.23,
+                    "b": 0.16
                 },
                 "LayoutGroupSortIndex": 0,
                 "Value": 0,
@@ -113,15 +113,15 @@
                 "GUID": "0e9bd6",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": 0.249418944,
-                    "posY": 0.2837503,
-                    "posZ": 0.249366179,
-                    "rotX": 0.000009103044,
-                    "rotY": 0.0122260386,
-                    "rotZ": -0.000012656963,
-                    "scaleX": 0.571428359,
-                    "scaleY": 0.5714285,
-                    "scaleZ": 0.571428359
+                    "posX": 0.25,
+                    "posY": 0.28,
+                    "posZ": 0.25,
+                    "rotX": 0,
+                    "rotY": 0.01,
+                    "rotZ": 0,
+                    "scaleX": 0.57,
+                    "scaleY": 0.57,
+                    "scaleZ": 0.57
                 },
                 "Nickname": "Rohan Leader flag model",
                 "Description": "",
@@ -132,9 +132,9 @@
                     "z": 0
                 },
                 "ColorDiffuse": {
-                    "r": 0.759581864,
-                    "g": 0.759581864,
-                    "b": 0.759581864
+                    "r": 0.76,
+                    "g": 0.76,
+                    "b": 0.76
                 },
                 "LayoutGroupSortIndex": 0,
                 "Value": 0,

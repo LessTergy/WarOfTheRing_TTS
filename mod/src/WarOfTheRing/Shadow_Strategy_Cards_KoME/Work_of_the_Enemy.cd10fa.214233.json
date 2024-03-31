@@ -3,15 +3,15 @@
         "GUID": "cd10fa",
         "Name": "Card",
         "Transform": {
-            "posX": -10.4248905,
-            "posY": 0.9746755,
-            "posZ": -32.4058952,
-            "rotX": 0.000553716556,
-            "rotY": 180.000015,
-            "rotZ": 180.004532,
-            "scaleX": 2.800268,
+            "posX": -10.42,
+            "posY": 0.97,
+            "posZ": -32.41,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 180.0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Work of the Enemy",
         "Description": "Card;Event;Strategy;Shadow;Init:3;#26;KoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

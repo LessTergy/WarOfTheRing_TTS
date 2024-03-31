@@ -4,14 +4,14 @@
         "Name": "Card",
         "Transform": {
             "posX": 16.5,
-            "posY": 0.9748218,
-            "posZ": -33.0000076,
-            "rotX": -0,
-            "rotY": 180.013718,
+            "posY": 0.97,
+            "posZ": -33.0,
+            "rotX": 0,
+            "rotY": 180.01,
             "rotZ": 180,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Saruman: Corrupted Wizard",
         "Description": "Card;Minion;#1;Shadow;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

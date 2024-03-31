@@ -3,15 +3,15 @@
         "GUID": "cd7757",
         "Name": "Deck",
         "Transform": {
-            "posX": -74.40515,
-            "posY": 0.997401834,
-            "posZ": -34.080677,
+            "posX": -74.41,
+            "posY": 1.0,
+            "posZ": -34.08,
             "rotX": 0,
-            "rotY": 359.968719,
+            "rotY": 359.97,
             "rotZ": 180,
-            "scaleX": 2.80049133,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Free Peoples Event Cards (WoME)",
         "Description": "Cards;Event;FreePeoples;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

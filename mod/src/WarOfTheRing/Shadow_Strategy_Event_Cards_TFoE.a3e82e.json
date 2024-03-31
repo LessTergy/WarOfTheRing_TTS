@@ -3,10 +3,10 @@
         "GUID": "a3e82e",
         "Name": "Deck",
         "Transform": {
-            "posX": 63.3626747,
-            "posY": 0.9781514,
-            "posZ": 61.1555367,
-            "rotX": 0.00000486400768,
+            "posX": 63.36,
+            "posY": 0.98,
+            "posZ": 61.16,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 180,
             "scaleX": 2.8,
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

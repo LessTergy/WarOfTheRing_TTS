@@ -3,15 +3,15 @@
         "GUID": "bfd90d",
         "Name": "Card",
         "Transform": {
-            "posX": -33.9999542,
-            "posY": 1.24219441,
-            "posZ": 20.5000134,
-            "rotX": -0.00241638254,
-            "rotY": 179.999954,
-            "rotZ": 179.978638,
-            "scaleX": 2.80049133,
+            "posX": -34.0,
+            "posY": 1.24,
+            "posZ": 20.5,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 179.98,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Gwaihir the Windlord",
         "Description": "Card;Event;Character;FreePeoples;Init:0;#15;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

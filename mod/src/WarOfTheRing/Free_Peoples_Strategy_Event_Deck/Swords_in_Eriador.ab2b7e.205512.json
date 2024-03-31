@@ -3,15 +3,15 @@
         "GUID": "ab2b7e",
         "Name": "Card",
         "Transform": {
-            "posX": -51.06876,
-            "posY": 1.38284349,
-            "posZ": 49.2690926,
-            "rotX": 0.0000207681642,
-            "rotY": 180.000015,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "posX": -51.07,
+            "posY": 1.38,
+            "posZ": 49.27,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Swords in Eriador",
         "Description": "Card;Event;Strategy;FreePeoples;Init:3;#20;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

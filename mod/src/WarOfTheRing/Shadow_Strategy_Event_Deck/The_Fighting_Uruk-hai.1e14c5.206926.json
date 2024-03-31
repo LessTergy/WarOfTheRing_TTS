@@ -3,15 +3,15 @@
         "GUID": "1e14c5",
         "Name": "Card",
         "Transform": {
-            "posX": 92.11954,
-            "posY": 1.31723917,
-            "posZ": -43.3474,
-            "rotX": 0.0000206591521,
+            "posX": 92.12,
+            "posY": 1.32,
+            "posZ": -43.35,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.800268,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "The Fighting Uruk-hai",
         "Description": "Card;Event;Strategy;Shadow;Init:7;#2;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

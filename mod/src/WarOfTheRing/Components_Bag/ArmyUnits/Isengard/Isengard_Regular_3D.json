@@ -3,15 +3,15 @@
         "GUID": "3bc62b",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 41.9999123,
-            "posY": 0.9875382,
-            "posZ": 1.9999851,
-            "rotX": 0.00140549487,
+            "posX": 42.0,
+            "posY": 0.99,
+            "posZ": 2.0,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 0.346499979,
-            "scaleY": 0.346499979,
-            "scaleZ": 0.346499979
+            "rotZ": 0,
+            "scaleX": 0.35,
+            "scaleY": 0.35,
+            "scaleZ": 0.35
         },
         "Nickname": "Isengard Regular",
         "Description": "Regular;3D;Isengard;Shadow;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.905,
-            "g": 0.898,
-            "b": 0.171947092
+            "r": 0.91,
+            "g": 0.9,
+            "b": 0.17
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -58,15 +58,15 @@
                 "GUID": "6d1318",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": -0.05965798,
+                    "posX": -0.06,
                     "posY": 0.03,
-                    "posZ": 0.08267163,
-                    "rotX": 0.00142704428,
-                    "rotY": 0.004962144,
-                    "rotZ": 0.0009561039,
-                    "scaleX": 2.00000024,
+                    "posZ": 0.08,
+                    "rotX": 0,
+                    "rotY": 0,
+                    "rotZ": 0,
+                    "scaleX": 2.0,
                     "scaleY": 2,
-                    "scaleZ": 2.00000024
+                    "scaleZ": 2.0
                 },
                 "Nickname": "Isengard Regular model",
                 "Description": "",

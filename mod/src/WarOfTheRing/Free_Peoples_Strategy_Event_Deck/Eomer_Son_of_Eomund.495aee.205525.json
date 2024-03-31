@@ -3,15 +3,15 @@
         "GUID": "495aee",
         "Name": "Card",
         "Transform": {
-            "posX": -50.0993462,
-            "posY": 1.31723917,
-            "posZ": 46.4727821,
-            "rotX": 0.0000207721223,
-            "rotY": 179.9987,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "posX": -50.1,
+            "posY": 1.32,
+            "posZ": 46.47,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Eomer, Son of Eomund",
         "Description": "Card;Event;Strategy;FreePeoples;Init:3;#23;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

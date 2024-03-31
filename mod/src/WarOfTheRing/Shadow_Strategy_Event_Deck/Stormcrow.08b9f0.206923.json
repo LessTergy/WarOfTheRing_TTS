@@ -3,15 +3,15 @@
         "GUID": "08b9f0",
         "Name": "Card",
         "Transform": {
-            "posX": 97.52171,
-            "posY": 1.31723893,
-            "posZ": -44.0318375,
-            "rotX": 0.0000207069261,
+            "posX": 97.52,
+            "posY": 1.32,
+            "posZ": -44.03,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Stormcrow",
         "Description": "Card;Event;Strategy;Shadow;Init:7;#6;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

@@ -3,15 +3,15 @@
         "GUID": "c22b26",
         "Name": "Card",
         "Transform": {
-            "posX": -31.4875584,
-            "posY": 2.408038,
-            "posZ": 39.6825027,
-            "rotX": 0.00002074429,
-            "rotY": 0.0299527645,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "posX": -31.49,
+            "posY": 2.41,
+            "posZ": 39.68,
+            "rotX": 0,
+            "rotY": 0.03,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Challenge of the King",
         "Description": "Card;Event;Character;FreePeoples;Init:2;#14;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

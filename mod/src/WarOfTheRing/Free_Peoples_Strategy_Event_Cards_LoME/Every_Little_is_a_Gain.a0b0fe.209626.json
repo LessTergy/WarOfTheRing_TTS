@@ -3,15 +3,15 @@
         "GUID": "a0b0fe",
         "Name": "Card",
         "Transform": {
-            "posX": -53.0162239,
-            "posY": 1.09330928,
-            "posZ": 55.95292,
-            "rotX": 0.000244942028,
-            "rotY": -0,
-            "rotZ": 179.99942,
-            "scaleX": 2.80049133,
+            "posX": -53.02,
+            "posY": 1.09,
+            "posZ": 55.95,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 180.0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Every Little is a Gain",
         "Description": "Card;Event;Strategy;FreePeoples;Init:6;#25;LoME;\r\n",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

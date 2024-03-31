@@ -3,15 +3,15 @@
         "GUID": "8c0aa6",
         "Name": "Card",
         "Transform": {
-            "posX": 77.44167,
-            "posY": 1.31723893,
-            "posZ": -59.5372429,
-            "rotX": 0.0000207444027,
+            "posX": 77.44,
+            "posY": 1.32,
+            "posZ": -59.54,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Captain of Despair",
         "Description": "Card;Event;Character;Shadow;Init:3;#28;LoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

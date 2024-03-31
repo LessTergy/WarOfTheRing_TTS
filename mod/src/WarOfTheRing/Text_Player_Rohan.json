@@ -3,9 +3,9 @@
         "GUID": "a3fdbb",
         "Name": "3DText",
         "Transform": {
-            "posX": 24.9993172,
-            "posY": 0.961428761,
-            "posZ": 65.0070953,
+            "posX": 25.0,
+            "posY": 0.96,
+            "posZ": 65.01,
             "rotX": 90,
             "rotY": 180,
             "rotZ": 0,
@@ -43,9 +43,9 @@
         "Text": {
             "Text": "Free Peoples (Rohan)",
             "colorstate": {
-                "r": 0.192,
-                "g": 0.701,
-                "b": 0.168
+                "r": 0.19,
+                "g": 0.7,
+                "b": 0.17
             },
             "fontSize": 64
         },

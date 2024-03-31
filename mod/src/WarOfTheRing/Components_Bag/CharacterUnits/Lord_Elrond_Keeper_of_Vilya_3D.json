@@ -3,15 +3,15 @@
         "GUID": "070f3d",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 11.5399933,
-            "posY": 1.45206058,
-            "posZ": 27.499897,
-            "rotX": -0,
-            "rotY": 180.000549,
-            "rotZ": 0.00000105387369,
-            "scaleX": 0.395999968,
-            "scaleY": 0.396,
-            "scaleZ": 0.395999968
+            "posX": 11.54,
+            "posY": 1.45,
+            "posZ": 27.5,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 0,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
+            "scaleZ": 0.4
         },
         "Nickname": "Lord Elrond: Keeper of Vilya",
         "Description": "Character;3D;FreePeoples;LoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.9999998,
-            "g": 0.9921643,
-            "b": 0.9999998
+            "r": 1.0,
+            "g": 0.99,
+            "b": 1.0
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -68,15 +68,15 @@
                 "GUID": "cd1a0a",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": -0.00342903612,
-                    "posY": -1.1113292,
-                    "posZ": -0.0889315158,
-                    "rotX": -0.00000147919422,
-                    "rotY": 210.000015,
-                    "rotZ": 0.00000185162332,
-                    "scaleX": 1.26262629,
-                    "scaleY": 2.52525258,
-                    "scaleZ": 1.26262629
+                    "posX": 0,
+                    "posY": -1.11,
+                    "posZ": -0.09,
+                    "rotX": 0,
+                    "rotY": 210.0,
+                    "rotZ": 0,
+                    "scaleX": 1.26,
+                    "scaleY": 2.53,
+                    "scaleZ": 1.26
                 },
                 "Nickname": "Character Base",
                 "Description": "",

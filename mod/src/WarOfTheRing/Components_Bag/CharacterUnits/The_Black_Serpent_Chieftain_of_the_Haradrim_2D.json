@@ -3,15 +3,15 @@
         "GUID": "dba410",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 87.43559,
-            "posY": 3.19416213,
-            "posZ": -65.94181,
-            "rotX": 0.5801602,
-            "rotY": 359.9635,
-            "rotZ": 357.502441,
-            "scaleX": 0.7000003,
-            "scaleY": 0.7000003,
-            "scaleZ": 0.7000003
+            "posX": 87.44,
+            "posY": 3.19,
+            "posZ": -65.94,
+            "rotX": 0.58,
+            "rotY": 359.96,
+            "rotZ": 357.5,
+            "scaleX": 0.7,
+            "scaleY": 0.7,
+            "scaleZ": 0.7
         },
         "Nickname": "The Black Serpent: Chieftain of the Haradrim",
         "Description": "Minion;2D;Ruler;DarkChieftain;FreePeoples;KoME;",
@@ -22,7 +22,7 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.7058823,
+            "r": 0.71,
             "g": 0,
             "b": 0
         },

@@ -3,15 +3,15 @@
         "GUID": "2e858c",
         "Name": "Card",
         "Transform": {
-            "posX": 26.4995689,
-            "posY": 0.9748218,
-            "posZ": -33.0440826,
+            "posX": 26.5,
+            "posY": 0.97,
+            "posZ": -33.04,
             "rotX": 0,
             "rotY": 179.97,
             "rotZ": 180,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "The Mouth of Sauron: Lieutenant of Barad~Dur",
         "Description": "Card;Minion;#2;Shadow;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

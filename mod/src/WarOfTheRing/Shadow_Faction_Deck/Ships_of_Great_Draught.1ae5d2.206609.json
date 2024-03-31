@@ -3,15 +3,15 @@
         "GUID": "1ae5d2",
         "Name": "Card",
         "Transform": {
-            "posX": 80.36634,
-            "posY": 1.415254,
-            "posZ": -44.4736633,
-            "rotX": -0,
+            "posX": 80.37,
+            "posY": 1.42,
+            "posZ": -44.47,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Ships of Great Draught",
         "Description": "Card;Faction;Corsairs;Shadow;#4;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

@@ -3,15 +3,15 @@
         "GUID": "8b25e1",
         "Name": "Custom_Assetbundle",
         "Transform": {
-            "posX": 20.92903,
-            "posY": 0.948071957,
-            "posZ": -39.37395,
-            "rotX": 0.0000141138171,
-            "rotY": 180.000046,
-            "rotZ": -0.0000418737473,
-            "scaleX": 0.2475004,
-            "scaleY": 0.2475004,
-            "scaleZ": 0.2475004
+            "posX": 20.93,
+            "posY": 0.95,
+            "posZ": -39.37,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 0,
+            "scaleX": 0.25,
+            "scaleY": 0.25,
+            "scaleZ": 0.25
         },
         "Nickname": "The Corsairs of Umbar",
         "Description": "Faction;3D;Corsairs;Shadow;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.0274509974,
-            "g": 0.011765,
-            "b": 0.007843
+            "r": 0.03,
+            "g": 0.01,
+            "b": 0.01
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

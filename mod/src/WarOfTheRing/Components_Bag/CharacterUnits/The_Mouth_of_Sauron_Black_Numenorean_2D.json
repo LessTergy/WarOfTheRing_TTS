@@ -3,12 +3,12 @@
         "GUID": "a220b2",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 82.62251,
-            "posY": 3.16196132,
-            "posZ": -63.9885941,
-            "rotX": -0.00000192034622,
+            "posX": 82.62,
+            "posY": 3.16,
+            "posZ": -63.99,
+            "rotX": 0,
             "rotY": 0,
-            "rotZ": -0.000008431015,
+            "rotZ": 0,
             "scaleX": 0.6,
             "scaleY": 0.6,
             "scaleZ": 0.6

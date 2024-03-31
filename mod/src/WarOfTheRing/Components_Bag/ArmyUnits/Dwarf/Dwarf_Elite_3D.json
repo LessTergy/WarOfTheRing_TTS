@@ -3,12 +3,12 @@
         "GUID": "35b3dd",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -39.8345528,
-            "posY": 0.995378554,
-            "posZ": 13.9464827,
-            "rotX": -0.00000190765013,
+            "posX": -39.83,
+            "posY": 1.0,
+            "posZ": 13.95,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0.0000034913835,
+            "rotZ": 0,
             "scaleX": 0.5,
             "scaleY": 0.5,
             "scaleZ": 0.5
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.5411765,
-            "g": 0.294061542,
-            "b": 0.12935856
+            "r": 0.54,
+            "g": 0.29,
+            "b": 0.13
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -58,8 +58,8 @@
                 "GUID": "94f8d6",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": 0.058,
-                    "posY": 0.734,
+                    "posX": 0.06,
+                    "posY": 0.73,
                     "posZ": -0.2,
                     "rotX": 0,
                     "rotY": 180,
@@ -77,9 +77,9 @@
                     "z": 0
                 },
                 "ColorDiffuse": {
-                    "r": 0.9999998,
-                    "g": 0.992176,
-                    "b": 0.9999998
+                    "r": 1.0,
+                    "g": 0.99,
+                    "b": 1.0
                 },
                 "LayoutGroupSortIndex": 0,
                 "Value": 0,

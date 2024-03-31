@@ -3,15 +3,15 @@
         "GUID": "fa8a27",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 86.93626,
-            "posY": 3.203346,
-            "posZ": -66.0792,
-            "rotX": 1.46546721,
-            "rotY": 179.966568,
-            "rotZ": 356.589233,
+            "posX": 86.94,
+            "posY": 3.2,
+            "posZ": -66.08,
+            "rotX": 1.47,
+            "rotY": 179.97,
+            "rotZ": 356.59,
             "scaleX": 0.4,
-            "scaleY": 0.400000036,
-            "scaleZ": 0.396000028
+            "scaleY": 0.4,
+            "scaleZ": 0.4
         },
         "Nickname": "Dwarf Elite",
         "Description": "Elite;Marble;Dwarves;FreePeoples;",

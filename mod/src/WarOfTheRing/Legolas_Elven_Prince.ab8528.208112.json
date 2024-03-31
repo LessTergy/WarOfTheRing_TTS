@@ -4,14 +4,14 @@
         "Name": "Card",
         "Transform": {
             "posX": 31.5,
-            "posY": 0.9611966,
+            "posY": 0.96,
             "posZ": 45,
-            "rotX": -0.00000196390215,
-            "rotY": 0.0115568861,
-            "rotZ": -0,
-            "scaleX": 2.800268,
+            "rotX": 0,
+            "rotY": 0.01,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Legolas: Elven Prince",
         "Description": "Card;Companion;Character;Level:1;#7;FreePeoples;LoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

@@ -3,12 +3,12 @@
         "GUID": "e504d9",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 106.710907,
-            "posY": 3.83449316,
-            "posZ": -60.9717064,
-            "rotX": 0.00001028215,
-            "rotY": 0.000414288777,
-            "rotZ": 0.0000186787656,
+            "posX": 106.71,
+            "posY": 3.83,
+            "posZ": -60.97,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
             "scaleX": 0.99,
             "scaleY": 0.99,
             "scaleZ": 0.99
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.7529412,
-            "g": 0.7529412,
-            "b": 0.7529412
+            "r": 0.75,
+            "g": 0.75,
+            "b": 0.75
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -50,9 +50,9 @@
             "TypeIndex": 1,
             "CustomShader": {
                 "SpecularColor": {
-                    "r": 0.8745098,
-                    "g": 0.8117647,
-                    "b": 0.745098054
+                    "r": 0.87,
+                    "g": 0.81,
+                    "b": 0.75
                 },
                 "SpecularIntensity": 0,
                 "SpecularSharpness": 2,

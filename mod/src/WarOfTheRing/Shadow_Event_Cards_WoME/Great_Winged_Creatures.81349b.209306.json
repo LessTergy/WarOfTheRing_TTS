@@ -3,15 +3,15 @@
         "GUID": "81349b",
         "Name": "Card",
         "Transform": {
-            "posX": -40.9685669,
-            "posY": 0.943950355,
-            "posZ": -54.889946,
-            "rotX": 0.00347284041,
-            "rotY": 179.997589,
-            "rotZ": 180.005066,
-            "scaleX": 2.800268,
+            "posX": -40.97,
+            "posY": 0.94,
+            "posZ": -54.89,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 180.01,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Great Winged Creatures",
         "Description": "Card;Event;Strategy;Shadow;Init:3;#11;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

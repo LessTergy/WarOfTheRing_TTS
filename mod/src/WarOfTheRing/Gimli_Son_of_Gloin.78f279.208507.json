@@ -4,14 +4,14 @@
         "Name": "Card",
         "Transform": {
             "posX": 36.5,
-            "posY": 0.974822,
+            "posY": 0.97,
             "posZ": 33,
-            "rotX": -0,
-            "rotY": -0,
+            "rotX": 0,
+            "rotY": 0,
             "rotZ": 0,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Gimli: Son of Gloin",
         "Description": "Card;Companion;Character;Level:2;#1;FreePeoples;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

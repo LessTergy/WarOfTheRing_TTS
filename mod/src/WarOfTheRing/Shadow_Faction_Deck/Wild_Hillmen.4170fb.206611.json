@@ -3,15 +3,15 @@
         "GUID": "4170fb",
         "Name": "Card",
         "Transform": {
-            "posX": 95.36693,
-            "posY": 1.31730366,
-            "posZ": -41.3070221,
-            "rotX": 0.0004008348,
-            "rotY": 179.999054,
-            "rotZ": 0.000851926568,
-            "scaleX": 2.800268,
+            "posX": 95.37,
+            "posY": 1.32,
+            "posZ": -41.31,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Wild Hillmen",
         "Description": "Card;Faction;Dunlendings;Shadow;#6;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

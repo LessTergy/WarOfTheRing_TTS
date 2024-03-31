@@ -3,15 +3,15 @@
         "GUID": "63a6a3",
         "Name": "Card",
         "Transform": {
-            "posX": -29.2284832,
-            "posY": 2.88358545,
-            "posZ": 39.22922,
-            "rotX": 0.00002076844,
-            "rotY": 359.031952,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "posX": -29.23,
+            "posY": 2.88,
+            "posZ": 39.23,
+            "rotX": 0,
+            "rotY": 359.03,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "We Prove the Swifter",
         "Description": "Card;Event;Character;FreePeoples;Init:0;#16;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

@@ -3,15 +3,15 @@
         "GUID": "dc5838",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 87.21166,
-            "posY": 3.15441,
-            "posZ": -59.2348137,
+            "posX": 87.21,
+            "posY": 3.15,
+            "posZ": -59.23,
             "rotX": 0,
-            "rotY": 0.004956541,
-            "rotZ": -0.0000128065576,
-            "scaleX": 0.495,
-            "scaleY": 0.495,
-            "scaleZ": 0.495
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.49,
+            "scaleY": 0.49,
+            "scaleZ": 0.49
         },
         "Nickname": "The Dead Men of Dunharrow",
         "Description": "Faction;2D;DeadMen;FreePeoples;WoME;",
@@ -23,7 +23,7 @@
         },
         "ColorDiffuse": {
             "r": 0,
-            "g": 0.333324522,
+            "g": 0.33,
             "b": 1
         },
         "LayoutGroupSortIndex": 0,

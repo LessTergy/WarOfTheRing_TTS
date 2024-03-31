@@ -3,15 +3,15 @@
         "GUID": "0546b6",
         "Name": "Card",
         "Transform": {
-            "posX": -3.499567,
-            "posY": 0.974822,
-            "posZ": 32.99999,
-            "rotX": -0,
-            "rotY": -0.000190658859,
+            "posX": -3.5,
+            "posY": 0.97,
+            "posZ": 33.0,
+            "rotX": 0,
+            "rotY": 0,
             "rotZ": 180,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Gandalf the White: Emissary from the West",
         "Description": "Card;Character;#8;FreePeoples;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

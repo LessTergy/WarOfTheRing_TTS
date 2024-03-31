@@ -3,15 +3,15 @@
         "GUID": "c832db",
         "Name": "Card",
         "Transform": {
-            "posX": -50.18194,
-            "posY": 1.31723511,
-            "posZ": 47.098877,
-            "rotX": 0.0000128312713,
-            "rotY": 179.986038,
-            "rotZ": 0.0000314865756,
-            "scaleX": 2.80049133,
+            "posX": -50.18,
+            "posY": 1.32,
+            "posZ": 47.1,
+            "rotX": 0,
+            "rotY": 179.99,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Guards of the Citadel",
         "Description": "Card;Event;Strategy;FreePeoples;Init:2;#14;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

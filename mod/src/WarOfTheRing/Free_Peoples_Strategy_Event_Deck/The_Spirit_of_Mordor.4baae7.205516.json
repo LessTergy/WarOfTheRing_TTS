@@ -3,15 +3,15 @@
         "GUID": "4baae7",
         "Name": "Card",
         "Transform": {
-            "posX": -50.4809227,
-            "posY": 1.46314383,
-            "posZ": 49.7124748,
-            "rotX": -0.00007369521,
-            "rotY": 179.999908,
-            "rotZ": 358.0914,
-            "scaleX": 2.80049133,
+            "posX": -50.48,
+            "posY": 1.46,
+            "posZ": 49.71,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 358.09,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "The Spirit of Mordor",
         "Description": "Card;Event;Strategy;FreePeoples;Init:1;#5;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

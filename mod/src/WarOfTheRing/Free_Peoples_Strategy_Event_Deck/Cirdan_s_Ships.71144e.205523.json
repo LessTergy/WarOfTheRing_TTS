@@ -3,15 +3,15 @@
         "GUID": "71144e",
         "Name": "Card",
         "Transform": {
-            "posX": -48.9829063,
-            "posY": 2.40803838,
-            "posZ": 44.1896057,
-            "rotX": 0.0000207851972,
-            "rotY": 179.98761,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "posX": -48.98,
+            "posY": 2.41,
+            "posZ": 44.19,
+            "rotX": 0,
+            "rotY": 179.99,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Cirdan's Ships",
         "Description": "Card;Event;Strategy;FreePeoples;Init:2;#13;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

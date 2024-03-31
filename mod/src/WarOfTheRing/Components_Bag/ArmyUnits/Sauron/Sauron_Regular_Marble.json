@@ -3,15 +3,15 @@
         "GUID": "dbfa16",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 103.743874,
-            "posY": 3.16128874,
-            "posZ": -66.711586,
-            "rotX": 0.0000187574587,
+            "posX": 103.74,
+            "posY": 3.16,
+            "posZ": -66.71,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 0.396,
-            "scaleY": 0.396,
-            "scaleZ": 0.396
+            "rotZ": 0,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
+            "scaleZ": 0.4
         },
         "Nickname": "Sauron Regular",
         "Description": "Regular;Marble;Sauron;Shadow;",

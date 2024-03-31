@@ -3,15 +3,15 @@
         "GUID": "74461e",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -18.1683025,
-            "posY": 1.010093,
-            "posZ": 65.5718155,
+            "posX": -18.17,
+            "posY": 1.01,
+            "posZ": 65.57,
             "rotX": 0,
             "rotY": 90,
             "rotZ": 0,
-            "scaleX": 0.625,
-            "scaleY": 0.625,
-            "scaleZ": 0.625
+            "scaleX": 0.62,
+            "scaleY": 0.62,
+            "scaleZ": 0.62
         },
         "Nickname": "Free Peoples Leading Player Counter",
         "Description": "",

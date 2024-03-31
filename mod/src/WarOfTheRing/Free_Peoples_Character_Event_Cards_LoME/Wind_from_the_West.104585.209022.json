@@ -3,15 +3,15 @@
         "GUID": "104585",
         "Name": "Card",
         "Transform": {
-            "posX": -78.3661957,
-            "posY": 1.31723893,
-            "posZ": 49.82743,
-            "rotX": -0.0000207692137,
+            "posX": -78.37,
+            "posY": 1.32,
+            "posZ": 49.83,
+            "rotX": 0,
             "rotY": 0,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Wind from the West",
         "Description": "Card;Event;Character;FreePeoples;Init:6;#27;LoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

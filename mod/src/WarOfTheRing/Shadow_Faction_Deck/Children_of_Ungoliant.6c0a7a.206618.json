@@ -3,15 +3,15 @@
         "GUID": "6c0a7a",
         "Name": "Card",
         "Transform": {
-            "posX": 89.13263,
-            "posY": 1.317239,
-            "posZ": -56.6302071,
-            "rotX": 0.0000208317342,
+            "posX": 89.13,
+            "posY": 1.32,
+            "posZ": -56.63,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Children of Ungoliant",
         "Description": "Card;Faction;Spiders;Shadow;#13;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

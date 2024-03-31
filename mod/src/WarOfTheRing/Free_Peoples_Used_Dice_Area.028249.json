@@ -3,12 +3,12 @@
         "GUID": "028249",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": -39.0000153,
+            "posX": -39.0,
             "posY": 0.95,
             "posZ": 31,
-            "rotX": -0.0000154827285,
-            "rotY": 0.00006012069,
-            "rotZ": 0.00003583366,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
             "scaleX": 2.5,
             "scaleY": 1,
             "scaleZ": 2.5

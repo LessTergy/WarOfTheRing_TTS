@@ -3,15 +3,15 @@
         "GUID": "f65fa5",
         "Name": "Card",
         "Transform": {
-            "posX": 87.3265,
-            "posY": 1.31723917,
-            "posZ": -34.72916,
-            "rotX": 0.0000207959147,
+            "posX": 87.33,
+            "posY": 1.32,
+            "posZ": -34.73,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.800268,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Shelob's Lair",
         "Description": "Card;Event;Character;Shadow;Init:3;#1;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

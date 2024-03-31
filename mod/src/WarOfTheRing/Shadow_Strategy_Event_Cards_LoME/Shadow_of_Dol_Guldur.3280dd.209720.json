@@ -3,15 +3,15 @@
         "GUID": "3280dd",
         "Name": "Card",
         "Transform": {
-            "posX": 52.96285,
-            "posY": 1.08198524,
-            "posZ": -56.1058846,
-            "rotX": 0.00186638918,
+            "posX": 52.96,
+            "posY": 1.08,
+            "posZ": -56.11,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0.00304670632,
-            "scaleX": 2.800268,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Shadow of Dol Guldur",
         "Description": "Card;Event;Strategy;Shadow;Init:3-5;#25;LoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

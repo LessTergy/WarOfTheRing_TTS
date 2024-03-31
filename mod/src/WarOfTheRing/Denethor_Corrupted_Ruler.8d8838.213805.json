@@ -4,9 +4,9 @@
         "Name": "Card",
         "Transform": {
             "posX": -20,
-            "posY": 0.9611913,
+            "posY": 0.96,
             "posZ": -45,
-            "rotX": 0.00000511337748,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 180,
             "scaleX": 2.8,
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

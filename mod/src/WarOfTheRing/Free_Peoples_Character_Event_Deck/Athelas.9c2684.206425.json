@@ -3,15 +3,15 @@
         "GUID": "9c2684",
         "Name": "Card",
         "Transform": {
-            "posX": -35.89755,
-            "posY": 2.40803623,
-            "posZ": 35.1397667,
-            "rotX": 0.0000207661342,
+            "posX": -35.9,
+            "posY": 2.41,
+            "posZ": 35.14,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Athelas",
         "Description": "Card;Event;Character;FreePeoples;Init:4;#9;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

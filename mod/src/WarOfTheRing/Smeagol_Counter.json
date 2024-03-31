@@ -4,14 +4,14 @@
         "Name": "Custom_Model",
         "Transform": {
             "posX": 8,
-            "posY": 0.996217132,
+            "posY": 1.0,
             "posZ": 27.5,
-            "rotX": 0.000002345117,
+            "rotX": 0,
             "rotY": 359.99,
-            "rotZ": 0.00000175336686,
-            "scaleX": 0.5000001,
-            "scaleY": 0.5000001,
-            "scaleZ": 0.5000001
+            "rotZ": 0,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "scaleZ": 0.5
         },
         "Nickname": "Smeagol",
         "Description": "Counter;Companion;FreePeoples;LoME;",

@@ -3,15 +3,15 @@
         "GUID": "b13dc5",
         "Name": "Card",
         "Transform": {
-            "posX": 101.666252,
-            "posY": 1.317255,
-            "posZ": -40.82434,
-            "rotX": 0.0000204761436,
+            "posX": 101.67,
+            "posY": 1.32,
+            "posZ": -40.82,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.800268,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Death to Forgoil",
         "Description": "Card;Faction;Dunlendings;Shadow;#9;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

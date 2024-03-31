@@ -3,15 +3,15 @@
         "GUID": "290e62",
         "Name": "Card",
         "Transform": {
-            "posX": -54.937912,
-            "posY": 1.38283992,
-            "posZ": 50.49834,
-            "rotX": 0.00002100196,
+            "posX": -54.94,
+            "posY": 1.38,
+            "posZ": 50.5,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.80049133,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Grimbeorn the Old, Son of Beorn",
         "Description": "Card;Event;Strategy;FreePeoples;Init:1;#17;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

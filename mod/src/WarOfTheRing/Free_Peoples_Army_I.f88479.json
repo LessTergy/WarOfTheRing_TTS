@@ -4,14 +4,14 @@
         "Name": "Custom_Model",
         "Transform": {
             "posX": -30.75,
-            "posY": 1.01250029,
+            "posY": 1.01,
             "posZ": 13,
-            "rotX": -0,
+            "rotX": 0,
             "rotY": 270,
             "rotZ": 180,
             "scaleX": 0.53,
-            "scaleY": 0.525000036,
-            "scaleZ": 0.525000036
+            "scaleY": 0.53,
+            "scaleZ": 0.53
         },
         "Nickname": "Free Peoples Army I",
         "Description": "",

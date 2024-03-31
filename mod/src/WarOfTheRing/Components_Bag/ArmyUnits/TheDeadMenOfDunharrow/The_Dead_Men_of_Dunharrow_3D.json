@@ -3,15 +3,15 @@
         "GUID": "2c0aa8",
         "Name": "rpg_SKELETON_KNIGHT",
         "Transform": {
-            "posX": -12.1159592,
-            "posY": 0.979907751,
-            "posZ": 38.9837341,
-            "rotX": -0.00146171381,
+            "posX": -12.12,
+            "posY": 0.98,
+            "posZ": 38.98,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": 0.0009363593,
-            "scaleX": 0.396,
-            "scaleY": 0.396,
-            "scaleZ": 0.396
+            "rotZ": 0,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
+            "scaleZ": 0.4
         },
         "Nickname": "The Dead Men of Dunharrow",
         "Description": "Faction;3D;DeadMen;FreePeoples;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.2941176,
-            "g": 0.2941176,
-            "b": 0.2941176
+            "r": 0.29,
+            "g": 0.29,
+            "b": 0.29
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -50,15 +50,15 @@
                 "GUID": "4487f5",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": 0.0122306868,
-                    "posY": -0.0342790149,
-                    "posZ": 0.001923957,
-                    "rotX": -0.00116064353,
-                    "rotY": 165.0235,
-                    "rotZ": 0.001281276,
-                    "scaleX": 1.11111307,
-                    "scaleY": 1.11111116,
-                    "scaleZ": 1.11111307
+                    "posX": 0.01,
+                    "posY": -0.03,
+                    "posZ": 0,
+                    "rotX": 0,
+                    "rotY": 165.02,
+                    "rotZ": 0,
+                    "scaleX": 1.11,
+                    "scaleY": 1.11,
+                    "scaleZ": 1.11
                 },
                 "Nickname": "Character Base",
                 "Description": "",

@@ -3,12 +3,12 @@
         "GUID": "380278",
         "Name": "Custom_Assetbundle",
         "Transform": {
-            "posX": 87.63134,
-            "posY": 1.4475857,
-            "posZ": -57.507988,
-            "rotX": 0.0000135027385,
-            "rotY": 269.998474,
-            "rotZ": 0.00000392425,
+            "posX": 87.63,
+            "posY": 1.45,
+            "posZ": -57.51,
+            "rotX": 0,
+            "rotY": 270.0,
+            "rotZ": 0,
             "scaleX": 1,
             "scaleY": 1,
             "scaleZ": 1

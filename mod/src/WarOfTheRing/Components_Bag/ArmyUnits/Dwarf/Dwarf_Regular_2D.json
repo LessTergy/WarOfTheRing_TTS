@@ -3,15 +3,15 @@
         "GUID": "671c08",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 81.20794,
-            "posY": 3.13518786,
-            "posZ": -86.50596,
-            "rotX": -0.000006769383,
-            "rotY": 0.00000184941393,
-            "rotZ": -0.00001632842,
-            "scaleX": 0.396,
-            "scaleY": 0.396,
-            "scaleZ": 0.396
+            "posX": 81.21,
+            "posY": 3.14,
+            "posZ": -86.51,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
+            "scaleZ": 0.4
         },
         "Nickname": "Dwarf Regular",
         "Description": "Regular;2D;Dwarves;FreePeoples;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.271767467,
-            "g": 0.256596863,
-            "b": 0.03172307
+            "r": 0.27,
+            "g": 0.26,
+            "b": 0.03
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

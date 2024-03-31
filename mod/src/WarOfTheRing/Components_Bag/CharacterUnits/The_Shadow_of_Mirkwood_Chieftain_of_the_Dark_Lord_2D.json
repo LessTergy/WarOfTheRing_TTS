@@ -3,15 +3,15 @@
         "GUID": "21f475",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 85.81262,
-            "posY": 3.15944719,
-            "posZ": -65.94289,
-            "rotX": -0.00000250312451,
-            "rotY": -0.000425669074,
-            "rotZ": 0.00000522937171,
-            "scaleX": 0.7000003,
-            "scaleY": 0.7000003,
-            "scaleZ": 0.7000003
+            "posX": 85.81,
+            "posY": 3.16,
+            "posZ": -65.94,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.7,
+            "scaleY": 0.7,
+            "scaleZ": 0.7
         },
         "Nickname": "The Shadow of Mirkwood: Chieftain of the Dark Lord",
         "Description": "Minion;2D;Ruler;DarkChieftain;FreePeoples;KoME;",
@@ -22,7 +22,7 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.7058823,
+            "r": 0.71,
             "g": 0,
             "b": 0
         },

@@ -3,11 +3,11 @@
         "GUID": "c2de22",
         "Name": "3DText",
         "Transform": {
-            "posX": 25.0000324,
-            "posY": 0.9615699,
-            "posZ": -65.02673,
+            "posX": 25.0,
+            "posY": 0.96,
+            "posZ": -65.03,
             "rotX": 90,
-            "rotY": -0.0000917637954,
+            "rotY": 0,
             "rotZ": 0,
             "scaleX": 1,
             "scaleY": 1,
@@ -43,9 +43,9 @@
         "Text": {
             "Text": "Shadow (The Witch-King)",
             "colorstate": {
-                "r": 0.856,
+                "r": 0.86,
                 "g": 0.1,
-                "b": 0.094
+                "b": 0.09
             },
             "fontSize": 64
         },

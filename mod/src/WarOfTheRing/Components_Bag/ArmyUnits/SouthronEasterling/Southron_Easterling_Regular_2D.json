@@ -3,15 +3,15 @@
         "GUID": "975361",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 75.35275,
-            "posY": 3.13518763,
-            "posZ": -82.41448,
-            "rotX": -0.00001130662,
-            "rotY": 0.000001875707,
-            "rotZ": -0.0000167552989,
-            "scaleX": 0.396,
-            "scaleY": 0.396,
-            "scaleZ": 0.396
+            "posX": 75.35,
+            "posY": 3.14,
+            "posZ": -82.41,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
+            "scaleZ": 0.4
         },
         "Nickname": "Southron/Easterling Regular",
         "Description": "Regular;2D;Haradrim;Shadow;",
@@ -23,7 +23,7 @@
         },
         "ColorDiffuse": {
             "r": 1,
-            "g": 0.6691448,
+            "g": 0.67,
             "b": 0
         },
         "LayoutGroupSortIndex": 0,

@@ -3,15 +3,15 @@
         "GUID": "ff6585",
         "Name": "Card",
         "Transform": {
-            "posX": -8.585961,
-            "posY": 1.36556721,
-            "posZ": 59.5988541,
-            "rotX": 0.0000207249959,
+            "posX": -8.59,
+            "posY": 1.37,
+            "posZ": 59.6,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Dead Men of Dunharrow",
         "Description": "Card;Event;Character;FreePeoples;Init:2;#22;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

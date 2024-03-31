@@ -3,15 +3,15 @@
         "GUID": "5bf71c",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 90.21453,
-            "posY": 3.16249418,
-            "posZ": -70.30096,
-            "rotX": 0.0000029182188,
+            "posX": 90.21,
+            "posY": 3.16,
+            "posZ": -70.3,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
             "scaleX": 0.4,
-            "scaleY": 0.400000036,
-            "scaleZ": 0.396000028
+            "scaleY": 0.4,
+            "scaleZ": 0.4
         },
         "Nickname": "North Elite",
         "Description": "Elite;Marble;North;FreePeoples;",

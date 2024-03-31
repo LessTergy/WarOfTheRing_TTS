@@ -4,11 +4,11 @@
         "Name": "Custom_PDF",
         "Transform": {
             "posX": 79,
-            "posY": 0.9476078,
-            "posZ": -31.0000019,
-            "rotX": 0.00000235075254,
-            "rotY": 270.0052,
-            "rotZ": 0.000005266747,
+            "posY": 0.95,
+            "posZ": -31.0,
+            "rotX": 0,
+            "rotY": 270.01,
+            "rotZ": 0,
             "scaleX": 4,
             "scaleY": 1,
             "scaleZ": 4

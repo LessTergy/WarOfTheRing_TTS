@@ -3,12 +3,12 @@
         "GUID": "fe42b0",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 95.204155,
-            "posY": 3.14149332,
-            "posZ": -71.18728,
-            "rotX": 0.000025037094,
-            "rotY": 180.000015,
-            "rotZ": 0.000008443226,
+            "posX": 95.2,
+            "posY": 3.14,
+            "posZ": -71.19,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 0,
             "scaleX": 0.33,
             "scaleY": 0.33,
             "scaleZ": 0.33

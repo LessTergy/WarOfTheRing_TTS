@@ -3,15 +3,15 @@
         "GUID": "8903c7",
         "Name": "Card",
         "Transform": {
-            "posX": 96.5108948,
-            "posY": 1.3172493,
-            "posZ": -33.4954453,
-            "rotX": 0.0000210094222,
+            "posX": 96.51,
+            "posY": 1.32,
+            "posZ": -33.5,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Give it to Uss!",
         "Description": "Card;Event;Character;Shadow;Init:3;#4;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

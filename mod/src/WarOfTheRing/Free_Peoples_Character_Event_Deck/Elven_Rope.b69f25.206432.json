@@ -3,15 +3,15 @@
         "GUID": "b69f25",
         "Name": "Card",
         "Transform": {
-            "posX": -5.387103,
-            "posY": 1.31723917,
-            "posZ": 81.1241455,
-            "rotX": 0.0000207689463,
+            "posX": -5.39,
+            "posY": 1.32,
+            "posZ": 81.12,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Elven Rope",
         "Description": "Card;Event;Character;FreePeoples;Init:3;#2;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

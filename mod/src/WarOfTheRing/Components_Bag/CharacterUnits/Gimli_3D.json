@@ -3,15 +3,15 @@
         "GUID": "eefb8f",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 28.7841,
-            "posY": 1.344387,
-            "posZ": 17.3875484,
-            "rotX": 0.0000221928076,
-            "rotY": 179.962738,
-            "rotZ": -0.0000163222958,
-            "scaleX": 0.400000125,
+            "posX": 28.78,
+            "posY": 1.34,
+            "posZ": 17.39,
+            "rotX": 0,
+            "rotY": 179.96,
+            "rotZ": 0,
+            "scaleX": 0.4,
             "scaleY": 0.4,
-            "scaleZ": 0.400000125
+            "scaleZ": 0.4
         },
         "Nickname": "Gimli",
         "Description": "Character;3D;Companion;FreePeoples;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.9999998,
-            "g": 0.9921654,
-            "b": 0.9999998
+            "r": 1.0,
+            "g": 0.99,
+            "b": 1.0
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -68,15 +68,15 @@
                 "GUID": "f454fb",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": 0.0307663959,
-                    "posY": -0.8340753,
-                    "posZ": -0.08623088,
-                    "rotX": 0.0000241049311,
-                    "rotY": 179.999908,
-                    "rotZ": -0.0000243546383,
-                    "scaleX": 1.24999952,
+                    "posX": 0.03,
+                    "posY": -0.83,
+                    "posZ": -0.09,
+                    "rotX": 0,
+                    "rotY": 180.0,
+                    "rotZ": 0,
+                    "scaleX": 1.25,
                     "scaleY": 2.5,
-                    "scaleZ": 1.24999952
+                    "scaleZ": 1.25
                 },
                 "Nickname": "Character Base",
                 "Description": "",

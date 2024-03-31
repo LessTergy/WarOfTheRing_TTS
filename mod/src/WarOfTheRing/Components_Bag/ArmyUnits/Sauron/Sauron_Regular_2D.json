@@ -3,15 +3,15 @@
         "GUID": "3b26a6",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 75.35638,
-            "posY": 3.13518763,
-            "posZ": -83.87481,
-            "rotX": -0.000008555304,
+            "posX": 75.36,
+            "posY": 3.14,
+            "posZ": -83.87,
+            "rotX": 0,
             "rotY": 0,
-            "rotZ": -0.000007897404,
-            "scaleX": 0.396,
-            "scaleY": 0.396,
-            "scaleZ": 0.396
+            "rotZ": 0,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
+            "scaleZ": 0.4
         },
         "Nickname": "Sauron Regular",
         "Description": "Regular;2D;Sauron;Shadow;",

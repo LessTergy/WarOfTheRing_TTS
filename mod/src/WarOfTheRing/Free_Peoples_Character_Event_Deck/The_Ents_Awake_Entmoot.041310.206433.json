@@ -3,15 +3,15 @@
         "GUID": "041310",
         "Name": "Card",
         "Transform": {
-            "posX": 15.948679,
-            "posY": 1.31723917,
-            "posZ": 76.54001,
-            "rotX": 0.0000207770445,
-            "rotY": 180.001053,
+            "posX": 15.95,
+            "posY": 1.32,
+            "posZ": 76.54,
+            "rotX": 0,
+            "rotY": 180.0,
             "rotZ": 0,
-            "scaleX": 2.80049133,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "The Ents Awake: Entmoot",
         "Description": "Card;Event;Character;FreePeoples;Init:5;#21;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

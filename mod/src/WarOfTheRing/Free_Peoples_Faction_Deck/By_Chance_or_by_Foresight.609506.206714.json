@@ -3,15 +3,15 @@
         "GUID": "609506",
         "Name": "Card",
         "Transform": {
-            "posX": -41.5228653,
-            "posY": 1.53198707,
-            "posZ": 28.9739056,
-            "rotX": 0.000020758418,
-            "rotY": 179.987686,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "posX": -41.52,
+            "posY": 1.53,
+            "posZ": 28.97,
+            "rotX": 0,
+            "rotY": 179.99,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "By Chance or by Foresight",
         "Description": "Card;Faction;FreePeoples;#18;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

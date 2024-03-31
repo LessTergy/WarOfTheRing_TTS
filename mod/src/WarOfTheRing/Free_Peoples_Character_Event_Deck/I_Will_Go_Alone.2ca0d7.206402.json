@@ -3,15 +3,15 @@
         "GUID": "2ca0d7",
         "Name": "Card",
         "Transform": {
-            "posX": 0.276233673,
-            "posY": 1.36556721,
-            "posZ": 61.5586853,
-            "rotX": 0.0000207892717,
+            "posX": 0.28,
+            "posY": 1.37,
+            "posZ": 61.56,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "I Will Go Alone",
         "Description": "Card;Event;Character;FreePeoples;Init:0;#11;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

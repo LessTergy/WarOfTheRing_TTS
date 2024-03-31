@@ -4,14 +4,14 @@
         "Name": "Card",
         "Transform": {
             "posX": 41.5,
-            "posY": 0.9611964,
+            "posY": 0.96,
             "posZ": 45,
             "rotX": 0,
-            "rotY": -0.001981425,
+            "rotY": 0,
             "rotZ": 0,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Boromir: Captain General of Gondor",
         "Description": "Card;Companion;Character;Level:1;#5;FreePeoples;LoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

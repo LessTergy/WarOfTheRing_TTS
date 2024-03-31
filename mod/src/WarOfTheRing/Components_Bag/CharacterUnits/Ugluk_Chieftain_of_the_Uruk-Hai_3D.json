@@ -4,14 +4,14 @@
         "Name": "Figurine_Custom",
         "Transform": {
             "posX": 56,
-            "posY": 1.06451845,
+            "posY": 1.06,
             "posZ": -39.5,
-            "rotX": -0.00000308970652,
-            "rotY": 0.0005819888,
-            "rotZ": -0.00000490921138,
-            "scaleX": 0.7000003,
-            "scaleY": 0.7000003,
-            "scaleZ": 0.7000003
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.7,
+            "scaleY": 0.7,
+            "scaleZ": 0.7
         },
         "Nickname": "Ugluk: Chieftain of the Uruk-Hai",
         "Description": "Minion;3D;Ruler;DarkChieftain;Shadow;KoME;",
@@ -22,7 +22,7 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.7058823,
+            "r": 0.71,
             "g": 0,
             "b": 0
         },

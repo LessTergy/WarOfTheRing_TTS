@@ -3,15 +3,15 @@
         "GUID": "51d8e0",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 6.347318,
-            "posY": 1.07693183,
-            "posZ": -7.29470348,
+            "posX": 6.35,
+            "posY": 1.08,
+            "posZ": -7.29,
             "rotX": 0,
-            "rotY": -0.00263083237,
-            "rotZ": -0,
-            "scaleX": 0.7000003,
-            "scaleY": 0.7000003,
-            "scaleZ": 0.7000003
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.7,
+            "scaleY": 0.7,
+            "scaleZ": 0.7
         },
         "Nickname": "Theoden: King of the Riddermark",
         "Description": "Character;3D;Ruler;Sovereign;FreePeoples;KoME;",

@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.0979663059,
-            "g": 0.8397212,
-            "b": 0.13656503
+            "r": 0.1,
+            "g": 0.84,
+            "b": 0.14
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -58,15 +58,15 @@
                 "GUID": "312c10",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": -0.282895356,
-                    "posY": 0.9344671,
-                    "posZ": 0.154533759,
-                    "rotX": 0.000143433979,
+                    "posX": -0.28,
+                    "posY": 0.93,
+                    "posZ": 0.15,
+                    "rotX": 0,
                     "rotY": 0,
-                    "rotZ": 15.000001,
-                    "scaleX": 0.616116464,
-                    "scaleY": 0.612521231,
-                    "scaleZ": 0.6122453
+                    "rotZ": 15.0,
+                    "scaleX": 0.62,
+                    "scaleY": 0.61,
+                    "scaleZ": 0.61
                 },
                 "Nickname": "Elf Leader Flag",
                 "Description": "",
@@ -77,9 +77,9 @@
                     "z": 0
                 },
                 "ColorDiffuse": {
-                    "r": 0.759581864,
-                    "g": 0.759581864,
-                    "b": 0.759581864
+                    "r": 0.76,
+                    "g": 0.76,
+                    "b": 0.76
                 },
                 "LayoutGroupSortIndex": 0,
                 "Value": 0,
@@ -136,15 +136,15 @@
                         "GUID": "8debf3",
                         "Name": "Custom_Model",
                         "Transform": {
-                            "posX": 0.05508064,
-                            "posY": -1.53495145,
-                            "posZ": -0.100455984,
-                            "rotX": 359.9747,
-                            "rotY": 359.9061,
-                            "rotZ": 344.999329,
-                            "scaleX": 2.3333323,
-                            "scaleY": 2.333333,
-                            "scaleZ": 2.33333254
+                            "posX": 0.06,
+                            "posY": -1.53,
+                            "posZ": -0.1,
+                            "rotX": 359.97,
+                            "rotY": 359.91,
+                            "rotZ": 345.0,
+                            "scaleX": 2.33,
+                            "scaleY": 2.33,
+                            "scaleZ": 2.33
                         },
                         "Nickname": "Elf Leader model",
                         "Description": "",

@@ -3,12 +3,12 @@
         "GUID": "f50dab",
         "Name": "Custom_Model_Infinite_Bag",
         "Transform": {
-            "posX": -59.99993,
-            "posY": 1.136199,
-            "posZ": 37.00017,
-            "rotX": -0,
-            "rotY": 0.0117773758,
-            "rotZ": -0,
+            "posX": -60.0,
+            "posY": 1.14,
+            "posZ": 37.0,
+            "rotX": 0,
+            "rotY": 0.01,
+            "rotZ": 0,
             "scaleX": 5,
             "scaleY": 0.1,
             "scaleZ": 1
@@ -58,5 +58,7 @@
         "ContainedObjects": []
     },
     "StatesPaths": {},
-    "ContainedObjectPaths": ["Free_Peoples_Combat_Die.648869.json"]
+    "ContainedObjectPaths": [
+        "Free_Peoples_Combat_Die.648869.json"
+    ]
 }

@@ -3,15 +3,15 @@
         "GUID": "1ae5d2",
         "Name": "Card",
         "Transform": {
-            "posX": 70.0828247,
-            "posY": 1.37701988,
-            "posZ": -34.6181755,
-            "rotX": 0.00001760704,
-            "rotY": 180.001266,
-            "rotZ": 1.42075861,
-            "scaleX": 2.800268,
+            "posX": 70.08,
+            "posY": 1.38,
+            "posZ": -34.62,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 1.42,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Servants of Sauron",
         "Description": "Card;Faction;Shadow;#18;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

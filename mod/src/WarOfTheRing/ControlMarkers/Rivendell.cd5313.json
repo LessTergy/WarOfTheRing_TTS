@@ -3,12 +3,12 @@
         "GUID": "cd5313",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -0.31708923,
-            "posY": 1.01500177,
-            "posZ": 18.6628,
-            "rotX": -0.0005750219,
-            "rotY": 224.966888,
-            "rotZ": 180.000275,
+            "posX": -0.32,
+            "posY": 1.02,
+            "posZ": 18.66,
+            "rotX": 0,
+            "rotY": 224.97,
+            "rotZ": 180.0,
             "scaleX": 0.45,
             "scaleY": 0.45,
             "scaleZ": 0.45

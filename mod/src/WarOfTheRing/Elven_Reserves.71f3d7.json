@@ -3,15 +3,15 @@
         "GUID": "71f3d7",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": -40.4000435,
+            "posX": -40.4,
             "posY": 0.92,
             "posZ": 9,
-            "rotX": 0.0006635614,
+            "rotX": 0,
             "rotY": 0,
             "rotZ": 0,
-            "scaleX": 1.25768793,
+            "scaleX": 1.26,
             "scaleY": 1,
-            "scaleZ": 1.25768793
+            "scaleZ": 1.26
         },
         "Nickname": "Elven Reserves",
         "Description": "",

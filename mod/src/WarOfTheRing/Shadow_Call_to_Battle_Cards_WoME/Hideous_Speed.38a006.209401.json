@@ -3,15 +3,15 @@
         "GUID": "38a006",
         "Name": "Card",
         "Transform": {
-            "posX": 2.499969,
-            "posY": 1.119499,
-            "posZ": -45.0000038,
-            "rotX": 0.004609412,
-            "rotY": 180.000092,
-            "rotZ": 179.852829,
-            "scaleX": 2.800268,
+            "posX": 2.5,
+            "posY": 1.12,
+            "posZ": -45.0,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 179.85,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Hideous Speed",
         "Description": "Card;CallToBattle;Init:2;#6;Shadow;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

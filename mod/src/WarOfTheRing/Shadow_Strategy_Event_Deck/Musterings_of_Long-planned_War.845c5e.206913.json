@@ -3,15 +3,15 @@
         "GUID": "845c5e",
         "Name": "Card",
         "Transform": {
-            "posX": 81.2553253,
-            "posY": 1.41525316,
-            "posZ": -43.4166756,
+            "posX": 81.26,
+            "posY": 1.42,
+            "posZ": -43.42,
             "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Musterings of Long-planned War",
         "Description": "Card;Event;Strategy;Shadow;Init:3;#23;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

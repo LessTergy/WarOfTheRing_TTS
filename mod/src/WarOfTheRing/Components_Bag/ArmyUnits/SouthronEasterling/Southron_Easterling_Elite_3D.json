@@ -3,15 +3,15 @@
         "GUID": "1a4eba",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 37.9694252,
-            "posY": 1.00744534,
-            "posZ": -3.83796358,
+            "posX": 37.97,
+            "posY": 1.01,
+            "posZ": -3.84,
             "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 0.6000001,
-            "scaleY": 0.600001454,
-            "scaleZ": 0.6000017
+            "rotZ": 0,
+            "scaleX": 0.6,
+            "scaleY": 0.6,
+            "scaleZ": 0.6
         },
         "Nickname": "Southron/Easterling Elite",
         "Description": "Elite;3D;Haradrim;Shadow;",
@@ -81,15 +81,15 @@
                 "GUID": "22585f",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": -0.00691938028,
-                    "posY": -0.0319545865,
-                    "posZ": -0.245125145,
-                    "rotX": -0,
-                    "rotY": -0.000160509444,
+                    "posX": -0.01,
+                    "posY": -0.03,
+                    "posZ": -0.25,
+                    "rotX": 0,
+                    "rotY": 0,
                     "rotZ": 0,
-                    "scaleX": 0.5999999,
-                    "scaleY": 0.599998534,
-                    "scaleZ": 0.9999972
+                    "scaleX": 0.6,
+                    "scaleY": 0.6,
+                    "scaleZ": 1.0
                 },
                 "Nickname": "Army Base",
                 "Description": "",
@@ -100,9 +100,9 @@
                     "z": 0
                 },
                 "ColorDiffuse": {
-                    "r": 0.9559999,
-                    "g": 0.3919875,
-                    "b": 0.112987511
+                    "r": 0.96,
+                    "g": 0.39,
+                    "b": 0.11
                 },
                 "LayoutGroupSortIndex": 0,
                 "Value": 0,

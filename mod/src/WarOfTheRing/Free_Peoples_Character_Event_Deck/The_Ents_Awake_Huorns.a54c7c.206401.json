@@ -3,15 +3,15 @@
         "GUID": "a54c7c",
         "Name": "Card",
         "Transform": {
-            "posX": -14.7786493,
-            "posY": 1.36556768,
-            "posZ": 61.2681046,
-            "rotX": 0.0000207693847,
+            "posX": -14.78,
+            "posY": 1.37,
+            "posZ": 61.27,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "The Ents Awake: Huorns",
         "Description": "Card;Event;Character;FreePeoples;Init:3;#20;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

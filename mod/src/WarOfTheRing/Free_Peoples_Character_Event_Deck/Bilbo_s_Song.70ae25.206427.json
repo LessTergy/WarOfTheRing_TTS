@@ -3,15 +3,15 @@
         "GUID": "70ae25",
         "Name": "Card",
         "Transform": {
-            "posX": -39.0454674,
-            "posY": 2.40803814,
-            "posZ": 41.0106049,
-            "rotX": 0.000020772588,
+            "posX": -39.05,
+            "posY": 2.41,
+            "posZ": 41.01,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Bilbo's Song",
         "Description": "Card;Event;Character;FreePeoples;Init:6;#12;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

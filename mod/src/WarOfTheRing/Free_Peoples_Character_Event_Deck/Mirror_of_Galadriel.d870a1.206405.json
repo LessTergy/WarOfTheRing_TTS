@@ -3,15 +3,15 @@
         "GUID": "d870a1",
         "Name": "Card",
         "Transform": {
-            "posX": -25.1431847,
-            "posY": 2.408038,
-            "posZ": 46.1484375,
-            "rotX": 0.0000207680423,
+            "posX": -25.14,
+            "posY": 2.41,
+            "posZ": 46.15,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Mirror of Galadriel",
         "Description": "Card;Event;Character;FreePeoples;Init:6;#13;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

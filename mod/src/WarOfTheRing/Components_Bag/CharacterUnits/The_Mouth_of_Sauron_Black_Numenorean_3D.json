@@ -3,12 +3,12 @@
         "GUID": "ba1a29",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 36.5335159,
-            "posY": 1.74331236,
-            "posZ": -27.3468742,
-            "rotX": 0.0000502290168,
-            "rotY": 0.0131156314,
-            "rotZ": -0.00004176913,
+            "posX": 36.53,
+            "posY": 1.74,
+            "posZ": -27.35,
+            "rotX": 0,
+            "rotY": 0.01,
+            "rotZ": 0,
             "scaleX": 0.4,
             "scaleY": 0.4,
             "scaleZ": 0.4
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.9999998,
-            "g": 0.9921749,
-            "b": 0.9999998
+            "r": 1.0,
+            "g": 0.99,
+            "b": 1.0
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -68,15 +68,15 @@
                 "GUID": "fc376c",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": -0.009094262,
-                    "posY": -1.828345,
-                    "posZ": 0.114211679,
-                    "rotX": 0.00005055023,
-                    "rotY": 179.794556,
-                    "rotZ": -0.000045067045,
-                    "scaleX": 1.49999952,
+                    "posX": -0.01,
+                    "posY": -1.83,
+                    "posZ": 0.11,
+                    "rotX": 0,
+                    "rotY": 179.79,
+                    "rotZ": 0,
+                    "scaleX": 1.5,
                     "scaleY": 2.5,
-                    "scaleZ": 1.49999952
+                    "scaleZ": 1.5
                 },
                 "Nickname": "Character Base",
                 "Description": "",

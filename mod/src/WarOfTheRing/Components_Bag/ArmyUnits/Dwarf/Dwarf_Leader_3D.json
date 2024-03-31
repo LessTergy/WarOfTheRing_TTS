@@ -3,12 +3,12 @@
         "GUID": "a50201",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -38.48953,
-            "posY": 1.00045419,
-            "posZ": 12.9635458,
-            "rotX": -0,
+            "posX": -38.49,
+            "posY": 1.0,
+            "posZ": 12.96,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": 0.00000291864239,
+            "rotZ": 0,
             "scaleX": 0.6,
             "scaleY": 0.6,
             "scaleZ": 0.6
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.5411765,
-            "g": 0.294061542,
-            "b": 0.12935856
+            "r": 0.54,
+            "g": 0.29,
+            "b": 0.13
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -58,15 +58,15 @@
                 "GUID": "d18e5b",
                 "Name": "Custom_Model",
                 "Transform": {
-                    "posX": -0,
+                    "posX": 0,
                     "posY": 0.01,
                     "posZ": 0,
-                    "rotX": -0,
-                    "rotY": -0.00263538561,
-                    "rotZ": -0,
-                    "scaleX": 1.71428692,
-                    "scaleY": 1.71428573,
-                    "scaleZ": 1.71428692
+                    "rotX": 0,
+                    "rotY": 0,
+                    "rotZ": 0,
+                    "scaleX": 1.71,
+                    "scaleY": 1.71,
+                    "scaleZ": 1.71
                 },
                 "Nickname": "Dwarf Leader model",
                 "Description": "",

@@ -3,15 +3,15 @@
         "GUID": "a81997",
         "Name": "Card",
         "Transform": {
-            "posX": -91.62147,
-            "posY": 12.7530689,
-            "posZ": 82.3459244,
-            "rotX": 0.0000206796376,
+            "posX": -91.62,
+            "posY": 12.75,
+            "posZ": 82.35,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Speed Greater than any Wind",
         "Description": "Card;Faction;Eagles;FreePeoples;#6;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

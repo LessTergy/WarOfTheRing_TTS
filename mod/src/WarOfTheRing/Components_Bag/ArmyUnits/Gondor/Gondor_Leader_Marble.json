@@ -3,12 +3,12 @@
         "GUID": "cb87a3",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 92.8118057,
-            "posY": 3.43250179,
-            "posZ": -63.1853447,
-            "rotX": -0.000008736226,
-            "rotY": 179.999954,
-            "rotZ": -0.00000188080355,
+            "posX": 92.81,
+            "posY": 3.43,
+            "posZ": -63.19,
+            "rotX": 0,
+            "rotY": 180.0,
+            "rotZ": 0,
             "scaleX": 0.6,
             "scaleY": 0.6,
             "scaleZ": 0.6

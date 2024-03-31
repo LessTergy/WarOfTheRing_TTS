@@ -6,20 +6,20 @@
             "posX": -0.26,
             "posY": 0.9,
             "posZ": 0.02,
-            "rotX": 0.0,
+            "rotX": 0,
             "rotY": 180.0,
-            "rotZ": 0.0,
-            "scaleX": 16.295,
+            "rotZ": 0,
+            "scaleX": 16.3,
             "scaleY": 1.0,
-            "scaleZ": 16.295
+            "scaleZ": 16.3
         },
         "Nickname": "Map",
         "Description": "",
         "GMNotes": "",
         "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
+            "x": 0,
+            "y": 0,
+            "z": 0
         },
         "ColorDiffuse": {
             "r": 1.0,
@@ -44,7 +44,7 @@
             "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2413438007922758455/2FA85238A2BBA8CB946C74A287E1F51931B120BF/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1.0,
-            "WidthScale": 0.0,
+            "WidthScale": 0,
             "CustomToken": {
                 "Thickness": 0.1,
                 "MergeDistancePixels": 15.0,

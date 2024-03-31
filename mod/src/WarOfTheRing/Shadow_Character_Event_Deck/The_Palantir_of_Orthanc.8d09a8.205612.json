@@ -3,15 +3,15 @@
         "GUID": "8d09a8",
         "Name": "Card",
         "Transform": {
-            "posX": 98.0417252,
-            "posY": 1.3172394,
-            "posZ": -43.14718,
-            "rotX": 0.0000207898229,
+            "posX": 98.04,
+            "posY": 1.32,
+            "posZ": -43.15,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.800268,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "The Palantir of Orthanc",
         "Description": "Card;Event;Character;Shadow;Init:3;#21;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

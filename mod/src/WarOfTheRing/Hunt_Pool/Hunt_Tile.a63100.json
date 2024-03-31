@@ -3,15 +3,15 @@
         "GUID": "a63100",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -39.8012047,
-            "posY": 5.89474344,
-            "posZ": -17.7587452,
+            "posX": -39.8,
+            "posY": 5.89,
+            "posZ": -17.76,
             "rotX": 0,
             "rotY": 0,
             "rotZ": 0,
-            "scaleX": 0.625,
-            "scaleY": 0.625,
-            "scaleZ": 0.625
+            "scaleX": 0.62,
+            "scaleY": 0.62,
+            "scaleZ": 0.62
         },
         "Nickname": "Hunt Tile",
         "Description": "",

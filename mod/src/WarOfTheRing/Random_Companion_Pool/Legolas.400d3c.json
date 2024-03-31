@@ -3,15 +3,15 @@
         "GUID": "400d3c",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 28.871769,
-            "posY": 2.07743216,
-            "posZ": 20.1224918,
-            "rotX": -0,
-            "rotY": -0.00002732076,
+            "posX": 28.87,
+            "posY": 2.08,
+            "posZ": 20.12,
+            "rotX": 0,
+            "rotY": 0,
             "rotZ": 180,
-            "scaleX": 0.5000001,
-            "scaleY": 0.5000001,
-            "scaleZ": 0.5000001
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "scaleZ": 0.5
         },
         "Nickname": "Legolas",
         "Description": "Counter;Companion;",

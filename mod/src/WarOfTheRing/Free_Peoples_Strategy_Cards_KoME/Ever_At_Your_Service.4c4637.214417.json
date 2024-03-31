@@ -3,15 +3,15 @@
         "GUID": "4c4637",
         "Name": "Card",
         "Transform": {
-            "posX": 2.34663725,
-            "posY": 1.40016329,
-            "posZ": -67.6876144,
-            "rotX": 0.000008065025,
+            "posX": 2.35,
+            "posY": 1.4,
+            "posZ": -67.69,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 180,
-            "scaleX": 2.80049133,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Ever At Your Service",
         "Description": "Card;Event;Strategy;FreePeoples;Init:4;#25;KoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

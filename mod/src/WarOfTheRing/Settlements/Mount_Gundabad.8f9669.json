@@ -3,12 +3,12 @@
         "GUID": "8f9669",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": -0.999077559,
-            "posY": 0.7700037,
-            "posZ": 23.0732422,
-            "rotX": -0.000171815933,
+            "posX": -1.0,
+            "posY": 0.77,
+            "posZ": 23.07,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0.0007640582,
+            "rotZ": 0,
             "scaleX": 0.55,
             "scaleY": 1,
             "scaleZ": 0.55
@@ -46,7 +46,7 @@
             "ImageScalar": 1,
             "WidthScale": 0,
             "CustomToken": {
-                "Thickness": 0.399999857,
+                "Thickness": 0.4,
                 "MergeDistancePixels": 5,
                 "StandUp": false,
                 "Stackable": false

@@ -3,15 +3,15 @@
         "GUID": "665e84",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 87.12915,
-            "posY": 3.15441,
-            "posZ": -64.69789,
-            "rotX": -0.00000113982651,
-            "rotY": 0.000117174823,
-            "rotZ": -0.00000469575571,
-            "scaleX": 0.495,
-            "scaleY": 0.495,
-            "scaleZ": 0.495
+            "posX": 87.13,
+            "posY": 3.15,
+            "posZ": -64.7,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.49,
+            "scaleY": 0.49,
+            "scaleZ": 0.49
         },
         "Nickname": "The Broods of Shelob",
         "Description": "Faction;2D;Spiders;Shadow;WoME;",
@@ -23,8 +23,8 @@
         },
         "ColorDiffuse": {
             "r": 1,
-            "g": 0.196077555,
-            "b": 0.196077555
+            "g": 0.2,
+            "b": 0.2
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

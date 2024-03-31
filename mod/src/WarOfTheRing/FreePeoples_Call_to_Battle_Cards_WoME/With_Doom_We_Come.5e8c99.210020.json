@@ -3,15 +3,15 @@
         "GUID": "5e8c99",
         "Name": "Card",
         "Transform": {
-            "posX": -40.8000069,
-            "posY": 1.09715807,
-            "posZ": 31.6999683,
-            "rotX": 0.174577862,
-            "rotY": 359.975342,
-            "rotZ": 180.067825,
-            "scaleX": 2.80049133,
+            "posX": -40.8,
+            "posY": 1.1,
+            "posZ": 31.7,
+            "rotX": 0.17,
+            "rotY": 359.98,
+            "rotZ": 180.07,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "With Doom We Come",
         "Description": "Card;CallToBattle;Init:2;#5;FreePeoples;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

@@ -4,14 +4,14 @@
         "Name": "Deck",
         "Transform": {
             "posX": -84.4,
-            "posY": 0.9829582,
+            "posY": 0.98,
             "posZ": -61,
-            "rotX": 0.000009734134,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 180,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Shadow Character Cards (KoME)",
         "Description": "Cards;Event;Shadow;KoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

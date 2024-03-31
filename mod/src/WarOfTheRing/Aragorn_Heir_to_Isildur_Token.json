@@ -4,14 +4,14 @@
         "Name": "Custom_Model",
         "Transform": {
             "posX": -7,
-            "posY": 0.996217132,
+            "posY": 1.0,
             "posZ": 27.5,
             "rotX": 0,
             "rotY": 0,
             "rotZ": 0,
-            "scaleX": 0.5000001,
-            "scaleY": 0.5000001,
-            "scaleZ": 0.5000001
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "scaleZ": 0.5
         },
         "Nickname": "Aragorn: Heir to Isildur",
         "Description": "Character;Token;FreePeoples;",

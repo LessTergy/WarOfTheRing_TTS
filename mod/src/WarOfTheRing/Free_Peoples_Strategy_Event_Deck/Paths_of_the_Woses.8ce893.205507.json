@@ -3,15 +3,15 @@
         "GUID": "8ce893",
         "Name": "Card",
         "Transform": {
-            "posX": -50.5917664,
-            "posY": 1.38284433,
-            "posZ": 47.6506729,
-            "rotX": 0.00002099052,
-            "rotY": 180.037872,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "posX": -50.59,
+            "posY": 1.38,
+            "posZ": 47.65,
+            "rotX": 0,
+            "rotY": 180.04,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Paths of the Woses",
         "Description": "Card;Event;Strategy;FreePeoples;Init:2;#11;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

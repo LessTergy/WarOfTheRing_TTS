@@ -3,15 +3,15 @@
         "GUID": "a36eed",
         "Name": "Card",
         "Transform": {
-            "posX": -87.3972,
-            "posY": 12.3190269,
-            "posZ": 66.9829254,
-            "rotX": 0.0000207719422,
+            "posX": -87.4,
+            "posY": 12.32,
+            "posZ": 66.98,
+            "rotX": 0,
             "rotY": 180,
-            "rotZ": -0,
-            "scaleX": 2.80049133,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "The Dark Door",
         "Description": "Card;Faction;DeadMen;FreePeoples;#3;WoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

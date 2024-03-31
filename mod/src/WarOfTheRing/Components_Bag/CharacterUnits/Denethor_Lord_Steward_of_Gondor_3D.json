@@ -3,15 +3,15 @@
         "GUID": "79b781",
         "Name": "Figurine_Custom",
         "Transform": {
-            "posX": 10.35075,
-            "posY": 1.07693172,
-            "posZ": -10.4173641,
+            "posX": 10.35,
+            "posY": 1.08,
+            "posZ": -10.42,
             "rotX": 0,
-            "rotY": 0.0004963534,
+            "rotY": 0,
             "rotZ": 0,
-            "scaleX": 0.7000003,
-            "scaleY": 0.7000003,
-            "scaleZ": 0.7000003
+            "scaleX": 0.7,
+            "scaleY": 0.7,
+            "scaleZ": 0.7
         },
         "Nickname": "Denethor: Lord Steward of Gondor",
         "Description": "Character;3D;Sovereign;Ruler;FreePeoples;KoME;",

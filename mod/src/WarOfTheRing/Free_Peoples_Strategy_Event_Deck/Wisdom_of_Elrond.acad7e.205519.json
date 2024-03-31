@@ -3,15 +3,15 @@
         "GUID": "acad7e",
         "Name": "Card",
         "Transform": {
-            "posX": -51.4565773,
-            "posY": 1.3172394,
-            "posZ": 47.1113625,
-            "rotX": 0.0000212960149,
-            "rotY": 179.989563,
-            "rotZ": 0.00000574759451,
-            "scaleX": 2.80049133,
+            "posX": -51.46,
+            "posY": 1.32,
+            "posZ": 47.11,
+            "rotX": 0,
+            "rotY": 179.99,
+            "rotZ": 0,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Wisdom of Elrond",
         "Description": "Card;Event;Strategy;FreePeoples;Init:4;#8;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

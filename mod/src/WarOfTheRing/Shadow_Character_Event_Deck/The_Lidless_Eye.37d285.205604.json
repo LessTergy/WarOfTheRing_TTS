@@ -3,15 +3,15 @@
         "GUID": "37d285",
         "Name": "Card",
         "Transform": {
-            "posX": 109.330574,
-            "posY": 1.31724274,
-            "posZ": -33.569725,
-            "rotX": 0.000020999687,
+            "posX": 109.33,
+            "posY": 1.32,
+            "posZ": -33.57,
+            "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "The Lidless Eye",
         "Description": "Card;Event;Character;Shadow;Init:1;#18;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

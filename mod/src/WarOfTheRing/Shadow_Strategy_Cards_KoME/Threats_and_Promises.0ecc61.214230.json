@@ -3,15 +3,15 @@
         "GUID": "0ecc61",
         "Name": "Card",
         "Transform": {
-            "posX": -8.587386,
-            "posY": 1.126251,
-            "posZ": -33.5525246,
-            "rotX": 0.006376941,
-            "rotY": 180.002869,
-            "rotZ": 180.5363,
-            "scaleX": 2.800268,
+            "posX": -8.59,
+            "posY": 1.13,
+            "posZ": -33.55,
+            "rotX": 0.01,
+            "rotY": 180.0,
+            "rotZ": 180.54,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Threats and Promises",
         "Description": "Card;Event;Strategy;Shadow;Init:3;#5;KoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

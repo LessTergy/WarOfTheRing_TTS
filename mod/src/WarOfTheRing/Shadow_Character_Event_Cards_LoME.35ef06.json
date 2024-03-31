@@ -4,14 +4,14 @@
         "Name": "Deck",
         "Transform": {
             "posX": -84.5,
-            "posY": 0.992591143,
+            "posY": 0.99,
             "posZ": 23,
-            "rotX": 0.00000575110835,
-            "rotY": 179.999176,
+            "rotX": 0,
+            "rotY": 180.0,
             "rotZ": 180,
-            "scaleX": 2.800268,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.800268
+            "scaleZ": 2.8
         },
         "Nickname": "Shadow Character Event Cards (LoME)",
         "Description": "Cards;Event;Character;Shadow;LoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

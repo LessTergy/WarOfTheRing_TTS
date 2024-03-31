@@ -3,11 +3,11 @@
         "GUID": "039537",
         "Name": "3DText",
         "Transform": {
-            "posX": -25.0061131,
-            "posY": 0.9625922,
-            "posZ": -65.02687,
+            "posX": -25.01,
+            "posY": 0.96,
+            "posZ": -65.03,
             "rotX": 90,
-            "rotY": -0.0000917637954,
+            "rotY": 0,
             "rotZ": 0,
             "scaleX": 1,
             "scaleY": 1,
@@ -43,9 +43,9 @@
         "Text": {
             "Text": "Shadow (Saruman)",
             "colorstate": {
-                "r": 0.905,
-                "g": 0.898,
-                "b": 0.172
+                "r": 0.91,
+                "g": 0.9,
+                "b": 0.17
             },
             "fontSize": 64
         },

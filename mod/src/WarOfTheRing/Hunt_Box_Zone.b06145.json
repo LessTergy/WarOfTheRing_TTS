@@ -7,7 +7,7 @@
             "posY": 2,
             "posZ": -20.7,
             "rotX": 0,
-            "rotY": 0.6664044,
+            "rotY": 0.67,
             "rotZ": 0,
             "scaleX": 9,
             "scaleY": 1.5,
@@ -25,7 +25,7 @@
             "r": 1,
             "g": 1,
             "b": 1,
-            "a": 0.509803951
+            "a": 0.51
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,

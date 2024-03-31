@@ -3,15 +3,15 @@
         "GUID": "890b46",
         "Name": "Deck",
         "Transform": {
-            "posX": -69.5490341,
-            "posY": 1.00221419,
-            "posZ": -60.9751854,
-            "rotX": 0.000006763562,
-            "rotY": 180.001938,
+            "posX": -69.55,
+            "posY": 1.0,
+            "posZ": -60.98,
+            "rotX": 0,
+            "rotY": 180.0,
             "rotZ": 180,
-            "scaleX": 2.80049133,
+            "scaleX": 2.8,
             "scaleY": 1,
-            "scaleZ": 2.80049133
+            "scaleZ": 2.8
         },
         "Nickname": "Free Peoples Strategy Cards (KoME)",
         "Description": "Cards;Event;FreePeoples;KoME;",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
+            "r": 1,
+            "g": 1,
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
