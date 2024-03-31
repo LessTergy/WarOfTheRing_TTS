@@ -3,15 +3,15 @@
         "GUID": "a25766",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 17.37962,
-            "posY": 1.010085,
-            "posZ": -65.62725,
-            "rotX": 0.00000610329,
-            "rotY": 269.999481,
-            "rotZ": 0.00000528563669,
-            "scaleX": 0.62499994,
-            "scaleY": 0.62499994,
-            "scaleZ": 0.62499994
+            "posX": 17.38,
+            "posY": 1,
+            "posZ": -65.63,
+            "rotX": 0,
+            "rotY": 270,
+            "rotZ": 0,
+            "scaleX": 0.625,
+            "scaleY": 0.625,
+            "scaleZ": 0.625
         },
         "Nickname": "Shadow Leading Player Counter",
         "Description": "",
@@ -24,7 +24,7 @@
         "ColorDiffuse": {
             "r": 1,
             "g": 1,
-            "b": 0.9960827
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,8 +41,8 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
-            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381105742/E83E3ACB2287D5A43B09576885A900F8BAA697FD/",
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819731393/5A889560451FDA9F913334165D0F9D396F03DBB3/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819426004/EBE8455A48A113E944186CFE9ECABFE09BF41A2C/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,

@@ -3,15 +3,15 @@
         "GUID": "08d651",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 17.7409744,
-            "posY": 0.9885036,
-            "posZ": 27.32136,
-            "rotX": -9.41941138e-8,
-            "rotY": 269.9771,
-            "rotZ": -1.65055141e-7,
-            "scaleX": 0.5000001,
-            "scaleY": 0.5000001,
-            "scaleZ": 0.5000001
+            "posX": 17.74,
+            "posY": 1,
+            "posZ": 27.32,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "scaleZ": 0.5
         },
         "Nickname": "Elven Ring (Nenya/Galadriel)",
         "Description": "Ring;Elven;Nenya;Galadriel;LoME;",
@@ -24,7 +24,7 @@
         "ColorDiffuse": {
             "r": 1,
             "g": 1,
-            "b": 0.9960827
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,8 +41,8 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380894460/D9F8BF75353B2DEC6F44C2EF81F0287DCC7E3C5D/",
-            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381091284/E55A21B4C61BC62DF46F61BE08087A77ED6C9584/",
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819580647/AFE999F5CF64BDCD83AAD2B270B1DF64D83ED50A/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819717154/F565392EFC8BDD3AA50CA49FDB4DA6F392D46832/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,

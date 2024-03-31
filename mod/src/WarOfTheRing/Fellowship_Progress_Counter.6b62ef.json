@@ -6,12 +6,12 @@
             "posX": 5.3,
             "posY": 1.00499964,
             "posZ": 23.19507,
-            "rotX": 2.38785862e-8,
-            "rotY": 270.015564,
+            "rotX": 0,
+            "rotY": 270,
             "rotZ": 180,
-            "scaleX": 0.450000048,
-            "scaleY": 0.450000048,
-            "scaleZ": 0.450000048
+            "scaleX": 0.45,
+            "scaleY": 0.45,
+            "scaleZ": 0.45
         },
         "Nickname": "Fellowship Progress Counter",
         "Description": "",
@@ -24,7 +24,7 @@
         "ColorDiffuse": {
             "r": 1,
             "g": 1,
-            "b": 0.9960827
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,8 +41,8 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
-            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381409923/8C6A8BAD7DEF1F5048086EDF9D4F26BD4D94B081/",
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819731393/5A889560451FDA9F913334165D0F9D396F03DBB3/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819347252/4F8B40FB14F4950B4FB8B88260C5B34B02B20F3C/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,

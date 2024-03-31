@@ -3,15 +3,15 @@
         "GUID": "359ca2",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 12.9105577,
-            "posY": 0.988503635,
-            "posZ": 27.39026,
-            "rotX": -1.03938724e-7,
-            "rotY": 270.0036,
-            "rotZ": -7.93850248e-8,
-            "scaleX": 0.5000001,
-            "scaleY": 0.5000001,
-            "scaleZ": 0.5000001
+            "posX": 12.91,
+            "posY": 1,
+            "posZ": 27.39,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "scaleZ": 0.5
         },
         "Nickname": "Elven Ring (Vilya/Elrond)",
         "Description": "Ring;Elven;Vilya;Elrond;LoME;",
@@ -24,7 +24,7 @@
         "ColorDiffuse": {
             "r": 1,
             "g": 1,
-            "b": 0.9960827
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,8 +41,8 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380894460/D9F8BF75353B2DEC6F44C2EF81F0287DCC7E3C5D/",
-            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381088258/BE753A73077D23492F4A5EFCEA1F70A158515EBF/",
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819580647/AFE999F5CF64BDCD83AAD2B270B1DF64D83ED50A/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819717002/F5E350ABAE044442D071049D17BF0493CDF31D06/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,

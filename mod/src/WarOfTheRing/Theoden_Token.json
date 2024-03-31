@@ -4,14 +4,14 @@
         "Name": "Custom_Model",
         "Transform": {
             "posX": -57,
-            "posY": 0.9748779,
-            "posZ": 39.34749,
-            "rotX": -0.00000241799671,
-            "rotY": 269.973267,
-            "rotZ": 0.0000030860856,
-            "scaleX": 0.5000001,
-            "scaleY": 0.5000001,
-            "scaleZ": 0.5000001
+            "posY": 1,
+            "posZ": 39.35,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "scaleZ": 0.5
         },
         "Nickname": "Theoden",
         "Description": "Token;Ruler;KoME;",
@@ -24,7 +24,7 @@
         "ColorDiffuse": {
             "r": 1,
             "g": 1,
-            "b": 0.9960827
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380894460/D9F8BF75353B2DEC6F44C2EF81F0287DCC7E3C5D/",
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819580647/AFE999F5CF64BDCD83AAD2B270B1DF64D83ED50A/",
             "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353293634/F1071412DC7FB79A4920B38195D0A814FA2E2134/",
             "NormalURL": "",
             "ColliderURL": "",

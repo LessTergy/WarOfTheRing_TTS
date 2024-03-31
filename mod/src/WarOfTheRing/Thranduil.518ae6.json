@@ -4,14 +4,14 @@
         "Name": "Custom_Model",
         "Transform": {
             "posX": -62,
-            "posY": 0.9748778,
-            "posZ": 39.4020042,
-            "rotX": -0.000002089692,
-            "rotY": 269.999878,
-            "rotZ": 9.33174135e-7,
-            "scaleX": 0.5000001,
-            "scaleY": 0.5000001,
-            "scaleZ": 0.5000001
+            "posY": 1,
+            "posZ": 39.4,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "scaleZ": 0.5
         },
         "Nickname": "Thranduil",
         "Description": "Token;Ruler;KoME;",
@@ -24,7 +24,7 @@
         "ColorDiffuse": {
             "r": 1,
             "g": 1,
-            "b": 0.9960827
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380894460/D9F8BF75353B2DEC6F44C2EF81F0287DCC7E3C5D/",
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819580647/AFE999F5CF64BDCD83AAD2B270B1DF64D83ED50A/",
             "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353294245/7994E2C99497B830195F43B3B17DF7984E54993F/",
             "NormalURL": "",
             "ColliderURL": "",

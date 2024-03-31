@@ -9,9 +9,9 @@
             "rotX": 3.28604159e-7,
             "rotY": 180,
             "rotZ": -2.724857e-7,
-            "scaleX": 0.62499994,
-            "scaleY": 0.62499994,
-            "scaleZ": 0.62499994
+            "scaleX": 0.625,
+            "scaleY": 0.625,
+            "scaleZ": 0.625
         },
         "Nickname": "Hunt Tile",
         "Description": "",
@@ -24,7 +24,7 @@
         "ColorDiffuse": {
             "r": 1,
             "g": 1,
-            "b": 0.9960827
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819731393/5A889560451FDA9F913334165D0F9D396F03DBB3/",
             "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1752443050820085365/D9708E11EDE68CBC062EEE6A1E0DA1A6BC8B4F28/",
             "NormalURL": "",
             "ColliderURL": "",

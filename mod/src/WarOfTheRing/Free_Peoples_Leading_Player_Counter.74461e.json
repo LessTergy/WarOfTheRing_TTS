@@ -6,12 +6,12 @@
             "posX": -18.1683025,
             "posY": 1.010093,
             "posZ": 65.5718155,
-            "rotX": 0.00000713400141,
-            "rotY": 90.00074,
-            "rotZ": -0.0000105786639,
-            "scaleX": 0.62499994,
-            "scaleY": 0.62499994,
-            "scaleZ": 0.62499994
+            "rotX": 0,
+            "rotY": 90,
+            "rotZ": 0,
+            "scaleX": 0.625,
+            "scaleY": 0.625,
+            "scaleZ": 0.625
         },
         "Nickname": "Free Peoples Leading Player Counter",
         "Description": "",
@@ -24,7 +24,7 @@
         "ColorDiffuse": {
             "r": 1,
             "g": 1,
-            "b": 0.9960827
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,8 +41,8 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
-            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381104452/5D585AE5B9FAE31654086475DD1B9202C83A2C79/",
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819731393/5A889560451FDA9F913334165D0F9D396F03DBB3/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2469734902819415930/4875438F7E8D10B8E34836E485A00DC766CE237B/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
