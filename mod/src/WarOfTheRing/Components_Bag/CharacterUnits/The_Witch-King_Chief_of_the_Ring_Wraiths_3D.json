@@ -3,15 +3,15 @@
         "GUID": "9f41c3",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 31.9439869,
-            "posY": 1.017835,
-            "posZ": -27.288084,
-            "rotX": 0.00001189947,
-            "rotY": 89.9966,
-            "rotZ": -0.0033337574,
-            "scaleX": 0.299999982,
+            "posX": 0,
+            "posY": 0,
+            "posZ": 0,
+            "rotX": 0,
+            "rotY": 90,
+            "rotZ": 0,
+            "scaleX": 0.3,
             "scaleY": 0.3,
-            "scaleZ": 0.299999982
+            "scaleZ": 0.3
         },
         "Nickname": "The Witch-King: Chief of the Ring Wraiths",
         "Description": "Minion;3D;Shadow;LoME;",

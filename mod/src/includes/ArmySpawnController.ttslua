@@ -1527,8 +1527,8 @@ function SpawnArmy(ArmyConfig, SettingType)
         NewObj.setPosition({ Position.x, Position.y + 1, Position.z })
     end
 
-    Template.setLock(false)
     ComponentBag.putObject(Template)
+    coroutine.yield(0)
 end
 
 function GetUnitFromComponentBag(ComponentBag, SearchConfig, SettingType)
@@ -1567,7 +1567,7 @@ function GetUnitFromComponentBag(ComponentBag, SearchConfig, SettingType)
     local Template = ComponentBag.takeObject({
         guid = result.guid,
         smooth = false,
-        position = { 80, -2, -60 },
+        position = { 80, 4, -60 },
         rotation = { 0, 180, 0 }
     })
     Template.setLock(true)

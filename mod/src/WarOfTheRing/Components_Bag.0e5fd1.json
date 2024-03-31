@@ -3,12 +3,12 @@
         "GUID": "0e5fd1",
         "Name": "Bag",
         "Transform": {
-            "posX": 86.98721,
-            "posY": 0.8346278,
-            "posZ": -65.99969,
-            "rotX": 0.000885414134,
-            "rotY": 0.0613940842,
-            "rotZ": 355.566284,
+            "posX": 88,
+            "posY": 0.85,
+            "posZ": -67,
+            "rotX": 0,
+            "rotY": 0,
+            "rotZ": 0,
             "scaleX": 1,
             "scaleY": 1,
             "scaleZ": 1

@@ -278,8 +278,8 @@ function SpawnCharacterInternal(ComponentBag, CharacterConfig, SettingType)
     NewObj.setLock(false)
     NewObj.setPosition({ position.x, position.y + 1, position.z })
 
-    Template.setLock(false)
     ComponentBag.putObject(Template)
+    coroutine.yield(0)
 end
 
 function GetCharacterFromComponentBag(ComponentBag, CharacterConfig, SettingType)
@@ -314,7 +314,7 @@ function GetCharacterFromComponentBag(ComponentBag, CharacterConfig, SettingType
     local Template = ComponentBag.takeObject({
         guid = result.guid,
         smooth = false,
-        position = { 80, -2, -60 },
+        position = { 80, 4, -60 },
         rotation = { 0, 180, 0 }
     })
     Template.setLock(true)
