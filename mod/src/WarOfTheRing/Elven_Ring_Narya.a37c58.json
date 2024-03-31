@@ -3,15 +3,15 @@
         "GUID": "a37c58",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -17.1914215,
-            "posY": 1.00500011,
-            "posZ": 23.5105648,
-            "rotX": -3.766739e-7,
-            "rotY": 90.0000839,
+            "posX": -17.25,
+            "posY": 1,
+            "posZ": 23.5,
+            "rotX": 0,
+            "rotY": -90,
             "rotZ": 180,
-            "scaleX": 0.450000048,
-            "scaleY": 0.450000048,
-            "scaleZ": 0.450000048
+            "scaleX": 0.45,
+            "scaleY": 0.45,
+            "scaleZ": 0.45
         },
         "Nickname": "Elven Ring (Narya)",
         "Description": "Ring;Elven;Narya;",
@@ -24,7 +24,7 @@
         "ColorDiffuse": {
             "r": 1,
             "g": 1,
-            "b": 0.9960827
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -42,7 +42,7 @@
         "Hands": false,
         "CustomMesh": {
             "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
-            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381484191/3BA8B4365430546A3284DCCA01E690EB6665404A/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2469734902818338702/4E8E51DE347A25DC1B5C765F8221B6E5FDDF8E66/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,

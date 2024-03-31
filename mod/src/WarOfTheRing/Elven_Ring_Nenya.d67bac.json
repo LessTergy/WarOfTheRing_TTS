@@ -3,15 +3,15 @@
         "GUID": "d67bac",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -18.8252525,
-            "posY": 1.00500011,
-            "posZ": 23.50758,
-            "rotX": -7.874524e-7,
-            "rotY": 90.00006,
+            "posX": -18.83,
+            "posY": 1,
+            "posZ": 23.5,
+            "rotX": 0,
+            "rotY": -90,
             "rotZ": 180,
-            "scaleX": 0.450000048,
-            "scaleY": 0.450000048,
-            "scaleZ": 0.450000048
+            "scaleX": 0.45,
+            "scaleY": 0.45,
+            "scaleZ": 0.45
         },
         "Nickname": "Elven Ring (Nenya)",
         "Description": "Ring;Elven;Nenya;",
@@ -24,7 +24,7 @@
         "ColorDiffuse": {
             "r": 1,
             "g": 1,
-            "b": 0.9960827
+            "b": 1
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -42,7 +42,7 @@
         "Hands": false,
         "CustomMesh": {
             "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1666862284380840235/5B6FFFDCDFE2D441DA5E3AB2D831A2CE5ECB6AC5/",
-            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1666862284381483535/7781D3B7438BB6F137E8DE48037B86460238DD24/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2469734902818338516/4B67102AA33666B9C28DD1B27679209C95D77213/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
