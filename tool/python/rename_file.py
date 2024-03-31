@@ -28,8 +28,8 @@ def rename_in_files(file_paths, origin_name, new_name):
             print("Replaced: " + file_path)
 
 
-origin_name = "Theoden.19e479.json"
-new_name = "Theoden_Token.json"
+origin_name = "Southrons_&_Easterlings_Political_Counter.52aff9.json"
+new_name = "Southrons_Easterlings_Political_Counter.52aff9.json"
 
 directory_path = "./mod/src/"
 file_extension = ".json"
