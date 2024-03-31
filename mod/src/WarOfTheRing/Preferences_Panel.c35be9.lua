@@ -144,7 +144,7 @@ function UpdatePanel()
 
     if Settings.NazgulType == "2D" then
         Nazgul2DColor = { 1, 1, 0 }
-    elseif Settings.NazgulType == "Round" then
+    elseif Settings.NazgulType == "Marble" then
         NazgulRoundColor = { 1, 1, 0 }
     elseif Settings.NazgulType == "Square" then
         NazgulSquareColor = { 1, 1, 0 }
@@ -154,7 +154,7 @@ function UpdatePanel()
 
     if Settings.ArmiesType == "2D" then
         Armies2DColor = { 1, 1, 0 }
-    elseif Settings.ArmiesType == "Round" then
+    elseif Settings.ArmiesType == "Marble" then
         ArmiesRoundColor = { 1, 1, 0 }
     else
         Armies3DColor = { 1, 1, 0 }
@@ -162,7 +162,7 @@ function UpdatePanel()
 
     if Settings.FactionsType == "2D" then
         Factions2DColor = { 1, 1, 0 }
-    elseif Settings.FactionsType == "Round" then
+    elseif Settings.FactionsType == "Marble" then
         FactionsRoundColor = { 1, 1, 0 }
     else
         Factions3DColor = { 1, 1, 0 }
@@ -800,7 +800,7 @@ function Nazgul2D()
 end
 
 function NazgulRound()
-    Settings.NazgulType = "Round"
+    Settings.NazgulType = "Marble"
     ApplySettingsFlag = true
     UpdatePanel()
 end
@@ -824,7 +824,7 @@ function Armies2D()
 end
 
 function ArmiesRound()
-    Settings.ArmiesType = "Round"
+    Settings.ArmiesType = "Marble"
     ApplySettingsFlag = true
     UpdatePanel()
 end
@@ -842,7 +842,7 @@ function Factions2D()
 end
 
 function FactionsRound()
-    Settings.FactionsType = "Round"
+    Settings.FactionsType = "Marble"
     ApplySettingsFlag = true
     UpdatePanel()
 end
