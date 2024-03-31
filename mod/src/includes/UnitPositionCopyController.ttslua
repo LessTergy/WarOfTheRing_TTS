@@ -1,57 +1,80 @@
+-- Armies
 local UnitTypes = { "Regular", "Elite", "Leader" }
 
 local ElvesConfig = {
     UnitName = "Elf",
-    NationName = "Elves",
-    ObjectName = "Elves"
+    NationName = "Elves"
 }
 
 local DwarvesConfig = {
     UnitName = "Dwarf",
-    NationName = "Dwarves",
-    ObjectName = "Dwarves"
+    NationName = "Dwarves"
 }
 
 local NorthConfig = {
     UnitName = "North",
-    NationName = "North",
-    ObjectName = "North"
+    NationName = "North"
 }
 
 local RohanConfig = {
     UnitName = "Rohan",
-    NationName = "Rohan",
-    ObjectName = "Rohan"
+    NationName = "Rohan"
 }
 
 local GondorConfig = {
     UnitName = "Gondor",
-    NationName = "Gondor",
-    ObjectName = "Gondor"
+    NationName = "Gondor"
 }
 
 local NazgulConfig = {
     UnitName = "Nazgûl",
-    NationName = "Sauron",
-    ObjectName = "Nazgul"
+    NationName = "Sauron"
 }
 
 local SauronConfig = {
     UnitName = "Sauron",
-    NationName = "Sauron",
-    ObjectName = "Sauron"
+    NationName = "Sauron"
 }
 
 local HaradrimConfig = {
     UnitName = "Southron/Easterling",
-    NationName = "Haradrim",
-    ObjectName = "Haradrim"
+    NationName = "Haradrim"
 }
 
 local IsengardConfig = {
     UnitName = "Isengard",
-    NationName = "Isengard",
-    ObjectName = "Isengard"
+    NationName = "Isengard"
+}
+
+-- Factions
+local EaglesConfig = {
+    GroupName = "Eagles",
+    ObjectName = "The Eagles of the Misty Mountains"
+}
+
+local EntsConfig = {
+    GroupName = "Ents",
+    ObjectName = "The Ents of Fangorn"
+}
+
+local HillmenConfig = {
+    GroupName = "Hillmen",
+    ObjectName = "The Hillmen of Dunland"
+}
+
+local SpidersConfig = {
+    GroupName = "Shelob",
+    ObjectName = "The Broods of Shelob"
+}
+
+local CorsairsConfig = {
+    GroupName = "Corsairs",
+    ObjectName = "The Corsairs of Umbar"
+}
+
+local DeadMenConfig = {
+    GroupName = "DeadMen",
+    ObjectName = "The Dead Men of Dunharrow"
 }
 
 -- Characters
@@ -85,16 +108,12 @@ local KingsMinionConfig = {
     Patterns = { "Minion", "Shadow", "KoME" }
 }
 
-local FactionConfig = {
-    GroupName = "Factions",
-    Patterns = { "Faction", "WoME" }
-}
-
 local clipboardId = "cf0214"
 
 function onLoad()
     addHotkey("Get Army Units Positions", GetArmyUnitsPositions, false)
     addHotkey("Get Characters Units Positions", GetCharacterUnitsPositions, false)
+    addHotkey("Get Faction Units Positions", GetFactionPositions, false)
 end
 
 function GetCharacterUnitsPositions(playerColor, object, pointerPosition, isKeyUp)
@@ -105,8 +124,6 @@ function GetCharacterUnitsPositions(playerColor, object, pointerPosition, isKeyU
 
     CreateCharacterUnitsInfo(allObjects, unitConfigList, CompanionConfig, MinionBaseConfig)
     CreateCharacterUnitsInfo(allObjects, unitConfigList, LordsCharacterConfig, LordsMinionConfig)
-
-    -- GetCharacterUnitsInfo(allObjects, unitConfigList, FactionConfig)
 
     CreateCharacterUnitsInfo(allObjects, unitConfigList, KingsCharacterConfig, KingsMinionConfig)
 
@@ -172,6 +189,43 @@ function CreateCharacterUnitConfig(Obj)
     unitConfig.Name = Obj.getName()
     unitConfig.Position = GetShortPosition(Obj)
     return unitConfig
+end
+
+function GetFactionPositions(playerColor, object, pointerPosition, isKeyUp)
+    print("Get Factions positions")
+
+    local allObjects = getAllObjects()
+    local unitList = {}
+
+    GetFactionUnitsInfo(allObjects, unitList, EaglesConfig)
+    GetFactionUnitsInfo(allObjects, unitList, EntsConfig)
+    GetFactionUnitsInfo(allObjects, unitList, HillmenConfig)
+
+    GetFactionUnitsInfo(allObjects, unitList, SpidersConfig)
+    GetFactionUnitsInfo(allObjects, unitList, CorsairsConfig)
+    GetFactionUnitsInfo(allObjects, unitList, DeadMenConfig)
+
+    local str = ""
+    for _, config in pairs(unitList) do
+        local configCopy = {}
+        configCopy.Name = config.Name
+        configCopy.Positions = config.Positions
+
+        local objName = "local " .. config.GroupName .. "Config = "
+        str = str .. objName .. PrintObject(configCopy) .. "\n\n"
+    end
+
+    CopyToClipboard(str)
+end
+
+function GetFactionUnitsInfo(allObjects, unitList, unitConfig)
+    local config = {}
+    config.UnitName = unitConfig.ObjectName
+    config.NationName = "Faction"
+    local type = "Faction"
+
+    local resultConfig = GetArmyUnitsInfoInternal(allObjects, unitList, config, type, false)
+    resultConfig.GroupName = unitConfig.GroupName
 end
 
 function GetArmyUnitsPositions(playerColor, object, pointerPosition, isKeyUp)
@@ -249,12 +303,8 @@ function GetArmyUnitsInfoInternal(allObjects, unitList, unitConfig, type, isType
 
         ::continue::
     end
-end
 
-function GetNationSide(value)
-    if value then
-        return "FreePeoples"
-    end
+    return config
 end
 
 function PrintObject(obj, indent)
