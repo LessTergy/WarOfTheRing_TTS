@@ -5,8 +5,8 @@ from find_text_files_by_pattern import find_files_by_text
 from remove_file_names_from_json import remove_file_names_from_json
 from replace_files import replace_files
 
-destination_directory = "./mod/src/WarOfTheRing/CharacterCards"
-pattern = '"Description": "Card;Minion'
+destination_directory = "./mod/src/WarOfTheRing/PoliticalTokens"
+pattern = '"Description": "PoliticalToken'
 
 source_directory = "./mod/src/WarOfTheRing"
 files_extension = ".json"

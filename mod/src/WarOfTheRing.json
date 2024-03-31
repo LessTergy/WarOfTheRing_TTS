@@ -2653,14 +2653,6 @@
         "The_Eagles_of_the_Misty_Mountains.a02da5.json",
         "Fellowship_Progress_Counter.6b62ef.json",
         "Corruption_Marker.abe1b3.json",
-        "Sauron_Political_Counter.75a065.json",
-        "Isengard_Political_Counter.7f39c1.json",
-        "Southrons_Easterlings_Political_Counter.52aff9.json",
-        "Gondor_Political_Counter.8ab5c1.json",
-        "Rohan_Political_Counter.f5ca1b.json",
-        "Elves_Political_Counter.fc2440.json",
-        "The_North_Political_Counter.07e059.json",
-        "Dwarves_Political_Counter.a55f2c.json",
         "Shadow_Action_Move_Nazgul_and_Minions.d8b25b.json",
         "Shadow_Action_Advance_Nation_on_Political_Track.55ee6d.json",
         "Elven_Ring_Vilya.1cc52c.json",
@@ -2881,6 +2873,14 @@
         "./CharacterCards/Treebeard_Tree-herd.d7264c.210303.json",
         "./CharacterCards/Ugluk_Chieftain_of_the_Uruk-Hai.f9969f.213411.json",
         "./CharacterCards/We_Shall_Get_It_Card.json",
-        "./ScriptProvider/UnitScriptProvider.json"
+        "./ScriptProvider/UnitScriptProvider.json",
+        "./PoliticalTokens/Dwarves_Political_Counter.a55f2c.json",
+        "./PoliticalTokens/Elves_Political_Counter.fc2440.json",
+        "./PoliticalTokens/Gondor_Political_Counter.8ab5c1.json",
+        "./PoliticalTokens/Isengard_Political_Counter.7f39c1.json",
+        "./PoliticalTokens/Rohan_Political_Counter.f5ca1b.json",
+        "./PoliticalTokens/Sauron_Political_Counter.75a065.json",
+        "./PoliticalTokens/Southrons_Easterlings_Political_Counter.52aff9.json",
+        "./PoliticalTokens/The_North_Political_Counter.07e059.json"
     ]
 }
