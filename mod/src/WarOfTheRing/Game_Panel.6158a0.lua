@@ -4839,8 +4839,7 @@ function SetupWarriorsExpansion()
 
     ShowInformationText("Setting up\nWarriors of Middle-Earth\nExpansion Content...")
 
-    -- SpawnFactions()
-    -- Global.call("UpdateIDs")
+    SpawnFactions()
     local IDs = Global.call("GetIDs")
 
     Global.call(
@@ -6561,7 +6560,7 @@ function FactionActive(Params)
     local IDs = Global.call("GetIDs")
 
     --make sure WoME expansion is in play...
-    if WarriorsOfMiddleEarth == false then
+    if not WarriorsOfMiddleEarth then
         return false
     end
 

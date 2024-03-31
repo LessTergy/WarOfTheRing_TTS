@@ -1277,48 +1277,48 @@ local EntsConfig = {
     }
 }
 
-local HillmenConfig = {
-    Name = "The Hillmen of Dunland",
+local DeadMenConfig = {
+    Name = "The Dead Men of Dunharrow",
     Positions = {
         {
-            x = 35.28,
+            x = -9.37,
             y = 1.05,
-            z = -39.4,
+            z = 39.51,
         },
         {
-            x = 37.46,
+            x = -10.46,
             y = 1.05,
-            z = -39.4,
+            z = 39.51,
         },
         {
-            x = 36.37,
+            x = -11.55,
             y = 1.05,
-            z = -39.4,
+            z = 38.42,
         },
         {
-            x = 34.19,
+            x = -8.28,
             y = 1.05,
-            z = -39.4,
+            z = 38.42,
         },
         {
-            x = 34.19,
+            x = -10.46,
             y = 1.05,
-            z = -38.31,
+            z = 38.42,
         },
         {
-            x = 35.28,
+            x = -8.28,
             y = 1.05,
-            z = -38.31,
+            z = 39.51,
         },
         {
-            x = 36.37,
+            x = -11.55,
             y = 1.05,
-            z = -38.31,
+            z = 39.51,
         },
         {
-            x = 37.46,
+            x = -9.37,
             y = 1.05,
-            z = -38.31,
+            z = 38.42,
         },
     }
 }
@@ -1415,48 +1415,48 @@ local CorsairsConfig = {
     }
 }
 
-local DeadMenConfig = {
-    Name = "The Dead Men of Dunharrow",
+local HillmenConfig = {
+    Name = "The Hillmen of Dunland",
     Positions = {
         {
-            x = -9.37,
+            x = 35.28,
             y = 1.05,
-            z = 39.51,
+            z = -39.4,
         },
         {
-            x = -10.46,
+            x = 37.46,
             y = 1.05,
-            z = 39.51,
+            z = -39.4,
         },
         {
-            x = -11.55,
+            x = 36.37,
             y = 1.05,
-            z = 38.42,
+            z = -39.4,
         },
         {
-            x = -8.28,
+            x = 34.19,
             y = 1.05,
-            z = 38.42,
+            z = -39.4,
         },
         {
-            x = -10.46,
+            x = 34.19,
             y = 1.05,
-            z = 38.42,
+            z = -38.31,
         },
         {
-            x = -8.28,
+            x = 35.28,
             y = 1.05,
-            z = 39.51,
+            z = -38.31,
         },
         {
-            x = -11.55,
+            x = 36.37,
             y = 1.05,
-            z = 39.51,
+            z = -38.31,
         },
         {
-            x = -9.37,
+            x = 37.46,
             y = 1.05,
-            z = 38.42,
+            z = -38.31,
         },
     }
 }
@@ -1495,6 +1495,20 @@ function SpawnArmies()
     SpawnArmy(HaradrimEliteConfig, settings.ArmiesType)
 
     SpawnArmy(NazgulConfig, settings.NazgulType)
+end
+
+function SpawnFactions()
+    local preferencesPanel = getObjectFromGUID("c35be9")
+    local settings = preferencesPanel.getTable("Settings")
+    local settingType = settings.FactionsType
+
+    SpawnArmy(EaglesConfig, settingType)
+    SpawnArmy(EntsConfig, settingType)
+    SpawnArmy(DeadMenConfig, settingType)
+
+    SpawnArmy(ShelobConfig, settingType)
+    SpawnArmy(CorsairsConfig, settingType)
+    SpawnArmy(HillmenConfig, settingType)
 end
 
 function SpawnArmy(ArmyConfig, SettingType)
@@ -1562,6 +1576,10 @@ function GetUnitFromComponentBag(ComponentBag, SearchConfig, SettingType)
 end
 
 function IsRightDescription(description, Patterns)
+    if Patterns == nil then
+        return true
+    end
+
     for _, pattern in pairs(Patterns) do
         if string.find(description, pattern) == nil then
             return false
