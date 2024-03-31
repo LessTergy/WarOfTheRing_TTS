@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Nenya_Action_Die.934aa8.lua",
+        "LuaScript": "#include ../../includes/DiceScript.ttslua",
         "LuaScriptState": "",
         "XmlUI": "",
         "RotationValues": [

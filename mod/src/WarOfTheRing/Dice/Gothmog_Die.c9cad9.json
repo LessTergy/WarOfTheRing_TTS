@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Gothmog_Die.c9cad9.lua",
+        "LuaScript": "#include ../../includes/DiceScript.ttslua",
         "LuaScriptState": "",
         "XmlUI": "",
         "RotationValues": [

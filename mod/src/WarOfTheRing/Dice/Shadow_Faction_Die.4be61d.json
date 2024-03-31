@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Shadow_Faction_Die.4be61d.lua",
+        "LuaScript": "#include ../../includes/DiceScript.ttslua",
         "LuaScriptState": "",
         "XmlUI": "",
         "RotationValues": [

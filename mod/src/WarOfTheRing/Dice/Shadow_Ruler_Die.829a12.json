@@ -50,7 +50,7 @@
             "TypeIndex": 2,
             "CastShadows": true
         },
-        "LuaScript": "#include ./Shadow_Ruler_Die.829a12.lua",
+        "LuaScript": "#include ../../includes/DiceScript.ttslua",
         "LuaScriptState": "",
         "XmlUI": "",
         "RotationValues": [

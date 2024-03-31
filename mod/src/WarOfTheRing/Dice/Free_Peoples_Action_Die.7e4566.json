@@ -50,7 +50,7 @@
             "TypeIndex": 2,
             "CastShadows": true
         },
-        "LuaScript": "#include ./Free_Peoples_Action_Die.7e4566.lua",
+        "LuaScript": "#include ../../includes/DiceScript.ttslua",
         "LuaScriptState": "",
         "XmlUI": "",
         "RotationValues": [

@@ -50,7 +50,7 @@
             "TypeIndex": 2,
             "CastShadows": true
         },
-        "LuaScript": "#include ./Shadow_Action_Dice.f2f9ed.lua",
+        "LuaScript": "#include ../../includes/DiceScript.ttslua",
         "LuaScriptState": "",
         "XmlUI": "",
         "RotationValues": [
