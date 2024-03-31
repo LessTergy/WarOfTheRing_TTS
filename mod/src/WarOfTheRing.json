@@ -2765,7 +2765,6 @@
         "Ruler_Corruption_Board.3caf09.json",
         "Free_Peoples_Ruler_Die.e506d1.json",
         "Shadow_Ruler_Die.829a12.json",
-        "Clipboard.c0347d.json",
         "Hunt_Tile.8ff093.json",
         "Hunt_Tile.8a80af.json",
         "Hunt_Tile.be4e0f.json",
@@ -2875,6 +2874,7 @@
         "./CharacterCards/Treebeard_Tree-herd.3d93f2.210201.json",
         "./CharacterCards/Treebeard_Tree-herd.d7264c.210303.json",
         "./CharacterCards/Ugluk_Chieftain_of_the_Uruk-Hai.f9969f.213411.json",
-        "./CharacterCards/We_Shall_Get_It_Card.json"
+        "./CharacterCards/We_Shall_Get_It_Card.json",
+        "./ScriptProvider/UnitScriptProvider.json"
     ]
 }

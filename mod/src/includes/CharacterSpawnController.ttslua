@@ -277,6 +277,8 @@ function SpawnCharacterInternal(ComponentBag, CharacterConfig, SettingType)
     local NewObj = Template.clone({ position = position })
     NewObj.setLock(false)
     NewObj.setPosition({ position.x, position.y + 1, position.z })
+    local scriptProvider = getObjectFromGUID("52d72d")
+    NewObj.setLuaScript(scriptProvider.getLuaScript())
 
     ComponentBag.putObject(Template)
     coroutine.yield(0)

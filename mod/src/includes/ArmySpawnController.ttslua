@@ -1521,10 +1521,13 @@ function SpawnArmy(ArmyConfig, SettingType)
         return
     end
 
+    local scriptProvider = getObjectFromGUID("52d72d")
+
     for _, Position in pairs(ArmyConfig.Positions) do
         local NewObj = Template.clone({ position = Position })
         NewObj.setLock(false)
         NewObj.setPosition({ Position.x, Position.y + 1, Position.z })
+        NewObj.setLuaScript(scriptProvider.getLuaScript())
     end
 
     ComponentBag.putObject(Template)

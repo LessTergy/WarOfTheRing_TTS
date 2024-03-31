@@ -1,31 +1,31 @@
 {
     "Object": {
-        "GUID": "c0347d",
+        "GUID": "52d72d",
         "Name": "ScriptingTrigger",
         "Transform": {
-            "posX": -85.29026,
-            "posY": 3.51113486,
-            "posZ": 64.4075,
-            "rotX": 0,
-            "rotY": 0,
-            "rotZ": 0,
-            "scaleX": 2.76425171,
-            "scaleY": 5.1,
-            "scaleZ": 3.00667953
+            "posX": -80,
+            "posY": 3.5,
+            "posZ": 80,
+            "rotX": 0.0,
+            "rotY": 0.0,
+            "rotZ": 0.0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "scaleZ": 1
         },
-        "Nickname": "Clipboard",
+        "Nickname": "Unit Script Provider",
         "Description": "",
         "GMNotes": "",
         "AltLookAngle": {
-            "x": 0,
-            "y": 0,
-            "z": 0
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
         },
         "ColorDiffuse": {
-            "r": 1,
-            "g": 1,
-            "b": 1,
-            "a": 0.509803951
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,9 +41,7 @@
         "GridProjection": false,
         "HideWhenFaceDown": false,
         "Hands": false,
-        "LuaScript": "#include ./Clipboard.c0347d.lua",
-        "LuaScriptState": "",
-        "XmlUI": ""
-    },
-    "StatesPaths": {}
+        "LuaScript": "#include ../../includes/UnitScript.ttslua",
+        "LuaScriptState": ""
+    }
 }
