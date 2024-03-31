@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Isengard_Political_Counter.7f39c1.lua",
+        "LuaScript": "#include ../../includes/PoliticalTokenScript.ttslua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

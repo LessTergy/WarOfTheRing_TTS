@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Gondor_Political_Counter.8ab5c1.lua",
+        "LuaScript": "#include ../../includes/PoliticalTokenScript.ttslua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

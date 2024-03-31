@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./The_North_Political_Counter.07e059.lua",
+        "LuaScript": "#include ../../includes/PoliticalTokenScript.ttslua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

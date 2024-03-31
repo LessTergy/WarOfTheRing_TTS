@@ -17,8 +17,8 @@ def search_and_replace(directory_path, pattern, replacement):
             print(f"File updated: {file_path}")
 
 
-directory_path = "./mod/src/WarOfTheRing/Dice"
+directory_path = "./mod/src/WarOfTheRing/PoliticalTokens"
 pattern = r'"LuaScript":\s+".*"'
-replacement = '"LuaScript": "#include ../../includes/DiceScript.ttslua"'
+replacement = '"LuaScript": "#include ../../includes/PoliticalTokenScript.ttslua"'
 
 search_and_replace(directory_path, pattern, replacement)

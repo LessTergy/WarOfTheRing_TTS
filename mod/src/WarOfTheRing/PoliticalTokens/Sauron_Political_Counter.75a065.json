@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Sauron_Political_Counter.75a065.lua",
+        "LuaScript": "#include ../../includes/PoliticalTokenScript.ttslua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

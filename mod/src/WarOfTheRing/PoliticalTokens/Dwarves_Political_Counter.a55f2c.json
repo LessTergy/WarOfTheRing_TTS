@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Dwarves_Political_Counter.a55f2c.lua",
+        "LuaScript": "#include ../../includes/PoliticalTokenScript.ttslua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

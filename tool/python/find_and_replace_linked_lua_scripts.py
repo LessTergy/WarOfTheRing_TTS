@@ -31,7 +31,7 @@ def find_filepath_with_same_basename(json_file: str, lua_files: list) -> str:
     return ""
 
 
-json_dir = "./mod/src/WarOfTheRing/Dice"
+json_dir = "./mod/src/WarOfTheRing/PoliticalTokens"
 lua_dir = "./mod/src/WarOfTheRing"
 json_extension = ".json"
 lua_extension = ".lua"
