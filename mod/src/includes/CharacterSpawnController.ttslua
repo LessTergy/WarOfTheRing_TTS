@@ -227,6 +227,11 @@ local CharactersKingsConfig = {
     },
 }
 
+local TreebeardConfig = {
+    Name = "Treebeard: Tree-herd",
+    Position = { x = -13.44, y = 1.01, z = 27.54 }
+}
+
 function SpawnCharactersBase()
     SpawnCharactersInternal(CharactersBaseConfig)
 end
@@ -239,12 +244,16 @@ function SpawnCharactersKings()
     SpawnCharactersInternal(CharactersKingsConfig)
 end
 
+function SpawnTreebeard()
+    local componentBag = getObjectFromGUID("0e5fd1")
+    local settingType = GetSettingType()
+
+    SpawnCharacterInternal(componentBag, TreebeardConfig, settingType)
+end
+
 function SpawnCharactersInternal(CharactersConfig)
     local componentBag = getObjectFromGUID("0e5fd1")
-
-    local preferencesPanel = getObjectFromGUID("c35be9")
-    local settings = preferencesPanel.getTable("Settings")
-    local settingType = settings.CharactersType
+    local settingType = GetSettingType()
 
     SpawnCharacterList(componentBag, CharactersConfig.FreePeoples, settingType)
     SpawnCharacterList(componentBag, CharactersConfig.Shadow, settingType)
@@ -252,11 +261,11 @@ end
 
 function SpawnCharacterList(ComponentBag, CharactersConfig, SettingType)
     for _, CharacterConfig in pairs(CharactersConfig) do
-        SpawnCharacter(ComponentBag, CharacterConfig, SettingType)
+        SpawnCharacterInternal(ComponentBag, CharacterConfig, SettingType)
     end
 end
 
-function SpawnCharacter(ComponentBag, CharacterConfig, SettingType)
+function SpawnCharacterInternal(ComponentBag, CharacterConfig, SettingType)
     local Template = GetCharacterFromComponentBag(ComponentBag, CharacterConfig, SettingType)
     coroutine.yield(0)
 
@@ -311,4 +320,10 @@ function GetCharacterFromComponentBag(ComponentBag, CharacterConfig, SettingType
     Template.setLock(true)
 
     return Template
+end
+
+function GetSettingType()
+    local preferencesPanel = getObjectFromGUID("c35be9")
+    local settings = preferencesPanel.getTable("Settings")
+    return settings.CharactersType
 end

@@ -544,20 +544,13 @@ function StartTurnStep()
     self.setDescription(
         "Panel;Round:" .. Round .. ";Phase:" .. Phase .. ";Turn:" .. Turn .. ";Step:" .. Step .. ";" .. FlagsString
     )
+
     self.clearButtons()
-    self.createButton(
-        {
-            click_function = "StartTurn",
-            function_owner = self,
-            label = "Start Turn " .. Turn,
-            position = { 0, 0.1, 0 },
-            width = 1600,
-            height = 400,
-            color = Colors.White,
-            font_size = 250,
-            tooltip = "Click to Start Turn " .. Turn
-        }
-    )
+    local startTurnButtonData = CreateButton("Start Turn " .. Turn, 250, 1600, 400, 0)
+    startTurnButtonData.click_function = "StartTurn"
+    startTurnButtonData.tooltip = "Click to Start Turn " .. Turn
+    self.createButton(startTurnButtonData)
+
     FellowshipTrack = math.floor((getObjectFromGUID("6b62ef").getPosition().x - 5.0) / 1.58)
     CorruptionTrack = math.floor((getObjectFromGUID("abe1b3").getPosition().x - 5.0) / 1.58)
     ShadowVP = math.floor((getObjectFromGUID("976dbc").getPosition().x + 23.65) / 1.64)
@@ -586,23 +579,16 @@ function StartTurnStep()
         FreePeoplesVP = 10
     end
 
-    self.createButton(
-        {
-            click_function = "Nothing",
-            function_owner = self,
-            label = "Fellowship Track: " ..
-                FellowshipTrack ..
-                "\nCorruption Track: " ..
-                CorruptionTrack ..
-                "\n\nShadow Victory Points: " ..
-                ShadowVP .. " of 10\nFree Peoples Victory Points: " .. FreePeoplesVP .. " of 4",
-            position = { 0, 0.1, -0.9 },
-            width = 0,
-            height = 0,
-            font_color = { 0.9, 0.9, 0.9 },
-            font_size = 75
-        }
-    )
+    local statInformationText = CreateTextData("", 75, -0.9)
+    statInformationText.label =
+        "Fellowship Track: " .. FellowshipTrack ..
+        "\nCorruption Track: " .. CorruptionTrack ..
+        "\n\nShadow Victory Points: " .. ShadowVP .. " of 10" ..
+        "\nFree Peoples Victory Points: " .. FreePeoplesVP .. " of 4"
+    statInformationText.font_color = { 0.9, 0.9, 0.9 }
+
+    self.createButton(statInformationText)
+
     function StartTurn()
         printToAll("Turn " .. Turn .. " has started.")
         --pass leader tokens?...
@@ -763,6 +749,7 @@ function Phase1_Step()
             tooltip = "Click Continue after all Phase 1 steps are completed."
         }
     )
+
     function Continue()
         NextStep = StepType.Phase2
         Step = StepType.Empty
@@ -3126,9 +3113,9 @@ function CreateBeginMenu()
     }
 
     if Player.Red.steam_name ~= nil then
-        playerRed_buttonData.label = playerRed_buttonData .. Player.Red.steam_name
+        playerRed_buttonData.label = playerRed_buttonData.label .. Player.Red.steam_name
     else
-        playerRed_buttonData.label = playerRed_buttonData .. "Choose red seat"
+        playerRed_buttonData.label = playerRed_buttonData.label .. "Choose red seat"
     end
 
     if Player.Blue.steam_name ~= nil then
@@ -4206,31 +4193,14 @@ function CreateTreebeardPromoMenu()
 
     ShowTitleText("Select Treebeard Content")
 
-    local noTreebeardButtonData =
-    {
-        click_function = "SelectNoTreebeard",
-        function_owner = self,
-        label = "No Treebeard",
-        position = { 0, 0.1, -0.6 },
-        width = 1800,
-        height = 150,
-        color = Colors.White,
-        font_size = 80,
-        tooltip = "Do not include Treebeard Promotional Character Card."
-    }
+    local noTreebeardButtonData = CreateButton("No Treebeard", 80, 1800, 150, -0.6)
+    noTreebeardButtonData.click_function = "SelectNoTreebeard"
+    noTreebeardButtonData.tooltip = "Do not include Treebeard Promotional Character Card."
 
-    local addTreebeardButtonData = {
-        click_function = "SelectAddTreebeard",
-        function_owner = self,
-        label = "Revised Treebeard",
-        position = { 0, 0.1, -0.3 },
-        width = 1800,
-        height = 150,
-        color = Colors.White,
-        font_size = 80,
-        tooltip =
-        "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
-    }
+    local addTreebeardButtonData = CreateButton("Revised Treebeard", 80, 1800, 150, -0.3)
+    addTreebeardButtonData.click_function = "SelectAddTreebeard"
+    addTreebeardButtonData.tooltip =
+    "Select the Revised Promotional Treebeard Character Card.\n(adds Root and Branch! ability)."
 
     local selectedButton = {}
 
@@ -4241,24 +4211,15 @@ function CreateTreebeardPromoMenu()
     end
 
     selectedButton.label = "Selected: " .. selectedButton.label
-    selectedButton.color = ButtonColorSelected
+    selectedButton.color = Colors.ButtonSelected
 
     self.createButton(noTreebeardButtonData)
     self.createButton(addTreebeardButtonData)
 
-    self.createButton(
-        {
-            click_function = "TreebeardMenuNext",
-            function_owner = self,
-            label = "Continue",
-            position = { 0, 0.1, 1.3 },
-            width = 1800,
-            height = 200,
-            color = Colors.White,
-            font_size = 100,
-            tooltip = "Continue Setup with the currently selected Treebeard option."
-        }
-    )
+    local continueButtonData = CreateButton("Continue", 100, 1800, 200, 1.3)
+    continueButtonData.click_function = "TreebeardMenuNext"
+    continueButtonData.tooltip = "Continue Setup with the currently selected Treebeard option."
+    self.createButton(continueButtonData)
 
     function SelectNoTreebeard()
         AddTreebeardPromo = false
@@ -5037,33 +4998,38 @@ function SetupKingsExpansion()
 end
 
 function SetupTreebeardVersion()
-    local id_promo_revised = "3d93f2"
-    local id_warriors_revised = "d7264c"
+    log("SetupTreebeardVersion")
+    local idPromoRevised = "3d93f2"
+    local idWarriorsRevised = "d7264c"
 
-    if WarriorsOfMiddleEarth then
-        local treebeardCard = getObjectFromGUID(id_warriors_revised)
-        treebeardCard.setPosition({ -13.5, 0.97, 33 }, false, false)
-        treebeardCard.setRotation({ 0, 0, 180 }, false, false)
+    local graveBag = getObjectFromGUID(GraveBagId)
+    local treebeardInGame = WarriorsOfMiddleEarth or AddTreebeardPromo
 
-        if getObjectFromGUID(id_promo_revised) ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(id_promo_revised))
-        end
-    elseif AddTreebeardPromo then
-        getObjectFromGUID(id_promo_revised).setPosition({ -13.5, 0.97, 33 }, false, false)
-        getObjectFromGUID(id_promo_revised).setRotation({ 0, 0, 180 }, false, false)
-
-        if getObjectFromGUID(id_warriors_revised) ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(id_warriors_revised))
-        end
-    else
-        if getObjectFromGUID(id_promo_revised) ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(id_promo_revised))
-        end
-
-        if getObjectFromGUID(id_warriors_revised) ~= nil then
-            getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(id_warriors_revised))
-        end
+    if not treebeardInGame then
+        graveBag.putObject(getObjectFromGUID(idPromoRevised))
+        return
     end
+
+    -- character card
+    local inGameCardId = ""
+    local removeCardId = ""
+    if WarriorsOfMiddleEarth then
+        inGameCardId = idWarriorsRevised
+        removeCardId = idPromoRevised
+    elseif AddTreebeardPromo then
+        inGameCardId = idPromoRevised
+    end
+
+    local treebeardCard = getObjectFromGUID(inGameCardId)
+    treebeardCard.setPosition({ -13.5, 0.97, 33 }, false, false)
+    treebeardCard.setRotation({ 0, 0, 180 }, false, false)
+
+    if removeCardId ~= "" then
+        graveBag.putObject(getObjectFromGUID(removeCardId))
+    end
+
+    -- miniature
+    SpawnTreebeard()
 end
 
 function CreateAlternateCompanionMenu()
