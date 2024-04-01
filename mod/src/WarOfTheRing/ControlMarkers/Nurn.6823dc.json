@@ -7,8 +7,8 @@
             "posY": 1.0,
             "posZ": -15.45,
             "rotX": 0,
-            "rotY": 225.0,
-            "rotZ": 0,
+            "rotY": 45,
+            "rotZ": 180,
             "scaleX": 0.45,
             "scaleY": 0.45,
             "scaleZ": 0.45
