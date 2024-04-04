@@ -5,8 +5,8 @@ from find_text_files_by_pattern import find_files_by_text
 from remove_file_names_from_json import remove_file_names_from_json
 from replace_files import replace_files
 
-destination_directory = "./mod/src/WarOfTheRing/Dice"
-pattern = '"Description": "Dice;'
+destination_directory = "./mod/src/WarOfTheRing/KingsCards"
+pattern = "http://cloud-3.steamusercontent.com/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/"
 
 source_directory = "./mod/src/WarOfTheRing"
 files_extension = ".json"
