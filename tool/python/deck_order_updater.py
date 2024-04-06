@@ -3,55 +3,18 @@ import os
 
 from find_text_files_by_pattern import find_files_by_text
 
-deck_dict = {
-    "00": "22",
-    "01": "19",
-    "02": "10",
-    "03": "36",
-    "04": "34",
-    "05": "12",
-    "06": "04",
-    "07": "29",
-    "08": "02",
-    "09": "32",
-    "10": "25",
-    "11": "03",
-    "12": "33",
-    "13": "35",
-    "14": "28",
-    "15": "23",
-    "16": "31",
-    "17": "16",
-    "18": "09",
-    "19": "27",
-    "20": "18",
-    "21": "15",
-    "22": "26",
-    "23": "07",
-    "24": "24",
-    "25": "08",
-    "26": "05",
-    "27": "11",
-    "28": "13",
-    "29": "21",
-    "30": "17",
-    "31": "00",
-    "32": "01",
-    "33": "20",
-    "34": "30",
-    "35": "14",
-    "36": "06",
-}
 
+def rename_card_files(files_folder) -> dict:
+    deck_dict = dict()
 
-def rename_card_files(files_folder, dict):
     for filename in os.listdir(files_folder):
         print(f"File {filename}")
         file_name, file_extension = os.path.splitext(filename)
 
         # Приводим number2 к формату "00" если значение меньше 10
-        current_value = extract_number(file_name)
-        new_value = dict[current_value]
+        current_value = extract_number(file_name, 1)
+        new_value = extract_number(file_name, 2)
+        deck_dict[current_value] = new_value
 
         new_filename = f"{new_value}{file_extension}"
 
@@ -61,10 +24,12 @@ def rename_card_files(files_folder, dict):
         os.rename(current_path, new_path)
         print(f"File {filename} renamed to {new_filename}")
 
+    return deck_dict
 
-def extract_number(file_name) -> str:
+
+def extract_number(file_name, index) -> str:
     parts = file_name.split("_")
-    number = int(parts[1]) - 1
+    number = int(parts[index]) - 1
     return f"{number:02}"
 
 
@@ -125,11 +90,11 @@ def find_and_replace_old_values(block_name, file_paths, value_dict):
                 file.truncate()
 
 
-# image_folder = "./../images"
-# rename_card_files(image_folder, deck_dict)
+image_folder = "./../images"
+deck_dict = rename_card_files(image_folder)
 
 source_directory = "./mod/src/WarOfTheRing"
-pattern = "http://cloud-3.steamusercontent.com/ugc/1836922259142892350/88A32BDC33FAA7E2548BD9486900884D8A7D252A/"
+pattern = "http://cloud-3.steamusercontent.com/ugc/1836922259142895222/DD0ED64BD5B2E65B7AA5112A47F5272A1B5AFC4D/"
 files_extension = ".json"
 
 file_paths = find_files_by_text(source_directory, pattern, files_extension, True)

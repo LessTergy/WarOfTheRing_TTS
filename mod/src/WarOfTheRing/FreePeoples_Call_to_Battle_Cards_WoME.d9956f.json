@@ -41,7 +41,7 @@
         "HideWhenFaceDown": true,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [209928, 210013, 209929, 210011, 209930, 210020],
+        "DeckIDs": [209928, 210026, 209929, 210027, 209930, 210028],
         "CustomDeck": {
             "2099": {
                 "FaceURL": "http://cloud-3.steamusercontent.com/ugc/5810280809884751476/75B8C82F8D2A19805778D24FACC48B391379CE90/",
@@ -53,7 +53,7 @@
                 "Type": 0
             },
             "2100": {
-                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142895222/DD0ED64BD5B2E65B7AA5112A47F5272A1B5AFC4D/",
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/5810280809885772382/30659B893ABEE1DB57951F18B2A08D1EEF2116D8/",
                 "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142895593/6845E31C539ADF69EDBCD39ED02D0B60EA98970B/",
                 "NumWidth": 9,
                 "NumHeight": 5,
