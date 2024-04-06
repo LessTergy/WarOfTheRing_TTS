@@ -40,12 +40,12 @@
         "GridProjection": false,
         "HideWhenFaceDown": false,
         "Hands": true,
-        "CardID": 207022,
+        "CardID": 207018,
         "SidewaysCard": false,
         "CustomDeck": {
             "2070": {
-                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1836922259143026705/2CCC853155AB68E3043470C601867805CFB8438D/",
-                "BackURL": "http://cloud-3.steamusercontent.com/ugc/2469735536239146375/4C816A91CC4CA654C283C466D86271DEABFFCF68/",
+                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/5810280809886560761/D3B76E346EC21CA07BB382DC846233164C4B47D3/",
+                "BackURL": "http://cloud-3.steamusercontent.com/ugc/5810280809886562297/CA9D56ADEE24579E6CCD67F593D28985595496BA/",
                 "NumWidth": 9,
                 "NumHeight": 5,
                 "BackIsHidden": true,
