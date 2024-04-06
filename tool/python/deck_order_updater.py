@@ -125,8 +125,8 @@ def find_and_replace_old_values(block_name, file_paths, value_dict):
                 file.truncate()
 
 
-# image_folder = "./../images"
-# rename_card_files(image_folder, deck_dict)
+image_folder = "./../images"
+rename_card_files(image_folder, deck_dict)
 
 source_directory = "./mod/src/WarOfTheRing"
 pattern = "http://cloud-3.steamusercontent.com/ugc/1836922259142892350/88A32BDC33FAA7E2548BD9486900884D8A7D252A/"
