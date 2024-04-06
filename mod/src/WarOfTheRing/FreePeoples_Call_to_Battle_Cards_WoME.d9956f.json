@@ -41,7 +41,14 @@
         "HideWhenFaceDown": true,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [209928, 210013, 209929, 210011, 209930, 210020],
+        "DeckIDs": [
+            209928,
+            210026,
+            209929,
+            210027,
+            209930,
+            210028
+        ],
         "CustomDeck": {
             "2099": {
                 "FaceURL": "http://cloud-3.steamusercontent.com/ugc/5810280809884565336/BF3F3AB023060C5B7660FA0580924453739C2001/",
