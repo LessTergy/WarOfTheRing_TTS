@@ -434,6 +434,14 @@ function CreateButton(Text, TextSize, Width, Height, PositionZ)
     }
 end
 
+function CreateToggleButtons(buttons)
+    for _, button_data in pairs(buttons) do
+        local data = button_data.ButtonData
+        data.color = GetButtonColor(button_data.SelectCondition)
+        self.createButton(data)
+    end
+end
+
 function UnitsSetupStep()
     ShowInformationText("Units Setup:\nPlease Wait\nSpawn Armies and Characters...")
 
@@ -3271,97 +3279,60 @@ end
 
 function CreatePlayersMenu()
     self.clearButtons()
-    self.createButton(
-        {
-            click_function = "Nothing",
-            function_owner = self,
-            label = "How Many Players?",
-            position = { 0, 0.1, -1.2 },
-            width = 0,
-            height = 0,
-            font_size = 150,
-            font_color = { 1, 1, 1 }
-        }
-    )
 
-    local button_1vs1 = {
-        SelectCondition = (VersusMode == VersusType.OneVersusOne and not CompactMode),
+    local title = CreateTextData("How Many Players?", 150, -1.2)
+    self.createButton(title)
 
-        ButtonData = {
-            click_function = "Choose1v1",
-            function_owner = self,
-            label = "2-Player (1 vs 1)",
-            position = { 0, 0.1, -0.6 },
-            tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
-        }
-    }
+    local button_1vs1 = CreateButton("2-Player (1 vs 1)", 75, 1600, 150, -0.6)
+    button_1vs1.click_function = "Choose1v1"
+    button_1vs1.tooltip = "Player 1 (Blue): The Free Peoples\n    vs.\nPlayer 2 (Red): The Shadow"
 
-    local button_1vs1_compact = {
-        SelectCondition = (VersusMode == VersusType.OneVersusOne and CompactMode),
+    local button_1vs2 = CreateButton("3-Player (1 vs 2)", 75, 1600, 150, -0.3)
+    button_1vs2.click_function = "Choose1v2"
+    button_1vs2.tooltip =
+        "Player 1 (Blue): The Free Peoples\n  " ..
+        "  vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\n" ..
+        "Player 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
 
-        ButtonData = {
-            click_function = "Choose1v1Compact",
-            function_owner = self,
-            label = "2-Player (Compact Mode)",
-            position = { 0, 0.1, 0.5 },
-            tooltip = "Player 1 (Blue): The Free Peoples\n  " ..
-                "  vs.\nPlayer 2 (Red): The Shadow\n" ..
-                "\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n" ..
-                "(Players sit next to each other)."
-        }
-    }
+    local button_2vs2 = CreateButton("4-Player (2 vs 2)", 75, 1600, 150, 0)
+    button_2vs2.click_function = "Choose2v2"
+    button_2vs2.tooltip =
+        "Player 1 (Blue): Gondor (Gondor,Elves)\n" ..
+        "Player 2 (Green): Rohan (Rohan,North,Dwarves)\n  " ..
+        "  vs.\nPlayer 3 (Red): The Witch-king (Sauron)\n" ..
+        "Player 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
 
-    local button_1vs2 = {
-        SelectCondition = (VersusMode == VersusType.OneVersusTwo),
-
-        ButtonData = {
-            click_function = "Choose1v2",
-            function_owner = self,
-            label = "3-Player (1 vs 2)",
-            position = { 0, 0.1, -0.3 },
-            tooltip =
-                "Player 1 (Blue): The Free Peoples\n  " ..
-                "  vs.\nPlayer 2 (Red): The Witch-king (the Sauron Nation)\n" ..
-                "Player 3 (Yellow): Saruman & Allies (Isengard and Southron & Easterling Nations)"
-        }
-    }
-
-    local button_2vs2 = {
-        SelectCondition = (VersusMode == VersusType.TwoVersusTwo),
-
-        ButtonData = {
-            click_function = "Choose2v2",
-            function_owner = self,
-            label = "4-Player (2 vs 2)",
-            position = { 0, 0.1, 0 },
-            tooltip = "Player 1 (Blue): Gondor (Gondor,Elves)\n" ..
-                "Player 2 (Green): Rohan (Rohan,North,Dwarves)\n  " ..
-                "  vs.\nPlayer 3 (Red): The Witch-king (Sauron)\n" ..
-                "Player 4 (Yellow): Saruman & Allies (Isengard,Southrons & Easterlings)"
-        }
-    }
+    local button_1vs1_compact = CreateButton("2-Player (Compact Mode)", 75, 1600, 150, 0.5)
+    button_1vs1_compact.click_function = "Choose1v1Compact"
+    button_1vs1_compact.tooltip = "Player 1 (Blue): The Free Peoples\n  " ..
+        "  vs.\nPlayer 2 (Red): The Shadow\n" ..
+        "\nCompact Mode: Rearrange the layout the way Mr. Thorpe prefers\n" ..
+        "(Players sit next to each other)."
 
     local buttons = {
-        button_1vs1,
-        button_1vs1_compact,
-        button_1vs2,
-        button_2vs2
+        {
+            ButtonData = button_1vs1,
+            SelectCondition = (VersusMode == VersusType.OneVersusOne and not CompactMode)
+        },
+        {
+            ButtonData = button_1vs2,
+            SelectCondition = (VersusMode == VersusType.OneVersusTwo)
+        },
+        {
+            ButtonData = button_2vs2,
+            SelectCondition = (VersusMode == VersusType.TwoVersusTwo)
+        },
+        {
+            ButtonData = button_1vs1_compact,
+            SelectCondition = (VersusMode == VersusType.OneVersusOne and CompactMode)
+        }
     }
 
-    CreateToggleButtons(buttons, 1600, 150, 75)
+    CreateToggleButtons(buttons)
 
-    self.createButton(
-        {
-            click_function = "Continue",
-            function_owner = self,
-            label = "Continue (" .. VersusMode .. ")",
-            position = { 0, 0.1, 1 },
-            width = 1600,
-            height = 200,
-            color = Colors.White,
-            font_size = 100
-        }
-    )
+    local continueButton = CreateButton("Continue (" .. VersusMode .. ")", 100, 1600, 200, 1)
+    continueButton.click_function = "Continue"
+    self.createButton(continueButton)
 
     function Choose1v1()
         VersusMode = VersusType.OneVersusOne
@@ -3431,19 +3402,6 @@ function CreatePlayersMenu()
         end
 
         Step = StepType.Empty
-    end
-end
-
-function CreateToggleButtons(buttons, width, height, font_size)
-    for _, button_data in pairs(buttons) do
-        local data = button_data.ButtonData
-        data.width = width
-        data.height = height
-        data.font_size = font_size
-
-        data.color = GetButtonColor(button_data.SelectCondition)
-
-        self.createButton(data)
     end
 end
 
