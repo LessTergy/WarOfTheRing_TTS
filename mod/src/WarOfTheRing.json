@@ -26,8 +26,8 @@
         "Gravity": 0.5,
         "PlayArea": 0.5,
         "Table": "Table_None",
-        "Sky": "Sky_Regal",
-        "SkyURL": "http://cloud-3.steamusercontent.com/ugc/780731574851327690/161E43BA5EAF5CF6B2BBCE6E0C5841582A252CC8/",
+        "Sky": "Sky_Museum",
+        "SkyURL": "http://cloud-3.steamusercontent.com/ugc/2461856215756938762/064D4B6404E1CC2ACFB6F309C420E480FABAE325/",
         "Note": "",
         "TabStates": {
             "0": {
@@ -2555,6 +2555,7 @@
         "ObjectStates": []
     },
     "ObjectPaths": [
+        "Building_Model.json",
         "Hunt_Pool.002387.json",
         "Free_Peoples_Strategy_Event_Deck.240819.json",
         "Shadow_Character_Event_Deck.8c377e.json",
