@@ -46,7 +46,7 @@
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
-            "MaterialIndex": 1,
+            "MaterialIndex": 3,
             "TypeIndex": 0,
             "CustomShader": {
                 "SpecularColor": {
