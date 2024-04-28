@@ -2556,6 +2556,7 @@
     },
     "ObjectPaths": [
         "Building_Model.json",
+        "Table_Base.json",
         "Hunt_Pool.002387.json",
         "Free_Peoples_Strategy_Event_Deck.240819.json",
         "Shadow_Character_Event_Deck.8c377e.json",
