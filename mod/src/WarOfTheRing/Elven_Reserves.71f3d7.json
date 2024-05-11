@@ -9,9 +9,9 @@
             "rotX": 0,
             "rotY": 0,
             "rotZ": 0,
-            "scaleX": 1.26,
+            "scaleX": 1.45,
             "scaleY": 1,
-            "scaleZ": 1.26
+            "scaleZ": 1.3
         },
         "Nickname": "Elven Reserves",
         "Description": "",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.75,
-            "g": 0.75,
-            "b": 0.75
+            "r": 0.212,
+            "g": 0.675,
+            "b": 0.31
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780732374523797489/052FEFC2C7A23B446620E83D913DBD99CCE1CF37/",
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2466361008650200122/6FEF0636FBD7C0B476F066910F847762218C6368/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,

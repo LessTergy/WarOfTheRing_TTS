@@ -9,9 +9,9 @@
             "rotX": 0,
             "rotY": 359.99,
             "rotZ": 0,
-            "scaleX": 1.26,
+            "scaleX": 1.45,
             "scaleY": 1,
-            "scaleZ": 1.26
+            "scaleZ": 1.3
         },
         "Nickname": "Gondor Reserves",
         "Description": "",
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 1,
-            "g": 1,
-            "b": 1
+            "r": 0.235,
+            "g": 0.192,
+            "b": 0.435
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780732374523805325/A9353DC8E897313D6F17808A5E14D3C5EDC65219/",
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2466361008650200122/6FEF0636FBD7C0B476F066910F847762218C6368/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,
