@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.54,
-            "g": 0.29,
-            "b": 0.13
+            "r": 0.38,
+            "g": 0.204,
+            "b": 0.192
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -64,9 +64,9 @@
                     "rotX": 0,
                     "rotY": 0,
                     "rotZ": 0,
-                    "scaleX": 1.71,
-                    "scaleY": 1.71,
-                    "scaleZ": 1.71
+                    "scaleX": 1.7,
+                    "scaleY": 1.7,
+                    "scaleZ": 1.7
                 },
                 "Nickname": "Dwarf Leader model",
                 "Description": "",
