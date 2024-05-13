@@ -12,7 +12,7 @@ function onLoad(save_state)
         font_size = 250,
         font_color = { 0, 0, 0 },
         tooltip =
-        "Play sound effect."
+        "Play sound effect"
     })
 end
 
