@@ -7,8 +7,14 @@
         "GameMode": "\u0420\u2019\u0420\u0455\u0420\u2116\u0420\u0405\u0420\u00b0 \u0420\u0459\u0420\u0455\u0420\u00bb\u0421\u040a\u0421\u2020\u0420\u00b0 (War of the Ring)",
         "GameType": "Game",
         "GameComplexity": "Medium Complexity",
-        "PlayingTime": [0, 180],
-        "PlayerCounts": [2, 4],
+        "PlayingTime": [
+            0,
+            180
+        ],
+        "PlayerCounts": [
+            2,
+            4
+        ],
         "Tags": [
             "Board Games",
             "Wargames",
@@ -2579,15 +2585,6 @@
         "FreePeoples_Event_Discard.b18c8a.json",
         "Free_Peoples_Faction_Discards_go_here.2d4c4f.json",
         "Shadow_Faction_Discards_go_here.bbab30.json",
-        "Dwarven_Reserves.662711.json",
-        "Elven_Reserves.71f3d7.json",
-        "Northern_Reserves.b1810d.json",
-        "Rohan_Reserves.9f1867.json",
-        "Gondor_Reserves.b842ca.json",
-        "Nazgul_Reserves.da9dcb.json",
-        "Sauron_Reserves.0d5a1e.json",
-        "Easterling_&_Southron_Reserves.38ba83.json",
-        "Isengard_Reserves.d4b698.json",
         "Free_Peoples_Strategy_Event_Cards_LoME.f8df2d.json",
         "Shadow_Strategy_Event_Cards_LoME.b83789.json",
         "Free_Peoples_Action_Dice_Box.46d2fc.json",
@@ -2867,6 +2864,15 @@
         "./KingsCards/The_Shadow_of_Mirkwood_Chieftain_of_the_Dark_Lord.a725bc.213512.json",
         "./KingsCards/Thranduil_Corrupted_Ruler.8c7014.213609.json",
         "./KingsCards/Thranduil_King_of_the_Woodland_Realm.a11471.213208.json",
-        "./KingsCards/Ugluk_Chieftain_of_the_Uruk-Hai.f9969f.213411.json"
+        "./KingsCards/Ugluk_Chieftain_of_the_Uruk-Hai.f9969f.213411.json",
+        "./Reserves/Dwarven_Reserves.662711.json",
+        "./Reserves/Easterling_&_Southron_Reserves.38ba83.json",
+        "./Reserves/Elven_Reserves.71f3d7.json",
+        "./Reserves/Gondor_Reserves.b842ca.json",
+        "./Reserves/Isengard_Reserves.d4b698.json",
+        "./Reserves/Nazgul_Reserves.da9dcb.json",
+        "./Reserves/Northern_Reserves.b1810d.json",
+        "./Reserves/Rohan_Reserves.9f1867.json",
+        "./Reserves/Sauron_Reserves.0d5a1e.json"
     ]
 }
