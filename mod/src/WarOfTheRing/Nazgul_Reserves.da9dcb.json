@@ -9,12 +9,12 @@
             "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 1.5,
+            "scaleX": 1.6,
             "scaleY": 1,
-            "scaleZ": 1.5
+            "scaleZ": 1.3
         },
         "Nickname": "Nazgul Reserves",
-        "Description": "",
+        "Description": "Reserves",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,

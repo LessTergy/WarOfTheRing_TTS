@@ -7,14 +7,14 @@
             "posY": 0.92,
             "posZ": -8.0,
             "rotX": 0,
-            "rotY": 179.99,
+            "rotY": 180,
             "rotZ": 0,
-            "scaleX": 1.71,
+            "scaleX": 1.6,
             "scaleY": 1,
-            "scaleZ": 1.7
+            "scaleZ": 2
         },
         "Nickname": "Sauron Reserves",
-        "Description": "",
+        "Description": "Reserves",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
