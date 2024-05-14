@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.86,
-            "g": 0.1,
-            "b": 0.09
+            "r": 0.686,
+            "g": 0.235,
+            "b": 0.149
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
