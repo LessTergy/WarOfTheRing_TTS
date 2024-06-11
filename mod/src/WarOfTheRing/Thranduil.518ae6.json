@@ -41,12 +41,12 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2469734902825948927/FBD1888837319531FC05A629CC4E5F873A991269/",
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2461856215753071531/01A3ECE535457CA682A6976030CB84CB72D25ECE/",
             "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2079031399353294245/7994E2C99497B830195F43B3B17DF7984E54993F/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
-            "MaterialIndex": 1,
+            "MaterialIndex": 3,
             "TypeIndex": 0,
             "CustomShader": {
                 "SpecularColor": {

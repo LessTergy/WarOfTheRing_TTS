@@ -9,12 +9,12 @@
             "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 1.3,
+            "scaleX": 1.6,
             "scaleY": 1,
-            "scaleZ": 1.4
+            "scaleZ": 1.3
         },
         "Nickname": "Nazgul Reserves",
-        "Description": "",
+        "Description": "Reserves",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 1,
-            "g": 1,
-            "b": 1
+            "r": 0.169,
+            "g": 0.141,
+            "b": 0.141
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780732374523806754/7A4C7DC42AA62139D73D82A95B82652D0A3A0188/",
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2466361008650200122/6FEF0636FBD7C0B476F066910F847762218C6368/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,

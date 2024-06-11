@@ -2685,9 +2685,9 @@ function SettlementControlMarkerEvent(Params)
                 "SettlementControlMarker;" .. Regions[Region].Settlement .. ";" .. Regions[Region].Side .. ";"
             ) -- SettlementControlMarker;[Settlement];[Side];
             if Params.MarkerObj.getRotation().z > 90 and Params.MarkerObj.getRotation().z < 270 then
-                Regions[Region].Control = "FreePeoples"
-            else
                 Regions[Region].Control = "Shadow"
+            else
+                Regions[Region].Control = "FreePeoples"
             end
 
             -- what type of event?
@@ -2888,12 +2888,12 @@ function PoliticalTokenEvent(Params)
             end
         elseif Params.Event == "Collide" then
             -- check to see if active status changed...
-            if Params.TokenObj.getRotation().z > 90 and Params.TokenObj.getRotation().z < 270 and not Active then
-                printToAll(Nation .. ": Activated!", Color)
-                PoliticalTrack[Nation].Active = true
-            elseif (Params.TokenObj.getRotation().z < 90 or Params.TokenObj.getRotation().z > 270) and Active then
+            if Params.TokenObj.getRotation().z > 90 and Params.TokenObj.getRotation().z < 270 and Active then
                 printToAll(Nation .. ": no longer Active.")
                 PoliticalTrack[Nation].Active = false
+            elseif (Params.TokenObj.getRotation().z < 90 or Params.TokenObj.getRotation().z > 270) and not Active then
+                printToAll(Nation .. ": Activated!", Color)
+                PoliticalTrack[Nation].Active = true
             end
         elseif Params.Event == "Destroy" then
         end

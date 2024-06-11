@@ -1,20 +1,20 @@
 {
     "Object": {
-        "GUID": "38ba83",
+        "GUID": "0d5a1e",
         "Name": "Custom_Token",
         "Transform": {
             "posX": 40.2,
             "posY": 0.92,
-            "posZ": -2,
+            "posZ": -8.0,
             "rotX": 0,
-            "rotY": 180.0,
+            "rotY": 180,
             "rotZ": 0,
-            "scaleX": 1.71,
+            "scaleX": 1.6,
             "scaleY": 1,
-            "scaleZ": 1.7
+            "scaleZ": 2
         },
-        "Nickname": "Easterling & Southron Reserves",
-        "Description": "",
+        "Nickname": "Sauron Reserves",
+        "Description": "Reserves",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.75,
-            "g": 0.75,
-            "b": 0.75
+            "r": 0.686,
+            "g": 0.235,
+            "b": 0.149
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780732374523809599/EFAEC3E4105FDD49D75C9979CABF9E41702A5596/",
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2466361008650200122/6FEF0636FBD7C0B476F066910F847762218C6368/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,
@@ -52,7 +52,7 @@
                 "Stackable": false
             }
         },
-        "LuaScript": "#include ./Easterling_&_Southron_Reserves.38ba83.lua",
+        "LuaScript": "#include ./Sauron_Reserves.0d5a1e.lua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

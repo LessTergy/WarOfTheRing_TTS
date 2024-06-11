@@ -1,20 +1,20 @@
 {
     "Object": {
-        "GUID": "662711",
+        "GUID": "38ba83",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": -40.4,
+            "posX": 40.2,
             "posY": 0.92,
-            "posZ": 13,
+            "posZ": -2,
             "rotX": 0,
-            "rotY": 0,
+            "rotY": 180.0,
             "rotZ": 0,
-            "scaleX": 1.26,
+            "scaleX": 1.6,
             "scaleY": 1,
-            "scaleZ": 1.26
+            "scaleZ": 2
         },
-        "Nickname": "Dwarven Reserves",
-        "Description": "",
+        "Nickname": "Easterling & Southron Reserves",
+        "Description": "Reserves",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 1,
-            "g": 1,
-            "b": 1
+            "r": 0.906,
+            "g": 0.631,
+            "b": 0.282
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780732374523795703/D422C907BC36B4DEE33F79684E762701D21BAF57/",
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2466361008650200122/6FEF0636FBD7C0B476F066910F847762218C6368/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,
@@ -52,7 +52,7 @@
                 "Stackable": false
             }
         },
-        "LuaScript": "#include ./Dwarven_Reserves.662711.lua",
+        "LuaScript": "#include ./Easterling_&_Southron_Reserves.38ba83.lua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

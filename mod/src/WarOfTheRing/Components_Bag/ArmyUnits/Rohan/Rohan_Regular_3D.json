@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/853845830990246962/91ED102169085CD78ACA63B591BB2515EADC9A5B/",
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2466361008661304449/A7CE2605EA9BB905740323801C827F6B0B983B2C/",
             "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/853845830990146088/0050E9E60B4DCF3995E786F9BFD2DB70CFA3E69C/",
             "NormalURL": "",
             "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/853845469457412576/1D066DCDFFC3CA3827A4822EACF34FCC1E65CE6B/",
@@ -62,7 +62,64 @@
         },
         "LuaScript": "",
         "LuaScriptState": "",
-        "XmlUI": ""
+        "XmlUI": "",
+        "ChildObjects": [
+            {
+                "GUID": "bd0393",
+                "Name": "Custom_Model",
+                "Transform": {
+                    "posX": 0,
+                    "posY": -0.03,
+                    "posZ": 0,
+                    "rotX": 0,
+                    "rotY": 0,
+                    "rotZ": 0,
+                    "scaleX": 0.42,
+                    "scaleY": 0.42,
+                    "scaleZ": 0.42
+                },
+                "Nickname": "Army Base",
+                "Description": "",
+                "GMNotes": "",
+                "AltLookAngle": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "ColorDiffuse": {
+                    "r": 0.21,
+                    "g": 0.4,
+                    "b": 0.18
+                },
+                "LayoutGroupSortIndex": 0,
+                "Value": 0,
+                "Locked": true,
+                "Grid": false,
+                "Snap": false,
+                "IgnoreFoW": false,
+                "MeasureMovement": false,
+                "DragSelectable": true,
+                "Autoraise": true,
+                "Sticky": false,
+                "Tooltip": true,
+                "GridProjection": false,
+                "HideWhenFaceDown": false,
+                "Hands": false,
+                "CustomMesh": {
+                    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "DiffuseURL": "",
+                    "NormalURL": "",
+                    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "Convex": true,
+                    "MaterialIndex": 1,
+                    "TypeIndex": 1,
+                    "CastShadows": true
+                },
+                "LuaScript": "",
+                "LuaScriptState": "",
+                "XmlUI": ""
+            }
+        ]
     },
     "StatesPaths": {}
 }

@@ -1,20 +1,20 @@
 {
     "Object": {
-        "GUID": "71f3d7",
+        "GUID": "b842ca",
         "Name": "Custom_Token",
         "Transform": {
             "posX": -40.4,
             "posY": 0.92,
-            "posZ": 9,
+            "posZ": -3,
             "rotX": 0,
-            "rotY": 0,
+            "rotY": 359.99,
             "rotZ": 0,
-            "scaleX": 1.26,
+            "scaleX": 1.45,
             "scaleY": 1,
-            "scaleZ": 1.26
+            "scaleZ": 1.3
         },
-        "Nickname": "Elven Reserves",
-        "Description": "",
+        "Nickname": "Gondor Reserves",
+        "Description": "Reserves",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.75,
-            "g": 0.75,
-            "b": 0.75
+            "r": 0.235,
+            "g": 0.192,
+            "b": 0.435
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780732374523797489/052FEFC2C7A23B446620E83D913DBD99CCE1CF37/",
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2466361008650200122/6FEF0636FBD7C0B476F066910F847762218C6368/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,
@@ -52,7 +52,7 @@
                 "Stackable": false
             }
         },
-        "LuaScript": "#include ./Elven_Reserves.71f3d7.lua",
+        "LuaScript": "#include ./Gondor_Reserves.b842ca.lua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

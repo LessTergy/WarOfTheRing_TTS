@@ -1,20 +1,20 @@
 {
     "Object": {
-        "GUID": "0d5a1e",
+        "GUID": "71f3d7",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": 40.2,
+            "posX": -40.4,
             "posY": 0.92,
-            "posZ": -8.0,
+            "posZ": 9,
             "rotX": 0,
-            "rotY": 179.99,
+            "rotY": 0,
             "rotZ": 0,
-            "scaleX": 1.71,
+            "scaleX": 1.45,
             "scaleY": 1,
-            "scaleZ": 1.7
+            "scaleZ": 1.3
         },
-        "Nickname": "Sauron Reserves",
-        "Description": "",
+        "Nickname": "Elven Reserves",
+        "Description": "Reserves",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -22,9 +22,9 @@
             "z": 0
         },
         "ColorDiffuse": {
-            "r": 0.75,
-            "g": 0.75,
-            "b": 0.75
+            "r": 0.212,
+            "g": 0.675,
+            "b": 0.31
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/1777210485804155855/9BA5541BFC3F1C4156889A119F063A44DAFDEC69/",
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2466361008650200122/6FEF0636FBD7C0B476F066910F847762218C6368/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,
@@ -52,7 +52,7 @@
                 "Stackable": false
             }
         },
-        "LuaScript": "#include ./Sauron_Reserves.0d5a1e.lua",
+        "LuaScript": "#include ./Elven_Reserves.71f3d7.lua",
         "LuaScriptState": "",
         "XmlUI": ""
     },

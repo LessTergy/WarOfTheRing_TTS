@@ -41,12 +41,12 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2469734902825948757/9B76EF54E0C18A25266EA81520C2A78393033711/",
-            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1752443050820018184/2C96A86EA0CCA0B740E0457786A7F4F16C7F2CAC/",
+            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2461856215753178823/D528117619A3A4BDF93C2A23FFD326EDFF17C945/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2461856215753892327/95E13A1D32F065D73620C0A984B563DEAFC85B42/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
-            "MaterialIndex": 0,
+            "MaterialIndex": 3,
             "TypeIndex": 0,
             "CastShadows": true
         },

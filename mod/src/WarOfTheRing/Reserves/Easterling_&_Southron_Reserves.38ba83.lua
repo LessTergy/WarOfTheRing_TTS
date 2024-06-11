@@ -4,18 +4,18 @@ function onLoad(save_state)
         click_function = "PlaySoundEffect",
         function_owner = self,
         label = ">",
-        position = { -2.3, 0.05, 0 },
+        position = { -2.5, 0.05, 0 },
         rotation = { 0, 180, 0 },
-        color = { 1, 0.16, 0.16 },
+        color = { 0.906, 0.631, 0.282 },
+        font_color = { 0.169, 0.141, 0.141 },
         width = 250,
         height = 250,
         font_size = 250,
-        font_color = { 0, 0, 0 },
-        tooltip =
-        "Play sound effect."
+        tooltip = "Play sound effect"
     })
 end
 
 function PlaySoundEffect()
-    Global.call("PlaySound", { ID = 19 }) --nazgul theme
+    -- haradrim horn
+    Global.call("PlaySound", { ID = 17 })
 end

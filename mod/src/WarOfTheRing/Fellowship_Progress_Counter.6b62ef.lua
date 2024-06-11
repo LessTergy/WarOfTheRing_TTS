@@ -46,11 +46,11 @@ function onCollisionEnter(collision_info)
     if not Colliding then
         Colliding = true
         if self.getRotation().z < 90 or self.getRotation().z > 270 then
+            printToAll("Fellowship is Hidden.", { 1, 1, 0 })
+        else
             -- I see you!
             Global.call("PlaySound", { ID = 13 })
             printToAll("Fellowship is Revealed.", { 1, 1, 0 })
-        else
-            printToAll("Fellowship is Hidden.", { 1, 1, 0 })
         end
         Wait.time(
             function ()
