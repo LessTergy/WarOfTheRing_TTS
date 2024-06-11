@@ -12,8 +12,8 @@ def rename_card_files(files_folder) -> dict:
         file_name, file_extension = os.path.splitext(filename)
 
         # Приводим number2 к формату "00" если значение меньше 10
-        current_value = extract_number(file_name, 1)
-        new_value = extract_number(file_name, 2)
+        current_value = extract_number(file_name, 0)
+        new_value = extract_number(file_name, 1)
         deck_dict[current_value] = new_value
 
         new_filename = f"{new_value}{file_extension}"
@@ -94,7 +94,7 @@ image_folder = "./../images"
 deck_dict = rename_card_files(image_folder)
 
 source_directory = "./mod/src/WarOfTheRing"
-pattern = "http://cloud-3.steamusercontent.com/ugc/1836922259142858618/A1B1C77527E097849C8CBA10714BD8D9E0C705D8/"
+pattern = "т"
 files_extension = ".json"
 
 file_paths = find_files_by_text(source_directory, pattern, files_extension, True)
