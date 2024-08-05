@@ -7,14 +7,8 @@
         "GameMode": "\u0420\u2019\u0420\u0455\u0420\u2116\u0420\u0405\u0420\u00b0 \u0420\u0459\u0420\u0455\u0420\u00bb\u0421\u040a\u0421\u2020\u0420\u00b0 (War of the Ring)",
         "GameType": "Game",
         "GameComplexity": "Medium Complexity",
-        "PlayingTime": [
-            0,
-            180
-        ],
-        "PlayerCounts": [
-            2,
-            4
-        ],
+        "PlayingTime": [0, 180],
+        "PlayerCounts": [2, 4],
         "Tags": [
             "Board Games",
             "Wargames",
@@ -33,7 +27,7 @@
         "PlayArea": 0.5,
         "Table": "Table_None",
         "Sky": "Sky_Museum",
-        "SkyURL": "http://cloud-3.steamusercontent.com/ugc/2461856215756938762/064D4B6404E1CC2ACFB6F309C420E480FABAE325/",
+        "SkyURL": "https://steamusercontent-a.akamaihd.net/ugc/2461856215756938762/064D4B6404E1CC2ACFB6F309C420E480FABAE325/",
         "Note": "",
         "TabStates": {
             "0": {
@@ -173,18 +167,18 @@
             "RepeatSong": false,
             "PlaylistEntry": 0,
             "CurrentAudioTitle": "Shadowmoon",
-            "CurrentAudioURL": "http://cloud-3.steamusercontent.com/ugc/770601828587055146/B4D229E4C683BC5A6F9712F52DC9DAAE28B0C6AC/",
+            "CurrentAudioURL": "https://steamusercontent-a.akamaihd.net/ugc/770601828587055146/B4D229E4C683BC5A6F9712F52DC9DAAE28B0C6AC/",
             "AudioLibrary": [
                 {
-                    "Item1": "http://cloud-3.steamusercontent.com/ugc/770601828587055146/B4D229E4C683BC5A6F9712F52DC9DAAE28B0C6AC/",
+                    "Item1": "https://steamusercontent-a.akamaihd.net/ugc/770601828587055146/B4D229E4C683BC5A6F9712F52DC9DAAE28B0C6AC/",
                     "Item2": "Shadowmoon"
                 },
                 {
-                    "Item1": "http://cloud-3.steamusercontent.com/ugc/770601828587132232/7D08630C6F43CB4BDEE63D6EB301443342DFF8EB/",
+                    "Item1": "https://steamusercontent-a.akamaihd.net/ugc/770601828587132232/7D08630C6F43CB4BDEE63D6EB301443342DFF8EB/",
                     "Item2": "Heart of the Deep"
                 },
                 {
-                    "Item1": "http://cloud-3.steamusercontent.com/ugc/770601828587290498/CAA33176F269F822862C36B8FC83F925B2F0A840/",
+                    "Item1": "https://steamusercontent-a.akamaihd.net/ugc/770601828587290498/CAA33176F269F822862C36B8FC83F925B2F0A840/",
                     "Item2": "Relentless"
                 }
             ]
