@@ -41,8 +41,8 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/780731815369976703/F53BA5105294D91FA44D8D2DC8DF6427769F81AF/",
-            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/780731815369978729/4E7B62980CA982F2A7FC116931BC4EA6DAD6DA14/",
+            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/780731815369976703/F53BA5105294D91FA44D8D2DC8DF6427769F81AF/",
+            "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/780731815369978729/4E7B62980CA982F2A7FC116931BC4EA6DAD6DA14/",
             "ImageScalar": 1,
             "WidthScale": 0
         },

@@ -41,8 +41,8 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/853845469457406069/5C730F4F3789097EC9197D2A7AD29090A0DBE280/",
-            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/776155051164030421/9EE09BD0DA36C4AFB7677D47679336EE4173620B/",
+            "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/853845469457406069/5C730F4F3789097EC9197D2A7AD29090A0DBE280/",
+            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/776155051164030421/9EE09BD0DA36C4AFB7677D47679336EE4173620B/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
@@ -106,10 +106,10 @@
                 "HideWhenFaceDown": false,
                 "Hands": false,
                 "CustomMesh": {
-                    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
                     "DiffuseURL": "",
                     "NormalURL": "",
-                    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
+                    "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/1487831460517710410/CA658A7F5B71856292F2E330BBBA03F3BE6EA939/",
                     "Convex": true,
                     "MaterialIndex": 4,
                     "TypeIndex": 1,

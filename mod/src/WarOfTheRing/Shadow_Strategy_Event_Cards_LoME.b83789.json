@@ -44,8 +44,8 @@
         "DeckIDs": [209725, 209724],
         "CustomDeck": {
             "2097": {
-                "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2449475598247937633/BB9B534FF8708D6BB7A330DB9405AA63A02C8171/",
-                "BackURL": "http://cloud-3.steamusercontent.com/ugc/1836922259142859091/1DCECBCDB9881D8879DB0F494396013DCE398F5B/",
+                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2449475598247937633/BB9B534FF8708D6BB7A330DB9405AA63A02C8171/",
+                "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/1836922259142859091/1DCECBCDB9881D8879DB0F494396013DCE398F5B/",
                 "NumWidth": 9,
                 "NumHeight": 5,
                 "BackIsHidden": true,

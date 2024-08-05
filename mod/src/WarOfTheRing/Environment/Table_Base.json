@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomAssetbundle": {
-            "AssetbundleURL": "http://cloud-3.steamusercontent.com/ugc/868496425808380193/6D743C154CD681FA1AC3535C6F55A62FBDB2C620/",
+            "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/868496425808380193/6D743C154CD681FA1AC3535C6F55A62FBDB2C620/",
             "AssetbundleSecondaryURL": "",
             "MaterialIndex": 1,
             "TypeIndex": 4,

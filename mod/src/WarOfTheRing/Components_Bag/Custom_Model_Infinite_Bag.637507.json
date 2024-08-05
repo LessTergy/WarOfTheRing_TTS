@@ -43,7 +43,7 @@
         "MaterialIndex": -1,
         "MeshIndex": -1,
         "CustomMesh": {
-            "MeshURL": "http://cloud-3.steamusercontent.com/ugc/777364374937637307/90282A489F876A964E7E718BC3D7F8E7BBECD54A/",
+            "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/777364374937637307/90282A489F876A964E7E718BC3D7F8E7BBECD54A/",
             "DiffuseURL": "",
             "NormalURL": "",
             "ColliderURL": "",
@@ -58,7 +58,5 @@
         "ContainedObjects": []
     },
     "StatesPaths": {},
-    "ContainedObjectPaths": [
-        "Free_Peoples_Combat_Die.3a4442.json"
-    ]
+    "ContainedObjectPaths": ["Free_Peoples_Combat_Die.3a4442.json"]
 }
