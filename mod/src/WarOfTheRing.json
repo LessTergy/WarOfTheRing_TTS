@@ -7,8 +7,14 @@
         "GameMode": "\u0420\u2019\u0420\u0455\u0420\u2116\u0420\u0405\u0420\u00b0 \u0420\u0459\u0420\u0455\u0420\u00bb\u0421\u040a\u0421\u2020\u0420\u00b0 (War of the Ring)",
         "GameType": "Game",
         "GameComplexity": "Medium Complexity",
-        "PlayingTime": [0, 180],
-        "PlayerCounts": [2, 4],
+        "PlayingTime": [
+            0,
+            180
+        ],
+        "PlayerCounts": [
+            2,
+            4
+        ],
         "Tags": [
             "Board Games",
             "Wargames",
@@ -2607,12 +2613,6 @@
         "Shadow_Army_II.6cf2e3.json",
         "Free_Peoples_Army_III.b4aa4d.json",
         "Shadow_Army_III.93b118.json",
-        "The_Broods_of_Shelob.a2b0b2.json",
-        "The_Corsairs_of_Umbar.c877f9.json",
-        "The_Hillmen_of_Dunland.de70d2.json",
-        "The_Dead_Men_of_Dunharrow.43848f.json",
-        "The_Ents_of_Fangorn.114a7d.json",
-        "The_Eagles_of_the_Misty_Mountains.a02da5.json",
         "Fellowship_Progress_Counter.6b62ef.json",
         "Corruption_Marker.abe1b3.json",
         "Shadow_Action_Move_Nazgul_and_Minions.d8b25b.json",
@@ -2867,6 +2867,12 @@
         "./Reserves/Nazgul_Reserves.da9dcb.json",
         "./Reserves/Northern_Reserves.b1810d.json",
         "./Reserves/Rohan_Reserves.9f1867.json",
-        "./Reserves/Sauron_Reserves.0d5a1e.json"
+        "./Reserves/Sauron_Reserves.0d5a1e.json",
+        "./FactionCard/The_Broods_of_Shelob.a2b0b2.json",
+        "./FactionCard/The_Corsairs_of_Umbar.c877f9.json",
+        "./FactionCard/The_Dead_Men_of_Dunharrow.43848f.json",
+        "./FactionCard/The_Eagles_of_the_Misty_Mountains.a02da5.json",
+        "./FactionCard/The_Ents_of_Fangorn.114a7d.json",
+        "./FactionCard/The_Hillmen_of_Dunland.de70d2.json"
     ]
 }
