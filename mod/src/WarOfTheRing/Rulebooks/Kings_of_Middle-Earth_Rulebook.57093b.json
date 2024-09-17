@@ -1,20 +1,20 @@
 {
     "Object": {
-        "GUID": "076d01",
+        "GUID": "57093b",
         "Name": "Custom_PDF",
         "Transform": {
-            "posX": 79,
+            "posX": -77,
             "posY": 0.95,
-            "posZ": -43,
+            "posZ": -23,
             "rotX": 0,
-            "rotY": 90.01,
+            "rotY": 89.99,
             "rotZ": 0,
-            "scaleX": 3.8,
+            "scaleX": 5.05,
             "scaleY": 1,
-            "scaleZ": 3.8
+            "scaleZ": 5.05
         },
         "Nickname": "",
-        "Description": "",
+        "Description": "Kings of Middle-Earth Rulebook",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -28,7 +28,7 @@
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
-        "Locked": false,
+        "Locked": true,
         "Grid": true,
         "Snap": true,
         "IgnoreFoW": false,
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomPDF": {
-            "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/1861691839688692453/13A5D9535AE9BC8FFF36C726FF6DE3E89C084DC9/",
+            "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/2086912698697249532/C20CDF280AC95F27876637C76662CD8D63574E93/",
             "PDFPassword": "",
             "PDFPage": 0,
             "PDFPageOffset": 0

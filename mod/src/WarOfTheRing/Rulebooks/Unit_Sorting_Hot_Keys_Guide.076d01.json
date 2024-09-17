@@ -1,20 +1,20 @@
 {
     "Object": {
-        "GUID": "57093b",
+        "GUID": "076d01",
         "Name": "Custom_PDF",
         "Transform": {
-            "posX": -77,
+            "posX": 79,
             "posY": 0.95,
-            "posZ": -23,
+            "posZ": -43,
             "rotX": 0,
-            "rotY": 89.99,
+            "rotY": 90.01,
             "rotZ": 0,
-            "scaleX": 5.05,
+            "scaleX": 3.8,
             "scaleY": 1,
-            "scaleZ": 5.05
+            "scaleZ": 3.8
         },
         "Nickname": "",
-        "Description": "",
+        "Description": "Unit Sorting Hot Keys Guide",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -28,7 +28,7 @@
         },
         "LayoutGroupSortIndex": 0,
         "Value": 0,
-        "Locked": true,
+        "Locked": false,
         "Grid": true,
         "Snap": true,
         "IgnoreFoW": false,
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomPDF": {
-            "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/2086912698697249532/C20CDF280AC95F27876637C76662CD8D63574E93/",
+            "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/1861691839688692453/13A5D9535AE9BC8FFF36C726FF6DE3E89C084DC9/",
             "PDFPassword": "",
             "PDFPage": 0,
             "PDFPageOffset": 0
