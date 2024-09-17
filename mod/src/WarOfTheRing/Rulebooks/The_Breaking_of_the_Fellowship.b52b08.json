@@ -43,7 +43,7 @@
         "CustomPDF": {
             "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/1744555712193017922/CE629726A44567DDCBDAC08115D749C8AEDC53E9/",
             "PDFPassword": "",
-            "PDFPage": 11,
+            "PDFPage": 0,
             "PDFPageOffset": 0
         },
         "LuaScript": "",

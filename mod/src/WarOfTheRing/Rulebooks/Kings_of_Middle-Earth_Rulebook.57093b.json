@@ -5,13 +5,13 @@
         "Transform": {
             "posX": -77,
             "posY": 0.95,
-            "posZ": -23,
+            "posZ": 12.33,
             "rotX": 0,
             "rotY": 89.99,
             "rotZ": 0,
-            "scaleX": 5.05,
+            "scaleX": 5,
             "scaleY": 1,
-            "scaleZ": 5.05
+            "scaleZ": 5
         },
         "Nickname": "",
         "Description": "Kings of Middle-Earth Rulebook",
