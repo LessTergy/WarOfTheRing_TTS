@@ -2602,12 +2602,6 @@
         "Gandalf_the_White_Emissary_from_the_West_Token.json",
         "Free_Peoples_Leading_Player_Counter.74461e.json",
         "Shadow_Leading_Player_Counter.a25766.json",
-        "Free_Peoples_Army_I.f88479.json",
-        "Shadow_Army_I.5330c7.json",
-        "Free_Peoples_Army_II.687ab1.json",
-        "Shadow_Army_II.6cf2e3.json",
-        "Free_Peoples_Army_III.b4aa4d.json",
-        "Shadow_Army_III.93b118.json",
         "Fellowship_Progress_Counter.6b62ef.json",
         "Corruption_Marker.abe1b3.json",
         "Shadow_Action_Move_Nazgul_and_Minions.d8b25b.json",
@@ -2873,6 +2867,12 @@
         "./HuntTiles/Smeagol_Hunt_Tile.07eee5.json",
         "./HuntTiles/Smeagol_Hunt_Tile.2d25c5.json",
         "./HuntTiles/Smeagol_Hunt_Tile.2fff89.json",
-        "./HuntTiles/Smeagol_Hunt_Tile.7bb73b.json"
+        "./HuntTiles/Smeagol_Hunt_Tile.7bb73b.json",
+        "./ArmyCounters/Free_Peoples_Army_I.f88479.json",
+        "./ArmyCounters/Free_Peoples_Army_II.687ab1.json",
+        "./ArmyCounters/Free_Peoples_Army_III.b4aa4d.json",
+        "./ArmyCounters/Shadow_Army_I.5330c7.json",
+        "./ArmyCounters/Shadow_Army_II.6cf2e3.json",
+        "./ArmyCounters/Shadow_Army_III.93b118.json"
     ]
 }
