@@ -14,7 +14,7 @@
             "scaleZ": 0.5
         },
         "Nickname": "Aragorn: Heir to Isildur",
-        "Description": "Character;Token;FreePeoples;",
+        "Description": "Counter;Character;FreePeoples;",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,

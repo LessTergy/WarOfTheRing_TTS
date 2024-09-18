@@ -14,7 +14,7 @@
             "scaleZ": 0.5
         },
         "Nickname": "Gandalf the White: Emissary from the West",
-        "Description": "Character;Token;FreePeoples;",
+        "Description": "Counter;Character;FreePeoples;",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,

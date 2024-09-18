@@ -137,7 +137,7 @@ function UpdateIDs()
             IDs.Companions.GandalfTheWhite = Obj.getGUID()
         elseif
             name == "Gandalf the White: Emissary from the West" and
-            string.find(description, "Character;Token;") ~= nil
+            string.find(description, "Counter;Character;") ~= nil
         then
             IDs.Companions.GandalfTheWhiteToken = Obj.getGUID()
         elseif
@@ -146,7 +146,7 @@ function UpdateIDs()
         then
             IDs.Companions.Aragorn = Obj.getGUID()
         elseif
-            name == "Aragorn: Heir to Isildur" and string.find(description, "Character;Token;") ~= nil
+            name == "Aragorn: Heir to Isildur" and string.find(description, "Counter;Character;") ~= nil
         then
             IDs.Companions.AragornToken = Obj.getGUID()
         elseif
