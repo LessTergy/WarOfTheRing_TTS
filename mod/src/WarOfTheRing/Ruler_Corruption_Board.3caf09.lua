@@ -281,19 +281,19 @@ function DrawTileCorruption(Object, PlayerColor)
     function DrawTileCorruptionCoroutine()
         local HuntPool = getObjectFromGUID(HuntPoolID)
         if HuntPool ~= nil then
-            --any tiles left?
             if HuntPool.getQuantity() < 1 then
                 printToAll("Hunt Pool is empty.")
-            else --draw a tile...
+            else
                 --shuffle the hunt pool...
-                printToAll("\nShuffling " .. HuntPool.getQuantity() .. " Tiles in the Hunt Pool...")
+                printToAll("\nShuffling " .. HuntPool.getQuantity() .. " Tiles in the Hunt Pool")
                 HuntPool.shuffle()
                 coroutine.yield(0)
-                printToAll("Drawing a face down Hunt Tile from the Hunt Pool...")
+                printToAll("Drawing a face down Hunt Tile from the Hunt Pool")
+
                 local NextSpot = { -50, 1.03, -21 }
                 for X = 1, 3 do
                     local Free = true --spot is free?
-                    for O, Obj in pairs(Physics.cast({ origin = { NextSpot[1] + (X - 1) * 2, NextSpot[2], NextSpot[3] }, direction = { 0, 1, 0 }, type = 3, size = { 1, 1, 1 }, orientation = { 0, 0, 0 }, max_distance = 0, debug = false })) do
+                    for _, Obj in pairs(Physics.cast({ origin = { NextSpot[1] + (X - 1) * 2, NextSpot[2], NextSpot[3] }, direction = { 0, 1, 0 }, type = 3, size = { 1, 1, 1 }, orientation = { 0, 0, 0 }, max_distance = 0, debug = false })) do
                         if Obj.hit_object.getName() == "Hunt Tile" or Obj.hit_object.getName() == "Smeagol Hunt Tile" then
                             Free = false
                             break
@@ -304,8 +304,9 @@ function DrawTileCorruption(Object, PlayerColor)
                         break
                     end
                 end
+
                 local HuntTile = HuntPool.takeObject()
-                HuntTile.setRotation({ 0, 180, 180 })
+                HuntTile.setRotation({ 0, 180, 0 })
                 HuntTile.setPositionSmooth({ NextSpot[1], NextSpot[2] + 0.5, NextSpot[3] }, false, true)
                 coroutine.yield(0)
             end
