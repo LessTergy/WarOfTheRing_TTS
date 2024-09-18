@@ -6,7 +6,7 @@ from remove_file_names_from_json import remove_file_names_from_json
 from replace_files import replace_files
 
 destination_directory = "./mod/src/WarOfTheRing/HuntTiles"
-pattern = '"Nickname": "Hunt Tile"'
+pattern = '"Nickname": "Smeagol Hunt Tile"'
 
 source_directory = "./mod/src/WarOfTheRing"
 files_extension = ".json"

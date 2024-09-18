@@ -2644,10 +2644,6 @@
         "Text_Player_Rohan.json",
         "Text_Player_TheWitchKing.json",
         "Text_Player_Saruman.json",
-        "Smeagol_Hunt_Tile.7bb73b.json",
-        "Smeagol_Hunt_Tile.2fff89.json",
-        "Smeagol_Hunt_Tile.07eee5.json",
-        "Smeagol_Hunt_Tile.2d25c5.json",
         "Fellowship_Card_Zone.128335.json",
         "Preferences_Panel.c35be9.json",
         "Dice_Not_Chosen.2916b7.json",
@@ -2873,6 +2869,10 @@
         "./HuntTiles/Hunt_Tile.9a7393.json",
         "./HuntTiles/Hunt_Tile.a31079.json",
         "./HuntTiles/Hunt_Tile.be4e0f.json",
-        "./HuntTiles/Hunt_Tile.c24f81.json"
+        "./HuntTiles/Hunt_Tile.c24f81.json",
+        "./HuntTiles/Smeagol_Hunt_Tile.07eee5.json",
+        "./HuntTiles/Smeagol_Hunt_Tile.2d25c5.json",
+        "./HuntTiles/Smeagol_Hunt_Tile.2fff89.json",
+        "./HuntTiles/Smeagol_Hunt_Tile.7bb73b.json"
     ]
 }
