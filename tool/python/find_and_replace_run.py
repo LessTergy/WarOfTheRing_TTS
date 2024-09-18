@@ -5,8 +5,8 @@ from find_text_files_by_pattern import find_files_by_text
 from remove_file_names_from_json import remove_file_names_from_json
 from replace_files import replace_files
 
-destination_directory = "./mod/src/WarOfTheRing/Rulebooks"
-pattern = '"Name": "Custom_PDF",'
+destination_directory = "./mod/src/WarOfTheRing/HuntTiles"
+pattern = '"Nickname": "Hunt Tile"'
 
 source_directory = "./mod/src/WarOfTheRing"
 files_extension = ".json"
