@@ -8,7 +8,7 @@
             "posZ": 20.12,
             "rotX": 0,
             "rotY": 0,
-            "rotZ": 180,
+            "rotZ": 0,
             "scaleX": 0.5,
             "scaleY": 0.5,
             "scaleZ": 0.5
@@ -42,7 +42,7 @@
         "Hands": false,
         "CustomMesh": {
             "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558540045642/FE8883A6E27019222BB7D19DE5020CAC154E55EF/",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/1666862284381417558/B48FF121BFB4FF2D22B8D4E78B0F7572D5A4E93C/",
+            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558546083711/13E072ADACA81430907064C7B686F1050731713C/",
             "NormalURL": "",
             "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558540045642/FE8883A6E27019222BB7D19DE5020CAC154E55EF/",
             "Convex": true,
