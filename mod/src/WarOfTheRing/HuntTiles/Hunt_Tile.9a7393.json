@@ -1,20 +1,20 @@
 {
     "Object": {
-        "GUID": "2fff89",
+        "GUID": "9a7393",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": 5.0,
+            "posX": -39.64,
             "posY": 1.02,
-            "posZ": 27.5,
-            "rotX": 0.01,
-            "rotY": 359.83,
-            "rotZ": 359.96,
+            "posZ": -13.86,
+            "rotX": 0,
+            "rotY": 180,
+            "rotZ": 0,
             "scaleX": 0.62,
             "scaleY": 0.62,
             "scaleZ": 0.62
         },
-        "Nickname": "Smeagol Hunt Tile",
-        "Description": "HuntTile;Smeagol;FreePeoples;LoME;",
+        "Nickname": "Hunt Tile",
+        "Description": "KoME;",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -42,7 +42,7 @@
         "Hands": false,
         "CustomMesh": {
             "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/2461856215753178823/D528117619A3A4BDF93C2A23FFD326EDFF17C945/",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/1752443050820122993/EBBCA53745FC1D78B70764DE1D838563F23583BB/",
+            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558539210546/3628AE75596C0E0A7A86492B3F9F3E118711C3DC/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,

@@ -14,7 +14,7 @@
             "scaleZ": 0.5
         },
         "Nickname": "Gandalf the White: Emissary from the West",
-        "Description": "Character;Token;FreePeoples;",
+        "Description": "Counter;Character;FreePeoples;",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -41,10 +41,10 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/1666862284381102231/569376306D620B4F1E35698842FCC628167172AB/",
+            "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558540045642/FE8883A6E27019222BB7D19DE5020CAC154E55EF/",
+            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558546083532/6CEBD34C321CD6D16684F3BF059DB7535ADB5E1B/",
             "NormalURL": "",
-            "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
+            "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558540045642/FE8883A6E27019222BB7D19DE5020CAC154E55EF/",
             "Convex": true,
             "MaterialIndex": 3,
             "TypeIndex": 0,

@@ -1,20 +1,20 @@
 {
     "Object": {
-        "GUID": "f88479",
+        "GUID": "7bb73b",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -30.75,
-            "posY": 1.01,
-            "posZ": 13,
-            "rotX": 0,
-            "rotY": 180,
-            "rotZ": 0,
-            "scaleX": 0.53,
-            "scaleY": 0.53,
-            "scaleZ": 0.53
+            "posX": 5.04,
+            "posY": 1.4,
+            "posZ": 27.49,
+            "rotX": 359.99,
+            "rotY": 359.53,
+            "rotZ": 359.79,
+            "scaleX": 0.62,
+            "scaleY": 0.62,
+            "scaleZ": 0.62
         },
-        "Nickname": "Free Peoples Army I",
-        "Description": "",
+        "Nickname": "Smeagol Hunt Tile",
+        "Description": "HuntTile;Smeagol;FreePeoples;LoME;",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -30,24 +30,24 @@
         "Value": 0,
         "Locked": false,
         "Grid": true,
-        "Snap": false,
+        "Snap": true,
         "IgnoreFoW": false,
         "MeasureMovement": false,
         "DragSelectable": true,
         "Autoraise": true,
-        "Sticky": false,
+        "Sticky": true,
         "Tooltip": true,
         "GridProjection": false,
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
             "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/2461856215753178823/D528117619A3A4BDF93C2A23FFD326EDFF17C945/",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/1666862284381367574/393E0EB9377C41C990A8672C90904250E8CE1A82/",
+            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558539269978/E4CDF612E922C77870CB576DDBE359496CF2D253/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
             "MaterialIndex": 3,
-            "TypeIndex": 4,
+            "TypeIndex": 0,
             "CustomShader": {
                 "SpecularColor": {
                     "r": 1,
@@ -60,7 +60,7 @@
             },
             "CastShadows": true
         },
-        "LuaScript": "#include ./Free_Peoples_Army_I.f88479.lua",
+        "LuaScript": "",
         "LuaScriptState": "",
         "XmlUI": ""
     },

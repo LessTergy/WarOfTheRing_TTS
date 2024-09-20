@@ -14,7 +14,7 @@
             "scaleZ": 0.5
         },
         "Nickname": "Aragorn: Heir to Isildur",
-        "Description": "Character;Token;FreePeoples;",
+        "Description": "Counter;Character;FreePeoples;",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -41,10 +41,10 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
-            "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/1666862284381101337/45C733298E085BCADCAF2D1FD9A69A602E1EC61E/",
+            "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558540045642/FE8883A6E27019222BB7D19DE5020CAC154E55EF/",
+            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558546083145/12071B2B10333042E918FE98CB88FA625529A10E/",
             "NormalURL": "",
-            "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/1666862284380864446/BB6AE8704837FBB340808509855C537D2418AB15/",
+            "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558540045642/FE8883A6E27019222BB7D19DE5020CAC154E55EF/",
             "Convex": true,
             "MaterialIndex": 3,
             "TypeIndex": 0,

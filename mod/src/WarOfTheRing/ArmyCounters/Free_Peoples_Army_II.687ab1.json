@@ -1,20 +1,20 @@
 {
     "Object": {
-        "GUID": "9a7393",
+        "GUID": "687ab1",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -39.64,
-            "posY": 1.02,
-            "posZ": -13.86,
+            "posX": -30.75,
+            "posY": 1.01,
+            "posZ": 5.25,
             "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 0.62,
-            "scaleY": 0.62,
-            "scaleZ": 0.62
+            "scaleX": 0.53,
+            "scaleY": 0.53,
+            "scaleZ": 0.53
         },
-        "Nickname": "Hunt Tile",
-        "Description": "KoME;",
+        "Nickname": "Free Peoples Army II",
+        "Description": "ArmyCounter;",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -30,24 +30,24 @@
         "Value": 0,
         "Locked": false,
         "Grid": true,
-        "Snap": true,
+        "Snap": false,
         "IgnoreFoW": false,
         "MeasureMovement": false,
         "DragSelectable": true,
         "Autoraise": true,
-        "Sticky": true,
+        "Sticky": false,
         "Tooltip": true,
         "GridProjection": false,
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
             "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/2461856215753178823/D528117619A3A4BDF93C2A23FFD326EDFF17C945/",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2079031781112951746/A6B44C9F2895072705CB3870E3520D26CEC4EBC9/",
+            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/1666862284381369325/6C2542519D4620282FBD8A46882D749BF4D50EBF/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
             "MaterialIndex": 3,
-            "TypeIndex": 0,
+            "TypeIndex": 4,
             "CustomShader": {
                 "SpecularColor": {
                     "r": 1,

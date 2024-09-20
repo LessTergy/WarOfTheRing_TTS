@@ -1,20 +1,20 @@
 {
     "Object": {
-        "GUID": "93b118",
+        "GUID": "7ac5fe",
         "Name": "Custom_Model",
         "Transform": {
-            "posX": -30.81,
-            "posY": 1.01,
-            "posZ": -6.42,
+            "posX": -41.29,
+            "posY": 1.02,
+            "posZ": -13.83,
             "rotX": 0,
             "rotY": 180,
             "rotZ": 0,
-            "scaleX": 0.53,
-            "scaleY": 0.53,
-            "scaleZ": 0.53
+            "scaleX": 0.62,
+            "scaleY": 0.62,
+            "scaleZ": 0.62
         },
-        "Nickname": "Shadow Army III",
-        "Description": "",
+        "Nickname": "Hunt Tile",
+        "Description": "KoME;",
         "GMNotes": "",
         "AltLookAngle": {
             "x": 0,
@@ -30,24 +30,24 @@
         "Value": 0,
         "Locked": false,
         "Grid": true,
-        "Snap": false,
+        "Snap": true,
         "IgnoreFoW": false,
         "MeasureMovement": false,
         "DragSelectable": true,
         "Autoraise": true,
-        "Sticky": false,
+        "Sticky": true,
         "Tooltip": true,
         "GridProjection": false,
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomMesh": {
             "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/2461856215753178823/D528117619A3A4BDF93C2A23FFD326EDFF17C945/",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/1666862284381373713/B7DD2D7474FE878DE220C1EDC4F5FB001234E9CC/",
+            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558539211113/51B3872CEA008434EBBCE894FD4BBAE3F83ED6AF/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
             "MaterialIndex": 3,
-            "TypeIndex": 4,
+            "TypeIndex": 0,
             "CustomShader": {
                 "SpecularColor": {
                     "r": 1,
