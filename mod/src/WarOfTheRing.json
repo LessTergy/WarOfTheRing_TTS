@@ -2864,15 +2864,15 @@
         "./ArmyCounters/Shadow_Army_I.5330c7.json",
         "./ArmyCounters/Shadow_Army_II.6cf2e3.json",
         "./ArmyCounters/Shadow_Army_III.93b118.json",
-        "./StrongholdBox/Custom_Token.231cc7.json",
-        "./StrongholdBox/Custom_Token.290739.json",
-        "./StrongholdBox/Custom_Token.3b9615.json",
-        "./StrongholdBox/Custom_Token.4024b1.json",
-        "./StrongholdBox/Custom_Token.4fde65.json",
-        "./StrongholdBox/Custom_Token.68ee3a.json",
-        "./StrongholdBox/Custom_Token.e496eb.json",
-        "./StrongholdBox/Custom_Token.f84976.json",
-        "./StrongholdBox/Custom_Token.f994cb.json",
-        "./StrongholdBox/Custom_Token.fb9626.json"
+        "./StrongholdBox/Helms_Deep.231cc7.json",
+        "./StrongholdBox/Lorien.290739.json",
+        "./StrongholdBox/Dol_Amroth.3b9615.json",
+        "./StrongholdBox/Grey_Havens.4024b1.json",
+        "./StrongholdBox/Minas_Tirith.4fde65.json",
+        "./StrongholdBox/Rivendell.68ee3a.json",
+        "./StrongholdBox/Woodland_Realm.e496eb.json",
+        "./StrongholdBox/Shadow_Stronghold_2.f84976.json",
+        "./StrongholdBox/Shadow_Stronghold_1.f994cb.json",
+        "./StrongholdBox/Erebor.fb9626.json"
     ]
 }
