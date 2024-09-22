@@ -3,15 +3,15 @@
         "GUID": "034932",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": -0.26,
+            "posX": -0.33,
             "posY": 0.9,
-            "posZ": 0.02,
+            "posZ": 0.13,
             "rotX": 0,
             "rotY": 180.0,
             "rotZ": 0,
-            "scaleX": 16.3,
+            "scaleX": 16.65,
             "scaleY": 1.0,
-            "scaleZ": 16.3
+            "scaleZ": 16.65
         },
         "Nickname": "Map",
         "Description": "",
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2413438007922758455/2FA85238A2BBA8CB946C74A287E1F51931B120BF/",
+            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558561392033/8AA23D78942D9C19C2EB80507668746883BA1D9D/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1.0,
             "WidthScale": 0,
