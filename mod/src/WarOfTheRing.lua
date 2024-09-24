@@ -2683,12 +2683,8 @@ function SettlementControlMarkerEvent(Params)
             Params.MarkerObj.setName(Region)
             Params.MarkerObj.setDescription(
                 "SettlementControlMarker;" .. Regions[Region].Settlement .. ";" .. Regions[Region].Side .. ";"
-            ) -- SettlementControlMarker;[Settlement];[Side];
-            if Params.MarkerObj.getRotation().z > 90 and Params.MarkerObj.getRotation().z < 270 then
-                Regions[Region].Control = "Shadow"
-            else
-                Regions[Region].Control = "FreePeoples"
-            end
+            )
+            Regions[Region].Control = GetControlMarkerSide(Params.MarkerObj)
 
             -- what type of event?
             if Params.Event == "Load" then
@@ -2736,6 +2732,15 @@ function SettlementControlMarkerEvent(Params)
 
             Params.MarkerObj.setGMNotes("Region:" .. Region .. ";Control:" .. Regions[Region].Control .. ";")
         end
+    end
+end
+
+function GetControlMarkerSide(ControlMarkerObject)
+    local rotation = ControlMarkerObject.getRotation().z
+    if rotation > 90 and rotation < 270 then
+        return "Shadow"
+    else
+        return "FreePeoples"
     end
 end
 
@@ -3018,22 +3023,25 @@ function StrongholdMenu(StrongholdObj)
     end
 end
 
-function StartSiege(StrongholdObj)
+function StartSiege(StrongholdObject)
     function StartSiegeCoroutine()
         local SiegeSpots = nil
-        local SrcObj = nil
-        local DstObj = nil
-        -- src or dst?
-        if string.find(StrongholdObj.getDescription(), "StrongholdBox;") ~= nil then
-            SrcObj = getObjectFromGUID(StrongholdObj.getGMNotes())
-            DstObj = StrongholdObj
-        else -- must be src...
-            SrcObj = StrongholdObj
-            DstObj = getObjectFromGUID(StrongholdObj.getGMNotes())
-            if DstObj == nil then
+        local OriginObject = nil
+        local DestinationObject = nil
+
+        local IsStrongholdBox = string.find(StrongholdObject.getDescription(), "StrongholdBox;") ~= nil
+
+        if IsStrongholdBox then
+            OriginObject = getObjectFromGUID(StrongholdObject.getGMNotes())
+            DestinationObject = StrongholdObject
+        else
+            OriginObject = StrongholdObject
+            DestinationObject = getObjectFromGUID(StrongholdObject.getGMNotes())
+
+            if DestinationObject == nil then
                 -- get first open shadow stronghold dst...
                 if getObjectFromGUID("f994cb").getGMNotes() == "" then
-                    DstObj = getObjectFromGUID("f994cb")
+                    DestinationObject = getObjectFromGUID("f994cb")
                     SiegeSpots = {
                         { -30.8, 1.5, -10.2 },
                         { -32,   1.5, -9.15 },
@@ -3046,7 +3054,7 @@ function StartSiege(StrongholdObj)
                         { -29.5, 1.5, -11.25 }
                     }
                 elseif getObjectFromGUID("f84976").getGMNotes() == "" then
-                    DstObj = getObjectFromGUID("f84976")
+                    DestinationObject = getObjectFromGUID("f84976")
                     SiegeSpots = {
                         { -30.8, 1.5, -14.1 },
                         { -32,   1.5, -13 },
@@ -3064,28 +3072,23 @@ function StartSiege(StrongholdObj)
             end
         end
 
-        if SrcObj ~= nil and DstObj ~= nil then
+        if OriginObject ~= nil and DestinationObject ~= nil then
             if SiegeSpots == nil then
-                SiegeSpots = SrcObj.getTable("SiegeSpots")
+                SiegeSpots = OriginObject.getTable("SiegeSpots")
             end
 
             -- inventory region...
             local Side = ""
             local Units = {}
             local ArmyCount = 0
+
             -- which size controls the stronghold? (look for the matching marker).
-            for O, Obj in pairs(getAllObjects()) do
-                -- look for marker and units...
+            for _, Obj in pairs(getAllObjects()) do
                 if
-                    Obj.getName() == SrcObj.getName() and
+                    Obj.getName() == OriginObject.getName() and
                     string.find(Obj.getDescription(), "SettlementControlMarker;") ~= nil
                 then
-                    if Obj.getRotation().z > 90 and Obj.getRotation().z < 270 then
-                        Side = "FreePeoples"
-                    else
-                        Side = "Shadow"
-                    end
-
+                    Side = GetControlMarkerSide(Obj)
                     break
                 end
             end
@@ -3093,11 +3096,11 @@ function StartSiege(StrongholdObj)
             coroutine.yield(0)
             if Side ~= "" then
                 -- inventory units in the region...
-                for O, Obj in pairs(getAllObjects()) do
+                for _, Obj in pairs(getAllObjects()) do
                     -- is object in the correct region?
                     if
-                        string.find(Obj.getGMNotes(), "Region:" .. SrcObj.getName() .. ";") ~= nil or
-                        string.find(Obj.getGMNotes(), "Region:" .. SrcObj.getName() .. " Stronghold;") ~= nil
+                        string.find(Obj.getGMNotes(), "Region:" .. OriginObject.getName() .. ";") ~= nil or
+                        string.find(Obj.getGMNotes(), "Region:" .. OriginObject.getName() .. " Stronghold;") ~= nil
                     then
                         -- is object on the correct side?
                         if string.find(Obj.getDescription(), Side .. ";") ~= nil then
@@ -3121,11 +3124,12 @@ function StartSiege(StrongholdObj)
 
                 -- must be 5 or less army units...
                 if #Units <= 0 then
-                    printToAll("There are no Units to Retreat into Siege at " .. SrcObj.getName() .. ".", { 1, 1, 0 })
+                    printToAll("There are no Units to Retreat into Siege at " .. OriginObject.getName() .. ".",
+                        { 1, 1, 0 })
                 elseif ArmyCount <= 5 then
                     local Height = 1.5
                     local Index = 0
-                    SrcObj.setDescription("Stronghold;Besieged;")
+                    OriginObject.setDescription("Stronghold;Besieged;")
                     for U = 1, #Units do
                         Index = Index + 1
                         if Index > #SiegeSpots then
@@ -3143,13 +3147,13 @@ function StartSiege(StrongholdObj)
                         if
                             string.find(
                                 getObjectFromGUID(Units[U]).getGMNotes(),
-                                "Region:" .. SrcObj.getName() .. " Stronghold;"
+                                "Region:" .. OriginObject.getName() .. " Stronghold;"
                             ) == nil
                         then
                             -- change Region to Stronghold Box and update return info...
                             getObjectFromGUID(Units[U]).setGMNotes(
                                 "Region:" ..
-                                SrcObj.getName() ..
+                                OriginObject.getName() ..
                                 " Stronghold;PX:" ..
                                 string.format("%.3f", getObjectFromGUID(Units[U]).getPosition().x) ..
                                 ";PZ:" ..
@@ -3162,19 +3166,19 @@ function StartSiege(StrongholdObj)
                     end
 
                     coroutine.yield(0)
-                    SrcObj.setGMNotes(DstObj.getGUID())
-                    DstObj.setGMNotes(SrcObj.getGUID())
+                    OriginObject.setGMNotes(DestinationObject.getGUID())
+                    DestinationObject.setGMNotes(OriginObject.getGUID())
                 else -- too many army units....
                     printToAll(
                         "Cannot Retreat into Siege at " ..
-                        SrcObj.getName() .. " because there are more than 5 Army Units (" .. ArmyCount .. ").",
+                        OriginObject.getName() .. " because there are more than 5 Army Units (" .. ArmyCount .. ").",
                         { 1, 1, 0 }
                     )
                 end
             else -- could not determine which side controls the stronghold...
-                print("Uhoh! Cannot find the Settlement Control Marker for: " .. SrcObj.getName() .. "!")
+                print("Uhoh! Cannot find the Settlement Control Marker for: " .. OriginObject.getName() .. "!")
             end -- if side?
-            StrongholdMenu(SrcObj)
+            StrongholdMenu(OriginObject)
         end
 
         return 1

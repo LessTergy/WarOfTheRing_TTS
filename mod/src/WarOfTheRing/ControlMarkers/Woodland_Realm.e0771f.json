@@ -14,7 +14,7 @@
             "scaleZ": 0.45
         },
         "Nickname": "Woodland Realm",
-        "Description": "SettlementControlMarker;;FreePeoples;",
+        "Description": "SettlementControlMarker;Stronghold;FreePeoples;",
         "GMNotes": "Region:Woodland Realm;Control:FreePeoples;",
         "AltLookAngle": {
             "x": 0,
