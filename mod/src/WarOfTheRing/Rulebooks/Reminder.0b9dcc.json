@@ -1,19 +1,19 @@
 {
     "Object": {
-        "GUID": "74ba38",
+        "GUID": "0b9dcc",
         "Name": "Custom_PDF",
         "Transform": {
             "posX": 79,
             "posY": 0.95,
-            "posZ": -31.0,
+            "posZ": 0,
             "rotX": 0,
-            "rotY": 270.01,
+            "rotY": 269.98,
             "rotZ": 0,
             "scaleX": 4,
             "scaleY": 1,
             "scaleZ": 4
         },
-        "Nickname": "War of the Ring FAQ",
+        "Nickname": "Reminder v1.10",
         "Description": "",
         "GMNotes": "",
         "AltLookAngle": {
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomPDF": {
-            "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/1470941285216969950/A7FB3B68E6D6536B6305901E0AF9F0293AC91F69/",
+            "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/2447233392239678362/5207ADE4C460F4C6A6F53773AD8E04F7940C2DB2/",
             "PDFPassword": "",
             "PDFPage": 0,
             "PDFPageOffset": 0
