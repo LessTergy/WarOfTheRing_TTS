@@ -1154,7 +1154,7 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
         local Template = getObjectFromGUID(guid)
         printToAll("Updating " .. Template.getName() .. "...")
 
-        --go through all objects and look for those to replace...
+        -- go through all objects and look for those to replace
         for _, Obj in pairs(AllObjects) do
             local NewObj = nil
             local position = nil
@@ -1179,6 +1179,7 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
             NewObj = Template.clone({ position })
             NewObj.setLock(false)
             NewObj.setPosition({ position.x, position.y + 1, position.z })
+            NewObj.setLuaScript(Obj.getLuaScript())
             Obj.destruct()
 
             ::continue::
