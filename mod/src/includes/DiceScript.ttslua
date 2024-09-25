@@ -12,7 +12,7 @@ function onLoad()
 end
 
 function onDestroy()
-    --remove this die if it was rolling...
+    --remove this die if it was rolling
     if ThisDiceRolling then
         Global.call("DeleteActionRoll", { DiceID = self.getGUID() })
     end

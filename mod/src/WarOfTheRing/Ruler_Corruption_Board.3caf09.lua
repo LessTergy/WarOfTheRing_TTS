@@ -260,7 +260,7 @@ function RefreshPanel()
         tooltip =
         "Corrupt this Ruler."
     })
-    --draw tile button...
+    --draw tile button
     self.createButton({
         click_function = "DrawTileCorruption",
         function_owner = self,
@@ -284,7 +284,7 @@ function DrawTileCorruption(Object, PlayerColor)
             if HuntPool.getQuantity() < 1 then
                 printToAll("Hunt Pool is empty.")
             else
-                --shuffle the hunt pool...
+                --shuffle the hunt pool
                 printToAll("\nShuffling " .. HuntPool.getQuantity() .. " Tiles in the Hunt Pool")
                 HuntPool.shuffle()
                 coroutine.yield(0)

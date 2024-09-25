@@ -95,7 +95,7 @@ local IDsBase = {
 }
 
 function UpdateIDs()
-    log("Updating Components IDs...")
+    log("Updating Components IDs")
 
     local IDs = IDsBase
     local allObjects = getAllObjects()

@@ -4,8 +4,8 @@ function onCollisionEnter(collision_info)
         --fellowship revealed?
         if getObjectFromGUID("6b62ef").getRotation().z < 90 or getObjectFromGUID("6b62ef").getRotation().z > 270 then
             broadcastToAll("Warning: Fellowship cannot move while revealed.", { 1, 1, 0 })
-        else --fellowship is hidden...
-            --if ring-bearers are not on the mordor track...
+        else --fellowship is hidden
+            --if ring-bearers are not on the mordor track
             local RBObj = getObjectFromGUID("e76bc8")
             if RBObj == nil then RBObj = getObjectFromGUID("d67c12") end
             if RBObj == nil then RBObj = getObjectFromGUID("b98185") end
@@ -17,13 +17,13 @@ function onCollisionEnter(collision_info)
                 broadcastToAll(
                     "The Fellowship moved on the Fellowship Track from " ..
                     tostring(OldValue) .. " to " .. tostring(OldValue + 1) .. ".", { 1, 1, 0 })
-                --if sic shadow panel is in play...
+                --if sic shadow panel is in play
                 if getObjectFromGUID("4b6f4c") ~= nil then
                     local HuntLevel = 0
                     local ToHit = 6
                     local ReRolls = 0
                     for O, Obj in pairs(getObjectFromGUID("b06145").getObjects()) do
-                        --make sure it's not this new die (ignore if it is)...
+                        --make sure it's not this new die (ignore if it is)
                         if Obj.getGUID() ~= collision_info.collision_object.getGUID() then
                             --if eye or shadow die then increment hunt level to max 5
                             if string.find(Obj.getDescription(), "Shadow;") ~= nil or string.find(Obj.getRotationValue(), "Eye") ~= nil then
@@ -33,7 +33,7 @@ function onCollisionEnter(collision_info)
                             end
                         end
                     end
-                    --get RingBearer's region...
+                    --get RingBearer's region
                     local RB = getObjectFromGUID("e76bc8")
                     if RB == nil then getObjectFromGUID("d67c12") end
                     if RB == nil then getObjectFromGUID("b98185") end
@@ -101,16 +101,16 @@ function onCollisionEnter(collision_info)
                     end
                 end
             end
-            --add dice to the freepeoples huntbox table...
+            --add dice to the freepeoples huntbox table
             local GamePanel = getObjectFromGUID(Global.getVar("GamePanelID"))
             local HuntBoxFreePeoplesDice = GamePanel.getTable("HuntBoxFreePeoplesDice")
             local Spots = GamePanel.getTable("Spots")
             local Placed = false
             table.insert(HuntBoxFreePeoplesDice, collision_info.collision_object.getGUID())
             GamePanel.setTable("HuntBoxFreePeoplesDice", HuntBoxFreePeoplesDice)
-            --increment the free peoples hunt dice count...
+            --increment the free peoples hunt dice count
             GamePanel.setVar("FreePeoplesHuntDiceCount", GamePanel.getVar("FreePeoplesHuntDiceCount") + 1)
-            --get next open spot in the hunt box and place the die there...
+            --get next open spot in the hunt box and place the die there
             for I = 1, #Spots.FreePeoplesHuntBoxDice do
                 local OK = true
                 for O, Obj in pairs(Physics.cast({ origin = { Spots.FreePeoplesHuntBoxDice[I][1], 1.5, Spots.FreePeoplesHuntBoxDice[I][3] }, direction = { 0, 1, 0 }, size = { 1, 1, 1 }, orientation = { 0, 0, 0 }, type = 3, max_distance = 0, debug = false })) do
@@ -128,7 +128,7 @@ function onCollisionEnter(collision_info)
                 end
             end
             if not Placed then
-                --just drop it above the hunt box...
+                --just drop it above the hunt box
                 collision_info.collision_object.setPositionSmooth({ -34, 5, -22 }, false, false)
             end
         end

@@ -4,9 +4,9 @@ Side = ""
 SideName = ""
 Dice = {}
 Rolling = false
-RollingTable = {} --list of dice actively rolling.
-RolledTable = {}  --list of dice finished rolling.
-ResultTable = {}  --table of roll results.
+RollingTable = {} --list of dice actively rolling
+RolledTable = {} --list of dice finished rolling
+ResultTable = {} --table of roll results
 ResultText = ""
 OffsetX = 4.5
 OffsetY = 0.5
@@ -34,7 +34,7 @@ function onObjectLeaveContainer(Container, Object)
 end
 
 function ReadTag(Params) --{Text="",Var="",Default=""}
-    --returns a value read from a line of text:  ex: System:ABCDE; will return ABCDE,or the default value if not found...
+    --returns a value read from a line of text:  ex: System:ABCDE; will return ABCDE,or the default value if not found
     if Params.Default == nil then Params.Default = "" end
     local VarValue = string.match(Params.Text, Params.Var .. ":.-;")
     if VarValue == nil then
@@ -209,7 +209,7 @@ function DisplayButtons()
 end
 
 function InsertRoll(Params) --{DiceID=""}
-    --only insert this dice roll if it did not already roll in this batch...
+    --only insert this dice roll if it did not already roll in this batch
     local Dupe = false
     for R = 1, #RolledTable do
         if RolledTable[R] == Params.DiceID then
@@ -227,7 +227,7 @@ function InsertRoll(Params) --{DiceID=""}
 end
 
 function DeleteRoll(Params) --{DiceID=""}
-    --remove this dice from roll tables...
+    --remove this dice from roll tables
     for R = 1, #RollingTable do
         if RollingTable[R] == Params.DiceID then
             table.remove(RollingTable, R)
@@ -243,7 +243,7 @@ function DeleteRoll(Params) --{DiceID=""}
 end
 
 function ReportRoll(Params) --{DiceID=""}
-    --remove this dice from rolling table and report result...
+    --remove this dice from rolling table and report result
     for R = 1, #RollingTable do
         if RollingTable[R] == Params.DiceID then
             table.remove(RollingTable, R)
@@ -254,16 +254,16 @@ function ReportRoll(Params) --{DiceID=""}
 end
 
 function RollingCoroutine()
-    --start this coroutine when any of this player's dice start rolling...
-    --signal this player is rolling a batch of their dice...
+    --start this coroutine when any of this player's dice start rolling
+    --signal this player is rolling a batch of their dice
     Rolling = true
-    --clear results table, we're collecting a new results table now...
+    --clear results table, we're collecting a new results table now
     ResultTable = {}
-    --keep looping until all rolling dice come to rest...
+    --keep looping until all rolling dice come to rest
     while #RollingTable > 0 do
         coroutine.yield(0)
     end
-    --display this batch of dice roll results...
+    --display this batch of dice roll results
     printToAll("-------------------------------------------------", DiceColor)
     if #RolledTable == 1 then
         ResultText = SideName .. " Player rolled a Combat Die: [" .. getObjectFromGUID(RolledTable[1]).getValue() .. "]"
@@ -279,10 +279,10 @@ function RollingCoroutine()
     end
     broadcastToAll(ResultText, DiceColor)
     printToAll("\n")
-    --clear Tables...
+    --clear Tables
     RollingTable = {}
     RolledTable = {}
-    --signal this player is done rolling this batch of dice...
+    --signal this player is done rolling this batch of dice
     Rolling = false
     return 1
 end
