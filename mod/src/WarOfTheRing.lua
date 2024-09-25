@@ -648,25 +648,29 @@ function SetupTheFateOfErebor()
             end
 
             coroutine.yield(0)
+
             -- activate dwarves political counter
-            if getObjectFromGUID("a55f2c") ~= nil then
+            local dwarvesPoliticalToken = getObjectFromGUID("a55f2c")
+            if dwarvesPoliticalToken ~= nil then
                 printToAll("  Dwarves are Active on the Political Track")
-                getObjectFromGUID("a55f2c").setRotation({ 0, 225, 180 })
+                SetTokenRotation(dwarvesPoliticalToken, true)
             end
 
             coroutine.yield(0)
+
             -- udpate region markers
-            if getObjectFromGUID("d39196") ~= nil then
-                getObjectFromGUID("d39196").setPositionSmooth({ 18.35, 9, 21.32 }, false, false)
-                -- move erebor marker
-                getObjectFromGUID("d39196").setRotation({ 0, 225, 0 })
+            local ereborMarker = getObjectFromGUID("d39196")
+            if ereborMarker ~= nil then
+                ereborMarker.setPositionSmooth({ 18.35, 9, 21.32 }, false, false)
+                SetTokenRotation(ereborMarker, false)
             end
 
             coroutine.yield(0)
-            if getObjectFromGUID("492ce6") ~= nil then
-                getObjectFromGUID("492ce6").setPositionSmooth({ 21.45, 9, 21.3 }, false, false)
+            local ironHillsMarker = getObjectFromGUID("492ce6")
+            if ironHillsMarker ~= nil then
+                ironHillsMarker.setPositionSmooth({ 21.45, 9, 21.3 }, false, false)
                 -- move iron hills marker
-                getObjectFromGUID("492ce6").setRotation({ 0, 225, 180 })
+                SetTokenRotation(ironHillsMarker, true)
             end
 
             coroutine.yield(0)
@@ -896,10 +900,11 @@ function SetupTheFateOfErebor_NewCities()
             Detected = { X = 0, R = 0, E = 0, L = 0 },
             Starting = { R = 2, E = 0, L = 0 }
         }
-        if getObjectFromGUID("29981e") ~= nil then
-            getObjectFromGUID("29981e").setPositionSmooth({ -19.72, 9, 17.36 }, false, false)
-            -- move marker
-            getObjectFromGUID("29981e").setRotation({ 0, 225, 180 })
+
+        local eredLuinMarker = getObjectFromGUID("29981e")
+        if eredLuinMarker ~= nil then
+            eredLuinMarker.setPositionSmooth({ -19.72, 9, 17.36 }, false, false)
+            SetTokenRotation(eredLuinMarker, true)
         end
     end
 
@@ -925,7 +930,7 @@ function SetupTheFateOfErebor_NewCities()
         if getObjectFromGUID("1d784f") ~= nil then
             getObjectFromGUID("1d784f").setPositionSmooth({ 27.76, 9, 0.95 }, false, false)
             -- move marker
-            getObjectFromGUID("1d784f").setRotation({ 0, 225, 0 })
+            getObjectFromGUID("1d784f").setRotation({ 0, 135, 180 })
         end
     end
 end
@@ -968,7 +973,7 @@ function CorruptHelmsDeep()
         coroutine.yield(0)
         -- move and flip SettlementControlMarker
         getObjectFromGUID("04cc5c").setPositionSmooth({ 0.71, 3, -5.03 }, false, false)
-        getObjectFromGUID("04cc5c").setRotation({ 0, 225, 0 })
+        getObjectFromGUID("04cc5c").setRotation({ 0, 135, 180 })
         coroutine.yield(0)
         -- announce corruption of helms deep
         printToAll("Helm's Deep has been corrupted to a Shadow Stronghold.", { 1, 1, 0 })
@@ -1015,7 +1020,7 @@ function RestoreHelmsDeep()
         coroutine.yield(0)
         -- move and flip SettlementControlMarker
         getObjectFromGUID("04cc5c").setPositionSmooth({ -0.64, 3, -5.12 }, false, false)
-        getObjectFromGUID("04cc5c").setRotation({ 0, 225, 180 })
+        getObjectFromGUID("04cc5c").setRotation({ 0, 135, 0 })
         coroutine.yield(0)
         -- announce restoration of helms deep
         printToAll("Helm's Deep has been restored to a Free People's Stronghold.", { 1, 1, 0 })
@@ -5380,4 +5385,12 @@ function SettlementsAreFlat()
     local preferencesPanel = getObjectFromGUID("c35be9")
     local settings = preferencesPanel.getTable("Settings")
     return settings.SettlementsType == "Flat"
+end
+
+function SetTokenRotation(Token, IsActive)
+    local zRotation = 0
+    if not IsActive then
+        zRotation = 180
+    end
+    Token.setRotation({ 0, 135, zRotation })
 end
