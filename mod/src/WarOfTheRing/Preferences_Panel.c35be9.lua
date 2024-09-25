@@ -133,7 +133,7 @@ function UpdatePanel()
     local DiceOriginalColor = { 1, 1, 1 }
     local DiceAnniversaryColor = { 1, 1, 1 }
 
-    --set button colors to match selections...
+    --set button colors to match selections
     if Settings.CharactersType == "2D" then
         Characters2DColor = { 1, 1, 0 }
     elseif Settings.CharactersType == "Square" then
@@ -210,7 +210,7 @@ function UpdatePanel()
     end
 
     self.clearButtons()
-    --figure scale...
+    --figure scale
     self.createButton(
         {
             click_function = "FigureScaleDown",
@@ -254,7 +254,7 @@ function UpdatePanel()
             font_size = 100
         }
     )
-    --armies model buttons...
+    --armies model buttons
     self.createButton(
         {
             click_function = "Armies3D",
@@ -300,7 +300,7 @@ function UpdatePanel()
             tooltip = "Use Round Marble Models for Armies."
         }
     )
-    --character model buttons...
+    --character model buttons
     self.createButton(
         {
             click_function = "Characters3D",
@@ -346,7 +346,7 @@ function UpdatePanel()
             tooltip = "Use Square Marble Models for Characters."
         }
     )
-    --factions model buttons...
+    --factions model buttons
     self.createButton(
         {
             click_function = "Factions3D",
@@ -392,7 +392,7 @@ function UpdatePanel()
             tooltip = "Use Round Marble Models for Factions (Warriors of Middle-Earth)."
         }
     )
-    --nazgul model buttons...
+    --nazgul model buttons
     self.createButton(
         {
             click_function = "Nazgul3D",
@@ -453,9 +453,9 @@ function UpdatePanel()
             tooltip = "Use Square Marble Models for Nazgul."
         }
     )
-    --lock models button...
+    --lock models button
 
-    --mt doom buttons...
+    --mt doom buttons
     self.createButton(
         {
             click_function = "MtDoom3D",
@@ -486,7 +486,7 @@ function UpdatePanel()
             tooltip = "Do not use 3D Mount Doom Track."
         }
     )
-    --settlement buttons...
+    --settlement buttons
     self.createButton(
         {
             click_function = "Settlements3D",
@@ -517,7 +517,7 @@ function UpdatePanel()
             tooltip = "Do not use 3D Settlements."
         }
     )
-    --sound effect buttons...
+    --sound effect buttons
     self.createButton(
         {
             click_function = "SoundEffectsOn",
@@ -548,7 +548,7 @@ function UpdatePanel()
             tooltip = "Mute Sound Effects."
         }
     )
-    --scream buttons...
+    --scream buttons
     self.createButton(
         {
             click_function = "ScreamAlways",
@@ -594,7 +594,7 @@ function UpdatePanel()
             tooltip = "Shut Up!"
         }
     )
-    --rules warnings buttons...
+    --rules warnings buttons
     self.createButton(
         {
             click_function = "WarningsOn",
@@ -625,7 +625,7 @@ function UpdatePanel()
             tooltip = "Rule Warnings Off: Will not detect rules violations."
         }
     )
-    --dice pack buttons...
+    --dice pack buttons
     self.createButton(
         {
             click_function = "DiceOriginal",
@@ -656,7 +656,7 @@ function UpdatePanel()
             tooltip = "Anniversary Dice Pack: Play with dice that match the Anniversary Edition."
         }
     )
-    --roll panel button...
+    --roll panel button
     if DicePanels == "Strips" then
         self.createButton(
             {
@@ -691,7 +691,7 @@ function UpdatePanel()
         )
     end
 
-    --apply...
+    --apply
     if ApplySettingsFlag then
         self.createButton(
             {
@@ -743,7 +743,7 @@ function NewCharacters3D()
             {
                 click_function = "ApplyPreferences",
                 function_owner = self,
-                label = "Please Wait\nApplying Preferences...",
+                label = "Please Wait\nApplying Preferences",
                 position = { 0, 0.1, 0 },
                 width = 0,
                 height = 0,
@@ -956,7 +956,7 @@ function ToggleDicePanels()
                 White = { -23.75, 1.01, -17.25 }
             }
             DPY = 180
-        else --not compact mode...
+        else --not compact mode
             DPS = {
                 Red = { -60, 1.14, -35.5 },
                 Black = { -60, 1.14, -37 },
@@ -966,7 +966,7 @@ function ToggleDicePanels()
             DPY = 0
         end
 
-        --fetch red strip...
+        --fetch red strip
         if getObjectFromGUID("9847f7") ~= nil then
             DPO = getObjectFromGUID("9847f7")
         else
@@ -979,7 +979,7 @@ function ToggleDicePanels()
             DPO.setLock(true)
         end
 
-        --fetch black strip...
+        --fetch black strip
         if getObjectFromGUID("63319b") ~= nil then
             DPO = getObjectFromGUID("63319b")
         else
@@ -993,7 +993,7 @@ function ToggleDicePanels()
             DPO.setLock(true)
         end
 
-        --fetch blue strip...
+        --fetch blue strip
         if getObjectFromGUID("637507") ~= nil then
             DPO = getObjectFromGUID("637507")
         else
@@ -1006,7 +1006,7 @@ function ToggleDicePanels()
             DPO.setLock(true)
         end
 
-        --fetch white strip...
+        --fetch white strip
         if getObjectFromGUID("f50dab") ~= nil then
             DPO = getObjectFromGUID("f50dab")
         else
@@ -1044,12 +1044,12 @@ function ToggleDicePanels()
         if Global.getVar("CompactMode") then
             DPS = { F = { -23.7, 1.01, -14.2 }, S = { -1.9, 1.01, -21.5 } }
             DPY = 0
-        else --not compact mode...
+        else --not compact mode
             DPS = { F = { -60, 1.14, 34 }, S = { -60, 1.14, -34 } }
             DPY = 180
         end
 
-        --fetch shadow panel...
+        --fetch shadow panel
         if getObjectFromGUID("92a611") ~= nil then
             DPO = getObjectFromGUID("92a611")
         else
@@ -1062,7 +1062,7 @@ function ToggleDicePanels()
             DPO.setLock(true)
         end
 
-        --fetch FPP panel...
+        --fetch FPP panel
         if getObjectFromGUID("4b6f4c") ~= nil then
             DPO = getObjectFromGUID("4b6f4c")
         else
@@ -1087,7 +1087,7 @@ function ApplyButton()
         {
             click_function = "ApplyPreferences",
             function_owner = self,
-            label = "Please Wait\nApplying Preferences...",
+            label = "Please Wait\nApplying Preferences",
             position = { 0, 0.1, 0 },
             width = 0,
             height = 0,
@@ -1114,7 +1114,7 @@ function ApplyButton()
         end
 
         coroutine.yield(0)
-        --get out new figurine templates...
+        --get out new figurine templates
         local ComponentBag = getObjectFromGUID("0e5fd1")
         local AllObjects = getAllObjects()
 
@@ -1152,9 +1152,9 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
 
     for _, guid in pairs(TemplateGuidList) do
         local Template = getObjectFromGUID(guid)
-        printToAll("Updating " .. Template.getName() .. "...")
+        printToAll("Updating " .. Template.getName() .. "")
 
-        --go through all objects and look for those to replace...
+        -- go through all objects and look for those to replace
         for _, Obj in pairs(AllObjects) do
             local NewObj = nil
             local position = nil
@@ -1179,6 +1179,7 @@ function ReplaceObjects(ComponentBag, AllObjects, SearchConfig, SettingType)
             NewObj = Template.clone({ position })
             NewObj.setLock(false)
             NewObj.setPosition({ position.x, position.y + 1, position.z })
+            NewObj.setLuaScript(Obj.getLuaScript())
             Obj.destruct()
 
             ::continue::
@@ -1398,14 +1399,14 @@ function TryUpdateDiceObject(OldDiceObj)
         return nil
     end
 
-    --look in dice bag for replacement...
+    --look in dice bag for replacement
     local ComponentBag = getObjectFromGUID("0e5fd1")
 
     local isSameDescription = false
     local isAnniversaryDice = false
 
     for _, Item in pairs(ComponentBag.getObjects()) do
-        --match? same description (except anniversary tag) and either anniversary or not anniversary...
+        --match? same description (except anniversary tag) and either anniversary or not anniversary
         isSameDescription =
             string.gsub(description, "Anniversary;", "") == string.gsub(Item.description, "Anniversary;", "")
 
@@ -1461,7 +1462,7 @@ function UpdateMountDoom()
 end
 
 function RecordPreferences()
-    --record settings...
+    --record settings
     Global.setVar("RulesWarnings", WarningsSettingType == "On")
     local Notes = ""
     --Notes = Notes .. "Scale:" .. FigureScale .. ";"
@@ -1493,7 +1494,7 @@ function ChangeFigureScaleCoroutine()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "Please Wait...\n\n(Changing Figure Scale)...",
+            label = "Please Wait\n\n(Changing Figure Scale)",
             position = { 0, 0.1, 0 },
             width = 0,
             height = 0,

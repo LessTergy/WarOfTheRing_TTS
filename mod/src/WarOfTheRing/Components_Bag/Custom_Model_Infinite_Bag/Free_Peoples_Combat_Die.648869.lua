@@ -13,7 +13,7 @@ function onLoad()
 end
 
 function onDestroy()
-    --remove this die if it was rolling...
+    --remove this die if it was rolling
     if ThisDiceRolling and getObjectFromGUID(PanelID) ~= nil then
         getObjectFromGUID(PanelID).call("DeleteRoll", { DiceID = self.getGUID() })
     end

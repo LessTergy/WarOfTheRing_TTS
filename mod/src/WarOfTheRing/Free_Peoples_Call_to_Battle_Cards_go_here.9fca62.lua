@@ -22,14 +22,14 @@ function AddToHand(Obj, Color)
             end
             local DeckCount = getObjectFromGUID(DeckID).getQuantity()
             local HandCount = #Player[Color].getHandObjects()
-            --deal the cards...
+            --deal the cards
             getObjectFromGUID(DeckID).deal(DeckCount, Color)
             repeat
                 coroutine.yield(0)
             until #Player[Color].getHandObjects() >= DeckCount + HandCount
             for X = 1, 20 do coroutine.yield(0) end
             Global.call("ShuffleHand", { player = Color })
-            --always return 1...
+            --always return 1
             return 1
         end
 
@@ -42,7 +42,7 @@ end
 function ReturnCards(Obj, Color)
     if Color == "Blue" or Color == "Green" then
         function ReturnCardsCoroutine()
-            --search cards...
+            --search cards
             local HandID = "63b83a" --assume blue
             if Color == "Green" then HandID = "588435" end
             for _, Obj in pairs(getObjectFromGUID(HandID).getObjects()) do
@@ -57,7 +57,7 @@ function ReturnCards(Obj, Color)
                 end
             end
             for X = 1, 10 do coroutine.yield(0) end
-            --wait for deck to form...
+            --wait for deck to form
             repeat
                 DeckID = GetDeckID()
                 coroutine.yield(0)

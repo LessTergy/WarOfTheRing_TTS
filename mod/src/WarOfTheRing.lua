@@ -245,7 +245,7 @@ function onObjectEnterZone(zone, enter_object)
             CheckHandLimit({ HandID = "71d77a", HandColor = "Yellow" })
         elseif zone.getGUID() == "588435" then -- green hand
             CheckHandLimit({ HandID = "588435", HandColor = "Green" })
-        elseif zone.getGUID() == "128335" then -- fellowship card zone...
+        elseif zone.getGUID() == "128335" then -- fellowship card zone
             -- card and companion tag, but not already tagged as fellowship?
             if
                 enter_object.type == "Card" and enter_object.getName() ~= "The Ring-bearers (Frodo & Samwise)" and
@@ -305,10 +305,10 @@ function onObjectLeaveZone(zone, leave_object)
             CheckHandLimit({ HandID = "71d77a", HandColor = "Yellow" })
         elseif zone.getGUID() == "588435" then -- green hand
             CheckHandLimit({ HandID = "588435", HandColor = "Green" })
-        elseif zone.getGUID() == "128335" then -- fellowship card zone...
+        elseif zone.getGUID() == "128335" then -- fellowship card zone
             -- not actively searching the fellowship?
             if not SearchingFellowship then
-                -- card and and fellowship tag...
+                -- card and and fellowship tag
                 if
                     leave_object.type == "Card" and leave_object.getName() ~= "The Ring-bearers (Frodo & Samwise)" and
                     string.find(leave_object.getDescription(), "Fellowship;") ~= nil
@@ -400,16 +400,16 @@ end
 function onObjectSearchEnd(Object, PlayerColor)
     if Object.getGUID() == "002387" then
         Object.shuffle()
-        printToAll("Shuffling Hunt Pool...")
+        printToAll("Shuffling Hunt Pool")
     elseif Object.getGUID() == "043c9c" then
         Object.shuffle()
-        printToAll("Shuffling Companion Random Pool...")
+        printToAll("Shuffling Companion Random Pool")
     end
 end
 
 -- {Dice=Object,Value="Eye"}
 function SetDiceFace(Params)
-    -- if object is a die and has the specified face, then rotates to it, otherwise does nothing...
+    -- if object is a die and has the specified face, then rotates to it, otherwise does nothing
     if Params.Dice ~= nil then
         if Params.Dice.type == "Dice" then
             for _, FF in pairs(Params.Dice.getRotationValues()) do
@@ -448,7 +448,7 @@ function CheckHandLimit(Params)
             FactionLimit = 3
         end
 
-        -- check hand limit...
+        -- check hand limit
         for O, Obj in pairs(getObjectFromGUID(Params.HandID).getObjects()) do
             if Obj.type == "Card" then
                 if string.find(Obj.getDescription(), "Event;") ~= nil then
@@ -459,7 +459,7 @@ function CheckHandLimit(Params)
             end
         end
 
-        -- check for alert...
+        -- check for alert
         if EventCount > EventLimit then
             AlertText =
                 "Discard " ..
@@ -600,7 +600,7 @@ end
 
 function SetupTheFateOfErebor()
     function SetupTFoECoroutine()
-        printToAll("Setting up The Fate of Erebor mini expansion...")
+        printToAll("Setting up The Fate of Erebor mini expansion")
         local OverlayToken = getObjectFromGUID(TFoERegionOverlayID)
         if OverlayToken ~= nil then
             OverlayToken.setLock(true)
@@ -634,7 +634,7 @@ function SetupTheFateOfErebor()
             end
 
             coroutine.yield(0)
-            -- Iron Hills 3d city...
+            -- Iron Hills 3d city
             if getObjectFromGUID("7318b5") ~= nil then
                 getObjectFromGUID("7318b5").setLock(true)
                 getObjectFromGUID("7318b5").setRotation({ 0, 180, 0 })
@@ -648,25 +648,29 @@ function SetupTheFateOfErebor()
             end
 
             coroutine.yield(0)
-            -- activate dwarves political counter...
-            if getObjectFromGUID("a55f2c") ~= nil then
-                printToAll("  Dwarves are Active on the Political Track...")
-                getObjectFromGUID("a55f2c").setRotation({ 0, 225, 180 })
+
+            -- activate dwarves political counter
+            local dwarvesPoliticalToken = getObjectFromGUID("a55f2c")
+            if dwarvesPoliticalToken ~= nil then
+                printToAll("  Dwarves are Active on the Political Track")
+                SetTokenRotation(dwarvesPoliticalToken, true)
             end
 
             coroutine.yield(0)
-            -- udpate region markers...
-            if getObjectFromGUID("d39196") ~= nil then
-                getObjectFromGUID("d39196").setPositionSmooth({ 18.35, 9, 21.32 }, false, false)
-                -- move erebor marker
-                getObjectFromGUID("d39196").setRotation({ 0, 225, 0 })
+
+            -- udpate region markers
+            local ereborMarker = getObjectFromGUID("d39196")
+            if ereborMarker ~= nil then
+                ereborMarker.setPositionSmooth({ 18.35, 9, 21.32 }, false, false)
+                SetTokenRotation(ereborMarker, false)
             end
 
             coroutine.yield(0)
-            if getObjectFromGUID("492ce6") ~= nil then
-                getObjectFromGUID("492ce6").setPositionSmooth({ 21.45, 9, 21.3 }, false, false)
+            local ironHillsMarker = getObjectFromGUID("492ce6")
+            if ironHillsMarker ~= nil then
+                ironHillsMarker.setPositionSmooth({ 21.45, 9, 21.3 }, false, false)
                 -- move iron hills marker
-                getObjectFromGUID("492ce6").setRotation({ 0, 225, 180 })
+                SetTokenRotation(ironHillsMarker, true)
             end
 
             coroutine.yield(0)
@@ -675,7 +679,7 @@ function SetupTheFateOfErebor()
             end
 
             coroutine.yield(0)
-            -- move North Regular from Dale to Carrock...
+            -- move North Regular from Dale to Carrock
             PositionUnit(
                 {
                     Name = "North Regular",
@@ -686,7 +690,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
-            -- move North Leader from Dale to Carrock...
+            -- move North Leader from Dale to Carrock
             PositionUnit(
                 {
                     Name = "North Leader",
@@ -697,7 +701,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
-            -- move Dwarf Leader from Erebor to Iron Hills...
+            -- move Dwarf Leader from Erebor to Iron Hills
             PositionUnit(
                 {
                     Name = "Dwarf Leader",
@@ -708,7 +712,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
-            -- move Dwarf Elite from Erebor to Reserves...
+            -- move Dwarf Elite from Erebor to Reserves
             PositionUnit(
                 {
                     Name = "Dwarf Elite",
@@ -719,7 +723,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
-            -- move Dwarf Elite from Erebor to Reserves...
+            -- move Dwarf Elite from Erebor to Reserves
             PositionUnit(
                 {
                     Name = "Dwarf Elite",
@@ -730,7 +734,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
-            -- move Dwarf Regular from Erebor to Iron Hills...
+            -- move Dwarf Regular from Erebor to Iron Hills
             PositionUnit(
                 {
                     Name = "Dwarf Regular",
@@ -741,7 +745,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
-            -- move Dwarf Regular from Reserves to Ered Luin...
+            -- move Dwarf Regular from Reserves to Ered Luin
             PositionUnit(
                 {
                     Name = "Dwarf Regular",
@@ -752,7 +756,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
-            -- move Sauron Regular from Reserves to Erebor...
+            -- move Sauron Regular from Reserves to Erebor
             PositionUnit(
                 {
                     Name = "Sauron Regular",
@@ -763,7 +767,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
-            -- move Sauron Regular from Reserves to Erebor...
+            -- move Sauron Regular from Reserves to Erebor
             PositionUnit(
                 {
                     Name = "Sauron Regular",
@@ -774,7 +778,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
-            -- update region info...
+            -- update region info
             Regions["Erebor"] = {
                 Nation = "Sauron",
                 Points = 2,
@@ -860,7 +864,7 @@ function SetupTheFateOfErebor()
         end
 
         coroutine.yield(0)
-        -- spawn Dale 3d fortification...
+        -- spawn Dale 3d fortification
         local Fort = getObjectFromGUID("42366d").clone({ position = { 17.65, 1.01, 15.43 } })
         Fort.setLock(true)
         if SettlementsAreFlat() then
@@ -896,10 +900,11 @@ function SetupTheFateOfErebor_NewCities()
             Detected = { X = 0, R = 0, E = 0, L = 0 },
             Starting = { R = 2, E = 0, L = 0 }
         }
-        if getObjectFromGUID("29981e") ~= nil then
-            getObjectFromGUID("29981e").setPositionSmooth({ -19.72, 9, 17.36 }, false, false)
-            -- move marker
-            getObjectFromGUID("29981e").setRotation({ 0, 225, 180 })
+
+        local eredLuinMarker = getObjectFromGUID("29981e")
+        if eredLuinMarker ~= nil then
+            eredLuinMarker.setPositionSmooth({ -19.72, 9, 17.36 }, false, false)
+            SetTokenRotation(eredLuinMarker, true)
         end
     end
 
@@ -925,27 +930,27 @@ function SetupTheFateOfErebor_NewCities()
         if getObjectFromGUID("1d784f") ~= nil then
             getObjectFromGUID("1d784f").setPositionSmooth({ 27.76, 9, 0.95 }, false, false)
             -- move marker
-            getObjectFromGUID("1d784f").setRotation({ 0, 225, 0 })
+            getObjectFromGUID("1d784f").setRotation({ 0, 135, 180 })
         end
     end
 end
 
 function CorruptHelmsDeep()
-    -- turn helms deep into a shadow stronghold...
+    -- turn helms deep into a shadow stronghold
     function CorruptHelmsDeepCoroutine()
-        -- move in shadow helms deep region overlay...
+        -- move in shadow helms deep region overlay
         getObjectFromGUID("534719").setLock(true)
         coroutine.yield(0)
         getObjectFromGUID("534719").setPosition({ 0.09, 0.90, -6.21 })
         getObjectFromGUID("534719").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
-        -- move in shadow helms deep stronghold box...
+        -- move in shadow helms deep stronghold box
         getObjectFromGUID("c9bcd7").setLock(true)
         coroutine.yield(0)
         getObjectFromGUID("c9bcd7").setPosition({ -34.75, 0.95, -6.50 })
         getObjectFromGUID("c9bcd7").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
-        -- move in shadow helms deep stronghold3d...
+        -- move in shadow helms deep stronghold3d
         getObjectFromGUID("011a2a").setLock(true)
         coroutine.yield(0)
         getObjectFromGUID("011a2a").setRotation({ 0, 180, 0 })
@@ -956,21 +961,21 @@ function CorruptHelmsDeep()
         end
 
         coroutine.yield(0)
-        -- move out FP helms deep stronghold 3d...
+        -- move out FP helms deep stronghold 3d
         getObjectFromGUID("ef398b").setLock(false)
         getObjectFromGUID("ef398b").setPositionSmooth({ -60, 1.15, -12 }, false, false)
         getObjectFromGUID("ef398b").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
-        -- move out FP helms deep stronghold box...
+        -- move out FP helms deep stronghold box
         getObjectFromGUID("231cc7").setLock(false)
         getObjectFromGUID("231cc7").setPositionSmooth({ -57, 1, -12 }, false, false)
         getObjectFromGUID("231cc7").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
         -- move and flip SettlementControlMarker
         getObjectFromGUID("04cc5c").setPositionSmooth({ 0.71, 3, -5.03 }, false, false)
-        getObjectFromGUID("04cc5c").setRotation({ 0, 225, 0 })
+        getObjectFromGUID("04cc5c").setRotation({ 0, 135, 180 })
         coroutine.yield(0)
-        -- announce corruption of helms deep...
+        -- announce corruption of helms deep
         printToAll("Helm's Deep has been corrupted to a Shadow Stronghold.", { 1, 1, 0 })
         return 1
     end
@@ -979,24 +984,24 @@ function CorruptHelmsDeep()
 end
 
 function RestoreHelmsDeep()
-    -- restore helms deep to a free peoples stronghold...
+    -- restore helms deep to a free peoples stronghold
     function RestoreHelmsDeepCoroutine()
-        -- move out shadow helms deep region overlay...
+        -- move out shadow helms deep region overlay
         getObjectFromGUID("534719").setPositionSmooth({ -61.8, 1, -17.81 }, false, false)
         getObjectFromGUID("534719").setRotation({ 0, 180, 0 })
         getObjectFromGUID("534719").setLock(false)
         coroutine.yield(0)
-        -- move out shadow helms deep stronghold box...
+        -- move out shadow helms deep stronghold box
         getObjectFromGUID("c9bcd7").setPositionSmooth({ -56.79, 1, -16.79 }, false, false)
         getObjectFromGUID("c9bcd7").setRotation({ 0, 180, 0 })
         getObjectFromGUID("c9bcd7").setLock(false)
         coroutine.yield(0)
-        -- move out shadow helms deep stronghold3d...
+        -- move out shadow helms deep stronghold3d
         getObjectFromGUID("011a2a").setRotation({ 0, 180, 0 })
         getObjectFromGUID("011a2a").setPositionSmooth({ -61.65, 1.25, -17.08 }, false, false)
         getObjectFromGUID("011a2a").setLock(false)
         coroutine.yield(0)
-        -- move in FP helms deep stronghold 3d...
+        -- move in FP helms deep stronghold 3d
         getObjectFromGUID("ef398b").setLock(true)
         coroutine.yield(0)
         getObjectFromGUID("ef398b").setPosition({ -0.19, 0.77, -5.57 }, false, false)
@@ -1007,7 +1012,7 @@ function RestoreHelmsDeep()
         end
 
         coroutine.yield(0)
-        -- move in FP helms deep stronghold box...
+        -- move in FP helms deep stronghold box
         getObjectFromGUID("231cc7").setLock(true)
         coroutine.yield(0)
         getObjectFromGUID("231cc7").setPosition({ -34.75, 0.95, -6.50 })
@@ -1015,9 +1020,9 @@ function RestoreHelmsDeep()
         coroutine.yield(0)
         -- move and flip SettlementControlMarker
         getObjectFromGUID("04cc5c").setPositionSmooth({ -0.64, 3, -5.12 }, false, false)
-        getObjectFromGUID("04cc5c").setRotation({ 0, 225, 180 })
+        getObjectFromGUID("04cc5c").setRotation({ 0, 135, 0 })
         coroutine.yield(0)
-        -- announce restoration of helms deep...
+        -- announce restoration of helms deep
         printToAll("Helm's Deep has been restored to a Free People's Stronghold.", { 1, 1, 0 })
         return 1
     end
@@ -1086,16 +1091,16 @@ function MoveUnit(UnitName, ID1, ID2, ID3, ID4, FromLocation, ToLocation, ToPosi
         printToAll("Moving " .. UnitName .. " from " .. FromLocation .. " to " .. ToLocation .. ".")
         UnitObj.setPositionSmooth(ToPosition, false, true)
         UnitObj.setGMNotes("Region:" .. ToLocation .. ";")
-    else -- uhoh, could not find unit...
+    else -- uhoh, could not find unit
         printToAll("Failed to move " .. UnitName .. " from " .. FromLocation .. " to " .. ToLocation .. "!")
     end
 end
 
 function SetupBreakingOfTheFellowship()
     function SetupBotFCoroutine()
-        printToAll("\nSetting up The Breaking of the Fellowship...\n", { 0, 1, 0 })
+        printToAll("\nSetting up The Breaking of the Fellowship\n", { 0, 1, 0 })
 
-        -- update region info...
+        -- update region info
         Regions["Rivendell"] = {
             Nation = "Elves",
             Points = 2,
@@ -1935,7 +1940,7 @@ function SetupBreakingOfTheFellowship()
         )
         coroutine.yield(0)
         getObjectFromGUID("8039f2").setRotation({ 0, 180, 0 })
-        -- balrog is dead...
+        -- balrog is dead
         printToAll("The Balrog is Dead.", { 1, 1, 0 })
         RemoveObjectFromGame({ ID = "2c3907" })
         -- balrog figure 3d
@@ -1951,7 +1956,7 @@ function SetupBreakingOfTheFellowship()
         -- balrog card
         RemoveObjectFromGame({ Name = "A Balrog is Come!" })
 
-        -- move ring-bearers to Eastemnet {6.76, 1.00, -2.33}...
+        -- move ring-bearers to Eastemnet {6.76, 1.00, -2.33}
         -- MoveUnit("Ring-bearers","e76bc8","d67c12","b98185","","Rivendell","Eastemnet",{6.76, 1.00, -2.33})
         PositionUnit(
             {
@@ -1962,8 +1967,8 @@ function SetupBreakingOfTheFellowship()
                 Position = { 9.1, 1.76, -2.7 }
             }
         )
-        -- fellowship is broken...
-        -- Gandalf the Grey is gone...
+        -- fellowship is broken
+        -- Gandalf the Grey is gone
         local CardObj = SeparateCompanionFromFellowship("Gandalf the Grey")
         for I = 1, 30 do
             coroutine.yield(0)
@@ -1971,7 +1976,7 @@ function SetupBreakingOfTheFellowship()
 
         KillCompanionCard(CardObj)
         coroutine.yield(0)
-        -- boromir is dead...
+        -- boromir is dead
         local CardObj = SeparateCompanionFromFellowship("Boromir")
         for I = 1, 30 do
             coroutine.yield(0)
@@ -1984,7 +1989,7 @@ function SetupBreakingOfTheFellowship()
             coroutine.yield(0)
         end
 
-        -- Strider starts in Eastemnet...
+        -- Strider starts in Eastemnet
         -- MoveUnit("Strider","e226bf","4ad487","c4949b","","Fellowship","Eastemnet",{5.11,1.01,0.55})
         PositionUnit(
             {
@@ -2000,7 +2005,7 @@ function SetupBreakingOfTheFellowship()
             coroutine.yield(0)
         end
 
-        -- Legolas starts in Eastemnet...
+        -- Legolas starts in Eastemnet
         -- MoveUnit("Legolas","a335e0","cb7ce5","7438fb","","Fellowship","Eastemnet",{5.26,1.01,1.68})
         PositionUnit(
             {
@@ -2016,7 +2021,7 @@ function SetupBreakingOfTheFellowship()
             coroutine.yield(0)
         end
 
-        -- Gimli starts in Eastemnet...
+        -- Gimli starts in Eastemnet
         -- MoveUnit("Gimli","f454fb","a68c9b","694bab","","Fellowship","Eastemnet",{5.89,1.01,-0.39})
         PositionUnit(
             {
@@ -2032,7 +2037,7 @@ function SetupBreakingOfTheFellowship()
         end
 
         coroutine.yield(0)
-        -- meriadoc and peregrin start in Fangorn...
+        -- meriadoc and peregrin start in Fangorn
         -- MoveUnit("Meriadoc","5642f1","773683","929feb","","Fellowship","Fangorn",{3.81, 0.97, 1.46})
         PositionUnit(
             {
@@ -2063,7 +2068,7 @@ function SetupBreakingOfTheFellowship()
             coroutine.yield(0)
         end
 
-        -- gandalf the white starts in Lorien...
+        -- gandalf the white starts in Lorien
         printToAll("Gandalf the White has returned to Lorien.", { 1, 1, 0 })
         -- MoveUnit("Gandalf the White","0166c2","27d117","60bd5c","","out of play","Lorien",{4.46,1.41,8})
         PositionUnit(
@@ -2076,14 +2081,14 @@ function SetupBreakingOfTheFellowship()
             }
         )
         getObjectFromGUID("0546b6").setRotation({ 0, 0, 0 })
-        -- fellowship is revealed at step 0...
+        -- fellowship is revealed at step 0
         printToAll("The Fellowship starts Revealed at 0 on the Fellowship Track", { 1, 1, 0 })
         getObjectFromGUID("6b62ef").setPositionSmooth({ 5.3, 1.01, 23.20 }, false, false)
         getObjectFromGUID("6b62ef").setRotation({ 0, 270, 0 })
-        -- corruption starts at 3...
+        -- corruption starts at 3
         printToAll("The Corruption of the Ring-bearer starts at 3.", { 1, 1, 0 })
         getObjectFromGUID("abe1b3").setPositionSmooth({ 10.04, 1.01, 24.15 }, false, false)
-        -- gollum is the Fellowship Guide {27.65, 0.98, 17.00}...
+        -- gollum is the Fellowship Guide {27.65, 0.98, 17.00}
         printToAll("All Companions have left the Fellowship, and Gollum is the Guide.", { 1, 1, 0 })
         Guide = "Gollum: Slave of the Ring"
         GuideLevel = 0
@@ -2101,49 +2106,49 @@ function SetupBreakingOfTheFellowship()
         getObjectFromGUID("1c4127").setPosition({ 32.9, 3, 20.0 })
         getObjectFromGUID("1c4127").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
-        -- Sauron starts active and at war...
+        -- Sauron starts active and at war
         getObjectFromGUID("75a065").setPositionSmooth({ 34.25, 1.01, -7.26 }, false, false)
         PoliticalTrack.Sauron.Level = 0
         PoliticalTrack.Sauron.AtWar = true
         printToAll("Sauron is at War!", { 1, 1, 0 })
         coroutine.yield(0)
-        -- Isengard starts active and at war...
+        -- Isengard starts active and at war
         getObjectFromGUID("7f39c1").setPositionSmooth({ 33.2, 1.01, -7.59 }, false, false)
         PoliticalTrack.Isengard.Level = 0
         PoliticalTrack.Isengard.AtWar = true
         printToAll("Isengard is at War!", { 1, 1, 0 })
         coroutine.yield(0)
-        -- Haradrim starts active and at war...
+        -- Haradrim starts active and at war
         getObjectFromGUID("52aff9").setPositionSmooth({ 35.34, 1.01, -7.59 }, false, false)
         PoliticalTrack.Haradrim.Level = 0
         PoliticalTrack.Haradrim.AtWar = true
         printToAll("Haradrim are at War!", { 1, 1, 0 })
         coroutine.yield(0)
-        -- elves start active and at war...
+        -- elves start active and at war
         getObjectFromGUID("fc2440").setPositionSmooth({ 33.18, 1.01, -5.47 }, false, false)
         PoliticalTrack.Elves.Level = 0
         PoliticalTrack.Elves.AtWar = true
         printToAll("Elves are at War!", { 1, 1, 0 })
         coroutine.yield(0)
-        -- gondor start inactive at zone 1...
+        -- gondor start inactive at zone 1
         getObjectFromGUID("8ab5c1").setPositionSmooth({ 33.05, 1.01, -1.91 }, false, false)
         PoliticalTrack.Gondor.Level = 1
         PoliticalTrack.Gondor.AtWar = false
         printToAll("Gondor starts further down the political track.", { 1, 1, 0 })
         coroutine.yield(0)
-        -- The North start inactive at zone 2...
+        -- The North start inactive at zone 2
         getObjectFromGUID("07e059").setPositionSmooth({ 35.34, 1.01, 1.71 }, false, false)
         PoliticalTrack.North.Level = 2
         PoliticalTrack.North.AtWar = false
         printToAll("The North starts further down the political track.", { 1, 1, 0 })
         coroutine.yield(0)
-        -- Dwarves start inactive at zone 2...
+        -- Dwarves start inactive at zone 2
         getObjectFromGUID("a55f2c").setPositionSmooth({ 33.14, 1.01, 1.72 }, false, false)
         PoliticalTrack.Dwarves.Level = 2
         PoliticalTrack.Dwarves.AtWar = false
         printToAll("Dwarves start further down the political track.\n", { 1, 1, 0 })
         coroutine.yield(0)
-        -- remove tiles...
+        -- remove tiles
         printToAll(
             "Removing standard Hunt Tiles from the Hunt Pool:\nOne Eye tile\nOne 1 Tile\nTwo 2 tiles\nTwo Zero/Reveal tiles\n"
         )
@@ -2167,7 +2172,7 @@ function SetupBreakingOfTheFellowship()
         )
         coroutine.yield(0)
 
-        -- add tiles...
+        -- add tiles
         printToAll(
             "Adding Special Tiles as played:\nZero Hunt tile (Elven Cloaks)\nZero Hunt tile (Elven Rope)\n-2 Hunt tile (Phial of Galadriel)\n"
         )
@@ -2184,7 +2189,7 @@ function SetupBreakingOfTheFellowship()
         end
 
         coroutine.yield(0)
-        -- remove cards...
+        -- remove cards
         printToAll(
             "Removing Free Peoples Character Event Cards:\nMithril Coat and Sting\nMirror of Galadriel\nElven Cloaks\nElven Rope\nPhial of Galadriel\n"
         )
@@ -2227,7 +2232,7 @@ function SetupBreakingOfTheFellowship()
         coroutine.yield(0)
         RemoveObjectFromGame({ ID = "92c6ed", Name = "Rage of the Dunlendings" })
         coroutine.yield(0)
-        -- put shadow cards into play...
+        -- put shadow cards into play
         printToAll("Placing Shadow Event Cards into Play:\nThe Palantir of Orthanc\nWormtongue\nThreats and Promises\n")
         getObjectFromGUID("8c377e").takeObject(
             { smooth = true, guid = "8d09a8", position = { -26.5, 1, -6 }, rotation = { 0, 180, 0 } }
@@ -2241,7 +2246,7 @@ function SetupBreakingOfTheFellowship()
             { smooth = true, guid = "1608f1", position = { -16.5, 1, -6 }, rotation = { 0, 180, 0 } }
         )
         coroutine.yield(0)
-        -- signal next step is ok to proceed...
+        -- signal next step is ok to proceed
         getObjectFromGUID(GamePanelID).setVar("Step", "")
         return 1
     end
@@ -2282,7 +2287,7 @@ end
 
 -- {Text="",Var="",Default=""}
 function ReadTag(Params)
-    -- returns a value read from a line of text:  ex: System:ABCDE; will return ABCDE,or the default value if not found...
+    -- returns a value read from a line of text:  ex: System:ABCDE; will return ABCDE,or the default value if not found
     if Params.Default == nil then
         Params.Default = ""
     end
@@ -2361,9 +2366,9 @@ function UnitEvent(Params)
                 local LastRegion =
                     ReadTag({ Text = Params.UnitObj.getGMNotes(), Var = "Region", Default = "out of play" })
                 local Region = GetGridRegion({ Position = Params.UnitObj.getPosition() })
-                -- if unit changed regions...
+                -- if unit changed regions
                 if Region ~= LastRegion then
-                    -- if dropped into play...
+                    -- if dropped into play
                     if
                         Region ~= "" and Params.UnitObj.getPosition().x < BoardX and
                         Params.UnitObj.getPosition().x > -BoardX and
@@ -2400,7 +2405,7 @@ function UnitEvent(Params)
                             end
                         elseif LastRegion == "" and Region ~= "" then
                             if Params.UnitObj.getName() == "Gandalf the White: Emissary from the West" then
-                                -- i've been sent back...
+                                -- i've been sent back
                                 PlaySound({ ID = 9 })
                             elseif Params.UnitObj.getName() == "Aragorn: Heir to Isildur" then
                                 -- stand!
@@ -2412,38 +2417,38 @@ function UnitEvent(Params)
                                 -- smeagol
                                 PlaySound({ ID = 16 })
                             elseif Params.UnitObj.getName() == "Lady Galadriel: Keeper of Nenya" then
-                                -- task...
+                                -- task
                                 PlaySound({ ID = 30 })
                             elseif Params.UnitObj.getName() == "Lord Elrond: Keeper of Vilya" then
-                                -- unite...
+                                -- unite
                                 PlaySound({ ID = 29 })
                             elseif Params.UnitObj.getName() == "Treebeard: Tree-herd" then
-                                -- no curse...
+                                -- no curse
                                 PlaySound({ ID = 34 })
                             elseif Params.UnitObj.getName() == "Saruman: Corrupted Wizard" then
-                                -- A new power...
+                                -- A new power
                                 PlaySound({ ID = 10 })
                             elseif string.find(Params.UnitObj.getName(), "The Witch") ~= nil then
-                                -- break him...
+                                -- break him
                                 PlaySound({ ID = 25 })
                             elseif string.find(Params.UnitObj.getName(), "The Mouth of Sauron") ~= nil then
-                                -- welcome...
+                                -- welcome
                                 PlaySound({ ID = 27 })
                             elseif Params.UnitObj.getName() == "Balrog: Evil of the Ancient World" then
                                 -- roar!
                                 PlaySound({ ID = 28 })
                             elseif Params.UnitObj.getName() == "Gothmog: Lieutenant of Morgul" then
-                                -- fear...
+                                -- fear
                                 PlaySound({ ID = 26 })
                             elseif Params.UnitObj.getName() == "Ugluk: Chieftain of the Uruk-Hai" then
-                                -- ugluk...
+                                -- ugluk
                                 PlaySound({ ID = 54 })
                             elseif Params.UnitObj.getName() == "The Shadow of Mirkwood: Chieftain of the Dark Lord" then
-                                -- vampire king...
+                                -- vampire king
                                 PlaySound({ ID = 53 })
                             elseif Params.UnitObj.getName() == "The Black Serpent: Chieftain of the Haradrim" then
                                 PlaySound({ ID = 52 })
-                                -- black serpent...
+                                -- black serpent
                             end
                             -- if character from out of play
                         end
@@ -2458,11 +2463,11 @@ function UnitEvent(Params)
                             Region == "Fellowship Box" and
                             string.find(Params.UnitObj.getDescription(), "Companion;") ~= nil
                         then
-                            -- return companion to fellowship...
+                            -- return companion to fellowship
                             ReturnCompanionToFellowship(Params.UnitObj)
                         end
 
-                        -- Validate Movement depending on unit type: Nazgul, Companion, Minion, Leader or Army Unit...
+                        -- Validate Movement depending on unit type: Nazgul, Companion, Minion, Leader or Army Unit
                         function ValidateMoveCoroutine()
                             if Regions[Region].Type == "Region" then
                                 local RegionNation = Regions[Region].Nation
@@ -2471,7 +2476,7 @@ function UnitEvent(Params)
                                     RegionNation = "Haradrim"
                                 end
 
-                                -- tally units in this region...
+                                -- tally units in this region
                                 local AllyArmyCount = 0
                                 local EnemyArmyCount = 0
                                 for O, Obj in pairs(getAllObjects()) do
@@ -2499,7 +2504,7 @@ function UnitEvent(Params)
                                     Params.UnitObj.getName() == "Nazgul" or
                                     string.find(Params.UnitObj.getName(), "The Witch-King") ~= nil
                                 then
-                                    -- Nazgul cannot enter region with a stronghold controlled by FP unless it is besieged...
+                                    -- Nazgul cannot enter region with a stronghold controlled by FP unless it is besieged
                                     if
                                         Regions[Region].Settlement == "Stronghold" and
                                         Regions[Region].Control == "FreePeoples" and
@@ -2574,7 +2579,7 @@ function UnitEvent(Params)
                         if RulesWarnings and Regions[Region] ~= nil then
                             startLuaCoroutine(Global, "ValidateMoveCoroutine")
                         end
-                    else -- dropped out of play...
+                    else -- dropped out of play
                         if Params.UnitObj.getName() == "Gandalf the Grey" then
                             PlaySound({ ID = 6 })
                             -- sorrow
@@ -2591,7 +2596,7 @@ function UnitEvent(Params)
                     Region = "out of play"
                 end
 
-                -- update notes...
+                -- update notes
                 Params.UnitObj.setGMNotes("Region:" .. Region .. ";")
                 if Params.Color ~= nil then
                     printToAll(
@@ -2630,9 +2635,9 @@ function ArmyEvent(Params)
                 local LastRegion =
                     ReadTag({ Text = Params.ArmyObj.getGMNotes(), Var = "Region", Default = "out of play" })
                 local Region = GetGridRegion({ Position = Params.ArmyObj.getPosition() })
-                -- if unit changed regions...
+                -- if unit changed regions
                 if Region ~= LastRegion then
-                    -- if dropped into play...
+                    -- if dropped into play
                     if
                         Region ~= "" and Params.ArmyObj.getPosition().x < BoardX and
                         Params.ArmyObj.getPosition().x > -BoardX and
@@ -2652,7 +2657,7 @@ function ArmyEvent(Params)
                     Region = "out of play"
                 end
 
-                -- update notes...
+                -- update notes
                 Params.ArmyObj.setGMNotes("Region:" .. Region .. ";")
                 if Params.Color ~= nil then
                     printToAll(
@@ -2683,12 +2688,8 @@ function SettlementControlMarkerEvent(Params)
             Params.MarkerObj.setName(Region)
             Params.MarkerObj.setDescription(
                 "SettlementControlMarker;" .. Regions[Region].Settlement .. ";" .. Regions[Region].Side .. ";"
-            ) -- SettlementControlMarker;[Settlement];[Side];
-            if Params.MarkerObj.getRotation().z > 90 and Params.MarkerObj.getRotation().z < 270 then
-                Regions[Region].Control = "Shadow"
-            else
-                Regions[Region].Control = "FreePeoples"
-            end
+            )
+            Regions[Region].Control = GetControlMarkerSide(Params.MarkerObj)
 
             -- what type of event?
             if Params.Event == "Load" then
@@ -2711,24 +2712,24 @@ function SettlementControlMarkerEvent(Params)
                         printToAll("\n" .. Region .. " is under " .. Regions[Region].Control .. " control (Conquered).")
                     end
 
-                    -- KoME? and helms deep...
+                    -- KoME? and helms deep
                     if KingsOfMiddleEarth and Region == "Helm's Deep" then
-                        -- if helms deep is now shadow controlled...
+                        -- if helms deep is now shadow controlled
                         if Regions[Region].Control == "Shadow" then
-                            -- if theoden ruler exists...
+                            -- if theoden ruler exists
                             if getObjectFromGUID("51d8e0") ~= nil then
-                                -- if theoden is corrupted...
+                                -- if theoden is corrupted
                                 if getObjectFromGUID("51d8e0").getName() == "Theoden: Corrupted Ruler" then
                                     CorruptHelmsDeep()
                                 end
                             end
-                        else -- restore helms deep to free peoples...
+                        else -- restore helms deep to free peoples
                             RestoreHelmsDeep()
                         end
                         -- if shadow controlled.
                     end
 
-                    -- re-calc victory points...
+                    -- re-calc victory points
                     CalculateVictoryPoints()
                 end
             elseif Params.Event == "Destroy" then
@@ -2739,13 +2740,22 @@ function SettlementControlMarkerEvent(Params)
     end
 end
 
+function GetControlMarkerSide(ControlMarkerObject)
+    local rotation = ControlMarkerObject.getRotation().z
+    if rotation > 90 and rotation < 270 then
+        return "Shadow"
+    else
+        return "FreePeoples"
+    end
+end
+
 function CalculateVictoryPoints()
-    -- calculate victory points for both sides...
+    -- calculate victory points for both sides
     VictoryPoints.FreePeoples = 0
     VictoryPoints.Shadow = 0
     for SCM, SCMObj in pairs(getAllObjects()) do
         if string.find(SCMObj.getDescription(), "SettlementControlMarker;") ~= nil then
-            -- if under shadow control...
+            -- if under shadow control
             if Regions[SCMObj.getName()].Control == "Shadow" then
                 if Regions[SCMObj.getName()].Control == "Shadow" and Regions[SCMObj.getName()].Side == "FreePeoples" then
                     VictoryPoints.Shadow = VictoryPoints.Shadow + Regions[SCMObj.getName()].Points
@@ -2845,7 +2855,7 @@ function PoliticalTokenEvent(Params)
                     if Level ~= 1 then
                         printToAll(Nation .. " moved on the Political Track from " .. Level .. " to 1.")
                     end
-                else -- token must have been dropped At War: flag and blow horn...
+                else -- token must have been dropped At War: flag and blow horn
                     PoliticalTrack[Nation].Level = 0
                     PoliticalTrack[Nation].AtWar = true
                     printToAll(Nation .. " at War!")
@@ -2859,7 +2869,7 @@ function PoliticalTokenEvent(Params)
                     -- political level changed?  then sound the alarm!
                     if Params.TokenObj.getVar("LastLevel") ~= PoliticalTrack[Nation].Level then
                         if Nation == "Dwarves" then
-                            -- Far Over...
+                            -- Far Over
                             Global.call("PlaySound", { ID = 24 })
                         elseif Nation == "Elves" then
                             -- Elven Horn
@@ -2887,7 +2897,7 @@ function PoliticalTokenEvent(Params)
                 end
             end
         elseif Params.Event == "Collide" then
-            -- check to see if active status changed...
+            -- check to see if active status changed
             if Params.TokenObj.getRotation().z > 90 and Params.TokenObj.getRotation().z < 270 and Active then
                 printToAll(Nation .. ": no longer Active.")
                 PoliticalTrack[Nation].Active = false
@@ -2925,14 +2935,14 @@ function MoveObject(Params)
         end
     end
 
-    -- move the object if it was found...
+    -- move the object if it was found
     if Obj ~= nil then
         if Params.Smooth == true then
             Obj.setPositionSmooth(Params.Position, false, false)
             if Params.Rotation ~= nil then
                 Obj.setRotationSmooth(Params.Rotation, false, false)
             end
-        else -- not smooth...
+        else -- not smooth
             Obj.setPosition(Params.Position)
             if Params.Rotation ~= nil then
                 Obj.setRotation(Params.Rotation)
@@ -3018,22 +3028,25 @@ function StrongholdMenu(StrongholdObj)
     end
 end
 
-function StartSiege(StrongholdObj)
+function StartSiege(StrongholdObject)
     function StartSiegeCoroutine()
         local SiegeSpots = nil
-        local SrcObj = nil
-        local DstObj = nil
-        -- src or dst?
-        if string.find(StrongholdObj.getDescription(), "StrongholdBox;") ~= nil then
-            SrcObj = getObjectFromGUID(StrongholdObj.getGMNotes())
-            DstObj = StrongholdObj
-        else -- must be src...
-            SrcObj = StrongholdObj
-            DstObj = getObjectFromGUID(StrongholdObj.getGMNotes())
-            if DstObj == nil then
-                -- get first open shadow stronghold dst...
+        local OriginObject = nil
+        local DestinationObject = nil
+
+        local IsStrongholdBox = string.find(StrongholdObject.getDescription(), "StrongholdBox;") ~= nil
+
+        if IsStrongholdBox then
+            OriginObject = getObjectFromGUID(StrongholdObject.getGMNotes())
+            DestinationObject = StrongholdObject
+        else
+            OriginObject = StrongholdObject
+            DestinationObject = getObjectFromGUID(StrongholdObject.getGMNotes())
+
+            if DestinationObject == nil then
+                -- get first open shadow stronghold dst
                 if getObjectFromGUID("f994cb").getGMNotes() == "" then
-                    DstObj = getObjectFromGUID("f994cb")
+                    DestinationObject = getObjectFromGUID("f994cb")
                     SiegeSpots = {
                         { -30.8, 1.5, -10.2 },
                         { -32,   1.5, -9.15 },
@@ -3046,7 +3059,7 @@ function StartSiege(StrongholdObj)
                         { -29.5, 1.5, -11.25 }
                     }
                 elseif getObjectFromGUID("f84976").getGMNotes() == "" then
-                    DstObj = getObjectFromGUID("f84976")
+                    DestinationObject = getObjectFromGUID("f84976")
                     SiegeSpots = {
                         { -30.8, 1.5, -14.1 },
                         { -32,   1.5, -13 },
@@ -3058,46 +3071,41 @@ function StartSiege(StrongholdObj)
                         { -30.8, 1.5, -15.2 },
                         { -29.5, 1.5, -15.2 }
                     }
-                else -- none available...
+                else -- none available
                     printToAll("No available Shadow Strongholds.", { 1, 1, 0 })
                 end
             end
         end
 
-        if SrcObj ~= nil and DstObj ~= nil then
+        if OriginObject ~= nil and DestinationObject ~= nil then
             if SiegeSpots == nil then
-                SiegeSpots = SrcObj.getTable("SiegeSpots")
+                SiegeSpots = OriginObject.getTable("SiegeSpots")
             end
 
-            -- inventory region...
+            -- inventory region
             local Side = ""
             local Units = {}
             local ArmyCount = 0
+
             -- which size controls the stronghold? (look for the matching marker).
-            for O, Obj in pairs(getAllObjects()) do
-                -- look for marker and units...
+            for _, Obj in pairs(getAllObjects()) do
                 if
-                    Obj.getName() == SrcObj.getName() and
+                    Obj.getName() == OriginObject.getName() and
                     string.find(Obj.getDescription(), "SettlementControlMarker;") ~= nil
                 then
-                    if Obj.getRotation().z > 90 and Obj.getRotation().z < 270 then
-                        Side = "FreePeoples"
-                    else
-                        Side = "Shadow"
-                    end
-
+                    Side = GetControlMarkerSide(Obj)
                     break
                 end
             end
 
             coroutine.yield(0)
             if Side ~= "" then
-                -- inventory units in the region...
-                for O, Obj in pairs(getAllObjects()) do
+                -- inventory units in the region
+                for _, Obj in pairs(getAllObjects()) do
                     -- is object in the correct region?
                     if
-                        string.find(Obj.getGMNotes(), "Region:" .. SrcObj.getName() .. ";") ~= nil or
-                        string.find(Obj.getGMNotes(), "Region:" .. SrcObj.getName() .. " Stronghold;") ~= nil
+                        string.find(Obj.getGMNotes(), "Region:" .. OriginObject.getName() .. ";") ~= nil or
+                        string.find(Obj.getGMNotes(), "Region:" .. OriginObject.getName() .. " Stronghold;") ~= nil
                     then
                         -- is object on the correct side?
                         if string.find(Obj.getDescription(), Side .. ";") ~= nil then
@@ -3119,13 +3127,14 @@ function StartSiege(StrongholdObj)
                     end
                 end
 
-                -- must be 5 or less army units...
+                -- must be 5 or less army units
                 if #Units <= 0 then
-                    printToAll("There are no Units to Retreat into Siege at " .. SrcObj.getName() .. ".", { 1, 1, 0 })
+                    printToAll("There are no Units to Retreat into Siege at " .. OriginObject.getName() .. ".",
+                        { 1, 1, 0 })
                 elseif ArmyCount <= 5 then
                     local Height = 1.5
                     local Index = 0
-                    SrcObj.setDescription("Stronghold;Besieged;")
+                    OriginObject.setDescription("Stronghold;Besieged;")
                     for U = 1, #Units do
                         Index = Index + 1
                         if Index > #SiegeSpots then
@@ -3139,17 +3148,17 @@ function StartSiege(StrongholdObj)
                             false
                         )
                         getObjectFromGUID(Units[U]).setRotationSmooth({ 0, 90, 0 }, false, true)
-                        -- if not already in the Stronghold region square...
+                        -- if not already in the Stronghold region square
                         if
                             string.find(
                                 getObjectFromGUID(Units[U]).getGMNotes(),
-                                "Region:" .. SrcObj.getName() .. " Stronghold;"
+                                "Region:" .. OriginObject.getName() .. " Stronghold;"
                             ) == nil
                         then
-                            -- change Region to Stronghold Box and update return info...
+                            -- change Region to Stronghold Box and update return info
                             getObjectFromGUID(Units[U]).setGMNotes(
                                 "Region:" ..
-                                SrcObj.getName() ..
+                                OriginObject.getName() ..
                                 " Stronghold;PX:" ..
                                 string.format("%.3f", getObjectFromGUID(Units[U]).getPosition().x) ..
                                 ";PZ:" ..
@@ -3162,19 +3171,19 @@ function StartSiege(StrongholdObj)
                     end
 
                     coroutine.yield(0)
-                    SrcObj.setGMNotes(DstObj.getGUID())
-                    DstObj.setGMNotes(SrcObj.getGUID())
-                else -- too many army units....
+                    OriginObject.setGMNotes(DestinationObject.getGUID())
+                    DestinationObject.setGMNotes(OriginObject.getGUID())
+                else -- too many army units.
                     printToAll(
                         "Cannot Retreat into Siege at " ..
-                        SrcObj.getName() .. " because there are more than 5 Army Units (" .. ArmyCount .. ").",
+                        OriginObject.getName() .. " because there are more than 5 Army Units (" .. ArmyCount .. ").",
                         { 1, 1, 0 }
                     )
                 end
-            else -- could not determine which side controls the stronghold...
-                print("Uhoh! Cannot find the Settlement Control Marker for: " .. SrcObj.getName() .. "!")
+            else -- could not determine which side controls the stronghold
+                print("Uhoh! Cannot find the Settlement Control Marker for: " .. OriginObject.getName() .. "!")
             end -- if side?
-            StrongholdMenu(SrcObj)
+            StrongholdMenu(OriginObject)
         end
 
         return 1
@@ -3191,11 +3200,11 @@ function EndSiege(StrongholdObj)
         if string.find(StrongholdObj.getDescription(), "StrongholdBox;") ~= nil then
             SrcObj = getObjectFromGUID(StrongholdObj.getGMNotes())
             DstObj = StrongholdObj
-        else -- must be src...
+        else -- must be src
             SrcObj = StrongholdObj
             DstObj = getObjectFromGUID(StrongholdObj.getGMNotes())
             if DstObj == nil then
-                -- get first open shadow stronghold dst...
+                -- get first open shadow stronghold dst
                 if getObjectFromGUID("f994cb").getGMNotes() == "" then
                     DstObj = getObjectFromGUID("f994cb")
                     SiegeSpots = {
@@ -3222,20 +3231,20 @@ function EndSiege(StrongholdObj)
                         { -30.8, 1.5, -15.2 },
                         { -29.5, 1.5, -15.2 }
                     }
-                else -- none available...
+                else -- none available
                     printToAll("Not Sieged.", { 1, 1, 0 })
                 end
             end
         end
 
         if SrcObj ~= nil and DstObj ~= nil then
-            -- ok to emerge if no enemy army units occupying...
+            -- ok to emerge if no enemy army units occupying
             local Side = ""
             local EnemyUnits = {}
             local SiegedUnits = {}
             -- which size controls the stronghold? (look for the matching marker).
             for O, Obj in pairs(getAllObjects()) do
-                -- look for marker and units...
+                -- look for marker and units
                 if
                     Obj.getName() == SrcObj.getName() and
                     string.find(Obj.getDescription(), "SettlementControlMarker;") ~= nil
@@ -3252,7 +3261,7 @@ function EndSiege(StrongholdObj)
 
             coroutine.yield(0)
             if Side ~= "" then
-                -- inventory units in the region...
+                -- inventory units in the region
                 for O, Obj in pairs(getAllObjects()) do
                     -- Shadow Stronghold box region?
                     if string.find(Obj.getGMNotes(), "Region:Shadow Stronghold 1;") ~= nil then
@@ -3300,7 +3309,7 @@ function EndSiege(StrongholdObj)
                         SrcObj.getName() .. ", because Enemy Army Units are still present (" .. #EnemyUnits .. ").",
                         { 1, 1, 0 }
                     )
-                else -- move sieged units back to board...
+                else -- move sieged units back to board
                     SrcObj.setDescription("Stronghold;")
                     for U = 1, #SiegedUnits do
                         -- has return position?
@@ -3347,7 +3356,7 @@ function EndSiege(StrongholdObj)
 end
 
 function DetectGuide()
-    -- the guide should be the top card detected.  If no card is detected, look for a deck and return the top card...
+    -- the guide should be the top card detected.  If no card is detected, look for a deck and return the top card
     local HighestY = 0
     -- id of the highest detected card.
     local HighestID = ""
@@ -3387,11 +3396,11 @@ function DetectGuide()
                 HighestLevel = CardLevel
             end
         elseif Obj.hit_object.tag == "Deck" then
-            -- get the top card...
+            -- get the top card
             if Obj.hit_object ~= nil then
                 if Obj.hit_object.getQuantity() > 1 then
                     TopCardName = Obj.hit_object.getObjects()[1].name
-                    -- go through deck to find the highest level...
+                    -- go through deck to find the highest level
 
                     for I, Item in pairs(Obj.hit_object.getObjects()) do
                         CardLevel = tonumber(ReadTag({ Text = Item.description, Var = "Level", Default = "0" }))
@@ -3488,7 +3497,7 @@ function FellowshipMenu()
 
     -- getObjectFromGUID(FellowshipRedZoneID).setPosition({36.5,-2,26.5})
     -- getObjectFromGUID(FellowshipYellowZoneID).setPosition({36.5,-2,26.5})
-    -- inventory fellowship by counting figures...
+    -- inventory fellowship by counting figures
     local CompanionCount = 0
     for O, Obj in pairs(
         Physics.cast(
@@ -3650,7 +3659,7 @@ function SearchFellowship(ButtonObj, PlayerColor)
 end
 
 function FellowshipCardMenu(CardObj)
-    -- buttons...
+    -- buttons
     CardObj.clearButtons()
     -- guide?
     if Guide == CardObj.getName() then
@@ -3736,7 +3745,7 @@ function FellowshipCardMenu(CardObj)
 end
 
 function ConfirmCompanionDeath(CardObj)
-    -- buttons...
+    -- buttons
     CardObj.clearButtons()
     CardObj.createButton(
         {
@@ -3784,7 +3793,7 @@ function ConfirmCompanionDeath(CardObj)
 end
 
 function KillCompanionCard(CardObj)
-    -- Kill this Companion, and remove from the game...
+    -- Kill this Companion, and remove from the game
     printToAll(CardObj.getName() .. " has died.", { 1, 1, 0 })
     -- guide died?
     if Guide == CardObj.getName() then
@@ -3804,13 +3813,13 @@ function KillCompanionCard(CardObj)
         end
     end
 
-    -- remove any buttons from card...
+    -- remove any buttons from card
     CardObj.clearButtons()
     CardObj.setHiddenFrom()
     CardObj.setLock(false)
     CardObj.setDescription(string.gsub(CardObj.getDescription(), "Fellowship;", ""))
     -- CardObj.setDescription(string.gsub(CardObj.getDescription(),"Dead;","").."Dead;")
-    -- try to locate the figure and remove it...
+    -- try to locate the figure and remove it
     for O, Obj in pairs(getAllObjects()) do
         -- if Obj.getName() == "Boromir" then print(Obj.getName(),":",Obj.getGUID(),":",Obj.type) end
         if Obj.getName() == "Gandalf the Grey" then
@@ -3827,7 +3836,7 @@ function KillCompanionCard(CardObj)
         end
     end
 
-    -- remove the card from the game...
+    -- remove the card from the game
     getObjectFromGUID("416864").putObject(CardObj)
     -- refresh fellowship menu?
     if not SearchingFellowship then
@@ -3842,7 +3851,7 @@ function GuideTheFellowship(CardObj)
 
     for O, Obj in pairs(getAllObjects()) do
         if Obj.type == "Card" and string.find(Obj.getDescription(), "Fellowship;") ~= nil then
-            -- buttons...
+            -- buttons
             Obj.clearButtons()
             -- guide?
             if Guide == Obj.getName() then
@@ -3913,7 +3922,7 @@ function GuideTheFellowship(CardObj)
 end
 
 function SeparateCompanionFromFellowship(CompanionName)
-    -- describe action to players...
+    -- describe action to players
     printToAll(CompanionName .. " separated from the Fellowship.", { 0.4, 0.4, 1 })
     if string.find(Guide, CompanionName) ~= nil then
         printToAll(Guide .. " is no longer the Fellowship Guide.", { 1, 1, 0 })
@@ -3933,7 +3942,7 @@ function SeparateCompanionFromFellowship(CompanionName)
         end
     end
 
-    -- locate the card. If it's in the fellowship box or line up, then separate it...
+    -- locate the card. If it's in the fellowship box or line up, then separate it
     local CardObj = nil
     -- in the fellowship lineup?
     for O, Obj in pairs(getAllObjects()) do
@@ -3946,7 +3955,7 @@ function SeparateCompanionFromFellowship(CompanionName)
         end
     end
 
-    -- if not found, then look in the fellowship card stack...
+    -- if not found, then look in the fellowship card stack
     if CardObj == nil then
         for O, Obj in pairs(
             Physics.cast(
@@ -3979,7 +3988,7 @@ function SeparateCompanionFromFellowship(CompanionName)
     end
 
     if CardObj ~= nil then
-        -- get first open companion card spot...
+        -- get first open companion card spot
         local Open = true -- assume true until proven false.
         local OpenSpot = Spots.CompanionCards.Separated[1]
         for S = 1, #Spots.CompanionCards.Separated do
@@ -4009,10 +4018,10 @@ function SeparateCompanionFromFellowship(CompanionName)
             end
         end
 
-        -- remove any buttons from card...
+        -- remove any buttons from card
         CardObj.clearButtons()
         CardObj.setHiddenFrom()
-        -- move card from fellowship deck (or lineup) to the table face up...
+        -- move card from fellowship deck (or lineup) to the table face up
         CardObj.setLock(false)
         if CompactMode then
             CardObj.setRotationSmooth({ 0, 180, 0 }, false, false)
@@ -4022,7 +4031,7 @@ function SeparateCompanionFromFellowship(CompanionName)
 
         -- CardObj.setPositionSmooth(OpenSpot,false,false)
         CardObj.setPosition(OpenSpot)
-        -- remove fellowship; tag and add Separated; tag to the card...
+        -- remove fellowship; tag and add Separated; tag to the card
         CardObj.setDescription(string.gsub(CardObj.getDescription(), "Fellowship;", ""))
         CardObj.setDescription(string.gsub(CardObj.getDescription(), "Separated;", "") .. "Separated;")
     end
@@ -4035,7 +4044,7 @@ function SeparateCompanionFromFellowship(CompanionName)
 end
 
 function ReturnCompanionToFellowship(CompanionObj)
-    -- CompantionObj is a figure dropped into the fellowhip box...
+    -- CompantionObj is a figure dropped into the fellowhip box
     printToAll(CompanionObj.getName() .. " has joined the Fellowship.", { 1, 1, 0 })
     -- does Gollum flee?
     if Guide == "Gollum: Slave of the Ring" then
@@ -4056,7 +4065,7 @@ function ReturnCompanionToFellowship(CompanionObj)
         GuideLevel = 0
     end
 
-    -- return token to fellowship bag(416864 to 043c9c)...
+    -- return token to fellowship bag(416864 to 043c9c)
     for I, Item in pairs(getObjectFromGUID("416864").getObjects()) do
         if
             string.find(CompanionObj.getName(), Item.name) ~= nil and
@@ -4071,7 +4080,7 @@ function ReturnCompanionToFellowship(CompanionObj)
         end
     end
 
-    -- check for the token on the table if not in the bag...
+    -- check for the token on the table if not in the bag
     for O, Obj in pairs(getAllObjects()) do
         if
             string.find(CompanionObj.getName(), Obj.getName()) ~= nil and
@@ -4082,7 +4091,7 @@ function ReturnCompanionToFellowship(CompanionObj)
         end
     end
 
-    -- look for a matching card tagged with seperated; on the table or smeagol card if its him...
+    -- look for a matching card tagged with seperated; on the table or smeagol card if its him
     local CardObj = nil
     for O, Obj in pairs(getAllObjects()) do
         if
@@ -4105,13 +4114,13 @@ function ReturnCompanionToFellowship(CompanionObj)
     end
 
     if CardObj ~= nil then
-        -- remove separated; tag and add fellowship; tag to the card...
+        -- remove separated; tag and add fellowship; tag to the card
         CardObj.setDescription(string.gsub(CardObj.getDescription(), "Separated;", ""))
         CardObj.setDescription(string.gsub(CardObj.getDescription(), "Fellowship;", "") .. "Fellowship;")
         if CardObj.getName() == "Smeagol: Tamed Wretch" then
             BuildFellowshipDeck()
         else
-            -- lift up fellowship cards...
+            -- lift up fellowship cards
             for O, Obj in pairs(
                 Physics.cast(
                     {
@@ -4138,7 +4147,7 @@ function ReturnCompanionToFellowship(CompanionObj)
                 end
             end
 
-            -- place the card back into the fellowship...
+            -- place the card back into the fellowship
             CardObj.setPosition({ 32.9, 1.01, 20.0 })
             CardObj.setRotation({ 0, 180, 180 })
             printToAll(CompanionObj.getName() .. "'s Card was placed into the Fellowship card stack.")
@@ -4155,10 +4164,10 @@ function SeparateCardFromFellowship(CardObj)
     local RBObj = getObjectFromGUID(IDs.Companions.TheRingBearers)
     local SeparateRegion = ReadTag({ Text = RBObj.getGMNotes(), Var = "Region", Default = "(Unknown Region)" })
     local FellowshipTrack = math.floor((getObjectFromGUID("6b62ef").getPosition().x - 5.0) / 1.58)
-    -- remove buttons from card...
+    -- remove buttons from card
     CardObj.clearButtons()
     CardObj.setHiddenFrom()
-    -- describe action to players...
+    -- describe action to players
     printToAll(
         CardObj.getName() ..
         " separated from the Fellowship at " ..
@@ -4183,7 +4192,7 @@ function SeparateCardFromFellowship(CardObj)
         end
     end
 
-    -- get first open companion card spot...
+    -- get first open companion card spot
     local Open = true -- assume true until proven false.
     local OpenSpot = Spots.CompanionCards.Separated[1]
     for S = 1, #Spots.CompanionCards.Separated do
@@ -4213,7 +4222,7 @@ function SeparateCardFromFellowship(CardObj)
         end
     end
 
-    -- move card from fellowship deck (or lineup) to the table face up...
+    -- move card from fellowship deck (or lineup) to the table face up
     CardObj.setLock(false)
     if CompactMode then
         CardObj.setRotationSmooth({ 0, 180, 0 }, false, false)
@@ -4222,10 +4231,10 @@ function SeparateCardFromFellowship(CardObj)
     end
 
     CardObj.setPositionSmooth(OpenSpot, false, false)
-    -- remove fellowship; tag and add Separated; tag to the card...
+    -- remove fellowship; tag and add Separated; tag to the card
     CardObj.setDescription(string.gsub(CardObj.getDescription(), "Fellowship;", ""))
     CardObj.setDescription(string.gsub(CardObj.getDescription(), "Separated;", "") .. "Separated;")
-    -- move and ping matching figurine if it is in the fellowship box...
+    -- move and ping matching figurine if it is in the fellowship box
     local FigureObj = nil
     for O, Obj in pairs(
         Physics.cast(
@@ -4285,7 +4294,7 @@ end
 
 -- {DiceID=""}
 function InsertActionRoll(Params)
-    -- only insert this dice roll if it did not already roll in this batch...
+    -- only insert this dice roll if it did not already roll in this batch
     local Dupe = false
     local Side = getObjectFromGUID(Params.DiceID).getVar("Side")
     for R = 1, #Dice.Action[Side].RollingTable do
@@ -4306,7 +4315,7 @@ end
 
 -- {DiceID=""}
 function DeleteActionRoll(Params)
-    -- remove this dice from roll tables...
+    -- remove this dice from roll tables
     local Side = getObjectFromGUID(Params.DiceID).getVar("Side")
     for R = 1, #Dice.Action[Side].RollingTable do
         if Dice.Action[Side].RollingTable[R] == Params.DiceID then
@@ -4325,7 +4334,7 @@ end
 
 -- {DiceID=""}
 function ReportActionRoll(Params)
-    -- remove this dice from rolling table and report result...
+    -- remove this dice from rolling table and report result
     local Side = getObjectFromGUID(Params.DiceID).getVar("Side")
     for R = 1, #Dice.Action[Side].RollingTable do
         if Dice.Action[Side].RollingTable[R] == Params.DiceID then
@@ -4338,12 +4347,12 @@ end
 
 function RollActionDice(Side)
     function RollingActionDiceCoroutine()
-        -- start this coroutine when any of this player's action dice start rolling...
-        -- signal this player is rolling a batch of their dice...
+        -- start this coroutine when any of this player's action dice start rolling
+        -- signal this player is rolling a batch of their dice
         Dice.Action[Side].Rolling = true
-        -- clear results table, we're collecting a new results table now...
+        -- clear results table, we're collecting a new results table now
         Dice.Action[Side].ResultTable = {}
-        -- keep looping until all rolling dice come to rest...
+        -- keep looping until all rolling dice come to rest
         while #Dice.Action[Side].RollingTable > 0 do
             coroutine.yield(0)
         end
@@ -4351,12 +4360,12 @@ function RollActionDice(Side)
         local SideName = "Shadow"
         if Side == "Shadow" then
             DiceColor = { 1, 0.4, 0.4 }
-        else -- assume FPP...
+        else -- assume FPP
             DiceColor = { 0.4, 0.4, 1 }
             SideName = "Free Peoples"
         end
 
-        -- display this batch of dice roll results...
+        -- display this batch of dice roll results
         printToAll("-- -- -- ", DiceColor)
         if #Dice.Action[Side].RolledTable == 1 then
             Dice.Action[Side].ResultText =
@@ -4376,10 +4385,10 @@ function RollActionDice(Side)
 
         broadcastToAll(Dice.Action[Side].ResultText, DiceColor)
         printToAll("\n")
-        -- clear Tables...
+        -- clear Tables
         Dice.Action[Side].RollingTable = {}
         Dice.Action[Side].RolledTable = {}
-        -- signal this player is done rolling this batch of dice...
+        -- signal this player is done rolling this batch of dice
         Dice.Action[Side].Rolling = false
         return 1
     end
@@ -4414,7 +4423,7 @@ function ReportDiceStats(PanelObj, PlayerColor)
     if not Player[PlayerColor].seated then
         -- this player color is not seated.
         printToAll(PlayerColor .. " Player is not seated.")
-    else -- print to player color only...
+    else -- print to player color only
         printToColor("-- -- -- ", PlayerColor, { 0.4, 0.4, 1 })
         printToColor("Free Peoples Combat Dice Stats:", PlayerColor, { 0.4, 0.4, 1 })
         if Dice.Stats.Combat.FreePeoples.RollCount > 0 then
@@ -4498,7 +4507,7 @@ function ReportDiceStats(PanelObj, PlayerColor)
             printToColor("  (Zero Action Rolls).", PlayerColor, { 1, 0.4, 0.4 })
         end
 
-        -- print blank line for spacing...
+        -- print blank line for spacing
         printToColor("\n", PlayerColor, { 1, 0.4, 0.4 })
     end
 end
@@ -5376,4 +5385,12 @@ function SettlementsAreFlat()
     local preferencesPanel = getObjectFromGUID("c35be9")
     local settings = preferencesPanel.getTable("Settings")
     return settings.SettlementsType == "Flat"
+end
+
+function SetTokenRotation(Token, IsActive)
+    local zRotation = 0
+    if not IsActive then
+        zRotation = 180
+    end
+    Token.setRotation({ 0, 135, zRotation })
 end

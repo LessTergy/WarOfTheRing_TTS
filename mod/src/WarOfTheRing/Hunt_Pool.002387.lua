@@ -33,10 +33,10 @@ function DrawHuntTile(Object, PlayerColor)
         if self.getQuantity() < 1 then
             printToAll("Hunt Pool is empty.")
         else
-            printToAll("\nShuffling " .. self.getQuantity() .. " Tiles in the Hunt Pool...")
+            printToAll("\nShuffling " .. self.getQuantity() .. " Tiles in the Hunt Pool")
             self.shuffle()
 
-            printToAll("Drawing a Hunt Tile from the Hunt Pool...")
+            printToAll("Drawing a Hunt Tile from the Hunt Pool")
             self.takeObject({ smooth = true, position = { -37.5, 3, -18 } })
             for D = 1, 10 do coroutine.yield(0) end
             Player[PlayerColor].pingTable({ -37.5, 2, -18 })

@@ -73,7 +73,7 @@ local VersusType = {
 }
 local VersusMode = VersusType.OneVersusOne
 
---Bags...
+--Bags
 local GraveBagId = "416864"
 
 local PlayersLeader = {
@@ -268,14 +268,14 @@ function onLoad()
         Player.White.changeColor("Grey")
     end
 
-    --detect round,Phase, and Step...
+    --detect round,Phase, and Step
     Round = ReadTag({ Text = self.getDescription(), Var = "Round", Default = 0 })
     Phase = ReadTag({ Text = self.getDescription(), Var = "Phase", Default = 0 })
     Turn = ReadTag({ Text = self.getDescription(), Var = "Turn", Default = 0 })
     NextStep = ReadTag({ Text = self.getDescription(), Var = "Step", Default = "" })
     Mute = string.find(getObjectFromGUID(Global.getVar("SoundCubeID")).getDescription(), "Muted;") ~= nil
 
-    --detect expansions...
+    --detect expansions
     LordsOfMiddleEarth = string.find(self.getDescription(), "LoME;") ~= nil
     WarriorsOfMiddleEarth = string.find(self.getDescription(), "WoME;") ~= nil
     KingsOfMiddleEarth = string.find(self.getDescription(), "KoME;") ~= nil
@@ -298,7 +298,7 @@ function onLoad()
 
     UpdateFlags()
 
-    --initialize components...
+    --initialize components
     Global.call("UpdateIDs")
     startLuaCoroutine(self, "MainCoroutine")
 end
@@ -329,7 +329,7 @@ function ProcessNextStep()
         "Panel;Round:" .. Round .. ";Phase:" .. Phase .. ";Turn:" .. Turn .. ";Step:" .. Step .. ";" .. FlagsString
     )
 
-    --assume new game setup...
+    --assume new game setup
     if Step == StepType.Empty then
         NextStep = StepType.BeginMenu
         Step = StepType.Empty
@@ -392,8 +392,8 @@ function ProcessNextStep()
     elseif Step == StepType.Phase6 then --Victory Check
         Phase6_VictoryCheckStep()
     elseif Step == StepType.EndTurn then
-        --end of turn stuff here...
-        --advance to next step...
+        --end of turn stuff here
+        --advance to next step
         NextStep = StepType.StartTurn
         Step = StepType.Empty
     elseif Step == StepType.EndTurn then
@@ -443,7 +443,7 @@ function CreateToggleButtons(buttons)
 end
 
 function UnitsSetupStep()
-    ShowInformationText("Units Setup:\nPlease Wait\nSpawn Armies and Characters...")
+    ShowInformationText("Units Setup:\nPlease Wait\nSpawn Armies and Characters")
 
     SpawnCharactersBase()
     SpawnArmies()
@@ -481,7 +481,7 @@ function CreateSetupCompleteMenu()
         Step = StepType.Empty
     end
 
-    --Shuffle decks and bags...
+    --Shuffle decks and bags
     local IDs = Global.call("GetIDs")
 
     getObjectFromGUID(IDs.CompanionBag).shuffle()
@@ -599,7 +599,7 @@ function StartTurnStep()
 
     function StartTurn()
         printToAll("Turn " .. Turn .. " has started.")
-        --pass leader tokens?...
+        --pass leader tokens?
         if Turn == 1 or VersusMode == VersusType.OneVersusOne then
             PlayersLeader.FreePeoples = "Gondor"
             PlayersLeader.Shadow = "The Witch-king"
@@ -642,7 +642,7 @@ function StartTurnStep()
             printToAll("Saruman Player (Yellow) has the Shadow Leading Player Token.", Player["Yellow"].color)
         end
 
-        --look for missing decks...
+        --look for missing decks
         IDs.FreePeoplesCharacterEventDeck =
             CheckDeck(
                 {
@@ -700,9 +700,9 @@ function StartTurnStep()
                 )
         end
 
-        --look for missing dice...
-        --...
-        --detect fellowship guide...
+        --look for missing dice
+        --
+        --detect fellowship guide
         GuideName = Global.call("DetectGuide")
         NextStep = StepType.Phase1
         Step = StepType.Empty
@@ -717,7 +717,7 @@ function Phase1_Step()
     Global.setVar("Phase", Phase)
     printToAll("Phase 1) Recover Action Dice and Draw Event Cards.")
 
-    --display info on panel...
+    --display info on panel
     self.clearButtons()
     self.createButton(
         {
@@ -765,16 +765,16 @@ function Phase1_Step()
 
     function PerformPhase1()
         self.clearButtons()
-        --gather action dice...
+        --gather action dice
         startLuaCoroutine(self, "GatherActionDiceCoroutine")
         NextStep = StepType.Phase2
         --NextStep = Steps.EndTurn
-        --draw event cards (and faction cards if playing WoME)...
+        --draw event cards (and faction cards if playing WoME)
         if Turn == 1 and TheBreakingOfTheFellowship and VersusMode ~= VersusType.TwoVersusTwo then
-            --players will be prompted what to draw, starting with FreePeoples...
+            --players will be prompted what to draw, starting with FreePeoples
             NextStep = StepType.Phase1_BotF_FreePeoplesDrawMenu
         elseif Turn == 1 and TheBreakingOfTheFellowship and VersusMode == VersusType.TwoVersusTwo then
-            --players will be prompted what to draw, starting with Gondor...
+            --players will be prompted what to draw, starting with Gondor
             NextStep = StepType.Phase1_BotF_GondorDrawMenu
         elseif VersusMode == VersusType.OneVersusOne then
             DrawFromDeck(
@@ -917,7 +917,7 @@ function Phase1_Step()
                     }
                 )
             else
-                --draw a shadow faction card for the leading shadow player...
+                --draw a shadow faction card for the leading shadow player
                 if WarriorsOfMiddleEarth and PlayersLeader.Shadow == "The Witch-king" then
                     DrawFromDeck(
                         {
@@ -940,7 +940,7 @@ function Phase1_Step()
                     )
                 end
 
-                --set next step to prompt shadow players which deck to draw from...
+                --set next step to prompt shadow players which deck to draw from
                 NextStep = StepType.Phase1_TheWitchKingDrawMenu
             end
         else --2v2
@@ -1042,7 +1042,7 @@ function Phase1_Step()
                     }
                 )
             else
-                --draw a faction card for each leading player...
+                --draw a faction card for each leading player
                 if PlayersLeader.FreePeoples == "Gondor" and WarriorsOfMiddleEarth then
                     DrawFromDeck(
                         {
@@ -1087,7 +1087,7 @@ function Phase1_Step()
                     )
                 end
 
-                --set next step to prompt each player which deck to draw from...
+                --set next step to prompt each player which deck to draw from
                 NextStep = StepType.Phase1_GondorDrawMenu
             end
         end
@@ -1102,7 +1102,7 @@ function Phase1_BotF_FP_DrawMenu()
 
     -- Free Peoples
     MoveGamePanel("FreePeoples")
-    --choose which card combination to draw...
+    --choose which card combination to draw
     self.clearButtons()
     self.createButton(
         {
@@ -1120,7 +1120,7 @@ function Phase1_BotF_FP_DrawMenu()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "Free Peoples Player\nis choosing which\nEvent Cards to Draw...",
+            label = "Free Peoples Player\nis choosing which\nEvent Cards to Draw",
             position = { 0, -0.1, -0 },
             rotation = { 180, 180, 0 },
             width = 0,
@@ -1250,7 +1250,7 @@ function Phase1_BotF_SH_DrawMenu()
     local IDs = Global.call("GetIDs")
 
     MoveGamePanel("Shadow")
-    --choose which card combination to draw...
+    --choose which card combination to draw
     self.clearButtons()
     self.createButton(
         {
@@ -1268,7 +1268,7 @@ function Phase1_BotF_SH_DrawMenu()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "Shadow Player\nis choosing which\nEvent Cards to Draw...",
+            label = "Shadow Player\nis choosing which\nEvent Cards to Draw",
             position = { 0, -0.1, 0 },
             rotation = { 180, 180, 0 },
             width = 0,
@@ -1445,9 +1445,9 @@ function Phase1_BotF_GondorPlayer_DrawMenu()
     local IDs = Global.call("GetIDs")
     CharacterCardCount = 0
     StrategyCardCount = 0
-    --move game panel to player's spot...
+    --move game panel to player's spot
     MoveGamePanel("Gondor")
-    --choose which card combination to draw...
+    --choose which card combination to draw
     self.clearButtons()
     self.createButton(
         {
@@ -1465,7 +1465,7 @@ function Phase1_BotF_GondorPlayer_DrawMenu()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "Free Peoples\nGondor (Blue) Player\nis choosing which\nEvent Cards to Draw...",
+            label = "Free Peoples\nGondor (Blue) Player\nis choosing which\nEvent Cards to Draw",
             position = { 0, -0.1, -0 },
             rotation = { 180, 180, 0 },
             width = 0,
@@ -1581,7 +1581,7 @@ function Phase1_BotF_RohanPlayer_DrawMenu()
     local IDs = Global.call("GetIDs")
     MoveGamePanel("Rohan")
 
-    --choose which card combination to draw...
+    --choose which card combination to draw
     self.clearButtons()
     self.createButton(
         {
@@ -1599,7 +1599,7 @@ function Phase1_BotF_RohanPlayer_DrawMenu()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "Free Peoples\nGRohan (Green) Player\nis choosing which\nEvent Cards to Draw...",
+            label = "Free Peoples\nGRohan (Green) Player\nis choosing which\nEvent Cards to Draw",
             position = { 0, -0.1, -0 },
             rotation = { 180, 180, 0 },
             width = 0,
@@ -1717,9 +1717,9 @@ function Phase1_BotF_TheWitchKingPlayer_DrawMenu()
     local IDs = Global.call("GetIDs")
     CharacterCardCount = 0
     StrategyCardCount = 0
-    --move game panel to player's spot...
+    --move game panel to player's spot
     MoveGamePanel("TheWitchKing")
-    --choose which card combination to draw...
+    --choose which card combination to draw
     self.clearButtons()
     self.createButton(
         {
@@ -1737,7 +1737,7 @@ function Phase1_BotF_TheWitchKingPlayer_DrawMenu()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "Free Peoples\nThe Witch-King (Red) Player\nis choosing which\nEvent Cards to Draw...",
+            label = "Free Peoples\nThe Witch-King (Red) Player\nis choosing which\nEvent Cards to Draw",
             position = { 0, -0.1, -0 },
             rotation = { 180, 180, 0 },
             width = 0,
@@ -1898,7 +1898,7 @@ function Phase1_BotF_SarumanPlayer_DrawMenu()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "Free Peoples\nSaruman (Yellow) Player\nis choosing which\nEvent Cards to Draw...",
+            label = "Free Peoples\nSaruman (Yellow) Player\nis choosing which\nEvent Cards to Draw",
             position = { 0, -0.1, -0 },
             rotation = { 180, 180, 0 },
             width = 0,
@@ -2057,7 +2057,7 @@ function Phase1_GondorPlayer_DrawMenu()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "The Free Peoples\nGondor (Blue) Player\nis deciding which type\nof event card to draw...",
+            label = "The Free Peoples\nGondor (Blue) Player\nis deciding which type\nof event card to draw",
             position = { 0, -0.1, 0 },
             rotation = { 180, 180, 0 },
             width = 0,
@@ -2146,7 +2146,7 @@ function Phase1_RohanPlayer_DrawMenu()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "The Free Peoples\nRohan (Green) Player\nis deciding which type\nof event card to draw...",
+            label = "The Free Peoples\nRohan (Green) Player\nis deciding which type\nof event card to draw",
             position = { 0, -0.1, 0 },
             rotation = { 180, 180, 0 },
             width = 0,
@@ -2235,7 +2235,7 @@ function Phase1_TheWitchKingPlayer_DrawMenu()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "Shadow\nThe Witch-king (Red) Player\nis deciding which type\nof event card to draw...",
+            label = "Shadow\nThe Witch-king (Red) Player\nis deciding which type\nof event card to draw",
             position = { 0, -0.1, 0 },
             rotation = { 180, 180, 0 },
             width = 0,
@@ -2324,7 +2324,7 @@ function Phase1_SarumanPlayer_DrawMenu()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "Shadow\nSaruman (Yellow) Player\nis deciding which type\nof event card to draw...",
+            label = "Shadow\nSaruman (Yellow) Player\nis deciding which type\nof event card to draw",
             position = { 0, -0.1, 0 },
             rotation = { 180, 180, 0 },
             width = 0,
@@ -2402,7 +2402,7 @@ function Phase2_FellowshipStep()
 
     MoveGamePanel("All")
 
-    -- display info on panel...
+    -- display info on panel
     self.clearButtons()
     self.createButton(
         {
@@ -2464,7 +2464,7 @@ function Phase2_FellowshipStep()
                     "Shadow Tokens from Lords of Middle-Earth are not used in the Breaking of the Fellowship scenario."
                 )
                 Step = StepType.Empty
-            else --look for seperated companions...
+            else --look for seperated companions
                 FellowshipCount = 8 --start with 8 in the fellowship.
                 local TokenCount = 0
                 if not InFellowship({ Name = "Meriadoc" }) then
@@ -2522,7 +2522,7 @@ function Phase2_FellowshipStep()
                         {
                             click_function = "Nothing",
                             function_owner = self,
-                            label = "Shadow is choosing\na Shadow Token...",
+                            label = "Shadow is choosing\na Shadow Token",
                             position = { 0, -0.1, 0 },
                             rotation = { 180, 180, 0 },
                             width = 0,
@@ -2575,7 +2575,7 @@ function Phase2_FellowshipStep()
                         getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.LoME.ShadowToken1))
                         Step = StepType.Empty
                     end
-                else --shadow gets both tokens...
+                else --shadow gets both tokens
                     printToAll(
                         "The Shadow receive both Shadow Tokens. (There were 2 or more Companions declared outside the Fellowship)."
                     )
@@ -2599,7 +2599,7 @@ function Phase3_HuntAllocationStep()
 
     MoveGamePanel("All")
 
-    --display info on panel...
+    --display info on panel
     self.clearButtons()
     self.createButton(
         {
@@ -2671,7 +2671,7 @@ function Phase3_HuntAllocationStep()
     HuntBoxFreePeoplesDiceArray = {}
 
     if FreePeoplesHuntDiceCount > 0 then
-        --allocate the first Shadow dice to the hunt box...
+        --allocate the first Shadow dice to the hunt box
         local shadowDiceId = IDs.ShadowActionDice[1]
         HuntBoxShadowDiceArray = { shadowDiceId }
 
@@ -2691,7 +2691,7 @@ function Phase4_ActionRollStep()
     Global.setVar("Phase", Phase)
     printToAll("Phase 4) Action Roll.")
     MoveGamePanel("All")
-    --display info on panel...
+    --display info on panel
     self.clearButtons()
     self.createButton(
         {
@@ -2733,7 +2733,7 @@ function Phase4_ActionRollStep()
     function PerformPhase4()
         self.clearButtons()
         startLuaCoroutine(self, "RollActionDiceCoroutine")
-        --auto advance to next step after 2 seconds...
+        --auto advance to next step after 2 seconds
         NextStep = StepType.Phase5
         Wait.time(
             function ()
@@ -2754,7 +2754,7 @@ function Phase5_ActionResolutionStep()
     Global.setVar("Phase", Phase)
     printToAll("Phase 5) Action Resolution.")
     MoveGamePanel("All")
-    --display info on panel...
+    --display info on panel
     self.clearButtons()
     self.createButton(
         {
@@ -2791,7 +2791,7 @@ function Phase6_VictoryCheckStep()
     Global.setVar("Phase", Phase)
     printToAll("Phase 6) Victory Check.")
     MoveGamePanel("All")
-    --display info on panel...
+    --display info on panel
     self.clearButtons()
     FellowshipTrack = math.floor((getObjectFromGUID("6b62ef").getPosition().x - 5.0) / 1.58)
     CorruptionTrack = math.floor((getObjectFromGUID("abe1b3").getPosition().x - 5.0) / 1.58)
@@ -2850,15 +2850,15 @@ function Phase6_VictoryCheckStep()
             font_size = 100
         }
     )
-    --check military victory...
+    --check military victory
     if ShadowVP >= 10 then
-        --isengard...
+        --isengard
         broadcastToAll("Shadow Military Victory Detected!", { 1, 1, 0 })
         Global.call("PlaySound", { ID = 5 })
     elseif FreePeoplesVP >= 4 then
         broadcastToAll("Free Peoples Military Victory Detected!", { 1, 1, 0 })
         Global.call("PlaySound", { ID = 3 })
-        --riders of rohan...
+        --riders of rohan
     end
 
     function Continue()
@@ -2987,7 +2987,7 @@ function CreateBasicMenu()
             {
                 click_function = "Nothing",
                 function_owner = self,
-                label = "Gathering Action Dice...",
+                label = "Gathering Action Dice",
                 position = { 0, 0.1, -0.5 },
                 width = 0,
                 height = 0,
@@ -3012,7 +3012,7 @@ function CreateBasicMenu()
             {
                 click_function = "Nothing",
                 function_owner = self,
-                label = "Rolling Action Dice...",
+                label = "Rolling Action Dice",
                 position = { 0, 0.1, -0.5 },
                 width = 0,
                 height = 0,
@@ -3366,7 +3366,7 @@ function CreatePlayersMenu()
         NextStep = StepType.ExpansionMenu
         Global.setVar("CompactMode", CompactMode)
 
-        --update here so BotF can benefit if it is used...
+        --update here so BotF can benefit if it is used
         if CompactMode then
             local GlobalSpots = Global.getTable("Spots")
             GlobalSpots.CompanionCards.Separated = GlobalSpots.Compact.CompanionCards.Separated
@@ -4049,7 +4049,7 @@ function CreateTreebeardPromoMenu()
 end
 
 function CreateStartingGuideMenu()
-    -- If breaking of the fellowship...
+    -- If breaking of the fellowship
     if TheBreakingOfTheFellowship then
         if LordsOfMiddleEarth then
             printToAll(
@@ -4063,7 +4063,7 @@ function CreateStartingGuideMenu()
         Step = StepType.Empty
     else
         MoveGamePanel("FreePeoples")
-        --choose Gandalf or Strider as the fellowship guide...
+        --choose Gandalf or Strider as the fellowship guide
         self.clearButtons()
         self.createButton(
             {
@@ -4081,7 +4081,7 @@ function CreateStartingGuideMenu()
             {
                 click_function = "Nothing",
                 function_owner = self,
-                label = "Free Peoples\nare choosing the\nFellowship Guide...",
+                label = "Free Peoples\nare choosing the\nFellowship Guide",
                 position = { 0, -0.1, -0 },
                 rotation = { 180, 180, 0 },
                 width = 0,
@@ -4443,12 +4443,12 @@ end
 
 function SetupFateOfEreborExpansion()
     if not TheFateOfErebor then
-        ShowInformationText("Putting away\nThe Fate of Erebor\nMini-Expansion Content...")
+        ShowInformationText("Putting away\nThe Fate of Erebor\nMini-Expansion Content")
         ClearExpansionContent("TFoE;")
         return
     end
 
-    ShowInformationText("Setting up\nThe Fate of Erebor\nMini-Expansion Content...")
+    ShowInformationText("Setting up\nThe Fate of Erebor\nMini-Expansion Content")
     local IDs = Global.call("GetIDs")
     Global.call("SetupTheFateOfErebor")
 
@@ -4460,7 +4460,7 @@ function SetupFateOfEreborExpansion()
         getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("2df5ce"))
     end
 
-    --replace cards...
+    --replace cards
     getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(
         getObjectFromGUID(IDs.TFoE.ShadowStrategyEventCards)
     )
@@ -4473,7 +4473,7 @@ function SetupFateOfEreborExpansion()
     )
 
     coroutine.yield(0)
-    --Remove Free Peoples Strategy Event Card #4, #19, and #22, then remove FP character card #17...
+    --Remove Free Peoples Strategy Event Card #4, #19, and #22, then remove FP character card #17
     Global.call(
         "RemoveObjectFromGame",
         { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "There and Back Again", Description = "#17;" }
@@ -4498,7 +4498,7 @@ function SetupFateOfEreborExpansion()
     )
     coroutine.yield(0)
 
-    --Remove Shadow Event Card #20 and #22 (Orcs Multiplying Again & Monsters Roused)...
+    --Remove Shadow Event Card #20 and #22 (Orcs Multiplying Again & Monsters Roused)
     Global.call(
         "RemoveObjectFromGame",
         { BagID = IDs.ShadowStrategyEventDeck, Name = "Orcs Multiplying Again", Description = "#20;" }
@@ -4511,7 +4511,7 @@ function SetupFateOfEreborExpansion()
     )
     coroutine.yield(0)
 
-    --Remove old Gimli Character Cards...
+    --Remove old Gimli Character Cards
     if getObjectFromGUID("78f279") ~= nil then
         if getObjectFromGUID("f86853") ~= nil then
             getObjectFromGUID("f86853").setPositionSmooth(
@@ -4536,7 +4536,7 @@ function SetupFateOfEreborExpansion()
         getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID("af7f13"))
     end
 
-    -- If KoME+TFoE then remove Dain and Brand from the game...
+    -- If KoME+TFoE then remove Dain and Brand from the game
     if KingsOfMiddleEarth then
         printToAll("The Fate of Erebor removes King Brand and King Dain Ironfoot from the game.", { 1, 1, 0 })
 
@@ -4576,34 +4576,34 @@ end
 
 function SetupLordsExpansion()
     if not LordsOfMiddleEarth then
-        ShowInformationText("Putting away\nLords of Middle-Earth\nExpansion Content...")
+        ShowInformationText("Putting away\nLords of Middle-Earth\nExpansion Content")
         ClearExpansionContent("LoME;")
         return
     end
 
-    ShowInformationText("Setting up\nLords of Middle-Earth\nExpansion Content...")
+    ShowInformationText("Setting up\nLords of Middle-Earth\nExpansion Content")
 
     SpawnCharactersLords()
     Global.call("UpdateIDs")
 
     local IDs = Global.call("GetIDs")
 
-    --change next step to Alternate Companions Menu...
+    --change next step to Alternate Companions Menu
     NextStep = StepType.AlternateCompanionsMenu
 
-    --Replace Elven Rings...
+    --Replace Elven Rings
     for I = 1, 3 do
         getObjectFromGUID(IDs.LoME.ElvenRings[I]).setPositionSmooth(
             getObjectFromGUID(IDs.ElvenRings[I]).getPosition(),
             false,
             false
         )
-        getObjectFromGUID(IDs.LoME.ElvenRings[I]).setRotation({ 0, 90, 0 })
+        getObjectFromGUID(IDs.LoME.ElvenRings[I]).setRotation({ 0, 180, 0 })
         getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.ElvenRings[I]))
         coroutine.yield(0)
     end
 
-    --Add New Event Cards...
+    --Add New Event Cards
     getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(
         getObjectFromGUID(IDs.LoME.ShadowCharacterEventCards)
     )
@@ -4620,7 +4620,7 @@ function SetupLordsExpansion()
     )
     coroutine.yield(0)
 
-    --Remove Shadow Event Card #17 (Balrog of Moria)...
+    --Remove Shadow Event Card #17 (Balrog of Moria)
     Global.call(
         "RemoveObjectFromGame",
         {
@@ -4630,7 +4630,7 @@ function SetupLordsExpansion()
         }
     )
 
-    --Add 2 Smeagol Tiles (if not using BotF)...
+    --Add 2 Smeagol Tiles (if not using BotF)
     if not TheBreakingOfTheFellowship then
         for T = 1, 2 do
             getObjectFromGUID(IDs.HuntTileBag).putObject(getObjectFromGUID(IDs.LoME.SmeagolTiles[T]))
@@ -4641,7 +4641,7 @@ end
 
 function SetupWarriorsExpansion()
     if not WarriorsOfMiddleEarth then
-        ShowInformationText("Putting away\nWarriors of Middle-Earth\nExpansion Content...")
+        ShowInformationText("Putting away\nWarriors of Middle-Earth\nExpansion Content")
 
         --Move Event Discard Spots..
         getObjectFromGUID("61c02b").setPosition({ 40.25, 0.92, -20.00 })
@@ -4651,7 +4651,7 @@ function SetupWarriorsExpansion()
         return
     end
 
-    ShowInformationText("Setting up\nWarriors of Middle-Earth\nExpansion Content...")
+    ShowInformationText("Setting up\nWarriors of Middle-Earth\nExpansion Content")
 
     SpawnFactions()
     local IDs = Global.call("GetIDs")
@@ -4723,12 +4723,12 @@ end
 
 function SetupKingsExpansion()
     if not KingsOfMiddleEarth then
-        ShowInformationText("Putting away\nKings of Middle-Earth\nExpansion Content...")
+        ShowInformationText("Putting away\nKings of Middle-Earth\nExpansion Content")
         ClearExpansionContent("KoME;")
         return
     end
 
-    ShowInformationText("Setting up\nKings of Middle-Earth\nExpansion Content...")
+    ShowInformationText("Setting up\nKings of Middle-Earth\nExpansion Content")
 
     SpawnCharactersKings()
     Global.call("UpdateIDs")
@@ -4741,7 +4741,7 @@ function SetupKingsExpansion()
         getObjectFromGUID(IDs.HuntTileBag).shuffle()
     end
 
-    --Remove Event Cards...
+    --Remove Event Cards
     Global.call(
         "RemoveObjectFromGame",
         { BagID = IDs.FreePeoplesCharacterEventDeck, Name = "House of the Stewards", Description = "#23;" }
@@ -4779,16 +4779,16 @@ function SetupKingsExpansion()
         { BagID = IDs.ShadowStrategyEventDeck, Name = "The King is Revealed", Description = "#18;" }
     )
 
-    -- If The Fate of Erebor is used then do not swap 2 of the cards (King Brands Men and Dain Ironfoot's Guard)...
+    -- If The Fate of Erebor is used then do not swap 2 of the cards (King Brands Men and Dain Ironfoot's Guard)
     if TheFateOfErebor then
-        --remove the new cards, we will keep old ones...
+        --remove the new cards, we will keep old ones
         Global.call("RemoveObjectFromGame", { BagID = "890b46", Name = "King Brand's Men", Description = "#19;" })
         Global.call(
             "RemoveObjectFromGame",
             { BagID = "890b46", Name = "Dain Ironfoot's Guard", Description = "#22;" }
         )
     else
-        --remove the 2 base cards, they will be replaced with the KoME new cards...
+        --remove the 2 base cards, they will be replaced with the KoME new cards
         Global.call(
             "RemoveObjectFromGame",
             { BagID = IDs.FreePeoplesStrategyEventDeck, Name = "King Brand's Men", Description = "#19;" }
@@ -4799,7 +4799,7 @@ function SetupKingsExpansion()
         )
     end
 
-    --Add New Event Cards...
+    --Add New Event Cards
     getObjectFromGUID(IDs.ShadowCharacterEventDeck).putObject(getObjectFromGUID("70fc9b"))
     coroutine.yield(0)
     getObjectFromGUID(IDs.ShadowStrategyEventDeck).putObject(getObjectFromGUID("cc76b8"))
@@ -4854,7 +4854,7 @@ function CreateAlternateCompanionMenu()
         return
     end
 
-    --secretly choose alternate companions...
+    --secretly choose alternate companions
     self.createButton(
         {
             click_function = "Nothing",
@@ -4871,7 +4871,7 @@ function CreateAlternateCompanionMenu()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "Free Peoples Player\nis secretly choosing\nAlternate Companions...",
+            label = "Free Peoples Player\nis secretly choosing\nAlternate Companions",
             position = { 0, -0.1, -0 },
             rotation = { 180, 180, 0 },
             width = 0,
@@ -5068,7 +5068,7 @@ function CreateAlternateCompanionMenu()
 
     function Continue()
         self.clearButtons()
-        --strip off asterisk from names if any...
+        --strip off asterisk from names if any
         for C = 1, #CompanionNames do
             CompanionNames[C] = string.gsub(CompanionNames[C], "*", "")
         end
@@ -5087,7 +5087,7 @@ function SetupCompanionsStep()
         {
             click_function = "Nothing",
             function_owner = self,
-            label = "Setting up the Fellowship...",
+            label = "Setting up the Fellowship",
             position = { 0, 0.1, 0 },
             width = 0,
             height = 0,
@@ -5099,9 +5099,9 @@ function SetupCompanionsStep()
         coroutine.yield(0)
     end
     -- for D
-    --flip all companion cards face down...
+    --flip all companion cards face down
     for O, Obj in pairs(getAllObjects()) do
-        -- If companion card (but not Gollum)...
+        -- If companion card (but not Gollum)
         if
             Obj.type == "Card" and string.find(Obj.getDescription(), "Companion;") ~= nil and
             string.find(Obj.getName(), "Gollum") == nil and
@@ -5129,7 +5129,7 @@ function SetupCompanionsStep()
     end
 
     --pause 30 frames after all companions are in the grave. Entrox Licher
-    --pull back out companion cards face down and place them on the board...
+    --pull back out companion cards face down and place them on the board
     for C = 2, #IDs.CompanionCards do
         coroutine.yield(0)
         local CardObj =
@@ -5153,7 +5153,7 @@ function SetupCompanionsStep()
     end
 
     coroutine.yield(0)
-    --drop guide on top of the stack face up...
+    --drop guide on top of the stack face up
     local CardObj =
         getObjectFromGUID(GraveBagId).takeObject(
             { smooth = true, guid = IDs.CompanionCards[1], rotation = { 0, 180, 0 }, position = { 32.9, 9, 20.15 } }
@@ -5161,7 +5161,7 @@ function SetupCompanionsStep()
     coroutine.yield(0)
     CardObj.setDescription(CardObj.getDescription() .. "Fellowship;")
 
-    --wait for fellowship guide card to exist...
+    --wait for fellowship guide card to exist
     repeat
         coroutine.yield(0)
     until getObjectFromGUID(IDs.CompanionCards[1]) ~= nil
@@ -5177,7 +5177,7 @@ function SetupCompanionsStep()
                 getObjectFromGUID(IDs.CompanionCards[1]).getPosition().x >= 32.8 and
                 getObjectFromGUID(IDs.CompanionCards[1]).getPosition().y <= 1.2 and
                 getObjectFromGUID(IDs.CompanionCards[1]).getPosition().z >= 20.1
-        else --card must have merged into deck...
+        else --card must have merged into deck
             Done = true
         end
     until Done
@@ -5186,22 +5186,22 @@ function SetupCompanionsStep()
     NextStep = StepType.SetupCompleteMenu
 
     if CompactMode then
-        broadcastToAll("Compact Mode 1v1:\nPlacing Players next to each other...")
+        broadcastToAll("Compact Mode 1v1:\nPlacing Players next to each other")
         VersusMode = VersusType.OneVersusOne
-        --update stored locations...
+        --update stored locations
         Spots.ShadowDiceBox = Spots.CompactShadowUsedDice
         Spots.FreePeoplesDiceBox = Spots.CompactFreePeoplesUsedDice
-        --relocate Blue hand...
+        --relocate Blue hand
         coroutine.yield(0)
         Global.call("MoveObject",
             { ID = "63b83a", Position = { -25, 3, -57 }, Rotation = { 0, 0, 0 }, Smooth = false })
         --blue hand
-        --swap blue to green, then back to move player to the correct spot...
+        --swap blue to green, then back to move player to the correct spot
         coroutine.yield(0)
         Player["Blue"].changeColor("Green")
         coroutine.yield(0)
         Player["Green"].changeColor("Blue")
-        --clear and move combat dice...
+        --clear and move combat dice
         for O, Obj in pairs(getAllObjects()) do
             if Obj.getName() == "(Free Peoples Combat Die)" or Obj.getName() == "(Shadow Combat Die)" then
                 Obj.destruct()
@@ -5233,7 +5233,7 @@ function SetupCompanionsStep()
             { ID = "4b6f4c", Position = { -23.7, 1.01, -14.2 }, Rotation = { 0, 0, 0 }, Smooth = false }
         )
         local CombatDiceIndex = 0
-        --move shadow objects first...
+        --move shadow objects first
         for O, Obj in pairs(getAllObjects()) do
             --what side is it on?
             if string.find(Obj.getDescription(), "Shadow;") ~= nil then
@@ -5261,7 +5261,7 @@ function SetupCompanionsStep()
         end
 
         coroutine.yield(0)
-        --move FP objects second...
+        --move FP objects second
         CombatDiceIndex = 0
         for O, Obj in pairs(getAllObjects()) do
             --what side is it on?
@@ -5398,7 +5398,7 @@ function SetupCompanionsStep()
         --Red Action Dice Box.
         Global.call("MoveObject", { ID = "46d2fc", Position = { -58, 1.57, -60 }, Smooth = false })
         --Red Action Dice Box.
-        --relocate used dice areas...
+        --relocate used dice areas
         Global.call(
             "MoveObject",
             { ID = "028249", Position = { -5.1, 0.95, -32.75 }, Rotation = { 0, 180, 0 }, Smooth = false }
@@ -5424,10 +5424,10 @@ function SetupCompanionsStep()
             { ID = "dcf102", Position = { -10.72, 0.95, -36.48 }, Rotation = { 0, 180, 0 }, Smooth = false }
         )
         --blue area
-        --remove certain components...
+        --remove certain components
         Global.call("RemoveObjectFromGame", { ID = "471b96" })
         Global.call("RemoveObjectFromGame", { ID = "28f260" })
-        --re-move combat dice panels (they seem to get lag/stuck in certain games)...
+        --re-move combat dice panels (they seem to get lag/stuck in certain games)
         for I = 1, 30 do
             coroutine.yield(0)
         end
@@ -5481,7 +5481,7 @@ function SetupCompanionsStep()
         end
     end
 
-    --Included: The Breaking of the Fellowship...
+    --Included: The Breaking of the Fellowship
     if TheBreakingOfTheFellowship then
         Global.call("SetupBreakingOfTheFellowship")
     else
@@ -5499,11 +5499,11 @@ function GatherActionDiceCoroutine()
     end
 
     GuideName = Global.call("DetectGuide")
-    --Remove any dice in the Dice Box and Used ActionDice areas, then place them in a staging (out) area...
+    --Remove any dice in the Dice Box and Used ActionDice areas, then place them in a staging (out) area
     local DiceIndex = 0
     ShadowHuntDiceCount = 0
     FreePeoplesHuntDiceCount = 0
-    --scan shadow used dice area for action dice...
+    --scan shadow used dice area for action dice
     for O, Obj in pairs(
         Physics.cast(
             {
@@ -5523,7 +5523,7 @@ function GatherActionDiceCoroutine()
                 string.find(Obj.hit_object.getRotationValue(), "Remove") ~= nil and
                 InPlay({ Name = "The Witch", Description = "Minion;" })
             then
-                --then eliminate the die...
+                --then eliminate the die
                 printToAll(
                     "Removing " ..
                     Obj.hit_object.getName() ..
@@ -5539,7 +5539,7 @@ function GatherActionDiceCoroutine()
                     "The Witch-King: The Black Captain has entered play.  Gothmog's die has been eliminated."
                 )
             else
-                --stage the dice to the outer area...
+                --stage the dice to the outer area
                 DiceIndex = DiceIndex + 1
                 Obj.hit_object.setPositionSmooth(Spots.ShadowDiceOut[DiceIndex], false, true)
                 Obj.hit_object.setRotation({ 0, SR, 0 })
@@ -5548,7 +5548,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --scan huntbox for shadow action dice...
+    --scan huntbox for shadow action dice
     for O, Obj in pairs(
         Physics.cast(
             {
@@ -5571,7 +5571,7 @@ function GatherActionDiceCoroutine()
                 string.find(Obj.hit_object.getRotationValue(), "Remove") ~= nil and
                 InPlay({ Name = "The Witch", Description = "Minion;" })
             then
-                --then eliminate the die...
+                --then eliminate the die
                 printToAll(
                     "Removing " ..
                     Obj.hit_object.getName() ..
@@ -5588,7 +5588,7 @@ function GatherActionDiceCoroutine()
                 )
             end
 
-            --stage the dice to the outer area...
+            --stage the dice to the outer area
             DiceIndex = DiceIndex + 1
             ShadowHuntDiceCount = ShadowHuntDiceCount + 1
             Obj.hit_object.setPositionSmooth(Spots.ShadowDiceOut[DiceIndex], false, true)
@@ -5597,7 +5597,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --scan board for any remaining shadow action dice...
+    --scan board for any remaining shadow action dice
     for _, Obj in pairs(getAllObjects()) do
         if Obj.getPosition().z >= -25 and Obj.getPosition().z <= 25 then
             if Obj.getPosition().x >= -37 and Obj.getPosition().x <= 37 then
@@ -5612,7 +5612,7 @@ function GatherActionDiceCoroutine()
                             InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
                             Obj.getGUID() == IDs.GothmogDice
                         then
-                            --do not gather gothmog when the black captain is in play...
+                            --do not gather gothmog when the black captain is in play
                         else
                             DiceIndex = DiceIndex + 1
                             Obj.setPositionSmooth(Spots.ShadowDiceOut[DiceIndex], false, true)
@@ -5626,7 +5626,7 @@ function GatherActionDiceCoroutine()
 
     coroutine.yield(0)
     if CompactMode then
-        --scan Compact dice line dice box for shadow action dice...
+        --scan Compact dice line dice box for shadow action dice
         for O, Obj in pairs(
             Physics.cast(
                 {
@@ -5651,7 +5651,7 @@ function GatherActionDiceCoroutine()
                         InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
                         Obj.hit_object.getGUID() == IDs.GothmogDice
                     then
-                        --do not gather gothmog when the black captain is in play...
+                        --do not gather gothmog when the black captain is in play
                     else
                         DiceIndex = DiceIndex + 1
                         Obj.hit_object.setPositionSmooth(Spots.ShadowDiceOut[DiceIndex], false, true)
@@ -5664,7 +5664,7 @@ function GatherActionDiceCoroutine()
         coroutine.yield(0)
     end
 
-    --scan shadow dice box for action dice...
+    --scan shadow dice box for action dice
     for O, Obj in pairs(
         Physics.cast(
             {
@@ -5683,7 +5683,7 @@ function GatherActionDiceCoroutine()
                 InPlay({ Name = "King: The Black Captain", Description = "Minion;" }) and
                 Obj.hit_object.getGUID() == IDs.GothmogDice
             then
-                --do not gather gothmog when the black captain is in play...
+                --do not gather gothmog when the black captain is in play
             else
                 DiceIndex = DiceIndex + 1
                 Obj.hit_object.setPositionSmooth(Spots.ShadowDiceOut[DiceIndex], false, true)
@@ -5693,7 +5693,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --scan free peoples used dice area for action dice...
+    --scan free peoples used dice area for action dice
     DiceIndex = 0
 
     for O, Obj in pairs(
@@ -5715,7 +5715,7 @@ function GatherActionDiceCoroutine()
                 string.find(Obj.hit_object.getRotationValue(), "Remove") ~= nil and
                 InPlay({ Name = "Gandalf the White: Emissary from the West", Description = "Character;" })
             then
-                --then eliminate the die...
+                --then eliminate the die
                 printToAll(
                     "Removing " ..
                     Obj.hit_object.getName() ..
@@ -5723,7 +5723,7 @@ function GatherActionDiceCoroutine()
                 )
                 getObjectFromGUID(GraveBagId).putObject(Obj.hit_object)
             else
-                --stage the dice to the outer area...
+                --stage the dice to the outer area
                 DiceIndex = DiceIndex + 1
                 Obj.hit_object.setPositionSmooth(Spots.FreePeoplesDiceOut[DiceIndex], false, true)
                 Obj.hit_object.setRotation({ 0, FR, 0 })
@@ -5732,7 +5732,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --scan free peoples dice box for action dice...
+    --scan free peoples dice box for action dice
     for _, Obj in pairs(
         Physics.cast(
             {
@@ -5747,7 +5747,7 @@ function GatherActionDiceCoroutine()
         )
     ) do
         if DiceIndex < #Spots.FreePeoplesDiceOut and string.find(Obj.hit_object.getDescription(), "Dice;") ~= nil then
-            --stage the dice to the outer area...
+            --stage the dice to the outer area
             DiceIndex = DiceIndex + 1
             Obj.hit_object.setPositionSmooth(Spots.FreePeoplesDiceOut[DiceIndex], false, true)
             Obj.hit_object.setRotation({ 0, FR, 0 })
@@ -5755,7 +5755,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --scan huntbox for free peoples action dice...
+    --scan huntbox for free peoples action dice
     for _, Obj in pairs(
         Physics.cast(
             {
@@ -5778,7 +5778,7 @@ function GatherActionDiceCoroutine()
                 string.find(Obj.hit_object.getRotationValue(), "Remove") ~= nil and
                 InPlay({ Name = "Gandalf the White: Emissary from the West", Description = "Character;" })
             then
-                --then eliminate the die...
+                --then eliminate the die
                 printToAll(
                     "Removing " ..
                     Obj.hit_object.getName() ..
@@ -5787,7 +5787,7 @@ function GatherActionDiceCoroutine()
                 getObjectFromGUID(GraveBagId).putObject(Obj.hit_object)
             end
 
-            --stage the dice to the outer area...
+            --stage the dice to the outer area
             DiceIndex = DiceIndex + 1
             FreePeoplesHuntDiceCount = FreePeoplesHuntDiceCount + 1
             Obj.hit_object.setPositionSmooth(Spots.FreePeoplesDiceOut[DiceIndex], false, true)
@@ -5796,7 +5796,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --scan board for any remaining FP action dice...
+    --scan board for any remaining FP action dice
     for _, Obj in pairs(getAllObjects()) do
         if Obj.getPosition().z >= -25 and Obj.getPosition().z <= 25 then
             if Obj.getPosition().x >= -37 and Obj.getPosition().x <= 37 then
@@ -5818,7 +5818,7 @@ function GatherActionDiceCoroutine()
 
     coroutine.yield(0)
     if CompactMode then
-        --scan Compact dice line dice box for FP action dice...
+        --scan Compact dice line dice box for FP action dice
         for O, Obj in pairs(
             Physics.cast(
                 {
@@ -5851,7 +5851,7 @@ function GatherActionDiceCoroutine()
 
     DiceIndex = 0
 
-    --FP gathers 4 base dice...
+    --FP gathers 4 base dice
     for I = 1, 4 do
         if getObjectFromGUID(IDs.FreePeoplesActionDice[I]) ~= nil then
             DiceIndex = DiceIndex + 1
@@ -5866,7 +5866,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --FP gathers +1 extra dice if Gandalf the White is in play...
+    --FP gathers +1 extra dice if Gandalf the White is in play
     if InPlay({ Name = "Gandalf the White: Emissary from the West", Description = "Character;" }) then
         if getObjectFromGUID(IDs.FreePeoplesActionDice[5]) ~= nil then
             DiceIndex = DiceIndex + 1
@@ -5880,7 +5880,7 @@ function GatherActionDiceCoroutine()
         end
     end
     coroutine.yield(0)
-    --FP gathers +1 extra dice if Aragorn is in play...
+    --FP gathers +1 extra dice if Aragorn is in play
     if InPlay({ Name = "Aragorn: Heir to Isildur", Description = "Character;" }) then
         if getObjectFromGUID(IDs.FreePeoplesActionDice[6]) ~= nil then
             DiceIndex = DiceIndex + 1
@@ -5894,7 +5894,7 @@ function GatherActionDiceCoroutine()
         end
     end
     coroutine.yield(0)
-    --FP gathers Narya action dice if gandalf the gray (keeper of narya) is the guide during the recover action, and there was at least 1 FP dice in the hunt box, and dice is not removed from game (Narya is in the pool if it is round 1 and Gandalf keeper is the guide)...
+    --FP gathers Narya action dice if gandalf the gray (keeper of narya) is the guide during the recover action, and there was at least 1 FP dice in the hunt box, and dice is not removed from game (Narya is in the pool if it is round 1 and Gandalf keeper is the guide)
     if
         GuideName == "Gandalf the Grey: Keeper of Narya" and
         (FreePeoplesHuntDiceCount > 0 and getObjectFromGUID(IDs.NaryaDice) ~= nil or Round == 1)
@@ -5904,7 +5904,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --FP add the Nenya dice if lady Galadriel is in play, and dice is not removed from game...
+    --FP add the Nenya dice if lady Galadriel is in play, and dice is not removed from game
     if
         InPlay({ Name = "Lady Galadriel: Keeper of Nenya", Description = "Character;" }) and
         getObjectFromGUID(IDs.NenyaDice) ~= nil
@@ -5914,7 +5914,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --FP add the Vilya dice if Lord Elrond is in play, and dice is not removed from game...
+    --FP add the Vilya dice if Lord Elrond is in play, and dice is not removed from game
     if
         InPlay({ Name = "Lord Elrond: Keeper of Vilya", Description = "Character;" }) and
         getObjectFromGUID(IDs.VilyaDice) ~= nil
@@ -5924,7 +5924,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --FP gathers faction dice if a faction is any FP faction card is flipped over (active)...
+    --FP gathers faction dice if a faction is any FP faction card is flipped over (active)
     if FactionActive({ Faction = "DeadMen" }) or FactionActive({ Faction = "Ents" }) or FactionActive({ Faction = "Eagles" }) then
         if getObjectFromGUID(IDs.FreePeoplesFactionDice) ~= nil then
             DiceIndex = DiceIndex + 1
@@ -5939,7 +5939,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --FP add the ruler dice if a Awakened Ruler is in play...
+    --FP add the ruler dice if a Awakened Ruler is in play
     if getObjectFromGUID(IDs.FreePeoplesRulerDice) ~= nil and InPlay({ Name = "(Awakened)", Description = "Ruler;" }) then
         DiceIndex = DiceIndex + 1
         getObjectFromGUID(IDs.FreePeoplesRulerDice).setPositionSmooth(Spots.FreePeoplesDiceBox[DiceIndex], false,
@@ -5947,7 +5947,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --Shadow Peoples gathers 7 base dice...
+    --Shadow Peoples gathers 7 base dice
     DiceIndex = 0
     for I = 1, 7 do
         if getObjectFromGUID(IDs.ShadowActionDice[I]) ~= nil then
@@ -5960,7 +5960,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --Shadow add +1 extra dice if Saruman is in play...
+    --Shadow add +1 extra dice if Saruman is in play
     if InPlay({ Name = "Saruman: Corrupted Wizard", Description = "Minion;" }) then
         if getObjectFromGUID(IDs.ShadowActionDice[8]) ~= nil then
             DiceIndex = DiceIndex + 1
@@ -5971,7 +5971,7 @@ function GatherActionDiceCoroutine()
         end
     end
     coroutine.yield(0)
-    --Shadow add +1 extra dice if a Witch-king minion is in play...
+    --Shadow add +1 extra dice if a Witch-king minion is in play
     if InPlay({ Name = "The Witch", Description = "Minion;" }) then
         if getObjectFromGUID(IDs.ShadowActionDice[9]) ~= nil then
             DiceIndex = DiceIndex + 1
@@ -5982,7 +5982,7 @@ function GatherActionDiceCoroutine()
         end
     end
     coroutine.yield(0)
-    --Shadow add +1 extra dice if a Mouth of Sauron minion is in play...
+    --Shadow add +1 extra dice if a Mouth of Sauron minion is in play
     if InPlay({ Name = "The Mouth of Sauron", Description = "Minion;" }) then
         if getObjectFromGUID(IDs.ShadowActionDice[10]) ~= nil then
             DiceIndex = DiceIndex + 1
@@ -5993,7 +5993,7 @@ function GatherActionDiceCoroutine()
         end
     end
     coroutine.yield(0)
-    --Shadow add Balrog dice if Balrog is in play, and dice is not removed from game...
+    --Shadow add Balrog dice if Balrog is in play, and dice is not removed from game
     if
         InPlay({ Name = "Balrog: Evil of the Ancient World", Description = "Minion;" }) and
         getObjectFromGUID(IDs.BalrogDice) ~= nil
@@ -6003,7 +6003,7 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --Shadow add Gothmog dice if Gothmog is in play, and dice is not removed from game...
+    --Shadow add Gothmog dice if Gothmog is in play, and dice is not removed from game
     if
         InPlay({ Name = "Gothmog: Lieutenant of Morgul", Description = "Minion;" }) and
         getObjectFromGUID(IDs.GothmogDice) ~= nil
@@ -6013,14 +6013,14 @@ function GatherActionDiceCoroutine()
     end
 
     coroutine.yield(0)
-    --Shadow add the ruler dice if an Dark Chieftain Ruler is in play...
+    --Shadow add the ruler dice if an Dark Chieftain Ruler is in play
     if getObjectFromGUID(IDs.ShadowRulerDice) ~= nil and InPlay({ Description = "DarkChieftain;" }) then
         DiceIndex = DiceIndex + 1
         getObjectFromGUID(IDs.ShadowRulerDice).setPositionSmooth(Spots.ShadowDiceBox[DiceIndex], false, true)
     end
 
     coroutine.yield(0)
-    --FP gathers faction dice if a faction is any FP faction card is flipped over (active)...
+    --FP gathers faction dice if a faction is any FP faction card is flipped over (active)
     if
         FactionActive({ Faction = "Spiders" }) or FactionActive({ Faction = "Corsairs" }) or
         FactionActive({ Faction = "Dunlendings" })
@@ -6034,7 +6034,7 @@ function GatherActionDiceCoroutine()
         end
     end
 
-    --always return 1 from a coroutine...
+    --always return 1 from a coroutine
     return 1
 end
 
@@ -6046,7 +6046,7 @@ function RollActionDiceCoroutine()
         FR = FR + 180
     end
 
-    --roll, then organize all dice in the Diceboxes...
+    --roll, then organize all dice in the Diceboxes
     local ShadowRollAreaPosition = getObjectFromGUID(IDs.ShadowDiceBox).getPosition()
     local FreePeoplesRollAreaPosition = getObjectFromGUID(IDs.FreePeoplesDiceBox).getPosition()
     local RollAreaSize = { 10, 5, 13 }
@@ -6056,7 +6056,7 @@ function RollActionDiceCoroutine()
         RollAreaSize = { 9, 5, 9 }
     end
 
-    --roll shadow action dice...
+    --roll shadow action dice
     ShadowDicePool = {}
     for _, Obj in pairs(
         Physics.cast(
@@ -6076,7 +6076,7 @@ function RollActionDiceCoroutine()
         end
     end
 
-    --scan free peoples dice box for action dice...
+    --scan free peoples dice box for action dice
     FreePeoplesDicePool = {}
     for _, Obj in pairs(
         Physics.cast(
@@ -6096,7 +6096,7 @@ function RollActionDiceCoroutine()
         end
     end
 
-    --roll ShadowDice...
+    --roll ShadowDice
     for I = 1, #ShadowDicePool do
         getObjectFromGUID(ShadowDicePool[I]).randomize()
         Wait.time(
@@ -6119,7 +6119,7 @@ function RollActionDiceCoroutine()
         )
     end
 
-    --wait for all Dice to finish rolling...
+    --wait for all Dice to finish rolling
     local Done = true
     repeat
         coroutine.yield(0)
@@ -6140,7 +6140,7 @@ function RollActionDiceCoroutine()
             end
         end
     until Done
-    --update huntbox dice tables...
+    --update huntbox dice tables
     HuntBoxShadowDiceArray = {}
     HuntBoxFreePeoplesDiceArray = {}
     for _, Obj in pairs(
@@ -6172,7 +6172,7 @@ function RollActionDiceCoroutine()
     end
 
     local ResultText = "\nThe Shadow Rolled: "
-    --organize shadow action dice...
+    --organize shadow action dice
     for I = 1, #ShadowDicePool do
         getObjectFromGUID(ShadowDicePool[I]).setPosition(Spots.ShadowDiceBox[I])
         ResultText = ResultText .. " [" .. getObjectFromGUID(ShadowDicePool[I]).getRotationValue() .. "]"
@@ -6184,7 +6184,7 @@ function RollActionDiceCoroutine()
 
     printToAll(ResultText, { 1, 0.3, 0.3 })
     ResultText = "\nThe Free Peoples Rolled: "
-    --organize FP action dice...
+    --organize FP action dice
     for I = 1, #FreePeoplesDicePool do
         ResultText = ResultText .. " [" .. getObjectFromGUID(FreePeoplesDicePool[I]).getRotationValue() .. "]"
         --eye result?
@@ -6194,7 +6194,7 @@ function RollActionDiceCoroutine()
     end
 
     printToAll(ResultText, { 0.3, 0.3, 1 })
-    --update huntbox again to pick up newly rolled eyes...
+    --update huntbox again to pick up newly rolled eyes
     for I = 1, #HuntBoxShadowDiceArray do
         getObjectFromGUID(HuntBoxShadowDiceArray[I]).setPositionSmooth(Spots.ShadowHuntBoxDice[I], false, true)
         Global.call("SetDiceFace", { Dice = getObjectFromGUID(HuntBoxShadowDiceArray[I]), Value = "Eye" })
@@ -6209,13 +6209,13 @@ function RollActionDiceCoroutine()
         Global.call("SetDiceFace", { Dice = getObjectFromGUID(HuntBoxShadowDiceArray[I]), Value = "Eye" })
     end
 
-    --line up action dice by type...
+    --line up action dice by type
     local SDI = 0 --shadow dice index
     local FPDI = 0 --FP dice index
     for DF = 1, 6 do
-        --line up shadow action dice...
+        --line up shadow action dice
         for I = 1, #ShadowDicePool do
-            --ignore eyes and group by face...
+            --ignore eyes and group by face
             if
                 getObjectFromGUID(ShadowDicePool[I]).getValue() == DF and
                 string.find(getObjectFromGUID(ShadowDicePool[I]).getRotationValue(), "Eye") == nil
@@ -6240,9 +6240,9 @@ function RollActionDiceCoroutine()
             end
         end
 
-        --organize FP action dice...
+        --organize FP action dice
         for I = 1, #FreePeoplesDicePool do
-            --ignore eyes and group by face...
+            --ignore eyes and group by face
             if
                 getObjectFromGUID(FreePeoplesDicePool[I]).getValue() == DF and
                 string.find(getObjectFromGUID(FreePeoplesDicePool[I]).getRotationValue(), "Eye") == nil
@@ -6268,7 +6268,7 @@ function RollActionDiceCoroutine()
         end
     end
 
-    --update dice stats...
+    --update dice stats
     for I = 1, #FreePeoplesDicePool do
         Global.call(
             "UpdateDiceStats",
@@ -6373,17 +6373,17 @@ end
 function FactionActive(Params)
     local IDs = Global.call("GetIDs")
 
-    --make sure WoME expansion is in play...
+    --make sure WoME expansion is in play
     if not WarriorsOfMiddleEarth then
         return false
     end
 
-    --make sure faction card exists...
+    --make sure faction card exists
     if getObjectFromGUID(IDs.WoME[Params.Faction .. "FactionCard"]) == nil then
         return false
     end
 
-    --make sure faction card is flipped over...
+    --make sure faction card is flipped over
     if
         getObjectFromGUID(IDs.WoME[Params.Faction .. "FactionCard"]).getRotation().z >= 90 and
         getObjectFromGUID(IDs.WoME[Params.Faction .. "FactionCard"]).getRotation().z <= 270
@@ -6396,7 +6396,7 @@ end
 
 -- Params: id="", position={x,y,z}, name="", description=""
 function CheckDeck(Params)
-    -- If the deck no longer exists, try to re-detect it at the specified position and return it's ID (or null if none found)...
+    -- If the deck no longer exists, try to re-detect it at the specified position and return it's ID (or null if none found)
     if getObjectFromGUID(Params.id) ~= nil then
         return Params.id
     else
@@ -6440,11 +6440,11 @@ function DrawFromDeck(Params)
 
     local DrawCount = 0
     for C = 1, Params.count do
-        if getObjectFromGUID(Params.deckid) ~= nil then --try by guid...
+        if getObjectFromGUID(Params.deckid) ~= nil then --try by guid
             getObjectFromGUID(Params.deckid).deal(1, Params.player)
             DrawCount = DrawCount + 1
         elseif Params.deckspot ~= nil then
-            --try to draw from a deck at that spot...
+            --try to draw from a deck at that spot
             local Success = false
             for _, Obj in pairs(
                 Physics.cast(
@@ -6467,7 +6467,7 @@ function DrawFromDeck(Params)
                 end
             end
 
-            --look for 1 last card in the spot...
+            --look for 1 last card in the spot
             if not Success then
                 for _, Obj in pairs(
                     Physics.cast(
@@ -6516,7 +6516,7 @@ end
 
 -- Params: {Text="", Var="", Default=""}
 function ReadTag(Params)
-    -- returns a value read from a line of text:  ex: System:ABCDE; will return ABCDE,or the default value if not found...
+    -- returns a value read from a line of text:  ex: System:ABCDE; will return ABCDE,or the default value if not found
     if Params.Default == nil then
         Params.Default = ""
     end
