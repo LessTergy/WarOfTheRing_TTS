@@ -4598,7 +4598,7 @@ function SetupLordsExpansion()
             false,
             false
         )
-        getObjectFromGUID(IDs.LoME.ElvenRings[I]).setRotation({ 0, 90, 0 })
+        getObjectFromGUID(IDs.LoME.ElvenRings[I]).setRotation({ 0, 180, 0 })
         getObjectFromGUID(GraveBagId).putObject(getObjectFromGUID(IDs.ElvenRings[I]))
         coroutine.yield(0)
     end
