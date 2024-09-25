@@ -3,9 +3,9 @@
         "GUID": "74ba38",
         "Name": "Custom_PDF",
         "Transform": {
-            "posX": 79,
+            "posX": 79.0,
             "posY": 0.95,
-            "posZ": -31.0,
+            "posZ": -18,
             "rotX": 0,
             "rotY": 270.01,
             "rotZ": 0,
@@ -43,7 +43,7 @@
         "CustomPDF": {
             "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/2447233392239697864/31BCA064581127EA49341E4F67ADB0371D6F2348/",
             "PDFPassword": "",
-            "PDFPage": 0,
+            "PDFPage": 1,
             "PDFPageOffset": 0
         },
         "LuaScript": "",
