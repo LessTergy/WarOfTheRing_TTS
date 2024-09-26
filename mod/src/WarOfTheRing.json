@@ -7,8 +7,14 @@
         "GameMode": "\u0420\u2019\u0420\u0455\u0420\u2116\u0420\u0405\u0420\u00b0 \u0420\u0459\u0420\u0455\u0420\u00bb\u0421\u040a\u0421\u2020\u0420\u00b0 (War of the Ring)",
         "GameType": "Game",
         "GameComplexity": "Medium Complexity",
-        "PlayingTime": [0, 180],
-        "PlayerCounts": [2, 4],
+        "PlayingTime": [
+            0,
+            180
+        ],
+        "PlayerCounts": [
+            2,
+            4
+        ],
         "Tags": [
             "Board Games",
             "Wargames",
@@ -1200,45 +1206,9 @@
             },
             {
                 "Position": {
-                    "x": -19.48,
-                    "y": 0.96,
-                    "z": 17.03
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
                     "x": -8.65,
                     "y": 0.96,
                     "z": 17.38
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
-                    "x": -0.56,
-                    "y": 0.96,
-                    "z": 23.55
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
-                    "x": 2.47,
-                    "y": 0.96,
-                    "z": 11.62
                 },
                 "Rotation": {
                     "x": 0,
@@ -1392,93 +1362,9 @@
             },
             {
                 "Position": {
-                    "x": 3.4,
+                    "x": -19.52,
                     "y": 0.96,
-                    "z": 8.07
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
-                    "x": -2.08,
-                    "y": 0.96,
-                    "z": -0.65
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
-                    "x": 5.87,
-                    "y": 0.96,
-                    "z": -22.85
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
-                    "x": -0.64,
-                    "y": 0.96,
-                    "z": -5.12
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
-                    "x": 5.0,
-                    "y": 0.96,
-                    "z": -5.75
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
-                    "x": 17.09,
-                    "y": 0.96,
-                    "z": 21.31
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
-                    "x": 17.04,
-                    "y": 0.96,
-                    "z": 15.82
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
-                    "x": 7.79,
-                    "y": 0.96,
-                    "z": -15.32
+                    "z": 17
                 },
                 "Rotation": {
                     "x": 0,
@@ -1932,30 +1818,6 @@
             },
             {
                 "Position": {
-                    "x": 21.21,
-                    "y": 0.96,
-                    "z": -5.08
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
-                    "x": 20.57,
-                    "y": 0.96,
-                    "z": -9.33
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
                     "x": 20.5,
                     "y": 0.96,
                     "z": -23.4
@@ -2289,18 +2151,6 @@
             },
             {
                 "Position": {
-                    "x": 21.45,
-                    "y": 0.96,
-                    "z": 21.3
-                },
-                "Rotation": {
-                    "x": 0,
-                    "y": 135,
-                    "z": 0
-                }
-            },
-            {
-                "Position": {
                     "x": 18.35,
                     "y": 0.96,
                     "z": 21.32
@@ -2605,10 +2455,6 @@
         "Gimli_Son_of_Gloin.f86853.201205.json",
         "Shadow_Strategy_Event_Cards_TFoE.a3e82e.json",
         "Erebor_Stronghold.7d50c0.json",
-        "Erebor.55e47b.json",
-        "Ered_Luin.c537fa.json",
-        "South_Rhun.2df5ce.json",
-        "Iron_Hills.7318b5.json",
         "Map.034932.json",
         "Table.a8d0fa.json",
         "Hunt_Box_Zone.b06145.json",
@@ -2654,7 +2500,6 @@
         "Thranduil.518ae6.json",
         "Helm_s_Deep_Stronghold.c9bcd7.json",
         "Helm_s_Deep_Overlay.534719.json",
-        "Helm_s_Deep.011a2a.json",
         "Hidden_Corruption_Zone.1f7d8d.json",
         "Corruptor_Counter.f9d255.json",
         "Ruler_Corruption_Board.3caf09.json",
@@ -2855,6 +2700,11 @@
         "./StrongholdBox/Woodland_Realm.e496eb.json",
         "./StrongholdBox/Shadow_Stronghold_2.f84976.json",
         "./StrongholdBox/Shadow_Stronghold_1.f994cb.json",
-        "./StrongholdBox/Erebor.fb9626.json"
+        "./StrongholdBox/Erebor.fb9626.json",
+        "./Settlements/Erebor.55e47b.json",
+        "./Settlements/Helm_s_Deep.011a2a.json",
+        "./Settlements/Ered_Luin.c537fa.json",
+        "./Settlements/Iron_Hills.7318b5.json",
+        "./Settlements/South_Rhun.2df5ce.json"
     ]
 }

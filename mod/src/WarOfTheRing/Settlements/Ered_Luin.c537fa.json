@@ -1,19 +1,19 @@
 {
     "Object": {
-        "GUID": "2df5ce",
+        "GUID": "c537fa",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": 65.44,
+            "posX": 62.88,
             "posY": 1.07,
             "posZ": 48.72,
             "rotX": 0,
-            "rotY": 179.97,
+            "rotY": 180.0,
             "rotZ": 0,
             "scaleX": 0.48,
             "scaleY": 1,
             "scaleZ": 0.48
         },
-        "Nickname": "South Rhun",
+        "Nickname": "Ered Luin",
         "Description": "City;TFoE;",
         "GMNotes": "",
         "AltLookAngle": {
@@ -41,20 +41,34 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/1753569444434391972/053A4BB35E26743EACB40172F2E9E4B2A8650C28/",
+            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392244082547/6A2BB1386B93A85A98FA1ED9705B9A62B0F83BF2/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,
             "CustomToken": {
                 "Thickness": 0.25,
-                "MergeDistancePixels": 25,
+                "MergeDistancePixels": 5,
                 "StandUp": false,
                 "Stackable": false
             }
         },
-        "LuaScript": "#include ./South_Rhun.2df5ce.lua",
+        "LuaScript": "#include ./Ered_Luin.c537fa.lua",
         "LuaScriptState": "",
-        "XmlUI": ""
+        "XmlUI": "",
+        "AttachedSnapPoints": [
+            {
+                "Position": {
+                    "x": 1.01,
+                    "y": 0.13,
+                    "z": -0.33
+                },
+                "Rotation": {
+                    "x": 0,
+                    "y": -45,
+                    "z": 0
+                }
+            }
+        ]
     },
     "StatesPaths": {}
 }

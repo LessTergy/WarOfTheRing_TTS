@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558562786871/2B42BA4D24D47389CF98221CFA3A86E64FE6CBFD/",
+            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392244083075/2B42BA4D24D47389CF98221CFA3A86E64FE6CBFD/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,
@@ -58,8 +58,8 @@
         "AttachedSnapPoints": [
             {
                 "Position": {
-                    "x": -0.94,
-                    "y": 0.13,
+                    "x": -0.95,
+                    "y": 0.12,
                     "z": -0.34
                 },
                 "Rotation": {

@@ -54,7 +54,21 @@
         },
         "LuaScript": "#include ./Orthanc.b3b00f.lua",
         "LuaScriptState": "",
-        "XmlUI": ""
+        "XmlUI": "",
+        "AttachedSnapPoints": [
+            {
+                "Position": {
+                    "x": -0.8,
+                    "y": 0.2,
+                    "z": -0.83
+                },
+                "Rotation": {
+                    "x": 0,
+                    "y": -45,
+                    "z": 0
+                }
+            }
+        ]
     },
     "StatesPaths": {}
 }

@@ -1,19 +1,19 @@
 {
     "Object": {
-        "GUID": "7318b5",
+        "GUID": "2df5ce",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": 63.07,
-            "posY": 1.17,
-            "posZ": 54.65,
+            "posX": 65.44,
+            "posY": 1.07,
+            "posZ": 48.72,
             "rotX": 0,
-            "rotY": 180,
+            "rotY": 179.97,
             "rotZ": 0,
             "scaleX": 0.48,
             "scaleY": 1,
             "scaleZ": 0.48
         },
-        "Nickname": "Iron Hills",
+        "Nickname": "South Rhun",
         "Description": "City;TFoE;",
         "GMNotes": "",
         "AltLookAngle": {
@@ -41,20 +41,34 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/1753569444434429170/F1E5A98D9F3511490934C246EA380E177868B279/",
+            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392244083075/2B42BA4D24D47389CF98221CFA3A86E64FE6CBFD/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,
             "CustomToken": {
                 "Thickness": 0.25,
-                "MergeDistancePixels": 5,
+                "MergeDistancePixels": 25,
                 "StandUp": false,
                 "Stackable": false
             }
         },
-        "LuaScript": "#include ./Iron_Hills.7318b5.lua",
+        "LuaScript": "#include ./South_Rhun.2df5ce.lua",
         "LuaScriptState": "",
-        "XmlUI": ""
+        "XmlUI": "",
+        "AttachedSnapPoints": [
+            {
+                "Position": {
+                    "x": -0.95,
+                    "y": 0.12,
+                    "z": -0.34
+                },
+                "Rotation": {
+                    "x": 0,
+                    "y": -45,
+                    "z": 0
+                }
+            }
+        ]
     },
     "StatesPaths": {}
 }

@@ -1,19 +1,19 @@
 {
     "Object": {
-        "GUID": "c537fa",
+        "GUID": "7318b5",
         "Name": "Custom_Token",
         "Transform": {
-            "posX": 62.88,
-            "posY": 1.07,
-            "posZ": 48.72,
+            "posX": 63.07,
+            "posY": 1.17,
+            "posZ": 54.65,
             "rotX": 0,
-            "rotY": 180.0,
+            "rotY": 180,
             "rotZ": 0,
             "scaleX": 0.48,
             "scaleY": 1,
             "scaleZ": 0.48
         },
-        "Nickname": "Ered Luin",
+        "Nickname": "Iron Hills",
         "Description": "City;TFoE;",
         "GMNotes": "",
         "AltLookAngle": {
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/1753569444434429170/F1E5A98D9F3511490934C246EA380E177868B279/",
+            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392244082547/6A2BB1386B93A85A98FA1ED9705B9A62B0F83BF2/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,
@@ -52,9 +52,23 @@
                 "Stackable": false
             }
         },
-        "LuaScript": "#include ./Ered_Luin.c537fa.lua",
+        "LuaScript": "#include ./Iron_Hills.7318b5.lua",
         "LuaScriptState": "",
-        "XmlUI": ""
+        "XmlUI": "",
+        "AttachedSnapPoints": [
+            {
+                "Position": {
+                    "x": 1.01,
+                    "y": 0.13,
+                    "z": -0.33
+                },
+                "Rotation": {
+                    "x": 0,
+                    "y": -45,
+                    "z": 0
+                }
+            }
+        ]
     },
     "StatesPaths": {}
 }
