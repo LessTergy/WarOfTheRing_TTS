@@ -46,7 +46,7 @@
             "ImageScalar": 1,
             "WidthScale": 1.0
         },
-        "LuaScript": "",
+        "LuaScript": "#include ../includes/NonInteractable.ttslua",
         "LuaScriptState": "",
         "XmlUI": ""
     },
