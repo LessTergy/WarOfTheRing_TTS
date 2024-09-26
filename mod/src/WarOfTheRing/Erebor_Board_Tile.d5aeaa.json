@@ -9,9 +9,9 @@
             "rotX": 0,
             "rotY": 179.97,
             "rotZ": 0,
-            "scaleX": 2.75,
+            "scaleX": 2.72,
             "scaleY": 1,
-            "scaleZ": 2.75
+            "scaleZ": 2.72
         },
         "Nickname": "Erebor Board Tile",
         "Description": "Overlay;TFoE;",
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/1754691331184419392/976D4CDDC081776CADD1FE56F214DE820519D1B0/",
+            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392244653534/12394CA5E5F9249542ACBE5CDD6AB24E9E7BE191/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,

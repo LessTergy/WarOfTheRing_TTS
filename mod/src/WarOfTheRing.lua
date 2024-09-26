@@ -604,7 +604,7 @@ function SetupTheFateOfErebor()
         local OverlayToken = getObjectFromGUID(TFoERegionOverlayID)
         if OverlayToken ~= nil then
             OverlayToken.setLock(true)
-            OverlayToken.setPositionSmooth({ 19.8, 0.91, 17.5 }, false, true)
+            OverlayToken.setPositionSmooth({ 19.81, 0.91, 17.45 }, false, true)
             OverlayToken.setRotation({ 0, 180, 0 })
             RemoveObjectFromGame({ ID = "db77a1" })
             -- remove FP Erebor
