@@ -52,7 +52,7 @@
                 "Stackable": false
             }
         },
-        "LuaScript": "",
+        "LuaScript": "#include ../includes/NonInteractable.ttslua",
         "LuaScriptState": "",
         "XmlUI": ""
     },
