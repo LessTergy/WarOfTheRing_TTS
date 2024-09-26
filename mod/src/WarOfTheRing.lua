@@ -659,18 +659,18 @@ function SetupTheFateOfErebor()
             coroutine.yield(0)
 
             -- udpate region markers
-            local ereborMarker = getObjectFromGUID("d39196")
-            if ereborMarker ~= nil then
-                ereborMarker.setPositionSmooth({ 18.35, 9, 21.32 }, false, false)
-                SetTokenRotation(ereborMarker, false)
+            local ereborControlMarker = getObjectFromGUID("d39196")
+            if ereborControlMarker ~= nil then
+                ereborControlMarker.setPositionSmooth({ 18.35, 9, 21.32 }, false, false)
+                SetTokenRotation(ereborControlMarker, false)
             end
 
             coroutine.yield(0)
-            local ironHillsMarker = getObjectFromGUID("492ce6")
-            if ironHillsMarker ~= nil then
-                ironHillsMarker.setPositionSmooth({ 21.45, 9, 21.3 }, false, false)
+            local ironHillsControlMarker = getObjectFromGUID("492ce6")
+            if ironHillsControlMarker ~= nil then
+                ironHillsControlMarker.setPositionSmooth({ 21.45, 9, 21.3 }, false, false)
                 -- move iron hills marker
-                SetTokenRotation(ironHillsMarker, true)
+                SetTokenRotation(ironHillsControlMarker, true)
             end
 
             coroutine.yield(0)
@@ -884,6 +884,7 @@ function SetupTheFateOfErebor_NewCities()
     if getObjectFromGUID("c537fa") ~= nil then
         getObjectFromGUID("c537fa").setLock(true)
         getObjectFromGUID("c537fa").setRotation({ 0, 180, 0 })
+
         if SettlementsAreFlat() then
             getObjectFromGUID("c537fa").setPositionSmooth({ -19.3, 0.84, 17.18 }, false, true)
         else
@@ -901,10 +902,10 @@ function SetupTheFateOfErebor_NewCities()
             Starting = { R = 2, E = 0, L = 0 }
         }
 
-        local eredLuinMarker = getObjectFromGUID("29981e")
-        if eredLuinMarker ~= nil then
-            eredLuinMarker.setPositionSmooth({ -19.72, 9, 17.36 }, false, false)
-            SetTokenRotation(eredLuinMarker, true)
+        local eredLuinControlMarker = getObjectFromGUID("29981e")
+        if eredLuinControlMarker ~= nil then
+            eredLuinControlMarker.setPositionSmooth({ -19.72, 9, 17.36 }, false, false)
+            SetTokenRotation(eredLuinControlMarker, true)
         end
     end
 
@@ -927,10 +928,11 @@ function SetupTheFateOfErebor_NewCities()
             Detected = { X = 0, R = 0, E = 0, L = 0 },
             Starting = { R = 3, E = 1, L = 0 }
         }
-        if getObjectFromGUID("1d784f") ~= nil then
-            getObjectFromGUID("1d784f").setPositionSmooth({ 27.76, 9, 0.95 }, false, false)
-            -- move marker
-            getObjectFromGUID("1d784f").setRotation({ 0, 135, 180 })
+
+        local southRhunControlMarker = getObjectFromGUID("1d784f")
+        if southRhunControlMarker ~= nil then
+            southRhunControlMarker.setPositionSmooth({ 27.76, 9, 0.95 }, false, false)
+            SetTokenRotation(southRhunControlMarker, false)
         end
     end
 end
@@ -972,8 +974,9 @@ function CorruptHelmsDeep()
         getObjectFromGUID("231cc7").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
         -- move and flip SettlementControlMarker
-        getObjectFromGUID("04cc5c").setPositionSmooth({ 0.71, 3, -5.03 }, false, false)
-        getObjectFromGUID("04cc5c").setRotation({ 0, 135, 180 })
+        local helmsDeepControlMarker = getObjectFromGUID("04cc5c")
+        helmsDeepControlMarker.setPositionSmooth({ 0.71, 3, -5.03 }, false, false)
+        SetTokenRotation(helmsDeepControlMarker, false)
         coroutine.yield(0)
         -- announce corruption of helms deep
         printToAll("Helm's Deep has been corrupted to a Shadow Stronghold.", { 1, 1, 0 })
@@ -1019,8 +1022,9 @@ function RestoreHelmsDeep()
         getObjectFromGUID("231cc7").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
         -- move and flip SettlementControlMarker
-        getObjectFromGUID("04cc5c").setPositionSmooth({ -0.64, 3, -5.12 }, false, false)
-        getObjectFromGUID("04cc5c").setRotation({ 0, 135, 0 })
+        local helmsDeepControlMarker = getObjectFromGUID("04cc5c")
+        helmsDeepControlMarker.setPositionSmooth({ -0.64, 3, -5.12 }, false, false)
+        SetTokenRotation(helmsDeepControlMarker, true)
         coroutine.yield(0)
         -- announce restoration of helms deep
         printToAll("Helm's Deep has been restored to a Free People's Stronghold.", { 1, 1, 0 })
