@@ -604,24 +604,26 @@ function SetupTheFateOfErebor()
         local OverlayToken = getObjectFromGUID(TFoERegionOverlayID)
         if OverlayToken ~= nil then
             OverlayToken.setLock(true)
+            OverlayToken.interactable = false
             OverlayToken.setPositionSmooth({ 19.8, 0.91, 17.5 }, false, true)
             OverlayToken.setRotation({ 0, 180, 0 })
-            RemoveObjectFromGame({ ID = "db77a1" })
+
             -- remove FP Erebor
-            RemoveObjectFromGame({ ID = "fb9626" })
+            RemoveObjectFromGame({ ID = "db77a1" })
             -- remove FP Erebor box
-            RemoveObjectFromGame({ ID = "8f175c" })
+            RemoveObjectFromGame({ ID = "fb9626" })
             -- remove Dale City
+            RemoveObjectFromGame({ ID = "8f175c" })
 
             local EreborSettlement = getObjectFromGUID("55e47b")
             EreborSettlement.setLock(true)
             EreborSettlement.setRotation({ 0, 180, 0 })
 
+            local ereborPosition = { x = 17.92, y = 1.16, z = 20.87 }
             if SettlementsAreFlat() then
-                EreborSettlement.setPosition({ 17.92, 0.78, 20.87 })
-            else
-                EreborSettlement.setPosition({ 17.92, 1.16, 20.87 })
+                ereborPosition.y = 0.78
             end
+            EreborSettlement.setPosition(ereborPosition)
 
             coroutine.yield(0)
             OverlayToken = getObjectFromGUID(TFoEStrongholdOverlayID)
@@ -884,7 +886,6 @@ function SetupTheFateOfErebor_NewCities()
     if getObjectFromGUID("c537fa") ~= nil then
         getObjectFromGUID("c537fa").setLock(true)
         getObjectFromGUID("c537fa").setRotation({ 0, 180, 0 })
-
         if SettlementsAreFlat() then
             getObjectFromGUID("c537fa").setPositionSmooth({ -19.3, 0.84, 17.18 }, false, true)
         else
@@ -942,42 +943,43 @@ function CorruptHelmsDeep()
     function CorruptHelmsDeepCoroutine()
         -- move in shadow helms deep region overlay
         getObjectFromGUID("534719").setLock(true)
-        coroutine.yield(0)
-        getObjectFromGUID("534719").setPosition({ 0.09, 0.90, -6.21 })
+        getObjectFromGUID("534719").setPosition({ 0.04, 0.91, -6.31 })
         getObjectFromGUID("534719").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
+
         -- move in shadow helms deep stronghold box
         getObjectFromGUID("c9bcd7").setLock(true)
-        coroutine.yield(0)
         getObjectFromGUID("c9bcd7").setPosition({ -34.75, 0.95, -6.50 })
         getObjectFromGUID("c9bcd7").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
+
         -- move in shadow helms deep stronghold3d
         getObjectFromGUID("011a2a").setLock(true)
-        coroutine.yield(0)
         getObjectFromGUID("011a2a").setRotation({ 0, 180, 0 })
-        getObjectFromGUID("011a2a").setPosition({ 0.24, 0.78, -5.49 })
-        coroutine.yield(0)
+        getObjectFromGUID("011a2a").setPosition({ 0.21, 0.78, -5.57 })
         if not SettlementsAreFlat() then
             getObjectFromGUID("011a2a").setPositionSmooth({ 0.24, 1.16, -5.49 }, false, false)
         end
-
         coroutine.yield(0)
+
         -- move out FP helms deep stronghold 3d
         getObjectFromGUID("ef398b").setLock(false)
         getObjectFromGUID("ef398b").setPositionSmooth({ -60, 1.15, -12 }, false, false)
         getObjectFromGUID("ef398b").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
+
         -- move out FP helms deep stronghold box
         getObjectFromGUID("231cc7").setLock(false)
         getObjectFromGUID("231cc7").setPositionSmooth({ -57, 1, -12 }, false, false)
         getObjectFromGUID("231cc7").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
+
         -- move and flip SettlementControlMarker
         local helmsDeepControlMarker = getObjectFromGUID("04cc5c")
-        helmsDeepControlMarker.setPositionSmooth({ 0.71, 3, -5.03 }, false, false)
+        helmsDeepControlMarker.setPositionSmooth({ 0.65, 3, -5.11 }, false, false)
         SetTokenRotation(helmsDeepControlMarker, false)
         coroutine.yield(0)
+
         -- announce corruption of helms deep
         printToAll("Helm's Deep has been corrupted to a Shadow Stronghold.", { 1, 1, 0 })
         return 1
