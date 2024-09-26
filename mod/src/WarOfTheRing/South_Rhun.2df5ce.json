@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/1753569444434391972/053A4BB35E26743EACB40172F2E9E4B2A8650C28/",
+            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392244083075/2B42BA4D24D47389CF98221CFA3A86E64FE6CBFD/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,
@@ -54,7 +54,21 @@
         },
         "LuaScript": "#include ./South_Rhun.2df5ce.lua",
         "LuaScriptState": "",
-        "XmlUI": ""
+        "XmlUI": "",
+        "AttachedSnapPoints": [
+            {
+                "Position": {
+                    "x": -0.95,
+                    "y": 0.12,
+                    "z": -0.34
+                },
+                "Rotation": {
+                    "x": 0,
+                    "y": -45,
+                    "z": 0
+                }
+            }
+        ]
     },
     "StatesPaths": {}
 }

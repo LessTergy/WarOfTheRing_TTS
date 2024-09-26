@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2449484558562786359/B5AF012EE1271F8726F822F985ED3D38034C25F3/",
+            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392244083154/B5AF012EE1271F8726F822F985ED3D38034C25F3/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,
@@ -54,7 +54,21 @@
         },
         "LuaScript": "",
         "LuaScriptState": "",
-        "XmlUI": ""
+        "XmlUI": "",
+        "AttachedSnapPoints": [
+            {
+                "Position": {
+                    "x": 1.01,
+                    "y": 0.13,
+                    "z": -0.33
+                },
+                "Rotation": {
+                    "x": 0,
+                    "y": -45,
+                    "z": 0
+                }
+            }
+        ]
     },
     "StatesPaths": {}
 }
