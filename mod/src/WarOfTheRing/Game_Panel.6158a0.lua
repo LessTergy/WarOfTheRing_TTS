@@ -63,8 +63,9 @@ local StepType = {
     BasicMenu = "BasicMenu",
     KillGamePanel = "KillGamePanel"
 }
-local Step = StepType.Empty
-local NextStep = StepType.Empty
+
+Step = StepType.Empty
+NextStep = StepType.Empty
 
 local VersusType = {
     OneVersusOne = "1v1",
@@ -5468,7 +5469,6 @@ function SetupCompanionsStep()
         end
     end
 
-    --Included: The Breaking of the Fellowship
     if TheBreakingOfTheFellowship then
         Global.call("SetupBreakingOfTheFellowship")
     else

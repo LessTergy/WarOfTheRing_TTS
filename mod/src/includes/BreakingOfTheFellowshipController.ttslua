@@ -316,9 +316,9 @@ function SetupBreakingOfTheFellowship()
                 Starting = { R = 10, E = 1, L = 0 }
             }
         end
-
         coroutine.yield(0)
-        -- move 1 Elf Elite from Elven Reinforcements to Rivendell. 104e8a {-0.13, 0.99, 19.85}
+
+        -- move 1 Elf Elite from Elven Reinforcements to Rivendell
         PositionUnit(
             {
                 Name = "Elf Elite",
@@ -329,7 +329,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Elf Elite from Reserves to Woodland Realm. ecab45 {14.40, 0.99, 15.88}
+
+        -- move 1 Elf Elite from Reserves to Woodland Realm
         PositionUnit(
             {
                 Name = "Elf Elite",
@@ -340,7 +341,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Rohan Elite from Reserves to Westemnet. 6164fd {2.97, 1.00, -5.01}
+
+        -- move 1 Rohan Elite from Reserves to Westemnet
         PositionUnit(
             {
                 Name = "Rohan Elite",
@@ -351,7 +353,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Rohan Leader from Reserves to Wesemnet. 241102 {3.14, 1.01, -3.38}
+
+        -- move 1 Rohan Leader from Reserves to Wesemnet
         PositionUnit(
             {
                 Name = "Rohan Leader",
@@ -362,7 +365,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 4 Isengard Regulars from Reserves to Gap of Rohan. 494274,69256a,e94175,4ac65c {-7.26, 0.98, -4.09},{-6.54, 0.98, -3.85},{-5.80, 0.98, -3.48},{-4.97, 0.98, -3.09}
+
+        -- move 4 Isengard Regulars from Reserves to Gap of Rohan
         PositionUnit(
             {
                 Name = "Isengard Regular",
@@ -373,6 +377,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Isengard Regular",
@@ -383,6 +388,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Isengard Regular",
@@ -393,6 +399,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Isengard Regular",
@@ -403,7 +410,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Isengard Regular from North Dunland to Gap of Rohan. e0c99d {-7.24, 0.98, -3.22}
+
+        -- move 1 Isengard Regular from North Dunland to Gap of Rohan
         PositionUnit(
             {
                 Name = "Isengard Regular",
@@ -414,7 +422,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Isengard Regular from South Dunland to Gap of Rohan. 925f64 {-6.50, 0.98, -2.93}
+
+        -- move 1 Isengard Regular from South Dunland to Gap of Rohan
         PositionUnit(
             {
                 Name = "Isengard Regular",
@@ -425,7 +434,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 2 Sauron Regulars out of Nurn to Reserves. de56d0,231412 {42.00, 1.01, -5.50},{42.00, 1.01, -10.50}
+
+        -- move 2 Sauron Regulars out of Nurn to Reserves
         PositionUnit(
             {
                 Name = "Sauron Regular",
@@ -436,6 +446,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Sauron Regular",
@@ -446,10 +457,11 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Nazgul from Barad~Dur to Eastemnet.
+
+        -- move 1 Nazgul from Barad~Dur to Eastemnet
         PositionUnit(
             {
-                Name = "Nazgul",
+                Name = "Nazgûl",
                 FromLocation = "Barad~Dur",
                 ToLocation = "Eastemnet",
                 Smooth = true,
@@ -457,7 +469,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Sauron Regular from Barad~Dur to Gorgoroth. f7720b {25.01, 0.99, -12.64}
+
+        -- move 1 Sauron Regular from Barad~Dur to Gorgoroth
         PositionUnit(
             {
                 Name = "Sauron Regular",
@@ -468,7 +481,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Sauron Regular from Barad~Dur to North Ithilien. 3897a7 {16.21, 0.99, -8.73}
+
+        -- move 1 Sauron Regular from Barad~Dur to North Ithilien
         PositionUnit(
             {
                 Name = "Sauron Regular",
@@ -479,7 +493,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 2 Sauron Regulars from Barad~Dur to Mount Gundabad. 0e02f6,7d5dcb {-2.75, 0.99, 22.27},{-1.21, 0.99, 24.73}
+
+        -- move 2 Sauron Regulars from Barad~Dur to Mount Gundabad
         PositionUnit(
             {
                 Name = "Sauron Regular",
@@ -490,6 +505,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Sauron Regular",
@@ -500,7 +516,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Sauron Elite from Barad~Dur to Minas Morgul. 3cc51a
+
+        -- move 1 Sauron Elite from Barad~Dur to Minas Morgul
         PositionUnit(
             {
                 Name = "Sauron Elite",
@@ -511,7 +528,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 4 Sauron Regular from Morannon to North Ithilien a16772,7f5af0,e9f66c,7ff26b {16.94, 0.99, -9.05},{15.82, 0.99, -7.88},{15.42, 0.99, -7.06},{15.03, 0.99, -6.24}
+        -- move 4 Sauron Regular from Morannon to North Ithilien
         PositionUnit(
             {
                 Name = "Sauron Regular",
@@ -522,6 +539,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Sauron Regular",
@@ -532,6 +550,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Sauron Regular",
@@ -542,6 +561,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Sauron Regular",
@@ -552,7 +572,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Sauron Elite from Reserves to North Ithilian. 70d465 {16.99, 0.98, -7.49}
+
+        -- move 1 Sauron Elite from Reserves to North Ithilian
         PositionUnit(
             {
                 Name = "Sauron Elite",
@@ -563,10 +584,11 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Nazgul from Reserves to North Ithilian. da05fb {16.61, 0.98, -5.17}
+
+        -- move 1 Nazgul from Reserves to North Ithilian
         PositionUnit(
             {
-                Name = "Nazgul",
+                Name = "Nazgûl",
                 FromLocation = "Nazgul Reinforcements",
                 ToLocation = "North Ithilien",
                 Smooth = true,
@@ -574,7 +596,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Sauron Elite from Reserves to Morannon. 12ee76 {19.12, 0.98, -6.27}
+
+        -- move 1 Sauron Elite from Reserves to Morannon
         PositionUnit(
             {
                 Name = "Sauron Elite",
@@ -585,7 +608,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Sauron Elite from Reserves to Moria. 4d1b38 {0.23, 0.98, 10.64}
+
+        -- move 1 Sauron Elite from Reserves to Moria
         PositionUnit(
             {
                 Name = "Sauron Elite",
@@ -596,10 +620,11 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Nazgul from Reserves to Dagorlad. cb19dc {20.87, 0.98, -0.48}
+
+        -- move 1 Nazgul from Reserves to Dagorlad
         PositionUnit(
             {
-                Name = "Nazgul",
+                Name = "Nazgûl",
                 FromLocation = "Nazgul Reinforcements",
                 ToLocation = "Dagorlad",
                 Smooth = true,
@@ -607,10 +632,11 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Nazgul from Reserves to North Rhun. 9fe34b {26.01, 0.98, 13.38}
+
+        -- move 1 Nazgul from Reserves to North Rhun
         PositionUnit(
             {
-                Name = "Nazgul",
+                Name = "Nazgûl",
                 FromLocation = "Nazgul Reinforcements",
                 ToLocation = "North Rhun",
                 Smooth = true,
@@ -618,7 +644,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Elite from South Rhun to Dagorlad. 88d4e0 {21.81, 1.00, -2.40}
+
+        -- move 1 Elite from South Rhun to Dagorlad
         PositionUnit(
             {
                 Name = "Southron/Easterling Elite",
@@ -629,7 +656,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 3 Regulars from South Rhun to Dagorlad. 457c1b,065185,00d408 {19.14, 0.99, -0.61},{18.39, 0.99, -1.27},{19.02, 0.99, -2.04}
+
+        -- move 3 Regulars from South Rhun to Dagorlad
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -640,6 +668,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -650,6 +679,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -660,7 +690,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 2 Regulars from Reserves to Dagorlad. 5e23d4,6dd870 {19.69, 1.01, -1.25},{19.86, 0.99, -2.36}
+
+        -- move 2 Regulars from Reserves to Dagorlad
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -671,6 +702,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -681,7 +713,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Elite from Reserves to North Rhun. 49c7fe {24.27, 1.00, 11.65}
+
+        -- move 1 Elite from Reserves to North Rhun
         PositionUnit(
             {
                 Name = "Southron/Easterling Elite",
@@ -692,7 +725,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 2 Regulars from Reserves to North Rhun. ac36b7,60018b {25.22, 0.99, 8.93},{26.13, 0.99, 8.94}
+
+        -- move 2 Regulars from Reserves to North Rhun
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -703,6 +737,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -713,7 +748,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Elite from Far Harad to South Ithilien. d9bf61 {16.31, 1.00, -15.04}
+
+        -- move 1 Elite from Far Harad to South Ithilien
         PositionUnit(
             {
                 Name = "Southron/Easterling Elite",
@@ -724,7 +760,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 3 Regulars from Far Harad to South Ithilien. e8d1d8,9ad4df,e9b6df {14.61, 0.99, -14.73},{13.94, 0.99, -15.56},{14.93, 0.99, -15.75}
+
+        -- move 3 Regulars from Far Harad to South Ithilien
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -735,6 +772,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -745,6 +783,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -755,7 +794,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 1 Elite from Near Harad to West Harondor. a11127 {13.05, 1.00, -18.33}
+
+        -- move 1 Elite from Near Harad to West Harondor
         PositionUnit(
             {
                 Name = "Southron/Easterling Elite",
@@ -766,7 +806,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
-        -- move 3 Regulars from Near Harad to West Harondor. 1d514d,132b14,2e7bf1 {13.00, 0.99, -16.48},{12.21, 0.99, -16.99},{11.41, 0.99, -17.69}
+
+        -- move 3 Regulars from Near Harad to West Harondor
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -777,6 +818,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -787,6 +829,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -797,6 +840,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         -- move 1 Elite from Reserves to Umbar. a7f52b {11.65, 1.00, -22.88}
         PositionUnit(
             {
@@ -808,6 +852,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         -- move 2 Regulars from Reserves to Umbar. 67a57b,9adaed {9.18, 0.99, -22.73},{10.18, 0.99, -22.73}
         PositionUnit(
             {
@@ -819,6 +864,7 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         PositionUnit(
             {
                 Name = "Southron/Easterling Regular",
@@ -829,8 +875,8 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
         -- move saruman to Orthanc. 61bc09 {-1.02, 1.00, -0.88}
-        -- MoveUnit("Saruman","61bc09","70e1af","7752c4","","out of play","Orthanc",{-1.02, 1.00, -0.88})
         PositionUnit(
             {
                 Name = "Saruman: Corrupted Wizard",
@@ -841,25 +887,17 @@ function SetupBreakingOfTheFellowship()
             }
         )
         coroutine.yield(0)
+
+        -- flip saruman's card
         getObjectFromGUID("8039f2").setRotation({ 0, 180, 0 })
         -- balrog is dead
         printToAll("The Balrog is Dead.", { 1, 1, 0 })
-        RemoveObjectFromGame({ ID = "2c3907" })
-        -- balrog figure 3d
-        RemoveObjectFromGame({ ID = "ae8ad7" })
-        -- balrog figure 2d
-        RemoveObjectFromGame({ ID = "60d004" })
-        -- balrog figure marble
-        RemoveObjectFromGame({ ID = "b9eda6" })
-        -- balrog dice
-        RemoveObjectFromGame({ ID = "792f54" })
-        -- balrog status counter
-        RemoveObjectFromGame({ ID = "b9f8d6" })
-        -- balrog card
         RemoveObjectFromGame({ Name = "A Balrog is Come!" })
+        RemoveObjectFromGame({ Name = "Balrog Status Counter" })
+        RemoveObjectFromGame({ Description = "Dice;Action;Balrog;" })
+        RemoveObjectFromGame({ Name = "The Balrog of Moria (Evil of the Ancient World)", Description = "Card;" })
 
-        -- move ring-bearers to Eastemnet {6.76, 1.00, -2.33}
-        -- MoveUnit("Ring-bearers","e76bc8","d67c12","b98185","","Rivendell","Eastemnet",{6.76, 1.00, -2.33})
+        -- move ring-bearers to Eastemnet
         PositionUnit(
             {
                 Name = "The Ring-bearers",
@@ -869,30 +907,29 @@ function SetupBreakingOfTheFellowship()
                 Position = { 9.1, 1.76, -2.7 }
             }
         )
+
         -- fellowship is broken
         -- Gandalf the Grey is gone
         local CardObj = SeparateCompanionFromFellowship("Gandalf the Grey")
-        for I = 1, 30 do
+        for D = 1, 30 do
             coroutine.yield(0)
         end
-
         KillCompanionCard(CardObj)
         coroutine.yield(0)
+
         -- boromir is dead
         local CardObj = SeparateCompanionFromFellowship("Boromir")
-        for I = 1, 30 do
+        for D = 1, 30 do
             coroutine.yield(0)
         end
-
         KillCompanionCard(CardObj)
         coroutine.yield(0)
-        SeparateCompanionFromFellowship("Strider")
-        for I = 1, 30 do
-            coroutine.yield(0)
-        end
 
         -- Strider starts in Eastemnet
-        -- MoveUnit("Strider","e226bf","4ad487","c4949b","","Fellowship","Eastemnet",{5.11,1.01,0.55})
+        SeparateCompanionFromFellowship("Strider")
+        for D = 1, 30 do
+            coroutine.yield(0)
+        end
         PositionUnit(
             {
                 Name = "Strider",
@@ -902,13 +939,12 @@ function SetupBreakingOfTheFellowship()
                 Position = { 6.4, 1.76, -0.85 }
             }
         )
-        SeparateCompanionFromFellowship("Legolas")
-        for I = 1, 30 do
-            coroutine.yield(0)
-        end
 
         -- Legolas starts in Eastemnet
-        -- MoveUnit("Legolas","a335e0","cb7ce5","7438fb","","Fellowship","Eastemnet",{5.26,1.01,1.68})
+        SeparateCompanionFromFellowship("Legolas")
+        for D = 1, 30 do
+            coroutine.yield(0)
+        end
         PositionUnit(
             {
                 Name = "Legolas",
@@ -918,13 +954,12 @@ function SetupBreakingOfTheFellowship()
                 Position = { 5.6, 1.76, 0.15 }
             }
         )
-        SeparateCompanionFromFellowship("Gimli")
-        for I = 1, 30 do
-            coroutine.yield(0)
-        end
 
         -- Gimli starts in Eastemnet
-        -- MoveUnit("Gimli","f454fb","a68c9b","694bab","","Fellowship","Eastemnet",{5.89,1.01,-0.39})
+        SeparateCompanionFromFellowship("Gimli")
+        for D = 1, 30 do
+            coroutine.yield(0)
+        end
         PositionUnit(
             {
                 Name = "Gimli",
@@ -934,13 +969,11 @@ function SetupBreakingOfTheFellowship()
                 Position = { 6.9, 1.76, -1.85 }
             }
         )
-        for I = 1, 30 do
+        for D = 1, 30 do
             coroutine.yield(0)
         end
 
-        coroutine.yield(0)
         -- meriadoc and peregrin start in Fangorn
-        -- MoveUnit("Meriadoc","5642f1","773683","929feb","","Fellowship","Fangorn",{3.81, 0.97, 1.46})
         PositionUnit(
             {
                 Name = "Meriadoc",
@@ -951,11 +984,9 @@ function SetupBreakingOfTheFellowship()
             }
         )
         SeparateCompanionFromFellowship("Meriadoc")
-        for I = 1, 30 do
+        for D = 1, 30 do
             coroutine.yield(0)
         end
-
-        -- MoveUnit("Peregrin","a34d6c","d61029","bcb921","","Fellowship","Fangorn",{3.84, 1.01, 0.68})
         PositionUnit(
             {
                 Name = "Peregrin",
@@ -966,13 +997,12 @@ function SetupBreakingOfTheFellowship()
             }
         )
         SeparateCompanionFromFellowship("Peregrin")
-        for I = 1, 30 do
+        for D = 1, 30 do
             coroutine.yield(0)
         end
 
         -- gandalf the white starts in Lorien
         printToAll("Gandalf the White has returned to Lorien.", { 1, 1, 0 })
-        -- MoveUnit("Gandalf the White","0166c2","27d117","60bd5c","","out of play","Lorien",{4.46,1.41,8})
         PositionUnit(
             {
                 Name = "Gandalf the White: Emissary from the West",
@@ -982,8 +1012,11 @@ function SetupBreakingOfTheFellowship()
                 Position = { 4.45, 1.76, 8 }
             }
         )
-        getObjectFromGUID("0546b6").setRotation({ 0, 0, 0 })
+
+
         -- fellowship is revealed at step 0
+        getObjectFromGUID("0546b6").setRotation({ 0, 180, 180 })
+
         printToAll("The Fellowship starts Revealed at 0 on the Fellowship Track", { 1, 1, 0 })
         getObjectFromGUID("6b62ef").setPositionSmooth({ 5.3, 1.01, 23.20 }, false, false)
         getObjectFromGUID("6b62ef").setRotation({ 0, 270, 0 })
@@ -995,7 +1028,7 @@ function SetupBreakingOfTheFellowship()
         Guide = "Gollum: Slave of the Ring"
         GuideLevel = 0
         coroutine.yield(0)
-        -- MoveUnit("Gollum","0df4d4","fe5a75","5d7909","","out of play","Fellowship",{27.65, 0.98, 17.00})
+
         PositionUnit(
             {
                 Name = "Gollum",
@@ -1073,7 +1106,6 @@ function SetupBreakingOfTheFellowship()
             { smooth = true, guid = "71f5b1", position = { -43.2, 1, -22.5 }, rotation = { 0, 180, 0 } }
         )
         coroutine.yield(0)
-
         -- add tiles
         printToAll(
             "Adding Special Tiles as played:\nZero Hunt tile (Elven Cloaks)\nZero Hunt tile (Elven Rope)\n-2 Hunt tile (Phial of Galadriel)\n"
@@ -1081,77 +1113,163 @@ function SetupBreakingOfTheFellowship()
         if getObjectFromGUID("a31079") ~= nil then
             getObjectFromGUID("a31079").setPositionSmooth({ -41.9, 1, -22.5 }, false, false)
         end
-
         if getObjectFromGUID("a31079") ~= nil then
             getObjectFromGUID("be4e0f").setPositionSmooth({ -40.6, 1, -22.5 }, false, false)
         end
-
         if getObjectFromGUID("a31079") ~= nil then
             getObjectFromGUID("8ff093").setPositionSmooth({ -39.3, 1, -22.5 }, false, false)
         end
-
         coroutine.yield(0)
         -- remove cards
         printToAll(
             "Removing Free Peoples Character Event Cards:\nMithril Coat and Sting\nMirror of Galadriel\nElven Cloaks\nElven Rope\nPhial of Galadriel\n"
         )
-        RemoveObjectFromGame({ ID = "357271", Name = "Mithril Coat and Sting" })
+        RemoveObjectFromGame({ Name = "Mithril Coat and Sting" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "d870a1", Name = "Mirror of Galadriel" })
+        RemoveObjectFromGame({ Name = "Mirror of Galadriel" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "b69f25", Name = "Elven Rope" })
+        RemoveObjectFromGame({ Name = "Elven Rope" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "46f2ed", Name = "Elven Cloaks" })
+        RemoveObjectFromGame({ Name = "Elven Cloaks" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "b3797a", Name = "Phial of Galadriel" })
+        RemoveObjectFromGame({ Name = "Phial of Galadriel" })
         coroutine.yield(0)
         printToAll("Removing Free Peoples Strategy Event Cards:\nMithril Coat and Sting\nMirror of Galadriel\n")
-        RemoveObjectFromGame({ ID = "3e59da", Name = "A Power too Great" })
+        RemoveObjectFromGame({ Name = "A Power too Great" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "619545", Name = "Kindred of Glorfindel" })
+        RemoveObjectFromGame({ Name = "Kindred of Glorfindel" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "495aee", Name = "Eomer, Son of Eomund" })
+        RemoveObjectFromGame({ Name = "Eomer, Son of Eomund" })
         coroutine.yield(0)
         printToAll(
             "Removing Shadow Character Event Cards:\nFoul Thing from the Deep\nCruel Weather\nLure of the Ring\nThe Breaking of the Fellowship\nWorn With Sorrow and Toil\nFlocks of Crebain\nBalrog of Moria\n"
         )
-        RemoveObjectFromGame({ ID = "4cd9f8", Name = "Cruel Weather" })
+        RemoveObjectFromGame({ Name = "Cruel Weather" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "838f6e", Name = "Foul Thing from the Deep" })
+        RemoveObjectFromGame({ Name = "Foul Thing from the Deep" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "77ff2b", Name = "Lure of the Ring" })
+        RemoveObjectFromGame({ Name = "Lure of the Ring" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "31ade1", Name = "The Breaking of the Fellowship" })
+        RemoveObjectFromGame({ Name = "The Breaking of the Fellowship" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "49b1b4", Name = "Worn with Sorrow and Toil" })
+        RemoveObjectFromGame({ Name = "Worn with Sorrow and Toil" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "630487", Name = "Flocks of Crebain" })
+        RemoveObjectFromGame({ Name = "Flocks of Crebain" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "c6b2ab", Name = "Balrog of Moria" })
+        RemoveObjectFromGame({ Name = "Balrog of Moria" })
         coroutine.yield(0)
         printToAll("Removing Shadow Strategy Event Cards:\nReturn to Valinor\nRage of the Dunlendings\n")
-        RemoveObjectFromGame({ ID = "7a96dc", Name = "Return to Valinor" })
+        RemoveObjectFromGame({ Name = "Return to Valinor" })
         coroutine.yield(0)
-        RemoveObjectFromGame({ ID = "92c6ed", Name = "Rage of the Dunlendings" })
+        RemoveObjectFromGame({ Name = "Rage of the Dunlendings" })
         coroutine.yield(0)
         -- put shadow cards into play
         printToAll("Placing Shadow Event Cards into Play:\nThe Palantir of Orthanc\nWormtongue\nThreats and Promises\n")
-        getObjectFromGUID("8c377e").takeObject(
-            { smooth = true, guid = "8d09a8", position = { -26.5, 1, -6 }, rotation = { 0, 180, 0 } }
-        )
-        coroutine.yield(0)
-        getObjectFromGUID("8c377e").takeObject(
-            { smooth = true, guid = "accb2a", position = { -21.5, 1, -6 }, rotation = { 0, 180, 0 } }
-        )
-        coroutine.yield(0)
-        getObjectFromGUID("6508fd").takeObject(
-            { smooth = true, guid = "1608f1", position = { -16.5, 1, -6 }, rotation = { 0, 180, 0 } }
-        )
-        coroutine.yield(0)
 
+        FetchObject(
+            {
+                Name = "The Palantir of Orthanc",
+                Description = "Card;",
+                Position = { -26.5, 1, -6 },
+                Rotation = { 0, 180, 0 },
+                Smooth = true
+            }
+        )
+        coroutine.yield(0)
+        FetchObject(
+            {
+                Name = "Wormtongue",
+                Description = "Card;",
+                Position = { -21.5, 1, -6 },
+                Rotation = { 0, 180, 0 },
+                Smooth = true
+            }
+        )
+        coroutine.yield(0)
+        FetchObject(
+            {
+                Name = "Threats and Promises",
+                Description = "Card;",
+                Position = { -16.5, 1, -6 },
+                Rotation = { 0, 180, 0 },
+                Smooth = true
+            }
+        )
+        coroutine.yield(0)
+        -- signal next step is ok to proceed
         getObjectFromGUID(GamePanelID).setVar("Step", "")
         return 1
     end
 
     startLuaCoroutine(Global, "SetupBotFCoroutine")
+end
+
+function FetchObject(Params)
+    --locates the object, even if in a bag/deck and fetches it, but ignores anything in the graveyard.
+    --ID and name must be exact match, description/gmnotes only needs to be found within the text.
+    local GraveObj = getObjectFromGUID("416864")
+    if Params.ID == nil then
+        Params.ID = ""
+    end
+    if Params.BagID == nil then
+        Params.BagID = ""
+    end
+    if Params.Name == nil then
+        Params.Name = ""
+    end
+    if Params.Description == nil then
+        Params.Description = ""
+    end
+    if Params.GMNotes == nil then
+        Params.GMNotes = ""
+    end
+    if Params.Position == nil then
+        Params.Position = { 0, 1, 0 }
+    end
+    if Params.Rotation == nil then
+        Params.Rotation = { 0, 0, 0 }
+    end
+    if Params.Smooth == nil then
+        Params.Smooth = false
+    end
+    local FetchedObj = nil
+    if getObjectFromGUID(Params.ID) ~= nil then
+        FetchedObj = getObjectFromGUID(Params.ID)
+    else
+        for O, Obj in pairs(getAllObjects()) do
+            if
+                (Obj.type == "Deck" or Obj.type == "Bag") and Obj ~= GraveObj and
+                (Params.BagID == "" or Obj.getGUID() == Params.BagID)
+            then
+                for I, Item in pairs(Obj.getObjects()) do
+                    if
+                        (Params.ID == "" or Params.ID == Item.guid) and
+                        (Params.Name == "" or string.upper(Params.Name) == string.upper(Item.name)) and
+                        (Params.Description == "" or string.find(Item.description, Params.Description) ~= nil) and
+                        (Params.GMnotes == "" or string.find(Item.gm_notes, Params.GMNotes) ~= nil)
+                    then
+                        FetchedObj = Obj.takeObject({ guid = Item.guid })
+                        break
+                    end
+                end
+            elseif
+                (Params.Name == "" or string.upper(Obj.getName()) == string.upper(Params.Name)) and
+                (Params.Description == "" or string.find(Obj.getDescription(), Params.Description) ~= nil) and
+                (Params.GMnotes == "" or string.find(Obj.getGMNotes(), Params.GMnotes) ~= nil)
+            then
+                FetchedObj = Obj
+                break
+            end
+        end
+    end
+    if FetchedObj ~= nil then
+        --print("Fetched Object:",FetchedObj.getGUID,":",FetchedObj.getName())
+        if Params.Smooth then
+            FetchedObj.setPositionSmooth(Params.Position, false, false)
+            FetchedObj.setRotationSmooth(Params.Rotation, false, false)
+        else --not smooth
+            FetchedObj.setPosition(Params.Position)
+            FetchedObj.setRotation(Params.Rotation)
+        end
+    end
 end
