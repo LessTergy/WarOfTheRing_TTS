@@ -1,8 +1,4 @@
 function UpdateHelmsDeepControl(Region)
-    if not KingsOfMiddleEarth then
-        return
-    end
-
     if Region ~= "Helm's Deep" then
         return
     end
@@ -17,9 +13,16 @@ function UpdateHelmsDeepControl(Region)
                 CorruptHelmsDeep()
             end
         end
-    else
+    elseif HelmsDeepInCorruptPosition() then
         RestoreHelmsDeep()
     end
+end
+
+function HelmsDeepInCorruptPosition()
+    local regionOverlay = getObjectFromGUID("534719")
+    local position = regionOverlay.getPosition()
+
+    return position.z < 24 and position.z > -24 and position.x > -35 and position.x < 35
 end
 
 function CorruptHelmsDeep()
