@@ -1,0 +1,342 @@
+TFoERegionOverlayID = "d5aeaa"
+TFoEStrongholdOverlayID = "7d50c0"
+
+function SetupTheFateOfErebor()
+    function SetupTFoECoroutine()
+        printToAll("Setting up The Fate of Erebor mini expansion")
+        local OverlayToken = getObjectFromGUID(TFoERegionOverlayID)
+        if OverlayToken ~= nil then
+            OverlayToken.setLock(true)
+            OverlayToken.interactable = false
+            OverlayToken.setPositionSmooth({ 19.8, 0.91, 17.5 }, false, true)
+            OverlayToken.setRotation({ 0, 180, 0 })
+
+            -- remove FP Erebor
+            RemoveObjectFromGame({ ID = "db77a1" })
+            -- remove FP Erebor box
+            RemoveObjectFromGame({ ID = "fb9626" })
+            -- remove Dale City
+            RemoveObjectFromGame({ ID = "8f175c" })
+
+            local EreborSettlement = getObjectFromGUID("55e47b")
+            EreborSettlement.setLock(true)
+            EreborSettlement.setRotation({ 0, 180, 0 })
+
+            local ereborPosition = { x = 17.92, y = 1.16, z = 20.87 }
+            if SettlementsAreFlat() then
+                ereborPosition.y = 0.78
+            end
+            EreborSettlement.setPosition(ereborPosition)
+
+            coroutine.yield(0)
+            OverlayToken = getObjectFromGUID(TFoEStrongholdOverlayID)
+            if OverlayToken ~= nil then
+                OverlayToken.setLock(true)
+                OverlayToken.setPositionSmooth({ -34.75, 0.95, 13.15 }, false, true)
+                OverlayToken.setRotation({ 0, 180, 0 })
+            else
+                print("Uhoh! Could not locate The Fate of Erebor Stronghold Overlay!")
+            end
+
+            coroutine.yield(0)
+            -- Iron Hills 3d city
+            if getObjectFromGUID("7318b5") ~= nil then
+                getObjectFromGUID("7318b5").setLock(true)
+                getObjectFromGUID("7318b5").setRotation({ 0, 180, 0 })
+                if SettlementsAreFlat() then
+                    -- Iron Hills 3d city
+                    getObjectFromGUID("7318b5").setPosition({ 21.92, 0.85, 21.1 }, false, true)
+                else
+                    -- Iron Hills 3d city
+                    getObjectFromGUID("7318b5").setPosition({ 21.92, 1.09, 21.1 }, false, true)
+                end
+            end
+
+            coroutine.yield(0)
+
+            -- activate dwarves political counter
+            local dwarvesPoliticalToken = getObjectFromGUID("a55f2c")
+            if dwarvesPoliticalToken ~= nil then
+                printToAll("  Dwarves are Active on the Political Track")
+                SetTokenRotation(dwarvesPoliticalToken, true)
+            end
+
+            coroutine.yield(0)
+
+            -- udpate region markers
+            local ereborControlMarker = getObjectFromGUID("d39196")
+            if ereborControlMarker ~= nil then
+                ereborControlMarker.setPositionSmooth({ 18.35, 9, 21.32 }, false, false)
+                SetTokenRotation(ereborControlMarker, false)
+            end
+
+            coroutine.yield(0)
+            local ironHillsControlMarker = getObjectFromGUID("492ce6")
+            if ironHillsControlMarker ~= nil then
+                ironHillsControlMarker.setPositionSmooth({ 21.45, 9, 21.3 }, false, false)
+                -- move iron hills marker
+                SetTokenRotation(ironHillsControlMarker, true)
+            end
+
+            coroutine.yield(0)
+            if getObjectFromGUID("189a1d") ~= nil then
+                getObjectFromGUID("189a1d").destruct()
+            end
+
+            coroutine.yield(0)
+            -- move North Regular from Dale to Carrock
+            PositionUnit(
+                {
+                    Name = "North Regular",
+                    FromLocation = "Dale",
+                    ToLocation = "Carrock",
+                    Smooth = true,
+                    Position = { 7, 2, 21 }
+                }
+            )
+            coroutine.yield(0)
+            -- move North Leader from Dale to Carrock
+            PositionUnit(
+                {
+                    Name = "North Leader",
+                    FromLocation = "Dale",
+                    ToLocation = "Carrock",
+                    Smooth = true,
+                    Position = { 6, 2, 20.75 }
+                }
+            )
+            coroutine.yield(0)
+            -- move Dwarf Leader from Erebor to Iron Hills
+            PositionUnit(
+                {
+                    Name = "Dwarf Leader",
+                    FromLocation = "Erebor",
+                    ToLocation = "Iron Hills",
+                    Smooth = true,
+                    Position = { 19, 2, 17.5 }
+                }
+            )
+            coroutine.yield(0)
+            -- move Dwarf Elite from Erebor to Reserves
+            PositionUnit(
+                {
+                    Name = "Dwarf Elite",
+                    FromLocation = "Erebor",
+                    ToLocation = "Dwarven Reinforcements",
+                    Smooth = true,
+                    Position = { -41.75, 2, 14 }
+                }
+            )
+            coroutine.yield(0)
+            -- move Dwarf Elite from Erebor to Reserves
+            PositionUnit(
+                {
+                    Name = "Dwarf Elite",
+                    FromLocation = "Erebor",
+                    ToLocation = "Dwarven Reinforcements",
+                    Smooth = true,
+                    Position = { -41.75, 2, 12 }
+                }
+            )
+            coroutine.yield(0)
+            -- move Dwarf Regular from Erebor to Iron Hills
+            PositionUnit(
+                {
+                    Name = "Dwarf Regular",
+                    FromLocation = "Erebor",
+                    ToLocation = "Iron Hills",
+                    Smooth = true,
+                    Position = { 20.5, 2, 18 }
+                }
+            )
+            coroutine.yield(0)
+            -- move Dwarf Regular from Reserves to Ered Luin
+            PositionUnit(
+                {
+                    Name = "Dwarf Regular",
+                    FromLocation = "Dwarven Reinforcements",
+                    ToLocation = "Ered Luin",
+                    Smooth = true,
+                    Position = { -18.8, 2, 15.5 }
+                }
+            )
+            coroutine.yield(0)
+            -- move Sauron Regular from Reserves to Erebor
+            PositionUnit(
+                {
+                    Name = "Sauron Regular",
+                    FromLocation = "Sauron Reinforcements",
+                    ToLocation = "Erebor",
+                    Smooth = true,
+                    Position = { 16.6, 2, 18.5 }
+                }
+            )
+            coroutine.yield(0)
+            -- move Sauron Regular from Reserves to Erebor
+            PositionUnit(
+                {
+                    Name = "Sauron Regular",
+                    FromLocation = "Sauron Reinforcements",
+                    ToLocation = "Erebor",
+                    Smooth = true,
+                    Position = { 17.5, 2, 18 }
+                }
+            )
+            coroutine.yield(0)
+            -- update region info
+            Regions["Erebor"] = {
+                Nation = "Sauron",
+                Points = 2,
+                Side = "Shadow",
+                Control = "Shadow",
+                Settlement = "Stronghold",
+                Type = "Region",
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 2, E = 0, L = 0 }
+            }
+            Regions["Iron Hills"] = {
+                Nation = "Dwarves",
+                Points = 1,
+                Side = "FreePeoples",
+                Control = "FreePeoples",
+                Settlement = "City",
+                Type = "Region",
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 2, E = 0, L = 1 }
+            }
+            Regions["Carrock"] = {
+                Nation = "North",
+                Points = 0,
+                Side = "FreePeoples",
+                Control = "FreePeoples",
+                Settlement = "Town",
+                Type = "Region",
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 2, E = 0, L = 1 }
+            }
+            Regions["Dale"] = {
+                Nation = "",
+                Points = 0,
+                Side = "",
+                Control = "",
+                Settlement = "Fortification",
+                Type = "Region",
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 0, E = 0, L = 0 }
+            }
+            Regions["Ered Luin"] = {
+                Nation = "Dwarves",
+                Points = 0,
+                Side = "FreePeoples",
+                Control = "FreePeoples",
+                Settlement = "Town",
+                Type = "Region",
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 2, E = 0, L = 0 }
+            }
+            Regions["Dwarven Reinforcements"] = {
+                Nation = "Dwarves",
+                Points = 0,
+                Side = "FreePeoples",
+                Control = "FreePeoples",
+                Settlement = "",
+                Type = "Reinforcements",
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 1, E = 5, L = 3 }
+            }
+            Regions["North Reinforcements"] = {
+                Nation = "North",
+                Points = 0,
+                Side = "FreePeoples",
+                Control = "FreePeoples",
+                Settlement = "",
+                Type = "Reinforcements",
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 6, E = 4, L = 3 }
+            }
+            Regions["Sauron Reinforcements"] = {
+                Nation = "Sauron",
+                Points = 0,
+                Side = "Shadow",
+                Control = "Shadow",
+                Settlement = "",
+                Type = "Reinforcements",
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 6, E = 4, L = 0 }
+            }
+        else -- uhoh!
+            print("Uhoh! Could not locate The Fate of Erebor Regions Overlay!")
+        end
+
+        coroutine.yield(0)
+        -- spawn Dale 3d fortification
+        local Fort = getObjectFromGUID("42366d").clone({ position = { 17.65, 1.01, 15.43 } })
+        Fort.setLock(true)
+        if SettlementsAreFlat() then
+            Fort.setPosition({ 17.65, 0.93, 15.43 })
+        else
+            Fort.setPosition({ 17.65, 1.01, 15.43 })
+        end
+
+        Fort.setRotation({ 0, 180, 0 })
+        return 1
+    end
+
+    startLuaCoroutine(Global, "SetupTFoECoroutine")
+end
+
+function SetupTheFateOfErebor_NewCities()
+    if getObjectFromGUID("c537fa") ~= nil then
+        getObjectFromGUID("c537fa").setLock(true)
+        getObjectFromGUID("c537fa").setRotation({ 0, 180, 0 })
+        if SettlementsAreFlat() then
+            getObjectFromGUID("c537fa").setPositionSmooth({ -19.3, 0.84, 17.18 }, false, true)
+        else
+            getObjectFromGUID("c537fa").setPositionSmooth({ -19.3, 1.08, 17.18 }, false, true)
+        end
+
+        Regions["Ered Luin"] = {
+            Nation = "Dwarves",
+            Points = 1,
+            Side = "FreePeoples",
+            Control = "FreePeoples",
+            Settlement = "City",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 2, E = 0, L = 0 }
+        }
+
+        local eredLuinControlMarker = getObjectFromGUID("29981e")
+        if eredLuinControlMarker ~= nil then
+            eredLuinControlMarker.setPositionSmooth({ -19.72, 9, 17.36 }, false, false)
+            SetTokenRotation(eredLuinControlMarker, true)
+        end
+    end
+
+    if getObjectFromGUID("2df5ce") ~= nil then
+        getObjectFromGUID("2df5ce").setLock(true)
+        getObjectFromGUID("2df5ce").setRotation({ 0, 180, 0 })
+        if SettlementsAreFlat() then
+            getObjectFromGUID("2df5ce").setPositionSmooth({ 27.28, 0.84, 0.83 }, false, true)
+        else
+            getObjectFromGUID("2df5ce").setPositionSmooth({ 27.28, 1.08, 0.83 }, false, true)
+        end
+
+        Regions["South Rhun"] = {
+            Nation = "Southron/Easterling",
+            Points = 1,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "City",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 3, E = 1, L = 0 }
+        }
+
+        local southRhunControlMarker = getObjectFromGUID("1d784f")
+        if southRhunControlMarker ~= nil then
+            southRhunControlMarker.setPositionSmooth({ 27.76, 9, 0.95 }, false, false)
+            SetTokenRotation(southRhunControlMarker, false)
+        end
+    end
+end

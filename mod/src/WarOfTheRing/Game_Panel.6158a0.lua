@@ -5098,9 +5098,9 @@ function SetupCompanionsStep()
     for I = 1, 99 do
         coroutine.yield(0)
     end
-    -- for D
+
     --flip all companion cards face down
-    for O, Obj in pairs(getAllObjects()) do
+    for _, Obj in pairs(getAllObjects()) do
         -- If companion card (but not Gollum)
         if
             Obj.type == "Card" and string.find(Obj.getDescription(), "Companion;") ~= nil and
