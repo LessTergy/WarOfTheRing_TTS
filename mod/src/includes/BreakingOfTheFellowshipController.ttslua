@@ -1,6 +1,6 @@
 function SetupBreakingOfTheFellowship()
     function SetupBotFCoroutine()
-        printToAll("\nSetting up The Breaking of the Fellowship\n", { 0, 1, 0 })
+        ShowInformationText("Setting up\nThe Breaking of the Fellowship\nMini-Expansion Content")
 
         -- update region info
         Regions["Rivendell"] = {

@@ -3796,3 +3796,7 @@ function SetTokenRotation(Token, IsActive)
     end
     Token.setRotation({ 0, 135, zRotation })
 end
+
+function ShowInformationText(text)
+    getObjectFromGUID(GamePanelID).call("ShowInformationText", text)
+end

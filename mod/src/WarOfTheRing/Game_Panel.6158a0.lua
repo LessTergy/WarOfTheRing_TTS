@@ -5080,25 +5080,12 @@ function CreateAlternateCompanionMenu()
 end
 
 function SetupCompanionsStep()
-    local IDs = Global.call("GetIDs")
-
-    self.clearButtons()
-    self.createButton(
-        {
-            click_function = "Nothing",
-            function_owner = self,
-            label = "Setting up the Fellowship",
-            position = { 0, 0.1, 0 },
-            width = 0,
-            height = 0,
-            font_size = 150,
-            font_color = { 1, 1, 1 }
-        }
-    )
+    ShowInformationText("Setting up the Fellowship")
     for I = 1, 99 do
         coroutine.yield(0)
     end
 
+    local IDs = Global.call("GetIDs")
     --flip all companion cards face down
     for _, Obj in pairs(getAllObjects()) do
         -- If companion card (but not Gollum)
