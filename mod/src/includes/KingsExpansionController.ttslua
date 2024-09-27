@@ -20,8 +20,11 @@ end
 
 function HelmsDeepInCorruptPosition()
     local regionOverlay = getObjectFromGUID("534719")
-    local position = regionOverlay.getPosition()
+    if regionOverlay == nil then
+        return false
+    end
 
+    local position = regionOverlay.getPosition()
     return position.z < 24 and position.z > -24 and position.x > -35 and position.x < 35
 end
 
