@@ -1,14 +1,21 @@
 TFoERegionOverlayID = "d5aeaa"
 TFoEStrongholdOverlayID = "7d50c0"
 
+local ereborStrongholdPosition = { x = 17.92, y = 1.16, z = 20.87 }
+local ereborControlMarkerPosition = { 18.35, 9, 21.32 }
+
+local ironHillsPosition = { x = 21.92, y = 1.09, z = 21.1 }
+local ironHillsControlMarkerPosition = { 21.45, 9, 21.3 }
+
 function SetupTheFateOfErebor()
     function SetupTFoECoroutine()
         printToAll("Setting up The Fate of Erebor mini expansion")
         local OverlayToken = getObjectFromGUID(TFoERegionOverlayID)
+
         if OverlayToken ~= nil then
             OverlayToken.setLock(true)
             OverlayToken.interactable = false
-            OverlayToken.setPositionSmooth({ 19.8, 0.91, 17.5 }, false, true)
+            OverlayToken.setPositionSmooth({ 19.81, 0.91, 17.45 }, false, true)
             OverlayToken.setRotation({ 0, 180, 0 })
 
             -- remove FP Erebor
@@ -22,13 +29,13 @@ function SetupTheFateOfErebor()
             EreborSettlement.setLock(true)
             EreborSettlement.setRotation({ 0, 180, 0 })
 
-            local ereborPosition = { x = 17.92, y = 1.16, z = 20.87 }
+            local ereborPosition = ereborStrongholdPosition
             if SettlementsAreFlat() then
                 ereborPosition.y = 0.78
             end
             EreborSettlement.setPosition(ereborPosition)
-
             coroutine.yield(0)
+
             OverlayToken = getObjectFromGUID(TFoEStrongholdOverlayID)
             if OverlayToken ~= nil then
                 OverlayToken.setLock(true)
@@ -37,21 +44,18 @@ function SetupTheFateOfErebor()
             else
                 print("Uhoh! Could not locate The Fate of Erebor Stronghold Overlay!")
             end
-
             coroutine.yield(0)
-            -- Iron Hills 3d city
-            if getObjectFromGUID("7318b5") ~= nil then
-                getObjectFromGUID("7318b5").setLock(true)
-                getObjectFromGUID("7318b5").setRotation({ 0, 180, 0 })
-                if SettlementsAreFlat() then
-                    -- Iron Hills 3d city
-                    getObjectFromGUID("7318b5").setPosition({ 21.92, 0.85, 21.1 }, false, true)
-                else
-                    -- Iron Hills 3d city
-                    getObjectFromGUID("7318b5").setPosition({ 21.92, 1.09, 21.1 }, false, true)
-                end
-            end
 
+            -- Iron Hills 3d city
+            local ironHillsCity = getObjectFromGUID("7318b5")
+            ironHillsCity.setLock(true)
+            ironHillsCity.setRotation({ 0, 180, 0 })
+
+            local cityPosition = ironHillsPosition
+            if SettlementsAreFlat() then
+                cityPosition.y = 0.85
+            end
+            ironHillsCity.setPosition(ironHillsPosition, false, true)
             coroutine.yield(0)
 
             -- activate dwarves political counter
@@ -60,30 +64,29 @@ function SetupTheFateOfErebor()
                 printToAll("  Dwarves are Active on the Political Track")
                 SetTokenRotation(dwarvesPoliticalToken, true)
             end
-
             coroutine.yield(0)
 
             -- udpate region markers
             local ereborControlMarker = getObjectFromGUID("d39196")
             if ereborControlMarker ~= nil then
-                ereborControlMarker.setPositionSmooth({ 18.35, 9, 21.32 }, false, false)
+                ereborControlMarker.setPositionSmooth(ereborControlMarkerPosition, false, false)
                 SetTokenRotation(ereborControlMarker, false)
             end
-
             coroutine.yield(0)
+
+            -- move iron hills marker
             local ironHillsControlMarker = getObjectFromGUID("492ce6")
             if ironHillsControlMarker ~= nil then
-                ironHillsControlMarker.setPositionSmooth({ 21.45, 9, 21.3 }, false, false)
-                -- move iron hills marker
+                ironHillsControlMarker.setPositionSmooth(ironHillsControlMarkerPosition, false, false)
                 SetTokenRotation(ironHillsControlMarker, true)
             end
-
             coroutine.yield(0)
+
             if getObjectFromGUID("189a1d") ~= nil then
                 getObjectFromGUID("189a1d").destruct()
             end
-
             coroutine.yield(0)
+
             -- move North Regular from Dale to Carrock
             PositionUnit(
                 {
@@ -95,6 +98,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
+
             -- move North Leader from Dale to Carrock
             PositionUnit(
                 {
@@ -106,6 +110,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
+
             -- move Dwarf Leader from Erebor to Iron Hills
             PositionUnit(
                 {
@@ -117,6 +122,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
+
             -- move Dwarf Elite from Erebor to Reserves
             PositionUnit(
                 {
@@ -128,6 +134,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
+
             -- move Dwarf Elite from Erebor to Reserves
             PositionUnit(
                 {
@@ -139,6 +146,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
+
             -- move Dwarf Regular from Erebor to Iron Hills
             PositionUnit(
                 {
@@ -150,6 +158,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
+
             -- move Dwarf Regular from Reserves to Ered Luin
             PositionUnit(
                 {
@@ -161,6 +170,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
+
             -- move Sauron Regular from Reserves to Erebor
             PositionUnit(
                 {
@@ -172,6 +182,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
+
             -- move Sauron Regular from Reserves to Erebor
             PositionUnit(
                 {
@@ -183,6 +194,7 @@ function SetupTheFateOfErebor()
                 }
             )
             coroutine.yield(0)
+
             -- update region info
             Regions["Erebor"] = {
                 Nation = "Sauron",
@@ -264,12 +276,12 @@ function SetupTheFateOfErebor()
                 Detected = { X = 0, R = 0, E = 0, L = 0 },
                 Starting = { R = 6, E = 4, L = 0 }
             }
-        else -- uhoh!
+        else
             print("Uhoh! Could not locate The Fate of Erebor Regions Overlay!")
         end
-
         coroutine.yield(0)
-        -- spawn Dale 3d fortification
+
+        -- spawn Dale fortification
         local Fort = getObjectFromGUID("42366d").clone({ position = { 17.65, 1.01, 15.43 } })
         Fort.setLock(true)
         if SettlementsAreFlat() then
