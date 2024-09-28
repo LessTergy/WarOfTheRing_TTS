@@ -63,8 +63,9 @@ local StepType = {
     BasicMenu = "BasicMenu",
     KillGamePanel = "KillGamePanel"
 }
-local Step = StepType.Empty
-local NextStep = StepType.Empty
+
+Step = StepType.Empty
+NextStep = StepType.Empty
 
 local VersusType = {
     OneVersusOne = "1v1",
@@ -5080,27 +5081,14 @@ function CreateAlternateCompanionMenu()
 end
 
 function SetupCompanionsStep()
-    local IDs = Global.call("GetIDs")
-
-    self.clearButtons()
-    self.createButton(
-        {
-            click_function = "Nothing",
-            function_owner = self,
-            label = "Setting up the Fellowship",
-            position = { 0, 0.1, 0 },
-            width = 0,
-            height = 0,
-            font_size = 150,
-            font_color = { 1, 1, 1 }
-        }
-    )
+    ShowInformationText("Setting up the Fellowship")
     for I = 1, 99 do
         coroutine.yield(0)
     end
-    -- for D
+
+    local IDs = Global.call("GetIDs")
     --flip all companion cards face down
-    for O, Obj in pairs(getAllObjects()) do
+    for _, Obj in pairs(getAllObjects()) do
         -- If companion card (but not Gollum)
         if
             Obj.type == "Card" and string.find(Obj.getDescription(), "Companion;") ~= nil and
@@ -5481,7 +5469,6 @@ function SetupCompanionsStep()
         end
     end
 
-    --Included: The Breaking of the Fellowship
     if TheBreakingOfTheFellowship then
         Global.call("SetupBreakingOfTheFellowship")
     else

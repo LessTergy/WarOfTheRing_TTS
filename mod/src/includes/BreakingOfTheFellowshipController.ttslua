@@ -1,0 +1,1275 @@
+function SetupBreakingOfTheFellowship()
+    function SetupBotFCoroutine()
+        ShowInformationText("Setting up\nThe Breaking of the Fellowship\nMini-Expansion Content")
+
+        -- update region info
+        Regions["Rivendell"] = {
+            Nation = "Elves",
+            Points = 2,
+            Side = "FreePeoples",
+            Control = "FreePeoples",
+            Settlement = "Stronghold",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 3, L = 1 }
+        }
+        Regions["Woodland Realm"] = {
+            Nation = "Elves",
+            Points = 2,
+            Side = "FreePeoples",
+            Control = "FreePeoples",
+            Settlement = "",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 1, E = 2, L = 1 }
+        }
+        Regions["Elven Reinforcements"] = {
+            Nation = "Elves",
+            Points = 0,
+            Side = "FreePeoples",
+            Control = "FreePeoples",
+            Settlement = "",
+            Type = "Reinforcements",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 2, E = 2, L = 0 }
+        }
+        Regions["Westemnet"] = {
+            Nation = "Rohan",
+            Points = 0,
+            Side = "FreePeoples",
+            Control = "FreePeoples",
+            Settlement = "Town",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 1, L = 1 }
+        }
+        Regions["Rohan Reinforcements"] = {
+            Nation = "Rohan",
+            Points = 0,
+            Side = "FreePeoples",
+            Control = "FreePeoples",
+            Settlement = "",
+            Type = "Reinforcements",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 6, E = 3, L = 2 }
+        }
+        Regions["North Dunland"] = {
+            Nation = "Isengard",
+            Points = 0,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Town",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
+        }
+        Regions["South Dunland"] = {
+            Nation = "Isengard",
+            Points = 0,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Town",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
+        }
+        Regions["Gap of Rohan"] = {
+            Nation = "Isengard",
+            Points = 0,
+            Side = "",
+            Control = "",
+            Settlement = "",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 6, E = 0, L = 0 }
+        }
+        Regions["Orthanc"] = {
+            Nation = "Isengard",
+            Points = 2,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Stronghold",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 4, E = 1, L = 0 }
+        }
+        Regions["Isengard Reinforcements"] = {
+            Nation = "Isengard",
+            Points = 0,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "",
+            Type = "Reinforcements",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 2, E = 5, L = 0 }
+        }
+        Regions["Barad~Dur"] = {
+            Nation = "Sauron",
+            Points = 2,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Stronghold",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
+        }
+        Regions["Eastemnet"] = {
+            Nation = "Rohan",
+            Points = 0,
+            Side = "",
+            Control = "",
+            Settlement = "",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 1 }
+        }
+        Regions["Nurn"] = {
+            Nation = "Sauron",
+            Points = 0,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Town",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
+        }
+        Regions["Gorgoroth"] = {
+            Nation = "Sauron",
+            Points = 0,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 4, E = 0, L = 0 }
+        }
+        Regions["Minas Morgul"] = {
+            Nation = "Sauron",
+            Points = 2,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Stronghold",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 5, E = 1, L = 1 }
+        }
+        Regions["Moria"] = {
+            Nation = "Sauron",
+            Points = 2,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Stronghold",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 2, E = 1, L = 0 }
+        }
+        Regions["Mount Gundabad"] = {
+            Nation = "Sauron",
+            Points = 2,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Stronghold",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 4, E = 0, L = 0 }
+        }
+        Regions["Morannon"] = {
+            Nation = "Sauron",
+            Points = 2,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Stronghold",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 1, E = 1, L = 1 }
+        }
+        Regions["North Ithilien"] = {
+            Nation = "",
+            Points = 0,
+            Side = "",
+            Control = "",
+            Settlement = "",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 5, E = 1, L = 1 }
+        }
+        Regions["Nazgul Reinforcements"] = {
+            Nation = "Sauron",
+            Points = 0,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "",
+            Type = "Reinforcements",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 1 }
+        }
+        Regions["Far Harad"] = {
+            Nation = "Southron/Easterling",
+            Points = 1,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "City",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
+        }
+        Regions["Near Harad"] = {
+            Nation = "Southron/Easterling",
+            Points = 0,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Town",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
+        }
+        Regions["Dagorlad"] = {
+            Nation = "",
+            Points = 0,
+            Side = "",
+            Control = "",
+            Settlement = "",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 5, E = 1, L = 1 }
+        }
+        Regions["North Rhun"] = {
+            Nation = "Southron/Easterling",
+            Points = 0,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Town",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 4, E = 1, L = 1 }
+        }
+        Regions["South Ithilien"] = {
+            Nation = "",
+            Points = 0,
+            Side = "",
+            Control = "",
+            Settlement = "",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 3, E = 1, L = 0 }
+        }
+        Regions["South Rhun"] = {
+            Nation = "Southron/Easterling",
+            Points = 0,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Town",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 0, E = 0, L = 0 }
+        }
+        Regions["Umbar"] = {
+            Nation = "Southron/Easterling",
+            Points = 2,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "Stronghold",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 5, E = 1, L = 0 }
+        }
+        Regions["West Harondor"] = {
+            Nation = "",
+            Points = 0,
+            Side = "",
+            Control = "",
+            Settlement = "",
+            Type = "Region",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 3, E = 1, L = 0 }
+        }
+        Regions["Haradrim Reinforcements"] = {
+            Nation = "Southron/Easterling",
+            Points = 0,
+            Side = "Shadow",
+            Control = "Shadow",
+            Settlement = "",
+            Type = "Reinforcements",
+            Detected = { X = 0, R = 0, E = 0, L = 0 },
+            Starting = { R = 4, E = 1, L = 0 }
+        }
+        if TheFateOfErebor then
+            Regions["Sauron Reinforcements"] = {
+                Nation = "Sauron",
+                Points = 0,
+                Side = "Shadow",
+                Control = "Shadow",
+                Settlement = "",
+                Type = "Reinforcements",
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 8, E = 1, L = 0 }
+            }
+        else
+            Regions["Sauron Reinforcements"] = {
+                Nation = "Sauron",
+                Points = 0,
+                Side = "Shadow",
+                Control = "Shadow",
+                Settlement = "",
+                Type = "Reinforcements",
+                Detected = { X = 0, R = 0, E = 0, L = 0 },
+                Starting = { R = 10, E = 1, L = 0 }
+            }
+        end
+        coroutine.yield(0)
+
+        -- move 1 Elf Elite from Elven Reinforcements to Rivendell
+        PositionUnit(
+            {
+                Name = "Elf Elite",
+                FromLocation = "Elven Reinforcements",
+                ToLocation = "Rivendell",
+                Smooth = true,
+                Position = { -0.17, 2, 17.66 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Elf Elite from Reserves to Woodland Realm
+        PositionUnit(
+            {
+                Name = "Elf Elite",
+                FromLocation = "Elven Reinforcements",
+                ToLocation = "Woodland Realm",
+                Smooth = true,
+                Position = { 14.4, 2, 15.88 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Rohan Elite from Reserves to Westemnet
+        PositionUnit(
+            {
+                Name = "Rohan Elite",
+                FromLocation = "Rohan Reinforcements",
+                ToLocation = "Westemnet",
+                Smooth = true,
+                Position = { 2.97, 2, -5 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Rohan Leader from Reserves to Wesemnet
+        PositionUnit(
+            {
+                Name = "Rohan Leader",
+                FromLocation = "Rohan Reinforcements",
+                ToLocation = "Westemnet",
+                Smooth = true,
+                Position = { 3.14, 2, -3.38 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 4 Isengard Regulars from Reserves to Gap of Rohan
+        PositionUnit(
+            {
+                Name = "Isengard Regular",
+                FromLocation = "Isengard Reinforcements",
+                ToLocation = "Gap of Rohan",
+                Smooth = true,
+                Position = { -7.26, 2, -4.09 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Isengard Regular",
+                FromLocation = "Isengard Reinforcements",
+                ToLocation = "Gap of Rohan",
+                Smooth = true,
+                Position = { -6.54, 2, -3.85 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Isengard Regular",
+                FromLocation = "Isengard Reinforcements",
+                ToLocation = "Gap of Rohan",
+                Smooth = true,
+                Position = { -5.8, 2, -3.48 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Isengard Regular",
+                FromLocation = "Isengard Reinforcements",
+                ToLocation = "Gap of Rohan",
+                Smooth = true,
+                Position = { -4.97, 2, -3.09 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Isengard Regular from North Dunland to Gap of Rohan
+        PositionUnit(
+            {
+                Name = "Isengard Regular",
+                FromLocation = "North Dunland",
+                ToLocation = "Gap of Rohan",
+                Smooth = true,
+                Position = { -7.24, 2, -3.22 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Isengard Regular from South Dunland to Gap of Rohan
+        PositionUnit(
+            {
+                Name = "Isengard Regular",
+                FromLocation = "South Dunland",
+                ToLocation = "Gap of Rohan",
+                Smooth = true,
+                Position = { -6.5, 2, -2.93 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 2 Sauron Regulars out of Nurn to Reserves
+        PositionUnit(
+            {
+                Name = "Sauron Regular",
+                FromLocation = "Nurn",
+                ToLocation = "Sauron Reinforcements",
+                Smooth = true,
+                Position = { 42, 2, -7 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Sauron Regular",
+                FromLocation = "Nurn",
+                ToLocation = "Sauron Reinforcements",
+                Smooth = true,
+                Position = { 42, 2, -9 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Nazgul from Barad~Dur to Eastemnet
+        PositionUnit(
+            {
+                Name = "Nazgûl",
+                FromLocation = "Barad~Dur",
+                ToLocation = "Eastemnet",
+                Smooth = true,
+                Position = { 6.41, 2, 1.41 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Sauron Regular from Barad~Dur to Gorgoroth
+        PositionUnit(
+            {
+                Name = "Sauron Regular",
+                FromLocation = "Barad~Dur",
+                ToLocation = "Gorgoroth",
+                Smooth = true,
+                Position = { 25, 2, -12.64 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Sauron Regular from Barad~Dur to North Ithilien
+        PositionUnit(
+            {
+                Name = "Sauron Regular",
+                FromLocation = "Barad~Dur",
+                ToLocation = "North Ithilien",
+                Smooth = true,
+                Position = { 16.21, 2, -8.73 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 2 Sauron Regulars from Barad~Dur to Mount Gundabad
+        PositionUnit(
+            {
+                Name = "Sauron Regular",
+                FromLocation = "Barad~Dur",
+                ToLocation = "Mount Gundabad",
+                Smooth = true,
+                Position = { -2.31, 2, 24.54 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Sauron Regular",
+                FromLocation = "Barad~Dur",
+                ToLocation = "Mount Gundabad",
+                Smooth = true,
+                Position = { -1.21, 2, 24.73 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Sauron Elite from Barad~Dur to Minas Morgul
+        PositionUnit(
+            {
+                Name = "Sauron Elite",
+                FromLocation = "Barad~Dur",
+                ToLocation = "Minas Morgul",
+                Smooth = true,
+                Position = { 20.25, 2, -10.35 }
+            }
+        )
+        coroutine.yield(0)
+        -- move 4 Sauron Regular from Morannon to North Ithilien
+        PositionUnit(
+            {
+                Name = "Sauron Regular",
+                FromLocation = "Morannon",
+                ToLocation = "North Ithilien",
+                Smooth = true,
+                Position = { 16.94, 2, -9.05 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Sauron Regular",
+                FromLocation = "Morannon",
+                ToLocation = "North Ithilien",
+                Smooth = true,
+                Position = { 15.82, 2, -7.88 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Sauron Regular",
+                FromLocation = "Morannon",
+                ToLocation = "North Ithilien",
+                Smooth = true,
+                Position = { 15.42, 2, -7.06 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Sauron Regular",
+                FromLocation = "Morannon",
+                ToLocation = "North Ithilien",
+                Smooth = true,
+                Position = { 15.03, 2, -6.24 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Sauron Elite from Reserves to North Ithilian
+        PositionUnit(
+            {
+                Name = "Sauron Elite",
+                FromLocation = "Sauron Reinforcements",
+                ToLocation = "North Ithilien",
+                Smooth = true,
+                Position = { 16.99, 2, -7.49 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Nazgul from Reserves to North Ithilian
+        PositionUnit(
+            {
+                Name = "Nazgûl",
+                FromLocation = "Nazgul Reinforcements",
+                ToLocation = "North Ithilien",
+                Smooth = true,
+                Position = { 16.61, 2, -5.17 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Sauron Elite from Reserves to Morannon
+        PositionUnit(
+            {
+                Name = "Sauron Elite",
+                FromLocation = "Sauron Reinforcements",
+                ToLocation = "Morannon",
+                Smooth = true,
+                Position = { 22.11, 2, -5.75 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Sauron Elite from Reserves to Moria
+        PositionUnit(
+            {
+                Name = "Sauron Elite",
+                FromLocation = "Sauron Reinforcements",
+                ToLocation = "Moria",
+                Smooth = true,
+                Position = { 0.52, 2, 8.76 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Nazgul from Reserves to Dagorlad
+        PositionUnit(
+            {
+                Name = "Nazgûl",
+                FromLocation = "Nazgul Reinforcements",
+                ToLocation = "Dagorlad",
+                Smooth = true,
+                Position = { 21.28, 2, -0.74 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Nazgul from Reserves to North Rhun
+        PositionUnit(
+            {
+                Name = "Nazgûl",
+                FromLocation = "Nazgul Reinforcements",
+                ToLocation = "North Rhun",
+                Smooth = true,
+                Position = { 26, 2, 13.38 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Elite from South Rhun to Dagorlad
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Elite",
+                FromLocation = "South Rhun",
+                ToLocation = "Dagorlad",
+                Smooth = true,
+                Position = { 21.81, 2, -2.4 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 3 Regulars from South Rhun to Dagorlad
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "South Rhun",
+                ToLocation = "Dagorlad",
+                Smooth = true,
+                Position = { 19.14, 2, -0.61 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "South Rhun",
+                ToLocation = "Dagorlad",
+                Smooth = true,
+                Position = { 18.39, 2, -1.27 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "South Rhun",
+                ToLocation = "Dagorlad",
+                Smooth = true,
+                Position = { 19.27, 2, -1.44 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 2 Regulars from Reserves to Dagorlad
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "Haradrim Reinforcements",
+                ToLocation = "Dagorlad",
+                Smooth = true,
+                Position = { 20.2, 2, -0.68 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "Haradrim Reinforcements",
+                ToLocation = "Dagorlad",
+                Smooth = true,
+                Position = { 20.35, 2, -2.25 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Elite from Reserves to North Rhun
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Elite",
+                FromLocation = "Haradrim Reinforcements",
+                ToLocation = "North Rhun",
+                Smooth = true,
+                Position = { 24.27, 2, 11.65 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 2 Regulars from Reserves to North Rhun
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "Haradrim Reinforcements",
+                ToLocation = "North Rhun",
+                Smooth = true,
+                Position = { 25.22, 2, 8.93 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "Haradrim Reinforcements",
+                ToLocation = "North Rhun",
+                Smooth = true,
+                Position = { 26.13, 2, 8.94 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Elite from Far Harad to South Ithilien
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Elite",
+                FromLocation = "Far Harad",
+                ToLocation = "South Ithilien",
+                Smooth = true,
+                Position = { 16.31, 2, -15.04 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 3 Regulars from Far Harad to South Ithilien
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "Far Harad",
+                ToLocation = "South Ithilien",
+                Smooth = true,
+                Position = { 14.61, 2, -14.73 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "Far Harad",
+                ToLocation = "South Ithilien",
+                Smooth = true,
+                Position = { 13.94, 2, -15.56 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "Far Harad",
+                ToLocation = "South Ithilien",
+                Smooth = true,
+                Position = { 14.93, 2, -15.75 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Elite from Near Harad to West Harondor
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Elite",
+                FromLocation = "Near Harad",
+                ToLocation = "West Harondor",
+                Smooth = true,
+                Position = { 13.05, 2, -18.33 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 3 Regulars from Near Harad to West Harondor
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "Near Harad",
+                ToLocation = "West Harondor",
+                Smooth = true,
+                Position = { 13, 2, -16.48 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "Near Harad",
+                ToLocation = "West Harondor",
+                Smooth = true,
+                Position = { 12.21, 2, -16.99 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "Near Harad",
+                ToLocation = "West Harondor",
+                Smooth = true,
+                Position = { 11.41, 2, -17.69 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 1 Elite from Reserves to Umbar. a7f52b {11.65, 1.00, -22.88}
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Elite",
+                FromLocation = "Haradrim Reinforcements",
+                ToLocation = "Umbar",
+                Smooth = true,
+                Position = { 11.65, 2, -22.88 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move 2 Regulars from Reserves to Umbar. 67a57b,9adaed {9.18, 0.99, -22.73},{10.18, 0.99, -22.73}
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "Haradrim Reinforcements",
+                ToLocation = "Umbar",
+                Smooth = true,
+                Position = { 10.18, 2, -22.73 }
+            }
+        )
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Southron/Easterling Regular",
+                FromLocation = "Haradrim Reinforcements",
+                ToLocation = "Umbar",
+                Smooth = true,
+                Position = { 9.18, 2, -22.73 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- move saruman to Orthanc. 61bc09 {-1.02, 1.00, -0.88}
+        PositionUnit(
+            {
+                Name = "Saruman: Corrupted Wizard",
+                FromLocation = "",
+                ToLocation = "Orthanc",
+                Smooth = true,
+                Position = { -1, 1.76, -0.88 }
+            }
+        )
+        coroutine.yield(0)
+
+        -- flip saruman's card
+        getObjectFromGUID("8039f2").setRotation({ 0, 180, 0 })
+        -- balrog is dead
+        printToAll("The Balrog is Dead.", { 1, 1, 0 })
+        RemoveObjectFromGame({ Name = "A Balrog is Come!" })
+        RemoveObjectFromGame({ Name = "Balrog Status Counter" })
+        RemoveObjectFromGame({ Description = "Dice;Action;Balrog;" })
+        RemoveObjectFromGame({ Name = "The Balrog of Moria (Evil of the Ancient World)", Description = "Card;" })
+
+        -- move ring-bearers to Eastemnet
+        PositionUnit(
+            {
+                Name = "The Ring-bearers",
+                FromLocation = "Rivendell",
+                ToLocation = "Eastemnet",
+                Smooth = true,
+                Position = { 9.1, 1.76, -2.7 }
+            }
+        )
+
+        -- fellowship is broken
+        -- Gandalf the Grey is gone
+        local CardObj = SeparateCompanionFromFellowship("Gandalf the Grey")
+        for D = 1, 30 do
+            coroutine.yield(0)
+        end
+        KillCompanionCard(CardObj)
+        coroutine.yield(0)
+
+        -- boromir is dead
+        local CardObj = SeparateCompanionFromFellowship("Boromir")
+        for D = 1, 30 do
+            coroutine.yield(0)
+        end
+        KillCompanionCard(CardObj)
+        coroutine.yield(0)
+
+        -- Strider starts in Eastemnet
+        SeparateCompanionFromFellowship("Strider")
+        for D = 1, 30 do
+            coroutine.yield(0)
+        end
+        PositionUnit(
+            {
+                Name = "Strider",
+                FromLocation = "Fellowship Box",
+                ToLocation = "Eastemnet",
+                Smooth = true,
+                Position = { 6.4, 1.76, -0.85 }
+            }
+        )
+
+        -- Legolas starts in Eastemnet
+        SeparateCompanionFromFellowship("Legolas")
+        for D = 1, 30 do
+            coroutine.yield(0)
+        end
+        PositionUnit(
+            {
+                Name = "Legolas",
+                FromLocation = "Fellowship Box",
+                ToLocation = "Eastemnet",
+                Smooth = true,
+                Position = { 5.6, 1.76, 0.15 }
+            }
+        )
+
+        -- Gimli starts in Eastemnet
+        SeparateCompanionFromFellowship("Gimli")
+        for D = 1, 30 do
+            coroutine.yield(0)
+        end
+        PositionUnit(
+            {
+                Name = "Gimli",
+                FromLocation = "Fellowship Box",
+                ToLocation = "Eastemnet",
+                Smooth = true,
+                Position = { 6.9, 1.76, -1.85 }
+            }
+        )
+        for D = 1, 30 do
+            coroutine.yield(0)
+        end
+
+        -- meriadoc and peregrin start in Fangorn
+        PositionUnit(
+            {
+                Name = "Meriadoc",
+                FromLocation = "Fellowship Box",
+                ToLocation = "Fangorn",
+                Smooth = true,
+                Position = { 3.8, 1.76, 1.5 }
+            }
+        )
+        SeparateCompanionFromFellowship("Meriadoc")
+        for D = 1, 30 do
+            coroutine.yield(0)
+        end
+        PositionUnit(
+            {
+                Name = "Peregrin",
+                FromLocation = "Fellowship Box",
+                ToLocation = "Fangorn",
+                Smooth = true,
+                Position = { 3.8, 1.76, 0.7 }
+            }
+        )
+        SeparateCompanionFromFellowship("Peregrin")
+        for D = 1, 30 do
+            coroutine.yield(0)
+        end
+
+        -- gandalf the white starts in Lorien
+        printToAll("Gandalf the White has returned to Lorien.", { 1, 1, 0 })
+        PositionUnit(
+            {
+                Name = "Gandalf the White: Emissary from the West",
+                FromLocation = "",
+                ToLocation = "Lorien",
+                Smooth = true,
+                Position = { 4.45, 1.76, 8 }
+            }
+        )
+
+
+        -- fellowship is revealed at step 0
+        getObjectFromGUID("0546b6").setRotation({ 0, 180, 180 })
+
+        printToAll("The Fellowship starts Revealed at 0 on the Fellowship Track", { 1, 1, 0 })
+        getObjectFromGUID("6b62ef").setPositionSmooth({ 5.3, 1.01, 23.20 }, false, false)
+        getObjectFromGUID("6b62ef").setRotation({ 0, 270, 0 })
+        -- corruption starts at 3
+        printToAll("The Corruption of the Ring-bearer starts at 3.", { 1, 1, 0 })
+        getObjectFromGUID("abe1b3").setPositionSmooth({ 10.04, 1.01, 24.15 }, false, false)
+        -- gollum is the Fellowship Guide {27.65, 0.98, 17.00}
+        printToAll("All Companions have left the Fellowship, and Gollum is the Guide.", { 1, 1, 0 })
+        Guide = "Gollum: Slave of the Ring"
+        GuideLevel = 0
+        coroutine.yield(0)
+
+        PositionUnit(
+            {
+                Name = "Gollum",
+                FromLocation = "",
+                ToLocation = "Fellowship Box",
+                Smooth = true,
+                Position = { 27.65, 1.76, 17 }
+            }
+        )
+        getObjectFromGUID("1c4127").setPosition({ 32.9, 3, 20.0 })
+        getObjectFromGUID("1c4127").setRotation({ 0, 180, 0 })
+        coroutine.yield(0)
+        -- Sauron starts active and at war
+        getObjectFromGUID("75a065").setPositionSmooth({ 34.25, 1.01, -7.26 }, false, false)
+        PoliticalTrack.Sauron.Level = 0
+        PoliticalTrack.Sauron.AtWar = true
+        printToAll("Sauron is at War!", { 1, 1, 0 })
+        coroutine.yield(0)
+        -- Isengard starts active and at war
+        getObjectFromGUID("7f39c1").setPositionSmooth({ 33.2, 1.01, -7.59 }, false, false)
+        PoliticalTrack.Isengard.Level = 0
+        PoliticalTrack.Isengard.AtWar = true
+        printToAll("Isengard is at War!", { 1, 1, 0 })
+        coroutine.yield(0)
+        -- Haradrim starts active and at war
+        getObjectFromGUID("52aff9").setPositionSmooth({ 35.34, 1.01, -7.59 }, false, false)
+        PoliticalTrack.Haradrim.Level = 0
+        PoliticalTrack.Haradrim.AtWar = true
+        printToAll("Haradrim are at War!", { 1, 1, 0 })
+        coroutine.yield(0)
+        -- elves start active and at war
+        getObjectFromGUID("fc2440").setPositionSmooth({ 33.18, 1.01, -5.47 }, false, false)
+        PoliticalTrack.Elves.Level = 0
+        PoliticalTrack.Elves.AtWar = true
+        printToAll("Elves are at War!", { 1, 1, 0 })
+        coroutine.yield(0)
+        -- gondor start inactive at zone 1
+        getObjectFromGUID("8ab5c1").setPositionSmooth({ 33.05, 1.01, -1.91 }, false, false)
+        PoliticalTrack.Gondor.Level = 1
+        PoliticalTrack.Gondor.AtWar = false
+        printToAll("Gondor starts further down the political track.", { 1, 1, 0 })
+        coroutine.yield(0)
+        -- The North start inactive at zone 2
+        getObjectFromGUID("07e059").setPositionSmooth({ 35.34, 1.01, 1.71 }, false, false)
+        PoliticalTrack.North.Level = 2
+        PoliticalTrack.North.AtWar = false
+        printToAll("The North starts further down the political track.", { 1, 1, 0 })
+        coroutine.yield(0)
+        -- Dwarves start inactive at zone 2
+        getObjectFromGUID("a55f2c").setPositionSmooth({ 33.14, 1.01, 1.72 }, false, false)
+        PoliticalTrack.Dwarves.Level = 2
+        PoliticalTrack.Dwarves.AtWar = false
+        printToAll("Dwarves start further down the political track.\n", { 1, 1, 0 })
+        coroutine.yield(0)
+        -- remove tiles
+        printToAll(
+            "Removing standard Hunt Tiles from the Hunt Pool:\nOne Eye tile\nOne 1 Tile\nTwo 2 tiles\nTwo Zero/Reveal tiles\n"
+        )
+        getObjectFromGUID("002387").takeObject(
+            { smooth = true, guid = "8aaa0a", position = { -43.2, 1, -21 }, rotation = { 0, 180, 0 } }
+        )
+        getObjectFromGUID("002387").takeObject(
+            { smooth = true, guid = "b58a49", position = { -41.9, 1, -21 }, rotation = { 0, 180, 0 } }
+        )
+        getObjectFromGUID("002387").takeObject(
+            { smooth = true, guid = "9ec4f1", position = { -40.6, 1, -21 }, rotation = { 0, 180, 0 } }
+        )
+        getObjectFromGUID("002387").takeObject(
+            { smooth = true, guid = "5d8190", position = { -39.3, 1, -21 }, rotation = { 0, 180, 0 } }
+        )
+        getObjectFromGUID("002387").takeObject(
+            { smooth = true, guid = "a63100", position = { -38.0, 1, -21 }, rotation = { 0, 180, 0 } }
+        )
+        getObjectFromGUID("002387").takeObject(
+            { smooth = true, guid = "71f5b1", position = { -43.2, 1, -22.5 }, rotation = { 0, 180, 0 } }
+        )
+        coroutine.yield(0)
+        -- add tiles
+        printToAll(
+            "Adding Special Tiles as played:\nZero Hunt tile (Elven Cloaks)\nZero Hunt tile (Elven Rope)\n-2 Hunt tile (Phial of Galadriel)\n"
+        )
+        if getObjectFromGUID("a31079") ~= nil then
+            getObjectFromGUID("a31079").setPositionSmooth({ -41.9, 1, -22.5 }, false, false)
+        end
+        if getObjectFromGUID("a31079") ~= nil then
+            getObjectFromGUID("be4e0f").setPositionSmooth({ -40.6, 1, -22.5 }, false, false)
+        end
+        if getObjectFromGUID("a31079") ~= nil then
+            getObjectFromGUID("8ff093").setPositionSmooth({ -39.3, 1, -22.5 }, false, false)
+        end
+        coroutine.yield(0)
+        -- remove cards
+        printToAll(
+            "Removing Free Peoples Character Event Cards:\nMithril Coat and Sting\nMirror of Galadriel\nElven Cloaks\nElven Rope\nPhial of Galadriel\n"
+        )
+        RemoveObjectFromGame({ Name = "Mithril Coat and Sting" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "Mirror of Galadriel" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "Elven Rope" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "Elven Cloaks" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "Phial of Galadriel" })
+        coroutine.yield(0)
+        printToAll("Removing Free Peoples Strategy Event Cards:\nMithril Coat and Sting\nMirror of Galadriel\n")
+        RemoveObjectFromGame({ Name = "A Power too Great" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "Kindred of Glorfindel" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "Eomer, Son of Eomund" })
+        coroutine.yield(0)
+        printToAll(
+            "Removing Shadow Character Event Cards:\nFoul Thing from the Deep\nCruel Weather\nLure of the Ring\nThe Breaking of the Fellowship\nWorn With Sorrow and Toil\nFlocks of Crebain\nBalrog of Moria\n"
+        )
+        RemoveObjectFromGame({ Name = "Cruel Weather" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "Foul Thing from the Deep" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "Lure of the Ring" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "The Breaking of the Fellowship" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "Worn with Sorrow and Toil" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "Flocks of Crebain" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "Balrog of Moria" })
+        coroutine.yield(0)
+        printToAll("Removing Shadow Strategy Event Cards:\nReturn to Valinor\nRage of the Dunlendings\n")
+        RemoveObjectFromGame({ Name = "Return to Valinor" })
+        coroutine.yield(0)
+        RemoveObjectFromGame({ Name = "Rage of the Dunlendings" })
+        coroutine.yield(0)
+        -- put shadow cards into play
+        printToAll("Placing Shadow Event Cards into Play:\nThe Palantir of Orthanc\nWormtongue\nThreats and Promises\n")
+
+        FetchObject(
+            {
+                Name = "The Palantir of Orthanc",
+                Description = "Card;",
+                Position = { -26.5, 1, -6 },
+                Rotation = { 0, 180, 0 },
+                Smooth = true
+            }
+        )
+        coroutine.yield(0)
+        FetchObject(
+            {
+                Name = "Wormtongue",
+                Description = "Card;",
+                Position = { -21.5, 1, -6 },
+                Rotation = { 0, 180, 0 },
+                Smooth = true
+            }
+        )
+        coroutine.yield(0)
+        FetchObject(
+            {
+                Name = "Threats and Promises",
+                Description = "Card;",
+                Position = { -16.5, 1, -6 },
+                Rotation = { 0, 180, 0 },
+                Smooth = true
+            }
+        )
+        coroutine.yield(0)
+        -- signal next step is ok to proceed
+        getObjectFromGUID(GamePanelID).setVar("Step", "")
+        return 1
+    end
+
+    startLuaCoroutine(Global, "SetupBotFCoroutine")
+end
+
+function FetchObject(Params)
+    --locates the object, even if in a bag/deck and fetches it, but ignores anything in the graveyard.
+    --ID and name must be exact match, description/gmnotes only needs to be found within the text.
+    local GraveObj = getObjectFromGUID("416864")
+    if Params.ID == nil then
+        Params.ID = ""
+    end
+    if Params.BagID == nil then
+        Params.BagID = ""
+    end
+    if Params.Name == nil then
+        Params.Name = ""
+    end
+    if Params.Description == nil then
+        Params.Description = ""
+    end
+    if Params.GMNotes == nil then
+        Params.GMNotes = ""
+    end
+    if Params.Position == nil then
+        Params.Position = { 0, 1, 0 }
+    end
+    if Params.Rotation == nil then
+        Params.Rotation = { 0, 0, 0 }
+    end
+    if Params.Smooth == nil then
+        Params.Smooth = false
+    end
+    local FetchedObj = nil
+    if getObjectFromGUID(Params.ID) ~= nil then
+        FetchedObj = getObjectFromGUID(Params.ID)
+    else
+        for O, Obj in pairs(getAllObjects()) do
+            if
+                (Obj.type == "Deck" or Obj.type == "Bag") and Obj ~= GraveObj and
+                (Params.BagID == "" or Obj.getGUID() == Params.BagID)
+            then
+                for I, Item in pairs(Obj.getObjects()) do
+                    if
+                        (Params.ID == "" or Params.ID == Item.guid) and
+                        (Params.Name == "" or string.upper(Params.Name) == string.upper(Item.name)) and
+                        (Params.Description == "" or string.find(Item.description, Params.Description) ~= nil) and
+                        (Params.GMnotes == "" or string.find(Item.gm_notes, Params.GMNotes) ~= nil)
+                    then
+                        FetchedObj = Obj.takeObject({ guid = Item.guid })
+                        break
+                    end
+                end
+            elseif
+                (Params.Name == "" or string.upper(Obj.getName()) == string.upper(Params.Name)) and
+                (Params.Description == "" or string.find(Obj.getDescription(), Params.Description) ~= nil) and
+                (Params.GMnotes == "" or string.find(Obj.getGMNotes(), Params.GMnotes) ~= nil)
+            then
+                FetchedObj = Obj
+                break
+            end
+        end
+    end
+    if FetchedObj ~= nil then
+        --print("Fetched Object:",FetchedObj.getGUID,":",FetchedObj.getName())
+        if Params.Smooth then
+            FetchedObj.setPositionSmooth(Params.Position, false, false)
+            FetchedObj.setRotationSmooth(Params.Rotation, false, false)
+        else --not smooth
+            FetchedObj.setPosition(Params.Position)
+            FetchedObj.setRotation(Params.Rotation)
+        end
+    end
+end

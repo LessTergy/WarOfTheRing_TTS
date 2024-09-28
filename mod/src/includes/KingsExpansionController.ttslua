@@ -1,0 +1,128 @@
+function UpdateHelmsDeepControl(Region)
+    if Region ~= "Helm's Deep" then
+        return
+    end
+
+    if Regions[Region].Control == "Shadow" then
+        local IDs = GetIDs()
+        local TheodenID = IDs.Companions.Theoden
+        local TheodenCharacter = getObjectFromGUID(TheodenID)
+
+        if TheodenCharacter ~= nil then
+            if TheodenCharacter.getName() == "Theoden: Corrupted Ruler" then
+                CorruptHelmsDeep()
+            end
+        end
+    elseif HelmsDeepInCorruptPosition() then
+        RestoreHelmsDeep()
+    end
+end
+
+function HelmsDeepInCorruptPosition()
+    local regionOverlay = getObjectFromGUID("534719")
+    if regionOverlay == nil then
+        return false
+    end
+
+    local position = regionOverlay.getPosition()
+    return position.z < 24 and position.z > -24 and position.x > -35 and position.x < 35
+end
+
+function CorruptHelmsDeep()
+    -- turn helms deep into a shadow stronghold
+    function CorruptHelmsDeepCoroutine()
+        -- move in shadow helms deep region overlay
+        getObjectFromGUID("534719").setLock(true)
+        getObjectFromGUID("534719").setPosition({ 0.04, 0.91, -6.31 })
+        getObjectFromGUID("534719").setRotation({ 0, 180, 0 })
+        coroutine.yield(0)
+
+        -- move in shadow helms deep stronghold box
+        getObjectFromGUID("c9bcd7").setLock(true)
+        getObjectFromGUID("c9bcd7").setPosition({ -34.75, 0.95, -6.50 })
+        getObjectFromGUID("c9bcd7").setRotation({ 0, 180, 0 })
+        coroutine.yield(0)
+
+        -- move in shadow helms deep stronghold3d
+        getObjectFromGUID("011a2a").setLock(true)
+        getObjectFromGUID("011a2a").setRotation({ 0, 180, 0 })
+        getObjectFromGUID("011a2a").setPosition({ 0.21, 0.78, -5.57 })
+        if not SettlementsAreFlat() then
+            getObjectFromGUID("011a2a").setPositionSmooth({ 0.24, 1.16, -5.49 }, false, false)
+        end
+        coroutine.yield(0)
+
+        -- move out FP helms deep stronghold 3d
+        getObjectFromGUID("ef398b").setLock(false)
+        getObjectFromGUID("ef398b").setPositionSmooth({ -60, 1.15, -12 }, false, false)
+        getObjectFromGUID("ef398b").setRotation({ 0, 180, 0 })
+        coroutine.yield(0)
+
+        -- move out FP helms deep stronghold box
+        getObjectFromGUID("231cc7").setLock(false)
+        getObjectFromGUID("231cc7").setPositionSmooth({ -57, 1, -12 }, false, false)
+        getObjectFromGUID("231cc7").setRotation({ 0, 180, 0 })
+        coroutine.yield(0)
+
+        -- move and flip SettlementControlMarker
+        local helmsDeepControlMarker = getObjectFromGUID("04cc5c")
+        helmsDeepControlMarker.setPositionSmooth({ 0.65, 3, -5.11 }, false, false)
+        SetTokenRotation(helmsDeepControlMarker, false)
+        coroutine.yield(0)
+
+        -- announce corruption of helms deep
+        printToAll("Helm's Deep has been corrupted to a Shadow Stronghold.", { 1, 1, 0 })
+        return 1
+    end
+
+    startLuaCoroutine(Global, "CorruptHelmsDeepCoroutine")
+end
+
+function RestoreHelmsDeep()
+    -- restore helms deep to a free peoples stronghold
+    function RestoreHelmsDeepCoroutine()
+        -- move out shadow helms deep region overlay
+        getObjectFromGUID("534719").setPositionSmooth({ -61.8, 1, -17.81 }, false, false)
+        getObjectFromGUID("534719").setRotation({ 0, 180, 0 })
+        getObjectFromGUID("534719").setLock(false)
+        coroutine.yield(0)
+
+        -- move out shadow helms deep stronghold box
+        getObjectFromGUID("c9bcd7").setPositionSmooth({ -56.79, 1, -16.79 }, false, false)
+        getObjectFromGUID("c9bcd7").setRotation({ 0, 180, 0 })
+        getObjectFromGUID("c9bcd7").setLock(false)
+        coroutine.yield(0)
+
+        -- move out shadow helms deep stronghold3d
+        getObjectFromGUID("011a2a").setRotation({ 0, 180, 0 })
+        getObjectFromGUID("011a2a").setPositionSmooth({ -61.65, 1.25, -17.08 }, false, false)
+        getObjectFromGUID("011a2a").setLock(false)
+        coroutine.yield(0)
+
+        -- move in FP helms deep stronghold 3d
+        getObjectFromGUID("ef398b").setLock(true)
+        getObjectFromGUID("ef398b").setPosition({ -0.19, 0.77, -5.57 }, false, false)
+        getObjectFromGUID("ef398b").setRotation({ 0, 180, 0 })
+        if not SettlementsAreFlat() then
+            getObjectFromGUID("ef398b").setPositionSmooth({ -0.19, 1.16, -5.57 }, false, false)
+        end
+        coroutine.yield(0)
+
+        -- move in FP helms deep stronghold box
+        getObjectFromGUID("231cc7").setLock(true)
+        getObjectFromGUID("231cc7").setPosition({ -34.75, 0.95, -6.50 })
+        getObjectFromGUID("231cc7").setRotation({ 0, 180, 0 })
+        coroutine.yield(0)
+
+        -- move and flip SettlementControlMarker
+        local helmsDeepControlMarker = getObjectFromGUID("04cc5c")
+        helmsDeepControlMarker.setPositionSmooth({ -0.64, 3, -5.12 }, false, false)
+        SetTokenRotation(helmsDeepControlMarker, true)
+        coroutine.yield(0)
+
+        printToAll("Helm's Deep has been restored to a Free People's Stronghold.", { 1, 1, 0 })
+        return 1
+    end
+
+    startLuaCoroutine(Global, "RestoreHelmsDeepCoroutine")
+end
