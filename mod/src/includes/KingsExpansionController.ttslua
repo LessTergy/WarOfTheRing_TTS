@@ -33,7 +33,7 @@ function CorruptHelmsDeep()
     function CorruptHelmsDeepCoroutine()
         -- move in shadow helms deep region overlay
         getObjectFromGUID("534719").setLock(true)
-        getObjectFromGUID("534719").setPosition({ 0.04, 0.91, -6.31 })
+        getObjectFromGUID("534719").setPosition({ 0.04, 0.91, -6.34 })
         getObjectFromGUID("534719").setRotation({ 0, 180, 0 })
         coroutine.yield(0)
 

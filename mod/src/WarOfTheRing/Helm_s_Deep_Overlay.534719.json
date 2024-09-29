@@ -9,9 +9,9 @@
             "rotX": 0,
             "rotY": 179.97,
             "rotZ": 0,
-            "scaleX": 1.33,
+            "scaleX": 1.34,
             "scaleY": 1,
-            "scaleZ": 1.33
+            "scaleZ": 1.34
         },
         "Nickname": "Helm's Deep Overlay",
         "Description": "Overlay;KoME;",
@@ -41,7 +41,7 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "CustomImage": {
-            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2079031399353564821/12607CDA032499CAC7C7EAB12A4966F8ECCF8BC6/",
+            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392261239049/607B956FF054C7823BA0EB45367BEAB5B0C48260/",
             "ImageSecondaryURL": "",
             "ImageScalar": 1,
             "WidthScale": 0,
