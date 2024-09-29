@@ -1,11 +1,11 @@
 TFoERegionOverlayID = "d5aeaa"
 TFoEStrongholdOverlayID = "7d50c0"
 
-local ereborStrongholdPosition = { x = 17.92, y = 1.16, z = 20.87 }
-local ereborControlMarkerPosition = { 18.35, 9, 21.32 }
+local ereborStrongholdPosition = { x = 17.92, y = 1.16, z = 20.75 }
+local ereborControlMarkerPosition = { 18.37, 9, 21.21 }
 
-local ironHillsPosition = { x = 21.92, y = 1.09, z = 21.1 }
-local ironHillsControlMarkerPosition = { 21.45, 9, 21.3 }
+local ironHillsPosition = { x = 21.92, y = 1.09, z = 20.97 }
+local ironHillsControlMarkerPosition = { 21.44, 9, 21.13 }
 
 function SetupTheFateOfErebor()
     function SetupTFoECoroutine()
@@ -28,7 +28,6 @@ function SetupTheFateOfErebor()
             local EreborSettlement = getObjectFromGUID("55e47b")
             EreborSettlement.setLock(true)
             EreborSettlement.setRotation({ 0, 180, 0 })
-
             local ereborPosition = ereborStrongholdPosition
             if SettlementsAreFlat() then
                 ereborPosition.y = 0.78
@@ -282,12 +281,12 @@ function SetupTheFateOfErebor()
         coroutine.yield(0)
 
         -- spawn Dale fortification
-        local Fort = getObjectFromGUID("42366d").clone({ position = { 17.65, 1.01, 15.43 } })
+        local Fort = getObjectFromGUID("42366d").clone({ position = { 17.59, 1.01, 15.43 } })
         Fort.setLock(true)
         if SettlementsAreFlat() then
-            Fort.setPosition({ 17.65, 0.93, 15.43 })
+            Fort.setPosition({ 17.59, 0.93, 15.43 })
         else
-            Fort.setPosition({ 17.65, 1.01, 15.43 })
+            Fort.setPosition({ 17.59, 1.01, 15.43 })
         end
 
         Fort.setRotation({ 0, 180, 0 })
