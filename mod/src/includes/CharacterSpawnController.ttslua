@@ -9,6 +9,22 @@ local CharactersBaseConfig = {
             },
         },
         {
+            Name = "Gandalf the White: Emissary from the West",
+            Position = {
+                x = -3.56,
+                y = 1.01,
+                z = 27.49,
+            },
+        },
+        {
+            Name = "Aragorn: Heir to Isildur",
+            Position = {
+                x = -8.47,
+                y = 1.01,
+                z = 27.51,
+            },
+        },
+        {
             Name = "Peregrin",
             Position = {
                 x = 27.3,
@@ -64,6 +80,14 @@ local CharactersBaseConfig = {
                 z = 17.35,
             },
         },
+        {
+            Name = "The Ring-bearers",
+            Position = {
+                x = -0.68,
+                y = 1.01,
+                z = 16.32,
+            }
+        }
     },
     Shadow = {
         {
@@ -90,7 +114,7 @@ local CharactersBaseConfig = {
                 z = -27.48,
             },
         }
-    },
+    }
 }
 
 local CharactersLordsConfig = {
