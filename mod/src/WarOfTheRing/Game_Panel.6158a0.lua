@@ -7,7 +7,7 @@ local FreePeoplesVP = 0
 local ShadowVP = 0
 local CorruptionTrack = 0
 local FellowshipTrack = 0
-local FreePeoplesHuntDiceCount = 0 --how many free peoples dice were retrieved from the hunt box from last turn.
+local FreePeoplesHuntDiceCount = 0
 local ShadowHuntDiceCount = 0
 local Round = 0
 
@@ -97,10 +97,10 @@ local FellowshipCount = 8
 
 local ShadowDicePool = {} --pool of dice rolled
 local FreePeoplesDicePool = {} --pool of dice rolled
-local HuntBoxShadowDiceArray = {} --table of dice ids
-local HuntBoxFreePeoplesDiceArray = {} --table of dice ids
+local HuntBoxShadowDiceArray = {}
+local HuntBoxFreePeoplesDiceArray = {}
 
-local Spots = {
+Spots = {
     GamePanel = {
         All = { Position = { 54, 13, 0 }, Rotation = { 90, 270, 0 }, Scale = { 7, 1, 7 } },
         FreePeoples = { Position = { 0, 12, 25 }, Rotation = { 90, 0, 0 }, Scale = { 5, 1, 5 } },
@@ -6275,6 +6275,11 @@ function RollActionDiceCoroutine()
     end
 
     return 1
+end
+
+function AddFreePeopleDiceToHunt(diceObject)
+    table.insert(HuntBoxFreePeoplesDiceArray, diceObject.getGUID())
+    FreePeoplesHuntDiceCount = FreePeoplesHuntDiceCount + 1
 end
 
 -- Params: {ID="", Name="",Description=""}
