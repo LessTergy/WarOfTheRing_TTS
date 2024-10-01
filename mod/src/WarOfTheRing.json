@@ -1,20 +1,14 @@
 {
     "Save": {
-        "SaveName": "WarOfTheRing",
+        "SaveName": "Война Кольца RUS + All DLC",
         "EpochTime": 1704480158,
         "Date": "1/5/2024 9:42:38 PM",
         "VersionNumber": "v13.2.2",
         "GameMode": "\u0420\u2019\u0420\u0455\u0420\u2116\u0420\u0405\u0420\u00b0 \u0420\u0459\u0420\u0455\u0420\u00bb\u0421\u040a\u0421\u2020\u0420\u00b0 (War of the Ring)",
         "GameType": "Game",
         "GameComplexity": "Medium Complexity",
-        "PlayingTime": [
-            0,
-            180
-        ],
-        "PlayerCounts": [
-            2,
-            4
-        ],
+        "PlayingTime": [0, 180],
+        "PlayerCounts": [2, 4],
         "Tags": [
             "Board Games",
             "Wargames",
