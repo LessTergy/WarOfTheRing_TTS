@@ -41,7 +41,14 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [209136, 209135, 209134, 209131, 209132, 209133],
+        "DeckIDs": [
+            209131,
+            209132,
+            209133,
+            209134,
+            209135,
+            209136
+        ],
         "CustomDeck": {
             "2091": {
                 "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447234026478961932/63288FD05E58CA35DD41C7995A875181901B5F60/",
@@ -60,11 +67,11 @@
     },
     "StatesPaths": {},
     "ContainedObjectPaths": [
-        "Long_Battle.2ca0d7.209103.json",
-        "Take_Someone_You_Can_Trust.700a3d.209113.json",
-        "Majesty_and_Glory.9adf09.209104.json",
         "The_Western_Way.28ac67.209116.json",
         "Premonition_of_Danger.a70e98.209109.json",
-        "Swift_Boats.b9d9c9.209112.json"
+        "Swift_Boats.b9d9c9.209112.json",
+        "Majesty_and_Glory.9adf09.209104.json",
+        "Take_Someone_You_Can_Trust.700a3d.209113.json",
+        "Long_Battle.2ca0d7.209103.json"
     ]
 }

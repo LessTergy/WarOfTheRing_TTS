@@ -41,7 +41,11 @@
         "HideWhenFaceDown": true,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [201202, 201201, 201200],
+        "DeckIDs": [
+            201200,
+            201201,
+            201202
+        ],
         "CustomDeck": {
             "2012": {
                 "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/1754691331184621671/6C886E8C884D523D08344086E001C3EE18C9D768/",
@@ -60,8 +64,8 @@
     },
     "StatesPaths": {},
     "ContainedObjectPaths": [
-        "Dwarves_of_the_Iron_Hills.a52bdd.201202.json",
+        "Bardings.9f2dc7.201200.json",
         "Book_of_Mazarbul.61d830.201201.json",
-        "Bardings.9f2dc7.201200.json"
+        "Dwarves_of_the_Iron_Hills.a52bdd.201202.json"
     ]
 }

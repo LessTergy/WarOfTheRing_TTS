@@ -41,7 +41,13 @@
         "HideWhenFaceDown": true,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [209228, 209226, 209224, 209225, 209227],
+        "DeckIDs": [
+            209224,
+            209225,
+            209226,
+            209227,
+            209228
+        ],
         "CustomDeck": {
             "2092": {
                 "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/5810280809891002775/8C5372024390F2905119635A655B3BFB41254674/",
@@ -60,10 +66,10 @@
     },
     "StatesPaths": {},
     "ContainedObjectPaths": [
-        "A_Balrog_is_Come!.5c4b2d.209224.json",
-        "The_Gates_are_Closed.6973f2.209217.json",
         "We_Won_t_Go_Back.cd601c.209221.json",
         "The_Lore_of_the_Elven_Rings.fdc7fa.209218.json",
-        "Captain_of_Despair.8c0aa6.209216.json"
+        "The_Gates_are_Closed.6973f2.209217.json",
+        "Captain_of_Despair.8c0aa6.209216.json",
+        "A_Balrog_is_Come!.5c4b2d.209224.json"
     ]
 }

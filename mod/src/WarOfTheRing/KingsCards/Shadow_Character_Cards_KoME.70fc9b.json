@@ -41,7 +41,11 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [214124, 214126, 214125],
+        "DeckIDs": [
+            214124,
+            214125,
+            214126
+        ],
         "CustomDeck": {
             "2141": {
                 "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/",
@@ -61,7 +65,7 @@
     "StatesPaths": {},
     "ContainedObjectPaths": [
         "The_Palantir_of_Minas_Tirith.83099e.214124.json",
-        "The_West_Has_Failed.da318e.214126.json",
-        "Your_Welcome_Is_Doubtful.3ab353.214125.json"
+        "Your_Welcome_Is_Doubtful.3ab353.214125.json",
+        "The_West_Has_Failed.da318e.214126.json"
     ]
 }

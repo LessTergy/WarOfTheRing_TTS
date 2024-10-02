@@ -41,7 +41,10 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [209327, 209326],
+        "DeckIDs": [
+            209326,
+            209327
+        ],
         "CustomDeck": {
             "2093": {
                 "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/5810280809891095337/A355C968759F1D5567A489522D86A47BF5C9B6FF/",
@@ -60,7 +63,7 @@
     },
     "StatesPaths": {},
     "ContainedObjectPaths": [
-        "Great_Winged_Creatures.81349b.209306.json",
-        "Strongly_Guarded.73da40.209324.json"
+        "Strongly_Guarded.73da40.209324.json",
+        "Great_Winged_Creatures.81349b.209306.json"
     ]
 }

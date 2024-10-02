@@ -41,7 +41,15 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [214231, 214230, 214229, 214228, 214232, 214227, 214233],
+        "DeckIDs": [
+            214227,
+            214228,
+            214229,
+            214230,
+            214231,
+            214232,
+            214233
+        ],
         "CustomDeck": {
             "2142": {
                 "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/",
@@ -60,12 +68,12 @@
     },
     "StatesPaths": {},
     "ContainedObjectPaths": [
-        "Denethor_s_Folly.88528f.214231.json",
-        "Threats_and_Promises.0ecc61.214230.json",
-        "The_Palantir_of_Barad-Dur.873349.214229.json",
-        "The_King_Is_Revealed.ce3ca3.214228.json",
-        "Return_to_Valinor.4f36a3.214232.json",
         "Stormcrow.85933d.214227.json",
+        "The_King_Is_Revealed.ce3ca3.214228.json",
+        "The_Palantir_of_Barad-Dur.873349.214229.json",
+        "Threats_and_Promises.0ecc61.214230.json",
+        "Denethor_s_Folly.88528f.214231.json",
+        "Return_to_Valinor.4f36a3.214232.json",
         "Work_of_the_Enemy.cd10fa.214233.json"
     ]
 }

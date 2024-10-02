@@ -42,9 +42,9 @@
         "Hands": false,
         "SidewaysCard": false,
         "DeckIDs": [
-            206422, 206414, 206417, 206418, 206420, 206419, 206415, 206410,
-            206401, 206407, 206402, 206412, 206403, 206404, 206413, 206421,
-            206416, 206400, 206408, 206411, 206409, 206406, 206423, 206405
+            206400, 206401, 206402, 206403, 206404, 206405, 206406, 206407,
+            206408, 206409, 206410, 206411, 206412, 206413, 206414, 206415,
+            206416, 206417, 206418, 206419, 206420, 206421, 206422, 206423
         ],
         "CustomDeck": {
             "2064": {
@@ -64,29 +64,29 @@
     },
     "StatesPaths": {},
     "ContainedObjectPaths": [
-        "House_of_the_Stewards.2ca0d7.206400.json",
-        "Gwaihir_the_Windlord.bfd90d.206435.json",
-        "The_Eagles_are_Coming!.b758ae.206430.json",
-        "The_Ents_Awake_Treebeard.a5f20c.206420.json",
-        "The_Ents_Awake_Entmoot.041310.206433.json",
-        "The_Ents_Awake_Huorns.a54c7c.206401.json",
-        "Dead_Men_of_Dunharrow.ff6585.206429.json",
-        "I_Will_Go_Alone.2ca0d7.206402.json",
+        "Elven_Cloaks.46f2ed.206431.json",
         "Elven_Rope.b69f25.206432.json",
-        "The_Grey_Company.505288.206415.json",
         "Phial_of_Galadriel.b3797a.206408.json",
-        "Mirror_of_Galadriel.d870a1.206405.json",
-        "Bilbo_s_Song.70ae25.206427.json",
+        "Smeagol_Helps_Nice_Master.61d744.206411.json",
+        "Mithril_Coat_and_Sting.357271.206406.json",
+        "Axe_and_Bow.4cfbe3.206426.json",
         "Horn_of_Gondor.e71b27.206436.json",
+        "Wizard_s_Staff.6aa818.206423.json",
+        "Athelas.9c2684.206425.json",
+        "There_is_Another_Way.6a2c85.206418.json",
+        "I_Will_Go_Alone.2ca0d7.206402.json",
+        "Bilbo_s_Song.70ae25.206427.json",
+        "Mirror_of_Galadriel.d870a1.206405.json",
         "Challenge_of_the_King.c22b26.206428.json",
+        "Gwaihir_the_Windlord.bfd90d.206435.json",
         "We_Prove_the_Swifter.63a6a3.206421.json",
         "There_and_Back_Again.5451db.206417.json",
-        "Elven_Cloaks.46f2ed.206431.json",
-        "Athelas.9c2684.206425.json",
-        "Smeagol_Helps_Nice_Master.61d744.206411.json",
-        "There_is_Another_Way.6a2c85.206418.json",
-        "Mithril_Coat_and_Sting.357271.206406.json",
-        "Wizard_s_Staff.6aa818.206423.json",
-        "Axe_and_Bow.4cfbe3.206426.json"
+        "The_Eagles_are_Coming!.b758ae.206430.json",
+        "The_Ents_Awake_Treebeard.a5f20c.206420.json",
+        "The_Ents_Awake_Huorns.a54c7c.206401.json",
+        "The_Ents_Awake_Entmoot.041310.206433.json",
+        "Dead_Men_of_Dunharrow.ff6585.206429.json",
+        "House_of_the_Stewards.2ca0d7.206400.json",
+        "The_Grey_Company.505288.206415.json"
     ]
 }
