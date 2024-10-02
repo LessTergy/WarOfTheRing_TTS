@@ -41,7 +41,15 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [214227, 214228, 214229, 214230, 214231, 214232, 214233],
+        "DeckIDs": [
+            214227,
+            214228,
+            214229,
+            214230,
+            214231,
+            214232,
+            214233
+        ],
         "CustomDeck": {
             "2142": {
                 "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/",
