@@ -4,7 +4,7 @@ import os
 from find_text_files_by_pattern import find_files_by_text
 
 
-def rename_card_files(files_folder) -> dict:
+def rename_image_files(files_folder) -> dict:
     deck_dict = dict()
 
     for filename in os.listdir(files_folder):
@@ -93,7 +93,7 @@ def find_and_replace_old_values(block_name, file_paths, value_dict):
 
 
 image_folder = "./../images"
-deck_dict = rename_card_files(image_folder)
+deck_dict = rename_image_files(image_folder)
 
 source_directory = "./mod/src/WarOfTheRing"
 pattern = "https://steamusercontent-a.akamaihd.net/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/"
