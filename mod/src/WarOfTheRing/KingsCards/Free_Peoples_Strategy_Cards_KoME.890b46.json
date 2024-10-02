@@ -41,23 +41,15 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [
-            214417,
-            214418,
-            214419,
-            214420,
-            214421,
-            214422,
-            214423
-        ],
+        "DeckIDs": [214429, 214430, 214431, 214432, 214433, 214434, 214435],
         "CustomDeck": {
             "2144": {
-                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/",
-                "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2079031781127736148/5BD818E3A141EA0F1CBC4D0141BC03A3D15A99CD/",
-                "NumWidth": 10,
-                "NumHeight": 4,
+                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447234026479696553/CDA320F31795FDDEC89DC7C6C0F31390E610C506/",
+                "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392260977737/8E64F70801E0A760E26262B1E85434095BA96A48/",
+                "NumWidth": 9,
+                "NumHeight": 5,
                 "BackIsHidden": true,
-                "UniqueBack": true,
+                "UniqueBack": false,
                 "Type": 0
             }
         },
@@ -69,11 +61,11 @@
     "StatesPaths": {},
     "ContainedObjectPaths": [
         "Ever_At_Your_Service.4c4637.214417.json",
+        "Men_of_Little_Villages.c51467.214420.json",
+        "Wisdom_of_Elrond.b46d82.214423.json",
+        "Riders_of_Theoden.b865ed.214421.json",
         "King_Brand_s_Men.af71d7.214418.json",
         "Dain_Ironfoot_s_Guard.d33729.214419.json",
-        "Men_of_Little_Villages.c51467.214420.json",
-        "Riders_of_Theoden.b865ed.214421.json",
-        "Thranduil_s_Archers.b31dcd.214422.json",
-        "Wisdom_of_Elrond.b46d82.214423.json"
+        "Thranduil_s_Archers.b31dcd.214422.json"
     ]
 }
