@@ -51,6 +51,15 @@
                 "BackIsHidden": true,
                 "UniqueBack": false,
                 "Type": 0
+            },
+            "2100": {
+                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447234026479696553/CDA320F31795FDDEC89DC7C6C0F31390E610C506/",
+                "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392260977737/8E64F70801E0A760E26262B1E85434095BA96A48/",
+                "NumWidth": 9,
+                "NumHeight": 5,
+                "BackIsHidden": true,
+                "UniqueBack": false,
+                "Type": 0
             }
         },
         "LuaScript": "",
