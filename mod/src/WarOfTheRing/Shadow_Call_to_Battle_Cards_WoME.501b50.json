@@ -41,20 +41,18 @@
         "HideWhenFaceDown": true,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [209529, 209432, 209431, 209530, 209430, 209528],
+        "DeckIDs": [
+            209430,
+            209431,
+            209432,
+            209528,
+            209529,
+            209530
+        ],
         "CustomDeck": {
             "2094": {
-                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392260908177/A9C180F02672E4D984E4613B73ABFAD2FA8C7357/",
+                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447234026479996534/580BA955BA0713E26E4D29660DE92BF64FCA9098/",
                 "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392260978033/7C6B30226669D6FAA7004A2D6756B2D96B2DA322/",
-                "NumWidth": 9,
-                "NumHeight": 5,
-                "BackIsHidden": true,
-                "UniqueBack": false,
-                "Type": 0
-            },
-            "2095": {
-                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392260898198/011CC5DC1A64A751FBE77D1FAD00CB946FD7C744/",
-                "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392260978265/061D36AFFA69E1F4A20E7174AF19795298A5E2E0/",
                 "NumWidth": 9,
                 "NumHeight": 5,
                 "BackIsHidden": true,
@@ -69,11 +67,11 @@
     },
     "StatesPaths": {},
     "ContainedObjectPaths": [
-        "Fierce_Folk.148a5d.209505.json",
-        "Hideous_Speed.38a006.209401.json",
-        "Old_Hatred.de93cd.209409.json",
-        "Webs_of_Shadow.73da40.209530.json",
         "The_Last_Stroke_of_Doom.c6b2ab.209403.json",
-        "Borne_up_on_the_Wind.658fb0.209502.json"
+        "Old_Hatred.de93cd.209409.json",
+        "Hideous_Speed.38a006.209401.json",
+        "Borne_up_on_the_Wind.658fb0.209502.json",
+        "Fierce_Folk.148a5d.209505.json",
+        "Webs_of_Shadow.73da40.209530.json"
     ]
 }

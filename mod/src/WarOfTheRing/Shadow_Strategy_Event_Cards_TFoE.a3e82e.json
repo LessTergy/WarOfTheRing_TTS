@@ -41,7 +41,10 @@
         "HideWhenFaceDown": true,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [201207, 201206],
+        "DeckIDs": [
+            201206,
+            201207
+        ],
         "CustomDeck": {
             "2012": {
                 "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2449475694174044395/08CEBAC2BF9DEB76D7B454FEC379801159D55662/",
@@ -60,7 +63,7 @@
     },
     "StatesPaths": {},
     "ContainedObjectPaths": [
-        "Orcs_Multiplying_Again.5b8a08.201207.json",
-        "Monsters_Roused.43d713.201206.json"
+        "Monsters_Roused.43d713.201206.json",
+        "Orcs_Multiplying_Again.5b8a08.201207.json"
     ]
 }

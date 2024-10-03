@@ -41,10 +41,13 @@
         "HideWhenFaceDown": true,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [209725, 209724],
+        "DeckIDs": [
+            209724,
+            209725
+        ],
         "CustomDeck": {
             "2097": {
-                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392260898198/011CC5DC1A64A751FBE77D1FAD00CB946FD7C744/",
+                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447234026480055128/E0895467D507F7588D5AF665C9EC70FEB0C98667/",
                 "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392260978265/061D36AFFA69E1F4A20E7174AF19795298A5E2E0/",
                 "NumWidth": 9,
                 "NumHeight": 5,
@@ -60,7 +63,7 @@
     },
     "StatesPaths": {},
     "ContainedObjectPaths": [
-        "Madness_and_Horror.bc2bf1.209700.json",
-        "Shadow_of_Dol_Guldur.3280dd.209720.json"
+        "Shadow_of_Dol_Guldur.3280dd.209720.json",
+        "Madness_and_Horror.bc2bf1.209700.json"
     ]
 }

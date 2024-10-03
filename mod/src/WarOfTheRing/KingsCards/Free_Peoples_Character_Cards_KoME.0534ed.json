@@ -41,15 +41,20 @@
         "HideWhenFaceDown": false,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [214314, 214315, 214316, 214313],
+        "DeckIDs": [
+            214337,
+            214338,
+            214339,
+            214340
+        ],
         "CustomDeck": {
             "2143": {
-                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392261188003/F629A8F4BC4442076434A3448BCEAA53E1E6B1A6/",
-                "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2079031781127736148/5BD818E3A141EA0F1CBC4D0141BC03A3D15A99CD/",
-                "NumWidth": 10,
-                "NumHeight": 4,
+                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447234026478961932/63288FD05E58CA35DD41C7995A875181901B5F60/",
+                "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392260977540/68BA6426B2C7AE9D77F27F34ED1FBB243274E5A8/",
+                "NumWidth": 9,
+                "NumHeight": 5,
                 "BackIsHidden": true,
-                "UniqueBack": true,
+                "UniqueBack": false,
                 "Type": 0
             }
         },
@@ -60,9 +65,9 @@
     },
     "StatesPaths": {},
     "ContainedObjectPaths": [
-        "House_of_the_Stewards.da18e8.214314.json",
+        "Aid_in_Time_of_Need.83e1eb.214313.json",
         "It_Is_Not_So_Dark_Here.5cad15.214315.json",
-        "Knowledge_of_the_Seeing_Stones.5800d4.214316.json",
-        "Aid_in_Time_of_Need.83e1eb.214313.json"
+        "House_of_the_Stewards.da18e8.214314.json",
+        "Knowledge_of_the_Seeing_Stones.5800d4.214316.json"
     ]
 }

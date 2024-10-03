@@ -40,16 +40,16 @@
         "GridProjection": false,
         "HideWhenFaceDown": false,
         "Hands": true,
-        "CardID": 214316,
+        "CardID": 214340,
         "SidewaysCard": false,
         "CustomDeck": {
             "2110": {
-                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392261188003/F629A8F4BC4442076434A3448BCEAA53E1E6B1A6/",
-                "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2079031781127736148/5BD818E3A141EA0F1CBC4D0141BC03A3D15A99CD/",
-                "NumWidth": 10,
-                "NumHeight": 4,
+                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447234026478961932/63288FD05E58CA35DD41C7995A875181901B5F60/",
+                "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392260977540/68BA6426B2C7AE9D77F27F34ED1FBB243274E5A8/",
+                "NumWidth": 9,
+                "NumHeight": 5,
                 "BackIsHidden": true,
-                "UniqueBack": true,
+                "UniqueBack": false,
                 "Type": 0
             }
         },

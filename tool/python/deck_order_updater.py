@@ -4,7 +4,7 @@ import os
 from find_text_files_by_pattern import find_files_by_text
 
 
-def rename_card_files(files_folder) -> dict:
+def rename_image_files(files_folder) -> dict:
     deck_dict = dict()
 
     for filename in os.listdir(files_folder):
@@ -46,7 +46,9 @@ def change_number_in_json(block_name, file_paths, value_dict) -> dict:
 
             old_json_value = object_block[block_name]
             old_card_number = str(old_json_value)[-2:]
-            new_card_number = value_dict[old_card_number]
+            new_card_number = value_dict.get(old_card_number, None)
+            if new_card_number == None:
+                continue
 
             new_json_value = int(str(old_json_value)[:-2] + new_card_number)
             object_block[block_name] = new_json_value
@@ -91,10 +93,10 @@ def find_and_replace_old_values(block_name, file_paths, value_dict):
 
 
 image_folder = "./../images"
-deck_dict = rename_card_files(image_folder)
+deck_dict = rename_image_files(image_folder)
 
 source_directory = "./mod/src/WarOfTheRing"
-pattern = "https://steamusercontent-a.akamaihd.net/ugc/1836922259142876332/DE209638AEE1E748AAEFEBF6BAD0BEB4384642DC/"
+pattern = "https://steamusercontent-a.akamaihd.net/ugc/2447234026480055128/E0895467D507F7588D5AF665C9EC70FEB0C98667/"
 files_extension = ".json"
 
 file_paths = find_files_by_text(source_directory, pattern, files_extension, True)

@@ -41,10 +41,15 @@
         "HideWhenFaceDown": true,
         "Hands": false,
         "SidewaysCard": false,
-        "DeckIDs": [209025, 209024, 209027, 209026],
+        "DeckIDs": [
+            209024,
+            209025,
+            209026,
+            209027
+        ],
         "CustomDeck": {
             "2090": {
-                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392260931677/6563DE040A9636ABA9FFB3866711ED736E46024C/",
+                "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2447234026478961932/63288FD05E58CA35DD41C7995A875181901B5F60/",
                 "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2447233392260977540/68BA6426B2C7AE9D77F27F34ED1FBB243274E5A8/",
                 "NumWidth": 9,
                 "NumHeight": 5,
@@ -60,9 +65,9 @@
     },
     "StatesPaths": {},
     "ContainedObjectPaths": [
-        "Safe_Paths_in_the_Dark.5f9d15.209010.json",
         "You_Know_the_Way_There.bd4b3d.209024.json",
-        "Three_Rings_for_the_Elven-Kings.af5525.209019.json",
-        "Wind_from_the_West.104585.209022.json"
+        "Safe_Paths_in_the_Dark.5f9d15.209010.json",
+        "Wind_from_the_West.104585.209022.json",
+        "Three_Rings_for_the_Elven-Kings.af5525.209019.json"
     ]
 }
