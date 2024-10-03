@@ -96,7 +96,7 @@ image_folder = "./../images"
 deck_dict = rename_image_files(image_folder)
 
 source_directory = "./mod/src/WarOfTheRing"
-pattern = "https://steamusercontent-a.akamaihd.net/ugc/2269315845048499268/C906DF19BD2FDDEE792567CB43399826BB89D5FF/"
+pattern = "https://steamusercontent-a.akamaihd.net/ugc/2447234026480055128/E0895467D507F7588D5AF665C9EC70FEB0C98667/"
 files_extension = ".json"
 
 file_paths = find_files_by_text(source_directory, pattern, files_extension, True)
