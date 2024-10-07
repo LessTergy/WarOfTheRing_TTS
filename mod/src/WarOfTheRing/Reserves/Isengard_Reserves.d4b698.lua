@@ -24,7 +24,7 @@ function CreateButtonData(PositionZ)
         label = ">",
         position = { -2.5, 0.05, PositionZ },
         rotation = { 0, 180, 0 },
-        color = { 0.914, 0.886, 0.345 },
+        color = { 0.925, 0.866, 0.196 },
         font_color = { 0.169, 0.141, 0.141 },
         width = 250,
         height = 250,
