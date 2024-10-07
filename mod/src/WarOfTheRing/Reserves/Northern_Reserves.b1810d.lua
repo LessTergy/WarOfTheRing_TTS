@@ -6,7 +6,7 @@ function onLoad(save_state)
         label = ">",
         position = { -2.5, 0.05, 0 },
         rotation = { 0, 180, 0 },
-        color = { 0.345, 0.678, 859 },
+        color = { 0.317, 0.611, 0.717 },
         width = 250,
         height = 250,
         font_size = 250,
