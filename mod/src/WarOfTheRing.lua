@@ -589,6 +589,9 @@ function RemoveObjectFromGame(Params)
                 (Params.Description == "" or string.find(Item.description, Params.Description) ~= nil)
             then
                 local FoundObj = bagObj.takeObject({ guid = Item.guid })
+                if Item.name ~= FoundObj.getName() then
+                    print("Found Object with same id - ", Item.name, "/", FoundObj.getName())
+                end
                 if Params.Logs then
                     print("Removing Item:", Item.guid, " ", Item.name, "/", FoundObj.getGUID(), ":", FoundObj.getName(),
                         " from Container:", bagObj.getGUID())
