@@ -548,7 +548,7 @@ function CheckHandLimit(Params)
     end
 end
 
--- {ID="",BagID="",Name="",Description=""}
+-- {ID = "", BagID = "", Name = "", Description = ""}
 function RemoveObjectFromGame(Params)
     if Params.ID == nil then
         Params.ID = ""
@@ -566,35 +566,49 @@ function RemoveObjectFromGame(Params)
         Params.Description = ""
     end
 
+    if Params.Logs == nil then
+        Params.Logs = false
+    end
+
     local GraveObj = getObjectFromGUID("416864")
-    if getObjectFromGUID(Params.ID) ~= nil then
-        -- print("Removing Object:",Params.ID," ",getObjectFromGUID(Params.ID).getName())
-        GraveObj.putObject(getObjectFromGUID(Params.ID))
-    else
-        for O, Obj in pairs(getAllObjects()) do
+    local Obj = getObjectFromGUID(Params.ID)
+    if Obj ~= nil then
+        if Params.Logs then
+            print("Removing Object:", Params.ID, " ", Obj.getName())
+        end
+        GraveObj.putObject(Obj)
+        return
+    end
+
+    local bagObj = getObjectFromGUID(Params.BagID)
+    if bagObj ~= nil then
+        local bagObjects = bagObj.getObjects()
+        for _, Item in pairs(bagObjects) do
             if
-                (Obj.type == "Deck" or Obj.type == "Bag") and Obj ~= GraveObj and
-                (Params.BagID == "" or Obj.getGUID() == Params.BagID)
+                (Params.ID == "" or Params.ID == Item.guid) and (Params.Name == "" or Params.Name == Item.name) and
+                (Params.Description == "" or string.find(Item.description, Params.Description) ~= nil)
             then
-                for I, Item in pairs(Obj.getObjects()) do
-                    if
-                        (Params.ID == "" or Params.ID == Item.guid) and (Params.Name == "" or Params.Name == Item.name) and
-                        (Params.Description == "" or string.find(Item.description, Params.Description) ~= nil)
-                    then
-                        local FoundObj = Obj.takeObject({ guid = Item.guid })
-                        -- print("Removing Item:",Item.guid," ",Item.name,"/",FoundObj.getGUID(),":",FoundObj.getName()," from Container:",Obj.getGUID())
-                        GraveObj.putObject(FoundObj)
-                        break
-                    end
+                local FoundObj = bagObj.takeObject({ guid = Item.guid })
+                if Params.Logs then
+                    print("Removing Item:", Item.guid, " ", Item.name, "/", FoundObj.getGUID(), ":", FoundObj.getName(),
+                        " from Container:", bagObj.getGUID())
                 end
-            elseif
-                Params.ID == nil and (Params.Name == "" or Obj.getName() == Params.Name) and
-                (Params.Description == "" or string.find(Obj.getDescription(), Params.Description) ~= nil)
-            then
-                -- print("Removing Object::",Params.Name,"/",Obj.getGUID(),":",Obj.getName())
-                GraveObj.putObject(Obj)
-                break
+                GraveObj.putObject(FoundObj)
+                return
             end
+        end
+    end
+
+    for _, Obj in pairs(getAllObjects()) do
+        if
+            Params.ID == nil and (Params.Name == "" or Obj.getName() == Params.Name) and
+            (Params.Description == "" or string.find(Obj.getDescription(), Params.Description) ~= nil)
+        then
+            if Params.Logs then
+                print("Removing Object::", Params.Name, "/", Obj.getGUID(), ":", Obj.getName())
+            end
+            GraveObj.putObject(Obj)
+            return
         end
     end
 end
