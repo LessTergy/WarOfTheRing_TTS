@@ -1,29 +1,9 @@
-# README #
+# Tabletop Simulator Mod for War of the Ring: Second Edition
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This project is a community-contributed open source mod for
+[Tabletop Simulator][1], emulating some features and game play of
+[War of the Ring][2]. It is periodically updated to the [Steam Workshop][3].
 
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+[1]: https://store.steampowered.com/app/286160/Tabletop_Simulator/
+[2]: https://boardgamegeek.com/boardgame/115746/war-of-the-ring-second-edition
+[3]: https://steamcommunity.com/sharedfiles/filedetails/?id=3174790136
