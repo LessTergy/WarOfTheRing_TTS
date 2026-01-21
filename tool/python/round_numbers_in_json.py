@@ -34,6 +34,5 @@ def round_numbers(data):
         return data
 
 
-# Пример использования
 folder_path = "./mod/src/"
 round_numbers_in_json_files(folder_path)
