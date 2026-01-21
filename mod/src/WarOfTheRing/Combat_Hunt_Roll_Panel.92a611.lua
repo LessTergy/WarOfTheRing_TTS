@@ -17,9 +17,9 @@ ENEMY_HIT_COLOUR = nil
 
 -- Speed settings
 DELAY = 0.25
-STAGGER_TIME = 0.2
+STAGGER_TIME = 0
 RANDOMIZE_COUNT = 4
-RANDOMIZE_STAGGER_TIME = 0.1
+RANDOMIZE_STAGGER_TIME = 0
 
 -- Roll history
 CURRENT_ROLL_ID = 0
@@ -30,6 +30,7 @@ ROLL_COUNT = 0
 ROLL_TO_HIT = 0
 REROLL_COUNT = 0
 REROLL_TO_HIT = 0
+REROLL_BONUS = 0
 SIX_HITS_TWICE = false
 ONE_HITS_SELF = false
 MISSES_TO_HITS = 0
@@ -68,12 +69,12 @@ COLOURS_FP = {
 BUTTON_COUNTS = {
     General = { RollCount = { 1, 5 }, RollToHit = { 2, 9 } },
     Combat = { RollCount = { 0, 5 }, RollToHit = { 2, 6 }, RerollCount = { 0, 5 }, RerollToHit = { 2, 6 }, MissesToHits = { 0, 2 } },
-    Hunt = { RollCount = { 1, 5 }, RollToHit = { 2, 6 }, RerollCount = { 0, 3 } }
+    Hunt = { RollCount = { 1, 5 }, RollToHit = { 2, 6 }, RerollCount = { 0, 3 }, RerollBonus = { 0, 1 } }
 }
 BUTTON_DEFAULTS = {
     General = { roll_count = 1, roll_to_hit = 5, reroll_count = 0, reroll_to_hit = 0 },
     Combat = { roll_count = 1, roll_to_hit = 5, reroll_count = 0, reroll_to_hit = 5 },
-    Hunt = { roll_count = 1, roll_to_hit = 6, reroll_count = 0, reroll_to_hit = 6 }
+    Hunt = { roll_count = 1, roll_to_hit = 6, reroll_count = 0, reroll_to_hit = 6, reroll_bonus = 0 }
 }
 
 function setupUI(panel_to_activate)
@@ -102,7 +103,8 @@ function onSave()
     return JSON.encode({
         CURRENT_PANEL = CURRENT_PANEL,
         CURRENT_ROLL_ID = CURRENT_ROLL_ID,
-        HISTORY = HISTORY
+        HISTORY =
+            HISTORY
     })
 end
 
@@ -205,6 +207,7 @@ function reloadRollPanel(panel_name)
     setRollToHit(BUTTON_DEFAULTS[panel_name].roll_to_hit)
     setRerollCount(BUTTON_DEFAULTS[panel_name].reroll_count)
     setRerollToHit(BUTTON_DEFAULTS[panel_name].reroll_to_hit)
+    setRerollBonus(BUTTON_DEFAULTS["Hunt"].reroll_bonus)
     setMissesToHits(0)
     set6HitsTwice(false)
     set1HitsSelf(false)
@@ -299,6 +302,17 @@ function uiSetRerollCount4() setRerollCount(4) end
 
 function uiSetRerollCount5() setRerollCount(5) end
 
+function setRerollBonus(reroll_bonus)
+    setAllButtonsUnselected(CURRENT_PANEL, 'RerollBonus')
+    setButtonSelected('btn' .. CURRENT_PANEL .. 'RerollBonus' .. reroll_bonus)
+    REROLL_BONUS = reroll_bonus
+    onInputChange('RerollBonus')
+end --function
+
+function uiSetRerollBonus0() setRerollBonus(0) end
+
+function uiSetRerollBonus1() setRerollBonus(1) end
+
 function setRerollToHit(reroll_to_hit)
     setAllButtonsUnselected(CURRENT_PANEL, 'RerollToHit')
     setButtonSelected('btn' .. CURRENT_PANEL .. 'RerollToHit' .. reroll_to_hit)
@@ -371,6 +385,7 @@ function createRollInfo()
         roll_count = ROLL_COUNT,
         roll_to_hit = ROLL_TO_HIT,
         reroll_count = REROLL_COUNT,
+        reroll_bonus = REROLL_BONUS,
         reroll_to_hit = REROLL_TO_HIT,
         six_hits_twice = SIX_HITS_TWICE,
         one_hits_self = ONE_HITS_SELF,
@@ -544,6 +559,11 @@ function doRoll(roll_info, start_die_idx)
                 return
             end
             local result = die.getRotationValue()
+            --hunt reroll bonus?
+            if roll_info.type == "Hunt" and not roll_info.on_roll_step then
+                result = result + roll_info.reroll_bonus
+            end --if
+            --tally result...
             results[die_idx] = result
             hit_result = calculateHitResult(result, to_hit, roll_info)
             addHit(die_idx, die, hit_result, roll_info, roll_info.on_roll_step)

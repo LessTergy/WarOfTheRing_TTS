@@ -27,7 +27,6 @@ def replace_characters(line, replacements):
     return line
 
 
-# Пример использования
 directory_path = "./mod"
 replacements = {"é": "e", "ú": "u", "ó": "o"}
 

@@ -190,6 +190,13 @@
                             <Button id="btnHuntRerollCount3" class="clsBtnInput" onClick="uiSetRerollCount3">3</Button>
                         </HorizontalLayout>
                     </HorizontalLayout>
+                    <HorizontalLayout>
+                        <Text class="clsTxtInputDesc">Hunt Re-roll Bonus</Text>
+                        <HorizontalLayout class="clsHzInput">
+                            <Button id="btnHuntRerollBonus0" class="clsBtnInput" onClick="uiSetRerollBonus0">0</Button>
+                            <Button id="btnHuntRerollBonus1" class="clsBtnInput" onClick="uiSetRerollBonus1">+1</Button>
+                        </HorizontalLayout>
+                    </HorizontalLayout>
                 </VerticalLayout>
             </Panel>
             <Panel class="clsPnlHits">

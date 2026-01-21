@@ -17,9 +17,9 @@ ENEMY_HIT_COLOUR = nil
 
 -- Speed settings
 DELAY = 0.25
-STAGGER_TIME = 0.2
+STAGGER_TIME = 0
 RANDOMIZE_COUNT = 4
-RANDOMIZE_STAGGER_TIME = 0.1
+RANDOMIZE_STAGGER_TIME = 0
 
 -- Roll history
 CURRENT_ROLL_ID = 0
@@ -102,7 +102,8 @@ function onSave()
     return JSON.encode({
         CURRENT_PANEL = CURRENT_PANEL,
         CURRENT_ROLL_ID = CURRENT_ROLL_ID,
-        HISTORY = HISTORY
+        HISTORY =
+            HISTORY
     })
 end
 
